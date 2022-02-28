@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_install.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, install, installing 
+summary: Deploy vCenter 插件与 ONTAP Select Deploy 管理实用程序捆绑在一起。您可以使用 ONTAP Select Deploy Web 用户界面在 vCenter 服务器上安装和注册此插件。 
+---
+= 安装 Deploy vCenter 插件
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Deploy vCenter 插件与 ONTAP Select Deploy 管理实用程序捆绑在一起。您可以使用 ONTAP Select Deploy Web 用户界面在 vCenter 服务器上安装和注册此插件。
+
+.开始之前
+* 请查看 link:concept_vpi_manage_before.html["开始之前"]。
+* 定义要使用以下权限部署的 vCenter 帐户： sessions.validate.session 。
+* 拥有具有以下权限的 vCenter 帐户的凭据：
++
+** 扩展
++
+*** 注册扩展
+
+
+
+
+
+
+假定已将 vCenter 管理服务器添加到 Deploy 中。如果尚未添加 vCenter Server ，请参见 link:task_adm_security.html["添加管理服务器帐户"] 有关详细信息 ...
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 管理 * 选项卡，然后单击左侧窗格中的 * 管理服务器 * 。
+. 选择目标管理服务器，然后单击 image:icon_kebab.gif["选项"] 然后单击 * 注册为插件 * 。
+. 提供 vCenter 凭据并选择插件版本。
+. 单击 * 注册 * 。
+

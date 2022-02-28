@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: task_cli_clusters.html 
+keywords: administer, administering, cli, clusters 
+summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。 
+---
+= ONTAP Select 集群
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以执行多项相关任务来管理 ONTAP Select 集群。
+
+
+
+== 删除 ONTAP Select 集群
+
+您可以使用命令行界面删除不再需要的 ONTAP Select 集群。
+
+集群必须处于脱机状态。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 虚拟机命令行界面。
+. 显示集群状态： `cluster show -name clustername`
+. 如果集群未脱机，请将其移至脱机状态： `cluster offline -name clustername`
+. 确认集群处于脱机状态后，请删除集群： `cluster delete -name clustername`
+

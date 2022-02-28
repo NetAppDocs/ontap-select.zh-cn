@@ -1,0 +1,188 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_networking.html 
+keywords: plan, planning, networking, network, drivers, vmxnet3, cluster mtu, firewall 
+summary: 在部署 ONTAP Select 之前，您必须正确配置虚拟机管理程序网络。 
+---
+= 网络连接注意事项
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在部署 ONTAP Select 之前，您必须正确配置虚拟机管理程序网络。
+
+
+
+==== 虚拟交换机选项
+
+您必须在每个 ONTAP Select 主机上配置一个虚拟交换机，以支持外部网络和内部网络（仅限多节点集群）。在部署多节点集群过程中，您应测试内部集群网络上的网络连接。
+
+
+NOTE: 要了解有关如何在虚拟机管理程序主机上配置 vSwitch 以及高速接口功能的详细信息，请参见 link:concept_nw_concepts_chars.html["深度剖析网络"] 部分。
+
+
+
+==== 升级到 VMXNET3
+
+从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将现有 ONTAP Select 节点升级到 9.5 或更高版本，则不会自动升级此驱动程序。
+
+
+NOTE: 此时不需要升级到 VMXNET3 。但是，如果选择升级驱动程序，则必须手动执行升级。在这种情况下，请联系 NetApp 支持部门以获得帮助。
+
+
+
+==== 集群 MTU
+
+使用单独的内部网络连接多节点集群中的 ONTAP Select 节点。此网络的 MTU 大小通常为 9000 。但是，在某些情况下，此 MTU 大小对于连接 ONTAP Select 节点的网络来说过大。为了容纳较小的帧，内部网络上 ONTAP Select 使用的 MTU 大小可以介于 7500-9000 字节之间。
+
+MTU 大小将显示在集群创建页面的集群详细信息部分中。此值由 Deploy 管理实用程序确定，如下所示：
+
+. 初始默认值为 9000 。
+. 在为 HA 对添加主机和网络时，根据网络中的 vSwitch 配置， MTU 值会根据需要减小。
+. 添加完所有 HA 对并准备好创建集群后，将设置集群的最终集群 MTU 值。
+
+
+
+NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
+
+
+
+==== 采用标准 vSwitch 的双 NIC 主机
+
+为了提高双 NIC 配置中的 ONTAP Select 性能，您应使用两个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：
+
+* ONTAP Select 多节点集群
+* 两个 NIC （ NIC1 和 NIC2 ）
+* 标准 vSwitch
+
+
+在此环境中，您应按如下所示使用两个端口组配置流量：
+
+端口组 1::
++
+--
+* 内部网络（集群， RSM ， HA-IC 流量）
+* NIC1 处于活动状态
+* NIC2 处于备用状态
+
+
+--
+端口组 2::
++
+--
+* 外部网络（数据和管理流量）
+* NIC1 处于备用状态
+* NIC2 处于活动状态
+
+
+--
+
+
+有关双 NIC 部署的详细信息，请参见 _deep dive _ 一节。
+
+
+
+==== 采用标准 vSwitch 的四 NIC 主机
+
+为了提高四 NIC 配置中的 ONTAP Select 性能，您应使用四个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：
+
+* ONTAP Select 多节点集群
+* 四个 NIC （ NIC1 ， NIC2 ， NIC3 和 NIC4 ）
+* 标准 vSwitch
+
+
+在此环境中，您应使用以下四个端口组配置流量：
+
+端口组 1::
++
+--
+* 内部网络（集群， RSM 流量）
+* NIC1 处于活动状态
+* NIC2 ， NIC3 ， NIC4 处于待机状态
+
+
+--
+端口组 2::
++
+--
+* 内部网络（集群， HA-IC 流量）
+* NIC3 处于活动状态
+* NIC1 ， NIC2 ， NIC4 处于待机状态
+
+
+--
+端口组 3.::
++
+--
+* 外部网络（数据和管理流量）
+* NIC2 处于活动状态
+* NIC1 ， NIC3 ， NIC4 处于待机状态
+
+
+--
+端口组 4.::
++
+--
+* 外部网络（数据流量）
+* NIC4 处于活动状态
+* NIC1 ， NIC2 ， NIC3 处于待机状态
+
+
+--
+
+
+有关四 NIC 部署的详细信息，请参见 _deep dive _ 一节。
+
+
+
+==== 网络流量要求
+
+您必须确保已正确配置防火墙，以使网络流量能够在 ONTAP Select 部署环境中的各个参与者之间流动。
+
+参与者::
++
+--
+* 部署 ONTAP Select Deploy 管理实用程序
+* vSphere/ESXi 是 vSphere 服务器或 ESXi 主机，具体取决于在集群部署中对主机的管理方式
+* 虚拟机管理程序服务器 ESXi 虚拟机管理程序主机
+* OTS 节点 ONTAP Select 节点
+* OTS 集群一个 ONTAP Select 集群
+* 管理 WS 本地管理工作站
+
+
+--
+网络流量要求摘要:: 下表介绍了 ONTAP Select 部署的网络流量要求。
+
+
+[cols="20,45,35"]
+|===
+| 协议 / 端口 | 方向 | Description 
+
+
+| TLS （ 443 ） | 部署到 vCenter Server （受管）或 ESXi （非受管） | VMware VIX API 
+
+
+| 902. | 部署到 vCenter Server （受管）或 ESXi （非受管） | VMware VIX API 
+
+
+| ICMP | 部署到虚拟机管理程序服务器 | Ping 
+
+
+| ICMP | 部署到每个 OTS 节点 | Ping 
+
+
+| SSH （ 22 ） | 管理每个 OTS 节点的 WS | 管理 
+
+
+| TLS （ 443 ） | 部署到 OTS 节点和集群 | 访问 ONTAP 
+
+
+| TLS （ 443 ） | 要部署的每个 OTS 节点 | 访问 Deploy 
+
+
+| iSCSI （ 3260 ） | 要部署的每个 OTS 节点 | 调解器 / 邮箱磁盘 
+|===

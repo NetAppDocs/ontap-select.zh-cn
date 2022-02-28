@@ -1,0 +1,406 @@
+---
+sidebar: sidebar 
+permalink: reference_api_workflow01.html 
+keywords: rest api, deploy rest api, rest, workflow, create cluster, curl, json 
+summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONTAP Select 集群。此时将使用评估版许可证创建集群。 
+---
+= 工作流 1 ：在 ESXi 上创建单节点评估集群
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONTAP Select 集群。此时将使用评估版许可证创建集群。
+
+集群创建工作流在以下情况下有所不同：
+
+* ESXi 主机不受 vCenter （独立主机）管理
+* 集群中使用多个节点或主机
+* 集群使用已购买的许可证部署在生产环境中
+* 使用 KVM 虚拟机管理程序代替 VMware ESXi （从 ONTAP Select 9.10.1 开始，不再支持 KVM ）
+
+
+
+
+== 1. 注册 vCenter Server 凭据
+
+在部署到由 vCenter Server 管理的 ESXi 主机时，您必须在注册主机之前添加凭据。然后， Deploy 管理实用程序可以使用凭据向 vCenter 进行身份验证。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 部署 | 发布 | /security/credentials 
+|===
+卷曲::
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step01 'https://10.21.191.150/api/security/credentials'
+----
+JSON 输入（步骤 01 ）::
+
+
+[source, json]
+----
+{
+  "hostname": "vcenter.company-demo.com",
+  "type": "vcenter",
+  "username": "misteradmin@vsphere.local",
+  "password": "mypassword"
+}
+----
+处理类型:: 异步
+输出::
++
+--
+* 位置响应标头中的凭据 ID
+* 作业对象
+
+
+--
+
+
+
+
+== 2. 注册虚拟机管理程序主机
+
+您必须添加一个虚拟机管理程序主机，其中包含 ONTAP Select 节点的虚拟机将在其中运行。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | 发布 | /hosts 
+|===
+卷曲::
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step02 'https://10.21.191.150/api/hosts'
+----
+JSON 输入（第 02 步）::
+
+
+[source, json]
+----
+{
+  "hosts": [
+    {
+      "hypervisor_type": "ESX",
+      "management_server": "vcenter.company-demo.com",
+      "name": "esx1.company-demo.com"
+    }
+  ]
+}
+----
+处理类型:: 异步
+输出::
++
+--
+* 位置响应标头中的主机 ID
+* 作业对象
+
+
+--
+
+
+
+
+== 3. 创建集群
+
+创建 ONTAP Select 集群时，系统会注册基本集群配置，并且 Deploy 会自动生成节点名称。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | 发布 | /clusters 
+|===
+卷曲:: 对于单节点集群，查询参数 node_count 应设置为 1 。
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+----
+JSON 输入（第 03 步）::
+
+
+[source, json]
+----
+{
+  "name": "my_cluster"
+}
+----
+处理类型:: 同步
+输出::
++
+--
+* 位置响应标头中的集群 ID
+
+
+--
+
+
+
+
+== 4. 配置集群
+
+在配置集群时，必须提供多个属性。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | patch | /clusters/ ｛ cluster_id ｝ 
+|===
+卷曲:: 您必须提供集群 ID 。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+----
+JSON 输入（第 04 步）::
+
+
+[source, json]
+----
+{
+  "dns_info": {
+    "domains": ["lab1.company-demo.com"],
+    "dns_ips": ["10.206.80.135", "10.206.80.136"]
+    },
+    "ontap_image_version": "9.5",
+    "gateway": "10.206.80.1",
+    "ip": "10.206.80.115",
+    "netmask": "255.255.255.192",
+    "ntp_servers": {"10.206.80.183"}
+}
+----
+处理类型:: 同步
+输出:: 无
+
+
+
+
+== 5. 检索节点名称
+
+Deploy 管理实用程序会在创建集群时自动生成节点标识符和名称。在配置节点之前，必须检索分配的 ID 。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | 获取 | /clusters/ ｛ cluster_id ｝ / 节点 
+|===
+卷曲:: 您必须提供集群 ID 。
+
+
+[source, curl]
+----
+curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+----
+处理类型:: 同步
+输出::
++
+--
+* 每个阵列都会记录一个节点，该节点使用唯一的 ID 和名称
+
+
+--
+
+
+
+
+== 6. 配置节点
+
+您必须为节点提供基本配置，这是用于配置节点的三个 API 调用中的第一个。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | 路径 | /clusters/ ｛ cluster_id ｝ /nodes/｛ node_id ｝ 
+|===
+卷曲:: 您必须提供集群 ID 和节点 ID 。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+----
+JSON 输入（第 06 步）:: 您必须提供要运行 ONTAP Select 节点的主机 ID 。
+
+
+[source, json]
+----
+{
+  "host": {
+    "id": "HOSTID"
+    },
+  "instance_type": "small",
+  "ip": "10.206.80.101",
+  "passthrough_disks": false
+}
+----
+处理类型:: 同步
+输出:: 无
+
+
+
+
+== 7. 检索节点网络
+
+您必须确定单节点集群中的节点使用的数据和管理网络。内部网络不用于单节点集群。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | 获取 | /clusters/ ｛ cluster_id ｝ /nodes/｛ node_id ｝ / 网络 
+|===
+卷曲:: 您必须提供集群 ID 和节点 ID 。
+
+
+[source, curl]
+----
+curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+----
+处理类型:: 同步
+输出::
++
+--
+* 由两个记录组成的数组，每个记录分别描述节点的单个网络，包括唯一 ID 和用途
+
+
+--
+
+
+
+
+== 8. 配置节点网络
+
+您必须配置数据和管理网络。内部网络不用于单节点集群。
+
+
+NOTE: 对以下 API 调用执行问题描述 两次，每个网络一次。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | patch | /clusters/ ｛ cluster_id ｝ /nodes/｛ node_id ｝ /networks/ ｛ network_id ｝ 
+|===
+卷曲:: 您必须提供集群 ID ，节点 ID 和网络 ID 。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+----
+JSON 输入（第 08 步）:: 您需要提供网络名称。
+
+
+[source, json]
+----
+{
+  "name": "sDOT_Network"
+}
+----
+处理类型:: 同步
+输出:: 无
+
+
+
+
+== 9. 配置节点存储池
+
+配置节点的最后一步是连接存储池。您可以通过 vSphere Web Client 或 Deploy REST API （可选）确定可用存储池。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | patch | /clusters/ ｛ cluster_id ｝ /nodes/｛ node_id ｝ /networks/ ｛ network_id ｝ 
+|===
+卷曲:: 您必须提供集群 ID ，节点 ID 和网络 ID 。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+----
+JSON 输入（第 09 步）:: 池容量为 2 TB 。
+
+
+[source, json]
+----
+{
+  "pool_array": [
+    {
+      "name": "sDOT-01",
+      "capacity": 2147483648000
+    }
+  ]
+}
+----
+处理类型:: 同步
+输出:: 无
+
+
+
+
+== 部署集群
+
+配置集群和节点后，您可以部署集群。
+
+[cols="15,15,70"]
+|===
+| 类别 | HTTP 动词 | 路径 
+
+
+| 集群 | 发布 | /clusters/ ｛ cluster_id ｝ /Deploy 
+|===
+卷曲:: 您必须提供集群 ID 。
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+----
+JSON 输入（第 10 步）:: 您必须提供 ONTAP 管理员帐户的密码。
+
+
+[source, json]
+----
+{
+  "ontap_credentials": {
+    "password": "mypassword"
+  }
+}
+----
+处理类型:: 异步
+输出::
++
+--
+* 作业对象
+
+
+--
+

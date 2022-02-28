@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: reference_release_notes.html 
+keywords:  
+summary:  
+---
+= 《 ONTAP Select 发行说明》
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select 发行说明提供了特定于版本的信息，包括新功能，支持的配置，升级说明，已知问题， 已修复的问题和已知限制。
+
+
+NOTE: 要访问发行说明，您需要一个帐户才能登录到 NetApp 支持站点。
+
+
+
+===== ONTAP Select 的当前版本
+
+您可以访问 https://library.netapp.com/ecm/ecm_download_file/ECMLP2879854["《 ONTAP Select 9.10.1 发行说明》"^] 可查看当前版本的详细信息。
+
+
+
+===== 旧版本的 ONTAP Select
+
+要访问本产品以往版本的发行说明，请参见 https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["ONTAP Select 产品库"^]。

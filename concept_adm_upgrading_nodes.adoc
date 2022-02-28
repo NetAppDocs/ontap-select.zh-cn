@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: concept_adm_upgrading_nodes.html 
+keywords: administer, administering, web, upgrading nodes 
+summary: 部署 ONTAP Select 集群后，您可以根据需要使用标准 ONTAP 软件升级操作步骤 升级每个节点的 ONTAP 映像。 
+---
+= 升级 ONTAP Select 节点
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+部署 ONTAP Select 集群后，您可以根据需要升级集群中每个节点上的 ONTAP 映像。
+
+
+CAUTION: 您不能使用 Deploy 管理实用程序升级现有 ONTAP Select 节点。Deploy 实用程序只能用于创建新的 ONTAP Select 集群。
+
+
+
+== 常规操作步骤
+
+总体而言，您应使用以下步骤升级现有 ONTAP Select 节点。
+
+. 导航到 NetApp 支持站点上的下载页面。
++
+https://mysupport.netapp.com/site/downloads["NetApp 支持下载"^]
+
+. 单击 * ONTAP Select 节点升级 * 。
+. 根据需要选择并下载相应的升级映像以响应所有提示。
+. 在升级 ONTAP Select 节点之前，请查看追加信息 发行说明以及所有必需的过程。您可以在产品库页面上访问适用于您的 ONTAP Select 版本的发行说明。
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["ONTAP Select 产品库"^]
+
+. 使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。
++
+https://docs.netapp.com/us-en/ontap/["ONTAP 9 文档"^]
+
+
+
+
+
+== 还原 ONTAP Select 节点
+
+您不能将 ONTAP Select 节点还原到最初安装的版本之前的版本。例如：
+
+最初安装的是 ONTAP Select 9.4:: 您可以将节点升级到 9.5 版，然后根据需要还原回 9.4 版。
+最初安装的是 ONTAP Select 9.5:: 您无法还原到版本 9.4 ，因为此版本早于最初安装的版本。
+
+
+
+
+== 使用 VMXNET3 网络驱动程序
+
+从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将现有 ONTAP Select 节点升级到 9.5 版，则网络驱动程序不会自动升级。您必须手动升级到 VMXNET3 。您应联系 NetApp 支持部门以获得升级方面的帮助。

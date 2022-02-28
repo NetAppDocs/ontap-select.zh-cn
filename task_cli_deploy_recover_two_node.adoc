@@ -1,0 +1,231 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_recover_two_node.html 
+keywords: administer, administering, cli, two node cluster, recover, recovering 
+summary: 如果 ONTAP Select Deploy 实用程序因某种原因失败或变得不可用，您将无法管理 ONTAP Select 节点和集群。此外，由于 Deploy 附带的调解器服务不可用，所有双节点集群都将失去 HA 功能。如果发生不可恢复的故障，您必须恢复 Deploy 实用程序实例以还原管理和 HA 功能。 
+---
+= 恢复双节点集群的 Deploy 实用程序
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果 ONTAP Select Deploy 实用程序因某种原因失败或变得不可用，您将无法管理 ONTAP Select 节点和集群。此外，由于 Deploy 附带的调解器服务不可用，所有双节点集群都将失去 HA 功能。如果发生不可恢复的故障，您必须恢复 Deploy 实用程序实例以还原管理和 HA 功能。
+
+
+
+== 开始之前
+
+您应在尝试恢复 Deploy 实用程序实例之前做好准备，以确保成功。
+
+
+
+===== 所需技能和信息
+
+您应熟悉几个管理过程并掌握所需的信息。
+
+
+
+===== 安装 Deploy 虚拟机
+
+您必须能够在虚拟机管理程序环境中安装 ONTAP Select Deploy 实用程序的新实例。
+
+
+
+===== ONTAP 命令行界面
+
+您必须能够登录到 ONTAP Select 集群的 ONTAP 命令行界面并使用 Shell 界面。
+
+
+
+===== Deploy 实用程序配置备份的可用性
+
+您必须确定是否已备份包含 ONTAP Select 双节点集群的失败 Deploy 实用程序实例中的配置数据。您的备份可能不包含集群。
+
+
+
+===== 还原 Deploy 配置的备份
+
+根据使用的恢复操作步骤 ，您应该能够还原 Deploy 配置数据的备份。
+
+
+
+===== 原始 Deploy 虚拟机的 IP 地址
+
+您必须知道出现故障的原始 Deploy 实用程序虚拟机的 IP 地址。
+
+
+
+===== 存储容量许可
+
+您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可，则必须在恢复或还原 Deploy 实例后重新安装每个容量池许可证。
+
+
+
+===== 确定要使用的恢复操作步骤
+
+您必须确定在恢复 ONTAP Select Deploy 实用程序实例时要使用的操作步骤 。您的决定取决于您是否已从包含 ONTAP Select 双节点集群的原始故障 Deploy 实用程序中备份配置数据。
+
+[cols="35,65"]
+|===
+| 是否具有包含双节点集群的 Deploy 备份？ | 要使用的恢复操作步骤 
+
+
+| 是的。 | 使用配置备份还原 Deploy 实用程序实例 
+
+
+| 否 | 重新配置和恢复 Deploy 实用程序实例 
+|===
+
+
+== 使用配置备份还原 Deploy 实用程序实例
+
+如果您已为包含双节点集群的失败 Deploy 实用程序实例创建备份，则可以将配置数据还原到新的 Deploy 虚拟机实例。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。
+
+您必须备份包含双节点集群的原始故障 Deploy 虚拟机中的配置数据。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。
+
+由于您还原的配置备份包含双节点集群，因此会在新的 Deploy 实用程序虚拟机中重新创建调解器 iSCSI 目标和邮箱。
+
+.步骤
+. 准备新的 ONTAP Select Deploy 实用程序实例：
++
+.. 安装新的 Deploy 实用程序虚拟机。
+.. 将 Deploy 配置从先前的备份还原到新虚拟机。
++
+有关安装和还原过程的更多详细信息，请参见相关任务。
+
+
+
+. 登录到 ONTAP Select 双节点集群的 ONTAP 命令行界面。
+. 进入高级权限模式：
++
+`set Adv.`
+
+. 如果新 Deploy 虚拟机的 IP 地址与原始 Deploy 虚拟机不同，则必须删除旧的调解器 iSCSI 目标并添加新目标：
++
+....
+storage iscsi-initiator remove-target -node * -target-type mailbox
+
+storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+
+storage iscsi-initiator add-target -node <node2_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+....
++
+` <ip_address>` 参数是新 Deploy 虚拟机的 IP 地址。
+
++
+通过这些命令， ONTAP Select 节点可以发现新 Deploy 实用程序虚拟机上的邮箱磁盘。
+
+. 确定调解器磁盘的名称：
++
+`disk show -container-type mediator`
+
+. 将邮箱磁盘分配给两个节点：
++
+....
+disk assign -disk <mediator-disk1-name> -owner <node1-name>
+disk assign -disk <mediator-disk2-name> -owner <node2-name>
+....
+. 验证是否已启用存储故障转移：
++
+`s存储故障转移显示`
+
+
+
+如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见 _Reinstalling a Capacity Pool license_ 。
+
+
+
+== 重新配置和恢复 Deploy 实用程序实例
+
+如果您没有包含双节点集群的失败 Deploy 实用程序实例的备份，则必须在新的 Deploy 虚拟机中配置调解器 iSCSI 目标和邮箱。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。
+
+您必须具有新 Deploy 实用程序实例的调解器目标名称。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。
+
+您可以选择将配置备份还原到新的 Deploy 虚拟机，即使该虚拟机不包含双节点集群也是如此。由于不会在还原时重新创建双节点集群，因此您必须通过 Deploy 上的 ONTAP Select 联机文档网页将调解器 iSCSI 目标和邮箱手动添加到新的 Deploy 实用程序实例中。您必须能够登录到双节点集群并知道这两个节点的 ONTAP 名称。
+
+
+NOTE: 恢复操作步骤 的目标是将双节点集群还原到运行状况良好的状态，在此状态下可以执行正常的 HA 接管和交还操作。
+
+.步骤
+. 准备新的 ONTAP Select Deploy 实用程序实例：
++
+.. 安装新的 Deploy 实用程序虚拟机。
+.. 也可以将 Deploy 配置从先前的备份还原到新虚拟机。
++
+如果还原先前的备份，则新的 Deploy 实例将不包含双节点集群。有关安装和还原过程的更多详细信息，请参见 " 相关信息 " 部分。
+
+
+
+. 登录到 ONTAP Select 双节点集群的 ONTAP 命令行界面。
+. 进入高级特权模式：
++
+`set Adv.`
+
+. 获取调解器 iSCSI 目标名称：
++
+`storage iscsi-initiator show -target-type mailbox`
+
+. 在新的 Deploy 实用程序虚拟机上访问联机文档网页，然后使用管理员帐户登录：
++
+` http://<ip_address>/api/ui`
+
++
+您必须使用 Deploy 虚拟机的 IP 地址。
+
+. 单击 * 调解器 * ，然后单击 * 获取 /mediators * 。
+. 单击 * 试用！ * 可显示 Deploy 维护的调解器列表。
++
+记下所需调解器实例的 ID 。
+
+. 单击 * 调解器 * ，然后单击 * 发布 * 。
+. 为 mediate_id 提供值。
+. 单击 `iscsi_target` 旁边的 * 型号 * 并填写名称值。
++
+使用目标名称作为 iqn_name 参数。
+
+. 单击 * 试用！ * 以创建调解器 iSCSI 目标。
++
+如果请求成功，您将收到 HTTP 状态代码 200 。
+
+. 如果新 Deploy 虚拟机的 IP 地址与原始 Deploy 虚拟机不同，则必须使用 ONTAP 命令行界面删除旧调解器 iSCSI 目标并添加新目标：
++
+....
+storage iscsi-initiator remove-target -node * -target-type mailbox
+
+storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
+
+storage iscsi-initiator add-target -node <node2_name> -label mediator-target-type mailbox -target-portal <ip_address> -target-name <target>
+....
++
+` <ip_address>` 参数是新 Deploy 虚拟机的 IP 地址。
+
+
+
+通过这些命令， ONTAP Select 节点可以发现新 Deploy 实用程序虚拟机上的邮箱磁盘。
+
+. 确定调解器磁盘的名称：
++
+`disk show -container-type mediator`
+
+. 将邮箱磁盘分配给两个节点：
++
+....
+disk assign -disk <mediator-disk1-name> -owner <node1-name>
+
+disk assign -disk <mediator-disk2-name> -owner <node2-name>
+....
+. 验证是否已启用存储故障转移：
++
+`s存储故障转移显示`
+
+
+
+如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见重新安装容量池许可证。
+
+link:task_install_deploy.html["安装 ONTAP Select Deploy"]
+
+

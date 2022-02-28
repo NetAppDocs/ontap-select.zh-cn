@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_upgrade.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, upgrade, verify, remove 
+summary: 您可以使用 ONTAP Select Deploy Web 用户界面从 vCenter 服务器升级或删除 Deploy 插件。您还可以验证是否仍安装此插件。 
+---
+= 验证并删除 Deploy vCenter 插件
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 ONTAP Select Deploy Web 用户界面从 vCenter 服务器升级或删除 Deploy 插件。您还可以验证是否仍安装此插件。
+
+.开始之前
+* 请查看 link:concept_vpi_manage_before.html["开始之前"]。
+* 应安装并注册 VMware vCenter 插件。
+* vCenter 管理员帐户必须具有以下 vCenter 权限：
++
+** 扩展
++
+*** 更新扩展
+*** 取消注册扩展
+
+
+
+
+
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序。
+. 单击页面顶部的 * 管理 * 选项卡，然后单击左侧窗格中的 * 管理服务器 * 。
+. 选择目标管理服务器，然后单击 image:icon_kebab.gif["选项"] 也可以选择的选项：
++
+.. * 验证插件 *
+.. * 注销插件 *
+
+
+. 如果出现提示，请提供 vCenter 凭据。
+
+
+如果删除此插件，则必须执行以下任务之一才能从 vCenter Server 中完成此插件的删除：
+
+* 重新启动 vCenter Server
+* 手动从 vCenter 服务器中删除此插件
+

@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: reference_vpi_troubleshooting.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, troubleshooting 
+summary: 在为 Deploy vCenter 插件提供支持时，您应了解可用的故障排除技术和常见错误。 
+---
+= 故障排除
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在为 Deploy vCenter 插件提供支持时，您应了解可用的故障排除技术和常见错误。
+
+
+
+== 安装，卸载和更新错误
+
+如果在安装，卸载或更新操作步骤 期间发生错误， API 将返回一条错误消息，此消息由用于启动操作步骤 的 Deploy 界面（ Web 用户界面或命令行界面）显示。
+
+常见错误包括：
+
+* 凭据错误（用户名或密码）
+* 为安装指定的插件无效或缺失
+* vCenter Server 脱机或无法访问
+
+
+对于追加信息 ，请检查以下日志：
+
+* 部署服务器日志
+* vCenter Server 日志
+
+
+
+
+== vCenter 中的插件错误
+
+如果在与 vCenter 的会话期间发生错误，则会显示一条错误消息。常见错误包括：
+
+* 无法从 Deploy 服务器加载 vCenter 中的嵌入式内容，因为浏览器不接受 Deploy 服务器的 SSL 证书。
+* 对于尝试访问 Deploy vCenter 插件的 vCenter 用户， Deploy 服务器无法授权其会话 ID 。会话超时。
+* 权限不足，无法访问 Deploy vCenter 插件。
+* Deploy 服务器脱机或无法访问。
+
+
+有关追加信息 的错误，请查看以下日志：
+
+* vCenter Server 日志
+* 部署服务器日志
+

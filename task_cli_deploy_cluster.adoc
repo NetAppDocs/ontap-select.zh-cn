@@ -1,0 +1,326 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_cluster.html 
+keywords: administer, administering, cli, create cluster, deploy cluster 
+summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令行界面创建单节点或多节点 ONTAP Select 集群。 
+---
+= 使用命令行界面部署 ONTAP Select 集群
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 ONTAP Select Deploy 管理实用程序提供的命令行界面创建单节点或多节点 ONTAP Select 集群。
+
+
+
+== 开始之前
+
+在 ESXi 上创建 ONTAP Select 集群之前，您应了解所需的准备工作。
+
+
+
+===== 准备将存储连接到 ONTAP Select 节点
+
+如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根聚合和数据聚合至少创建一个存储池。在配置 ONTAP Select 节点时，您必须连接存储池。
+
+如果使用软件 RAID ，则必须为系统数据创建存储池，并确保 SSD 驱动器可用于根聚合和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。
+
+
+
+===== 可用的 ONTAP Select 版本
+
+Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_adm_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
+
+
+
+===== 为生产部署授予 ONTAP Select 许可
+
+在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 _capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool_ 型号为共享池授予许可。
+
+
+
+== 上传并注册许可证文件
+
+获取具有存储容量的许可证文件后，必须将包含许可证的文件上传到 Deploy 虚拟机并进行注册。
+
+
+NOTE: 如果您部署的集群仅用于评估，则可以跳过此步骤。
+
+您必须具有管理员用户帐户的密码。
+
+.步骤
+. 在本地工作站上的命令 Shell 中，使用 sftp 实用程序将许可证文件上传到 Deploy 虚拟机。
++
+示例
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put NLF-320000nnn.txt
+exit
+....
+. 使用 SSH 使用管理员帐户登录到 Deploy 实用程序命令行界面。
+. 注册许可证：
++
+`license add -file-name filename`
+
++
+根据提示提供管理员帐户密码。
+
+. 显示系统中的许可证以确认已正确添加此许可证：
++
+`许可证显示`
+
+
+
+
+
+== 添加 ESXi 虚拟机管理程序主机
+
+您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。
+
+在注册由 vCenter 管理的主机之前，您必须为 vCenter Server 添加一个管理服务器帐户。如果主机不受 vCenter 管理，则可以在注册主机时提供主机凭据。您应使用此操作步骤 添加每个主机。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 如果主机由 vCenter Server 管理，请添加 vCenter 帐户凭据：
++
+`credential add -hostname <FQDN_IP> -type vcenter -username vCenter_username`
+
++
+示例
+
++
+....
+credential add -hostname vc.select.company-demo.com -type vcenter -username administrator@vsphere.local
+....
+. 注册主机：
++
+** 注册不受 vCenter 管理的独立主机： `host register -name <FQDN_IP> -hypervisor 类型的 ESX -username ESX_username`
+** 注册 vCenter 管理的主机： `host register -name <FQDN_IP> -hypervisor -type esx -mgmt-server <FQDN| IP>`
++
+示例
+
++
+....
+host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.company-demo.com
+....
+
+
+. 显示主机的状态并确认其已验证。
++
+`host show -name <FQDN_IP> -detailed`
+
++
+示例
+
++
+....
+host show -name 10.234.81.14 -detailed
+....
+
+
+
+
+== 创建和配置 ONTAP Select 集群
+
+您必须创建并配置 ONTAP Select 集群。配置集群后，您可以配置各个节点。
+
+您必须确定集群包含的节点数，并具有关联的配置信息。
+
+创建 ONTAP Select 集群时， Deploy 实用程序会根据您提供的集群名称和节点数自动生成节点名称。此外， Deploy 还会生成唯一的节点标识符。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 创建集群：
++
+`cluster create -name clustername -node-count nodes`
+
++
+示例
+
++
+....
+cluster create -name test-cluster -node-count 1
+....
+. 配置集群：
++
+`cluster modify -name clustername -mgmt-ip ip_address -netmask netmask -gateway ip_address -dns-servers <FQDN_IP>_list -dns-domains domain_list`
+
++
+示例
+
++
+....
+cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
+-gateway 10.234.81.1 -dns-servers 10.221.220.10 -dnsdomains select.company-demo.com
+....
+. 显示集群的配置和状态：
++
+`cluster show -name clustername -detailed`
+
+
+
+
+
+== 配置 ONTAP Select 节点
+
+您必须配置 ONTAP Select 集群中的每个节点。
+
+您必须具有节点的配置信息。应在 Deploy 实用程序中上传并安装容量层许可证文件。
+
+您应使用此操作步骤 配置每个节点。在此示例中，将为节点应用容量层许可证。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 确定分配给集群节点的名称：
++
+`node show -cluster-name clustername`
+
+. 选择节点并执行基本配置： `node modify -name nodename -cluster-name clustername -host-name <FQDN_IP> -license-serial number number -instance-type -passthrough-disks false`
++
+示例
+
++
+....
+node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.81.14
+-license-serial-number 320000nnnn -instance-type small -passthrough-disks false
+....
++
+节点的 RAID 配置使用 _passthrough-disks_参数 指示。如果使用的是本地硬件 RAID 控制器，则此值必须为 false 。如果使用的是软件 RAID ，则此值必须为 true 。
+
++
+ONTAP Select 节点使用容量层许可证。
+
+. 显示主机上可用的网络配置：
++
+`host network show -host-name <FQDN_IP> -detailed`
+
++
+示例
+
++
+....
+host network show -host-name 10.234.81.14 -detailed
+....
+. 执行节点的网络配置：
++
+`node modify -name nodename -cluster-name clustername -mgmt-ip ip -management-network network_name -data-network network_name -internal-network network_name`
+
++
+部署单节点集群时，您不需要内部网络，应删除 -internal-network 。
+
++
+示例
+
++
+....
+node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.21
+-management-networks sDOT_Network -data-networks sDOT_Network
+....
+. 显示节点的配置：
++
+`node show -name nodename -cluster-name clustername -detailed`
+
++
+示例
+
++
+....
+node show -name test-cluster-01 -cluster-name test-cluster -detailed
+....
+
+
+
+
+== 将存储连接到 ONTAP Select 节点
+
+您必须配置 ONTAP Select 集群中每个节点使用的存储。必须至少为每个节点分配一个存储池。
+
+您必须已使用 VMware vSphere 创建存储池。
+
+此操作步骤 假定使用本地硬件 RAID 控制器。您应在 ONTAP Select 集群中的每个节点上配置存储。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 显示主机上可用的存储池：
++
+`host storage pool show -host-name <FQDN_IP>`
+
++
+示例
+
++
+[listing]
+----
+host storage pool show -host-name 10.234.81.14
+----
++
+您也可以通过 VMware vSphere 获取可用存储池。
+
+. 将可用存储池连接到 ONTAP Select 节点：
++
+`node storage pool attach -name poolname -cluster-name clustername -node-name nodename -capacity-limit limit`
+
++
+如果包含 -capacity-limit 参数，请将此值指定为 GB 或 TB 。
+
++
+示例
+
++
+[listing]
+----
+node storage pool attach -name sDOT-02 -cluster-name test-cluster -
+node-name test-cluster-01 -capacity-limit 500GB
+----
+. 显示连接到节点的存储池：
++
+`node storage pool show -cluster-name clustername -node-name nodename`
+
++
+示例
+
++
+[listing]
+----
+node storage pool show -cluster-name test-cluster -node-name testcluster-01
+----
+
+
+
+
+== 部署 ONTAP Select 集群
+
+配置集群和节点后，您可以部署集群。
+
+在部署多节点集群之前，您应运行网络连接检查程序以确认内部网络上各个集群节点之间的连接。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 部署 ONTAP Select 集群：
++
+`cluster deploy -name clustername`
+
++
+示例
+
++
+[listing]
+----
+cluster deploy -name test-cluster
+----
++
+出现提示时，提供要用于 ONTAP 管理员帐户的密码。
+
+. 显示集群的状态以确定集群何时成功部署：
++
+`cluster show -name clustername`
+
+
+
+您应备份 ONTAP Select Deploy 配置数据。

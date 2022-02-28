@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task_cli_security.html 
+keywords: administer, administering, cli, security 
+summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。 
+---
+= 安全性
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。
+
+
+
+= 更改 Deploy 管理员密码
+
+您可以根据需要使用命令行界面更改 Deploy 虚拟机管理员帐户的密码。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序命令行界面。
+. 更改密码： `password modify`
+. 根据您的环境情况对所有提示进行响应。
+

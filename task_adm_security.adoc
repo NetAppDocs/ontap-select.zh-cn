@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task_adm_security.html 
+keywords: administer, administering, web, security 
+summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。 
+---
+= 安全性
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。
+
+
+
+== 更改 Deploy 管理员密码
+
+您可以根据需要使用 Web 用户界面更改 Deploy 虚拟机管理员帐户的密码。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面右上角的图图标并选择 * 更改密码 * 。
+. 根据提示提供当前密码和新密码，然后单击 * 提交 * 。
+
+
+
+
+== 添加管理服务器帐户
+
+您可以将管理服务器帐户添加到 Deploy 凭据存储数据库中。
+
+您应熟悉凭据类型以及 ONTAP Select Deploy 如何使用这些凭据。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 管理 * 选项卡。
+. 单击 * 管理服务器 * ，然后单击 * 添加 vCenter* 。
+. 输入以下信息并单击 * 添加 * 。
++
+[cols="30,70"]
+|===
+| 在此字段中为… | 执行以下操作… 
+
+
+| 名称 /IP 地址 | 提供 vCenter Server 的域名或 IP 地址。 
+
+
+| Username | 输入帐户用户名以访问 vCenter 。 
+
+
+| Password | 输入关联用户名的密码。 
+|===
+. 您可以选择注册（安装） Deploy vCenter 插件。
+. 添加新管理服务器后，您可以选择单击 image:icon_kebab.gif["选项"] 并选择以下选项之一：
++
+** 更新凭据
+** 注册为插件
+** 验证凭据
+** 删除管理服务器
+
+
+

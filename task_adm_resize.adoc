@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: task_adm_resize.html 
+keywords: administer, administering, web, resizing nodes, resizing 
+summary: 部署 ONTAP Select 集群后，您可以使用 Deploy 管理实用程序升级节点的虚拟机管理程序实例类型。 
+---
+= 调整 ONTAP Select 集群节点的大小
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+部署 ONTAP Select 集群后，您可以使用 Deploy 管理实用程序升级节点的虚拟机管理程序实例类型。
+
+
+NOTE: 只有在使用容量层许可模式时，才能执行集群节点大小调整操作。无法调整具有容量池许可证的 ONTAP Select 节点的大小。
+
+集群必须处于联机状态。
+
+此任务介绍如何使用 Deploy Web 用户界面。您也可以使用 Deploy 命令行界面执行实例大小调整。无论您使用哪个接口，调整大小操作所需的时间都可能因多种因素而有显著差异，并且可能需要较长时间才能完成。您只能将节点大小调整为更大。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 集群 * 选项卡，然后从列表中选择所需的集群。
+. 在集群详细信息页面上，单击页面右侧的齿轮图标，然后选择 * 实例大小调整 * 。
+. 选择 * 实例类型 * 并提供 ONTAP 凭据，然后单击 * 修改 * 。
+
+
+您必须等待调整大小操作完成。

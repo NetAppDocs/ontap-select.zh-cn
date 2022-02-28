@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: reference_lic_ontap_features.html 
+keywords: license, licensing, ontap features, default ontap features 
+summary: ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。 
+---
+= 默认情况下， ONTAP 功能处于启用状态
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。
+
+在部署集群时， ONTAP Select 会自动为每个节点授予多项功能的许可。
+
+
+
+===== 包括的功能
+
+默认情况下，包括以下功能并获得许可：
+
+* NFS
+* CIFS
+* iSCSI
+* SnapMirror
+* SnapVault
+* FlexClone
+* SnapRestore
+* NetApp 卷加密
+* 重复数据删除和数据压缩
+* ONTAP 多租户功能
+* NetApp 卷加密（仅限非受限国家或地区）
+
+
+
+
+===== 单独许可的功能
+
+您必须为任何其他功能获取单独的许可证，包括：
+
+* SnapLock 企业
+* FabricPool
+* 数据可用性服务
+* FlexCache （零成本）
+* SyncMirror （零成本）
+* MetroCluster SDS （ ONTAP Select 高级许可证产品）
+
+
+
+NOTE: 使用 StorageGRID Webscale 时，您不需要 FabricPool 许可证。
+
+.相关信息
+* link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["比较 ONTAP Select 和 ONTAP 9"]
+

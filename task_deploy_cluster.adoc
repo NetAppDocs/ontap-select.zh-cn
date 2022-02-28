@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: task_deploy_cluster.html 
+keywords: install, installing, deploy ontap select cluster, create cluster 
+summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的 Web 用户界面来部署单节点或多节点 ONTAP Select 集群。 
+---
+= 部署 ONTAP Select 集群
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 ONTAP Select Deploy 管理实用程序提供的 Web 用户界面来部署单节点或多节点 ONTAP Select 集群。
+
+使用 Deploy 实用程序 Web 界面创建 ONTAP Select 集群时，系统会引导您完成一系列特定步骤。具体过程因部署单节点集群还是多节点集群而异。
+
+
+TIP: 您也可以使用 Deploy 实用程序命令行界面部署 ONTAP Select 集群。
+
+
+
+== 开始之前
+
+您应做好部署准备，以确保部署成功。
+
+初始规划::
++
+--
+* 虚拟机管理程序
+* 节点数
+* 许可证类型
+* 平台大小（实例类型）
+* ONTAP Select 版本
+
+
+--
+主机准备::
++
+--
+. 登录到 Deploy Web 用户界面。
+. 单击 image:icon_question_mark.gif["问号"] 位于页面顶部。
+. 单击 * 前提条件 * 。
+. 向下滚动以查看要求，然后单击 * 确定 * 。
+
+
+--
+许可证文件:: 如果您计划在生产环境中部署集群，则必须根据您的许可模式获取存储许可证文件。
+部署安装和帐户凭据:: 您必须安装 Deploy 管理实用程序并执行初始配置。请参见 link:task_install_deploy.html["安装 ONTAP Select Deploy"] 有关详细信息 ...您需要具有在安装过程中配置的 Deploy 管理员帐户的密码。
+安装早期的 ONTAP Select 节点映像:: 默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则需要将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
+入门启动页面::
++
+--
+* 添加许可证
+* 将主机添加到清单
+* 创建集群
+* 网络预检
+* 部署集群
+
+
+--
+
+
+
+NOTE: 您可以通过单击页面顶部的选项卡（集群，虚拟机管理程序主机，管理）来单独执行相同的步骤。
+
+网络检查程序:: 如果要部署多节点集群，则应熟悉网络检查程序。
+部署集群后:: 您应备份 ONTAP Select Deploy 配置数据。
+
+
+
+
+== 创建单节点集群
+
+您可以使用 ONTAP Select Deploy Web 用户界面部署单节点 ONTAP Select 集群。
+
+请参见 link:http:task_deploy_cluster.html#before-you-begin["开始之前"] 以准备部署集群。必须安装 Deploy 管理并对其进行初始配置（密码， AutoSupport ， vCenter ）。
+
+为生产部署创建一个包含一个节点的 ONTAP Select 集群。
+
+.步骤
+. 使用管理员帐户（ admin ）通过 Web 界面登录到 Deploy 实用程序。
+. 如果显示 * 欢迎使用 ONTAP Select * 弹出窗口，请确认您满足配置前提条件，然后单击 * 确定 * 。
+. 如果未显示 * 入门 * 集群启动页面，请单击 image:icon_question_mark.gif["问号"] 在页面顶部，然后单击 * 开始使用 * 。
+. 在 * 入门 * 页面上，单击 * 上传 * 并从本地工作站中选择一个许可证，然后单击 * 打开 * 上传此许可证。
+. 单击 * 刷新 * 并确认已添加许可证。
+. 单击 * 下一步 * 添加虚拟机管理程序主机，然后单击 * 添加 * 。
++
+您可以直接添加 ESXi 主机，也可以通过连接到 vCenter 服务器来添加此主机。根据需要提供相应的主机详细信息和凭据。
+
+. 单击 * 刷新 * 并确认主机的 * 类型 * 值为 * ESX 。
++
+您提供的任何帐户凭据都会添加到 Deploy 凭据数据库中。
+
+. 单击 * 下一步 * 开始集群创建过程。
+. 在 * 集群详细信息 * 部分中，提供描述集群的所有必要信息，然后单击 * 完成 * 。
+. 在 * 节点设置 * 下，提供节点管理 IP 地址并为节点选择许可证；您可以根据需要上传新许可证。如果需要，您还可以更改节点名称。
+. 提供 * 虚拟机管理程序 * 和 * 网络 * 配置。
++
+有三种节点配置可定义虚拟机大小和可用功能集。这些实例类型分别受所购买许可证的标准，高级和高级 XL 产品支持。为节点选择的许可证必须与实例类型匹配或超过实例类型。
+
++
+选择虚拟机管理程序主机以及管理和数据网络。
+
+. 提供 * 存储 * 配置，然后单击 * 完成 * 。
++
+您可以根据平台许可证级别和主机配置选择驱动器。
+
+. 查看并确认集群的配置。
++
+您可以通过单击来更改配置 image:icon_pencil.gif["编辑"] 在相应部分中。
+
+. 单击 * 下一步 * 并提供 ONTAP 管理员密码。
+. 单击 * 创建集群 * 以开始集群创建过程，然后单击弹出窗口中的 * 确定 * 。
++
+创建集群可能需要长达 30 分钟的时间。
+
+. 监控多步集群创建过程，以确认集群已成功创建。
++
+此页面会定期自动刷新。
+
++
+
+TIP: 如果集群创建操作已启动，但无法完成，则可能无法注册您定义的 ONTAP 管理密码。在这种情况下，您可以使用 admin 帐户的密码 _changeme123_ 访问 ONTAP Select 集群的管理界面。
+
+
+
+您应确认已配置 ONTAP Select AutoSupport 功能，并备份 ONTAP Select Deploy 配置数据。

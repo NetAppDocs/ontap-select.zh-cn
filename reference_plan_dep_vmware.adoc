@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_vmware.html 
+keywords: plan, planning, ontap select deploy, vmware requirements 
+summary: 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您应考虑 VMware 环境的一些特定要求和限制。 
+---
+= VMware 虚拟机管理程序环境
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您应考虑 VMware 环境的一些特定要求和限制。
+
+
+
+== ESXi 主机服务器硬件要求
+
+ESXi 虚拟机管理程序主机必须满足几个最低资源要求。您应确保部署了 ONTAP Select 的主机满足以下基本要求：
+
+* ESXi 服务器：
++
+** 硬件和软件必须为 64 位
+** 必须遵循为 ONTAP Select 节点定义的相同受支持版本
+
+
+* 虚拟 CPU （ 2 个）
+* 虚拟内存（ 4 GB ）
+* 存储（ 40 GB ）
+* 已启用 DHCP （也可以分配静态 IP 地址）
+
+
+
+
+== 网络连接
+
+您必须确保已配置 ONTAP Select Deploy 虚拟机网络接口并具有一个管理 IP 地址。您可以使用 DHCP 动态分配 IP 地址或手动配置静态 IP 地址。
+
+根据您的部署决策， Deploy 虚拟机必须能够连接到 vCenter 服务器， ESXi 虚拟机管理程序主机及其管理的 ONTAP Select 节点。您必须将防火墙配置为允许所需的流量。
+
+Deploy 使用 VMware VIX API 与 vCenter 服务器和 ESXi 主机进行通信。最初，它会使用基于 SSL 的 SOAP 在 TCP 端口 443 上建立连接。之后，将使用 SSL 在端口 902 上打开连接。此外， Deploy 会发出 ping 命令，以验证是否存在使用您指定的 IP 地址的 ESXi 主机。
+
+此外， Deploy 还必须能够使用以下协议与 ONTAP Select 节点和集群管理 IP 地址进行通信：
+
+* ping 命令（ ICMP ）
+* SSH （端口 22 ）
+* SSL （端口 443 ）
+
+
+
+
+== 支持 IP 版本 4
+
+ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 （ IPv6 ）。此限制在以下方面影响 ONTAP Select ：
+
+* 您必须为 Deploy 虚拟机的管理 LIF 分配 IPv4 地址。
+* Deploy 无法创建配置为在 ONTAP LIF 上使用 IPv6 的 ONTAP Select 节点。
+
+
+
+
+== VMware vCenter 语言限制
+
+如果您使用 ONTAP Select Deploy 通过 Windows Server 上的 vCenter 创建在 ESXi 上运行的集群，则必须使用英语版本。ONTAP Select Deploy 在非英语版本的 Windows 上不支持 vCenter 。

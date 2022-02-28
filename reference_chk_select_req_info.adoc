@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_select_req_info.html 
+keywords: ontap select, pre-installation, vmware 
+summary: 在准备在 VMware 环境中部署 ONTAP Select 集群时，请收集使用 ONTAP Select Deploy 管理实用程序部署和配置集群时所需的信息。 
+---
+= ONTAP Select 安装所需的信息
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在准备在 VMware 环境中部署 ONTAP Select 集群时，请收集使用 ONTAP Select Deploy 管理实用程序部署和配置集群时所需的信息。
+
+您收集的某些信息会对集群本身进行适用场景 处理，而其他信息则会对集群中的各个节点进行适用场景 处理。
+
+
+
+== 集群级别的信息
+
+您必须收集与 ONTAP Select 集群相关的信息。
+
+[cols="35,65"]
+|===
+| 集群信息 | Description 
+
+
+| 集群的名称 | 集群的唯一标识符。 
+
+
+| 许可模式 | 评估或购买的许可。 
+
+
+| 集群的 IP 配置 | 集群和节点的 IP 配置，包括： * 集群的管理 IP 地址 * 子网掩码 * 默认网关 
+|===
+
+
+== 主机级信息
+
+您必须收集与 ONTAP Select 集群中每个节点相关的信息。
+
+[cols="35,65"]
+|===
+| 集群信息 | Description 
+
+
+| 主机的名称 | 主机的唯一标识符。 
+
+
+| 主机的域名 | 主机的完全限定域名。 
+
+
+| 节点的 IP 配置 | 集群中每个节点的管理 IP 地址。 
+
+
+| 镜像节点 | HA 对中关联节点的名称（仅限多节点集群）。 
+
+
+| 存储池 | 所用存储池的名称。 
+
+
+| 存储磁盘 | 使用软件 RAID 时的磁盘列表。 
+
+
+| 序列号 | 如果要使用已购买许可证进行部署，则为 NetApp 提供的唯一九位序列号。 
+|===

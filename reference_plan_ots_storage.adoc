@@ -1,0 +1,220 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_storage.html 
+keywords: plan, planning, storage, software raid, hardware raid, raid, nvme 
+summary: 您应考虑几个与 ONTAP Select 主机存储相关的规划问题。 
+---
+= 存储和 RAID 注意事项
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您应考虑几个与 ONTAP Select 主机存储相关的规划问题。
+
+
+
+== 硬件 RAID 控制器要求
+
+部署 ONTAP Select 的虚拟机管理程序主机上的 RAID 控制器必须满足多项要求。
+
+
+NOTE: 运行 ONTAP Select 的 ESXi 主机在使用随 ONTAP Select 提供的硬件 RAID 控制器或软件 RAID 功能时需要本地物理驱动器。如果使用 ONTAP Select vNAS 解决方案 访问外部存储，则不会使用本地 RAID 控制器和软件 RAID 功能。
+
+RAID 控制器的最低要求包括：
+
+* 12 Gbps 吞吐量
+* 512 MB 内部电池供电缓存或闪存（超级容量）缓存
+* 在回写模式下配置：
++
+** 启用故障恢复模式以 " 直写 " （如果支持）
+** 启用 " 始终预读 " 策略（如果支持）
+
+
+* RAID 控制器后面的所有本地磁盘都应配置为一个 RAID 组；如果需要，可以使用多个 RAID 控制器：
++
+** 禁用 RAID 组的本地驱动器缓存，这对于保持数据完整性至关重要。
+
+
+* 必须根据以下准则执行 LUN 配置：
++
+** 如果 RAID 组大小超过 64 TB 的最大 ESXi LUN 大小，则应配置多个大小相等的 LUN ，这些 LUN 会占用 RAID 组中的所有可用存储。
+** 如果 RAID 组大小小于 64 TB 的最大 ESXi LUN 大小，则应配置一个 LUN ，此 LUN 占用 RAID 组中的所有可用存储。
+
+
+
+
+
+
+== 软件 RAID 要求
+
+在 VMware ESXi 虚拟机管理程序上部署 ONTAP Select 集群时，您可以使用 ONTAP Select 提供的软件 RAID 功能，而不是本地硬件 RAID 控制器。在使用软件 RAID 部署集群之前，您必须了解一些要求和限制。
+
+
+
+==== 一般要求
+
+在 VMware ESXi 上部署软件 RAID 的环境必须满足以下核心要求：
+
+* VMware ESXi 版本：
++
+** ESXi 6.5 U2 （内部版本 8294253 ）或更高版本
+** ESXi 6.7 GA （内部版本 8169922 ）或更高版本
+
+
+* ONTAP Select 9.5 或更高版本
+* ONTAP Select Deploy 2.10 或更高版本
+* 仅限新的 ONTAP Select 集群
+
+
+
+NOTE: 您必须使用 Deploy 管理实用程序使用 ONTAP Select 9.5 或更高版本部署新集群。不能对已从先前版本升级到 ONTAP Select 9.5 的现有节点使用软件 RAID 。
+
+* ONTAP Select 高级许可证或更高版本
+* 仅限本地 SSD 驱动器
+* 将系统磁盘与根聚合和数据聚合分离
+* 主机上无硬件 RAID 控制器
+
+
+
+NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_chars.html["存储"] 有关其他配置要求，请参见 _deep dive 下的一节。
+
+* 不支持 VMware VMotion ， HA 和 DRS
+
+
+
+
+==== ONTAP Select 节点配置
+
+您必须按如下所示配置每个 ONTAP Select 节点和虚拟机管理程序主机，以便将系统磁盘与根聚合和数据聚合分开：
+
+* 创建系统存储池您必须为 ONTAP Select 系统数据创建存储池。在配置 ONTAP Select 节点时，您必须连接存储池。
+* 连接必要的物理磁盘虚拟机管理程序主机必须连接所需的 SSD 磁盘，并且这些磁盘可供 ONTAP Select 虚拟机使用。这些驱动器用于存放根聚合和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储磁盘。
+
+
+
+
+== 存储容量限制
+
+在规划 ONTAP Select 部署时，您应了解与存储分配和使用相关的限制。
+
+下面介绍了最重要的存储限制。有关详细信息，您还应查看 _NetApp 互操作性表工具 _ 。
+
+
+TIP: ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Select 集群或购买许可证之前，您应熟悉这些限制。有关详细信息，请参见 _License_ 一节。
+
+
+
+==== 正在计算原始存储容量
+
+ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的虚拟数据和根磁盘的总允许大小。分配容量时应考虑这一点。
+
+
+
+==== 单节点集群的最小存储容量
+
+为单节点集群中的节点分配的最小存储池大小为：
+
+* 评估： 500 GB
+* 生产： 1.0 TB
+
+
+生产部署的最小分配量包括 1 TB 的用户数据，加上各种 ONTAP Select 内部流程使用的 266 GB ，这是必需的开销。
+
+
+
+==== 多节点集群的最小存储容量
+
+为多节点集群中的每个节点分配的存储池的最小大小为：
+
+* 评估： 1.9 TB
+* 生产： 2.0 TB
+
+
+生产部署的最小分配量包括 2 TB 的用户数据，加上各种 ONTAP Select 内部流程使用的 266 GB ，这是必需的开销。
+
+
+NOTE: HA 对中的每个节点都必须具有相同的存储容量。
+
+
+
+==== 存储容量和多个存储池
+
+使用本地直连存储， VMware vSAN 或外部存储阵列时，您可以将每个 ONTAP Select 节点配置为最多使用 400 TB 的存储。但是，使用直连存储或外部存储阵列时，单个存储池的最大大小为 64 TB 。因此，如果您计划在这些情况下使用 64 TB 以上的存储，则必须按如下所示分配多个存储池：
+
+* 在集群创建过程中分配初始存储池
+* 通过分配一个或多个额外存储池来增加节点存储
+
+
+
+NOTE: 每个存储池会保留 2% 的未使用缓冲区，并且不需要容量许可证。除非指定了容量上限，否则 ONTAP Select 不会使用此存储。如果指定了容量上限，则会使用该存储容量，除非指定的容量位于 2% 缓冲区区域中。要防止在尝试分配存储池中的所有空间时偶尔发生错误，需要使用此缓冲区。
+
+
+
+==== 存储容量和 VMware vSAN
+
+使用 VMware vSAN 时，数据存储库可能会大于 64 TB 。但是，在创建 ONTAP Select 集群时，您最初只能分配最多 64 TB 的容量。创建集群后，您可以从现有 vSAN 数据存储库分配更多存储。ONTAP Select 可以使用的 vSAN 数据存储库容量取决于所设置的 VM 存储策略。
+
+
+
+==== 最佳实践
+
+对于虚拟机管理程序核心硬件，您应考虑以下建议：
+
+* 一个 ONTAP Select 聚合中的所有驱动器都应采用相同的类型。例如，不应在同一聚合中混用 HDD 和 SSD 驱动器。
+
+
+
+
+== 根据平台许可证确定的其他磁盘驱动器要求
+
+您选择的驱动器会受到平台许可证的限制。
+
+
+NOTE: 使用本地 RAID 控制器和驱动器以及软件 RAID 时，需要满足磁盘驱动器要求。这些要求不适用于通过 ONTAP Select vNAS 解决方案 访问的外部存储。
+
+标准::
++
+--
+* 8 到 60 个内部 HDD （ NL-SAS ， SATA ， 10K SAS ）
+
+
+--
+高级版::
++
+--
+* 8 到 60 个内部 HDD （ NL-SAS ， SATA ， 10K SAS ）
+* 4 到 60 个内部 SSD
+
+
+--
+高级版 xl::
++
+--
+* 8 到 60 个内部 HDD （ NL-SAS ， SATA ， 10K SAS ）
+* 4 到 60 个内部 SSD
+* 4 到 14 个内部 NVMe
+
+
+--
+
+
+
+NOTE: 高级许可证（仅 SSD ）和高级 XL 许可证（ SSD 或 NVMe ）支持带有本地 DAS 驱动器的软件 RAID 。
+
+
+
+== 采用软件 RAID 的 NVMe 驱动器
+
+您可以将软件 RAID 配置为使用 NVMe SSD 驱动器。您的环境必须满足以下要求：
+
+* ONTAP Select 9.7 或更高版本以及关联的 Deploy 管理实用程序
+* 高级 XL 平台许可证或 90 天评估许可证
+* VMware ESXi 6.7 或更高版本
+* 符合规格 1.0 或更高版本的 NVMe 设备
+
+
+在使用 NVMe 驱动器之前，您需要手动配置这些驱动器。请参见 link:task_chk_nvme_configure.html["配置主机以使用 NVMe 驱动器"] 有关详细信息 ...

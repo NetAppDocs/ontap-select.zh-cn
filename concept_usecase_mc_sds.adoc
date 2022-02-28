@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: concept_usecase_mc_sds.html 
+keywords: ontap select, metrocluster software defined storage, mc sds storage 
+summary: ONTAP Select MetroCluster SDS 提供增强的保护功能和经济高效的实施。 
+---
+= MetroCluster 软件定义的存储
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select MetroCluster SDS 提供增强的保护功能和经济高效的实施。
+
+如果满足某些最低要求，则可以在两个位置之间延伸双节点集群。此架构可完美地位于基于硬件的 MetroCluster 和单个数据中心集群（硬件定义或软件定义）之间。ONTAP Select MetroCluster SDS 的要求突出了软件定义的存储解决方案的一般灵活性，以及它与基于硬件的 MetroCluster SDS 之间的区别。不需要专有硬件。
+
+与 MetroCluster 不同， ONTAP Select 使用现有网络基础架构，并支持高达 5 毫秒 RTT 的网络延迟，最大抖动高达 5 毫秒，总最大延迟为 10 毫秒。此外，还要求最长距离为 10 公里，但延迟配置文件更为重要。市场空间的隔离要求与物理隔离有关，而不是与实际距离有关。在某些情况下，这可能意味着不同的建筑物。在其他情况下，这可能意味着同一建筑中的不同房间。无论实际的物理位置如何，将双节点集群定义为 MetroCluster SDS 的是每个节点都使用一个单独的上行链路交换机。
+
+在双节点 HA 配置中，需要使用调解器在故障转移期间正确识别活动节点，并避免出现在网络分区期间两个节点均独立保持活动状态的任何脑裂情形。此操作与先前提供的常规双节点 HA 配置相同。为了在站点故障期间提供适当的保护和故障转移，调解器应位于与两个 HA 节点不同的站点上。调解器与每个 ONTAP Select 节点之间的最大延迟不能超过 125 毫秒。
+
+借助此解决方案 ，企业客户可以放心地在商用硬件上利用软件定义的存储解决方案 的灵活性。他们可以放心地进行部署，因为他们知道自己的数据受企业级 0 RPO 解决方案 的保护。
+
+ONTAP Select MetroCluster SDS 具有以下优势：
+
+* MetroCluster SDS 为 ONTAP Select 提供了另一个保护维度（从数据中心到数据中心）。除了利用软件定义的存储和 ONTAP 的所有优势之外，客户现在还可以利用这种额外级别的保护。
+* MetroCluster SDS 可通过 0 RPO 和自动故障转移提供业务关键型数据保护。数据存储和应用程序访问点都会自动切换到运行正常的数据中心或节点，无需任何干预。
+* MetroCluster SDS 经济高效。它可以利用现有网络基础架构在 HA 对之间实现延伸型弹性，无需额外的硬件。它还可以在同一集群中提供主动 / 主动数据访问和数据中心冗余。
+
+
+* MetroCluster SD*
+
+image:MCSDS_01.jpg["基于 DAS 的私有云"]
+
+有关更多最佳实践和其他要求，请参见各节 link:concept_ha_config.html#two-node-ha-versus-multi-node-ha["双节点 HA 与多节点 HA"] 和 。

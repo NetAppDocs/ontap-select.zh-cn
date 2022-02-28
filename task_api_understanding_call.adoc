@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task_api_understanding_call.html 
+keywords: rest api, deploy rest api, rest, understanding, executing 
+summary: 所有 API 调用的详细信息均采用通用格式记录并显示在 ONTAP Select Deploy 联机文档网页上。通过了解单个 API 调用，您可以访问和解释所有 API 调用的详细信息。 
+---
+= 了解并执行 API 调用
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+所有 API 调用的详细信息均采用通用格式记录并显示在 ONTAP Select Deploy 联机文档网页上。通过了解单个 API 调用，您可以访问和解释所有 API 调用的详细信息。
+
+您必须登录到 ONTAP Select Deploy 联机文档网页。您必须具有创建集群时为 ONTAP Select 集群分配的唯一标识符。
+
+您可以使用 ONTAP Select 集群的唯一标识符检索描述该集群的配置信息。在此示例中，将返回归类为 " 低成本 " 的所有字段。但是，作为最佳实践，您应仅请求所需的特定字段。
+
+.步骤
+. 在主页上，滚动到底部，然后单击 * 集群 * 。
+. 单击 * 获取 /clusters/ ｛ cluster_id ｝ * 可显示用于返回 ONTAP Select 集群信息的 API 调用的详细信息。
+

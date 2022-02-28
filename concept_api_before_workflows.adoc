@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_workflows.html 
+keywords: rest api, deploy rest api, rest, workflows, before you begin 
+summary: 您应准备好查看和使用工作流流程。 
+---
+= 在使用 API 工作流之前
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您应准备好查看和使用工作流流程。
+
+
+
+=== 了解工作流中使用的 API 调用
+
+ONTAP Select 联机文档页面包含每个 REST API 调用的详细信息。工作流示例中使用的每个 API 调用都仅包含在文档页面上查找此调用所需的信息，而不是在此处重复这些详细信息。找到特定 API 调用后，您可以查看该调用的完整详细信息，包括输入参数，输出格式， HTTP 状态代码和请求处理类型。
+
+工作流中的每个 API 调用都包含以下信息，以帮助您在文档页面上查找此调用：
+
+* 类别 API 调用会在文档页面上按功能相关的区域或类别进行组织。要查找特定的 API 调用，请滚动到页面底部，然后单击相应的 API 类别。
+* HTTP 动词 HTTP 动词用于标识对资源执行的操作。每个 API 调用都通过一个 HTTP 动词来执行。
+* 路径此路径用于确定在执行调用时操作适用场景 所使用的特定资源。路径字符串会附加到核心 URL 中，以形成用于标识资源的完整 URL 。
+
+
+
+
+=== 构建 URL 以直接访问 REST API
+
+除了 ONTAP Select 文档页面之外，您还可以直接通过 Python 等编程语言访问 Deploy REST API 。在这种情况下，核心 URL 与访问联机文档页面时使用的 URL 稍有不同。直接访问 API 时，必须将 /API 附加到域和端口字符串。例如： ` \http://deploy.mycompany.com/api`

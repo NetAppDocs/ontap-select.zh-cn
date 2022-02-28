@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_hardware.html 
+keywords: plan, planning, vmware, hardware, hardware requirements 
+summary: 与 VMware 环境相关，您应考虑几个硬件要求和规划问题。 
+---
+= VMware 虚拟机管理程序和硬件注意事项
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+与 VMware 环境相关，您应考虑几个硬件要求和规划问题。
+
+
+
+== 虚拟机管理程序要求
+
+与运行 ONTAP Select 的虚拟机管理程序相关的要求有多种。
+
+
+NOTE: 您应查看适用于您的 ONTAP Select 版本的最新发行说明，了解任何其他已知限制。
+
+
+
+==== VMware 许可
+
+要部署 ONTAP Select 集群，您的组织必须为运行 ONTAP Select 的虚拟机管理程序主机拥有有效的 VMware vSphere 许可证。您应使用适合您的部署的许可证。
+
+
+
+==== 软件兼容性
+
+ONTAP Select 可以部署在以下虚拟机管理程序上：
+
+* VMware ESXi 6.5 U2 （内部版本 8294253 或更高版本）
+* VMware ESXi 6.7 GA （内部版本 8169922 或更高版本），包括 6.7 U1 ， U2 和 U3
+* VMware ESXi 7.0 GA （内部版本 15843807 或更高版本），包括 7.0 U1 和 U2
+
+
+
+NOTE: 只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESXi 版本上使用 ONTAP Select 。
+
+
+
+==== 升级到 VMware ESXi 6.5 U2 或更高版本
+
+如果您当前已在 VMware ESXi 6.5 U1 上部署 ONTAP Select ，则应尽快升级到 ESXi 6.5 U2 或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。
+
+
+
+==== VMware vCenter 和独立 ESXi 主机
+
+如果 ESXi 虚拟机管理程序主机由 vCenter Server 管理，则必须使用 vCenter 凭据将此主机注册到 Deploy 管理实用程序。您不能使用 ESXi 凭据将主机注册为独立主机。
+
+
+
+== 核心硬件要求
+
+部署 ONTAP Select 的物理虚拟机管理程序主机必须满足多个硬件要求。您可以为虚拟机管理程序主机选择任何平台，只要该主机满足最低硬件要求即可。以下供应商提供受支持的硬件平台： Cisco ， Dell ， HP ， Fujitsu ， Lenovo ， 和 Supermicro 。
+
+
+NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。
+
+请参见 https://mysupport.netapp.com/matrix["NetApp 互操作性表工具， window=_blank"] 有关详细信息 ...
+
+
+
+==== 基本硬件要求
+
+无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。
+
+* 处理器
++
+** 适用于服务器的 Intel Xeon 处理器（请参见 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 处理器， window=_blank"] 有关详细信息，请参见）
+
+
+* 以太网网络端口
++
+** 4 个 10GbE （建议）
+** 2 个 10GbE
+** 1 个 10GbE
+** 4 个 1GbE （仅适用于双节点 ROBO 集群）
+** 2 个 1GbE （仅适用于单节点集群）
+
+
+
+
+
+
+==== 根据实例类型确定的其他硬件要求
+
+根据节点实例类型，还需要满足多项其他硬件要求。
+
+请参见 link:concept_lic_platforms.html["了解平台许可证产品"] 有关详细信息 ...
+
+小型::
++
+--
+* CPU 核心 6 个或更多物理核心，其中 4 个为 ONTAP Select 预留。
+* 24 GB 或更大的内存，其中 16 GB 为 ONTAP Select 预留。
+* 提供标准，高级或高级 XL 的所需平台许可证
+
+
+--
+中等::
++
+--
+* CPU 核心 10 个或更多物理核心，其中 8 个为 ONTAP Select 预留。
+* 72 GB 或更大的内存，其中 64 GB 预留用于 ONTAP Select
+* 提供高级版或高级版 XL 的所需平台许可证
+
+
+--
+大型::
++
+--
+* CPU 核心为 18 个或更多物理核心，其中 16 个为 ONTAP Select 预留。
+* 内存为 136 GB 或更大，为 ONTAP Select 预留 128 GB
+* 提供 Premium XL 的所需平台许可证
+
+
+--
+
+
+
+NOTE: 根据平台许可证，还有其他磁盘要求。请参见 link:reference_plan_ots_storage.html["存储和 RAID"] 有关详细信息 ...

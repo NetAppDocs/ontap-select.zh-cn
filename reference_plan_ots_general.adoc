@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_general.html 
+keywords: plan, planning, general requirements 
+summary: 在规划 ONTAP Select 部署时，您应考虑几个一般要求。 
+---
+= 一般要求和规划注意事项
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在规划 ONTAP Select 部署时，您应考虑几个一般要求。
+
+
+
+== 集群大小及相关注意事项
+
+您应考虑与集群大小相关的多个规划问题。
+
+集群中的节点数:: ONTAP Select 集群由一个，两个，四个，六个或八个节点组成。您应根据应用程序要求确定集群的大小。例如，如果企业部署需要 HA 功能，则应使用多节点集群。
+专用与搭配:: 您应根据应用程序类型确定部署是采用专用模式还是搭配模式。请注意，由于工作负载的多样性和更紧密的集成，搭配模式可能会更加复杂。
+
+
+
+
+== 虚拟机管理程序主机
+
+您应考虑与虚拟机管理程序主机相关的多个规划问题。
+
+
+CAUTION: 除非 NetApp 支持人员指示，否则不应直接修改 ONTAP Select 虚拟机的配置。只能通过 Deploy 管理实用程序配置和修改虚拟机。在未获得 NetApp 支持的情况下，在 Deploy 实用程序之外对 ONTAP Select 虚拟机进行更改会导致发生原因 虚拟机出现故障并使其无法使用。
+
+独立于虚拟机管理程序::
++
+--
+* VMware ESXi
+* 基于内核的虚拟机（ KVM ）
+
+
+--
+
+
+
+NOTE: 从 ONTAP Select 9.10.1 开始，不再支持 KVM 虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。
+
+有关受支持平台的更多详细信息，请参见虚拟机管理程序专用的规划信息和发行说明。
+
+适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序::
++
+--
+* 在 VMware ESXi 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
+* 在 KVM 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
+
+
+--
+每个主机一个或多个 ONTAP Select 节点实例::
++
+--
+* 一个 ONTAP Select 集群中的多个节点不能在同一主机上运行。特定主机上的所有节点必须来自不同的 ONTAP Select 集群。
+* 您必须使用外部存储。
+* 如果使用软件 RAID ，则只能在主机上部署一个 ONTAP Select 节点。
+
+
+--
+集群中节点的虚拟机管理程序一致性:: ONTAP Select 集群中的所有主机都必须运行相同版本的虚拟机管理程序软件。
+每个主机上的物理端口数::
++
+--
+* 单节点集群中的主机应具有两个物理端口。
+* 多节点集群中的每个主机应具有四个物理端口
+
+
+--
+将 ONTAP Select 与基于 ONTAP 硬件的集群集成:: 您不能将 ONTAP Select 节点直接添加到基于 ONTAP 硬件的集群中。但是，您也可以选择在 ONTAP Select 集群和基于硬件的 ONTAP 集群之间建立集群对等关系。
+
+
+
+
+== 存储
+
+您应考虑几个与主机存储相关的规划问题。
+
+RAID 类型:: 在 ESXi 上使用直连存储（ DAS ）时，您应确定是使用本地硬件 RAID 控制器还是使用 ONTAP Select 附带的软件 RAID 功能。如果使用软件 RAID ，请参见 link:reference_plan_ots_storage.html["存储和 RAID 注意事项"] 有关详细信息 ...
+本地存储::
++
+--
+* 是否使用一个或多个 RAID 组
+* 是否使用一个或多个 LUN
+
+
+--
+外部存储::
++
+--
+* VMware vSAN
+* 通用外部存储阵列
+
+
+--
+估计所需存储:: 您应确定 ONTAP Select 节点需要多少存储。在获取具有存储容量的已购买许可证时，需要提供此信息。有关详细信息，请参见存储容量限制。
+
+
+
+NOTE: ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数据磁盘允许的总大小。
+
+用于生产部署的许可模式:: 您必须为生产环境中部署的每个 ONTAP Select 集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。
+
+
+.相关信息
+* link:reference_plan_ots_storage.html["存储和 RAID 注意事项"]
+

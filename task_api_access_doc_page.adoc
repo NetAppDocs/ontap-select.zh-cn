@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: task_api_access_doc_page.html 
+keywords: rest api, deploy rest api, rest, deploy documentation, access, accessing 
+summary: 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 文档，并手动对 API 调用执行问题描述 。 
+---
+= 访问 Deploy 文档页面
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 文档，并手动对 API 调用执行问题描述 。
+
+您必须具备以下条件：
+
+* ONTAP Select Deploy 虚拟机的 IP 地址或域名
+* 管理员的用户名和密码
+
+
+.步骤
+. 在浏览器中键入 URL 并按 * 输入 * ：
++
+` https://<ip_address>/api/ui`
+
+. 使用管理员用户名和密码登录。
+
+
+此时将显示 Deploy 文档网页，页面底部将按类别组织调用。

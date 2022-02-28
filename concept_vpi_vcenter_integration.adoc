@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_vcenter_integration.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, vcenter integration 
+summary: Deploy 插件与 vCenter Server 紧密集成。由于这种集成，您可以轻松地在 Deploy 实用程序和 vCenter Server 管理的资源之间导航。下面提供了这种集成的几个示例。 
+---
+= 部署插件和 vCenter 集成
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Deploy 插件与 vCenter Server 紧密集成。由于这种集成，您可以轻松地在 Deploy 实用程序和 vCenter Server 管理的资源之间导航。下面提供了这种集成的几个示例。
+
+
+
+== 分配给 ONTAP Select 集群的 VMware 资源
+
+ONTAP Select 集群作为一组或多个节点在 VMware 上运行。每个节点都是一个位于不同 ESXi 主机上的专用虚拟机。ONTAP Select 集群与以下 VMware 资源关联：
+
+* 主机
+* ONTAP VM
+* 数据存储库
+* 网络
+
+
+可以通过多种方法查看特定 ONTAP Select 集群使用的 VMware 资源。
+
+
+
+== 通过插件查看集群的 VMware 资源
+
+您可以通过 Deploy 插件查看分配给 ONTAP Select 集群的 VMware 资源。
+
+.步骤
+. 使用浏览器通过 vSphere HTML5 登录到 vCenter Server 。
+. 单击 * 全局清单列表 * 窗格中的 * ONTAP Select Clusters* 。
+. 单击右侧列表中的所需集群。
+. 单击 * 更多对象 * 选项卡，然后在页面顶部选择所需的资源类别。
+. 选择一个特定的 VMware 资源以显示追加信息 。
+
+
+
+
+== 通过 ESXi 虚拟机查看 ONTAP Select 集群
+
+您可以通过访问 VMware 虚拟机来查看 ONTAP Select 集群和关联的集群资源。
+
+.步骤
+. 使用浏览器通过 vSphere HTML5 登录到 vCenter Server 。
+. 单击顶部的 * 菜单 * ，然后单击 * 虚拟机和模板 * 。
+. 从左侧列表中选择所需虚拟机。
+. 单击 * 更多对象 * 选项卡以查看虚拟机中运行的 ONTAP Select 集群。
+. 要查看与集群关联的整个 VMware 资源集合，请单击 ONTAP Select 集群，然后单击 * 更多对象 * 选项卡。
+
+
+
+
+== 在 ESXi 主机上创建单节点集群
+
+您可以通过 vSphere 界面选择 ESXi 虚拟机管理程序主机，并部署 ONTAP Select 单节点集群。
+
+.步骤
+. 使用浏览器通过 vSphere HTML5 登录到 vCenter Server 。
+. 单击顶部的 * 菜单 * ，然后单击 * 主机和集群 * 。
+. 右键单击左侧所需的虚拟机管理程序主机，选择 * ONTAP Select * ，然后单击 * 新建 ONTAP Select * 。
+. 按照中的步骤完成部署过程 link:task_deploy_cluster.html["部署 ONTAP Select 集群"]。
+

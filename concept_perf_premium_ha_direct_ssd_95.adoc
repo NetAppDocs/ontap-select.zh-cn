@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_95.html 
+keywords: ontap select, performance 
+summary: ONTAP Select 9.5 性能—高级 HA 直连 SSD 存储。 
+---
+= ONTAP Select 9.5 性能：高级 HA 直连 SSD 存储
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select 9.5 性能与高级 HA 直连 SSD 存储。
+
+
+
+== 参考平台
+
+ONTAP Select 9.5 （高级版）硬件（每个节点）：
+
+* Cisco UCS C240 M4SX ：
++
+** 2.1 GHz 的 Intel Xeon CPU E5-2620
+** 2 个插槽；每个插槽 16 个 CPU
+** 128 GB RAM
+** VMware ESXi 6.5
+** 每个主机的驱动器数： 24 个 900 GB SSD
+
+
+
+
+客户端硬件：
+
+* 5 个 NFSv3 IBM 3550m4 客户端
+
+
+配置信息：
+
+* 1 ， 500 MTU ，用于客户端和 Select 集群之间的数据路径
+* 未使用存储效率功能（数据压缩，重复数据删除， Snapshot 副本， SnapMirror 等）
+
+
+下表列出了根据使用软件 RAID 和硬件 RAID 的 ONTAP Select 高级节点 HA 对上的读 / 写工作负载测量的吞吐量。性能测量是使用 SIO 负载生成工具进行的。
+
+* 采用软件 RAID 和硬件 RAID 的 DAS （ SSD ）上单节点（四节点中型实例的一部分） ONTAP Select 9.5 集群的性能结果 *
+
+[cols="6*"]
+|===
+| Description | 顺序读取 64KiB | 顺序写入 64KiB | 随机读取 8 KiB | 随机写入 8 KiB | 随机 WR/RD （ 50/50 ） 8 KiB 
+
+
+| ONTAP 9.5 选择使用 DAS （ SSD ）硬件 RAID 的中型实例 | 1 ， 712 MiBps | 412MiBps | 391MiBps | 1251MiBps | 309MiBps 
+
+
+| ONTAP 9.5 选择使用 DAS （ SSD ）软件 RAID 的中型实例 | 1 ， 674 MiBps | 360 MiBps | 451 MiBps | 223MiBps | 293MiBps 
+|===
+
+
+=== 64K 顺序读取
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个节点
+* 每个节点 2 个数据 NIC
+* 每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 8 TB 软件 RAID ）
+* 64 个 SIO 进程，每个进程 1 个线程
+* 每个节点 32 个卷
+* 每个进程 1 个文件；每个进程的文件大小为 12000 MB
+
+
+
+
+=== 64K 顺序写入
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个节点
+* 每个节点 2 个数据 NIC
+* 每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 4 TB 软件 RAID ）
+* 128 个 SIO 进程，每个进程 1 个线程
+* 每个节点的卷数 32 （硬件 RAID ）， 16 （软件 RAID ）
+* 每个进程 1 个文件；每个进程的文件大小为 30720 MB
+
+
+
+
+=== 8 K 随机读取
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个节点
+* 每个节点 2 个数据 NIC
+* 每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 4 TB 软件 RAID ）
+* 64 个 SIO 进程，每个进程 8 个线程
+* 每个节点的卷 32
+* 每个进程 1 个文件；每个进程的文件大小为 12228MB
+
+
+
+
+=== 8 K 随机写入
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个节点
+* 每个节点 2 个数据 NIC
+* 每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 4 TB 软件 RAID ）
+* 64 个 SIO 进程，每个进程 8 个线程
+* 每个节点的卷 32
+* 每个进程 1 个文件；每个进程的文件大小为 8192 MB
+
+
+
+
+=== 8 K 随机 50% 写入 50% 读取
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个节点
+* 每个节点 2 个数据 NIC
+* 每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 4 TB 软件 RAID ）
+* 64 个 SIO 进程，每个进程 20 个线程
+* 每个节点的卷 32
+* 每个进程 1 个文件；每个进程的文件大小为 12228MB
+

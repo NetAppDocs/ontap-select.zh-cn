@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: task_cli_migrate_deploy.html 
+keywords: administer, administering, cli, deploy, deploy instance, migrate 
+summary: 您可以使用命令行界面将 Deploy 管理实用程序的现有实例迁移到新虚拟机。 
+---
+= 将 Deploy 实例迁移到新虚拟机
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用命令行界面将 Deploy 管理实用程序的现有实例迁移到新虚拟机。
+
+此操作步骤 基于使用原始虚拟机中的配置数据创建新虚拟机。新虚拟机和原始虚拟机必须运行相同版本的 Deploy 实用程序。您不能迁移到其他版本的 Deploy 实用程序。
+
+
+
+== 备份 Deploy 配置数据
+
+在迁移虚拟机时，您必须为 Deploy 配置数据创建一份备份。您还应在部署 ONTAP Select 集群后创建备份。数据将保存到一个加密文件中，您可以将该文件下载到本地工作站。
+
+确保 Deploy 在备份操作期间未执行任何其他任务。
+
+您创建的备份文件会捕获虚拟机中的所有配置数据。此数据介绍了部署环境的各个方面，包括 ONTAP Select 集群。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 创建 Deploy 配置数据的备份，该数据存储在 Deploy 服务器的内部目录中：
++
+`d部署备份创建`
+
+. 根据提示提供备份密码。
++
+备份文件将根据密码进行加密。
+
+. 显示系统中的可用备份：
++
+`deDeploy backup show -detailed`
+
+. 根据 * 已创建 * 字段中的日期选择备份文件并记录 * 下载 URL* 值。
++
+您可以通过 URL 访问备份文件。
+
+. 使用 Web 浏览器或 Curl 等实用程序，使用 URL 将备份文件下载到本地工作站。
+
+
+
+
+== 安装 Deploy 虚拟机的新实例
+
+您必须创建一个新的 Deploy 虚拟机实例，以便使用原始虚拟机中的配置数据进行更新。
+
+您必须熟悉用于在 VMware 环境中下载和部署 ONTAP Select Deploy 虚拟机的过程。
+
+本任务将进行简要介绍。
+
+.步骤
+. 创建 Deploy 虚拟机的新实例：
++
+.. 下载虚拟机映像。
+.. 部署虚拟机并配置网络接口。
+.. 使用 SSH 访问 Deploy 实用程序。
+
+
+
+
+link:task_install_deploy.html["安装 ONTAP Select Deploy"]
+
+
+
+== 将 Deploy 配置数据还原到新虚拟机
+
+您必须将配置数据从原始 Deploy 实用程序虚拟机还原到新虚拟机。数据位于一个文件中，您必须从本地工作站上传该文件。
+
+您必须具有先前备份中的配置数据。这些数据包含在一个文件中，并且必须在本地工作站上可用。
+
+.步骤
+. 在本地工作站上的命令 Shell 中，使用 sftp 实用程序将备份文件上传到 Deploy 虚拟机。
++
+示例
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put deploy_backup_20190601162151.tar.gz
+exit
+....
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 还原配置数据。
++
+`d部署备份还原 -path pathname -filename filename`
+
++
+示例
+
++
+`deDeploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`
+
+

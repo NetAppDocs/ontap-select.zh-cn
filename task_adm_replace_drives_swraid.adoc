@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task_adm_replace_drives_swraid.html 
+keywords: administer, administering, web, software raid, replace drive 
+summary: 如果使用软件 RAID 的驱动器出现故障， ONTAP Select 将使用备用驱动器（如果有）并自动启动重建过程。这与 FAS 和 AFF 上的 ONTAP 的工作原理类似。但是，如果没有可用的备用驱动器，则需要向 ONTAP Select 节点添加一个。 
+---
+= 使用软件 RAID 时更换故障驱动器
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果使用软件 RAID 的驱动器出现故障， ONTAP Select 将使用备用驱动器（如果有）并自动启动重建过程。这与 FAS 和 AFF 上的 ONTAP 的工作原理类似。但是，如果没有可用的备用驱动器，则需要向 ONTAP Select 节点添加一个。
+
+
+NOTE: 必须通过 ONTAP Deploy 删除故障驱动器和添加新驱动器（标记为备用驱动器）。不支持使用 vSphere 将驱动器连接到 ONTAP Select VM 。
+
+
+
+== 确定故障驱动器
+
+驱动器出现故障后，请使用 Deploy 实用程序命令行界面确定出现故障的磁盘。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序命令行界面。
+. 确定发生故障的磁盘。
++
+[listing]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+
+
+== 删除故障驱动器
+
+确定出现故障的驱动器后，请删除该磁盘。
+
+.步骤
+. 使用管理员帐户登录到 Deploy Web 用户界面。
+. 单击 * 集群 * 选项卡并选择相关集群。
++
+image:ST_22.jpg["节点详细信息"]
+
+. 单击 * + * 展开存储视图。
++
+image:ST_23.jpg["编辑节点存储"]
+
+. 单击 * 编辑 * 以更改连接的磁盘，然后取消选中故障驱动器。
++
+image:ST_24.jpg["存储磁盘详细信息"]
+
+. 提供集群凭据，然后单击 * 编辑存储 * 。
++
+image:ST_25.jpg["ONTAP 凭据"]
+
+. 确认操作。
++
+image:ST_26.jpg["警告"]
+
+
+
+
+
+== 添加新的备用驱动器
+
+删除故障驱动器后，请添加备用磁盘。
+
+.步骤
+. 使用管理员帐户登录到 Deploy Web 用户界面。
+. 单击 * 集群 * 选项卡并选择相关集群。
++
+image:ST_27.jpg["HA 对"]
+
+. 单击 * + * 展开存储视图。
++
+image:ST_28.jpg["编辑节点存储"]
+
+. 单击 * 编辑 * 并确认新驱动器可用并将其选中。
++
+image:ST_29.jpg["存储磁盘详细信息"]
+
+. 提供集群凭据，然后单击 * 编辑存储 * 。
++
+image:ST_30.jpg["存储磁盘详细信息"]
+
+. 确认操作。
++
+image:ST_31.jpg["存储磁盘详细信息"]
+
+

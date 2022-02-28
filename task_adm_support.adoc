@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: task_adm_support.html 
+keywords: administer, administering, web, diagnostics, support 
+summary: 在管理 ONTAP Select 过程中，您可以执行多项相关的诊断和支持任务。 
+---
+= 诊断和支持
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在管理 ONTAP Select 过程中，您可以执行多项相关的诊断和支持任务。
+
+
+
+== 配置 Deploy 系统
+
+您应设置影响 Deploy 实用程序运行方式的基本系统配置参数。
+
+Deploy 配置数据由 AutoSupport 使用。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 管理 * 选项卡。
+. 单击 * 设置和 AutoSupport * ，然后单击 image:icon_pencil.gif["编辑"]。
+. 根据您的环境需要提供配置数据，然后单击 * 修改 * 。
++
+如果您使用代理服务器，则可以按如下所示配置代理 URL ： ` \http://USERNAME:PASSWORD@<FQDN|IP>:PORT`
+
++
+示例 ` http://user1:mypassword@proxy.company-demo.com:80`
+
+
+
+
+
+== 显示 ONTAP Select Deploy 事件消息
+
+ONTAP Select Deploy 实用程序包含一个事件日志记录工具，可提供有关系统活动的信息。要调试任何问题，您应查看事件日志的内容，或者在支持人员的指示下查看事件日志的内容。
+
+您可以根据以下几个特征筛选事件消息列表：
+
+* Status
+* Type
+* 类别
+* 实例
+* 时间
+* Description
+
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 管理 * 选项卡。
+. 单击 * 事件和作业 * ，然后单击 * 事件 * 。
+. 也可以单击 * 筛选器 * 并创建一个筛选器来限制显示的事件消息。
+
+
+
+
+== 启用 AutoSupport
+
+您可以根据需要启用和禁用 AutoSupport 功能。
+
+AutoSupport 是 NetApp 在支持 ONTAP Select 方面使用的主要故障排除工具。因此，除非绝对必要，否则不应禁用 AutoSupport 。如果禁用 AutoSupport ，则仍会收集数据，但不会将其传输到 NetApp 。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 管理 * 选项卡。
+. 单击 * 设置和 AutoSupport * ，然后单击 image:icon_kebab.gif["选项"]。
+. 根据需要启用或禁用 AutoSupport 功能。
+
+
+
+
+== 生成并下载 AutoSupport 软件包
+
+ONTAP Select 可以生成 AutoSupport 软件包。您应生成一个软件包来调试任何问题，或者在支持人员的指示下生成此软件包。
+
+您可以在 NetApp 支持部门的指导下生成以下 AutoSupport 软件包：
+
+* 部署日志由 ONTAP Select Deploy 实用程序创建的日志文件
+* 对有关虚拟机管理程序主机和 ONTAP Select 节点的故障排除和调试信息进行故障排除
+* 有关虚拟机管理程序主机和 ONTAP Select 节点的性能信息
+
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 单击页面顶部的 * 管理 * 选项卡。
+. 单击 * 设置和 AutoSupport * ，然后单击 image:icon_kebab.gif["选项"]。
+. 单击 * 生成 * 。
+. 选择类型并为软件包提供问题描述 ；您也可以提供案例编号。
+. 单击 * 生成 * 。
++
+系统会为每个 AutoSupport 软件包分配一个唯一的序列号标识号。
+
+. 也可以在 * AutoSupport History* 下选择正确的软件包并单击下载图标将 AutoSupport 文件保存到本地工作站。
+

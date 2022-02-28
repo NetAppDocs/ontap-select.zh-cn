@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_browser.html 
+keywords: rest api, deploy rest api, rest, access browser, before you begin 
+summary: 在使用 Deploy 联机文档页面之前，您应注意以下几点。 
+---
+= 在使用浏览器访问 API 之前
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在使用 Deploy 联机文档页面之前，您应注意以下几点。
+
+
+
+=== 部署计划
+
+如果要在执行特定部署或管理任务时调用问题描述 API ，则应考虑创建部署计划。这些计划可以是正式的或非正式的，通常包含您的目标和要使用的 API 调用。有关详细信息，请参见使用 Deploy REST API 的工作流流程。
+
+
+
+=== JSON 示例和参数定义
+
+每个 API 调用都会在文档页面上使用一致的格式进行说明。其中包括实施说明，查询参数和 HTTP 状态代码。此外，您还可以显示 API 请求和响应所使用的 JSON 的详细信息，如下所示：
+
+* 示例值如果在 API 调用上单击 _example value_ ，则会显示该调用的典型 JSON 结构。您可以根据需要修改此示例并将其用作请求的输入。
+* Model 如果单击 _Model_ ，则会显示一个完整的 JSON 参数列表，其中每个参数都有一个问题描述 。
+
+
+
+
+=== 发出 API 调用时的注意事项
+
+使用 Deploy 文档页面执行的所有 API 操作均为实时操作。请注意，不要错误地创建，更新或删除配置或其他数据。

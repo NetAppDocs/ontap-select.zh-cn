@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: concept_ha_mirroring.html 
+keywords: ontap select, ha, high availability, synchronous replication, mirrored aggregates, write path, raid syncmirror, rsm 
+summary: 使用 RAID SyncMirror （ RSM ），镜像聚合和写入路径防止数据丢失。 
+---
+= HA RSM 和镜像聚合
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用 RAID SyncMirror （ RSM ），镜像聚合和写入路径防止数据丢失。
+
+
+
+== 同步复制
+
+ONTAP HA 模式基于 HA 配对节点的概念构建。ONTAP Select 可通过使用 ONTAP 中的 RAID SyncMirror （ RSM ）功能在集群节点之间复制数据块，从而将此架构扩展到非共享商用服务器环境中，从而为分布在 HA 对中的用户数据提供两个副本。
+
+具有调解器的双节点集群可以跨越两个数据中心。有关详细信息，请参见一节 link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["双节点延伸型 HA （ MetroCluster SDS ）最佳实践"]。
+
+
+
+== 镜像聚合
+
+一个 ONTAP Select 集群由两到八个节点组成。每个 HA 对包含两个用户数据副本，这些副本通过 IP 网络在节点之间同步镜像。此镜像对用户是透明的，它是数据聚合的一个属性，在数据聚合创建过程中会自动配置。
+
+必须镜像 ONTAP Select 集群中的所有聚合，以便在发生节点故障转移时提供数据，并避免发生硬件故障时出现 SPOF 。ONTAP Select 集群中的聚合使用 HA 对中每个节点提供的虚拟磁盘构建，并使用以下磁盘：
+
+* 一组本地磁盘（由当前 ONTAP Select 节点提供）
+* 一组镜像磁盘（由当前节点的 HA 配对节点提供）
+
+
+
+NOTE: 用于构建镜像聚合的本地磁盘和镜像磁盘的大小必须相同。这些聚合称为丛 0 和丛 1 （分别表示本地和远程镜像对）。实际丛编号在您的安装中可能有所不同。
+
+这种方法与标准 ONTAP 集群的工作方式有着根本的不同。此适用场景 将对 ONTAP Select 集群中的所有根磁盘和数据磁盘执行。聚合同时包含数据的本地副本和镜像副本。因此，包含 N 个虚拟磁盘的聚合可提供相当于 N/2 个磁盘的唯一存储，因为第二个数据副本驻留在其自身的唯一磁盘上。
+
+下图显示了四节点 ONTAP Select 集群中的一个 HA 对。此集群中只有一个聚合（测试），该聚合使用两个 HA 配对节点的存储。此数据聚合由两组虚拟磁盘组成：一组本地磁盘，由 ONTAP Select 所属集群节点（丛 0 ）提供；另一组远程磁盘，由故障转移配对节点（丛 1 ）提供。
+
+丛 0 是存放所有本地磁盘的分段。丛 1 是用于存放镜像磁盘或负责存储用户数据第二个复制副本的磁盘的存储分段。拥有聚合的节点将磁盘分配给 Plex 0 ，而该节点的 HA 配对节点将磁盘分配给 Plex 1 。
+
+在下图中，存在一个包含两个磁盘的镜像聚合。此聚合的内容会在我们的两个集群节点之间进行镜像，并将本地磁盘 NET-1.1 置于 Plex 0 分段中，而将远程磁盘 NET-2.1 置于 Plex 1 分段中。在此示例中，聚合测试由左侧的集群节点拥有，并使用本地磁盘 NET-1.1 和 HA 配对镜像磁盘 NET-2.1 。
+
+* ONTAP Select 镜像聚合 *image:DDHA_03.jpg["ONTAP Select 镜像聚合"]
+
+
+NOTE: 部署 ONTAP Select 集群后，系统上的所有虚拟磁盘都会自动分配给正确的丛，无需用户在磁盘分配方面执行额外步骤。这样可以防止意外将磁盘分配给不正确的丛，并提供最佳的镜像磁盘配置。
+
+
+
+== 写入路径
+
+在集群节点之间同步镜像数据块以及在发生系统故障时不丢失数据的要求会对传入写入在通过 ONTAP Select 集群传播时所采用的路径产生重大影响。此过程包括两个阶段：
+
+* 确认
+* 转存
+
+
+对目标卷的写入会通过数据 LIF 进行，并提交到 ONTAP Select 节点的系统磁盘上的虚拟化 NVRAM 分区，然后再确认回客户端。在 HA 配置中，还会执行另一个步骤，因为这些 NVRAM 写入操作会在被确认之前立即镜像到目标卷所有者的 HA 配对节点。如果原始节点出现硬件故障，此过程可确保 HA 配对节点上的文件系统一致性。
+
+将写入提交到 NVRAM 后， ONTAP 会定期将此分区的内容移动到相应的虚拟磁盘，此过程称为转存。此过程仅在目标卷所属的集群节点上发生一次，而不会在 HA 配对节点上发生。
+
+下图显示了传入写入请求到 ONTAP Select 节点的写入路径。
+
+* ONTAP Select 写入路径工作流 *image:DDHA_04.jpg["ONTAP Select 写入路径工作流"]
+
+传入写入确认包括以下步骤：
+
+* 写入操作通过 ONTAP Select 节点 A 拥有的逻辑接口进入系统
+* 写入将提交到节点 A 的 NVRAM 并镜像到 HA 配对节点 B
+* 在两个 HA 节点上都存在 I/O 请求后，该请求将确认回客户端。
+
+
+ONTAP Select 从 NVRAM 转存到数据聚合（ ONTAP CP ）包括以下步骤：
+
+* 写入将从虚拟 NVRAM 转存到虚拟数据聚合。
+* 镜像引擎将块同步复制到两个丛。
+

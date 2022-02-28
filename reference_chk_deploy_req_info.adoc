@@ -1,0 +1,70 @@
+---
+bar: sidebar 
+permalink: reference_chk_deploy_req_info.html 
+keywords: ontap select, deploy, pre-installation, vmware 
+summary: 在 VMware 环境中安装 Deploy 管理实用程序之前，请查看基本要求并准备成功部署。 
+---
+= Deploy 实用程序安装所需信息
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 VMware 环境中安装 Deploy 管理实用程序之前，请查看所需的配置信息和可选的网络配置信息，以便为成功部署做好准备。
+
+
+
+== 所需的配置信息
+
+在部署规划中，您应在安装 ONTAP Select Deploy 管理实用程序之前确定所需的配置信息。
+
+[cols="40,60"]
+|===
+| 所需信息 | Description 
+
+
+| Deploy 虚拟机的名称 | 用于虚拟机的标识符。 
+
+
+| ESXi 主机的名称 | 安装了 Deploy 实用程序的 VMware ESXi 主机的标识符。 
+
+
+| 数据存储库的名称 | 存放虚拟机文件的 VMware 数据存储库的标识符（大约需要 40 GB ）。 
+
+
+| 虚拟机的网络 | Deploy 虚拟机所连接的网络的标识符。 
+|===
+
+
+== 可选网络配置信息
+
+默认情况下， Deploy 虚拟机使用 DHCP 进行配置。但是，如果需要，您可以手动配置虚拟机的网络接口。
+
+[cols="35,65"]
+|===
+| 网络信息 | Description 
+
+
+| 主机名 | 主机的标识符。 
+
+
+| 主机 IP 地址 | 主机的静态 IPv4 地址。 
+
+
+| 子网掩码 | 子网掩码，基于虚拟机所属的网络。 
+
+
+| 网关 | 默认网关或路由器。 
+
+
+| 主 DNS 服务器 | 主域名服务器。 
+
+
+| 二级 DNS 服务器 | 二级域名服务器。 
+
+
+| 搜索域 | 要使用的搜索域的列表。 
+|===

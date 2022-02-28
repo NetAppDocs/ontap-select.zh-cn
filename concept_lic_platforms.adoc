@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_platforms.html 
+keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
+summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。 
+---
+= 了解平台许可证产品
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。
+
+
+
+=== 平台许可证产品提供的功能
+
+特定的许可证选项在以下两个方面定义并限制虚拟机管理程序主机的功能：
+
+* 实例类型（ CPU ，内存）
+* 其他功能
+
+
+许可证产品按从标准到高级 XL 的功能升序排列。通常，您选择的许可证选项会授予您该级别以及所有更低级别的功能。例如，高级级别既提供高级功能，又提供标准功能。
+
+
+
+=== 标准
+
+标准产品提供以下功能：
+
+* 仅小型实例类型
+* 仅限硬盘驱动器（ HDD ）
+* 仅限本地硬件 RAID 控制器
+* vNAS
+
+
+
+
+=== 高级版
+
+高级版产品提供以下功能：
+
+* 小型或中型实例类型
+* 硬盘驱动器（ HDD ）或固态驱动器（ SSD ）
+* 本地硬件 RAID 控制器或软件 RAID
+* vNAS
+* MetroCluster SDS
+
+
+
+
+=== 高级版 xl
+
+高级 XL 产品提供以下功能：
+
+* 小型，中型或大型实例类型。
+* 硬盘驱动器（ HDD ）或固态驱动器（ SSD ）
+* 本地硬件 RAID 控制器或软件 RAID 。
+* vNAS
+* MetroCluster SDS
+
+
+
+NOTE: 大型实例类型（使用高级 XL 许可证）仅在 VMware ESXi 上受支持。

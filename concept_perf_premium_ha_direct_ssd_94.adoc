@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_94.html 
+keywords: ontap select, performance 
+summary: ONTAP Select 9.4 性能的性能信息—高级 HA 直连 SSD 存储。 
+---
+= ONTAP Select 9.4 性能：高可用性直连 SSD 高级存储
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select 9.4 性能与高级 HA 直连 SSD 存储。
+
+
+
+== 参考平台
+
+ONTAP Select 9.4 （高级版）硬件（每个节点）：
+
+* Cisco UCS C240 M4S2 ：
++
+** 2.60 GHz 的 Intel Xeon CPU E5-2697
+** 2 个插槽；每个插槽 14 个 CPU
+** 56 个逻辑 CPU （启用 HT ）
+** 256 GB RAM
+** VMware ESXi 6.5
+** 每个主机的驱动器数： 24 个 X371A NetApp 960 GB SSD
+
+
+
+
+客户端硬件：
+
+* 4 个 NFSv3 IBM 3550m4 客户端
+
+
+配置信息：
+
+* 1 ， 500 MTU ，用于客户端和 Select 集群之间的数据路径
+* 未使用存储效率功能（数据压缩，重复数据删除， Snapshot 副本， SnapMirror 等）
+
+
+下表列出了根据 ONTAP Select 高级节点 HA 对上的读 / 写工作负载测量的吞吐量。性能测量是使用 SIO 负载生成工具进行的。
+
+* 单节点（四节点中型实例的一部分）基于 DAS （ SSD ）的 ONTAP Select 9.4 集群的性能结果 *
+
+[cols="6*"]
+|===
+| Description | 顺序读取 64KiB | 顺序写入 64KiB | 随机读取 8 KiB | 随机写入 8 KiB | 随机 WR/RD （ 50/50 ） 8 KiB 
+
+
+| 采用 DAS （ SSD ）的 ONTAP 9.4 Select 中型实例 | 1045MBps 16 ， 712 IOPS | 251 MBps 4016 IOPS | 492MBps 62 ， 914 IOPS | 141 MBps 18 ， 048 IOPS | 218 MBps 27 ， 840 IOPS 
+|===
+
+
+=== 64K 顺序读取
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个数据 NIC
+* 1 个数据聚合（ 2 TB ）
+* 64 个卷； 64 个 SIO 进程 / 线程
+* 每个节点 32 个卷（共 64 个）
+* 每个卷 1 个 SIO 进程；每个文件 1 个 SIO 线程
+* 每个卷 1 个文件；每个卷的文件大小为 12000 MB
+
+
+
+
+=== 64K 顺序写入
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个数据 NIC
+* 1 个数据聚合（ 2 TB ）：
+* 64 个卷； 128 个 SIO 进程 / 线程
+* 每个节点 32 个卷（共 64 个）
+* 每个卷 2 个 SIO 进程；每个文件 1 个 SIO 线程
+* 每个卷 2 个文件；每个卷的文件大小为 30720 MB
+
+
+
+
+=== 8 K 随机读取
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个数据 NIC
+* 1 个数据聚合（ 2 TB ）：
+* 64 个卷； 64 个 SIO 进程 / 线程
+* 每个节点 32 个卷（共 64 个）
+* 每个卷 1 个 SIO 进程；每个文件 8 个 SIO 线程
+* 每个卷 1 个文件；每个卷的文件大小为 12228MB
+
+
+
+
+=== 8 K 随机写入
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个数据 NIC
+* 1 个数据聚合（ 2 TB ）
+* 64 个卷； 64 个 SIO 进程 / 线程
+* 每个节点 32 个卷（共 64 个）
+* 每个卷 1 个 SIO 进程；每个文件 8 个 SIO 线程
+* 每个卷 1 个文件；每个卷的文件大小为 8192 MB
+
+
+
+
+== 8 K 随机 50% 写入 50% 读取
+
+详细信息：
+
+* 已启用 SIO 直接 I/O
+* 2 个数据 NIC
+* 1 个数据聚合（ 2 TB ）
+* 64 个卷； 64 个 SIO 进程 / 线程
+* 每个节点 32 个卷（共 64 个）
+* 每个卷 1 个 SIO 进程；每个文件 20 个 SIO 线程
+* 每个卷 1 个文件；每个卷的文件大小为 12228MB
+

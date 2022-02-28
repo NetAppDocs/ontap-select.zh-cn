@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: task_chk_nvme_configure.html 
+keywords: ontap select, nvme storage, host preparation 
+summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需要配置主机以识别这些驱动器。 
+---
+= 配置主机以使用 NVMe 驱动器
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需要配置主机以识别这些驱动器。
+
+在 NVMe 设备上使用 VMDirectPath I/O 直通可最大限度地提高数据效率。此设置会将驱动器公开给 ONTAP Select 虚拟机，从而使 ONTAP 可以通过 PCI 直接访问设备。
+
+确保您的部署环境满足以下最低要求：
+
+* ONTAP Select 9.7 或更高版本以及关联的 Deploy 管理实用程序
+* 高级 XL 平台许可证或 90 天评估许可证
+* VMware ESXi 6.7 或更高版本
+* 符合规格 1.0 或更高版本的 NVMe 设备
+
+
+按照 link:reference_chk_host_prep.html["主机准备检查清单"]，查看 和  有关详细信息，请参见相关主题。
+
+此操作步骤 可在创建新 ONTAP Select 集群之前执行。您还可以执行操作步骤 为现有的 SW-RAID NVMe 集群配置其他 NVMe 驱动器。在这种情况下，配置驱动器后，您必须通过 Deploy 添加这些驱动器，就像添加其他 SSD 驱动器一样。主要区别在于， Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的信息：
+
+* Deploy 负责处理重新启动流程编排。
+* HA 接管和交还会按顺序执行，但重新同步聚合可能会很耗时。
+* 单节点集群将发生停机。
+
+
+请参见 link:concept_stor_capacity_inc.html["增加存储容量"] 适用于追加信息 。
+
+.步骤
+. 访问主机上的 * BIOS 配置 * 菜单，以支持 I/O 虚拟化。
+. 启用 * 定向 I/O （ VT-d ）的 Intel （ R ） VT 设置。
++
+image:nvme_01.png["套接字配置"]
+
+. 某些服务器支持 * Intel 卷管理设备（ Intel VMD ） * 。如果启用此选项，则 ESXi 虚拟机管理程序将无法识别可用的 NVMe 设备；请先禁用此选项，然后再继续。
++
+image:nvme_07.png["套接字配置， VMD"]
+
+. 配置 NVMe 驱动器以传递到虚拟机。
++
+.. 在 vSphere 中，打开主机 * 配置 * 视图，然后单击 * 硬件： PCI 设备 * 下的 * 编辑 * 。
+.. 选择要用于 ONTAP Select 的 NVMe 驱动器。
++
+image:nvme_02.png["编辑 PCI 设备可用性"]
+
++
+
+NOTE: 您需要一个 VMFS 数据存储库，该数据存储库也由 NVMe 设备提供支持，以托管 ONTAP Select VM 系统磁盘和虚拟 NVRAM 。在为其他 NVMe 驱动器配置 PCI 直通时，至少保留一个 NVMe 驱动器可用于此目的。
+
+.. 单击 * 确定 * 。选定设备指示 * 可用（待定） * 。
+
+
+. 单击 * 重新启动主机 * 。
++
+image:nvme_03.png["重新启动此主机"]
+
+
+
+准备好主机后，您可以安装 ONTAP Select Deploy 实用程序。Deploy 可指导您在新准备的主机上创建 ONTAP Select 存储集群。在此过程中， Deploy 将检测是否存在配置为直通的 NVMe 驱动器，并自动选择这些驱动器以用作 ONTAP 数据磁盘。您可以根据需要调整默认选择。
+
+
+NOTE: 每个 ONTAP Select 节点最多支持 14 个 NVMe 设备。
+
+image:nvme_04.png["ONTAP Select 部署集群"]
+
+成功部署集群后，您可以使用 ONTAP System Manager 根据最佳实践配置存储。ONTAP 将自动启用闪存优化的存储效率功能，以充分利用您的 NVMe 存储。
+
+image:nvme_05.png["正在准备本地存储"]
+
+image:nvme_06.png["ONTAP 系统管理器"]

@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: task_install_deploy.html 
+keywords: install, installing, ontap select deploy, deploy administration utility, deploy utility 
+summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实用程序创建 ONTAP Select 集群。 
+---
+= 安装 ONTAP Select Deploy
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您需要安装 ONTAP Select Deploy 管理实用程序并使用该实用程序创建 ONTAP Select 集群。
+
+
+
+== 下载虚拟机映像
+
+您可以从 NetApp 支持站点下载 ONTAP Select 软件包。
+
+ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF ）标准打包为虚拟机。单个压缩文件的后缀为 `ova` 。
+
+.步骤
+. 使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。
+. 单击 * 首要任务 * 下的 * 下载软件 * 并登录。
+. 单击 * 查找您的产品 * 。
+. 向下滚动并单击 * ONTAP Select * 。
+. 选择所需的软件包版本。
+. 查看最终用户许可协议（ EULA ），然后单击 * 接受并继续 * 。
+. 选择并下载相应的软件包，根据需要响应所有提示。
+
+
+
+
+== 部署虚拟机
+
+您必须使用 OVF 虚拟机映像安装和启动 ONTAP Select Deploy 虚拟机。在安装过程中，您必须将网络接口配置为使用 DHCP 或静态 IP 配置。
+
+您必须准备部署 ONTAP Select Deploy 虚拟机：
+
+* 通过安装 VMware Client Integration 插件或根据需要执行类似配置，在浏览器中启用 OVF 功能
+* 如果要为 Deploy 虚拟机动态分配 IP 地址，请在 VMware 环境中启用 DHCP
+
+
+您必须拥有创建虚拟机时要使用的配置信息，包括虚拟机名称，外部网络和主机名。定义静态网络配置时，需要以下追加信息 ：
+
+* Deploy 虚拟机的 IP 地址
+* 网络掩码
+* 网关（路由器）的 IP 地址
+* 主 DNS 服务器的 IP 地址
+* 第二个 DNS 服务器的 IP 地址
+* DNS 搜索域
+
+
+如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是，如果您选择不使用此表单，则可以改用 Deploy 虚拟机的控制台来配置网络。
+
+.步骤
+. 访问 vSphere 客户端并登录。
+. 导航到层次结构中的相应位置，然后选择 * 部署 OVF 模板 * 。
+. 选择 OVA 文件并完成 Deploy OVF Template 向导，根据您的环境选择相应的选项。
++
+您必须为管理员帐户定义密码。登录到 Deploy 实用程序时，需要提供此密码。
+
+. 部署虚拟机后，根据您在部署向导中输入的内容选择新虚拟机，如果尚未启动，请将其启动。
+. 如果需要，您可以使用虚拟机控制台配置 Deploy 网络：
++
+.. 单击 * 控制台 * 选项卡以访问 ESXi 主机设置 Shell 并监控启动过程。
+.. 等待出现以下提示：
++
+主机名：
+
+.. 键入主机名并按 * 输入 * 。
+.. 等待出现以下提示：
++
+提供管理员用户的密码：
+
+.. 键入密码并按 * 输入 * 。
+.. 等待出现以下提示：
++
+是否使用 DHCP 设置网络信息？[N] ：
+
+.. 键入 * 。 n* 定义静态 IP 配置，或者键入 y 以使用 DHCP ，然后按 * 。
+.. 如果选择静态配置，请根据需要提供所有网络配置信息。
+
+
+
+
+
+
+== 登录到 Deploy Web 界面
+
+您应登录到 Web 用户界面以确认 Deploy 实用程序可用并执行初始配置。
+
+.步骤
+. 使用 IP 地址或域名将浏览器指向 Deploy 实用程序：
++
+` https://<ip_address>/`
+
+. 提供管理员（ admin ）帐户名称和密码并登录。
+. 如果显示 * 欢迎使用 ONTAP Select * 弹出窗口，请查看前提条件并单击 * 确定 * 继续。
+. 如果这是首次登录，而您未使用 vCenter 提供的向导安装 Deploy ，请在出现提示时提供以下配置信息：
++
+** 管理员帐户的新密码（必需）
+** AutoSupport （可选）
+** 使用帐户凭据的 vCenter Server （可选）
+
+
+
+
+link:task_cli_signing_in.html["使用 SSH 登录到 Deploy"]

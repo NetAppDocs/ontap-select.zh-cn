@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_robo.html 
+keywords: plan, planning, remote and branch office, robo 
+summary: 您可以在远程办公室 / 分支机构（ ROBO ）环境中部署 ONTAP Select 。在规划 ROBO 部署时，您必须选择支持您的目标的配置。 
+---
+= 远程办公室和分支机构部署
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在远程办公室 / 分支机构（ ROBO ）环境中部署 ONTAP Select 。在规划 ROBO 部署时，您必须选择支持您的目标的配置。
+
+在 ROBO 环境中部署 ONTAP Select 时，可以使用两种主要配置。
+
+
+NOTE: 部署 ONTAP Select 时，您可以使用任何 VMware vSphere 许可证。
+
+
+
+==== 采用 ONTAP HA 的 ONTAP Select 双节点集群
+
+ONTAP Select 双节点集群由一个 HA 对组成，非常适合 ROBO 部署。
+
+
+
+==== 支持 VMware 的 ONTAP Select 单节点集群
+
+您可以在 ROBO 环境中部署 ONTAP Select 单节点集群。虽然单个节点缺少原生 HA 功能，但您可以通过以下方式之一部署集群以提供存储保护：
+
+* 使用 VMware HA 共享外部存储
+* VMware vSAN
+
+
+
+NOTE: 如果使用 vSAN ，则必须具有 VMware vSAN ROBO 许可证。

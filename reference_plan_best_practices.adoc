@@ -1,0 +1,151 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_best_practices.html 
+keywords: plan, planning, best practices, recommendations 
+summary: 在规划 ONTAP Select 部署时，您应考虑一些最佳实践。 
+---
+= 最佳实践摘要
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在规划 ONTAP Select 部署时，您应考虑一些最佳实践。
+
+
+
+== 存储
+
+请考虑以下存储最佳实践。
+
+
+
+===== 纯闪存或通用闪存阵列
+
+使用全闪存 VSAN 或通用闪存阵列部署 ONTAP Select 虚拟 NAS （ vNAS ）时，应遵循使用非 SSD DAS 存储的 ONTAP Select 的最佳实践。
+
+
+
+===== 虚拟机管理程序核心硬件
+
+一个 ONTAP Select 聚合中的所有驱动器都应采用相同的类型。例如，不应在同一聚合中混用 HDD 和 SSD 驱动器。
+
+
+
+===== RAID 控制器
+
+应将服务器 RAID 控制器配置为在回写模式下运行。如果出现写入工作负载性能问题，请检查控制器设置并确保未启用直写或写式。
+
+如果物理服务器包含一个 RAID 控制器，用于管理所有本地连接的磁盘， NetApp 建议为服务器操作系统创建一个单独的 LUN ，并为 ONTAP Select 创建一个或多个 LUN 。如果启动磁盘损坏，则管理员可以通过这种最佳做法重新创建操作系统 LUN ，而不会影响 ONTAP Select 。
+
+RAID 控制器缓存用于存储所有传入的块更改，而不仅仅是针对 NVRAM 分区的更改。因此，在选择 RAID 控制器时，请选择可用缓存最大的控制器。更大的缓存可以减少磁盘刷新的频率，并提高 ONTAP Select VM ，虚拟机管理程序以及服务器上托管的任何计算 VM 的性能。
+
+* RAID 组 *
+
+最佳 RAID 组大小为 8 到 12 个驱动器。每个 RAID 组的最大驱动器数为 24 。
+
+每个 ONTAP Select 节点支持的最大 NVMe 驱动器数为 14 个。
+
+备用磁盘是可选的，但建议使用。NetApp 还建议每个 RAID 组使用一个备用磁盘；但是，可以使用所有 RAID 组的全局备用磁盘。例如，您可以为每三个 RAID 组使用两个备用磁盘，每个 RAID 组包含 8 到 12 个驱动器。
+
+ONTAP Select 不会因增加 RAID 组中的 LUN 数量而获得任何性能优势。只能使用多个 LUN 来遵循 SATA/NL-SAS 配置的最佳实践或绕过虚拟机管理程序文件系统限制。
+
+
+
+===== VMware ESXi 主机
+
+NetApp 建议为托管系统磁盘的数据存储库使用 ESX 6.5 U2 或更高版本以及 NVMe 磁盘。此配置可为 NVRAM 分区提供最佳性能。
+
+
+NOTE: 在 ESX 6.5 U2 及更高版本上安装时，无论系统磁盘位于 SSD 还是 NVMe 磁盘上， ONTAP Select 都使用 vNVME 驱动程序。此操作会将 VM 硬件级别设置为 13 ，此级别与 ESX 6.5 及更高版本兼容。
+
+为 ONTAP Select 网络和外部存储（使用 iSCSI 或 NFS 时为 VMware vSAN 和通用存储阵列流量）定义专用网络端口，带宽和 vSwitch 配置。
+
+配置容量选项以限制存储利用率（ ONTAP Select 不能占用外部 vNAS 数据存储库的全部容量）。
+
+确保所有通用外部存储阵列尽可能使用可用的冗余和 HA 功能。
+
+
+
+===== VMware Storage vMotion
+
+在决定是否对 ONTAP Select 节点使用 VMware Storage vMotion 时，新主机上的可用容量并不是唯一的因素。底层存储类型，主机配置和网络功能应能够承受与原始主机相同的工作负载。
+
+
+
+== 网络
+
+请考虑以下网络最佳实践。
+
+
+
+===== MAC 地址重复
+
+为了避免多个 Deploy 实例分配重复的 MAC 地址，应使用每个第 2 层网络一个 Deploy 实例来创建或管理 ONTAP Select 集群或节点。
+
+
+
+===== EMS 消息
+
+应仔细监控 ONTAP Select 双节点集群，以查看指示存储故障转移已禁用的 EMS 消息。这些消息表示与调解器服务的连接断开，应立即纠正。
+
+
+
+===== 负载平衡
+
+要优化内部和外部 ONTAP Select 网络之间的负载平衡，请使用基于源虚拟端口负载平衡策略的路由。
+
+
+
+===== 多个第 2 层网络
+
+如果数据流量跨越多个第 2 层网络且需要使用 VLAN 端口，或者您使用多个 IP 空间，则应使用 VGT 。
+
+
+
+===== 物理交换机配置
+
+VMware 建议在连接到 ESXi 主机的交换机端口上将 STP 设置为 PortFast 。如果未在交换机端口上将 STP 设置为 Portfast ，则可能会影响 ONTAP Select 允许上行链路故障的能力。使用 LACP 时， LACP 计时器应设置为 FAST （ 1 秒）。负载平衡策略应根据端口组上的 IP 哈希以及 LAG 上的源和目标 IP 地址以及 TCP/UDP 端口和 VLAN 设置为路由。
+
+
+
+== HA
+
+请考虑以下 HA 最佳实践。
+
+
+
+===== 部署备份
+
+最佳做法是定期备份 Deploy 配置数据，包括在创建集群后备份。对于双节点集群来说，这一点尤为重要，因为调解器配置数据包含在备份中。
+
+创建或部署集群后，您应备份 ONTAP Select Deploy 配置数据。
+
+
+
+===== 镜像聚合
+
+尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足，则 发生原因 ONTAP 可能会删除用作存储交还基线的通用 NetApp Snapshot ® 副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。监控聚合空间利用率的良好基线高达 85% 。
+
+
+
+===== NIC 聚合，绑定和故障转移
+
+ONTAP Select 支持双节点集群使用一个 10 Gb 链路；但是， NetApp 最佳实践是在 ONTAP Select 集群的内部和外部网络上通过 NIC 聚合或 NIC 绑定实现硬件冗余。
+
+如果 NIC 具有多个应用程序专用集成电路（ ASIC ），则在通过 NIC 绑定为内部和外部网络构建网络结构时，请从每个 ASIC 中选择一个网络端口。
+
+NetApp 建议 ESX 和物理交换机上的 LACP 模式均处于活动状态。此外，物理交换机，端口，端口通道接口和 vmnic 上的 LACP 计时器应设置为 FAST （ 1 秒）。
+
+在将分布式 vSwitch 与 LACP 结合使用时， NetApp 建议您根据端口组上的 IP 哈希， LAG 上的源和目标 IP 地址， TCP/UDP 端口和 VLAN 将负载平衡策略配置为路由。
+
+
+
+===== 双节点延伸型 HA （ MetroCluster SDS ）最佳实践
+
+在创建 MetroCluster SDS 之前，请使用 ONTAP Deploy 连接检查程序确保两个数据中心之间的网络延迟处于可接受的范围内。
+
+使用虚拟子系统标记（ VGT ）和双节点集群时，需要注意额外的事项。在双节点集群配置中，在 ONTAP 完全可用之前，可以使用节点管理 IP 地址与调解器建立早期连接。因此，映射到节点管理 LIF （端口 e0a ）的端口组仅支持外部交换机标记（ EST ）和虚拟交换机标记（ VST ）标记。此外，如果管理流量和数据流量使用同一端口组，则整个双节点集群仅支持 EST 和 VST 。

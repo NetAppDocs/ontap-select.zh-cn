@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: concept_ots_overview.html 
+keywords: overview, software defined storage, sds, typical deployment, ontap 9 
+summary: ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在虚拟机管理程序主机上。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。 
+---
+= ONTAP Select 概述
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。
+
+
+
+== 软件定义的存储
+
+通过软件实施和交付 IT 服务，管理员可以快速灵活地配置资源，而这是以前无法做到的。随着现代数据中心迁移到软件定义的基础架构（ SDI ）架构，最有价值的 IT 资产可以与底层物理基础架构分离，从而提供灵活性，可扩展性和可编程性。
+
+在一个商业环境中，数据在直连存储（ DAS ）的孤岛之间分散，数据移动性和管理已成为更加复杂的问题。软件定义的存储（ SDS ）已成为 SDI 环境中解决这些问题和其他问题的重要组成部分。
+
+ONTAP Select 是适用于 SDS 市场的 NetApp 解决方案 。ONTAP Select 将企业级存储管理功能引入软件定义的数据中心，并将 NetApp Data Fabric 架构扩展到最极端的边缘用例，包括物联网（ Internet of Things ， IoT ）和战术服务器。
+
+
+
+== 两个软件组件
+
+ONTAP Select 由两个主要软件组件组成：
+
+
+
+===== ONTAP Select 节点
+
+ONTAP Select 集群由一个，两个，四个，六个或八个节点组成。每个集群节点都部署为一个单独的虚拟机，并运行专门设计的 ONTAP 9 软件版本。
+
+
+
+===== ONTAP Select Deploy 管理实用程序
+
+Deploy 管理实用程序作为单独的 Linux 虚拟机打包并安装。您必须使用实用程序在生产环境中部署 ONTAP Select 集群。当前版本的 ONTAP Select 节点映像与 Deploy 实用程序捆绑在一起。
+
+
+NOTE: 从 ONTAP Select 9.7 开始，不再为 Deploy 管理实用程序分配单独的版本号。Deploy 的版本号与关联的 ONTAP Select 版本相同。但是，在特定 ONTAP Select 版本中， Deploy 实用程序的每个更新都有一个唯一的内部版本号。
+
+
+
+== 典型部署图示
+
+下图显示了用于部署和支持四节点 ONTAP Select 集群的 ONTAP Select Deploy 管理实用程序。Deploy 实用程序和 ONTAP Select 节点在专用虚拟机管理程序主机上作为单独的虚拟机运行。
+
+image:ots_architecture.png["显示了使用 Deploy 管理实用程序创建的 ONTAP Select 四节点集群。"]
+
+
+
+== 比较 ONTAP Select 和 ONTAP 9
+
+基于硬件的 ONTAP 和 ONTAP Select 均可提供企业级存储解决方案。但是，由于它们的设计和实施方式不同，因此它们可以满足不同的业务要求和使用情形。在规划 ONTAP Select 部署之前，您应熟悉各个平台之间的主要区别。
+
+
+
+===== 不同的 HA 架构
+
+根据您在集群中定义的节点数， ONTAP Select 可提供 HA 功能。例如，一个四节点集群包含两个 HA 对。ONTAP Select 使用的 HA 架构基于非共享存储模式。也就是说， HA 对中的一个节点无法直接访问另一个节点所拥有的存储。此设计可能会影响某些 ONTAP Select 操作特征。
+
+
+
+===== 容量许可
+
+ONTAP Select 引入了一种基于使用量的许可模式。在生产环境中部署 ONTAP Select 集群时，您必须为每个节点或共享容量池购买一个含存储容量的许可证。您必须使用 Deploy 实用程序应用用于为集群节点建立存储容量的许可证文件。
+
+
+
+===== ONTAP 功能许可
+
+ONTAP Select 集群中的每个节点都会自动获得使用多项 ONTAP 功能的许可。您无需手动安装或应用这些功能许可证。
+
+
+
+===== ONTAP Select 不支持 ONTAP 功能
+
+ONTAP Select 不支持多种 ONTAP 功能。在大多数情况下，这些功能需要特殊硬件，而虚拟化 ONTAP Select 环境中不提供这些硬件。
+
+* 不支持光纤通道光纤通道和以太网光纤通道。
+* 不支持接口组接口组（ IFGRP ）。
+* 运行状况监控在基于硬件的 ONTAP 部署中使用的传统运行状况监控功能特定于底层硬件组件。由于 ONTAP Select 使用的是虚拟化环境，因此运行状况监控器不处于活动状态。
+* 支持 NIC 卸载由于 ONTAP Select 使用的是虚拟化环境，因此不支持 NIC 卸载工具。
+* 集群 IP 空间不支持对集群 IP 空间进行任何修改，包括添加或删除端口。
+* ONTAP 端口属性不支持修改 ONTAP 端口的属性，包括速度，双工和流量控制。
+* 服务处理器
+* NetApp 存储加密驱动器
+
+
+.相关信息
+* link:reference_lic_ontap_features.html["默认情况下， ONTAP 功能处于启用状态"]
+
