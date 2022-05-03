@@ -6,6 +6,7 @@ summary: 部署 ONTAP Select 集群后，您可以使用 Deploy 管理实用程�
 ---
 = 调整 ONTAP Select 集群节点的大小
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

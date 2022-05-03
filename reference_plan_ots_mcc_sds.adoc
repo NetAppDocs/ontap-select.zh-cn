@@ -6,6 +6,7 @@ summary: 在规划 MetroCluster ONTAP Select 部署时，您应考虑多项要�
 ---
 = 准备 MetroCluster SDS 部署
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

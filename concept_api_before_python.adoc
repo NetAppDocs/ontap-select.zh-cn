@@ -6,6 +6,7 @@ summary: 在运行示例 Python 脚本之前，您必须准备好环境。
 ---
 = 在使用 Python 访问 API 之前
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

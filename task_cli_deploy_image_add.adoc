@@ -6,6 +6,7 @@ summary: 您可以将 ONTAP Select 映像添加到 Deploy 管理实用程序实�
 ---
 = 添加要部署的 ONTAP Select 映像
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

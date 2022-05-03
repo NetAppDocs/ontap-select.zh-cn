@@ -6,6 +6,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 ---
 = 使用命令行界面部署 ONTAP Select 集群
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

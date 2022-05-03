@@ -6,6 +6,7 @@ summary: ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在
 ---
 = ONTAP Select 概述
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary:
 ---
 = 《 ONTAP Select 发行说明》
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

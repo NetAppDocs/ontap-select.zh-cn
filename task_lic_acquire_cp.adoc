@@ -6,6 +6,7 @@ summary: 您必须为 ONTAP Select 节点使用的每个容量池获取一个许
 ---
 = 获取容量池许可证
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

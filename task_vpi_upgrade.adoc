@@ -6,6 +6,7 @@ summary: 您可以使用 ONTAP Select Deploy Web 用户界面从 vCenter 服务�
 ---
 = 验证并删除 Deploy vCenter 插件
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

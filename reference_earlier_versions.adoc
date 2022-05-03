@@ -6,6 +6,7 @@ summary: 如果您运行的不是最新版本，则可以参考先前版本的 O
 ---
 = 早期版本的 ONTAP Select 文档
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

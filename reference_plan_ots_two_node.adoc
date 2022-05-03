@@ -6,6 +6,7 @@ summary: 使用 HA 部署双节点集群所涉及的规划和配置与其他集�
 ---
 = 具有 HA 的 ONTAP Select 双节点集群
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

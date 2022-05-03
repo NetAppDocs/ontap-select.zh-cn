@@ -6,6 +6,7 @@ summary: 确定 ONTAP Select 适合您的组织后，您可以购买支持生产
 ---
 = 已为生产部署购买许可证
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

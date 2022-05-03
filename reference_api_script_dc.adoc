@@ -6,6 +6,7 @@ summary: 您可以使用以下命令行界面脚本删除现有集群。
 ---
 = 用于删除集群的脚本
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

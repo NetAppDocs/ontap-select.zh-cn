@@ -6,6 +6,7 @@ summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONT
 ---
 = 工作流 1 ：在 ESXi 上创建单节点评估集群
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的
 ---
 = 默认情况下， ONTAP 功能处于启用状态
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

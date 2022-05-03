@@ -6,6 +6,7 @@ summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层
 ---
 = 了解平台许可证产品
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

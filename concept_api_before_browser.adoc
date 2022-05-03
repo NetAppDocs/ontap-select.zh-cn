@@ -6,6 +6,7 @@ summary: 在使用 Deploy 联机文档页面之前，您应注意以下几点。
 ---
 = 在使用浏览器访问 API 之前
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

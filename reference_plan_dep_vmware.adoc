@@ -6,6 +6,7 @@ summary: 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您
 ---
 = VMware 虚拟机管理程序环境
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

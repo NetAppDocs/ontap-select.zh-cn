@@ -6,6 +6,7 @@ summary: 您可以测试内部集群网络上两个或多个 ONTAP Select 节点
 ---
 = 确认 ONTAP Select 节点之间的网络连接
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

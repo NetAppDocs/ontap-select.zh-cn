@@ -6,6 +6,7 @@ summary: 双 NIC 和四 NIC 配置的 ONTAP Select vSwitch 配置和负载平衡
 ---
 = VMware vSphere vSwitch 配置
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

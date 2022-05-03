@@ -6,6 +6,7 @@ summary: Deploy vCenter 插件与 ONTAP Select Deploy 和 VMware vCenter 紧密�
 ---
 = 插件架构
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 基于单交换机和多交换机环境的上游物理交换机配置�
 ---
 = 物理交换机配置
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

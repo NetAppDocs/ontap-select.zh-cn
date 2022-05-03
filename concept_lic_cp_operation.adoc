@@ -6,6 +6,7 @@ summary: 容量池许可模式与容量层模式不同。存储容量将分配�
 ---
 = 操作详细信息
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

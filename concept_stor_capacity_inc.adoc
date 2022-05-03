@@ -6,6 +6,7 @@ summary: ONTAP Deploy 可用于为 ONTAP Select 集群中的每个节点添加�
 ---
 = 增加存储容量
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

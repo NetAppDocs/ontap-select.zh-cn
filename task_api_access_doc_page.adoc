@@ -6,6 +6,7 @@ summary: 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 
 ---
 = 访问 Deploy 文档页面
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

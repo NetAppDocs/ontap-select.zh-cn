@@ -6,6 +6,7 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 ---
 = 配置主机以使用 NVMe 驱动器
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -25,7 +26,7 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 * 符合规格 1.0 或更高版本的 NVMe 设备
 
 
-按照 link:reference_chk_host_prep.html["主机准备检查清单"]，查看 和  有关详细信息，请参见相关主题。
+按照 link:reference_chk_host_prep.html["主机准备检查清单"]，查看 link:reference_chk_deploy_req_info.html["Deploy 实用程序安装所需信息"]和 link:reference_chk_select_req_info.html["ONTAP Select 安装所需的信息"] 有关详细信息，请参见相关主题。
 
 此操作步骤 可在创建新 ONTAP Select 集群之前执行。您还可以执行操作步骤 为现有的 SW-RAID NVMe 集群配置其他 NVMe 驱动器。在这种情况下，配置驱动器后，您必须通过 Deploy 添加这些驱动器，就像添加其他 SSD 驱动器一样。主要区别在于， Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的信息：
 

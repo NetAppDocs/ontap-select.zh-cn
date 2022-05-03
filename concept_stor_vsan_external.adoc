@@ -6,6 +6,7 @@ summary: 虚拟 NAS （ Virtual NAS ， vNAS ）部署支持 VSAN 上的 ONTAP S
 ---
 = vSAN 和外部阵列配置
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

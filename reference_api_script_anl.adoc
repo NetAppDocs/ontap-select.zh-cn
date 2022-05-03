@@ -6,6 +6,7 @@ summary: 您可以使用以下脚本为 ONTAP Select 节点添加许可证。
 ---
 = 用于添加节点许可证的脚本
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 了解适用于 ONTAP Select 环境的常规存储概念，然后再了
 ---
 = 存储：一般概念和特征
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

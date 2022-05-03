@@ -6,6 +6,7 @@ summary: ONTAP Select 既支持单节点网络配置，也支持多节点网络�
 ---
 = 单节点和多节点网络配置
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

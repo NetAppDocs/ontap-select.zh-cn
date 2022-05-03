@@ -6,6 +6,7 @@ summary: 在部署集群后，您应了解集群的初始状态，并根据需�
 ---
 = 部署后集群的初始状态
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

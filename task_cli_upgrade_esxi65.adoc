@@ -6,6 +6,7 @@ summary: 如果您在 VMware ESXi 上运行 ONTAP Select ，则可以将 ESXi �
 ---
 = 将 VMware ESXi 升级到 6.5 及更高版本
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

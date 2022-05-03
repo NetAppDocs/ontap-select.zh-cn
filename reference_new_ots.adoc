@@ -6,6 +6,7 @@ summary: 当前版本的 ONTAP Select 提供了几项新增功能和变更功能
 ---
 = ONTAP Select 9.10.1 中的新增功能
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

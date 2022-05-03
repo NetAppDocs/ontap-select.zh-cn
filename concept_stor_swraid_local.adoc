@@ -6,6 +6,7 @@ summary: 软件 RAID 是在 ONTAP 软件堆栈中实施的 RAID 抽象层。它�
 ---
 = 用于本地连接存储的软件 RAID 服务
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

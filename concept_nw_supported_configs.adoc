@@ -6,6 +6,7 @@ summary: 选择最佳硬件并配置网络以优化性能和故障恢复能力�
 ---
 = 支持的网络配置
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

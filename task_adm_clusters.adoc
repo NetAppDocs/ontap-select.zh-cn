@@ -6,6 +6,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 ---
 = ONTAP Select 集群
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -63,7 +64,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 对集群或虚拟机进行这些更改时， Deploy 实用程序配置数据库不会自动更新，并且可能会与集群的状态不同步。在这些情况下以及其他情况下，您应执行集群刷新，以便根据集群的当前状态更新 Deploy 数据库。
 
 .开始之前
-所需信息::
+所需信息:: 您必须具有集群的当前配置信息，包括：
 +
 --
 * ONTAP 管理员凭据
@@ -81,7 +82,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 NOTE: 您可以在 Deploy 命令行界面 Shell 中使用 cluster refresh 命令刷新集群，而不使用 Deploy 图形用户界面。
 
-集群和虚拟机配置::
+集群和虚拟机配置:: 一些配置值可能会发生更改，并且发生原因 Deploy 数据库会变得不同步，这些配置值包括：
 +
 --
 * 集群和节点名称
@@ -93,7 +94,7 @@ NOTE: 您可以在 Deploy 命令行界面 Shell 中使用 cluster refresh 命令
 
 
 --
-集群和节点状态::
+集群和节点状态:: ONTAP Select 集群或节点的状态可能会使其无法正常运行。您应执行集群刷新操作以更正以下情况：
 +
 --
 * 节点处于 _unknown_ 状态 ONTAP Select 节点可能处于 _unknown 状态，原因有多种，包括未找到此节点。

@@ -6,6 +6,7 @@ summary: 在规划安装 ONTAP Select Deploy 管理实用程序时，您应考�
 ---
 = ONTAP Select Deploy 的一般要求和规划
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

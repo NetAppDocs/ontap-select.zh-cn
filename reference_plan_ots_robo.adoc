@@ -6,6 +6,7 @@ summary: 您可以在远程办公室 / 分支机构（ ROBO ）环境中部署 O
 ---
 = 远程办公室和分支机构部署
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

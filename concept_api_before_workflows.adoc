@@ -6,6 +6,7 @@ summary: 您应准备好查看和使用工作流流程。
 ---
 = 在使用 API 工作流之前
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 在容量层许可模式下，九位数节点序列号与分配给节�
 ---
 = 节点序列号
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

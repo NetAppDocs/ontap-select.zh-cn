@@ -6,6 +6,7 @@ summary: 首先，熟悉适用于 ONTAP Select 环境的一般网络概念。然
 ---
 = 网络连接：一般概念和特征
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

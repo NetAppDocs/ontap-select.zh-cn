@@ -6,6 +6,7 @@ summary: 在准备在 VMware 环境中部署 ONTAP Select 集群时，请收集�
 ---
 = ONTAP Select 安装所需的信息
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

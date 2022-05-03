@@ -6,6 +6,7 @@ summary: 您可以按照工作流为 ONTAP Select 部署购买和应用许可证
 ---
 = 购买许可证时的工作流
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

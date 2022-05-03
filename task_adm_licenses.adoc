@@ -6,6 +6,7 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 ---
 = ONTAP Select 许可证
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

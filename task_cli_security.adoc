@@ -6,6 +6,7 @@ summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项
 ---
 = 安全性
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

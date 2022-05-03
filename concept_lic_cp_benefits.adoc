@@ -6,6 +6,7 @@ summary: 使用容量池许可模式而不是容量层许可模式具有多种�
 ---
 = 优势摘要
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 您可以从 Deploy 管理实用程序实例中删除不再需要的 ON
 ---
 = 从 Deploy 中删除 ONTAP Select 映像
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

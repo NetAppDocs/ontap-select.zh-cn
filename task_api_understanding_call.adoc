@@ -6,6 +6,7 @@ summary: 所有 API 调用的详细信息均采用通用格式记录并显示在
 ---
 = 了解并执行 API 调用
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

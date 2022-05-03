@@ -6,6 +6,7 @@ summary: ONTAP Select 提供的存储效率选项与 FAS 和 AFF 阵列上的存
 ---
 = 存储效率支持
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: Deploy vCenter 插件与 ONTAP Select Deploy 管理实用程序捆绑�
 ---
 = 安装 Deploy vCenter 插件
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

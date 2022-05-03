@@ -6,6 +6,7 @@ summary: HA 磁盘检测信号， HA 邮箱， HA 检测信号， HA 故障转�
 ---
 = HA 其他详细信息
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

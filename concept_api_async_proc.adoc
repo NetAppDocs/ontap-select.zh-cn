@@ -6,6 +6,7 @@ summary: 某些 Deploy API 调用（尤其是创建或修改资源的调用）�
 ---
 = 使用作业对象进行异步处理
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

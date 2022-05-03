@@ -6,6 +6,7 @@ summary: 查找有关 ONTAP Select 的常见问题的答案。
 ---
 = 常见问题解答
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

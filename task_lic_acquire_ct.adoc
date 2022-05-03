@@ -6,6 +6,7 @@ summary: 使用容量层许可时，您需要为每个 ONTAP Select 节点获取
 ---
 = 获取容量层许可证
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

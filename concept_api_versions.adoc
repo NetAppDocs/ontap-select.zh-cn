@@ -6,6 +6,7 @@ summary: ONTAP Select Deploy 附带的 REST API 分配有一个版本号。API �
 ---
 = 部署 API 版本控制
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 如果使用软件 RAID 的驱动器出现故障， ONTAP Select 将使
 ---
 = 使用软件 RAID 时更换故障驱动器
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

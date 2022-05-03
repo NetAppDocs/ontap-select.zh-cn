@@ -6,6 +6,7 @@ summary: 您可以使用一个工作流过程来部署 ONTAP Select 集群。
 ---
 = ONTAP Select 安装和部署工作流
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

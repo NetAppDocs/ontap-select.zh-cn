@@ -6,6 +6,7 @@ summary: 在 VMware 环境中安装 Deploy 管理实用程序之前，请查看�
 ---
 = Deploy 实用程序安装所需信息
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

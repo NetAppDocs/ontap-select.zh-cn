@@ -6,6 +6,7 @@ summary: ONTAP Select 非常适合支持组织中的一个或多个私有云。�
 ---
 = 私有云和数据中心
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

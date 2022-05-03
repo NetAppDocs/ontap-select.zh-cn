@@ -6,6 +6,7 @@ summary: 您可以使用以下脚本根据脚本和 JSON 输入文件中定义�
 ---
 = 用于创建集群的脚本
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

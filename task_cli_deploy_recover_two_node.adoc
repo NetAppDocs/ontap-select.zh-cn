@@ -6,6 +6,7 @@ summary: 如果 ONTAP Select Deploy 实用程序因某种原因失败或变得�
 ---
 = 恢复双节点集群的 Deploy 实用程序
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -227,5 +228,5 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见重新安装容量池许可证。
 
 link:task_install_deploy.html["安装 ONTAP Select Deploy"]
-
-
+link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["将 Deploy 配置数据还原到新虚拟机"]
+link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安装容量池许可证"]

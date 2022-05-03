@@ -6,6 +6,7 @@ summary: 发现高可用性选项，为您的环境选择最佳的 HA 配置。
 ---
 = 高可用性配置
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

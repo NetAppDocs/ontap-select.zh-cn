@@ -6,6 +6,7 @@ summary: 每次 Deploy API 调用都会作为 HTTP 请求执行给 Deploy 虚拟
 ---
 = 请求和响应 API 事务
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

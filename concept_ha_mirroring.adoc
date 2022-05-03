@@ -6,6 +6,7 @@ summary: 使用 RAID SyncMirror （ RSM ），镜像聚合和写入路径防止�
 ---
 = HA RSM 和镜像聚合
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

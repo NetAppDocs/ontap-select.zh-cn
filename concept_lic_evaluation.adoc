@@ -6,6 +6,7 @@ summary: 如果您要在决定购买之前评估 ONTAP Select ，可以使用评
 ---
 = 评估版许可证
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

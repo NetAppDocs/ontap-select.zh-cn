@@ -6,6 +6,7 @@ summary: 由于 REST Web 服务具有固有的灵活性，因此可以通过多�
 ---
 = 如何访问 Deploy API
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

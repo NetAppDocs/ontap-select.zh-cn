@@ -6,6 +6,7 @@ summary: 您可以浏览和显示网络的几个方面。
 ---
 = 确认网络连接
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

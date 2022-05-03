@@ -6,6 +6,7 @@ summary: 与 VMware 环境相关，您应考虑几个硬件要求和规划问题
 ---
 = VMware 虚拟机管理程序和硬件注意事项
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

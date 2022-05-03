@@ -6,6 +6,7 @@ summary: 您需要使用 SSH 登录到 Deploy 管理 Shell 。登录后，您可
 ---
 = 使用 SSH 登录到 Deploy
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

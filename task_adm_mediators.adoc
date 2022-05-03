@@ -6,6 +6,7 @@ summary: 每个 ONTAP Select 双节点集群都由调解器服务监控，该服
 ---
 = 管理 Deploy 调解器服务
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

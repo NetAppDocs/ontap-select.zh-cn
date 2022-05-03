@@ -6,6 +6,7 @@ summary: 在您开始探索 ONTAP Select 并规划部署时，首先熟悉术语
 ---
 = 术语和关键概念
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -19,7 +20,7 @@ ONTAP Select 部署:: ONTAP Select Deploy 是用于部署 ONTAP Select 集群的
 虚拟机管理程序主机与 ONTAP Select 节点:: 虚拟机管理程序 host_ 是托管 ONTAP Select 虚拟机的核心硬件平台。在虚拟机管理程序主机上部署 ONTAP Select 虚拟机并使其处于活动 ONTAP Select 状态时，该虚拟机将被视为 _vp 节点 _ 。
 ONTAP Select 集群:: 您可以创建一 ONTAP Select 个 _cluster cluster_ ，其中包含一个，两个，四个，六个或八个节点。多节点集群始终包含一个或多个 HA 对。例如，一个四节点集群包含两个 HA 对。单节点集群不提供 HA 功能。
 准备虚拟机管理程序主机环境:: 在使用 Deploy 管理实用程序部署 ONTAP Select 集群之前，您需要准备要运行 ONTAP Select 的虚拟机管理程序主机，包括存储和网络环境。此主机预配置是在 ONTAP Select 产品之外根据当前要求和限制完成的。
-评估与生产部署::
+评估与生产部署:: 每个 ONTAP Select 节点都使用 _evaluation_license_ 或 _purchased license_ 运行。您可以使用评估版许可证在将 ONTAP Select 部署到生产环境之前对其进行评估。评估版许可证会自动生成并应用。如果在生产环境中部署集群，则必须购买许可证，其中包括选择：
 +
 --
 * 许可模式
@@ -31,7 +32,7 @@ ONTAP Select 集群:: 您可以创建一 ONTAP Select 个 _cluster cluster_ ，�
 容量层许可模式:: 在为 ONTAP Select 部署授予存储许可时，容量层许可模式是最初的选项。它基于与 NetApp AFF 和 FAS 结合使用的 ONTAP 模型。每个节点都需要一个单独的许可证。存储容量将锁定到节点并永久存在（无需续订）。
 容量池许可模式:: 容量池许可模式是在使用 Deploy 2.10 的 ONTAP Select 9.5 中引入的。每个存储容量池都需要一个单独的许可证。容量池许可证会锁定到 License Manager 实例（即 Deploy 实例），并且必须根据购买条款进行续订。您可以在组织中许可和使用任意数量的容量池。但是，由于容量池由 ONTAP Select 节点共享，因此所需的许可证通常少于容量层许可。
 许可证管理器:: License Manager 是一个支持容量池许可的软件组件。它目前是 Deploy 管理实用程序的一部分。LM 会从其管理的共享池中将存储租用给 ONTAP Select 节点。_License Lock ID_ 是一个数字字符串，用于唯一标识每个 LM 实例以及每个 Deploy 实例。您必须同时使用容量池许可证序列号和 LLID 来生成许可证文件。
-平台许可证产品::
+平台许可证产品:: 您可以通过三种许可证选项来确定购买许可证时 ONTAP Select 虚拟机的大小功能：
 +
 --
 * 标准
@@ -46,7 +47,7 @@ ONTAP Select 集群:: 您可以创建一 ONTAP Select 个 _cluster cluster_ ，�
 
 存储池与数据存储库:: ONTAP Select _storage pool_ 是一个逻辑数据容器，用于抽象化和隐藏底层物理存储。存储池与虚拟机管理程序无关。在 ESXi 虚拟机管理程序主机上部署时， ONTAP Select 存储池与 vmware_datastorage_ 同义。
 集群 MTU:: 集群 MTU 是一项功能，可用于配置 ONTAP Select 多节点集群使用的内部网络上使用的 MTU 大小。在配置 HA 对以适应网络环境时， Deploy 管理实用程序会调整 MTU 大小。您也可以手动设置此值。
-ONTAP Select vNAS::
+ONTAP Select vNAS:: ONTAP Select vNAS 解决方案 允许 ONTAP Select 节点访问外部存储上的 VMware 数据存储库。对于 ONTAP Select vNAS ，不再需要本地 RAID 控制器； RAID 功能假定由远程存储提供。可以通过以下方式配置 ONTAP Select vNAS ：
 +
 --
 * VMware vSAN
@@ -58,7 +59,7 @@ ONTAP Select vNAS::
 
 在这两种情况下，都必须在创建 ONTAP Select 集群或扩展现有节点的存储容量之前配置外部存储。
 
-节点重新托管::
+节点重新托管:: 如果您部署的集群使用通过 ONTAP Select vNAS 解决方案 （ VMware vSAN 或通用外部存储阵列）提供的外部存储，则可以通过使用以下 VMware 功能的操作移动托管 ONTAP Select 节点的 ESXi 虚拟机：
 +
 --
 * VMotion
@@ -84,7 +85,7 @@ CAUTION: 如果您有一个或多个活动双节点集群，则管理这些集�
 
 MetroCluster SDS:: MetroCluster SDS 是一项功能，可在部署双节点 ONTAP Select 集群时提供额外的配置选项。与典型的双节点 ROBO 部署不同， MetroCluster SDS 节点可以相隔更远的距离。通过这种物理隔离，可以实现其他使用情形，例如灾难恢复。要使用 MetroCluster SDS ，您必须具有高级许可证或更高版本。此外，节点之间的网络必须满足最低延迟要求。
 凭据存储:: Deploy 凭据存储是一个安全数据库，用于保存帐户凭据。它主要用于在创建新集群时注册虚拟机管理程序主机。有关详细信息，请参见 _Plan_ 一节。
-存储效率::
+存储效率:: ONTAP Select 提供的存储效率选项与 FAS 和 AFF 阵列上的存储效率选项类似。从概念上讲，采用直连存储（ DAS ） SSD 的 ONTAP Select （使用高级许可证）类似于 AFF 阵列。使用带有 HDD 的 DAS 的配置以及所有 vNAS 配置应视为类似于 FAS 阵列。这两种配置之间的主要区别在于，采用 DAS SSD 的 ONTAP Select 支持实时聚合级重复数据删除和聚合级后台重复数据删除。其余存储效率选项可用于这两种配置。
 +
 --
 vNAS 默认配置可启用称为单实例数据日志记录（ SIDl ）的写入优化功能。在 ONTAP Select 9.6 及更高版本中，后台 ONTAP 存储效率功能已通过启用 SIDl 的认证。有关详细信息，请参见 _deep dive 部分。

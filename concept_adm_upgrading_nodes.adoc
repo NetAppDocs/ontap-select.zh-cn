@@ -6,6 +6,7 @@ summary: 部署 ONTAP Select 集群后，您可以根据需要使用标准 ONTAP
 ---
 = 升级 ONTAP Select 节点
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

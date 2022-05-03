@@ -6,6 +6,7 @@ summary: 在为 Deploy vCenter 插件提供支持时，您应了解可用的故�
 ---
 = 故障排除
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

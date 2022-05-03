@@ -6,6 +6,7 @@ summary: ONTAP Select MetroCluster SDS 提供增强的保护功能和经济高�
 ---
 = MetroCluster 软件定义的存储
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -34,4 +35,4 @@ ONTAP Select MetroCluster SDS 具有以下优势：
 
 image:MCSDS_01.jpg["基于 DAS 的私有云"]
 
-有关更多最佳实践和其他要求，请参见各节 link:concept_ha_config.html#two-node-ha-versus-multi-node-ha["双节点 HA 与多节点 HA"] 和 。
+有关更多最佳实践和其他要求，请参见各节 link:concept_ha_config.html#two-node-ha-versus-multi-node-ha["双节点 HA 与多节点 HA"] 和 link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["双节点延伸型 HA （ MetroCluster SDS ）最佳实践"]。

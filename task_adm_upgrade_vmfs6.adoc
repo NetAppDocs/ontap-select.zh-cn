@@ -6,6 +6,7 @@ summary: VMware 不支持从 VMFS 5 原位升级到 VMFS 6 。您可以使用 St
 ---
 = 使用 Storage vMotion 升级到 VMFS6
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

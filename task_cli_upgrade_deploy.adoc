@@ -6,6 +6,7 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 ---
 = 升级 Deploy 实例
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

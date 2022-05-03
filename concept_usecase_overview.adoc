@@ -6,6 +6,7 @@ summary: 根据通过虚拟机管理程序虚拟化提供的固有灵活性， O
 ---
 = 业务需求和使用情形
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

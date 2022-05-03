@@ -6,6 +6,7 @@ summary: 适用于 ONTAP Select Deploy 的 VMware vCenter 插件专为在 VMware
 ---
 = Deploy vCenter 插件概述
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

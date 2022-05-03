@@ -6,6 +6,7 @@ summary: 在使用 Python 代码示例创建或删除 ONTAP Select 集群时，�
 ---
 = 用于创建集群的脚本的 JSON
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

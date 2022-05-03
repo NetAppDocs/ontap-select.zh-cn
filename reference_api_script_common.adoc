@@ -6,6 +6,7 @@ summary: 所有 Python 脚本都在一个模块中使用一个通用 Python 类�
 ---
 = 通用支持模块
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 使用 Ansible 角色自动执行 ONTAP Select 部署。
 ---
 = 利用 Ansible 实现 ONTAP Select 部署自动化
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 您可以使用示例 Python 脚本执行多种不同的任务。在实
 ---
 = 了解 Python 脚本
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

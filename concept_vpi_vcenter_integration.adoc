@@ -6,6 +6,7 @@ summary: Deploy 插件与 vCenter Server 紧密集成。由于这种集成，您
 ---
 = 部署插件和 vCenter 集成
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

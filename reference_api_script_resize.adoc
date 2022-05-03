@@ -6,6 +6,7 @@ summary: 您可以使用以下脚本调整 ONTAP Select 集群中节点的大小
 ---
 = 用于调整集群节点大小的脚本
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 准备部署 ONTAP Select 节点的每个虚拟机管理程序主机。
 ---
 = 主机配置和准备检查清单
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

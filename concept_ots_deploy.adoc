@@ -6,6 +6,7 @@ summary: ONTAP Select Deploy 是用于部署和管理 ONTAP Select 集群的管�
 ---
 = ONTAP Select 部署
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 您可以从 vCenter Server 中手动删除 Deploy 插件。
 ---
 = 从 vCenter 中手动删除 Deploy 插件
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

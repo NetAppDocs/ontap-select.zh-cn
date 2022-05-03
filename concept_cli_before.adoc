@@ -6,6 +6,7 @@ summary: 您可以使用 SSH 访问 Deploy 管理 Shell 。登录后，您可以
 ---
 = 开始之前
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

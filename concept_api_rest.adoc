@@ -6,6 +6,7 @@ summary: 表述性状态传输（ Representational State Transfer ， REST ）�
 ---
 = REST Web 服务基础
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

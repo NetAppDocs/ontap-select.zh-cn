@@ -6,6 +6,7 @@ summary: 容量池和容量层许可模式之间存在多种差异。
 ---
 = 比较容量池和容量层许可
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

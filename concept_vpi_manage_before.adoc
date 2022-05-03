@@ -6,6 +6,7 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 ---
 = 开始之前
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

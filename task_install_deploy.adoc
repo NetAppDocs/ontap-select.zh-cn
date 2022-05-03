@@ -6,6 +6,7 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 ---
 = 安装 ONTAP Select Deploy
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

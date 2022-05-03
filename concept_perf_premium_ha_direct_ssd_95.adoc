@@ -6,6 +6,7 @@ summary: ONTAP Select 9.5 性能—高级 HA 直连 SSD 存储。
 ---
 = ONTAP Select 9.5 性能：高级 HA 直连 SSD 存储
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 您可以使用命令行界面将 Deploy 管理实用程序的现有实
 ---
 = 将 Deploy 实例迁移到新虚拟机
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

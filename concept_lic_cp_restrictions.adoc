@@ -6,6 +6,7 @@ summary: 下面介绍了使用容量池许可模式时适用的限制。
 ---
 = 容量池许可的部署限制
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
