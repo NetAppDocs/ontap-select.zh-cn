@@ -21,7 +21,7 @@ summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONT
 * ESXi 主机不受 vCenter （独立主机）管理
 * 集群中使用多个节点或主机
 * 集群使用已购买的许可证部署在生产环境中
-* 使用 KVM 虚拟机管理程序代替 VMware ESXi （从 ONTAP Select 9.10.1 开始，不再支持 KVM ）
+* 使用KVM虚拟机管理程序代替VMware ESXi (使用ONTAP Select 9.10.1及更高版本创建新集群时、不再支持KVM)
 
 
 

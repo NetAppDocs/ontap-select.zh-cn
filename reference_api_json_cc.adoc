@@ -168,7 +168,7 @@ summary: 在使用 Python 代码示例创建或删除 ONTAP Select 集群时，�
 == KVM 上的单节点集群
 
 
-NOTE: 从 ONTAP Select 9.10.1 开始，不再支持 KVM 虚拟机管理程序。以下示例适用于支持 KVM 的早期版本。
+NOTE: 从ONTAP Select 9.10.1开始、创建新集群时不再支持KVM虚拟机管理程序。以下示例适用于支持 KVM 的早期版本。
 
 [source, json]
 ----

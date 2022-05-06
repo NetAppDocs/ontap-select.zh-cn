@@ -17,7 +17,7 @@ summary: 查找有关 ONTAP Select 的常见问题的答案。
 查找有关 ONTAP Select 的常见问题的答案。
 
 
-NOTE: 从 ONTAP Select 9.10.1 开始，不再支持 KVM 虚拟机管理程序。有关 KVM 的问题仅适用于支持 KVM 的早期版本。
+NOTE: 从ONTAP Select 9.10.1开始、创建新集群时不再支持KVM虚拟机管理程序。有关KVM的问题仅适用于支持KVM的早期版本。
 
 
 
@@ -156,7 +156,7 @@ AFF/FAS 上提供的所有 RAID 方法也可供 ONTAP Select 使用。其中包�
 
 软件 RAID 的一些要求如下：
 
-* 支持 KVM 和 ESX
+* 支持ESX和KVM (ONTAP Select 9.10.1之前的版本)
 * 支持的物理磁盘大小： 200 GB – 32 TB
 * 仅在 DAS 配置上受支持
 * 仅支持 SSD

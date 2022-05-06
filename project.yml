@@ -9,7 +9,7 @@ settings:
   langs: zh-cn,us-en,ja-jp,zh-tw,ko-kr
 sidebar:
   entries:
-  - title: ONTAP Select 9.10.1 文档
+  - title: ONTAP Select 文档
     url: "/index.html"
   - title: 发行说明
     url: "/reference_release_notes.html"
