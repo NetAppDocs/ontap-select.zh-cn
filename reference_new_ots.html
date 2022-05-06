@@ -1423,7 +1423,7 @@
   });
 </script><div class="sidebar-nav-container">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-select/index.html">
-        ONTAP Select 9.10.1 文档
+        ONTAP Select 文档
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/ontap-select/reference_release_notes.html">
         发行说明
       </a></li><li class="subfolders "><a href="#">
@@ -1826,7 +1826,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-05-06 18:22:33 +0000">05/06/2022</time>
     
   
 
@@ -1841,21 +1841,24 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="增强了对vmware-esxi的支持">增强了对VMware ESXi的支持</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ONTAP Select 9.11.1支持VMware ESXi 7.0 U3C。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="支持-vmware-nsx-t">支持 VMware NSX-T</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ONTAP Select 9.10.1 已通过 VMware NSX-T 3.1.2 的认证。将 NSX-T 与使用 OVA 文件和 ONTAP Select Deploy 管理实用程序部署的 ONTAP Select 单节点集群结合使用时，不存在任何功能问题或缺陷。但是，在将 NSX-T 与 ONTAP Select 多节点集群结合使用时，应注意以下要求和限制：</p>
+<p>ONTAP Select 9.10.1 已通过 VMware NSX-T 3.1.2 的认证。将 NSX-T 与使用 OVA 文件和 ONTAP Select Deploy 管理实用程序部署的 ONTAP Select 单节点集群结合使用时，不存在任何功能问题或缺陷。</p>
+</div>
+<div class="paragraph">
+<p>但是、在将NSX-T与ONTAP Select 多节点集群结合使用时、您应注意ONTAP Select 9.11.1的以下要求和限制：</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">集群 MTU</dt>
-<dd>
-<p>在部署集群之前，您必须手动将集群 MTU 大小调整为 8800 ，以考虑额外的开销。VMware 准则允许在使用 NSX-T 时使用 200 字节的缓冲区</p>
-</dd>
-<dt class="hdlist1">网络 4x10 Gb 配置</dt>
-<dd>
-<p>对于在配置有四个 NIC 的 VMware ESXi 主机上部署 ONTAP Select 的情况， Deploy 实用程序将提示您遵循最佳实践，即在两个不同的端口组之间拆分内部流量，并在两个不同的端口组之间拆分外部流量。但是，在使用覆盖网络时，此配置不起作用，您应忽略此建议。在这种情况下，您只能使用一个内部端口组和一个外部端口组。</p>
-</dd>
 <dt class="hdlist1">网络连接检查程序</dt>
 <dd>
 <p>在基于 NSX-T 的网络上运行 Deploy CLI 提供的网络连接检查程序时，此检查程序将失败。</p>
@@ -1868,7 +1871,13 @@
 <h2 id="不再支持-kvm-虚拟机管理程序">不再支持 KVM 虚拟机管理程序</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。但是，如果您将集群从先前版本升级到 9.10.1 ，则仍可使用 Deploy 实用程序管理集群。</p>
+<p>不再支持KVM虚拟机管理程序。</p>
+</div>
+<div class="paragraph">
+<p>从ONTAP Select 9.10.1及更高版本开始、您将无法再使用Deploy实用程序创建基于KVM的新集群或添加基于KVM的主机。此外、9.10.1是支持现有KVM集群和主机联机等易管理性功能的最后一个版本。</p>
+</div>
+<div class="paragraph">
+<p>然后、从ONTAP Select 9.11.1及更高版本开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。</p>
 </div>
 </div>
 </div>
