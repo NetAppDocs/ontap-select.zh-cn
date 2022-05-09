@@ -3629,7 +3629,6 @@
   <block id="b21133b863e352c7e380ae8974198a75" category="list-text"><block ref="b21133b863e352c7e380ae8974198a75" category="inline-link-macro-rx"></block></block>
   <block id="d36f4205c301fa0311580c2426a17881" category="list-text">使用KVM虚拟机管理程序代替VMware ESXi (使用ONTAP Select 9.10.1及更高版本创建新集群时、不再支持KVM)</block>
   <block id="91f528f33d4be79010000f66d8e7792c" category="inline-link">《ONTAP Select 9.11.1发行说明》</block>
-  <block id="035f3963e6805da6ba00f69f4e5ea8fd" category="paragraph">您可以访问<block ref="7ed889202f2b282e8463fa03128c4ef2" category="inline-link-rx"></block> 可查看当前版本的详细信息。</block>
   <block id="b25679a7bebb3b9795d3926792d8c9a9" category="paragraph">MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。请注意、ONTAP Select 9.10.1及更高版本不再支持KVM。</block>
   <block id="0ec7f2d003cb42f9464107b0ad854843" category="admonition">从ONTAP Select 9.10.1开始、在部署新的ONTAP Select 集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">虚拟机管理程序您可以部署到ESXi或KVM (取决于Deploy版本)。部署到 ESXi 时，虚拟机管理程序可以由 vCenter 进行管理，也可以是独立主机。</block>
@@ -3646,4 +3645,5 @@
   <block id="d0a2c35dd24f48a701484a2c0e0e4e2a" category="list-text">支持ESX和KVM (ONTAP Select 9.10.1之前的版本)</block>
   <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">从ONTAP Select 9.10.1开始、部署新集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">ONTAP Select 文档</block>
+  <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">您可以访问<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> 可查看有关当前版本的详细信息。</block>
 </blocks>
