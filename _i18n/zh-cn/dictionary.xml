@@ -1373,7 +1373,6 @@
   <block id="3e7e570e683be353e09e19562e3196f3" category="paragraph">从较高层面来看，此任务由三部分组成。您必须重新生成并安装 Deploy 实例使用的所有容量池许可证。将所有许可证重新安装到新的 Deploy 实例后，您可以根据需要重置序列号。最后，如果 Deploy IP 地址已更改，则必须更新使用容量池许可证的每个 ONTAP Select 节点。</block>
   <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">请联系 NetApp 支持部门，取消绑定并取消注册原始 Deploy 实例的所有容量池许可证。</block>
   <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">获取并下载每个容量池许可证的新许可证文件。</block>
-  <block id="345c5eb90afb9e2e8ee266e94ccbe0f1" category="paragraph">有关详细信息，请参见获取容量池许可证 _ 。</block>
   <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">在新 Deploy 实例上安装容量池许可证：</block>
   <block id="99683d4e14f8df30b153000825273e2d" category="list-text">单击 * 许可证 * ，然后单击 * 容量池 * 。</block>
   <block id="095bb96ffb3551a58960c96316107d76" category="list-text">单击 * 添加 * ，然后单击 * 上传许可证 * 以选择并上传许可证。</block>
@@ -3646,4 +3645,5 @@
   <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">从ONTAP Select 9.10.1开始、部署新集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">ONTAP Select 文档</block>
   <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">您可以访问<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> 可查看有关当前版本的详细信息。</block>
+  <block id="88d96915de77c1959098b364119959de" category="paragraph">请参见 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
 </blocks>
