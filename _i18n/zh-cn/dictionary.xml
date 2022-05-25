@@ -1064,10 +1064,6 @@
   <block id="f3c1a1c8717be55597746058712a8a41" category="paragraph">部署单节点集群时，您不需要内部网络，应删除 -internal-network 。</block>
   <block id="c2f2bd4587b8c71cf8e299f386400e66" category="list-text">显示节点的配置：</block>
   <block id="733447df59e9b9f51345490bc3341e5d" category="paragraph">`node show -name nodename -cluster-name clustername -detailed`</block>
-  <block id="9a71b3cdddddadb8fe576b697592d9b1" category="section-title">将存储连接到 ONTAP Select 节点</block>
-  <block id="d76b42af4750ab47db6807261ff568d9" category="paragraph">您必须配置 ONTAP Select 集群中每个节点使用的存储。必须至少为每个节点分配一个存储池。</block>
-  <block id="ae494932199568deba5542920a6c52e0" category="paragraph">您必须已使用 VMware vSphere 创建存储池。</block>
-  <block id="8cc64aa381816d6fe67efbffa850dced" category="paragraph">此操作步骤 假定使用本地硬件 RAID 控制器。您应在 ONTAP Select 集群中的每个节点上配置存储。</block>
   <block id="d07e64799eaa81c2e7811d55f1faaaf1" category="list-text">显示主机上可用的存储池：</block>
   <block id="9646f070282208e61d267e28e7ef6bb1" category="paragraph">`host storage pool show -host-name &lt;FQDN_IP&gt;`</block>
   <block id="3457f038144b809169e1a74a423ab6b6" category="paragraph">您也可以通过 VMware vSphere 获取可用存储池。</block>
@@ -1894,10 +1890,6 @@
   <block id="67550f4cdbfd87619a6b9d0a3b78729e" category="paragraph"><block ref="67550f4cdbfd87619a6b9d0a3b78729e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="aa93950c1aed200eaa527c1dac76c135" category="inline-link-macro">双节点 HA 与多节点 HA</block>
   <block id="2873f708ad14d01a4941aae540a49300" category="paragraph">有关更多最佳实践和其他要求，请参见各节 <block ref="b5a87e2c6cb220b53b8486e8e1bc1eac" category="inline-link-macro-rx"></block> 和 <block ref="3a9138e6cecc138f508a809e03f2cd7a" category="inline-link-macro-rx"></block>。</block>
-  <block id="672f48d2ec82ec522a85cf3df49eb607" category="summary">ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。</block>
-  <block id="24c73c70fff103725b0dc81f21473d67" category="paragraph">在部署集群时， ONTAP Select 会自动为每个节点授予多项功能的许可。</block>
-  <block id="4c174b0c4d6417356173383c959c14a8" category="section-title">包括的功能</block>
-  <block id="f7cc5fa2aa671dbb06fcdd7df278e0e6" category="paragraph">默认情况下，包括以下功能并获得许可：</block>
   <block id="c6546b53840ec8245dd4d4d70fcdbc26" category="list-text">CIFS</block>
   <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="list-text">iSCSI</block>
   <block id="794cb725c5631ad99b5b7c000307f0df" category="list-text">SnapMirror</block>
@@ -1908,8 +1900,6 @@
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">重复数据删除和数据压缩</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">ONTAP 多租户功能</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp 卷加密（仅限非受限国家或地区）</block>
-  <block id="dee52e4036e8b3203de4ad54ebf51957" category="section-title">单独许可的功能</block>
-  <block id="fe1bc1414ac4d3ff24ab13de6ded84ae" category="paragraph">您必须为任何其他功能获取单独的许可证，包括：</block>
   <block id="8fe0c9f8f23d1eb8317ecbfc3412e145" category="list-text">SnapLock 企业</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="cd4d0565c73e994a0df5b7c0a072acc6" category="list-text">数据可用性服务</block>
@@ -3337,10 +3327,7 @@
   <block id="fb1dff3ec52367cdb90456fabf48600c" category="paragraph">`sservice-control —启动 vsphere-client`</block>
   <block id="acd7d62c9b810f0d5861712e738fb732" category="summary">如果使用软件 RAID 的驱动器出现故障， ONTAP Select 将使用备用驱动器（如果有）并自动启动重建过程。这与 FAS 和 AFF 上的 ONTAP 的工作原理类似。但是，如果没有可用的备用驱动器，则需要向 ONTAP Select 节点添加一个。</block>
   <block id="aeb7169d045185953deed3c0de3865f8" category="doc">使用软件 RAID 时更换故障驱动器</block>
-  <block id="22e35b7624c291099f06269e559eb73a" category="admonition">必须通过 ONTAP Deploy 删除故障驱动器和添加新驱动器（标记为备用驱动器）。不支持使用 vSphere 将驱动器连接到 ONTAP Select VM 。</block>
   <block id="d790a7cfad60ef9c4cf133fdbf5d8644" category="section-title">确定故障驱动器</block>
-  <block id="c6451675a58dba4a0d99c6ccf691cb92" category="paragraph">驱动器出现故障后，请使用 Deploy 实用程序命令行界面确定出现故障的磁盘。</block>
-  <block id="a9f7dbddb14939c805024201a3e1b090" category="list-text">确定发生故障的磁盘。</block>
   <block id="307bdb5a979a863911e3c77799901dec" category="section-title">删除故障驱动器</block>
   <block id="0ab4ad97846d3de95e1f2d091028d9ed" category="paragraph">确定出现故障的驱动器后，请删除该磁盘。</block>
   <block id="eecedba88893e3e14bfd8006f68186d1" category="list-text">使用管理员帐户登录到 Deploy Web 用户界面。</block>
@@ -3646,4 +3633,25 @@
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">ONTAP Select 文档</block>
   <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">您可以访问<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> 可查看有关当前版本的详细信息。</block>
   <block id="88d96915de77c1959098b364119959de" category="paragraph">请参见 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
+  <block id="d0730ff14b2f6fb53d9e49978a76660e" category="summary">ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。</block>
+  <block id="0deac5caf37785bb3c3ce0d80f8d8d18" category="admonition">ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP 功能。</block>
+  <block id="8132b1f57834df621ea1aedaa548729e" category="section-title">默认情况下、ONTAP 功能会自动启用</block>
+  <block id="d4370df695508d400d73750728248ebe" category="paragraph">ONTAP Select 附带了以下功能、默认情况下已获得许可：</block>
+  <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
+  <block id="a56a12489213d10b531398efee448f95" category="section-title">单独许可的ONTAP 功能</block>
+  <block id="585f4a038bba40a29999437c007446e9" category="paragraph">对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：</block>
+  <block id="6dec3523c85f378f79fcf83c82e21868" category="paragraph">如果使用软件RAID的驱动器发生故障、ONTAP Select 会分配一个可用的备用驱动器、并自动启动重建过程。这与ONTAP 在FAS 和AFF 上的工作方式类似。但是、如果没有可用的备用驱动器、则需要向ONTAP Select 节点添加一个。</block>
+  <block id="483b2bdf1e13fa583e93f86544ae9ee4" category="admonition">必须通过ONTAP Select Deploy删除故障驱动器和添加新驱动器(标记为备用驱动器)。不支持使用 vSphere 将驱动器连接到 ONTAP Select VM 。</block>
+  <block id="04985546e9771cbfe818d7c08949cb4e" category="paragraph">如果驱动器出现故障、您需要使用ONTAP 命令行界面来识别故障磁盘。</block>
+  <block id="76b45a86afe9ddfec423de5caad088a5" category="list-text">使用管理员帐户登录到ONTAP 命令行界面。</block>
+  <block id="56f32587956bc806f4ffe1823a1a1872" category="list-text">确定发生故障的磁盘驱动器。</block>
+  <block id="562e70611d61b3bdd5fa02c1473d7fb3" category="section-title">将存储连接到ONTAP Select 节点</block>
+  <block id="866ece73832a5308b812e48e59ba8a4f" category="paragraph">您必须配置ONTAP Select 集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。</block>
+  <block id="f31242a3b10d57ca87f84e612994d57c" category="paragraph">您必须使用VMware vSphere创建存储池。如果您使用的是软件RAID、则还需要至少一个可用磁盘驱动器。</block>
+  <block id="2976fb0a07ffd25ea274d2cc9bc187be" category="paragraph">使用本地硬件RAID控制器时、需要执行步骤1到4。使用软件RAID时、您需要执行步骤1到步骤6。</block>
+  <block id="cc6982c020bc97509cfd68e72db0524e" category="list-text">使用管理员帐户凭据使用SSH登录到Deploy实用程序命令行界面。</block>
+  <block id="1d0fd2b207143cd0cbfe1f1eca67206a" category="list-text">如果您使用的是软件RAID、请连接可用驱动器：</block>
+  <block id="477b4fc07bc021818bf99ca0a2f9a370" category="paragraph">`node storage disk attach -node-name nodename -cluster-name clustername -disks list_of_drives`</block>
+  <block id="10d4b2d6f8c74f79bcce5324cfbda150" category="list-text">如果您使用的是软件RAID、请显示连接到节点的磁盘：</block>
+  <block id="f1efe358bd22df5ef0bdf73fc9e8d10b" category="paragraph">`node storage disk show -node-name nodename -cluster-name clustername`</block>
 </blocks>

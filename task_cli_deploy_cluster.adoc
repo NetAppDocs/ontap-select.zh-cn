@@ -24,7 +24,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 
 
-===== 准备将存储连接到 ONTAP Select 节点
+=== 准备将存储连接到 ONTAP Select 节点
 
 如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根聚合和数据聚合至少创建一个存储池。在配置 ONTAP Select 节点时，您必须连接存储池。
 
@@ -32,13 +32,13 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 
 
-===== 可用的 ONTAP Select 版本
+=== 可用的 ONTAP Select 版本
 
 Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_adm_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
 
 
 
-===== 为生产部署授予 ONTAP Select 许可
+=== 为生产部署授予 ONTAP Select 许可
 
 在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 _capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool_ 型号为共享池授予许可。
 
@@ -238,16 +238,16 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
-== 将存储连接到 ONTAP Select 节点
+== 将存储连接到ONTAP Select 节点
 
-您必须配置 ONTAP Select 集群中每个节点使用的存储。必须至少为每个节点分配一个存储池。
+您必须配置ONTAP Select 集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。
 
-您必须已使用 VMware vSphere 创建存储池。
+您必须使用VMware vSphere创建存储池。如果您使用的是软件RAID、则还需要至少一个可用磁盘驱动器。
 
-此操作步骤 假定使用本地硬件 RAID 控制器。您应在 ONTAP Select 集群中的每个节点上配置存储。
+使用本地硬件RAID控制器时、需要执行步骤1到4。使用软件RAID时、您需要执行步骤1到步骤6。
 
 .步骤
-. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 使用管理员帐户凭据使用SSH登录到Deploy实用程序命令行界面。
 . 显示主机上可用的存储池：
 +
 `host storage pool show -host-name <FQDN_IP>`
@@ -290,6 +290,30 @@ node-name test-cluster-01 -capacity-limit 500GB
 [listing]
 ----
 node storage pool show -cluster-name test-cluster -node-name testcluster-01
+----
+. 如果您使用的是软件RAID、请连接可用驱动器：
++
+`node storage disk attach -node-name nodename -cluster-name clustername -disks list_of_drives`
+
++
+示例
+
++
+[listing]
+----
+node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000:66:00.0 0000:67:00.0 0000:68:00.0
+----
+. 如果您使用的是软件RAID、请显示连接到节点的磁盘：
++
+`node storage disk show -node-name nodename -cluster-name clustername`
+
++
+示例
+
++
+[listing]
+----
+node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 ----
 
 

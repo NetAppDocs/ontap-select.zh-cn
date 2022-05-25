@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference_lic_ontap_features.html 
 keywords: license, licensing, ontap features, default ontap features 
-summary: ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。 
+summary: ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。 
 ---
-= 默认情况下， ONTAP 功能处于启用状态
+= ONTAP 功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,16 @@ summary: ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的
 
 
 [role="lead"]
-ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。
-
-在部署集群时， ONTAP Select 会自动为每个节点授予多项功能的许可。
+ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。
 
 
+NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP 功能。
 
-===== 包括的功能
 
-默认情况下，包括以下功能并获得许可：
+
+== 默认情况下、ONTAP 功能会自动启用
+
+ONTAP Select 附带了以下功能、默认情况下已获得许可：
 
 * NFS
 * CIFS
@@ -34,14 +35,15 @@ ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除
 * NetApp 卷加密
 * 重复数据删除和数据压缩
 * ONTAP 多租户功能
+* ONTAP S3
 * NetApp 卷加密（仅限非受限国家或地区）
 
 
 
 
-===== 单独许可的功能
+=== 单独许可的ONTAP 功能
 
-您必须为任何其他功能获取单独的许可证，包括：
+对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：
 
 * SnapLock 企业
 * FabricPool
