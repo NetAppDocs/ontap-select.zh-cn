@@ -1835,7 +1835,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-05-25 16:11:02 +0000">05/25/2022</time>
     
   
 
@@ -1845,7 +1845,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>如果使用软件 RAID 的驱动器出现故障， ONTAP Select 将使用备用驱动器（如果有）并自动启动重建过程。这与 FAS 和 AFF 上的 ONTAP 的工作原理类似。但是，如果没有可用的备用驱动器，则需要向 ONTAP Select 节点添加一个。</p>
+<p>如果使用软件RAID的驱动器发生故障、ONTAP Select 会分配一个可用的备用驱动器、并自动启动重建过程。这与ONTAP 在FAS 和AFF 上的工作方式类似。但是、如果没有可用的备用驱动器、则需要向ONTAP Select 节点添加一个。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1854,7 +1854,7 @@
 <img src="/us-en/ontap-select/images/note.svg" alt="注">
 </td>
 <td class="content">
-必须通过 ONTAP Deploy 删除故障驱动器和添加新驱动器（标记为备用驱动器）。不支持使用 vSphere 将驱动器连接到 ONTAP Select VM 。
+必须通过ONTAP Select Deploy删除故障驱动器和添加新驱动器(标记为备用驱动器)。不支持使用 vSphere 将驱动器连接到 ONTAP Select VM 。
 </td>
 </tr>
 </table>
@@ -1865,16 +1865,16 @@
 <h2 id="确定故障驱动器">确定故障驱动器</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>驱动器出现故障后，请使用 Deploy 实用程序命令行界面确定出现故障的磁盘。</p>
+<p>如果驱动器出现故障、您需要使用ONTAP 命令行界面来识别故障磁盘。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>使用管理员帐户登录到 Deploy 实用程序命令行界面。</p>
+<p>使用管理员帐户登录到ONTAP 命令行界面。</p>
 </li>
 <li>
-<p>确定发生故障的磁盘。</p>
+<p>确定发生故障的磁盘驱动器。</p>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;cluster name&gt;::&gt; storage disk show -container-type broken

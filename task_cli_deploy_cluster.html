@@ -1835,7 +1835,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-05-25 16:11:02 +0000">05/25/2022</time>
     
   
 
@@ -1855,8 +1855,8 @@
 <div class="paragraph">
 <p>在 ESXi 上创建 ONTAP Select 集群之前，您应了解所需的准备工作。</p>
 </div>
-<div class="sect4">
-<h5 id="准备将存储连接到-ontap-select-节点">准备将存储连接到 ONTAP Select 节点</h5>
+<div class="sect2">
+<h3 id="准备将存储连接到-ontap-select-节点">准备将存储连接到 ONTAP Select 节点</h3>
 <div class="paragraph">
 <p>如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根聚合和数据聚合至少创建一个存储池。在配置 ONTAP Select 节点时，您必须连接存储池。</p>
 </div>
@@ -1864,14 +1864,14 @@
 <p>如果使用软件 RAID ，则必须为系统数据创建存储池，并确保 SSD 驱动器可用于根聚合和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="可用的-ontap-select-版本">可用的 ONTAP Select 版本</h5>
+<div class="sect2">
+<h3 id="可用的-ontap-select-版本">可用的 ONTAP Select 版本</h3>
 <div class="paragraph">
 <p>Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <a href="task_adm_deploy_image_add.html">"添加要部署的 ONTAP Select 映像"</a> 有关详细信息 &#8230;&#8203;</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="为生产部署授予-ontap-select-许可">为生产部署授予 ONTAP Select 许可</h5>
+<div class="sect2">
+<h3 id="为生产部署授予-ontap-select-许可">为生产部署授予 ONTAP Select 许可</h3>
 <div class="paragraph">
 <p>在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 <em>capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool</em> 型号为共享池授予许可。</p>
 </div>
@@ -2155,22 +2155,22 @@ exit</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="将存储连接到-ontap-select-节点">将存储连接到 ONTAP Select 节点</h2>
+<h2 id="将存储连接到ontap-select-节点">将存储连接到ONTAP Select 节点</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您必须配置 ONTAP Select 集群中每个节点使用的存储。必须至少为每个节点分配一个存储池。</p>
+<p>您必须配置ONTAP Select 集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。</p>
 </div>
 <div class="paragraph">
-<p>您必须已使用 VMware vSphere 创建存储池。</p>
+<p>您必须使用VMware vSphere创建存储池。如果您使用的是软件RAID、则还需要至少一个可用磁盘驱动器。</p>
 </div>
 <div class="paragraph">
-<p>此操作步骤 假定使用本地硬件 RAID 控制器。您应在 ONTAP Select 集群中的每个节点上配置存储。</p>
+<p>使用本地硬件RAID控制器时、需要执行步骤1到4。使用软件RAID时、您需要执行步骤1到步骤6。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。</p>
+<p>使用管理员帐户凭据使用SSH登录到Deploy实用程序命令行界面。</p>
 </li>
 <li>
 <p>显示主机上可用的存储池：</p>
@@ -2218,6 +2218,34 @@ node-name test-cluster-01 -capacity-limit 500GB</pre>
 <div class="listingblock">
 <div class="content">
 <pre>node storage pool show -cluster-name test-cluster -node-name testcluster-01</pre>
+</div>
+</div>
+</li>
+<li>
+<p>如果您使用的是软件RAID、请连接可用驱动器：</p>
+<div class="paragraph">
+<p><code>node storage disk attach -node-name nodename -cluster-name clustername -disks list_of_drives</code></p>
+</div>
+<div class="paragraph">
+<p>示例</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000:66:00.0 0000:67:00.0 0000:68:00.0</pre>
+</div>
+</div>
+</li>
+<li>
+<p>如果您使用的是软件RAID、请显示连接到节点的磁盘：</p>
+<div class="paragraph">
+<p><code>node storage disk show -node-name nodename -cluster-name clustername</code></p>
+</div>
+<div class="paragraph">
+<p>示例</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>node storage disk show -node-name sdot-smicro-009a -cluster-name NVME</pre>
 </div>
 </div>
 </li>

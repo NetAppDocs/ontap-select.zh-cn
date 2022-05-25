@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head class="at-element-marker">
-  <title>默认情况下， ONTAP 功能处于启用状态</title>
+  <title>ONTAP 功能</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="默认情况下， ONTAP 功能处于启用状态" />
+  <meta property="og:title" content="ONTAP 功能" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/zh-cn/ontap-select/reference_lic_ontap_features.html" />
-	<meta property="og:description" content="ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。" />
+	<meta property="og:description" content="ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-cn/ontap-select/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。">
   <meta name="keywords" content=" license, licensing, ontap features, default ontap features"><!-- Icons -->
   <link rel="icon" href="/zh-cn/ontap-select/images/favicon.ico" type="image/x-icon">
 
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/issues/new?body=Page%3A%20[默认情况下， ONTAP 功能处于启用状态](https://docs.netapp.com/zh-cn/ontap-select/reference_lic_ontap_features.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-select/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/blob/main/reference_lic_ontap_features.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-select/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/ontap-select/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/issues/new?body=Page%3A%20[ONTAP 功能](https://docs.netapp.com/zh-cn/ontap-select/reference_lic_ontap_features.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-select/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/blob/main/reference_lic_ontap_features.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/ontap-select/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/ontap-select/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -1828,14 +1828,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">默认情况下， ONTAP 功能处于启用状态</h1>
+  <h1 class="n-doc__component-detail-heading">ONTAP 功能</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-05-25 16:11:02 +0000">05/25/2022</time>
     
   
 
@@ -1845,17 +1845,27 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>ONTAP Select 完全支持大多数 ONTAP 功能，但与硬件相关的功能除外。</p>
+<p>ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="注">
+</td>
+<td class="content">
+ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP 功能。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="默认情况下ontap-功能会自动启用">默认情况下、ONTAP 功能会自动启用</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>在部署集群时， ONTAP Select 会自动为每个节点授予多项功能的许可。</p>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="包括的功能">包括的功能</h5>
-<div class="paragraph">
-<p>默认情况下，包括以下功能并获得许可：</p>
+<p>ONTAP Select 附带了以下功能、默认情况下已获得许可：</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1890,15 +1900,17 @@
 <p>ONTAP 多租户功能</p>
 </li>
 <li>
+<p>ONTAP S3</p>
+</li>
+<li>
 <p>NetApp 卷加密（仅限非受限国家或地区）</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect4">
-<h5 id="单独许可的功能">单独许可的功能</h5>
+<div class="sect2">
+<h3 id="单独许可的ontap-功能">单独许可的ONTAP 功能</h3>
 <div class="paragraph">
-<p>您必须为任何其他功能获取单独的许可证，包括：</p>
+<p>对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1941,6 +1953,8 @@
 <p><a href="concept_ots_overview.html#comparing-ontap-select-and-ontap-9">"比较 ONTAP Select 和 ONTAP 9"</a></p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 
