@@ -159,7 +159,7 @@ AFF/FAS 上提供的所有 RAID 方法也可供 ONTAP Select 使用。其中包�
 * 支持ESX和KVM (ONTAP Select 9.10.1之前的版本)
 * 支持的物理磁盘大小： 200 GB – 32 TB
 * 仅在 DAS 配置上受支持
-* 仅支持 SSD
+* 支持SSD或NVMe
 * 需要高级版或高级版 XL ONTAP Select 许可证
 * 硬件 RAID 控制器应不存在或已禁用，或者应在 SAS HBA 模式下运行
 * 必须将基于专用 LUN 的 LVM 存储池或数据存储库用于系统磁盘：核心转储，启动 /NVRAM 和调解器。

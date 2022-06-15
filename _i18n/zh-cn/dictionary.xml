@@ -713,7 +713,6 @@
   <block id="6ec2a86943d66b46f70e5d87ac537fd4" category="paragraph">软件 RAID 的一些要求如下：</block>
   <block id="daa9446dd725dfc008580c725c26e90b" category="list-text">支持的物理磁盘大小： 200 GB – 32 TB</block>
   <block id="94615c9042eb14ee228868c999ca7b3b" category="list-text">仅在 DAS 配置上受支持</block>
-  <block id="103ab2c767b1be091ad46e82ec44d53c" category="list-text">仅支持 SSD</block>
   <block id="aba50a4db4f2d357e877595c641130a5" category="list-text">需要高级版或高级版 XL ONTAP Select 许可证</block>
   <block id="6bc864440af96dd0ce3cfac81f642cc2" category="list-text">硬件 RAID 控制器应不存在或已禁用，或者应在 SAS HBA 模式下运行</block>
   <block id="f249bf8d9e4b8c7b417b66fb9c6c3c90" category="list-text">必须将基于专用 LUN 的 LVM 存储池或数据存储库用于系统磁盘：核心转储，启动 /NVRAM 和调解器。</block>
@@ -1248,15 +1247,6 @@
   <block id="68a547a08a3ebb293924c580b641ce65" category="paragraph">* 网络最低配置和建议配置 *</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="cell"></block>
   <block id="523bd57fcc837e7be7bc3b0cd4b52afa" category="cell">最低要求</block>
-  <block id="5259ae4afb5996ff48788b2fa720114c" category="cell">建议</block>
-  <block id="27a08f8dae649f80b5adc97cf7ed216e" category="cell">单节点集群</block>
-  <block id="c427a9a2fab6b24f6b7ff4100579a75c" category="cell">2 个 1 Gb</block>
-  <block id="bb81903d791182b6c510f5328e456c82" category="cell">2 个 10 Gb</block>
-  <block id="37fcdf053dd0dacaa320af1b91afcf77" category="cell">双节点集群 /MetroCluster SDS</block>
-  <block id="d65313238bf052bcd4da75255bc1229a" category="cell">4 个 1 Gb 或 1 个 10 Gb</block>
-  <block id="cb3b967446da7c765f29874d3af83439" category="cell">4/6/8 节点集群</block>
-  <block id="b3923a8eb8f81681199fa22056cdedc2" category="cell">4 个 10 Gb 或 2 个 25/40 Gb</block>
-  <block id="cc781d9852a683d49b415b4724ced3f1" category="paragraph">* 使用多个物理交换机的网络配置 * 如果有足够的硬件可用， NetApp 建议使用下图所示的多交换机配置，因为这样可以增强对物理交换机故障的保护。</block>
   <block id="976b2628d60825feb0397b7cb29e1ab5" category="inline-image-macro">使用多个物理交换机进行网络配置</block>
   <block id="d08307744845f9100511e47ff88bc61a" category="paragraph"><block ref="d08307744845f9100511e47ff88bc61a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bb3e372088c34ecc97b747d050480dd5" category="summary">在安装和管理 Deploy vCenter 插件之前，您需要执行以下几项操作。</block>
@@ -2848,14 +2838,9 @@
   <block id="e974ba73413c61605294fbea7a63f880" category="paragraph">请参见<block ref="6989237bb21ab12eea7660d1d2c0793b" category="inline-link-rx"></block> 有关详细信息 ...</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬件要求</block>
   <block id="6e789a662664596fd2f867b83af8955a" category="paragraph">无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。</block>
-  <block id="e22b6495595f2c4ad67a830d1be05c6e" category="list-text">处理器</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon 处理器， window=_blank</block>
   <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">适用于服务器的 Intel Xeon 处理器（请参见 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 有关详细信息，请参见）</block>
-  <block id="1d6cab2018d0973fc42f97393441359e" category="list-text">以太网网络端口</block>
-  <block id="f165a91cf573cd6d747aacd35dfe0df9" category="list-text">4 个 10GbE （建议）</block>
   <block id="7538c6fd2c1f96ec16f31ff621c5090f" category="list-text">2 个 10GbE</block>
-  <block id="48eb25fbf1bf64862fe4e24ffa80f025" category="list-text">4 个 1GbE （仅适用于双节点 ROBO 集群）</block>
-  <block id="b40ce30b0ea7008987849cf8b3de219c" category="list-text">2 个 1GbE （仅适用于单节点集群）</block>
   <block id="d55a9ba430190ded23c2d10278bfb65d" category="section-title">根据实例类型确定的其他硬件要求</block>
   <block id="bfc8cbb02384bbb523227067dcadb07e" category="paragraph">根据节点实例类型，还需要满足多项其他硬件要求。</block>
   <block id="7e64fd00098cc9d082a7cbbea21dc2a5" category="inline-link-macro">了解平台许可证产品</block>
@@ -3654,4 +3639,16 @@
   <block id="477b4fc07bc021818bf99ca0a2f9a370" category="paragraph">`node storage disk attach -node-name nodename -cluster-name clustername -disks list_of_drives`</block>
   <block id="10d4b2d6f8c74f79bcce5324cfbda150" category="list-text">如果您使用的是软件RAID、请显示连接到节点的磁盘：</block>
   <block id="f1efe358bd22df5ef0bdf73fc9e8d10b" category="paragraph">`node storage disk show -node-name nodename -cluster-name clustername`</block>
+  <block id="1a4f0dd8a8bf6109c981c282ef6e87c9" category="paragraph">支持的微处理器包括：</block>
+  <block id="9adc1cc3490cf88dcf6538833825d06d" category="paragraph">根据集群大小、可以使用多种受支持的以太网配置。</block>
+  <block id="28f29271814291e43be7deaba751046b" category="cell">集群大小</block>
+  <block id="c76e3867213cff8946148c6510af0736" category="cell">建议</block>
+  <block id="b57920e2838d0b8c1570a84513bd3391" category="cell">单节点集群</block>
+  <block id="84b6dad36f332d459c3cbbff61102611" category="cell">2个1GbE</block>
+  <block id="76d2b682f134359232d4f4b954c5e1a3" category="cell">双节点集群或MetroCluster SDS</block>
+  <block id="0ea5b2cd33e45a6a2df81dcad2a5045d" category="cell">4个1GbE或1个10GbE</block>
+  <block id="f2f0116ae4525605fa023e57cc038a7e" category="cell">4/6/8节点集群</block>
+  <block id="aabad23ff55f6490dcedde7b5fc7b430" category="cell">4个10GbE或2个25/40GbE</block>
+  <block id="e329a903fac418f23c3deeab45b989ff" category="paragraph">如果有足够的硬件可用、NetApp建议使用下图所示的多交换机配置、因为这样可以增强保护、防止物理交换机出现故障。</block>
+  <block id="cf3d9f4201951d721713f10886d41ddb" category="list-text">支持SSD或NVMe</block>
 </blocks>
