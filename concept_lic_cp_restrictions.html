@@ -1827,61 +1827,36 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 11:37:06 +0000">06/17/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>下面介绍了使用容量池许可模式时适用的限制。</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="每个集群的许可模式一致">每个集群的许可模式一致</h3>
 <div class="paragraph">
 <p>一个 ONTAP Select 集群中的所有节点都必须使用相同的许可模式，即容量层或容量池。您不能在一个集群中混用节点的许可类型。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="集群中的所有节点都使用同一个-license-manager-实例">集群中的所有节点都使用同一个 License Manager 实例</h3>
 <div class="paragraph">
 <p>ONTAP Select 集群中具有容量池许可证的所有节点都必须使用同一个 License Manager 实例。由于每个 Deploy 实例中都有一个 License Manager 实例，因此，此限制重新说明了一个集群中的所有节点都必须由同一个 Deploy 实例管理的现有要求。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="每个节点一个容量池">每个节点一个容量池</h3>
 <div class="paragraph">
 <p>每个节点只能从一个容量池租用存储。一个节点不能使用两个或更多池。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="ha-对中的节点使用同一个池">HA 对中的节点使用同一个池</h3>
 <div class="paragraph">
 <p>一个 HA 对中的两个节点都必须从同一个容量池租用存储。但是，同一集群中的不同 HA 对可以从同一 License Manager 管理的不同池中租用存储。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="存储许可证持续时间">存储许可证持续时间</h3>
 <div class="paragraph">
 <p>从 NetApp 获取存储许可证时，必须选择许可证有效期。例如，许可证的有效期可能为一年。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="数据聚合租约有效期">数据聚合租约有效期</h3>
 <div class="paragraph">
 <p>当 ONTAP Select 节点请求数据聚合的存储租约时，许可证管理器会根据容量池的配置提供一个特定持续时间的租约。您可以将每个池的租约期限配置为一小时到七天之间。默认租约有效期为 24 小时。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="分配给-deploy-的静态-ip-地址">分配给 Deploy 的静态 IP 地址</h3>
 <div class="paragraph">
 <p>使用容量池许可时，您必须为 Deploy 管理实用程序分配一个静态 IP 地址。</p>
-</div>
 </div>
 
     </article>

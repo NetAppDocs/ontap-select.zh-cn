@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 11:37:06 +0000">06/17/2022</time>
     
   
 
@@ -1841,14 +1841,17 @@
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="虚拟机管理程序主机与-ontap-select-节点">虚拟机管理程序主机与 ONTAP Select 节点</h5>
+<div class="sect1">
+<h2 id="虚拟机管理程序主机与-ontap-select-节点">虚拟机管理程序主机与 ONTAP Select 节点</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>虚拟机管理程序 host_ 是托管 ONTAP Select 虚拟机的核心硬件平台。在虚拟机管理程序主机上部署 ONTAP Select 虚拟机并使其处于活动 ONTAP Select 状态时，该虚拟机将被视为 _vp 节点 _ 。在 Deploy REST API 版本 3 中，主机和节点对象是独立的。这样就可以建立一对多关系，其中一个或多个 ONTAP Select 节点可以在同一虚拟机管理程序主机上运行。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="对象标识符">对象标识符</h5>
+</div>
+<div class="sect1">
+<h2 id="对象标识符">对象标识符</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>创建每个资源实例或对象时，系统会为其分配一个唯一标识符。这些标识符在 ONTAP Select Deploy 的特定实例中具有全局唯一性。发出创建新对象实例的 API 调用后，相关 ID 值将返回到 HTTP 响应的 <code>location</code> 标头中的调用程序。在引用资源实例时，您可以提取此标识符并在后续调用中使用它。</p>
 </div>
@@ -1865,14 +1868,18 @@
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="请求标识符">请求标识符</h5>
+</div>
+<div class="sect1">
+<h2 id="请求标识符">请求标识符</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>每个成功的 API 请求都会分配一个唯一标识符。此标识符将在关联 HTTP 响应的 <code>requis-id</code> 标头中返回。您可以使用请求标识符来统称单个特定 API 请求响应事务的活动。例如，您可以根据请求 ID 检索事务的所有事件消息。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="同步和异步调用">同步和异步调用</h5>
+</div>
+<div class="sect1">
+<h2 id="同步和异步调用">同步和异步调用</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>服务器执行从客户端收到的 HTTP 请求的主要方式有两种：</p>
 </div>
@@ -1887,8 +1894,10 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="确认长时间运行的作业完成">确认长时间运行的作业完成</h5>
+</div>
+<div class="sect1">
+<h2 id="确认长时间运行的作业完成">确认长时间运行的作业完成</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>通常，任何可能需要很长时间才能完成的操作都会在服务器上使用后台任务异步处理。使用 Deploy REST API 时，每个后台任务都会通过一个作业对象进行锁定，此作业对象会跟踪任务并提供信息，例如当前状态。创建后台任务后，将在 HTTP 响应中返回作业对象，包括其唯一标识符。</p>
 </div>
@@ -1909,8 +1918,10 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="安全性">安全性</h5>
+</div>
+<div class="sect1">
+<h2 id="安全性">安全性</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Deploy API 使用以下安全技术：</p>
 </div>
@@ -1923,6 +1934,7 @@
 <p>HTTP 身份验证基本身份验证用于每个 API 事务。每个请求都会添加一个 HTTP 标头，其中包含 base64 字符串中的用户名和密码。</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 

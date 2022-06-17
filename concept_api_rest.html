@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 11:37:06 +0000">06/17/2022</time>
     
   
 
@@ -1841,14 +1841,17 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="架构和传统限制">架构和传统限制</h3>
+<div class="sect1">
+<h2 id="架构和传统限制">架构和传统限制</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>而其余内容则由 Roy Fielding 博士正式阐述 <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">"Dissertation"</a> 2000 年在 UC Irvine 大会上。它通过一组限制来定义架构模式，这些限制共同改进了基于 Web 的应用程序和底层协议。这些限制会根据使用无状态通信协议的客户端 / 服务器架构建立 RESTful Web 服务应用程序。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="资源和状态表示">资源和状态表示</h3>
+</div>
+<div class="sect1">
+<h2 id="资源和状态表示">资源和状态表示</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>资源是基于 Web 的系统的基本组件。创建 REST Web 服务应用程序时，早期设计任务包括：</p>
 </div>
@@ -1866,14 +1869,18 @@
 <p>客户端和服务器之间会交换消息，以便根据通用 CRUD （创建，读取，更新和删除）模式访问和更改资源的状态。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="uri-端点">URI 端点</h3>
+</div>
+<div class="sect1">
+<h2 id="uri-端点">URI 端点</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>必须使用定义明确的寻址方案定义和提供每个 REST 资源。资源所在的端点和标识的端点使用统一资源标识符（ Uniform Resource Identifier ， URI ）。URI 提供了一个通用框架，用于为网络中的每个资源创建唯一名称。统一资源定位器（ Uniform Resource Locator ， URL ）是一种用于 Web 服务的 URI 类型，用于标识和访问资源。资源通常以类似于文件目录的分层结构公开。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="http-消息">HTTP 消息</h3>
+</div>
+<div class="sect1">
+<h2 id="http-消息">HTTP 消息</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>超文本传输协议（ HTTP ）是 Web 服务客户端和服务器用来交换有关资源的请求和响应消息的协议。在设计 Web 服务应用程序时， HTTP 动词（例如 GET 和 POST ）会映射到资源以及相应的状态管理操作。</p>
 </div>
@@ -1881,10 +1888,13 @@
 <p>HTTP 为无状态。因此，要在一个事务下关联一组相关请求和响应，追加信息 必须包含在请求 / 响应数据流附带的 HTTP 标头中。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="json-格式化">JSON 格式化</h3>
+</div>
+<div class="sect1">
+<h2 id="json-格式化">JSON 格式化</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>虽然信息可以通过多种方式在客户端和服务器之间进行结构化和传输，但最常用的选项（以及 Deploy REST API 中使用的选项）是 JavaScript 对象表示法（ JSON ）。JSON 是一种行业标准，用于以纯文本形式表示简单数据结构，并用于传输描述资源的状态信息。</p>
+</div>
 </div>
 </div>
 

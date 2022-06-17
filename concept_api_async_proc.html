@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 11:37:06 +0000">06/17/2022</time>
     
   
 
@@ -1841,8 +1841,9 @@
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="使用作业对象描述的异步请求">使用作业对象描述的异步请求</h5>
+<div class="sect1">
+<h2 id="使用作业对象描述的异步请求">使用作业对象描述的异步请求</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>发出异步运行的 API 调用后， HTTP 响应代码 202 表示此请求已成功验证并被接受，但尚未完成。此请求将作为后台任务进行处理，在对客户端进行初始 HTTP 响应后，此任务将继续运行。响应包括作业对象锁定请求，包括其唯一标识符。</p>
 </div>
@@ -1859,8 +1860,10 @@
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="正在查询与-api-请求关联的作业对象">正在查询与 API 请求关联的作业对象</h5>
+</div>
+<div class="sect1">
+<h2 id="正在查询与-api-请求关联的作业对象">正在查询与 API 请求关联的作业对象</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>HTTP 响应中返回的作业对象包含多个属性。您可以查询 state 属性以确定请求是否成功完成。作业对象可以处于以下状态之一：</p>
 </div>
@@ -1919,8 +1922,10 @@
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="用于发出异步请求的常规操作步骤">用于发出异步请求的常规操作步骤</h5>
+</div>
+<div class="sect1">
+<h2 id="用于发出异步请求的常规操作步骤">用于发出异步请求的常规操作步骤</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>您可以使用以下高级操作步骤完成异步 API 调用。</p>
 </div>
@@ -1952,6 +1957,7 @@
 <p>当作业达到终端状态（成功，失败）时停止。</p>
 </li>
 </ol>
+</div>
 </div>
 </div>
 
