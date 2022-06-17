@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
@@ -1847,50 +1847,27 @@
 <div class="paragraph">
 <p>您应在尝试恢复 Deploy 实用程序实例之前做好准备，以确保成功。</p>
 </div>
-<div class="sect4">
-<h5 id="所需技能和信息">所需技能和信息</h5>
 <div class="paragraph">
 <p>您应熟悉几个管理过程并掌握所需的信息。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="安装-deploy-虚拟机">安装 Deploy 虚拟机</h5>
 <div class="paragraph">
 <p>您必须能够在虚拟机管理程序环境中安装 ONTAP Select Deploy 实用程序的新实例。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="ontap-命令行界面">ONTAP 命令行界面</h5>
 <div class="paragraph">
 <p>您必须能够登录到 ONTAP Select 集群的 ONTAP 命令行界面并使用 Shell 界面。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="deploy-实用程序配置备份的可用性">Deploy 实用程序配置备份的可用性</h5>
 <div class="paragraph">
 <p>您必须确定是否已备份包含 ONTAP Select 双节点集群的失败 Deploy 实用程序实例中的配置数据。您的备份可能不包含集群。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="还原-deploy-配置的备份">还原 Deploy 配置的备份</h5>
 <div class="paragraph">
 <p>根据使用的恢复操作步骤 ，您应该能够还原 Deploy 配置数据的备份。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="原始-deploy-虚拟机的-ip-地址">原始 Deploy 虚拟机的 IP 地址</h5>
 <div class="paragraph">
 <p>您必须知道出现故障的原始 Deploy 实用程序虚拟机的 IP 地址。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="存储容量许可">存储容量许可</h5>
 <div class="paragraph">
 <p>您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可，则必须在恢复或还原 Deploy 实例后重新安装每个容量池许可证。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="确定要使用的恢复操作步骤">确定要使用的恢复操作步骤</h5>
 <div class="paragraph">
 <p>您必须确定在恢复 ONTAP Select Deploy 实用程序实例时要使用的操作步骤 。您的决定取决于您是否已从包含 ONTAP Select 双节点集群的原始故障 Deploy 实用程序中备份配置数据。</p>
 </div>
@@ -1916,7 +1893,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2148,10 +2124,19 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 <div class="paragraph">
 <p>如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见重新安装容量池许可证。</p>
 </div>
-<div class="paragraph">
-<p><a href="task_install_deploy.html">"安装 ONTAP Select Deploy"</a><br>
-<a href="task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine">"将 Deploy 配置数据还原到新虚拟机"</a><br>
-<a href="task_adm_licenses.html#reinstalling-a-capacity-pool-license">"重新安装容量池许可证"</a></p>
+<div class="ulist">
+<div class="title">相关信息</div>
+<ul>
+<li>
+<p><a href="task_install_deploy.html">"安装 ONTAP Select Deploy"</a></p>
+</li>
+<li>
+<p><a href="task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine">"将 Deploy 配置数据还原到新虚拟机"</a></p>
+</li>
+<li>
+<p><a href="task_adm_licenses.html#reinstalling-a-capacity-pool-license">"重新安装容量池许可证"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

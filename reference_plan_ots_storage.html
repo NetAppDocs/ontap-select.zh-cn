@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
@@ -1916,8 +1916,8 @@
 <div class="paragraph">
 <p>在 VMware ESXi 虚拟机管理程序上部署 ONTAP Select 集群时，您可以使用 ONTAP Select 提供的软件 RAID 功能，而不是本地硬件 RAID 控制器。在使用软件 RAID 部署集群之前，您必须了解一些要求和限制。</p>
 </div>
-<div class="sect3">
-<h4 id="一般要求">一般要求</h4>
+<div class="sect2">
+<h3 id="一般要求">一般要求</h3>
 <div class="paragraph">
 <p>在 VMware ESXi 上部署软件 RAID 的环境必须满足以下核心要求：</p>
 </div>
@@ -1982,7 +1982,7 @@
 <img src="/us-en/ontap-select/images/note.svg" alt="注">
 </td>
 <td class="content">
-如果存在硬件 RAID 控制器，请参见 <a href="concept_stor_concepts_chars.html">"存储"</a> 有关其他配置要求，请参见 _deep dive 下的一节。
+如果存在硬件 RAID 控制器，请参见 <a href="concept_stor_concepts_chars.html">"深度剖析存储"</a> 第节、了解其他配置要求。
 </td>
 </tr>
 </table>
@@ -1995,8 +1995,8 @@
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="ontap-select-节点配置">ONTAP Select 节点配置</h4>
+<div class="sect2">
+<h3 id="ontap-select-节点配置">ONTAP Select 节点配置</h3>
 <div class="paragraph">
 <p>您必须按如下所示配置每个 ONTAP Select 节点和虚拟机管理程序主机，以便将系统磁盘与根聚合和数据聚合分开：</p>
 </div>
@@ -2034,14 +2034,14 @@ ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Sel
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="正在计算原始存储容量">正在计算原始存储容量</h4>
+<div class="sect2">
+<h3 id="正在计算原始存储容量">正在计算原始存储容量</h3>
 <div class="paragraph">
 <p>ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的虚拟数据和根磁盘的总允许大小。分配容量时应考虑这一点。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="单节点集群的最小存储容量">单节点集群的最小存储容量</h4>
+<div class="sect2">
+<h3 id="单节点集群的最小存储容量">单节点集群的最小存储容量</h3>
 <div class="paragraph">
 <p>为单节点集群中的节点分配的最小存储池大小为：</p>
 </div>
@@ -2059,8 +2059,8 @@ ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Sel
 <p>生产部署的最小分配量包括 1 TB 的用户数据，加上各种 ONTAP Select 内部流程使用的 266 GB ，这是必需的开销。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="多节点集群的最小存储容量">多节点集群的最小存储容量</h4>
+<div class="sect2">
+<h3 id="多节点集群的最小存储容量">多节点集群的最小存储容量</h3>
 <div class="paragraph">
 <p>为多节点集群中的每个节点分配的存储池的最小大小为：</p>
 </div>
@@ -2090,8 +2090,8 @@ HA 对中的每个节点都必须具有相同的存储容量。
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="存储容量和多个存储池">存储容量和多个存储池</h4>
+<div class="sect2">
+<h3 id="存储容量和多个存储池">存储容量和多个存储池</h3>
 <div class="paragraph">
 <p>使用本地直连存储， VMware vSAN 或外部存储阵列时，您可以将每个 ONTAP Select 节点配置为最多使用 400 TB 的存储。但是，使用直连存储或外部存储阵列时，单个存储池的最大大小为 64 TB 。因此，如果您计划在这些情况下使用 64 TB 以上的存储，则必须按如下所示分配多个存储池：</p>
 </div>
@@ -2118,14 +2118,14 @@ HA 对中的每个节点都必须具有相同的存储容量。
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="存储容量和-vmware-vsan">存储容量和 VMware vSAN</h4>
+<div class="sect2">
+<h3 id="存储容量和-vmware-vsan">存储容量和 VMware vSAN</h3>
 <div class="paragraph">
 <p>使用 VMware vSAN 时，数据存储库可能会大于 64 TB 。但是，在创建 ONTAP Select 集群时，您最初只能分配最多 64 TB 的容量。创建集群后，您可以从现有 vSAN 数据存储库分配更多存储。ONTAP Select 可以使用的 vSAN 数据存储库容量取决于所设置的 VM 存储策略。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="最佳实践">最佳实践</h4>
+<div class="sect2">
+<h3 id="最佳实践">最佳实践</h3>
 <div class="paragraph">
 <p>对于虚拟机管理程序核心硬件，您应考虑以下建议：</p>
 </div>
@@ -2157,27 +2157,16 @@ HA 对中的每个节点都必须具有相同的存储容量。
 </tr>
 </table>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">标准</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">标准</div>
 <ul>
 <li>
 <p>8 到 60 个内部 HDD （ NL-SAS ， SATA ， 10K SAS ）</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">高级版</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">高级版</div>
 <ul>
 <li>
 <p>8 到 60 个内部 HDD （ NL-SAS ， SATA ， 10K SAS ）</p>
@@ -2187,14 +2176,8 @@ HA 对中的每个节点都必须具有相同的存储容量。
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">高级版 xl</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">高级版 xl</div>
 <ul>
 <li>
 <p>8 到 60 个内部 HDD （ NL-SAS ， SATA ， 10K SAS ）</p>
@@ -2206,11 +2189,6 @@ HA 对中的每个节点都必须具有相同的存储容量。
 <p>4 到 14 个内部 NVMe</p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</dd>
-</dl>
 </div>
 <div class="admonitionblock note">
 <table>

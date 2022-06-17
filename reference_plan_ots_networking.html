@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
@@ -1841,8 +1841,9 @@
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="虚拟交换机选项">虚拟交换机选项</h4>
+<div class="sect1">
+<h2 id="虚拟交换机选项">虚拟交换机选项</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>您必须在每个 ONTAP Select 主机上配置一个虚拟交换机，以支持外部网络和内部网络（仅限多节点集群）。在部署多节点集群过程中，您应测试内部集群网络上的网络连接。</p>
 </div>
@@ -1859,8 +1860,10 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="升级到-vmxnet3">升级到 VMXNET3</h4>
+</div>
+<div class="sect1">
+<h2 id="升级到-vmxnet3">升级到 VMXNET3</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将现有 ONTAP Select 节点升级到 9.5 或更高版本，则不会自动升级此驱动程序。</p>
 </div>
@@ -1877,8 +1880,10 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="集群-mtu">集群 MTU</h4>
+</div>
+<div class="sect1">
+<h2 id="集群-mtu">集群 MTU</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>使用单独的内部网络连接多节点集群中的 ONTAP Select 节点。此网络的 MTU 大小通常为 9000 。但是，在某些情况下，此 MTU 大小对于连接 ONTAP Select 节点的网络来说过大。为了容纳较小的帧，内部网络上 ONTAP Select 使用的 MTU 大小可以介于 7500-9000 字节之间。</p>
 </div>
@@ -1911,8 +1916,10 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="采用标准-vswitch-的双-nic-主机">采用标准 vSwitch 的双 NIC 主机</h4>
+</div>
+<div class="sect1">
+<h2 id="采用标准-vswitch-的双-nic-主机">采用标准 vSwitch 的双 NIC 主机</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>为了提高双 NIC 配置中的 ONTAP Select 性能，您应使用两个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：</p>
 </div>
@@ -1932,13 +1939,8 @@
 <div class="paragraph">
 <p>在此环境中，您应按如下所示使用两个端口组配置流量：</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">端口组 1</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">端口组 1</div>
 <ul>
 <li>
 <p>内部网络（集群， RSM ， HA-IC 流量）</p>
@@ -1951,14 +1953,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">端口组 2</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">端口组 2</div>
 <ul>
 <li>
 <p>外部网络（数据和管理流量）</p>
@@ -1971,17 +1967,14 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
-<p>有关双 NIC 部署的详细信息，请参见 _deep dive _ 一节。</p>
+<p>请参见 <a href="concept_nw_concepts_chars.html">"深度剖析网络"</a> 第节、了解有关双NIC部署的详细信息。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="采用标准-vswitch-的四-nic-主机">采用标准 vSwitch 的四 NIC 主机</h4>
+</div>
+<div class="sect1">
+<h2 id="采用标准-vswitch-的四-nic-主机">采用标准 vSwitch 的四 NIC 主机</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>为了提高四 NIC 配置中的 ONTAP Select 性能，您应使用四个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：</p>
 </div>
@@ -2001,13 +1994,8 @@
 <div class="paragraph">
 <p>在此环境中，您应使用以下四个端口组配置流量：</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">端口组 1</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">端口组 1</div>
 <ul>
 <li>
 <p>内部网络（集群， RSM 流量）</p>
@@ -2020,14 +2008,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">端口组 2</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">端口组 2</div>
 <ul>
 <li>
 <p>内部网络（集群， HA-IC 流量）</p>
@@ -2040,14 +2022,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">端口组 3.</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">端口组 3.</div>
 <ul>
 <li>
 <p>外部网络（数据和管理流量）</p>
@@ -2060,14 +2036,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">端口组 4.</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">端口组 4.</div>
 <ul>
 <li>
 <p>外部网络（数据流量）</p>
@@ -2080,27 +2050,20 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
-<p>有关四 NIC 部署的详细信息，请参见 _deep dive _ 一节。</p>
+<p>请参见 <a href="concept_nw_concepts_chars.html">"深度剖析网络"</a> 第节、了解有关四NIC部署的详细信息。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="网络流量要求">网络流量要求</h4>
+</div>
+<div class="sect1">
+<h2 id="网络流量要求">网络流量要求</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>您必须确保已正确配置防火墙，以使网络流量能够在 ONTAP Select 部署环境中的各个参与者之间流动。</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">参与者</dt>
-<dd>
+<div class="paragraph">
 <p>在 ONTAP Select 部署中，有多个参与者或实体会交换网络流量。这些内容将介绍，然后在网络流量要求的摘要问题描述 中使用。</p>
-<div class="openblock">
-<div class="content">
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2123,14 +2086,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">网络流量要求摘要</dt>
-<dd>
+<div class="paragraph">
 <p>下表介绍了 ONTAP Select 部署的网络流量要求。</p>
-</dd>
-</dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2188,6 +2145,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 
     </article>

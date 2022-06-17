@@ -1827,22 +1827,16 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>使用 HA 部署双节点集群所涉及的规划和配置与其他集群节点配置所使用的规划和配置相同。但是，在创建双节点集群时，您应注意几个不同之处。</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="目标环境">目标环境</h4>
 <div class="paragraph">
 <p>双节点集群由一个 HA 对组成，专为远程办公室和分支机构部署而设计。</p>
 </div>
@@ -1858,15 +1852,9 @@
 </tr>
 </table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="许可">许可</h4>
 <div class="paragraph">
 <p>您可以使用任何 VMware vSphere 许可证部署双节点集群。但是， VMware ROBO 标准版和高级版许可证非常适合远程办公室和分支机构部署。</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="调解器服务">调解器服务</h4>
 <div class="paragraph">
 <p>如果集群包含两个节点，则在节点出现故障或失去通信时，无法达到所需的仲裁。为了解决这些类型的脑裂问题， ONTAP Select Deploy 实用程序的每个实例都包含一个调解器服务。此服务连接到活动双节点集群中的每个节点，以监控 HA 对并协助管理故障。调解器服务会在与每个双节点集群关联的专用 iSCSI 目标上维护 HA 状态信息。</p>
 </div>
@@ -1882,24 +1870,14 @@
 </tr>
 </table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="集群和调解器服务的位置">集群和调解器服务的位置</h4>
 <div class="paragraph">
 <p>由于双节点集群通常部署在远程办公室或分支机构中，因此它们可以与企业数据中心和提供管理支持的 Deploy 实用程序处于远程位置。使用此配置时， Deploy 实用程序和集群之间的管理流量将通过 WAN 传输。有关限制和限制的详细信息，请参见发行说明。</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="备份-deploy-配置数据">备份 Deploy 配置数据</h4>
 <div class="paragraph">
 <p>最佳做法是定期备份 Deploy 配置数据，包括在创建集群后备份。对于双节点集群来说，这一点尤为重要，因为备份中包含调解器配置数据。</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="分配给-deploy-的静态-ip-地址">分配给 Deploy 的静态 IP 地址</h4>
 <div class="paragraph">
 <p>您必须为 Deploy 管理实用程序分配一个静态 IP 地址。此要求适用场景 All Deploy 实例用于管理一个或多个 ONTAP Select 双节点集群。</p>
-</div>
 </div>
 
     </article>

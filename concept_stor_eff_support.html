@@ -1827,15 +1827,13 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>ONTAP Select 提供的存储效率选项与 FAS 和 AFF 阵列上的存储效率选项类似。</p>
 </div>
@@ -1911,13 +1909,6 @@ Cross Volume Background Deduplication:  true</pre>
 </div>
 <div class="paragraph">
 <p>下表汇总了各种可用的存储效率选项，默认情况下为启用选项，默认情况下为未启用但建议使用的存储效率选项，具体取决于 ONTAP Select 版本和介质类型。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>ONTAP Select 存储效率配置 *</p>
-</li>
-</ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2032,21 +2023,21 @@ Cross Volume Background Deduplication:  true</pre>
 <div class="paragraph">
 <p>在 DAS SSD 上使用的 <span class="小型"><sup>1</sup>ONTAP Select 9.4 （需要高级许可证）允许使用聚合级后台跨卷扫描程序对聚合中的现有数据进行重复数据删除。对于在 9.4</span> <span class="小型"><sup>2</sup>ONTAP Select 9.3 on DAS SSD （需要高级许可证）之前创建的卷，可以手动执行此一次性操作；但是，必须在创建聚合后启用此功能。 # [ 小型 ]</span><sup>3</sup>ONTAP Select 9.5 vNAS 默认不支持任何存储效率策略。有关单实例数据日志记录（ SIDL ）的详细信息，请查看 vNAS 部分。 # 【小型】 #<sup>4</sup>ONTAP Select 9.6 支持新许可证（高级版 XL ）和新的虚拟机大小（大型）。但是，只有使用软件 RAID 的 DAS 配置才支持大型 VM 。在当前版本中，大型 ONTAP Select VM 不支持硬件 RAID 和 vNAS 配置。 #</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="有关-das-ssd-配置的升级行为的注释">有关 DAS SSD 配置的升级行为的注释</h4>
 <div class="paragraph">
 <p>升级到 ONTAP Select 9.5 或更高版本后，请等待 <code>ssystem node upgrade-revert show</code> 命令指示升级已完成，然后再验证现有卷的存储效率值。</p>
 </div>
 <div class="paragraph">
 <p>在升级到 ONTAP Select 9.5 或更高版本的系统上，在现有聚合或新创建的聚合上创建的新卷与在全新部署中创建的卷具有相同的行为。已进行 ONTAP Select 代码升级的现有卷与新创建的卷具有大多数相同的存储效率策略，但存在一些变体：</p>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">场景 1</dt>
+<dd>
+<p>如果在升级之前未在卷上启用存储效率策略、则：</p>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
-<li>
-<p>方案 1* 如果在升级之前未在卷上启用存储效率策略，则：</p>
-</li>
 <li>
 <p>具有 <code>space guarantee = volume</code> 的卷未启用实时数据缩减，聚合实时重复数据删除和聚合后台重复数据删除。这些选项可以在升级后启用。</p>
 </li>
@@ -2056,9 +2047,18 @@ Cross Volume Background Deduplication:  true</pre>
 <li>
 <p>升级后，现有卷上的存储效率策略将设置为 auto 。</p>
 </li>
-<li>
-<p>方案 2* 如果在升级之前已在卷上启用了一些存储效率，则：</p>
-</li>
+</ul>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">场景 2</dt>
+<dd>
+<p>如果在升级之前已在卷上启用了某些存储效率、则：</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
 <li>
 <p>升级后，具有 <code>space guarantee = volume</code> 的卷没有任何差异。</p>
 </li>
@@ -2074,11 +2074,12 @@ Cross Volume Background Deduplication:  true</pre>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="有关-das-hdd-配置的升级行为的注释">有关 DAS HDD 配置的升级行为的注释</h4>
+</div>
+</dd>
+</dl>
+</div>
 <div class="paragraph">
 <p>升级到 ONTAP Select 9.5 或更高版本后，升级之前启用的存储效率功能将保留下来。如果在升级之前未启用存储效率，则在升级后不会启用存储效率。</p>
-</div>
 </div>
 
     </article>

@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:26:24 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
@@ -1837,29 +1837,30 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>您应考虑与 VMware vCenter 相关的多项规划要求。</p>
+<p>您必须定义 vCenter Server 帐户并将其与包含所需管理权限的角色关联。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="注">
+</td>
+<td class="content">
+此外、您还需要管理部署ONTAP Select 的ESXi虚拟机管理程序主机的vCenter Server的完全限定域名或IP地址。
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="访问-vcenter-服务器">访问 vCenter 服务器</h2>
+<h2 id="管理权限">管理权限</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您必须有权访问管理部署了 ONTAP Select 的 ESXi 虚拟机管理程序主机的 vCenter Server 。</p>
+<p>下面列出了创建和管理ONTAP Select 集群所需的最低管理权限。</p>
 </div>
-<div class="sect3">
-<h4 id="位置">位置</h4>
-<div class="paragraph">
-<p>您必须具有 vCenter Server 的完全限定域名或 IP 地址。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="管理权限">管理权限</h4>
-<div class="paragraph">
-<p>您必须定义 vCenter Server 帐户并将其与包含所需管理权限的角色关联。创建和管理 ONTAP Select 集群需要以下最低管理权限：</p>
-</div>
-<div class="sect4">
-<h5 id="数据存储库">数据存储库</h5>
+<div class="sect2">
+<h3 id="数据存储库">数据存储库</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1880,12 +1881,14 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="主机">主机</h5>
-
-</div>
-<div class="sect4">
-<h5 id="configuration">Configuration</h5>
+<div class="sect2">
+<h3 id="主机">主机</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Configuration</dt>
+<dd>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1897,8 +1900,12 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="本地操作">本地操作</h5>
+</div>
+</dd>
+<dt class="hdlist1">本地操作</dt>
+<dd>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1913,8 +1920,13 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="网络">网络</h5>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="网络">网络</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1923,39 +1935,33 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="虚拟机">虚拟机</h5>
-
+<div class="sect2">
+<h3 id="虚拟机">虚拟机</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Configuration</dt>
+<dd>
+<p>此类别中的所有权限。</p>
+</dd>
+<dt class="hdlist1">交互</dt>
+<dd>
+<p>此类别中的所有权限。</p>
+</dd>
+<dt class="hdlist1">清单</dt>
+<dd>
+<p>此类别中的所有权限。</p>
+</dd>
+<dt class="hdlist1">配置</dt>
+<dd>
+<p>此类别中的所有权限。</p>
+</dd>
+</dl>
 </div>
-<div class="sect4">
-<h5 id="configuration-2">Configuration</h5>
+</div>
+<div class="sect2">
+<h3 id="vapp">vApp</h3>
 <div class="paragraph">
 <p>此类别中的所有权限。</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="交互">交互</h5>
-<div class="paragraph">
-<p>此类别中的所有权限。</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="清单">清单</h5>
-<div class="paragraph">
-<p>此类别中的所有权限。</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="配置">配置</h5>
-<div class="paragraph">
-<p>此类别中的所有权限。</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="vapp">vApp</h5>
-<div class="paragraph">
-<p>此类别中的所有权限。</p>
-</div>
 </div>
 </div>
 </div>

@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-15 18:46:40 +0000">06/15/2022</time>
+    <time datetime="2022-06-17 19:39:14 +0000">06/17/2022</time>
     
   
 
@@ -1859,14 +1859,14 @@
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="vmware-许可">VMware 许可</h4>
+<div class="sect2">
+<h3 id="vmware-许可">VMware 许可</h3>
 <div class="paragraph">
 <p>要部署 ONTAP Select 集群，您的组织必须为运行 ONTAP Select 的虚拟机管理程序主机拥有有效的 VMware vSphere 许可证。您应使用适合您的部署的许可证。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="软件兼容性">软件兼容性</h4>
+<div class="sect2">
+<h3 id="软件兼容性">软件兼容性</h3>
 <div class="paragraph">
 <p>ONTAP Select 可以部署在以下虚拟机管理程序上：</p>
 </div>
@@ -1896,14 +1896,14 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="升级到-vmware-esxi-6-5-u2-或更高版本">升级到 VMware ESXi 6.5 U2 或更高版本</h4>
+<div class="sect2">
+<h3 id="升级到-vmware-esxi-6-5-u2-或更高版本">升级到 VMware ESXi 6.5 U2 或更高版本</h3>
 <div class="paragraph">
 <p>如果您当前已在 VMware ESXi 6.5 U1 上部署 ONTAP Select ，则应尽快升级到 ESXi 6.5 U2 或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="vmware-vcenter-和独立-esxi-主机">VMware vCenter 和独立 ESXi 主机</h4>
+<div class="sect2">
+<h3 id="vmware-vcenter-和独立-esxi-主机">VMware vCenter 和独立 ESXi 主机</h3>
 <div class="paragraph">
 <p>如果 ESXi 虚拟机管理程序主机由 vCenter Server 管理，则必须使用 vCenter 凭据将此主机注册到 Deploy 管理实用程序。您不能使用 ESXi 凭据将主机注册为独立主机。</p>
 </div>
@@ -1931,8 +1931,8 @@
 <div class="paragraph">
 <p>请参见 <a href="https://mysupport.netapp.com/matrix">NetApp 互操作性表工具， window=_blank</a> 有关详细信息 &#8230;&#8203;</p>
 </div>
-<div class="sect3">
-<h4 id="基本硬件要求">基本硬件要求</h4>
+<div class="sect2">
+<h3 id="基本硬件要求">基本硬件要求</h3>
 <div class="paragraph">
 <p>无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。</p>
 </div>
@@ -1979,21 +1979,16 @@
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="根据实例类型确定的其他硬件要求">根据实例类型确定的其他硬件要求</h4>
+<div class="sect2">
+<h3 id="根据实例类型确定的其他硬件要求">根据实例类型确定的其他硬件要求</h3>
 <div class="paragraph">
 <p>根据节点实例类型，还需要满足多项其他硬件要求。</p>
 </div>
 <div class="paragraph">
 <p>请参见 <a href="concept_lic_platforms.html">"了解平台许可证产品"</a> 有关详细信息 &#8230;&#8203;</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">小型</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">小型</div>
 <ul>
 <li>
 <p>CPU 核心 6 个或更多物理核心，其中 4 个为 ONTAP Select 预留。</p>
@@ -2006,14 +2001,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">中等</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">中等</div>
 <ul>
 <li>
 <p>CPU 核心 10 个或更多物理核心，其中 8 个为 ONTAP Select 预留。</p>
@@ -2026,14 +2015,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">大型</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">大型</div>
 <ul>
 <li>
 <p>CPU 核心为 18 个或更多物理核心，其中 16 个为 ONTAP Select 预留。</p>
@@ -2045,11 +2028,6 @@
 <p>提供 Premium XL 的所需平台许可证</p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</dd>
-</dl>
 </div>
 <div class="admonitionblock note">
 <table>
