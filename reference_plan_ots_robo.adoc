@@ -21,15 +21,7 @@ summary: 您可以在远程办公室 / 分支机构（ ROBO ）环境中部署 O
 
 NOTE: 部署 ONTAP Select 时，您可以使用任何 VMware vSphere 许可证。
 
-
-
-==== 采用 ONTAP HA 的 ONTAP Select 双节点集群
-
 ONTAP Select 双节点集群由一个 HA 对组成，非常适合 ROBO 部署。
-
-
-
-==== 支持 VMware 的 ONTAP Select 单节点集群
 
 您可以在 ROBO 环境中部署 ONTAP Select 单节点集群。虽然单个节点缺少原生 HA 功能，但您可以通过以下方式之一部署集群以提供存储保护：
 

@@ -18,7 +18,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 
 
-=== ONTAP Select 产品资源
+== ONTAP Select 产品资源
 
 以下产品页面提供了指向各种 ONTAP Select 资源的链接。
 
@@ -28,7 +28,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 
 
-=== ONTAP 9 资源
+== ONTAP 9 资源
 
 * https://docs.netapp.com/us-en/ontap/["ONTAP 9 文档"^]
 +
@@ -42,7 +42,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 
 
-=== 博客
+== 博客
 
 我们提供了一组涵盖 ONTAP Select 各个方面的博客文章。
 
@@ -51,7 +51,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 
 
-=== 社区
+== 社区
 
 您可以与其他用户联系，提出问题并为 NetApp ONTAP Select 社区做出贡献。
 
@@ -60,7 +60,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 
 
-=== NetApp 互操作性表工具
+== NetApp 互操作性表工具
 
 互操作性表工具包含详细的配置和产品支持信息。
 

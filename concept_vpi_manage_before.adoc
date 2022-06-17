@@ -53,7 +53,7 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 
 
 
-==== 验证最终用户对插件的访问权限
+=== 验证最终用户对插件的访问权限
 
 您需要一个帐户来验证通过 vSphere 对插件的访问权限。此帐户必须具有以下 vCenter 权限： sessions.validate.session 。在 vCenter 中创建帐户后，您必须将其定义到 Deploy 管理实用程序中。在 Deploy Web 用户界面中，单击 Administration 选项卡，然后单击 Credentials 以提供 vCenter Server 位置和凭据。
 
@@ -65,7 +65,7 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 
 
 
-==== 管理插件
+=== 管理插件
 
 在 Deploy Web 用户界面中，您可以安装此插件，然后升级或删除它。每次执行其中一项管理操作时，系统都会在弹出窗口中提示您输入 vCenter 帐户。每个管理操作都通过一个单独的 vCenter 权限进行控制。
 
@@ -84,7 +84,7 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 
 
 
-==== 访问此插件
+=== 访问此插件
 
 最终用户可以通过 vSphere 访问此插件。您必须为要使用此插件的帐户分配以下权限：
 
