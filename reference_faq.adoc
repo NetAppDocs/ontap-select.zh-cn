@@ -144,7 +144,7 @@ NOTE: 不支持更改 ONTAP Deploy 虚拟机的 IP 地址。
 
 ===== 什么是软件 RAID ？
 
-ONTAP Select 可以使用没有 RAID 控制器的服务器。软件 RAID 仅支持 SSD 。不支持其他驱动器类型（包括 NVMe ）。ONTAP Select 启动和核心磁盘仍必须位于虚拟化分区（存储池或数据存储库）中。ONTAP Select 使用 RD2 （根 - 数据 - 数据分区）对 SSD 进行分区。因此， ONTAP Select 根分区与数据聚合位于相同的物理磁盘轴上。但是，根聚合以及启动和核心虚拟化磁盘不计入容量许可证。
+ONTAP Select 可以使用没有硬件RAID控制器的服务器。在这种情况下、RAID功能在软件中实施。使用软件RAID时、SSD和NVMe驱动器均受支持。ONTAP Select 启动和核心磁盘仍必须位于虚拟化分区（存储池或数据存储库）中。ONTAP Select 使用 RD2 （根 - 数据 - 数据分区）对 SSD 进行分区。因此， ONTAP Select 根分区与数据聚合位于相同的物理磁盘轴上。但是，根聚合以及启动和核心虚拟化磁盘不计入容量许可证。
 
 AFF/FAS 上提供的所有 RAID 方法也可供 ONTAP Select 使用。其中包括 RAID 4 ， RAID DP 和 RAID-TEC 。SSD 的最小数量因所选 RAID 配置的类型而异。最佳实践要求至少存在一个备用磁盘。备用磁盘和奇偶校验磁盘不计入容量许可证。
 

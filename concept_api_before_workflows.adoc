@@ -18,7 +18,7 @@ summary: 您应准备好查看和使用工作流流程。
 
 
 
-=== 了解工作流中使用的 API 调用
+== 了解工作流中使用的 API 调用
 
 ONTAP Select 联机文档页面包含每个 REST API 调用的详细信息。工作流示例中使用的每个 API 调用都仅包含在文档页面上查找此调用所需的信息，而不是在此处重复这些详细信息。找到特定 API 调用后，您可以查看该调用的完整详细信息，包括输入参数，输出格式， HTTP 状态代码和请求处理类型。
 
@@ -31,6 +31,6 @@ ONTAP Select 联机文档页面包含每个 REST API 调用的详细信息。工
 
 
 
-=== 构建 URL 以直接访问 REST API
+== 构建 URL 以直接访问 REST API
 
 除了 ONTAP Select 文档页面之外，您还可以直接通过 Python 等编程语言访问 Deploy REST API 。在这种情况下，核心 URL 与访问联机文档页面时使用的 URL 稍有不同。直接访问 API 时，必须将 /API 附加到域和端口字符串。例如： ` \http://deploy.mycompany.com/api`
