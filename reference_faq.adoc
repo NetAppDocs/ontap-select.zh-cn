@@ -25,9 +25,9 @@ NOTE: 从ONTAP Select 9.10.1开始、创建新集群时不再支持KVM虚拟机�
 
 我们提供了几个常见问题和解答。
 
-ONTAP Deploy 是用于创建 ONTAP Select 集群的实用程序。目前， ONTAP Deploy 是唯一可用于创建生产集群的方法。ONTAP Deploy 还可用于创建评估 Select 集群，以使客户端能够测试和记录生产部署的实际步骤。ONTAP Deploy 还可以使用适当的容量层许可证将评估集群转换为生产集群，该许可证具有足够的容量来容纳评估期间占用的空间。
+ONTAP Select Deploy是用于创建ONTAP Select 集群的实用程序。目前、ONTAP Select Deploy是唯一可用于创建生产集群的方法。ONTAP Select Deploy还可用于创建评估Select集群、以使客户端能够测试和记录生产部署的实际步骤。ONTAP Select Deploy还可以使用适当的容量层许可证将评估集群转换为生产集群、该许可证具有足够的容量来容纳评估期间占用的空间。
 
-ONTAP Deploy 是一个包含 ONTAP Select 映像的虚拟机。在集群安装期间， ONTAP Deploy 会执行多项检查，以帮助确保满足 ONTAP Select 的最低要求。ONTAP Deploy VM 和 Select 集群可以单独升级。
+ONTAP Select Deploy是一个包含ONTAP Select 映像的虚拟机。在集群安装期间、ONTAP Select Deploy会执行多项检查、以帮助确保满足ONTAP Select 的最低要求。ONTAP Select Deploy VM和Select集群可以单独升级。
 
 与 FAS 上的 ONTAP 一样，应使用 perfstat 实用程序收集性能数据。以下是一个命令示例：
 
@@ -35,7 +35,7 @@ ONTAP Deploy 是一个包含 ONTAP Select 映像的虚拟机。在集群安装�
 ----
 perfstat8 –i N,m -t <sample time in minutes> --verbose --nodes=<filer IP> --diag-passwd=abcxyz --mode="cluster-mode" > <name of output file>
 ----
-.如何访问 ONTAP Deploy 的 Swagger API 页面？
+.如何访问ONTAP Select Deploy的Swagger API页面？
 [listing]
 ----
 http://<Deploy-IP-Address/api/ui
@@ -53,7 +53,7 @@ NOTE: API v3 版本与 API 的先前版本不向后兼容。上提供了一个�
 
 对于许可证、安装、升级和还原、有几个问题和答案。
 
-是的。ONTAP Deploy 实用程序可以独立于 ONTAP Select 集群进行升级。同样， Select 集群也可以独立于 ONTAP Deploy 实用程序进行升级。
+是的。ONTAP Select Deploy实用程序可以独立于ONTAP Select 集群进行升级。同样、Select集群也可以独立于ONTAP Select Deploy实用程序进行升级。
 
 可以。虽然 ONTAP Select 升级二进制文件与 FAS 上的 ONTAP 升级二进制文件是单独下载的，但 Select 集群的升级操作步骤 与 FAS 集群的升级完全相同。
 
@@ -66,7 +66,7 @@ NOTE: API v3 版本与 API 的先前版本不向后兼容。上提供了一个�
 
 是的。
 
-ONTAP Deploy 可通过 GUI ， CLI 或 REST API 使用集群刷新操作来识别对以下 ONTAP Select 集群属性所做的更改：
+ONTAP Select Deploy可通过GUI、CLI或REST API使用集群刷新操作来识别对以下ONTAP Select 集群属性所做的更改：
 
 * 网络配置（ IP 地址， DNS ， NTP ，网络掩码和网关）
 * ONTAP Select 集群，节点名称和版本
@@ -79,9 +79,9 @@ ONTAP Deploy 可通过 GUI ， CLI 或 REST API 使用集群刷新操作来识�
 
 
 
-NOTE: 不支持更改 ONTAP Deploy 虚拟机的 IP 地址。
+NOTE: 不支持更改ONTAP Select Deploy虚拟机的IP地址。
 
-升级到 ONTAP Deploy 2.6 后，可以为已部署但尚未更改其原始配置的任何 ONTAP Select 集群支持这些更改。换言之，如果使用 System Manager 或 vCenter 更改了上述 ONTAP Select 集群属性，则升级到 ONTAP Deploy 2.6 不会修复这些不一致问题。必须先回滚 ONTAP Select 属性更改， ONTAP Deploy 才能将其唯一元数据添加到每个 ONTAP Select VM 。
+升级到ONTAP Select Deploy 2.6后、可以为已部署但尚未更改其原始配置的任何ONTAP Select 集群支持这些更改。换言之、如果使用System Manager或vCenter更改了上述ONTAP Select 集群属性、则升级到ONTAP Select Deploy 2.6不会修复这些不一致问题。必须先回滚ONTAP Select 属性更改、ONTAP Select Deploy才能将其唯一元数据添加到每个ONTAP Select VM。
 
 
 
@@ -89,9 +89,9 @@ NOTE: 不支持更改 ONTAP Deploy 虚拟机的 IP 地址。
 
 有关存储、有几个问题和答案。
 
-是的。ONTAP Deploy 可以安装在 KVM 或 ESX 上，并且这两种安装都可以在任一虚拟机管理程序上创建 ONTAP Select 集群。
+是的。ONTAP Select Deploy可以安装在KVM或ESX上、并且这两种安装都可以在任一虚拟机管理程序上创建ONTAP Select 集群。
 
-如果 ESX 主机获得了正确的许可，则无需由 vCenter Server 管理 ESX 主机。但是，如果主机由 vCenter Server 管理，则必须将 ONTAP Deploy 配置为使用该 vCenter Server 。也就是说，如果 ESX 主机由 vCenter Server 主动管理，则不能在 ONTAP Deploy 中将其配置为独立主机。请注意，由于 vMotion 或 VMware HA 事件， ONTAP Deploy 虚拟机依靠 vCenter 来跟踪 ESXi 主机之间的所有 ONTAP Select VM 迁移。
+如果 ESX 主机获得了正确的许可，则无需由 vCenter Server 管理 ESX 主机。但是、如果主机由vCenter Server管理、则必须将ONTAP Select Deploy配置为使用该vCenter Server。也就是说、如果ESX主机由vCenter Server主动管理、则不能在ONTAP Select Deploy中将其配置为独立主机。请注意、由于vMotion或VMware HA事件、ONTAP Select Deploy虚拟机依靠vCenter来跟踪ESXi主机之间的所有ONTAP Select VM迁移。
 
 ONTAP Select 可以使用没有硬件RAID控制器的服务器。在这种情况下、RAID功能在软件中实施。使用软件RAID时、SSD和NVMe驱动器均受支持。ONTAP Select 启动和核心磁盘仍必须位于虚拟化分区（存储池或数据存储库）中。ONTAP Select 使用 RD2 （根 - 数据 - 数据分区）对 SSD 进行分区。因此， ONTAP Select 根分区与数据聚合位于相同的物理磁盘轴上。但是，根聚合以及启动和核心虚拟化磁盘不计入容量许可证。
 
@@ -122,21 +122,21 @@ AFF/FAS 上提供的所有 RAID 方法也可供 ONTAP Select 使用。其中包�
 
 如果在大于支持的最大大小的数据存储库上安装，则必须在产品设置期间使用容量上限。
 
-ONTAP Deploy 包含一个存储添加工作流，该工作流支持在 ONTAP Select 节点上执行容量扩展操作。您可以使用同一数据存储库中的空间（如果仍有可用空间）来扩展所管理的存储，也可以从单独的数据存储库中添加空间。不支持在同一聚合中混合使用本地数据存储库和远程数据存储库。
+ONTAP Select Deploy包含一个存储添加工作流、该工作流支持在ONTAP Select 节点上执行容量扩展操作。您可以使用同一数据存储库中的空间（如果仍有可用空间）来扩展所管理的存储，也可以从单独的数据存储库中添加空间。不支持在同一聚合中混合使用本地数据存储库和远程数据存储库。
 
 存储添加还支持软件 RAID 。但是，对于软件 RAID ，必须向 ONTAP Select VM 添加更多物理驱动器。在这种情况下，存储添加与管理 FAS 或 AFF 阵列类似。使用软件 RAID 向 ONTAP Select 节点添加存储时，必须考虑 RAID 组大小和驱动器大小。
 
-ONTAP Deploy 和 ONTAP Select for ESX 支持使用 vSAN 或外部阵列类型的数据存储库配置 ONTAP Select 单节点集群的存储池。
+ONTAP Select Deploy和ONTAP Select for ESX支持使用vSAN或外部阵列类型的数据存储库配置ONTAP Select 单节点集群的存储池。
 
-ONTAP Deploy 和 ONTAP Select for KVM 支持在外部阵列上使用共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE 。不支持其他类型的存储池。
+ONTAP Select Deploy和ONTAP Select for KVM支持在外部阵列上使用共享逻辑存储池类型配置ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE 。不支持其他类型的存储池。
 
 支持共享存储上的多节点 HA 集群。
 
 ESX 和 KVM 均支持使用外部存储的多节点集群（多节点 vNAS ）。不支持在同一集群中混用虚拟机管理程序。共享存储上的 HA 架构仍意味着 HA 对中的每个节点都具有其配对数据的镜像副本。但是，与依赖 VMware HA 或 KVM 实时移动的单节点集群相比，多节点集群具有 ONTAP 无中断运行的优势。
 
-虽然 ONTAP Deploy 增加了对同一主机上多个 ONTAP Select VM 的支持，但在创建集群期间，不允许这些实例属于同一个 ONTAP Select 集群。对于 ESX 环境， NetApp 建议创建 VM 反关联性规则，以便 VMware HA 不会尝试将多个 ONTAP Select VM 从同一个 ONTAP Select 集群迁移到一个 ESX 主机上。此外，如果 ONTAP Deploy 检测到 ONTAP Select VM 的管理（用户启动） vMotion 或实时迁移导致违反我们的最佳实践，例如两个 ONTAP Select 节点最终位于同一物理主机上， ONTAP Deploy 会在 Deploy 图形用户界面和日志中发布警报。ONTAP Deploy 了解 ONTAP Select VM 位置的唯一方法是执行集群刷新操作，这是 ONTAP Deploy 管理员必须启动的手动操作。ONTAP Deploy 中没有可启用主动监控的功能，只有通过 Deploy 图形用户界面或日志才能看到警报。换言之，此警报无法转发到集中式监控基础架构。
+虽然ONTAP Select Deploy增加了对同一主机上多个ONTAP Select VM的支持、但在创建集群期间、不允许这些实例属于同一个ONTAP Select 集群。对于 ESX 环境， NetApp 建议创建 VM 反关联性规则，以便 VMware HA 不会尝试将多个 ONTAP Select VM 从同一个 ONTAP Select 集群迁移到一个 ESX 主机上。此外、如果ONTAP Select Deploy检测到ONTAP Select VM的管理(用户启动) vMotion或实时迁移导致违反我们的最佳实践、例如两个ONTAP Select 节点最终位于同一物理主机上、 ONTAP Select Deploy会在Deploy图形用户界面和日志中发布警报。ONTAP Select Deploy了解ONTAP Select VM位置的唯一方法是执行集群刷新操作、这是ONTAP Select Deploy管理员必须启动的手动操作。ONTAP Select Deploy中没有可启用主动监控的功能、只有通过Deploy图形用户界面或日志才能看到警报。换言之，此警报无法转发到集中式监控基础架构。
 
-支持 NSX-V VXLAN 端口组。对于包括 ONTAP MetroCluster SDS 在内的多节点 HA ，请确保将内部网络 MTU 配置为 7500 到 8900 （而不是 9000 ）之间，以满足 VXLAN 开销的要求。在集群部署期间，可以使用 ONTAP Deploy 配置内部网络 MTU 。
+支持 NSX-V VXLAN 端口组。对于包括 ONTAP MetroCluster SDS 在内的多节点 HA ，请确保将内部网络 MTU 配置为 7500 到 8900 （而不是 9000 ）之间，以满足 VXLAN 开销的要求。在集群部署期间、可以使用ONTAP Select Deploy配置内部网络MTU。
 
 在外部阵列存储池上运行的 ONTAP Select VM 支持 virsh 实时迁移。
 
@@ -156,28 +156,28 @@ Select VM 会继承 vSAN 数据存储库存储策略， FTT/FTM 设置不受限�
 
 对于VMware vCenter、有几个问题和答案。
 
-ONTAP Deploy 使用 VMware VIX API 与 vCenter 和 / 或 ESX 主机进行通信。VMware 文档指出，与 vCenter Server 或 ESX 主机的初始连接是使用 TCP 端口 443 上的 HTTPS/SOAP 完成的。此端口用于通过 TLS/SSL 实现安全 HTTP 。其次，在 TCP 端口 902 的插槽上打开与 ESX 主机的连接。通过此连接的数据将使用 SSL 进行加密。此外， ONTAP Deploy 会发出 `ping` 命令，以验证是否有 ESX 主机在您指定的 IP 地址处做出响应。
+ONTAP Select Deploy使用VMware VIX API与vCenter和/或ESX主机进行通信。VMware 文档指出，与 vCenter Server 或 ESX 主机的初始连接是使用 TCP 端口 443 上的 HTTPS/SOAP 完成的。此端口用于通过 TLS/SSL 实现安全 HTTP 。其次，在 TCP 端口 902 的插槽上打开与 ESX 主机的连接。通过此连接的数据将使用 SSL 进行加密。此外、ONTAP Select Deploy会发出`ping`命令、以验证是否有ESX主机在您指定的IP地址处做出响应。
 
-ONTAP Deploy 还必须能够按如下方式与 ONTAP Select 节点和集群管理 IP 地址进行通信：
+ONTAP Select Deploy还必须能够按如下方式与ONTAP Select 节点和集群管理IP地址进行通信：
 
 * Ping
 * SSH （端口 22 ）
 * SSL （端口 443 ）
 
 
-对于双节点集群， ONTAP Deploy 托管集群邮箱。每个 ONTAP Select 节点都必须能够通过 iSCSI （端口 3260 ）访问 ONTAP Deploy 。
+对于双节点集群、ONTAP Select Deploy托管集群邮箱。每个ONTAP Select 节点都必须能够通过iSCSI (端口3260)访问ONTAP Select Deploy。
 
 对于多节点集群，内部网络必须完全打开（无 NAT 或防火墙）。
 
 此处提供了所需的 vCenter 权限列表： link:reference_plan_ots_vcenter.html["VMware vCenter 服务器"]。
 
-可以将 vCenter Server 中的 ONTAP Deploy 功能与 ONTAP Deploy 插件集成在一起。请注意，此插件不能替代 ONTAP Deploy 。而是在后台运行 ONTAP Deploy ， vCenter 管理员可以使用此插件调用大多数 ONTAP Deploy 功能。某些 ONTAP Deploy 操作只能使用命令行界面进行。
+可以将vCenter Server中的ONTAP Select Deploy功能与ONTAP Select Deploy插件集成在一起。请注意、此插件不能替代ONTAP Select Deploy。而是在后台运行ONTAP Select Deploy、vCenter管理员可以使用此插件调用大多数ONTAP Select Deploy功能。某些ONTAP Select Deploy操作只能使用命令行界面进行。
 
-只有一个 ONTAP Deploy 虚拟机可以将其插件注册到特定的 vCenter 服务器。
+只有一个ONTAP Select Deploy虚拟机可以将其插件注册到特定的vCenter服务器。
 
 此插件允许 vCenter 管理员和 IT 通才使用 vCenter HTML5 图形用户界面创建 ONTAP Select 集群。请注意，不支持 Flash vCenter GUI 。
 
-此外，它还允许 ONTAP Deploy 使用 vCenter RBAC 进行身份验证。授予使用 ONTAP Deploy 插件的 vCenter 权限的用户会将其 vCenter 帐户映射到 ONTAP Deploy 管理员用户。ONTAP Deploy 会记录每个操作的用户 ID ，以下文件可用作基本审核日志：
+此外、它还允许ONTAP Select Deploy使用vCenter RBAC进行身份验证。授予使用ONTAP Select Deploy插件的vCenter权限的用户会将其vCenter帐户映射到ONTAP Select Deploy管理员用户。ONTAP Select Deploy会记录每个操作的用户ID、以下文件可用作基本审核日志：
 
 [listing]
 ----
@@ -189,7 +189,7 @@ nginx_access.log
 
 对于HA对和集群、有几个问题和答案。
 
-与主要使用 ONTAP Deploy VM 创建集群的四节点，六节点和八节点集群不同，双节点集群持续依赖 ONTAP Deploy VM 进行 HA 仲裁。如果 ONTAP Deploy 虚拟机不可用，则故障转移服务将被禁用。
+与主要使用ONTAP Select Deploy VM创建集群的四节点、六节点和八节点集群不同、双节点集群持续依赖ONTAP Select Deploy VM进行HA仲裁。如果ONTAP Select Deploy虚拟机不可用、则故障转移服务将被禁用。
 
 MetroCluster SDS 是一种成本较低的同步复制选项，属于 NetApp 的 MetroCluster 业务连续性解决方案类别。与 NetApp MetroCluster 在 FAS 混合闪存， AFF ，适用于云的 NetApp 私有存储和 NetApp FlexArray ® 技术上推出的 NetApp 不同，它仅适用于 ONTAP Select 。
 
@@ -211,15 +211,15 @@ ONTAP MetroCluster SDS 支持所有类型的存储配置（ DAS 和 vNAS ）。
 
 这些要求如下：
 
-* 三个数据中心（一个用于 ONTAP Deploy 调解器，一个用于每个节点）。
+* 三个数据中心(一个用于ONTAP Select Deploy调解器、一个用于每个节点)。
 * 5 毫秒 RTT 和 5 毫秒抖动， ONTAP Select 节点之间的最大总时间为 10 毫秒，最大物理距离为 10 公里。
-* ONTAP Deploy 调解器与每个 ONTAP Select 节点之间的 RTT 为 125 毫秒，最小带宽为 5 Mbps 。
+* ONTAP Select Deploy调解器与每个ONTAP Select 节点之间的RTT为125毫秒、最小带宽为5 Mbps。
 * 高级版或高级版 XL 许可证。
 
 
 在 vSAN 数据存储库或外部阵列数据存储库（即 vNAS 部署）上运行的 ONTAP Select VM 支持 vMotion ， DRS 和 VMware HA 功能。
 
-所有配置均支持 Storage vMotion ，包括单节点和多节点 ONTAP Select 集群以及 ONTAP Deploy VM 。可以使用 Storage vMotion 在不同的 VMFS 版本（例如，从 VMFS 5 迁移到 VMFS 6 ）之间迁移 ONTAP Select 或 ONTAP Deploy 虚拟机，但不限于此使用情形。最佳做法是，在启动 Storage vMotion 操作之前关闭虚拟机。在存储 vMotion 操作完成后， ONTAP Deploy 必须对以下操作执行问题描述 ：
+所有配置均支持Storage vMotion、包括单节点和多节点ONTAP Select 集群以及ONTAP Select Deploy VM。可以使用Storage vMotion在不同的VMFS版本(例如、从VMFS 5迁移到VMFS 6)之间迁移ONTAP Select 或ONTAP Select Deploy虚拟机、但不限于此使用情形。最佳做法是，在启动 Storage vMotion 操作之前关闭虚拟机。在存储vMotion操作完成后、ONTAP Select Deploy必须对以下操作执行问题描述 ：
 
 [listing]
 ----
@@ -237,14 +237,14 @@ cluster refresh
 
 对于调解器服务、有几个问题和答案。
 
-双节点集群持续依赖 ONTAP Deploy 虚拟机进行 HA 仲裁。参与双节点 HA 仲裁协商的 ONTAP Deploy 虚拟机将标记为调解器虚拟机。
+双节点集群持续依赖ONTAP Select Deploy虚拟机进行HA仲裁。参与双节点HA仲裁协商的ONTAP Select Deploy虚拟机将标记为调解器虚拟机。
 
-是的。ONTAP Deploy 充当双节点 HA 对的调解器，支持高达 500 毫秒 RTT 的 WAN 延迟，并要求最小带宽为 5 Mbps 。
+是的。ONTAP Select Deploy充当双节点HA对的调解器、支持高达500毫秒RTT的WAN延迟、并要求最小带宽为5 Mbps。
 
-调解器流量为 iSCSI ，源自 ONTAP Select 节点管理 IP 地址，并在 ONTAP Deploy IP 地址上终止。请注意，在使用双节点集群时，不能对 ONTAP Select 节点管理 IP 地址使用 IPv6 。
+调解器流量为iSCSI、源自ONTAP Select 节点管理IP地址、并在ONTAP Select Deploy IP地址上终止。请注意，在使用双节点集群时，不能对 ONTAP Select 节点管理 IP 地址使用 IPv6 。
 
-是的。每个 ONTAP Deploy VM 都可用作最多 100 个双节点 ONTAP Select 集群的通用调解器服务。
+是的。每个ONTAP Select Deploy VM都可用作最多100个双节点ONTAP Select 集群的通用调解器服务。
 
-是的。可以使用另一个 ONTAP Deploy VM 来托管调解器服务。
+是的。可以使用另一个ONTAP Select Deploy VM来托管调解器服务。
 
 延伸型 HA 部署模式仅支持具有调解器的双节点集群。
