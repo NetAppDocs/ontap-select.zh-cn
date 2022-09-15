@@ -687,8 +687,6 @@
   <block id="f249bf8d9e4b8c7b417b66fb9c6c3c90" category="list-text">必须将基于专用 LUN 的 LVM 存储池或数据存储库用于系统磁盘：核心转储，启动 /NVRAM 和调解器。</block>
   <block id="98188cc87f947a659e62ebdc6dab134c" category="paragraph">在 KVM 上安装时，必须使用一个绑定和一个网桥。具有两个或四个物理端口的主机应将所有端口置于同一个绑定中。</block>
   <block id="56bf9f6724c0961bfe3efdd9a5936afd" category="paragraph">使用硬件 RAID 控制器时， ONTAP Select 在很大程度上不了解底层服务器问题。如果服务器是根据我们的最佳实践配置的，则应存在一定数量的冗余。我们建议使用 RAID 5/6 ，以避免驱动器出现故障。对于软件 RAID 配置， ONTAP 负责发出有关磁盘故障的警报，如果有备用驱动器，则启动驱动器重建。</block>
-  <block id="908a6644c79f2bc9e82d8777e36f7cd0" category="inline-link-macro">网络配置最佳实践</block>
-  <block id="a0543dd1ad93ec7f733c7d2af9d3c7fd" category="paragraph">您应至少使用两个物理 NIC ，以避免网络层出现单点故障。NetApp 建议在数据，管理和内部端口组中配置 NIC 绑定和绑定，并在组或绑定中配置两个或更多上行链路。此类配置可确保在发生任何上行链路故障时，虚拟交换机将流量从发生故障的上行链路移至 NIC 组中运行正常的上行链路。有关建议的网络配置的详细信息，请参见 <block ref="839f4923aa784429d01d1b8b212d4b5c" category="inline-link-macro-rx"></block>。</block>
   <block id="a2f6b74c2700adf79d2359dceccee7cf" category="paragraph">对于双节点或四节点集群，所有其他错误均由 ONTAP HA 处理。如果需要更换虚拟机管理程序服务器，并且需要使用新服务器重新创建 ONTAP Select 集群，请联系 NetApp 技术支持。</block>
   <block id="5328a869dd2ed37e5be32f4f227e54d6" category="paragraph">包括 vSAN 在内的所有配置均支持每个 ONTAP Select 节点 400 TB 的存储。</block>
   <block id="4906d0b814c398d1e0b3d033c584f66b" category="paragraph">如果在大于支持的最大大小的数据存储库上安装，则必须在产品设置期间使用容量上限。</block>
@@ -3568,4 +3566,6 @@
   <block id="28abf93f8fe8302ba488797b5f941425" category="paragraph">调解器流量为iSCSI、源自ONTAP Select 节点管理IP地址、并在ONTAP Select Deploy IP地址上终止。请注意，在使用双节点集群时，不能对 ONTAP Select 节点管理 IP 地址使用 IPv6 。</block>
   <block id="b39698e69e296e70cec153c53b590841" category="paragraph">是的。每个ONTAP Select Deploy VM都可用作最多100个双节点ONTAP Select 集群的通用调解器服务。</block>
   <block id="9fb59ca6cf972183dcb06f8acae8ff15" category="paragraph">是的。可以使用另一个ONTAP Select Deploy VM来托管调解器服务。</block>
+  <block id="4eccac51b0adbf20af102f091873b54b" category="inline-link-macro">最佳实践摘要：网络连接</block>
+  <block id="8a820df1b1697eba16442acc38af08cd" category="paragraph">您应至少使用两个物理 NIC ，以避免网络层出现单点故障。NetApp 建议在数据，管理和内部端口组中配置 NIC 绑定和绑定，并在组或绑定中配置两个或更多上行链路。此类配置可确保在发生任何上行链路故障时，虚拟交换机将流量从发生故障的上行链路移至 NIC 组中运行正常的上行链路。有关建议的网络配置的详细信息，请参见 <block ref="705c0997f8d64d5d2f3905a67e67034f" category="inline-link-macro-rx"></block>。</block>
 </blocks>
