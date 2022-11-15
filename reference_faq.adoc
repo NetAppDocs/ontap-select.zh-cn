@@ -17,7 +17,7 @@ summary: 查找有关 ONTAP Select 的常见问题的答案。
 您可以找到有关ONTAP Select 的常见问题解答。
 
 
-NOTE: 从ONTAP Select 9.10.1开始、创建新集群时不再支持KVM虚拟机管理程序。此外、从9.11.1开始、您将无法再管理KVM上的现有ONTAP Select 集群。有关KVM的问题仅适用于支持KVM的早期版本。
+NOTE: 从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。现在、对于ONTAP Select 9.11.1及更高版本、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。有关KVM的问题仅适用于支持KVM的早期版本。
 
 
 

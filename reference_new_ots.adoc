@@ -2,9 +2,10 @@
 sidebar: sidebar 
 permalink: reference_new_ots.html 
 keywords: new features 
-summary: 当前版本的 ONTAP Select 提供了几项新增功能和变更功能。 
+// summary: The current release includes several new features and improvements specific to ONTAP Select. 
+summary: 当前版本不包含ONTAP Select 的任何新增功能或改进功能。 
 ---
-= ONTAP Select 9.10.1 中的新增功能
+= 此版本中的新增功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,31 +15,10 @@ summary: 当前版本的 ONTAP Select 提供了几项新增功能和变更功能
 
 
 [role="lead"]
-当前版本的 ONTAP Select 提供了几项新增功能和变更功能。
+当前版本不包含ONTAP Select 的任何新增功能或改进功能。
 
 
 
-== 增强了对VMware ESXi的支持
+== 《 ONTAP 发行说明》
 
-ONTAP Select 9.11.1支持VMware ESXi 7.0 U3C。
-
-
-
-== 支持 VMware NSX-T
-
-ONTAP Select 9.10.1 已通过 VMware NSX-T 3.1.2 的认证。将 NSX-T 与使用 OVA 文件和 ONTAP Select Deploy 管理实用程序部署的 ONTAP Select 单节点集群结合使用时，不存在任何功能问题或缺陷。
-
-但是、在将NSX-T与ONTAP Select 多节点集群结合使用时、您应注意ONTAP Select 9.11.1的以下要求和限制：
-
-网络连接检查程序:: 在基于 NSX-T 的网络上运行 Deploy CLI 提供的网络连接检查程序时，此检查程序将失败。
-
-
-
-
-== 不再支持 KVM 虚拟机管理程序
-
-不再支持KVM虚拟机管理程序。
-
-从ONTAP Select 9.10.1及更高版本开始、您将无法再使用Deploy实用程序创建基于KVM的新集群或添加基于KVM的主机。此外、9.10.1是支持现有KVM集群和主机联机等易管理性功能的最后一个版本。
-
-然后、从ONTAP Select 9.11.1及更高版本开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
+ONTAP Select 从当前版本的核心ONTAP 产品中的大多数新开发中获益。请参见 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["《 ONTAP 发行说明》"^] 有关每个ONTAP 9版本中的新增功能或改进功能的信息。

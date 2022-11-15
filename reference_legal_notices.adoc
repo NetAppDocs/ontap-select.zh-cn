@@ -50,5 +50,5 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 通知文件提供了有关 NetApp 软件中使用的第三方版权和许可证的信息。
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2882083["ONTAP Select 9.11.1注意事项"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["ONTAP Select 9.12.1注意事项"^]
 
