@@ -1936,7 +1936,6 @@
   <block id="aca2fd87d8012efa91dbc6e6c912d7e7" category="summary">ONTAP Select 提供的存储效率选项与 FAS 和 AFF 阵列上的存储效率选项类似。</block>
   <block id="6b3850335452abbd46e2f81ea011d686" category="doc">存储效率支持</block>
   <block id="1f111941ef490bbd54082392c8d7d5bb" category="paragraph">使用全闪存 VSAN 或通用闪存阵列部署 ONTAP Select 虚拟 NAS （ vNAS ）时，应遵循使用非 SSD DAS 存储的 ONTAP Select 的最佳实践。</block>
-  <block id="969781b66db59786314019d03efd76a2" category="paragraph">只要您的 DAS 存储具有 SSD 驱动器和高级许可证，就会在新安装中自动启用类似于 AFF 的特性。</block>
   <block id="49932c189a1a728df81d679633c219ad" category="paragraph">如果具有类似于 AFF 的特性，则在安装期间会自动启用以下实时 SE 功能：</block>
   <block id="f50eca1bbe0727a0ae492a37d9a67341" category="list-text">实时零模式检测</block>
   <block id="bdf3d88111488b006ff78f64841f7388" category="list-text">卷实时重复数据删除</block>
@@ -1946,19 +1945,10 @@
   <block id="181a300bfda94fa49239b8a84b279718" category="list-text">聚合实时重复数据删除</block>
   <block id="88a926c88a9b371d22327f343c745ee5" category="list-text">聚合后台重复数据删除</block>
   <block id="1054ae451e201d93ff68b5fbde92dded" category="paragraph">要验证 ONTAP Select 是否已启用所有默认存储效率策略，请在新创建的卷上运行以下命令：</block>
-  <block id="bfd3f6691384baf34cdf17419cb0e78c" category="admonition">对于从 9.4 升级的 ONTAP Select ，您必须使用高级许可证在 DAS SSD 存储上安装 ONTAP Select 9.4 。此外，在使用 ONTAP Deploy 进行初始集群安装期间，必须选中 * 启用存储效率 * 复选框。在未满足先前条件的情况下，要在 ONTAP 升级后启用类似于 AFF 的特性，需要手动创建启动参数并重新启动节点。有关更多详细信息，请联系技术支持。</block>
-  <block id="3bc7377fef3090d09722c97053d94bb8" category="paragraph">下表汇总了各种可用的存储效率选项，默认情况下为启用选项，默认情况下为未启用但建议使用的存储效率选项，具体取决于 ONTAP Select 版本和介质类型。</block>
-  <block id="3a06677d57bafe5f93316fd203140cec" category="cell">ONTAP Select 功能</block>
-  <block id="4ddd372db4137397986851a36755d62b" category="cell">9.6 / 9.5 高级或高级 XL^4^ （ DAS SSD ）</block>
-  <block id="99bd414e50c66dbb85a360543a8724df" category="cell">9.4^1^ / 9.3^2^ 高级版（ DAS SSD ）</block>
-  <block id="4075cc803e896778b25727ceeb07e4a7" category="cell">9.6 / 9.5 / 9.4^1^ / 9.3^2^ 所有许可证（ DAS HDD ）</block>
-  <block id="984fe899b528b40d37d811cdfc614800" category="cell">9.6 所有许可证（ vNAS ）</block>
-  <block id="31174df2fdbdd2be052e12c615c7307f" category="cell">9.5 / 9.4^1^ / 9.3^2^ 高级版或标准版（ vNAS ）^3^</block>
   <block id="d0a10dc848c7f164cb7f367fc2ea6eca" category="cell">实时零检测</block>
   <block id="7aae22088072740b827e9f671e64d38c" category="cell">是（默认）</block>
   <block id="97206f3375e25c7ad628adbd0ede2481" category="cell">是由用户按卷启用</block>
   <block id="aa7f77e663b832d5b0e544c5511e680c" category="cell">不支持</block>
-  <block id="649f2af3727e1d3e6b8443c426591936" category="cell">是（建议）由用户按卷启用</block>
   <block id="2d25c72c1b18e562f6654fff8e11711e" category="cell">不可用</block>
   <block id="8c2a1d946295997fcc7ffd5ff081383e" category="cell">32 K 实时压缩（二级压缩）</block>
   <block id="0ee764ea898e833d7247cd7c2bff2bb6" category="cell">是由用户逐卷启用。</block>
@@ -1968,12 +1958,7 @@
   <block id="6535e9c5f49b7cb87395689e840b7921" category="cell">数据压缩扫描程序</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">是的。</block>
   <block id="c63eff507592c9cb40454ec64c57e654" category="cell">数据缩减扫描程序</block>
-  <block id="e723e4513197f2aa8ae3faf74f9b455b" category="cell">是（建议）由用户按卷启用，空间保证 = 无）</block>
   <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">不适用</block>
-  <block id="b155b6b4f561bbefa57bcbe381aa7293" category="cell">是（建议）</block>
-  <block id="f3bd89de8243a3f6af6ddfd8f57c51d2" category="paragraph">在 DAS SSD 上使用的 [ 小型 ]#^1^ONTAP Select 9.4 （需要高级许可证）允许使用聚合级后台跨卷扫描程序对聚合中的现有数据进行重复数据删除。对于在 9.4# [ 小型 ]#^2^ONTAP Select 9.3 on DAS SSD （需要高级许可证）之前创建的卷，可以手动执行此一次性操作；但是，必须在创建聚合后启用此功能。 # [ 小型 ]#^3^ONTAP Select 9.5 vNAS 默认不支持任何存储效率策略。有关单实例数据日志记录（ SIDL ）的详细信息，请查看 vNAS 部分。 # 【小型】 #^4^ONTAP Select 9.6 支持新许可证（高级版 XL ）和新的虚拟机大小（大型）。但是，只有使用软件 RAID 的 DAS 配置才支持大型 VM 。在当前版本中，大型 ONTAP Select VM 不支持硬件 RAID 和 vNAS 配置。 #</block>
-  <block id="2bb65eec7b863bd298a37f91f01bc93b" category="paragraph">升级到 ONTAP Select 9.5 或更高版本后，请等待 `ssystem node upgrade-revert show` 命令指示升级已完成，然后再验证现有卷的存储效率值。</block>
-  <block id="deed1cb925849f0f3e45d21a73322805" category="paragraph">在升级到 ONTAP Select 9.5 或更高版本的系统上，在现有聚合或新创建的聚合上创建的新卷与在全新部署中创建的卷具有相同的行为。已进行 ONTAP Select 代码升级的现有卷与新创建的卷具有大多数相同的存储效率策略，但存在一些变体：</block>
   <block id="29a9d0505777c34dba7f61853452be5d" category="list-text">具有 `space guarantee = volume` 的卷未启用实时数据缩减，聚合实时重复数据删除和聚合后台重复数据删除。这些选项可以在升级后启用。</block>
   <block id="35fbb1bb20290d891a137d1fcbd0e239" category="list-text">具有 `space guarantee = none` 的卷未启用后台数据压缩。此选项可在升级后启用。</block>
   <block id="1dee9382dee8939942474aa4d9a34277" category="list-text">升级后，现有卷上的存储效率策略将设置为 auto 。</block>
@@ -1981,7 +1966,6 @@
   <block id="ef178eb460204113beba1cbd28432807" category="list-text">具有 `space guarantee = none` 的卷已启用聚合后台重复数据删除。</block>
   <block id="3779f0db6c726f0073ea96bd58344c7c" category="list-text">使用 `s仅实时存储策略` 的卷的策略设置为 auto 。</block>
   <block id="f32e9c7c29189d660541b511be781cbb" category="list-text">具有用户定义的存储效率策略的卷的策略不变，但具有 `space guarantee = none` 的卷除外。这些卷已启用聚合后台重复数据删除。</block>
-  <block id="d0b68a1323470e4c9310c26b4ee1c585" category="paragraph">升级到 ONTAP Select 9.5 或更高版本后，升级之前启用的存储效率功能将保留下来。如果在升级之前未启用存储效率，则在升级后不会启用存储效率。</block>
   <block id="827fe6014df4dcd93529a1c8e73f3c37" category="summary">在使用 Deploy 联机文档页面之前，您应注意以下几点。</block>
   <block id="150a67adb932e1a6edc3581e48ffcd17" category="doc">在使用浏览器访问 API 之前</block>
   <block id="9fd0cd7fbfcb835011bb94274ec501c7" category="section-title">部署计划</block>
@@ -3559,4 +3543,17 @@
   <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">此版本中的新增功能</block>
   <block id="626a7cbe056796bcb1c158b143866230" category="section-title">《 ONTAP 发行说明》</block>
   <block id="ee7c32e022645197b08ad79344b7cea5" category="paragraph">ONTAP Select 从当前版本的核心ONTAP 产品中的大多数新开发中获益。请参见<block ref="13c0668cefb5d13050e1de01793dacbb" category="inline-link-rx"></block> 有关每个ONTAP 9版本中的新增功能或改进功能的信息。</block>
+  <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">使用全闪存VSAN或通用闪存阵列部署ONTAP Select 虚拟NAS (vNAS)时、应遵循使用非SSD直连存储(DAS)的ONTAP Select 的最佳实践。</block>
+  <block id="56d7a71de46feea406be8535cec9562b" category="paragraph">只要您的DAS存储具有SSD驱动器和高级许可证、就会在新安装中自动启用类似于AFF的特性。</block>
+  <block id="c9f8761a361c6711a9ed57ab4856d50e" category="admonition">对于从9.6及更高版本升级的ONTAP Select 、您必须使用高级许可证在DAS SSD存储上安装ONTAP Select。此外、在使用ONTAP Deploy进行初始集群安装期间、您必须选中*启用存储效率*复选框。在未满足先前条件的情况下，要在 ONTAP 升级后启用类似于 AFF 的特性，需要手动创建启动参数并重新启动节点。有关更多详细信息，请联系技术支持。</block>
+  <block id="351b67a1c9ed30f55beb4efb9008c75e" category="inline-link">TR-4517</block>
+  <block id="57d9bfd04afc415045de434b6511e231" category="paragraph">下表汇总了各种可用的存储效率选项、默认情况下启用的选项或默认情况下不启用但建议使用的选项、具体取决于介质类型和软件许可证。下表 适用场景 ONTAP Select 9.6及更高版本中的信息。对于先前版本、请参阅ONTAP Select 中的_Storage Efficiency Support_一节<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>。</block>
+  <block id="01ff2713f71d1a077e5cd9476bafae04" category="cell">ONTAP Select 功能</block>
+  <block id="1454e3c114972f47f44938bc14cf6784" category="cell">DAS SSD (高级或高级XL^1^)</block>
+  <block id="8aede28fe0ef40efaea43ec1bbfb9a33" category="cell">DAS HDD (所有许可证)</block>
+  <block id="c7f594218b673d842d21f54f543fb19c" category="cell">vNAS (所有许可证)</block>
+  <block id="d670b307adcbd20c75b779bb62ae10bc" category="paragraph">[小型]#^1^ONTAP Select 9.6支持新许可证(高级XL)和新的VM大小(大型)。但是，只有使用软件 RAID 的 DAS 配置才支持大型 VM 。在9.6版中、大型ONTAP Select VM不支持硬件RAID和vNAS配置。#</block>
+  <block id="2b306d5ec9ffced1b4c962a0d5f78acb" category="paragraph">升级到ONTAP Select 9.6或更高版本后、请等待<block ref="65c6cabf39cf5a036e1dff5fc1483802" prefix=" " category="inline-code"></block> 命令以指示升级已完成、然后再验证现有卷的存储效率值。</block>
+  <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升级到ONTAP Select 9.6或更高版本的系统上、在现有聚合或新创建的聚合上创建的新卷与在全新部署中创建的卷具有相同的行为。已进行 ONTAP Select 代码升级的现有卷与新创建的卷具有大多数相同的存储效率策略，但存在一些变体：</block>
+  <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">升级到ONTAP Select 9.6或更高版本后、升级之前启用的存储效率功能将保留下来。如果在升级之前未启用存储效率，则在升级后不会启用存储效率。</block>
 </blocks>
