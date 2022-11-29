@@ -22,7 +22,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 以下产品页面提供了指向各种 ONTAP Select 资源的链接。
 
-* https://www.netapp.com/data-management/software-defined-storage-ontap-select/documentation["NetApp ONTAP Select 资源"^]
+* https://www.netapp.com/data-management/ontap-select/documentation["NetApp ONTAP Select 资源"^]
 * https://www.netapp.com/us/products/data-management-software/ontap-select-sds.aspx["NetApp ONTAP Select 产品页面"^]
 
 

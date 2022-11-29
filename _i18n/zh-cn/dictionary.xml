@@ -854,7 +854,6 @@
   <block id="9b0fbf172f51b4a5abce0857edfab0f9" category="section-title">ONTAP Select 产品资源</block>
   <block id="c49e76269f99b6773f9b3a78f408edb0" category="paragraph">以下产品页面提供了指向各种 ONTAP Select 资源的链接。</block>
   <block id="a8880942f614154c0bef5b881090cda1" category="inline-link">NetApp ONTAP Select 资源</block>
-  <block id="4dbedeedb10d03b7a8ed66a0dda3941d" category="list-text"><block ref="4dbedeedb10d03b7a8ed66a0dda3941d" category="inline-link-rx"></block></block>
   <block id="bb0cd218d1754229c2a730e5e27f5a5b" category="inline-link">NetApp ONTAP Select 产品页面</block>
   <block id="e2e78aa3752db107a66c2193b8f739a3" category="list-text"><block ref="e2e78aa3752db107a66c2193b8f739a3" category="inline-link-rx"></block></block>
   <block id="f372ae3b2fda116fe4b7463cbac902c0" category="section-title">ONTAP 9 资源</block>
@@ -3556,4 +3555,5 @@
   <block id="2b306d5ec9ffced1b4c962a0d5f78acb" category="paragraph">升级到ONTAP Select 9.6或更高版本后、请等待<block ref="65c6cabf39cf5a036e1dff5fc1483802" prefix=" " category="inline-code"></block> 命令以指示升级已完成、然后再验证现有卷的存储效率值。</block>
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升级到ONTAP Select 9.6或更高版本的系统上、在现有聚合或新创建的聚合上创建的新卷与在全新部署中创建的卷具有相同的行为。已进行 ONTAP Select 代码升级的现有卷与新创建的卷具有大多数相同的存储效率策略，但存在一些变体：</block>
   <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">升级到ONTAP Select 9.6或更高版本后、升级之前启用的存储效率功能将保留下来。如果在升级之前未启用存储效率，则在升级后不会启用存储效率。</block>
+  <block id="6d7b1bef7e9e53ab5f633ac04956a24b" category="list-text"><block ref="6d7b1bef7e9e53ab5f633ac04956a24b" category="inline-link-rx"></block></block>
 </blocks>
