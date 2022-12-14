@@ -22,6 +22,7 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 
 您可以从 NetApp 支持站点下载 ONTAP Select 软件包。
 
+.关于此任务
 ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF ）标准打包为虚拟机。单个压缩文件的后缀为 `ova` 。
 
 .步骤
@@ -40,6 +41,7 @@ ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF �
 
 您必须使用 OVF 虚拟机映像安装和启动 ONTAP Select Deploy 虚拟机。在安装过程中，您必须将网络接口配置为使用 DHCP 或静态 IP 配置。
 
+.开始之前
 您必须准备部署 ONTAP Select Deploy 虚拟机：
 
 * 通过安装 VMware Client Integration 插件或根据需要执行类似配置，在浏览器中启用 OVF 功能
@@ -56,6 +58,7 @@ ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF �
 * DNS 搜索域
 
 
+.关于此任务
 如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是，如果您选择不使用此表单，则可以改用 Deploy 虚拟机的控制台来配置网络。
 
 .步骤
@@ -111,4 +114,5 @@ ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF �
 
 
 
+.相关信息
 link:task_cli_signing_in.html["使用 SSH 登录到 Deploy"]

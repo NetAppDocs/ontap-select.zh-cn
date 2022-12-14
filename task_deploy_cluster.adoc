@@ -77,8 +77,10 @@ NOTE: 您可以通过单击页面顶部的选项卡（集群，虚拟机管理�
 
 您可以使用 ONTAP Select Deploy Web 用户界面部署单节点 ONTAP Select 集群。
 
+.开始之前
 请参见 link:task_deploy_cluster.html#before-you-begin["开始之前"] 以准备部署集群。必须安装 Deploy 管理并对其进行初始配置（密码， AutoSupport ， vCenter ）。
 
+.关于此任务
 为生产部署创建一个包含一个节点的 ONTAP Select 集群。
 
 .步骤
@@ -128,4 +130,5 @@ TIP: 如果集群创建操作已启动，但无法完成，则可能无法注册
 
 
 
+.完成后
 您应确认已配置 ONTAP Select AutoSupport 功能，并备份 ONTAP Select Deploy 配置数据。

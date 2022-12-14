@@ -51,6 +51,7 @@ Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用�
 
 NOTE: 如果您部署的集群仅用于评估，则可以跳过此步骤。
 
+.开始之前
 您必须具有管理员用户帐户的密码。
 
 .步骤
@@ -84,6 +85,7 @@ exit
 
 您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。
 
+.关于此任务
 在注册由 vCenter 管理的主机之前，您必须为 vCenter Server 添加一个管理服务器帐户。如果主机不受 vCenter 管理，则可以在注册主机时提供主机凭据。您应使用此操作步骤 添加每个主机。
 
 .步骤
@@ -131,8 +133,10 @@ host show -name 10.234.81.14 -detailed
 
 您必须创建并配置 ONTAP Select 集群。配置集群后，您可以配置各个节点。
 
+.开始之前
 您必须确定集群包含的节点数，并具有关联的配置信息。
 
+.关于此任务
 创建 ONTAP Select 集群时， Deploy 实用程序会根据您提供的集群名称和节点数自动生成节点名称。此外， Deploy 还会生成唯一的节点标识符。
 
 .步骤
@@ -172,8 +176,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 您必须配置 ONTAP Select 集群中的每个节点。
 
+.开始之前
 您必须具有节点的配置信息。应在 Deploy 实用程序中上传并安装容量层许可证文件。
 
+.关于此任务
 您应使用此操作步骤 配置每个节点。在此示例中，将为节点应用容量层许可证。
 
 .步骤
@@ -242,8 +248,10 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 您必须配置ONTAP Select 集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。
 
+.开始之前
 您必须使用VMware vSphere创建存储池。如果您使用的是软件RAID、则还需要至少一个可用磁盘驱动器。
 
+.关于此任务
 使用本地硬件RAID控制器时、需要执行步骤1到4。使用软件RAID时、您需要执行步骤1到步骤6。
 
 .步骤
@@ -323,6 +331,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 配置集群和节点后，您可以部署集群。
 
+.开始之前
 在部署多节点集群之前，您应运行网络连接检查程序以确认内部网络上各个集群节点之间的连接。
 
 .步骤
@@ -348,4 +357,5 @@ cluster deploy -name test-cluster
 
 
 
+.完成后
 您应备份 ONTAP Select Deploy 配置数据。

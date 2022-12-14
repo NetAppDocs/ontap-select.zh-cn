@@ -19,6 +19,7 @@ summary: 您可以从 Deploy 管理实用程序实例中删除不再需要的 ON
 
 CAUTION: 您不应删除集群正在使用的任何 ONTAP Select 映像。
 
+.关于此任务
 您可以删除当前未由集群使用或计划在未来集群部署中使用的旧 ONTAP Select 映像。
 
 .步骤

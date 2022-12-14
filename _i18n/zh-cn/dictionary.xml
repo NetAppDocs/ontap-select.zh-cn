@@ -1297,7 +1297,6 @@
   <block id="ae6ece3040d8e73c3c76bc342db2a5b5" category="summary">欢迎使用 ONTAP Select 文档门户。</block>
   <block id="7436b418bed093768e360d32105591d2" category="doc">ONTAP Select 文档</block>
   <block id="8a7497698e274b257189171d812c4134" category="paragraph">NetApp ONTAP Select 是一款软件定义的存储设备，您可以在运行 VMware ESXi 虚拟机管理程序的各种商用硬件服务器上部署。它可以为您提供构建灵活且可扩展的私有云基础架构所需的灵活性。</block>
-  <block id="1fde0727b387439572ade83eecff4f68" category="section-title">了解新功能</block>
   <block id="93c13bfba0d6bca47835d55338a89bcb" category="section-title">导航产品文档</block>
   <block id="fa0fa8503380df9df5c58ad57a531ff5" category="inline-link">ONTAP Select 产品库</block>
   <block id="f24c86f59b1831aca015361d668be674" category="paragraph">您可以在上找到此产品的 KVM 版本的发行说明和文档<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>。</block>
@@ -3556,4 +3555,99 @@
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升级到ONTAP Select 9.6或更高版本的系统上、在现有聚合或新创建的聚合上创建的新卷与在全新部署中创建的卷具有相同的行为。已进行 ONTAP Select 代码升级的现有卷与新创建的卷具有大多数相同的存储效率策略，但存在一些变体：</block>
   <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">升级到ONTAP Select 9.6或更高版本后、升级之前启用的存储效率功能将保留下来。如果在升级之前未启用存储效率，则在升级后不会启用存储效率。</block>
   <block id="6d7b1bef7e9e53ab5f633ac04956a24b" category="list-text"><block ref="6d7b1bef7e9e53ab5f633ac04956a24b" category="inline-link-rx"></block></block>
+  <block id="201d6cf1ba171c49bcdcb0766d20f3f9" category="paragraph-title">所需技能和信息</block>
+  <block id="7322a68bf06479e293387c20bf0f3e8e" category="paragraph-title">安装 Deploy 虚拟机</block>
+  <block id="816d0d92458bc1f7a68303a845228dde" category="paragraph-title">ONTAP 命令行界面</block>
+  <block id="fe8a09bfef8f50e4e72bec1b0f9c18db" category="paragraph-title">Deploy 实用程序配置备份的可用性</block>
+  <block id="8fbcf0a0690f2df2d9b37ca23e0733f5" category="paragraph-title">还原 Deploy 配置的备份</block>
+  <block id="d929d228dc7d6e05fe2b30f1a5826c49" category="paragraph-title">原始 Deploy 虚拟机的 IP 地址</block>
+  <block id="b957b13a65ee2e9c4a639a76b0b7cce7" category="paragraph-title">存储容量许可</block>
+  <block id="ed67f205040bfaf568fb57e318f22a15" category="paragraph-title">确定要使用的恢复操作步骤</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">关于此任务</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">结果</block>
+  <block id="801333bc71ada3c7b40aa384a24d7978" category="paragraph-title">网络最低配置和建议配置</block>
+  <block id="7e9f6a3ecc2e8ef83d7c15d09d7343f7" category="paragraph-title">采用 ONTAP HA 的 ONTAP Select 双节点集群</block>
+  <block id="918565c2d0e9439ff8f11d84c548453a" category="paragraph-title">支持 VMware 的 ONTAP Select 单节点集群</block>
+  <block id="e22b6495595f2c4ad67a830d1be05c6e" category="paragraph-title">处理器</block>
+  <block id="aca8e861c6f30fe2d42d0310a387312b" category="paragraph-title">以太网配置</block>
+  <block id="bfa10f7c5e846fdab9228aa316c04549" category="paragraph-title">LIF</block>
+  <block id="642223473862db290604321fe2ebe763" category="paragraph-title">svms</block>
+  <block id="d5350d8759b1ec84607e47908809058e" category="paragraph-title">聚合</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="paragraph-title">功能</block>
+  <block id="60311a7026f3d48f88b9518fc315cec6" category="paragraph-title">目标环境</block>
+  <block id="0b9c6eef4e3d3a222eb04e910d252339" category="paragraph-title">许可</block>
+  <block id="dff5ebd3a9adcb736da925d0da3936b9" category="paragraph-title">集群和调解器服务的位置</block>
+  <block id="c56f96d077c10fb4c4d1ce83cf5edfaa" category="paragraph-title">分配给 Deploy 的静态 IP 地址</block>
+  <block id="8b85794e07760e9397de8eb59192abb9" category="paragraph-title">ONTAP Select 存储效率配置</block>
+  <block id="47228ec57373d626b6ba8033642aa844" category="paragraph-title">有关 DAS SSD 配置的升级行为的注释</block>
+  <block id="2ebe501f9076f748c335cf335b5e07aa" category="paragraph-title">有关 DAS HDD 配置的升级行为的注释</block>
+  <block id="06be3d2851694a8ac21502e41f3e4305" category="paragraph-title">每个集群的许可模式一致</block>
+  <block id="4b0e422dcf415e37a99fb9240372b2e7" category="paragraph-title">集群中的所有节点都使用同一个 License Manager 实例</block>
+  <block id="02adb22963ca335394cfa32d81eb77c1" category="paragraph-title">每个节点一个容量池</block>
+  <block id="b738a2037fc94e2290be56df30341770" category="paragraph-title">HA 对中的节点使用同一个池</block>
+  <block id="affb254e2447d7a107f972ff759efbb0" category="paragraph-title">存储许可证持续时间</block>
+  <block id="231c03420ee8b0ab0994fb02ab1e1c01" category="paragraph-title">数据聚合租约有效期</block>
+  <block id="492e5546e60705134bff8d7f80511a8d" category="section-title">了解新增功能</block>
+  <block id="510a8cb711495bfdd04c792d2fc4b0fe" category="paragraph-title">参与者</block>
+  <block id="4bf581a821f13c0335aed161abdd6607" category="paragraph-title">网络流量要求摘要</block>
+  <block id="711926301465cde3461f5fc265229189" category="paragraph-title">ONTAP Select Deploy与ONTAP Select 有何区别？</block>
+  <block id="2cafb84adddb7f33d640fbedf4b9e1ed" category="paragraph-title">如何对使用 ONTAP Select 的性能问题描述 进行故障排除？</block>
+  <block id="2a07e658b19b1a46502dcaa156304d77" category="paragraph-title">ONTAP Select VM 是否可以使用 VMware 或其他第三方快照进行备份？</block>
+  <block id="9b837fd67d580207d87f58b37e1fefed" category="paragraph-title">对于本常见问题解答中未涉及的问题，我可以从何处获得澄清？</block>
+  <block id="676e5b6258c8aedd468f71142c59be64" category="paragraph-title">ONTAP Select 和ONTAP Select Deploy是否可以单独升级？</block>
+  <block id="ab7351a7aeb835a8c5a54bc22957dc89" category="paragraph-title">ONTAP Select 是否可以使用与 FAS 集群相同的操作步骤 进行升级？</block>
+  <block id="a16c0a0ef72a1eb743acb4bc099a7f63" category="paragraph-title">是否可以使用与 FAS 集群相同的操作步骤 还原 ONTAP Select ？</block>
+  <block id="6c934076f6916c570e1e192badaff0f6" category="paragraph-title">ONTAP MetroCluster SDS 是否至少需要高级版许可证？</block>
+  <block id="d2ff884cc30a8e5431e7b9a592afafd4" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy和ONTAP Select 集群和节点管理的IP地址？</block>
+  <block id="635eb068c84d97fe678e1459fc684023" category="paragraph-title">单个ONTAP Select Deploy实例是否可以在ESX和KVM上创建集群？</block>
+  <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="paragraph-title">ESX 上的 ONTAP Select 是否需要 vCenter ？</block>
+  <block id="3690bfca39d229721656be52d6e38df1" category="paragraph-title">什么是软件 RAID ？</block>
+  <block id="4e0891be88802b935c566dc6245269b2" category="paragraph-title">软件 RAID 与硬件 RAID 配置有何不同？</block>
+  <block id="d0093f68bddcefc4d27db886e2488615" category="paragraph-title">适用于 KVM 的 ONTAP Select 是否支持多个 NIC 绑定？</block>
+  <block id="baf467f7c147f366ee1e95629aa35ddb" category="paragraph-title">ONTAP Select 如何报告或警报虚拟机管理程序主机中发生故障的物理磁盘或 NIC ？ONTAP Select 是从虚拟机管理程序检索此信息还是应在虚拟机管理程序级别设置监控？</block>
+  <block id="c7b611d510bc619ec380a5444620746f" category="paragraph-title">ONTAP Select 支持的最大数据存储库大小是多少？</block>
+  <block id="4bb81c896f6353933a5f144d4f155bba" category="paragraph-title">如何增加 ONTAP Select 节点的容量？</block>
+  <block id="5e9f8d0ad5095acd00ef1ca82d1d0612" category="paragraph-title">ONTAP Select 是否支持 vSAN 或外部阵列类型的数据存储库？</block>
+  <block id="e9939028b5812a609cc9ffa930082fba" category="paragraph-title">ONTAP Select 是否支持 vSAN 上的多节点集群或其他共享外部存储（包括某些 HCI 堆栈）？</block>
+  <block id="8f45fcba53179b19aa4b7255218edbff" category="paragraph-title">ONTAP Select 是否支持 VMware 的 NSX VXLAN ？</block>
+  <block id="2b759707434dfe6525eb57ceb25c887f" category="paragraph-title">ONTAP Select 是否支持 KVM 实时迁移？</block>
+  <block id="ce777469b9f51fcc7f290822407d49c8" category="paragraph-title">vSAN AF 是否需要 ONTAP Select 高级版？</block>
+  <block id="8835ca2abfedf3bf3f774e0cbc020504" category="paragraph-title">支持哪些 vSAN FTT/FTM 设置？</block>
+  <block id="f13bfc8565d5515f3a1d879c5ecc3e18" category="paragraph-title">如果多个 ONTAP Select 节点属于不同的 Select 集群，它们是否可以在同一主机上运行？</block>
+  <block id="0599d62f7e6320d42cfbeebf39e88a84" category="paragraph-title">您是否可以让一个具有单个 10GE 端口的主机运行 ONTAP Select ？它是否可同时用于 ESX 和 KVM ？</block>
+  <block id="935a7d198067fd5cc94997a307675cd6" category="paragraph-title">要在 KVM 上执行实时迁移，您还需要运行哪些进程？</block>
+  <block id="217b7fb2555068ab584db913a7aea017" category="paragraph-title">ONTAP Select Deploy如何与vCenter进行通信以及应打开哪些防火墙端口？</block>
+  <block id="60789e3f721edfada82e8544b0181a42" category="paragraph-title">要创建ONTAP Select 集群、ONTAP Select Deploy需要哪些vCenter权限？</block>
+  <block id="cb5e1276bf07a1471cf95cbe7e0aacac" category="paragraph-title">什么是 vCenter Deploy 插件？</block>
+  <block id="27239a2d535b7aad4fede1afbfc975ce" category="paragraph-title">有多少个ONTAP Select Deploy VM可以将其插件注册到一个vCenter Server？</block>
+  <block id="214da09e3e95b0ef18f3b1348583230d" category="paragraph-title">ONTAP Select Deploy vCenter插件有何优势？</block>
+  <block id="b622687ba14734f3e63b4781b7e16324" category="paragraph-title">四节点，六节点或八节点集群与双节点 ONTAP Select 集群有何区别？</block>
+  <block id="22d02cab0c9108f9f86736e68a4be2de" category="paragraph-title">什么是 MetroCluster SDS ？</block>
+  <block id="5c13f1d93ecc5cc8fc37b87a8fedb3b7" category="paragraph-title">MetroCluster SDS 与 NetApp MetroCluster 有何不同？</block>
+  <block id="1092371194caad84c750464b682a97f5" category="paragraph-title">双节点 ONTAP Select 集群与双节点 ONTAP MetroCluster SDS 有何区别？</block>
+  <block id="8cfa2d102770158dc8e70d7e66b373c1" category="paragraph-title">ONTAP MetroCluster SDS 是否需要本地存储（ DAS ）？</block>
+  <block id="f631c65fafafcb98d092145300c095ee" category="paragraph-title">ONTAP MetroCluster SDS 是否支持软件 RAID ？</block>
+  <block id="d36cfdb5417305fbac63c342a62834bb" category="paragraph-title">ONTAP MetroCluster SDS 是否同时支持 SSD 和旋转介质？</block>
+  <block id="8b331b2a82b49d9dafa0973ccc6ec8bf" category="paragraph-title">ONTAP MetroCluster SDS 是否支持四节点和更大的集群大小？</block>
+  <block id="2643662b1523cd419f3e1a430c3d5ca5" category="paragraph-title">ONTAP MetroCluster SDS 有哪些要求？</block>
+  <block id="17a218f1a33ec9a62075f6e806d197be" category="paragraph-title">ONTAP Select 是否支持 vMotion 或 VMware HA ？</block>
+  <block id="32c62abec281fb2b058ef0af1f973abc" category="paragraph-title">ONTAP Select 是否支持 Storage vMotion ？</block>
+  <block id="d89c5456578e0bb5466c0194a63dbf13" category="paragraph-title">ONTAP Select 节点之间的 HA 流量是否可以通过不同的 vSwitch 和 / 或隔离的物理端口以及 / 或在 ESX 主机之间使用点对点 IP 缆线运行？</block>
+  <block id="02134a14eda4b0c0557ac5e897c7ad16" category="paragraph-title">什么是调解器服务？</block>
+  <block id="4d400d9f529e89c20ecab9cde4405a26" category="paragraph-title">调解器服务是否可以远程执行？</block>
+  <block id="5c3d06658ad9d8eaedefa625da8a9c54" category="paragraph-title">调解器服务使用什么协议？</block>
+  <block id="dbeee071e162d66777e5e130dcd67249" category="paragraph-title">是否可以对多个双节点 HA 集群使用一个调解器服务？</block>
+  <block id="ecf49f01e42124f2d85776c522feaa41" category="paragraph-title">部署后是否可以更改调解器服务位置？</block>
+  <block id="40910d9d6a3231bdd6eae7aec77b73aa" category="paragraph-title">ONTAP Select 是否支持使用（或不使用）调解器的延伸型集群？</block>
+  <block id="bd609b0252eeccc3bcce74e0c9234a88" category="paragraph-title">每个 ONTAP Select 集群一个实用程序实例</block>
+  <block id="6c7ded8cf41b50f61e1af82df9af57eb" category="paragraph-title">一个实用程序实例，用于多个 ONTAP Select 集群</block>
+  <block id="dfe55bfdf78bf686c853c934cacca8aa" category="paragraph-title">凭据类型</block>
+  <block id="f2d299d92bba14c1b1251b504639222c" category="paragraph-title">NetApp 客户端软件</block>
+  <block id="91aa06ef59aa905f170919b05e594df9" category="paragraph-title">可能的配置选项</block>
+  <block id="42cac712a9acf93c75659c9fa981f95f" category="paragraph-title">已购买含存储容量的许可证</block>
+  <block id="58af1c2597d085d648724676529071f9" category="paragraph-title">虚拟机管理程序平台</block>
+  <block id="ef85c9b02f4296b633e43a4931df8c2f" category="paragraph-title">节点之间的延迟</block>
+  <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">ONTAP Select 的当前版本</block>
+  <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">旧版本的 ONTAP Select</block>
+  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">关于此任务</block>
 </blocks>

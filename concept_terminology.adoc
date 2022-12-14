@@ -102,4 +102,5 @@ NOTE: 您只能添加版本早于 Deploy 实例附带的原始版本的 ONTAP Se
 在部署 ONTAP Select 集群后对其进行管理:: 部署 ONTAP Select 集群后，您可以像配置基于硬件的 ONTAP 集群一样配置此集群。例如，您可以使用 System Manager 或标准 ONTAP 命令行界面配置 ONTAP Select 集群。
 
 
+.相关信息
 link:task_cli_deploy_image_add.html["添加要部署的 ONTAP Select 映像"]

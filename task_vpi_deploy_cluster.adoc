@@ -55,8 +55,10 @@ summary: 您可以通过 vSphere Web 用户界面使用 Deploy vCenter 插件来
 
 您可以将虚拟机管理程序主机添加到 Deploy 实用程序中，以便在部署集群之前运行 ONTAP Select 节点。如果需要，您可以在集群创建对话框中添加主机。
 
+.开始之前
 您应查看部署 ONTAP Select 集群的准备情况。
 
+.关于此任务
 您可以根据集群大小添加一个或多个主机。
 
 .步骤
@@ -73,6 +75,7 @@ summary: 您可以通过 vSphere Web 用户界面使用 Deploy vCenter 插件来
 
 您可以通过 vSphere Web Client 使用 VMware vCenter 插件来部署由单个节点组成的 ONTAP Select 集群。
 
+.开始之前
 您应查看准备部署 ONTAP Select 集群和添加虚拟机管理程序主机。您可以在创建集群之前或在创建单节点集群过程中添加要运行 ONTAP Select 节点的主机。
 
 .步骤
@@ -122,8 +125,10 @@ TIP: 如果集群创建操作已启动，但无法完成，则不会注册您定
 
 您可以通过 vSphere Web Client 使用 VMware vCenter 插件来部署由多个节点组成的 ONTAP Select 集群。
 
+.开始之前
 您应查看准备部署 ONTAP Select 集群和添加虚拟机管理程序主机。您可以在创建集群之前或在创建多节点集群过程中添加要运行 ONTAP Select 节点的主机。
 
+.关于此任务
 ONTAP Select 多节点集群包含偶数个节点。节点始终以 HA 对的形式加入。
 
 .步骤

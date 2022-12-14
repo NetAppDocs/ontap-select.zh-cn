@@ -22,10 +22,13 @@ summary: 创建 ONTAP Select 集群后，您可以通过执行各种管理任务
 
 通常，您可以使用 Deploy Web 界面执行的过程分为三类。
 
+.部署 ONTAP Select 集群
 您可以部署单节点或多节点集群。请参见 link:task_deploy_cluster.html["部署 ONTAP Select 集群"] 有关详细信息 ...
 
+.对现有 ONTAP Select 集群执行操作步骤
 管理过程按不同类别进行组织，例如 _Security_ 和 _Clusters_ 。
 
+.在 Deploy 实用程序上执行操作步骤
 特定于部署的过程有多种（例如更改管理员密码）。
 
 
@@ -43,6 +46,7 @@ NOTE: 您也可以使用命令行界面管理 ONTAP Select 。有关详细信息
 
 部署 ONTAP Select 集群后，您可以像配置和管理基于硬件的 ONTAP 系统一样配置和管理集群。例如，您可以使用 OnCommand 系统管理器或 ONTAP 命令行界面配置 ONTAP Select 集群。
 
+.NetApp 客户端软件
 您可以使用以下受支持的 NetApp 客户端软件连接到 ONTAP Select ：
 
 * OnCommand 系统管理器
@@ -61,6 +65,7 @@ NOTE: 使用 SnapCenter 和相应插件需要基于服务器的许可证。ONTAP
 
 ONTAP Select 不支持列表中未包含的任何其他 NetApp 客户端软件。
 
+.可能的配置选项
 配置集群时，可以使用多种选项，包括以下选项：
 
 * 创建网络配置
@@ -68,6 +73,8 @@ ONTAP Select 不支持列表中未包含的任何其他 NetApp 客户端软件�
 * 创建数据 Storage Virtual Machine （ SVM ）
 
 
+.已购买含存储容量的许可证
 如果您决定在部署 ONTAP Select 集群时不安装具有存储容量的许可证文件，则必须在使用已购买许可证运行的集群的宽限期到期之前获取并安装这些许可证文件。
 
+.镜像聚合
 Deploy 管理实用程序会从可用数据存储库空间（例如 Pool0 和 Pool1 ）在每个 ONTAP Select 节点上创建数据备用磁盘。要在多节点集群上为数据实施高可用性，您必须使用这些备用磁盘创建镜像聚合。

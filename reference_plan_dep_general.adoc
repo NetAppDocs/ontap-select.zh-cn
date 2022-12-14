@@ -25,8 +25,10 @@ summary: 在规划安装 ONTAP Select Deploy 管理实用程序时，您应考�
 
 NOTE: 在所有部署情形下，一个 ONTAP Select 集群和集群中的节点只能由一个 Deploy 管理实用程序实例管理。一个集群不能由两个或更多不同的 Deploy 实用程序实例管理。
 
+.每个 ONTAP Select 集群一个实用程序实例
 您可以使用一个专用的 Deploy 实用程序实例部署和管理每个 ONTAP Select 集群。在这种一对一配置中，每个实用程序到集群对之间都有明确的分隔。此配置可为较小的故障域提供高级别的隔离。
 
+.一个实用程序实例，用于多个 ONTAP Select 集群
 您可以使用一个 Deploy 实用程序实例在组织中部署和管理多个 ONTAP Select 集群。在这种一对多配置中，所有处理和配置数据都由同一个 Deploy 实用程序实例管理。
 
 
@@ -41,10 +43,12 @@ ONTAP Select Deploy 凭据存储是一个存储帐户信息的数据库。在集
 
 NOTE: 帐户信息将使用 AES 加密算法和 SHA-256 哈希算法安全地存储在数据库中。
 
+.凭据类型
 支持以下类型的凭据：
 
 * 在将 ONTAP Select 节点直接部署到 VMware ESXi 期间，用于对虚拟机管理程序主机进行身份验证的主机
 * 当主机由 VMware vCenter 管理时，在将 ONTAP Select 节点部署到 ESXi 时， vCenter 用于对 vCenter 服务器进行身份验证
 
 
+.访问
 在使用 Deploy 执行常规管理任务（例如添加虚拟机管理程序主机）时，可以在内部访问凭据存储。您也可以直接通过 Deploy Web 用户界面和 CLI 管理凭据存储。

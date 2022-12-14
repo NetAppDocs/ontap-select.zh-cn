@@ -34,6 +34,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 您可以删除不再需要的 ONTAP Select 集群。
 
+.开始之前
 集群必须处于脱机状态。
 
 .步骤

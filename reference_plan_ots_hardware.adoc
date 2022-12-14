@@ -74,11 +74,13 @@ NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge �
 
 无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。
 
+.处理器
 支持的微处理器包括：
 
 * 适用于服务器的 Intel Xeon 处理器（请参见 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 处理器， window=_blank"] 有关详细信息，请参见）
 
 
+.以太网配置
 根据集群大小、可以使用多种受支持的以太网配置。
 
 [cols="30,35,35"]

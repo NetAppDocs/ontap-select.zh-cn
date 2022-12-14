@@ -16,6 +16,7 @@ summary: 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 
 [role="lead"]
 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 文档，并手动对 API 调用执行问题描述 。
 
+.开始之前
 您必须具备以下条件：
 
 * ONTAP Select Deploy 虚拟机的 IP 地址或域名
@@ -30,4 +31,5 @@ summary: 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 
 . 使用管理员用户名和密码登录。
 
 
+.结果
 此时将显示 Deploy 文档网页，页面底部将按类别组织调用。

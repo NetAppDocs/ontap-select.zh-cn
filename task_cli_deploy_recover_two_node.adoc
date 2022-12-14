@@ -22,20 +22,28 @@ summary: 如果 ONTAP Select Deploy 实用程序因某种原因失败或变得�
 
 您应在尝试恢复 Deploy 实用程序实例之前做好准备，以确保成功。
 
+.所需技能和信息
 您应熟悉几个管理过程并掌握所需的信息。
 
+.安装 Deploy 虚拟机
 您必须能够在虚拟机管理程序环境中安装 ONTAP Select Deploy 实用程序的新实例。
 
+.ONTAP 命令行界面
 您必须能够登录到 ONTAP Select 集群的 ONTAP 命令行界面并使用 Shell 界面。
 
+.Deploy 实用程序配置备份的可用性
 您必须确定是否已备份包含 ONTAP Select 双节点集群的失败 Deploy 实用程序实例中的配置数据。您的备份可能不包含集群。
 
+.还原 Deploy 配置的备份
 根据使用的恢复操作步骤 ，您应该能够还原 Deploy 配置数据的备份。
 
+.原始 Deploy 虚拟机的 IP 地址
 您必须知道出现故障的原始 Deploy 实用程序虚拟机的 IP 地址。
 
+.存储容量许可
 您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可，则必须在恢复或还原 Deploy 实例后重新安装每个容量池许可证。
 
+.确定要使用的恢复操作步骤
 您必须确定在恢复 ONTAP Select Deploy 实用程序实例时要使用的操作步骤 。您的决定取决于您是否已从包含 ONTAP Select 双节点集群的原始故障 Deploy 实用程序中备份配置数据。
 
 [cols="35,65"]
@@ -54,8 +62,10 @@ summary: 如果 ONTAP Select Deploy 实用程序因某种原因失败或变得�
 
 如果您已为包含双节点集群的失败 Deploy 实用程序实例创建备份，则可以将配置数据还原到新的 Deploy 虚拟机实例。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。
 
+.开始之前
 您必须备份包含双节点集群的原始故障 Deploy 虚拟机中的配置数据。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。
 
+.关于此任务
 由于您还原的配置备份包含双节点集群，因此会在新的 Deploy 实用程序虚拟机中重新创建调解器 iSCSI 目标和邮箱。
 
 .步骤
@@ -104,6 +114,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 
+.完成后
 如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见 _Reinstalling a Capacity Pool license_ 。
 
 
@@ -112,8 +123,10 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 如果您没有包含双节点集群的失败 Deploy 实用程序实例的备份，则必须在新的 Deploy 虚拟机中配置调解器 iSCSI 目标和邮箱。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。
 
+.开始之前
 您必须具有新 Deploy 实用程序实例的调解器目标名称。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。
 
+.关于此任务
 您可以选择将配置备份还原到新的 Deploy 虚拟机，即使该虚拟机不包含双节点集群也是如此。由于不会在还原时重新创建双节点集群，因此您必须通过 Deploy 上的 ONTAP Select 联机文档网页将调解器 iSCSI 目标和邮箱手动添加到新的 Deploy 实用程序实例中。您必须能够登录到双节点集群并知道这两个节点的 ONTAP 名称。
 
 
@@ -193,6 +206,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 
+.完成后
 如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见重新安装容量池许可证。
 
 .相关信息

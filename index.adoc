@@ -17,7 +17,7 @@ NetApp ONTAP Select 是一款软件定义的存储设备，您可以在运行 VM
 
 
 
-== 了解新功能
+== 了解新增功能
 
 * link:reference_new_ots.html["此版本中的新增功能"]
 

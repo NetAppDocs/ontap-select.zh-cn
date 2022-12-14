@@ -43,6 +43,7 @@ summary: 您可以使用 ONTAP Select Deploy Web 用户界面从 vCenter 服务�
 . 如果出现提示，请提供 vCenter 凭据。
 
 
+.完成后
 如果删除此插件，则必须执行以下任务之一才能从 vCenter Server 中完成此插件的删除：
 
 * 重新启动 vCenter Server

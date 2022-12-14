@@ -11,6 +11,7 @@ summary: 您可以通过 vSphere Web Client 访问 Deploy vCenter 插件。
 [role="lead"]
 您可以通过 vSphere Web Client 访问 Deploy vCenter 插件。
 
+.开始之前
 必须安装 vCenter 插件。此外，您在登录到 vSphere 时使用的 vCenter 帐户必须具有以下权限：
 
 * NetApp
@@ -33,4 +34,5 @@ summary: 您可以通过 vSphere Web Client 访问 Deploy vCenter 插件。
 . 单击 * 全局清单列表 * 。
 
 
+.结果
 左侧窗格中提供了 * ONTAP Select Clusters* 和 * ONTAP Select Deploy * 选项。如果未显示它们，您应先注销，然后重新登录。

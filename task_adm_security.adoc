@@ -34,6 +34,7 @@ summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项
 
 您可以将管理服务器帐户添加到 Deploy 凭据存储数据库中。
 
+.开始之前
 您应熟悉凭据类型以及 ONTAP Select Deploy 如何使用这些凭据。
 
 .步骤
