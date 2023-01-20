@@ -1,109 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">ONTAP Select 9.6 性能的性能信息—高级 HA 直连 SSD 存储。</block>
-  <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">ONTAP Select 9.6 性能：高可用性直连 SSD 高级存储</block>
-  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">参考平台的性能信息。</block>
-  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">参考平台</block>
-  <block id="e4a309f15020053335305c42e7ab8866" category="paragraph">ONTAP Select 9.6 （高级版 XL ）硬件（每个节点）</block>
-  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">Fujitsu PRIMERGY RX2540 M4 ：</block>
-  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">2.6 GHz 的 Intel （ R ） Xeon （ R ） Gold 6142b CPU</block>
-  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32 个物理核心（ 16 个 2 插槽）， 64 个逻辑核心</block>
-  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GB RAM</block>
-  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">每个主机的驱动器数： 24 个 960 GB SSD</block>
-  <block id="54b588a0a73b1fd4e80bea0b52b66a5c" category="list-text">ESX 6.5U1</block>
-  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">客户端硬件</block>
-  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5 个 NFSv3 IBM 3550m4 客户端</block>
-  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">配置信息</block>
-  <block id="644583ef81af3657d263540fe36659df" category="list-text">软件 RAID 1 x 9 + 2 RAID-DP （ 11 个驱动器）</block>
-  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5 （ ONTAP 中的 RAID-0 ） /RAID 缓存 NVRAM</block>
-  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">未使用存储效率功能（数据压缩，重复数据删除， Snapshot 副本， SnapMirror 等）</block>
-  <block id="d906eb9f16fe5d1f0efd1b7177d61563" category="paragraph">下表列出了根据使用软件 RAID 和硬件 RAID 的 ONTAP Select 高级节点 HA 对上的读 / 写工作负载测量的吞吐量。性能测量是使用 SIO 负载生成工具进行的。</block>
-  <block id="98e524c388d1dc4bc579ff68a03fac92" category="paragraph">* 采用软件 RAID 和硬件 RAID 的 DAS （ SSD ）上单节点（四节点中型实例的一部分） ONTAP Select 9.5 集群的性能结果 *</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Description</block>
-  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">顺序读取 64KiB</block>
-  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">顺序写入 64KiB</block>
-  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">随机读取 8 KiB</block>
-  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">随机写入 8 KiB</block>
-  <block id="e78425925b16cdbe3107734a56031c80" category="cell">随机 WR/RD （ 50/50 ） 8 KiB</block>
-  <block id="590488d177e2d68396e9e404f0787197" category="cell">ONTAP 9.6 选择采用 DAS （ SSD ）软件 RAID 的大型实例</block>
-  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171 MiBps</block>
-  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559 MiBps</block>
-  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">9554 MiBps</block>
-  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">294 MiBps</block>
-  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">5664 MiBps</block>
-  <block id="895f2f67b79ae99fa3fe27377f9e4cd0" category="cell">ONTAP 9.6 选择使用 DAS （ SSD ）软件 RAID 的中型实例</block>
-  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090 MiBps</block>
-  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MiBps</block>
-  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677 MiBps</block>
-  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335 MiBps</block>
-  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 个 3 MiBps</block>
-  <block id="97ed077967fa6e5c5b243597455454ad" category="cell">ONTAP 9.6 选择使用 DAS （ SSD ）硬件 RAID 的中型实例</block>
-  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038 MiBps</block>
-  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520 MiBps</block>
-  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578 MiBps</block>
-  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325 MiBps</block>
-  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399 MiBps</block>
-  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">64K 顺序读取</block>
-  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">详细信息：</block>
-  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">已启用 SIO 直接 I/O</block>
-  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2 个节点</block>
-  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">每个节点 2 个数据 NIC</block>
-  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 8 TB 软件 RAID ）</block>
-  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64 个 SIO 进程，每个进程 1 个线程</block>
-  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">每个节点 32 个卷</block>
-  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">每个进程 1 个文件；每个进程的文件大小为 12000 MB</block>
-  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">64K 顺序写入</block>
-  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 4 TB 软件 RAID ）</block>
-  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128 个 SIO 进程，每个进程 1 个线程</block>
-  <block id="5347890bfa18e54f63569bc0327414f2" category="list-text">每个节点的卷数 32 （硬件 RAID ）， 16 （软件 RAID ）</block>
-  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">每个进程 1 个文件；每个进程的文件大小为 30720 MB</block>
-  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">8 K 随机读取</block>
-  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64 个 SIO 进程，每个进程 8 个线程</block>
-  <block id="5e891e0901bd4eb1cada8b221b715ae8" category="list-text">每个节点的卷 32</block>
-  <block id="4af562d52353844c11ed213dc9654510" category="list-text">每个进程 1 个文件；每个进程的文件大小为 12228MB</block>
-  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">8 K 随机写入</block>
-  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">每个进程 1 个文件；每个进程的文件大小为 8192 MB</block>
-  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">8 K 随机 50% 写入 50% 读取</block>
-  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">每个进程 64 个 SIO 进程 208 个线程</block>
   <block id="1bef0a056722dac4fff8d9e4eb9229d3" category="summary">您可以使用以下脚本根据脚本和 JSON 输入文件中定义的参数创建集群。</block>
   <block id="e16c906ba61aeeafbcb69e14b4357d15" category="doc">用于创建集群的脚本</block>
-  <block id="1844b667aa3a3552724d4b6f25fdfee0" category="summary">ONTAP Select 9.4 性能的性能信息—高级 HA 直连 SSD 存储。</block>
-  <block id="7e6ffef2d9e4630a693d27eee2bf092b" category="doc">ONTAP Select 9.4 性能：高可用性直连 SSD 高级存储</block>
-  <block id="62226f401a888e5c673bd197232488a4" category="paragraph">ONTAP Select 9.4 性能与高级 HA 直连 SSD 存储。</block>
-  <block id="7145f73f47761ef03a9ac7fa743946ba" category="paragraph">ONTAP Select 9.4 （高级版）硬件（每个节点）：</block>
-  <block id="080b55c282b18aff6acbb9b8307e45d7" category="list-text">Cisco UCS C240 M4S2 ：</block>
-  <block id="c2d47e9bc55facf5b445ed65b937324d" category="list-text">2.60 GHz 的 Intel Xeon CPU E5-2697</block>
-  <block id="4fb1dad16b1d444620c31d069252b122" category="list-text">2 个插槽；每个插槽 14 个 CPU</block>
-  <block id="067be87059aca76ce27d2d89d383b1fe" category="list-text">56 个逻辑 CPU （启用 HT ）</block>
-  <block id="3b63a934f24699a3abc944472864815f" category="list-text">256 GB RAM</block>
-  <block id="433abae658dcc70d5d3761c8600f7b1f" category="list-text">VMware ESXi 6.5</block>
-  <block id="a47c0000c2a8c08808a324895ee9f307" category="list-text">每个主机的驱动器数： 24 个 X371A NetApp 960 GB SSD</block>
-  <block id="89b13670b1db743f4d85d8e8f4088bcf" category="paragraph">客户端硬件：</block>
-  <block id="2dfe3c2982e9fc1ac8adf6ce6b36e54c" category="list-text">4 个 NFSv3 IBM 3550m4 客户端</block>
-  <block id="2eb19baafd2ac3bf96bb137917d946fa" category="paragraph">配置信息：</block>
-  <block id="a40f55e0a537eb3307ad8510ba1e6e1b" category="list-text">1 ， 500 MTU ，用于客户端和 Select 集群之间的数据路径</block>
-  <block id="8b72248fc750c60f5a43e996ad821fe0" category="paragraph">下表列出了根据 ONTAP Select 高级节点 HA 对上的读 / 写工作负载测量的吞吐量。性能测量是使用 SIO 负载生成工具进行的。</block>
-  <block id="b6b524966f971cc1b38cf6c4eded4605" category="paragraph">* 单节点（四节点中型实例的一部分）基于 DAS （ SSD ）的 ONTAP Select 9.4 集群的性能结果 *</block>
-  <block id="cfde5abdec2f5607a3796be635ad47c8" category="cell">采用 DAS （ SSD ）的 ONTAP 9.4 Select 中型实例</block>
-  <block id="1f194e7c72c8d7d14fa3c4f8961be5d9" category="cell">1045MBps 16 ， 712 IOPS</block>
-  <block id="28e25559b3ba528fccbc794a3d5acf26" category="cell">251 MBps 4016 IOPS</block>
-  <block id="cd1bc5669f6e4b437606af5e53a8b1fa" category="cell">492MBps 62 ， 914 IOPS</block>
-  <block id="ece20723782dfa056ec3b55e3b24c37e" category="cell">141 MBps 18 ， 048 IOPS</block>
-  <block id="d75d181c83215266d40487856fd42da7" category="cell">218 MBps 27 ， 840 IOPS</block>
-  <block id="a3aa868c13903be73360a0ca2b15dfec" category="list-text">2 个数据 NIC</block>
-  <block id="c877600127e0c10559aaef3fa6f8b340" category="list-text">1 个数据聚合（ 2 TB ）</block>
-  <block id="49bbe54cd8eaab8f69a8a97fa376d801" category="list-text">64 个卷； 64 个 SIO 进程 / 线程</block>
-  <block id="4a0db462fd57fced8d7681b289ec4560" category="list-text">每个节点 32 个卷（共 64 个）</block>
-  <block id="de2926cc8dca4ae82290fb564b1e727a" category="list-text">每个卷 1 个 SIO 进程；每个文件 1 个 SIO 线程</block>
-  <block id="1ac3559913b9b5236f11c6f5102ad2ef" category="list-text">每个卷 1 个文件；每个卷的文件大小为 12000 MB</block>
-  <block id="be480d1f91e2cdc691aa5d12fca920bc" category="list-text">1 个数据聚合（ 2 TB ）：</block>
-  <block id="09316e2030ac2a586bdc8b34957a3f11" category="list-text">64 个卷； 128 个 SIO 进程 / 线程</block>
-  <block id="5c976de35e9bfb7d8dfdc6bc36e9f30b" category="list-text">每个卷 2 个 SIO 进程；每个文件 1 个 SIO 线程</block>
-  <block id="e5f9abaaeb90091b0581ce38df4c2c3b" category="list-text">每个卷 2 个文件；每个卷的文件大小为 30720 MB</block>
-  <block id="f2c1316c9ccf02c81ebe9af467c06324" category="list-text">每个卷 1 个 SIO 进程；每个文件 8 个 SIO 线程</block>
-  <block id="e8a52598182d56969b5ab1ca3f51824c" category="list-text">每个卷 1 个文件；每个卷的文件大小为 12228MB</block>
-  <block id="e5b92c2ae9138f1aed4a50d59474e5b4" category="list-text">每个卷 1 个文件；每个卷的文件大小为 8192 MB</block>
-  <block id="8199bd94478b387253fc671d5de902af" category="list-text">每个卷 1 个 SIO 进程；每个文件 20 个 SIO 线程</block>
   <block id="32ddafc35da243c0e169cfbcc318e4a2" category="summary">您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 文档，并手动对 API 调用执行问题描述 。</block>
   <block id="ee7f595722514d489b804241b0118bf9" category="doc">访问 Deploy 文档页面</block>
   <block id="a08d0039b6defc60dd0db0aebca289d8" category="paragraph">您必须具备以下条件：</block>
@@ -247,15 +146,11 @@
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相关信息</block>
   <block id="680e9e82137091017ba19fdaa5193e04" category="list-text"><block ref="680e9e82137091017ba19fdaa5193e04" category="inline-link-macro-rx"></block></block>
   <block id="8b60e6d501896a426a20e22fc6479aec" category="summary">性能因硬件配置而异。</block>
-  <block id="803abb3d8fba33b629c90a24fc1585f8" category="doc">性能一般注意事项</block>
-  <block id="e4169e437dafc2dac3f256dc83393811" category="paragraph">本节所述的性能数字是对 ONTAP Select 集群性能的粗略估计，不是性能保证。</block>
-  <block id="8db2c1339766522ddbe10fc18f14fda4" category="paragraph">由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。事实上，特定硬件配置是影响特定 ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">* 核心频率 * 。一般来说，最好使用较高的频率。</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">* 单插槽与多插槽 * 。ONTAP Select 不使用多插槽功能，但支持多插槽配置所需的虚拟机管理程序开销会在整体性能方面造成一定程度的偏差。</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">* RAID 卡配置和关联的虚拟机管理程序驱动程序 * 。虚拟机管理程序提供的默认驱动程序可能需要替换为硬件供应商驱动程序。</block>
   <block id="71408d9f3d3515fa8a651b1604736a6f" category="list-text">* RAID 组中的驱动器类型和驱动器数量 * 。</block>
   <block id="f28d3f9b022a76395cd98dbce7787e03" category="list-text">* 虚拟机管理程序版本和修补程序级别 * 。</block>
-  <block id="d98c26215b600e916c38a438cd921e98" category="paragraph">本节仅介绍在完全相同的测试平台上执行测试时的性能比较，以突出显示特定功能的影响。通常，我们会记录硬件环境，并在该平台上运行尽可能高的性能配置。</block>
   <block id="9356992dec47ad3cff6c85c52b7d7e61" category="summary">如果有可用的硬件 RAID 控制器， ONTAP Select 可以将 RAID 服务移至硬件控制器，以提高写入性能并防止物理驱动器出现故障。因此， ONTAP Select 集群中所有节点的 RAID 保护由本地连接的 RAID 控制器提供，而不是通过 ONTAP 软件 RAID 提供。</block>
   <block id="dbadd117fcffc5e2fbcbb08c9edd1a14" category="doc">用于本地连接存储的硬件 RAID 服务</block>
   <block id="2414b45e14afeaaa0816f032bf126e4d" category="admonition">ONTAP Select 数据聚合配置为使用 RAID 0 ，因为物理 RAID 控制器正在为底层驱动器提供 RAID 条带化。不支持其他 RAID 级别。</block>
@@ -1907,30 +1802,6 @@
   <block id="c264be0843833c0497e73f18533d675d" category="list-text">获取具有长时间轮询请求的作业的当前状态</block>
   <block id="0347794109580ef0b93925c162a6a1de" category="list-text">如果作业处于非终端状态（已排队，正在运行），请重新执行环路。</block>
   <block id="6caaacff3c8abae5d9b2e02a5e4d0829" category="list-text">当作业达到终端状态（成功，失败）时停止。</block>
-  <block id="6d42c54012b863cd6eedcc3d403ad0c6" category="summary">ONTAP Select 9.5 性能—高级 HA 直连 SSD 存储。</block>
-  <block id="ff0e3825fd4663837f971a7ba681159f" category="doc">ONTAP Select 9.5 性能：高级 HA 直连 SSD 存储</block>
-  <block id="c9b1fc9101d9afb87bc8e65e52b3cdaf" category="paragraph">ONTAP Select 9.5 性能与高级 HA 直连 SSD 存储。</block>
-  <block id="d8ae9b53271ef4ae7e463671d9edd15f" category="paragraph">ONTAP Select 9.5 （高级版）硬件（每个节点）：</block>
-  <block id="da8d0349a5f6486d92d1203e4c900b69" category="list-text">Cisco UCS C240 M4SX ：</block>
-  <block id="66b56969cc3581bdd13812374d117941" category="list-text">2.1 GHz 的 Intel Xeon CPU E5-2620</block>
-  <block id="79f2a0232b06d44ab405491d76e73a16" category="list-text">2 个插槽；每个插槽 16 个 CPU</block>
-  <block id="88f6a554563c7a608913d59040ebaf62" category="list-text">128 GB RAM</block>
-  <block id="1762c54cddae477ffccf703524615078" category="list-text">每个主机的驱动器数： 24 个 900 GB SSD</block>
-  <block id="b488012d536d61994101d21973ccb5fc" category="cell">ONTAP 9.5 选择使用 DAS （ SSD ）硬件 RAID 的中型实例</block>
-  <block id="f3478912bb07f7ec7c8444a5e316e819" category="cell">1 ， 712 MiBps</block>
-  <block id="95017f29234ec8b67e7f06611466891b" category="cell">412MiBps</block>
-  <block id="48c28f3a705b0584dbfb937f1e189873" category="cell">391MiBps</block>
-  <block id="9dcedfb9f11c04fb8a4aaa046d530c89" category="cell">1251MiBps</block>
-  <block id="772f559bb1cae1f865b3a396cf692ddc" category="cell">309MiBps</block>
-  <block id="c91e356267219d84f0202e2d0dfbffb2" category="cell">ONTAP 9.5 选择使用 DAS （ SSD ）软件 RAID 的中型实例</block>
-  <block id="aad82c942b780f118f2cb44de2a917b2" category="cell">1 ， 674 MiBps</block>
-  <block id="c17a615d3925b4ae5b453126b17c321f" category="cell">360 MiBps</block>
-  <block id="db456de05f2855d308ef49d553c921f7" category="cell">451 MiBps</block>
-  <block id="6f874ec8b8b77dc7dd8d2a094888d1e3" category="cell">223MiBps</block>
-  <block id="2de50a1b7b5776ec223eb8252b6d9597" category="cell">293MiBps</block>
-  <block id="114ff4f2711841720a4f7186e6a15a6a" category="list-text">每个进程 1 个文件；每个进程的文件大小为 12228MB</block>
-  <block id="1180f790e23bf2a48f8bf9f2b5e2a5d4" category="list-text">每个进程 1 个文件；每个进程的文件大小为 8192 MB</block>
-  <block id="e919c753c1379472f37d0b73be4c0c35" category="list-text">64 个 SIO 进程，每个进程 20 个线程</block>
   <block id="aca2fd87d8012efa91dbc6e6c912d7e7" category="summary">ONTAP Select 提供的存储效率选项与 FAS 和 AFF 阵列上的存储效率选项类似。</block>
   <block id="6b3850335452abbd46e2f81ea011d686" category="doc">存储效率支持</block>
   <block id="1f111941ef490bbd54082392c8d7d5bb" category="paragraph">使用全闪存 VSAN 或通用闪存阵列部署 ONTAP Select 虚拟 NAS （ vNAS ）时，应遵循使用非 SSD DAS 存储的 ONTAP Select 的最佳实践。</block>
@@ -3377,10 +3248,6 @@
   <block id="7590e9173880f1e9732bf635a6fdd451" category="sidebar">同步复制和镜像聚合</block>
   <block id="4ad4ca6d00f55818bc64af3e5a3ec6fb" category="sidebar">其他高可用性功能</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="sidebar">性能</block>
-  <block id="3516c8ba7b35045de92853ce609c11f7" category="sidebar">General considerations</block>
-  <block id="51816119234063b73e5a0a75806755ce" category="sidebar">9.4 高级高可用性直连 SSD 存储</block>
-  <block id="1bbc5edfb65abbd74567c968131d62b8" category="sidebar">9.5 高级高可用性直连 SSD 存储</block>
-  <block id="121abb38eefc2bbdbd5ecfe650e612c1" category="sidebar">9.6 高级高可用性直连 SSD 存储</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="sidebar">入门</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">概述</block>
   <block id="2d242bb36ec91b32005f9296ff03a912" category="sidebar">架构</block>
@@ -3650,4 +3517,6 @@
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">ONTAP Select 的当前版本</block>
   <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">旧版本的 ONTAP Select</block>
   <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">关于此任务</block>
+  <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。特定硬件配置是影响特定ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：</block>
+  <block id="589ecc96b319d521b89948044a66b27b" category="paragraph">有关ONTAP Select 9.4、9.5和9.6的性能测试详细信息、请参见的_Data ONTAP Select Performance_一节<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>。</block>
 </blocks>

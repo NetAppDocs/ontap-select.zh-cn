@@ -4,7 +4,7 @@ permalink: concept_perf_general.html
 keywords: ontap select, performance 
 summary: 性能因硬件配置而异。 
 ---
-= 性能一般注意事项
+= 性能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,9 +16,7 @@ summary: 性能因硬件配置而异。
 [role="lead"]
 性能因硬件配置而异。
 
-本节所述的性能数字是对 ONTAP Select 集群性能的粗略估计，不是性能保证。
-
-由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。事实上，特定硬件配置是影响特定 ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：
+由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。特定硬件配置是影响特定ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：
 
 * * 核心频率 * 。一般来说，最好使用较高的频率。
 * * 单插槽与多插槽 * 。ONTAP Select 不使用多插槽功能，但支持多插槽配置所需的虚拟机管理程序开销会在整体性能方面造成一定程度的偏差。
@@ -27,4 +25,4 @@ summary: 性能因硬件配置而异。
 * * 虚拟机管理程序版本和修补程序级别 * 。
 
 
-本节仅介绍在完全相同的测试平台上执行测试时的性能比较，以突出显示特定功能的影响。通常，我们会记录硬件环境，并在该平台上运行尽可能高的性能配置。
+有关ONTAP Select 9.4、9.5和9.6的性能测试详细信息、请参见的_Data ONTAP Select Performance_一节 https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^]。

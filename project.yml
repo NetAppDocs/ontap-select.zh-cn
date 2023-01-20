@@ -184,15 +184,7 @@ sidebar:
       - title: 其他高可用性功能
         url: "/concept_ha_other.html"
     - title: 性能
-      entries:
-      - title: General considerations
-        url: "/concept_perf_general.html"
-      - title: 9.4 高级高可用性直连 SSD 存储
-        url: "/concept_perf_premium_ha_direct_ssd_94.html"
-      - title: 9.5 高级高可用性直连 SSD 存储
-        url: "/concept_perf_premium_ha_direct_ssd_95.html"
-      - title: 9.6 高级高可用性直连 SSD 存储
-        url: "/concept_perf_premium_ha_direct_ssd_96.html"
+      url: "/concept_perf_general.html"
   - title: 与 vCenter 集成
     entries:
     - title: 入门
