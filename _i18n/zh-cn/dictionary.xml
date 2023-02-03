@@ -1497,7 +1497,6 @@
   <block id="bac8e85676787adaae3dcc2dd52d64fa" category="paragraph">`ls -lh /opt/netapp/images`</block>
   <block id="cda33a034ba882bacd58315a77cc81b3" category="list-text">也可以删除 ESXi 映像。</block>
   <block id="19b0df5ac5e7fed3b93ef14a626c1330" category="paragraph">示例 `rm -r /opt/netapp/images/DataONTAPv-9.3RC1-vidconsole esx.ova`</block>
-  <block id="144e136136c9b5e30873de1afe8813d2" category="list-text">如果使用的是 ONTAP Select 9.10.1 之前的版本，则可以选择删除 KVM 映像。</block>
   <block id="acbb93a8e2ab3c3f0b3c4adb7b2094ff" category="paragraph">示例 `rm -r /opt/netapp/images/DataONTAPv-9.3Rc1-serialconsole — kvm.raw.tar`</block>
   <block id="cf3870a4ea8df9ca19bca44e9ddb94ff" category="summary">在规划安装 ONTAP Select Deploy 管理实用程序时，您应考虑几个一般要求。</block>
   <block id="dbc858bba588a84f31510f7236fc9029" category="doc">ONTAP Select Deploy 的一般要求和规划</block>
@@ -3289,14 +3288,9 @@
   <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="sidebar">获取更多信息</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">早期版本</block>
   <block id="33b6370e1de46bd324564163dfaf48a9" category="list-text">VMware ESXi 7.0 GA (内部版本15843807或更高版本)、包括7.0 U1、U2和U3C</block>
-  <block id="d36f4205c301fa0311580c2426a17881" category="list-text">使用KVM虚拟机管理程序代替VMware ESXi (使用ONTAP Select 9.10.1及更高版本创建新集群时、不再支持KVM)</block>
-  <block id="b25679a7bebb3b9795d3926792d8c9a9" category="paragraph">MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。请注意、ONTAP Select 9.10.1及更高版本不再支持KVM。</block>
-  <block id="0ec7f2d003cb42f9464107b0ad854843" category="admonition">从ONTAP Select 9.10.1开始、在部署新的ONTAP Select 集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">虚拟机管理程序您可以部署到ESXi或KVM (取决于Deploy版本)。部署到 ESXi 时，虚拟机管理程序可以由 vCenter 进行管理，也可以是独立主机。</block>
-  <block id="4a2f121824a056475165660b79eefb58" category="admonition">从ONTAP Select 9.10.1开始、创建新集群时不再支持KVM虚拟机管理程序。以下示例适用于支持 KVM 的早期版本。</block>
   <block id="5f3026f83f6c32eec05d90d578a5e7ea" category="paragraph">请参见 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以准备部署集群。必须安装 Deploy 管理并对其进行初始配置（密码， AutoSupport ， vCenter ）。</block>
   <block id="d0a2c35dd24f48a701484a2c0e0e4e2a" category="list-text">支持ESX和KVM (ONTAP Select 9.10.1之前的版本)</block>
-  <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">从ONTAP Select 9.10.1开始、部署新集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">ONTAP Select 文档</block>
   <block id="88d96915de77c1959098b364119959de" category="paragraph">请参见 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="d0730ff14b2f6fb53d9e49978a76660e" category="summary">ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。</block>
@@ -3397,17 +3391,13 @@
   <block id="8a820df1b1697eba16442acc38af08cd" category="paragraph">您应至少使用两个物理 NIC ，以避免网络层出现单点故障。NetApp 建议在数据，管理和内部端口组中配置 NIC 绑定和绑定，并在组或绑定中配置两个或更多上行链路。此类配置可确保在发生任何上行链路故障时，虚拟交换机将流量从发生故障的上行链路移至 NIC 组中运行正常的上行链路。有关建议的网络配置的详细信息，请参见 <block ref="705c0997f8d64d5d2f3905a67e67034f" category="inline-link-macro-rx"></block>。</block>
   <block id="bc8028393dfe2dad42a885ee42952937" category="inline-link-macro">此版本中的新增功能</block>
   <block id="81f4b69f6b074a0894dc780d0c5fe22f" category="list-text"><block ref="81f4b69f6b074a0894dc780d0c5fe22f" category="inline-link-macro-rx"></block></block>
-  <block id="2648230546014b2ae69624070a44ec60" category="admonition">从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。现在、对于ONTAP Select 9.11.1及更高版本、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。</block>
   <block id="14f3d38ecd199a3a7efaea74103df87f" category="paragraph">ONTAP Select 9.12.1可以部署在VMware ESXi上。此站点包含有关在VMware ESXi上运行的ONTAP Select 9.12.1、9.11.1、9.10.1、9.9.1、9.8和9.7的文档、以及与虚拟机管理程序无关的文档(例如REST API)。</block>
   <block id="b3a281a86bd3818b168900985a901d99" category="inline-link-macro">ONTAP Select 9.12.1注意事项</block>
   <block id="ee6f7d910b278ad714ca5e935fc4ef34" category="list-text"><block ref="ee6f7d910b278ad714ca5e935fc4ef34" category="inline-link-macro-rx"></block></block>
   <block id="f35dd9a9dbe889bc05b23cec8774b252" category="inline-link">《ONTAP Select 9.12.1发行说明》</block>
   <block id="b3075927414c52e4bd4c7e822453d175" category="paragraph">您可以访问<block ref="3ec17b33e7ccb0ff402fc289d09bfa2b" category="inline-link-rx"></block> 可查看有关当前版本的详细信息。</block>
-  <block id="252f0e043f3f30bf9b9641c26a9f3d25" category="admonition">从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。现在、对于ONTAP Select 9.11.1及更高版本、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。有关KVM的问题仅适用于支持KVM的早期版本。</block>
   <block id="81884c993fa720d5bc8ac8f0f7c6dbda" category="summary">当前版本不包含ONTAP Select 的任何新增功能或改进功能。</block>
   <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">此版本中的新增功能</block>
-  <block id="626a7cbe056796bcb1c158b143866230" category="section-title">《 ONTAP 发行说明》</block>
-  <block id="ee7c32e022645197b08ad79344b7cea5" category="paragraph">ONTAP Select 从当前版本的核心ONTAP 产品中的大多数新开发中获益。请参见<block ref="13c0668cefb5d13050e1de01793dacbb" category="inline-link-rx"></block> 有关每个ONTAP 9版本中的新增功能或改进功能的信息。</block>
   <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">使用全闪存VSAN或通用闪存阵列部署ONTAP Select 虚拟NAS (vNAS)时、应遵循使用非SSD直连存储(DAS)的ONTAP Select 的最佳实践。</block>
   <block id="56d7a71de46feea406be8535cec9562b" category="paragraph">只要您的DAS存储具有SSD驱动器和高级许可证、就会在新安装中自动启用类似于AFF的特性。</block>
   <block id="c9f8761a361c6711a9ed57ab4856d50e" category="admonition">对于从9.6及更高版本升级的ONTAP Select 、您必须使用高级许可证在DAS SSD存储上安装ONTAP Select。此外、在使用ONTAP Deploy进行初始集群安装期间、您必须选中*启用存储效率*复选框。在未满足先前条件的情况下，要在 ONTAP 升级后启用类似于 AFF 的特性，需要手动创建启动参数并重新启动节点。有关更多详细信息，请联系技术支持。</block>
@@ -3519,4 +3509,46 @@
   <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">关于此任务</block>
   <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。特定硬件配置是影响特定ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：</block>
   <block id="589ecc96b319d521b89948044a66b27b" category="paragraph">有关ONTAP Select 9.4、9.5和9.6的性能测试详细信息、请参见的_Data ONTAP Select Performance_一节<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>。</block>
+  <block id="3a7c41ad2e6168ef513e210afc4be8f6" category="admonition">从ONTAP Select 9.10.1开始、部署新集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。</block>
+  <block id="507f8233cb2eb908786a8439f415fee2" category="list-text">从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。</block>
+  <block id="93ffd34ce676a00f4a126c465fc48130" category="list-text">从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。</block>
+  <block id="1af8cafe7ba409845ae1075c9a509547" category="paragraph">NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。</block>
+  <block id="77e5d3b8719596b41c77222a6711e69b" category="section-title">ONTAP Select 9.12.1</block>
+  <block id="05dd50ebf48db80deadf4c9a847c2ce4" category="paragraph">ONTAP Select 9.12.1从当前版本的核心ONTAP 产品中的大多数新开发中受益。它不包括ONTAP Select 特有的任何新功能或改进。</block>
+  <block id="7802fb8cc2dd2205ca511b49141235e0" category="section-title">ONTAP Select 9.11.1</block>
+  <block id="719b97afa778e32343849808db915b66" category="paragraph">ONTAP Select 9.11.1包括多项新功能和改进功能。</block>
+  <block id="aacb1ad8ec74092a13074108a4e20c02" category="list-text">增强了对VMware ESXi的支持</block>
+  <block id="aa46a81eb495f6cb92e19c98c6d7383a" category="list-text">ONTAP Select 9.11.1支持VMware ESXi 7.0 U3C。</block>
+  <block id="5986999240906508e3084d84dd2552d8" category="list-text">支持 VMware NSX-T</block>
+  <block id="1092b73fb287a831beb00918cbde5b6b" category="list-text">ONTAP Select 9.10.1及更高版本已通过VMware NSX-T 3.1.2的认证。将NSX-T与使用OVA文件和ONTAP Select Deploy管理实用程序部署的ONTAP Select 单节点集群结合使用时、不存在任何功能问题或缺陷。但是、在将NSX-T与ONTAP Select 多节点集群结合使用时、您应注意ONTAP Select 9.11.1的以下限制：</block>
+  <block id="97ba2ef50ca50de240503a53bf0d9347" category="list-text">网络连接检查程序</block>
+  <block id="9272e0dade1877b24e5ef4ad453f2c08" category="paragraph">在基于 NSX-T 的网络上运行 Deploy CLI 提供的网络连接检查程序时，此检查程序将失败。</block>
+  <block id="51e3f7647537ef4a51cd74ad4edcb9c6" category="list-text">不再支持 KVM 虚拟机管理程序</block>
+  <block id="d2cc16162b6d3a24dc4a4501cf469cb0" category="inline-link">EOA通知</block>
+  <block id="5370055608d6cbcb7f0776601a776aed" category="paragraph">NetApp强烈建议客户计划并执行从适用于KVM的ONTAP Select 到任何其他ONTAP 平台的完整数据迁移、包括适用于ESXi的ONTAP Select。有关详细信息，请参见<block ref="e7f4803e65543a8054dff75dc9e1166a" category="inline-link-rx"></block></block>
+  <block id="bdcccc9d04bbc9b8540a1fbdebef3b93" category="section-title">ONTAP Select 9.10.1</block>
+  <block id="d7e7eb95caecb5dfc702a5f7d3cb0071" category="paragraph">ONTAP Select 9.10.1包括多项新功能和改进功能。</block>
+  <block id="4774053cb57a95a02a834cf823224b16" category="list-text">ONTAP Select 9.10.1 已通过 VMware NSX-T 3.1.2 的认证。将NSX-T与使用OVA文件和ONTAP Select Deploy管理实用程序部署的ONTAP Select 单节点集群结合使用时、不存在任何功能问题或缺陷。但是，在将 NSX-T 与 ONTAP Select 多节点集群结合使用时，应注意以下要求和限制：</block>
+  <block id="ad136d3e5fb5acdd03500618ef8e1a95" category="paragraph">在部署集群之前，您必须手动将集群 MTU 大小调整为 8800 ，以考虑额外的开销。VMware 准则允许在使用 NSX-T 时使用 200 字节的缓冲区</block>
+  <block id="be4edc608044981ff1193ab01e2a80a8" category="list-text">网络 4x10 Gb 配置</block>
+  <block id="e3f9b3ee4bd0f7a9715c1acd839cb82b" category="paragraph">对于在配置有四个 NIC 的 VMware ESXi 主机上部署 ONTAP Select 的情况， Deploy 实用程序将提示您遵循最佳实践，即在两个不同的端口组之间拆分内部流量，并在两个不同的端口组之间拆分外部流量。但是，在使用覆盖网络时，此配置不起作用，您应忽略此建议。在这种情况下，您只能使用一个内部端口组和一个外部端口组。</block>
+  <block id="2380ad5ce6796e080b2fcb896e8b4d72" category="list-text">从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。但是，如果您将集群从先前版本升级到 9.10.1 ，则仍可使用 Deploy 实用程序管理集群。</block>
+  <block id="5321c0bf4db2c41a876a8455e4fd3037" category="section-title">ONTAP Select 9.9.1</block>
+  <block id="2dc4c31981db6194573548002505f01d" category="paragraph">ONTAP Select 9.9.1包括多项新功能和改进功能。</block>
+  <block id="c92580bf4d34ad8667b38f18db6e63e5" category="list-text">处理器系列支持</block>
+  <block id="49cffca69c2495abd2b6646948ffc778" category="list-text">从ONTAP Select 9.1.1开始、ONTAP Select 仅支持来自Intel Xeon Sandy Bridge或更高版本的CPU型号。</block>
+  <block id="5f4c6121d4f63aaa5d6daebc2a2effee" category="list-text">已更新VMware ESXi支持</block>
+  <block id="94f6b8f3b96f83ead9cf8f1fff27c5ba" category="list-text">ONTAP Select 9.1.1增强了对VMware ESXi的支持。现在支持以下版本：</block>
+  <block id="2a75a4bfd68197cf6684d89c95157677" category="list-text">ESXi 7.0 U2</block>
+  <block id="aa3bb437d4c9050ad360819d6231b58e" category="list-text">ESXi 7.0 U1</block>
+  <block id="c4537e24714e3ee09d3a03a894db75f4" category="section-title">ONTAP Select 9.8</block>
+  <block id="00ba796063aa024015a8e3a32ba25b3d" category="paragraph">ONTAP Select 9.8提供了几项新增功能和变更功能。</block>
+  <block id="db16d4c1e494c28301de7f652ab007e8" category="list-text">高速接口</block>
+  <block id="a15ac8498d522b4bdcfac7e79ef2e02f" category="list-text">此高速接口功能可同时为25G (25GbE)和40G (40GbE)提供一个选项、从而增强了网络连接。要在使用这些较高速度时获得最佳性能、您应遵循ONTAP Select 文档中所述的端口映射配置最佳实践。</block>
+  <block id="420170376a4067e246c6c8ab8f967e8c" category="list-text">ONTAP Select 9.8中有关VMware ESXi支持的两项更改。</block>
+  <block id="9f4c0a8e21510ca1633a5494406686bc" category="list-text">支持ESXi 7.0 (GA内部版本15843807及更高版本)</block>
+  <block id="75907379a71ad8ffa5e06073ace36e0d" category="list-text">不再支持ESXi 6.0</block>
+  <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">使用的是KVM虚拟机管理程序、而不是VMware ESXi</block>
+  <block id="cb8338f0bc7e868c1dca9f89ef69705a" category="paragraph">MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。</block>
+  <block id="e5a37d3922c90b1192e2c159354c1e1d" category="list-text">如果使用的版本早于ONTAP Select 9.10.1、则可以选择删除KVM映像。</block>
 </blocks>

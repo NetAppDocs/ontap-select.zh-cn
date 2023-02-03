@@ -22,8 +22,15 @@ summary: 在规划 MetroCluster ONTAP Select 部署时，您应考虑多项要�
 每个节点都必须具有高级或更高的 ONTAP Select 许可证。
 
 .虚拟机管理程序平台
-MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。请注意、ONTAP Select 9.10.1及更高版本不再支持KVM。
+MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。
 
+[NOTE]
+====
+* 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
+* 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
+
+
+====
 .网络配置：
 参与站点之间需要第 2 层连接。支持 10GbE 和 1GbE ，包括以下配置：
 

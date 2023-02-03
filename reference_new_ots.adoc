@@ -15,10 +15,100 @@ summary: 当前版本不包含ONTAP Select 的任何新增功能或改进功能�
 
 
 [role="lead"]
-当前版本不包含ONTAP Select 的任何新增功能或改进功能。
+NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
 
 
 
-== 《 ONTAP 发行说明》
+== ONTAP Select 9.12.1
 
-ONTAP Select 从当前版本的核心ONTAP 产品中的大多数新开发中获益。请参见 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["《 ONTAP 发行说明》"^] 有关每个ONTAP 9版本中的新增功能或改进功能的信息。
+ONTAP Select 9.12.1从当前版本的核心ONTAP 产品中的大多数新开发中受益。它不包括ONTAP Select 特有的任何新功能或改进。
+
+
+
+== ONTAP Select 9.11.1
+
+ONTAP Select 9.11.1包括多项新功能和改进功能。
+
+增强了对VMware ESXi的支持:: ONTAP Select 9.11.1支持VMware ESXi 7.0 U3C。
+支持 VMware NSX-T:: ONTAP Select 9.10.1及更高版本已通过VMware NSX-T 3.1.2的认证。将NSX-T与使用OVA文件和ONTAP Select Deploy管理实用程序部署的ONTAP Select 单节点集群结合使用时、不存在任何功能问题或缺陷。但是、在将NSX-T与ONTAP Select 多节点集群结合使用时、您应注意ONTAP Select 9.11.1的以下限制：
++
+--
+* 网络连接检查程序
++
+在基于 NSX-T 的网络上运行 Deploy CLI 提供的网络连接检查程序时，此检查程序将失败。
+
+
+
+--
+不再支持 KVM 虚拟机管理程序::
++
+--
+从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
+
+从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
+
+NetApp强烈建议客户计划并执行从适用于KVM的ONTAP Select 到任何其他ONTAP 平台的完整数据迁移、包括适用于ESXi的ONTAP Select。有关详细信息，请参见 https://mysupport.netapp.com/info/communications/ECMLP2877451.html["EOA通知"^]
+
+--
+
+
+
+
+== ONTAP Select 9.10.1
+
+ONTAP Select 9.10.1包括多项新功能和改进功能。
+
+支持 VMware NSX-T:: ONTAP Select 9.10.1 已通过 VMware NSX-T 3.1.2 的认证。将NSX-T与使用OVA文件和ONTAP Select Deploy管理实用程序部署的ONTAP Select 单节点集群结合使用时、不存在任何功能问题或缺陷。但是，在将 NSX-T 与 ONTAP Select 多节点集群结合使用时，应注意以下要求和限制：
++
+--
+* 集群 MTU
++
+在部署集群之前，您必须手动将集群 MTU 大小调整为 8800 ，以考虑额外的开销。VMware 准则允许在使用 NSX-T 时使用 200 字节的缓冲区
+
+* 网络 4x10 Gb 配置
++
+对于在配置有四个 NIC 的 VMware ESXi 主机上部署 ONTAP Select 的情况， Deploy 实用程序将提示您遵循最佳实践，即在两个不同的端口组之间拆分内部流量，并在两个不同的端口组之间拆分外部流量。但是，在使用覆盖网络时，此配置不起作用，您应忽略此建议。在这种情况下，您只能使用一个内部端口组和一个外部端口组。
+
+* 网络连接检查程序
++
+在基于 NSX-T 的网络上运行 Deploy CLI 提供的网络连接检查程序时，此检查程序将失败。
+
+
+
+--
+不再支持 KVM 虚拟机管理程序:: 从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。但是，如果您将集群从先前版本升级到 9.10.1 ，则仍可使用 Deploy 实用程序管理集群。
+
+
+
+
+== ONTAP Select 9.9.1
+
+ONTAP Select 9.9.1包括多项新功能和改进功能。
+
+处理器系列支持:: 从ONTAP Select 9.1.1开始、ONTAP Select 仅支持来自Intel Xeon Sandy Bridge或更高版本的CPU型号。
+已更新VMware ESXi支持:: ONTAP Select 9.1.1增强了对VMware ESXi的支持。现在支持以下版本：
++
+--
+* ESXi 7.0 U2
+* ESXi 7.0 U1
+
+
+--
+
+
+
+
+== ONTAP Select 9.8
+
+ONTAP Select 9.8提供了几项新增功能和变更功能。
+
+高速接口:: 此高速接口功能可同时为25G (25GbE)和40G (40GbE)提供一个选项、从而增强了网络连接。要在使用这些较高速度时获得最佳性能、您应遵循ONTAP Select 文档中所述的端口映射配置最佳实践。
+已更新VMware ESXi支持:: ONTAP Select 9.8中有关VMware ESXi支持的两项更改。
++
+--
+* 支持ESXi 7.0 (GA内部版本15843807及更高版本)
+* 不再支持ESXi 6.0
+
+
+--
+

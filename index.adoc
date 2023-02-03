@@ -22,9 +22,13 @@ NetApp ONTAP Select 是一款软件定义的存储设备，您可以在运行 VM
 * link:reference_new_ots.html["此版本中的新增功能"]
 
 
+[NOTE]
+====
+* 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
+* 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
 
-NOTE: 从 ONTAP Select 9.10.1 开始，您无法再在 KVM 虚拟机管理程序上部署新集群。现在、对于ONTAP Select 9.11.1及更高版本、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
 
+====
 
 
 == 导航产品文档

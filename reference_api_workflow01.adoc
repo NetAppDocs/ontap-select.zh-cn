@@ -21,7 +21,15 @@ summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONT
 * ESXi 主机不受 vCenter （独立主机）管理
 * 集群中使用多个节点或主机
 * 集群使用已购买的许可证部署在生产环境中
-* 使用KVM虚拟机管理程序代替VMware ESXi (使用ONTAP Select 9.10.1及更高版本创建新集群时、不再支持KVM)
+* 使用的是KVM虚拟机管理程序、而不是VMware ESXi
++
+[NOTE]
+====
+** 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
+** 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
+
+
+====
 
 
 
@@ -42,7 +50,7 @@ summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONT
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step01 'https://10.21.191.150/api/security/credentials'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step01 'https://10.21.191.150/api/security/credentials'
 ----
 JSON 输入（步骤 01 ）::
 
@@ -85,7 +93,7 @@ JSON 输入（步骤 01 ）::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step02 'https://10.21.191.150/api/hosts'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step02 'https://10.21.191.150/api/hosts'
 ----
 JSON 输入（第 02 步）::
 
@@ -131,7 +139,7 @@ JSON 输入（第 02 步）::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
 ----
 JSON 输入（第 03 步）::
 
@@ -170,7 +178,7 @@ JSON 输入（第 03 步）::
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
 ----
 JSON 输入（第 04 步）::
 
@@ -211,7 +219,7 @@ Deploy 管理实用程序会在创建集群时自动生成节点标识符和名�
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
 ----
 处理类型:: 同步
 输出::
@@ -241,7 +249,7 @@ curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
 ----
 JSON 输入（第 06 步）:: 您必须提供要运行 ONTAP Select 节点的主机 ID 。
 
@@ -279,7 +287,7 @@ JSON 输入（第 06 步）:: 您必须提供要运行 ONTAP Select 节点的主
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
 ----
 处理类型:: 同步
 输出::
@@ -312,7 +320,7 @@ NOTE: 对以下 API 调用执行问题描述 两次，每个网络一次。
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
 ----
 JSON 输入（第 08 步）:: 您需要提供网络名称。
 
@@ -345,7 +353,7 @@ JSON 输入（第 08 步）:: 您需要提供网络名称。
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
 ----
 JSON 输入（第 09 步）:: 池容量为 2 TB 。
 
@@ -383,7 +391,7 @@ JSON 输入（第 09 步）:: 池容量为 2 TB 。
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
 ----
 JSON 输入（第 10 步）:: 您必须提供 ONTAP 管理员帐户的密码。
 
