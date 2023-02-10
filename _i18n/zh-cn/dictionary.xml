@@ -828,7 +828,6 @@
   <block id="433e51a365a7b38eca70ff3fb9842f4f" category="paragraph">根据提示提供管理员帐户密码。</block>
   <block id="8321447cfcedfbf85f936b6d5ffebfe0" category="list-text">显示系统中的许可证以确认已正确添加此许可证：</block>
   <block id="8822a9cc146d06e4ec77936054fb11ca" category="paragraph">`许可证显示`</block>
-  <block id="ba93b2a719cfe3e8015ab3ec2eaf4774" category="section-title">添加 ESXi 虚拟机管理程序主机</block>
   <block id="73f4469376ea1f5c82d6b88b4dd08c80" category="paragraph">您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。</block>
   <block id="dd18331505610da0aa987b27dd5c8b25" category="paragraph">在注册由 vCenter 管理的主机之前，您必须为 vCenter Server 添加一个管理服务器帐户。如果主机不受 vCenter 管理，则可以在注册主机时提供主机凭据。您应使用此操作步骤 添加每个主机。</block>
   <block id="c1f1fdaeb1fc7d288d9969efdd963bcc" category="list-text">使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。</block>
@@ -836,7 +835,6 @@
   <block id="12c193f5dcc3f99c7a295445ebc9b455" category="paragraph">`credential add -hostname &lt;FQDN_IP&gt; -type vcenter -username vCenter_username`</block>
   <block id="c61720431284d81fa9e02425c5f95ab6" category="list-text">注册主机：</block>
   <block id="05a199c9e0f61506eaad93a8dc60682f" category="list-text">注册不受 vCenter 管理的独立主机： `host register -name &lt;FQDN_IP&gt; -hypervisor 类型的 ESX -username ESX_username`</block>
-  <block id="1c33a374a227666dbe5c62e17c001cc4" category="list-text">注册 vCenter 管理的主机： `host register -name &lt;FQDN_IP&gt; -hypervisor -type esx -mgmt-server &lt;FQDN| IP&gt;`</block>
   <block id="72d7c672225aae34bedacaaa9e067e1b" category="list-text">显示主机的状态并确认其已验证。</block>
   <block id="86cc5166af9ee54f72113259fac2f069" category="paragraph">`host show -name &lt;FQDN_IP&gt; -detailed`</block>
   <block id="9654fb56bf1aee9815d9cad239ed20e6" category="section-title">创建和配置 ONTAP Select 集群</block>
@@ -3551,4 +3549,26 @@
   <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">使用的是KVM虚拟机管理程序、而不是VMware ESXi</block>
   <block id="cb8338f0bc7e868c1dca9f89ef69705a" category="paragraph">MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。</block>
   <block id="e5a37d3922c90b1192e2c159354c1e1d" category="list-text">如果使用的版本早于ONTAP Select 9.10.1、则可以选择删除KVM映像。</block>
+  <block id="7ece09332cee8602060ca18c20ce13f2" category="section-title">添加ESXi虚拟机管理程序主机</block>
+  <block id="7e2fe14c99e2697025b2031aedd0ec68" category="list-text">注册vCenter管理的主机：<block ref="06cf66b5547f9422d5a9c37b6cfb3aca" prefix=" " category="inline-code"></block></block>
+  <block id="18d733133eb14f6d577f2d278fac37a1" category="summary">您可以使用host modify命令修改使用此ONTAP Select Deploy实例的主机管理服务器。</block>
+  <block id="35f41fa38694b23a0654a4a8c0dd359b" category="doc">修改主机管理服务器</block>
+  <block id="88f06314571793a45376bea0a67c1684" category="paragraph">您可以使用<block ref="efefae9f89e157498d052edf2886fd00" prefix=" " category="inline-code"></block> 用于使用此ONTAP Select Deploy实例修改主机管理服务器的命令。</block>
+  <block id="92e9d6227d5534e7afc27a11179c808e" category="section-title">语法</block>
+  <block id="6297f303e9e12ebecef22ddbadda2695" category="paragraph"><block ref="2a5899524cd06699eb3f22670e5b5f7a" prefix="" category="inline-code"></block></block>
+  <block id="15f4c82d7b2b43e31c30dd018b800c56" category="section-title">所需参数</block>
+  <block id="83f499a540b1323009c200d6f8cc9396" category="cell">参数</block>
+  <block id="5a0c5f11bba8b50361398fca38743e26" category="paragraph"><block ref="d1e29f4e7c05a0d14116dced0271a083" prefix="" category="inline-code"></block></block>
+  <block id="8e6d2b7bb122ef90ab4d9499b2c875ea" category="paragraph">要修改的主机的IP地址或FQDN。</block>
+  <block id="666b70d55b751021bd6bceab3555d74b" category="paragraph"><block ref="57fb45691ba5713dde99aa386c9de5c5" prefix="" category="inline-code"></block></block>
+  <block id="f265ef7fd6211a9a63635d95bcbe841d" category="paragraph">要设置到主机的主机管理服务器的IP地址或FQDN。指定"-"(连字符)以从主机取消设置管理服务器。必须先添加此管理服务器的凭据、然后才能使用注册此主机 <block ref="c779ef963465b6edf0cdf8be183d8b9e" prefix=" " category="inline-code"></block> 命令：</block>
+  <block id="e3beee990a3abfcc54a09f5727e1ee11" category="section-title">可选参数</block>
+  <block id="ca6c068d9b2bab12276a5adb2fa8b1c4" category="paragraph"><block ref="f599cc506e0eddc851eb7ebdb18a6143" prefix="" category="inline-code"></block></block>
+  <block id="d04f7b66a82acbcd30236e90b34f191b" category="paragraph">显示帮助消息。</block>
+  <block id="51409356309172bc38605699145c5125" category="paragraph"><block ref="c3e8e825367e7f94475a891a9d781ce5" prefix="" category="inline-code"></block></block>
+  <block id="90cbb6ff863c3db71ceae9fe55f8e66f" category="paragraph">此参数用于控制长时间运行的命令的行为。如果设置了、则命令将在前台运行、并且与操作相关的事件消息将在发生时显示。</block>
+  <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
+  <block id="6766f7a2e53a40ab3efd050bec084512" category="paragraph">有权访问此主机的用户名。只有当主机不受管理服务器(即由vCenter管理的ESX主机)管理时、才需要执行此操作。</block>
+  <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">自主勒索软件保护(ARP)</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
 </blocks>

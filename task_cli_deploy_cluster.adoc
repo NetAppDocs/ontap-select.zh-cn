@@ -81,7 +81,7 @@ exit
 
 
 
-== 添加 ESXi 虚拟机管理程序主机
+== 添加ESXi虚拟机管理程序主机
 
 您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。
 
@@ -104,7 +104,8 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 . 注册主机：
 +
 ** 注册不受 vCenter 管理的独立主机： `host register -name <FQDN_IP> -hypervisor 类型的 ESX -username ESX_username`
-** 注册 vCenter 管理的主机： `host register -name <FQDN_IP> -hypervisor -type esx -mgmt-server <FQDN| IP>`
+** 注册vCenter管理的主机：
+`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
 示例
 
