@@ -32,7 +32,6 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 * SnapVault
 * FlexClone
 * SnapRestore
-* NetApp 卷加密
 * 重复数据删除和数据压缩
 * ONTAP 多租户功能
 * ONTAP S3
