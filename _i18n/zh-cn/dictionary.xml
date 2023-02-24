@@ -1677,7 +1677,6 @@
   <block id="5bc075cee240a70af54270621d93765c" category="list-text">SnapVault</block>
   <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
-  <block id="c4b8c29f448328e82ce27062b5fd9c28" category="list-text">NetApp 卷加密</block>
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">重复数据删除和数据压缩</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">ONTAP 多租户功能</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp 卷加密（仅限非受限国家或地区）</block>
@@ -1891,7 +1890,6 @@
   <block id="eda37297768fb66316ec0c97afd29213" category="paragraph">如果每个主机包含两个 10 Gb 端口，则应按如下所示配置 vSwitch ：</block>
   <block id="a86f2765e738940e7dd8fdf6da677fd5" category="list-text">配置 vSwitch 并将这两个端口分配给 vSwitch 。使用这两个端口创建 NIC 组。</block>
   <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">将负载平衡策略设置为 "Route based on the originating virtual port ID" 。</block>
-  <block id="4392037ca9aa84394b086d1268c59a3b" category="list-text">将两个适配器标记为 " 活动 " 。</block>
   <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">vSwitch 属性）</block>
   <block id="fee017d680804978d6f31a0149d3356f" category="list-text">将 " 故障恢复 " 设置设置为 " 是 " 。<block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">将 vSwitch 配置为使用巨型帧（ 9000 MTU ）。</block>
@@ -3571,4 +3569,5 @@
   <block id="6766f7a2e53a40ab3efd050bec084512" category="paragraph">有权访问此主机的用户名。只有当主机不受管理服务器(即由vCenter管理的ESX主机)管理时、才需要执行此操作。</block>
   <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">自主勒索软件保护(ARP)</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">将两个适配器标记为"活动"或将一个适配器标记为"活动"、将另一个适配器标记为"备用"。</block>
 </blocks>

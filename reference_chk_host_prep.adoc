@@ -98,7 +98,7 @@ vSwitch 是用于支持内部和外部网络连接的核心虚拟机管理程序
 
 * 配置 vSwitch 并将这两个端口分配给 vSwitch 。使用这两个端口创建 NIC 组。
 * 将负载平衡策略设置为 "Route based on the originating virtual port ID" 。
-* 将两个适配器标记为 " 活动 " 。
+* 将两个适配器标记为"活动"或将一个适配器标记为"活动"、将另一个适配器标记为"备用"。
 * 将 " 故障恢复 " 设置设置为 " 是 " 。image:CHK_04.jpg["vSwitch 属性）"]
 * 将 vSwitch 配置为使用巨型帧（ 9000 MTU ）。
 * 在 vSwitch 上为内部流量（ ONTAP 内部）配置端口组：
