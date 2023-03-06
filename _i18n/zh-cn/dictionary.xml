@@ -3570,4 +3570,73 @@
   <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">自主勒索软件保护(ARP)</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
   <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">将两个适配器标记为"活动"或将一个适配器标记为"活动"、将另一个适配器标记为"备用"。</block>
+  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">ONTAP Select 9.6 性能的性能信息—高级 HA 直连 SSD 存储。</block>
+  <block id="f0b00c7331f322626690d4fd2e51c06f" category="doc">性能：高级HA直连SSD存储</block>
+  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">参考平台的性能信息。</block>
+  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">参考平台</block>
+  <block id="1046c015c70060135ed38c7cc90d8b86" category="paragraph">ONTAP Select (高级版XL)硬件(每个节点)</block>
+  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">Fujitsu PRIMERGY RX2540 M4 ：</block>
+  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">2.6 GHz 的 Intel （ R ） Xeon （ R ） Gold 6142b CPU</block>
+  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32 个物理核心（ 16 个 2 插槽）， 64 个逻辑核心</block>
+  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GB RAM</block>
+  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">每个主机的驱动器数： 24 个 960 GB SSD</block>
+  <block id="54b588a0a73b1fd4e80bea0b52b66a5c" category="list-text">ESX 6.5U1</block>
+  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">客户端硬件</block>
+  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5 个 NFSv3 IBM 3550m4 客户端</block>
+  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">配置信息</block>
+  <block id="644583ef81af3657d263540fe36659df" category="list-text">软件 RAID 1 x 9 + 2 RAID-DP （ 11 个驱动器）</block>
+  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5 （ ONTAP 中的 RAID-0 ） /RAID 缓存 NVRAM</block>
+  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">未使用存储效率功能（数据压缩，重复数据删除， Snapshot 副本， SnapMirror 等）</block>
+  <block id="8b753111757d995e14e8b502f0b060f5" category="paragraph">下表列出了根据使用软件RAID和硬件RAID的高可用性(HA) ONTAP Select 节点对上的读/写工作负载测量的吞吐量。性能测量是使用 SIO 负载生成工具进行的。</block>
+  <block id="8f0b44fb88a1368b40ccf845bb51b622" category="admonition">这些性能数据基于ONTAP Select 9.6。</block>
+  <block id="5f0987d7c836e13b5c975378b71cb33d" category="paragraph">*使用软件RAID和硬件RAID*的直连存储(DAS) SSD上单个节点(四节点中型实例的一部分) ONTAP Select 集群的性能结果</block>
+  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">顺序读取 64KiB</block>
+  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">顺序写入 64KiB</block>
+  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">随机读取 8 KiB</block>
+  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">随机写入 8 KiB</block>
+  <block id="e78425925b16cdbe3107734a56031c80" category="cell">随机 WR/RD （ 50/50 ） 8 KiB</block>
+  <block id="b9f7179a485f0a08d3f620ea3027bc01" category="cell">采用DAS (SSD)软件RAID的ONTAP Select 大型实例</block>
+  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171 MiBps</block>
+  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559 MiBps</block>
+  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">9554 MiBps</block>
+  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">294 MiBps</block>
+  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">5664 MiBps</block>
+  <block id="729966193ad3771980bdca3507a1eaaf" category="cell">采用DAS (SSD)软件RAID的ONTAP Select 中型实例</block>
+  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090 MiBps</block>
+  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MiBps</block>
+  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677 MiBps</block>
+  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335 MiBps</block>
+  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 个 3 MiBps</block>
+  <block id="e4475fda14f8565f7c25947659d1c3d9" category="cell">采用DAS (SSD)硬件RAID的ONTAP Select 中型实例</block>
+  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038 MiBps</block>
+  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520 MiBps</block>
+  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578 MiBps</block>
+  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325 MiBps</block>
+  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399 MiBps</block>
+  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">64K 顺序读取</block>
+  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">详细信息：</block>
+  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">已启用 SIO 直接 I/O</block>
+  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2 个节点</block>
+  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">每个节点 2 个数据 NIC</block>
+  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 8 TB 软件 RAID ）</block>
+  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64 个 SIO 进程，每个进程 1 个线程</block>
+  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">每个节点 32 个卷</block>
+  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">每个进程 1 个文件；每个进程的文件大小为 12000 MB</block>
+  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">64K 顺序写入</block>
+  <block id="0f298226345a9b3c58f0c3df3b00ab51" category="list-text">每个节点2个数据网络接口卡(NIC)</block>
+  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">每个节点 1 个数据聚合（ 2 TB 硬件 RAID ），（ 4 TB 软件 RAID ）</block>
+  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128 个 SIO 进程，每个进程 1 个线程</block>
+  <block id="ebfa598c2ae4ecaca547d57ec9bcebda" category="list-text">每个节点的卷数：32 (硬件RAID)、16 (软件RAID)</block>
+  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">每个进程 1 个文件；每个进程的文件大小为 30720 MB</block>
+  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">8 K 随机读取</block>
+  <block id="06f2713882df7e7a8c3ec49774af3f5d" category="list-text">每个节点2个数据NIC</block>
+  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64 个 SIO 进程，每个进程 8 个线程</block>
+  <block id="37b92a84c96cf144d3d2f1ddd9e668dc" category="list-text">每个节点的卷数：32</block>
+  <block id="4af562d52353844c11ed213dc9654510" category="list-text">每个进程 1 个文件；每个进程的文件大小为 12228MB</block>
+  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">8 K 随机写入</block>
+  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">每个进程 1 个文件；每个进程的文件大小为 8192 MB</block>
+  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">8 K 随机 50% 写入 50% 读取</block>
+  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">每个进程 64 个 SIO 进程 208 个线程</block>
+  <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">性能概述</block>
+  <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">ONTAP Select 9.6性能</block>
 </blocks>

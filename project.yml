@@ -189,7 +189,11 @@ sidebar:
       - title: 其他高可用性功能
         url: "/concept_ha_other.html"
     - title: 性能
-      url: "/concept_perf_general.html"
+      entries:
+      - title: 性能概述
+        url: "/concept_perf_general.html"
+      - title: ONTAP Select 9.6性能
+        url: "/concept_perf_premium_ha_direct_ssd_96.html"
   - title: 与 vCenter 集成
     entries:
     - title: 入门
