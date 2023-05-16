@@ -34,7 +34,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 === 可用的 ONTAP Select 版本
 
-Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_adm_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
+Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
 
 
 

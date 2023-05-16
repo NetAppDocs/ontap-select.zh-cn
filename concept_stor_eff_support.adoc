@@ -57,7 +57,7 @@ Cross Volume Background Deduplication:  true
 NOTE: 对于从9.6及更高版本升级的ONTAP Select 、您必须使用高级许可证在DAS SSD存储上安装ONTAP Select。此外、在使用ONTAP Deploy进行初始集群安装期间、您必须选中*启用存储效率*复选框。在未满足先前条件的情况下，要在 ONTAP 升级后启用类似于 AFF 的特性，需要手动创建启动参数并重新启动节点。有关更多详细信息，请联系技术支持。
 
 .ONTAP Select 存储效率配置
-下表汇总了各种可用的存储效率选项、默认情况下启用的选项或默认情况下不启用但建议使用的选项、具体取决于介质类型和软件许可证。下表 适用场景 ONTAP Select 9.6及更高版本中的信息。对于先前版本、请参阅ONTAP Select 中的_Storage Efficiency Support_一节 https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^]。
+下表汇总了各种可用的存储效率选项、默认情况下启用的选项或默认情况下不启用但建议使用的选项、具体取决于介质类型和软件许可证。下表 适用场景 ONTAP Select 9.6及更高版本中的信息。对于先前版本、请参阅ONTAP Select 中的_Storage Efficiency Support_一节 https://["TR-4517"^]。
 
 [cols="4"]
 |===

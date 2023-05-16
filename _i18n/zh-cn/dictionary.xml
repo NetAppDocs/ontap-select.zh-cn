@@ -813,7 +813,6 @@
   <block id="c423fd05ac4075cd52ed8e9ec9961c3f" category="paragraph">如果使用软件 RAID ，则必须为系统数据创建存储池，并确保 SSD 驱动器可用于根聚合和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。</block>
   <block id="d5ba525828b35ea241ddabb08b074ffd" category="section-title">可用的 ONTAP Select 版本</block>
   <block id="aa66e32480de432747a10957bdaa05fd" category="inline-link-macro">添加要部署的 ONTAP Select 映像</block>
-  <block id="f04ce539f861b20e999ae9ca7a1a5963" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <block ref="78d33d23ddbc660baa867877fc233dd4" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="700dafd7ca1606f2a30973a096a3f27f" category="section-title">为生产部署授予 ONTAP Select 许可</block>
   <block id="9526942f4f0cae81c16b2f122cce2a1e" category="paragraph">在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 _capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool_ 型号为共享池授予许可。</block>
   <block id="9b419acef9660c05b08074757cfef581" category="section-title">上传并注册许可证文件</block>
@@ -3641,4 +3640,5 @@
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">ONTAP Select 9.6性能</block>
   <block id="31ecb65d48d53f60c89a54adee2acf00" category="section-title">管理已过期的容量池许可证</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。</block>
+  <block id="15ab075109f8f2254777d15c63f96650" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <block ref="b1d42ed6470398387d373e3f35d8d69e" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
 </blocks>

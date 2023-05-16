@@ -46,7 +46,7 @@ ONTAP Select 9.11.1包括多项新功能和改进功能。
 * 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
 * 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
 +
-NetApp强烈建议客户计划并执行从适用于KVM的ONTAP Select 到任何其他ONTAP 平台的完整数据迁移、包括适用于ESXi的ONTAP Select。有关详细信息，请参见 https://mysupport.netapp.com/info/communications/ECMLP2877451.html["EOA通知"^]
+NetApp强烈建议客户计划并执行从适用于KVM的ONTAP Select 到任何其他ONTAP 平台的完整数据迁移、包括适用于ESXi的ONTAP Select。有关详细信息，请参见 https://["EOA通知"^]
 
 
 

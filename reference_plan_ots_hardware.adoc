@@ -66,7 +66,7 @@ NOTE: 只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESX
 
 NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。
 
-请参见 https://mysupport.netapp.com/matrix["NetApp 互操作性表工具， window=_blank"] 有关详细信息 ...
+请参见 https://["NetApp 互操作性表工具， window=_blank"] 有关详细信息 ...
 
 
 

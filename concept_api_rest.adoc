@@ -20,7 +20,7 @@ summary: 表述性状态传输（ Representational State Transfer ， REST ）�
 
 == 架构和传统限制
 
-而其余内容则由 Roy Fielding 博士正式阐述 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["Dissertation"] 2000 年在 UC Irvine 大会上。它通过一组限制来定义架构模式，这些限制共同改进了基于 Web 的应用程序和底层协议。这些限制会根据使用无状态通信协议的客户端 / 服务器架构建立 RESTful Web 服务应用程序。
+而其余内容则由 Roy Fielding 博士正式阐述 https://["Dissertation"] 2000 年在 UC Irvine 大会上。它通过一组限制来定义架构模式，这些限制共同改进了基于 Web 的应用程序和底层协议。这些限制会根据使用无状态通信协议的客户端 / 服务器架构建立 RESTful Web 服务应用程序。
 
 
 
