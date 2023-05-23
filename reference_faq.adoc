@@ -47,7 +47,7 @@ perfstat8 –i N,m -t <sample time in minutes> --verbose --nodes=<filer IP> --di
 http://<Deploy-IP-Address/api/ui
 ----
 
-NOTE: API v3 版本与 API 的先前版本不向后兼容。上提供了一个新的 API 指南 https://["Field Portal"]。
+NOTE: API v3 版本与 API 的先前版本不向后兼容。上提供了一个新的 API 指南 https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"]。
 
 .ONTAP Select VM 是否可以使用 VMware 或其他第三方快照进行备份？
 否ONTAP Select VM 使用独立的永久性驱动器，这些驱动器不会包含在基于 VMware 的快照中。备份 ONTAP Select 的唯一受支持方法是 SnapMirror ， SnapVault 或 SVM DR （如果适用）。

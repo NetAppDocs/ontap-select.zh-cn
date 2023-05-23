@@ -22,19 +22,19 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 以下产品页面提供了指向各种 ONTAP Select 资源的链接。
 
-* https://["NetApp ONTAP Select 资源"^]
-* https://["NetApp ONTAP Select 产品页面"^]
+* https://www.netapp.com/data-management/ontap-select/documentation["NetApp ONTAP Select 资源"^]
+* https://www.netapp.com/us/products/data-management-software/ontap-select-sds.aspx["NetApp ONTAP Select 产品页面"^]
 
 
 
 
 == ONTAP 9 资源
 
-* https://["ONTAP 9 文档"^]
+* https://docs.netapp.com/us-en/ontap/["ONTAP 9 文档"^]
 +
 提供了有关 ONTAP 9 的文档（命令行界面命令除外）。
 
-* https://["ONTAP 9 文档中心"^]
+* https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 文档中心"^]
 +
 提供 ONTAP 9 命令行界面命令的文档。
 
@@ -46,7 +46,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 我们提供了一组涵盖 ONTAP Select 各个方面的博客文章。
 
-* https://["NetApp ONTAP Select 博客"^]
+* https://blog.netapp.com/tag/ontap-select/["NetApp ONTAP Select 博客"^]
 
 
 
@@ -55,7 +55,7 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 您可以与其他用户联系，提出问题并为 NetApp ONTAP Select 社区做出贡献。
 
-* http://["NetApp 社区： ONTAP Select"^]
+* http://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select["NetApp 社区： ONTAP Select"^]
 
 
 
@@ -64,5 +64,5 @@ summary: 您可以访问其他资源来获取有关 ONTAP Select 的帮助和详
 
 互操作性表工具包含详细的配置和产品支持信息。
 
-* https://["NetApp IMT"^]
+* https://mysupport.netapp.com/matrix/["NetApp IMT"^]
 

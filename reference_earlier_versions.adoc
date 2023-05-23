@@ -17,5 +17,5 @@ summary: 如果您运行的不是最新版本，则可以参考先前版本的 O
 如果您运行的不是最新版本，则可以参考先前版本的 ONTAP Select 文档。使用支持的早期版本的 KVM 虚拟机管理程序时，您还可以访问所需的文档。
 
 .ONTAP Select 9.5及更早版本
-* https://["ONTAP Select 产品库"^]
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293&archive=true["ONTAP Select 产品库"^]
 
