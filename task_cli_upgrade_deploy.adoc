@@ -23,6 +23,9 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 确保在升级期间未使用 Deploy 执行任何其他任务。有关升级 Deploy 实用程序的信息和限制，请参见最新发行说明。
 
 
+NOTE: 如果您安装了ONTAP Select Deploy管理实用程序实例、则应考虑升级到最新版本。ONTAP Select节点和ONTAP Select Deploy组件会单独升级。请参见 link:concept_adm_upgrading_nodes.html["升级 ONTAP Select 节点"^] 了解更多详细信息。
+
+
 
 == 正在下载升级软件包
 
@@ -54,15 +57,13 @@ link:https://mysupport.netapp.com["NetApp 支持"^]
 此任务介绍了一种将文件上传到 Deploy 虚拟机的方法。可能还有其他更适合您的环境的选项。
 
 .步骤
-. 在本地工作站上的命令 Shell 中，使用 sftp 实用程序将映像文件上传到 Deploy 虚拟机。
+. 在本地工作站上的命令Shell中、使用scp实用程序将映像文件上传到Deploy虚拟机。
 +
 示例
 
 +
 ....
-sftp admin@10.234.81.101 (provide password when prompted)
-put ONTAPdeploy2.12_upgrade.tar.gz
-exit
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
 ....
 
 
@@ -89,8 +90,7 @@ exit
 
 +
 ....
-deploy upgrade -package-path /home/admin/
-ONTAPdeploy2.12_upgrade.tar.gz
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 

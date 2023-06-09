@@ -1265,7 +1265,6 @@
   <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">获取升级软件包后，您必须将此文件上传到 Deploy 虚拟机。</block>
   <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">您必须在本地工作站上提供升级文件。您还必须具有管理员用户帐户的密码。</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">此任务介绍了一种将文件上传到 Deploy 虚拟机的方法。可能还有其他更适合您的环境的选项。</block>
-  <block id="fc867a2c06f0b493d05e8508b022600e" category="list-text">在本地工作站上的命令 Shell 中，使用 sftp 实用程序将映像文件上传到 Deploy 虚拟机。</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">升级文件存储在管理员用户的主目录中。</block>
   <block id="cff2646f28c605bf4435cf5b8260a4e7" category="section-title">正在应用升级软件包</block>
   <block id="baa4f96e18f8e9fced4eec3f5a81a23a" category="paragraph">将升级文件上传到 Deploy 虚拟机后，您可以应用此升级。</block>
@@ -3641,4 +3640,6 @@
   <block id="31ecb65d48d53f60c89a54adee2acf00" category="section-title">管理已过期的容量池许可证</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。</block>
   <block id="15ab075109f8f2254777d15c63f96650" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <block ref="b1d42ed6470398387d373e3f35d8d69e" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
+  <block id="f39da9a3a7ab30031d6c4133fff101c1" category="admonition">如果您安装了ONTAP Select Deploy管理实用程序实例、则应考虑升级到最新版本。ONTAP Select节点和ONTAP Select Deploy组件会单独升级。请参见 <block ref="4c9e70831def8fb341e5d69652f04dcf" category="inline-link-macro-rx"></block> 了解更多详细信息。</block>
+  <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">在本地工作站上的命令Shell中、使用scp实用程序将映像文件上传到Deploy虚拟机。</block>
 </blocks>
