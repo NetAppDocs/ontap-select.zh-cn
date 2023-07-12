@@ -2508,7 +2508,6 @@
   <block id="3d76d8ade4be6a0fa76347dff9a10a88" category="paragraph">`deDeploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`</block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">部署 ONTAP Select 集群后，您可以使用 Deploy 管理实用程序升级节点的虚拟机管理程序实例类型。</block>
   <block id="a81401e9911e6ba18e35f42e304aeafc" category="doc">调整 ONTAP Select 集群节点的大小</block>
-  <block id="da8c60eda9de027a78518654141ef28e" category="admonition">只有在使用容量层许可模式时，才能执行集群节点大小调整操作。无法调整具有容量池许可证的 ONTAP Select 节点的大小。</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">集群必须处于联机状态。</block>
   <block id="090def24fea0489fb8d3e01bab4bd447" category="paragraph">此任务介绍如何使用 Deploy Web 用户界面。您也可以使用 Deploy 命令行界面执行实例大小调整。无论您使用哪个接口，调整大小操作所需的时间都可能因多种因素而有显著差异，并且可能需要较长时间才能完成。您只能将节点大小调整为更大。</block>
   <block id="0a34214ca44126aa0cdfec7af4a58c66" category="list-text">单击页面顶部的 * 集群 * 选项卡，然后从列表中选择所需的集群。</block>
@@ -3646,4 +3645,7 @@
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">防篡改Snapshot副本</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM 迁移</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
+  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
+  <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS Deploy集群刷新失败并显示错误</block>
+  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息、请参见知识库文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
 </blocks>

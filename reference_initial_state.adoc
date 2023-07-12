@@ -18,6 +18,9 @@ summary: 在部署集群后，您应了解集群的初始状态，并根据需�
 
 ONTAP Select 集群在创建后具有多个特征。
 
+
+NOTE: 限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息、请参见知识库文章 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["OTS Deploy集群刷新失败并显示错误"^]。
+
 .LIF
 分配有两种类型的客户指定 LIF ：
 
