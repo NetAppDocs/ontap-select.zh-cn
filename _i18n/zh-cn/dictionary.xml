@@ -2298,7 +2298,6 @@
   <block id="c79b5e481b72a791067309bf6341357a" category="section-title">部署备份</block>
   <block id="f30bc4e85b9bb354d7f8cfeba876a8ba" category="paragraph">最佳做法是定期备份 Deploy 配置数据，包括在创建集群后备份。对于双节点集群来说，这一点尤为重要，因为调解器配置数据包含在备份中。</block>
   <block id="af57810cccc926c446851c6408c6667b" category="paragraph">创建或部署集群后，您应备份 ONTAP Select Deploy 配置数据。</block>
-  <block id="f28ccc9cc7fa1367f54e4ae8e3176c31" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足，则 发生原因 ONTAP 可能会删除用作存储交还基线的通用 NetApp Snapshot ® 副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。监控聚合空间利用率的良好基线高达 85% 。</block>
   <block id="9dc41c2a99c45941a7b6c4298a4ba9a5" category="section-title">NIC 聚合，绑定和故障转移</block>
   <block id="27294906efe978d2e7d613739082d7c5" category="paragraph">ONTAP Select 支持双节点集群使用一个 10 Gb 链路；但是， NetApp 最佳实践是在 ONTAP Select 集群的内部和外部网络上通过 NIC 聚合或 NIC 绑定实现硬件冗余。</block>
   <block id="d29b03a7fc61c6e1f42a47018afc8bcb" category="paragraph">如果 NIC 具有多个应用程序专用集成电路（ ASIC ），则在通过 NIC 绑定为内部和外部网络构建网络结构时，请从每个 ASIC 中选择一个网络端口。</block>
@@ -2659,7 +2658,6 @@
   <block id="568e700bfd84bf09ea449e03f0b63ec2" category="paragraph">可以将双节点主动 / 主动 HA 集群延伸到更远的距离，并可能将每个节点放置在不同的数据中心中。双节点集群与双节点延伸型集群（也称为 MetroCluster SDS ）之间的唯一区别是节点之间的网络连接距离。</block>
   <block id="576271d358b861b1da59de8d0b9547e8" category="paragraph">双节点集群定义为一个集群，其中两个节点位于同一数据中心，距离 300 米。通常，两个节点都具有指向同一网络交换机或一组交换机间链路（ ISL ）网络交换机的上行链路。</block>
   <block id="4e83e8addeafe73c3acbe68952183177" category="paragraph">双节点 MetroCluster SDS 的定义是一个集群，其节点（不同的机房，不同的建筑物和不同的数据中心）物理隔离超过 300 米。此外，每个节点的上行链路连接都连接到不同的网络交换机。MetroCluster SDS 不需要专用硬件。但是，环境应遵守延迟（ RTT 最长为 5 毫秒，抖动最大为 5 毫秒，总共为 10 毫秒）和物理距离（最长为 10 公里）的要求。</block>
-  <block id="04392e82fbee6fd91224b767c3bcd4ae" category="paragraph">MetroCluster SDS 是一项高级功能，需要高级许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。</block>
   <block id="526a514c4ab4ec984314911904c226e7" category="admonition">本地连接存储（ DAS ）和共享存储（ vNAS ）均支持 MetroCluster SDS 。请注意，由于 ONTAP Select VM 和共享存储之间的网络， vNAS 配置的固有延迟通常较高。MetroCluster SDS 配置必须在节点之间提供最长 10 毫秒的延迟，包括共享存储延迟。换言之，仅测量 Select VM 之间的延迟是不够的，因为对于这些配置，共享存储延迟并不可忽略。</block>
   <block id="d1bf7b4cf1d6b51999a759865fb8c66b" category="summary">ONTAP Select Deploy 是用于部署和管理 ONTAP Select 集群的管理实用程序。</block>
   <block id="b6943de2133c238e306c67b38531d08a" category="paragraph">ONTAP Select Deploy 是用于部署和管理 ONTAP Select 集群的管理实用程序。Deploy 会打包为 Linux 虚拟机，在创建 ONTAP Select 集群之前，必须先安装该虚拟机。</block>
@@ -3648,4 +3646,7 @@
   <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS Deploy集群刷新失败并显示错误</block>
   <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息、请参见知识库文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
+  <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。</block>
+  <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">建议为镜像聚合至少保留20%的可用空间、以获得最佳存储性能和可用性。虽然建议对非镜像聚合使用10%的空间、但文件系统可以使用额外的10%空间来吸收增量更改。由于ONTAP采用基于Snapshot的写时复制架构、增量更改可提高镜像聚合的空间利用率。不遵守这些最佳实践可能会对性能产生负面影响。</block>
+  <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS是一项高级功能、需要高级版许可证或高级尊享版许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。高级XL许可证还支持创建NVMe驱动器。</block>
 </blocks>

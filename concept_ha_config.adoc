@@ -65,7 +65,7 @@ NOTE: 当充当双节点集群的调解器时， ONTAP Deploy 虚拟机将成为
 
 双节点 MetroCluster SDS 的定义是一个集群，其节点（不同的机房，不同的建筑物和不同的数据中心）物理隔离超过 300 米。此外，每个节点的上行链路连接都连接到不同的网络交换机。MetroCluster SDS 不需要专用硬件。但是，环境应遵守延迟（ RTT 最长为 5 毫秒，抖动最大为 5 毫秒，总共为 10 毫秒）和物理距离（最长为 10 公里）的要求。
 
-MetroCluster SDS 是一项高级功能，需要高级许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。
+MetroCluster SDS是一项高级功能、需要高级版许可证或高级尊享版许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。高级XL许可证还支持创建NVMe驱动器。
 
 
 NOTE: 本地连接存储（ DAS ）和共享存储（ vNAS ）均支持 MetroCluster SDS 。请注意，由于 ONTAP Select VM 和共享存储之间的网络， vNAS 配置的固有延迟通常较高。MetroCluster SDS 配置必须在节点之间提供最长 10 毫秒的延迟，包括共享存储延迟。换言之，仅测量 Select VM 之间的延迟是不够的，因为对于这些配置，共享存储延迟并不可忽略。
