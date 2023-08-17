@@ -1037,7 +1037,6 @@
   <block id="4f1b3cd9fba2e292ff3f1a184f8331f0" category="paragraph">有关容量池许可模式的详细信息，请参见 _capacity pools 许可模式 _ 了解详细信息。</block>
   <block id="ef063895a1ede73693b222ec3a2f0a63" category="summary">选择最佳硬件并配置网络以优化性能和故障恢复能力。</block>
   <block id="2e9a99934aaba2c5ae48b142fa347861" category="doc">支持的网络配置</block>
-  <block id="3ad46bc4202506ae104cdd08943bdf18" category="paragraph">服务器供应商深知客户有不同的需求和选择至关重要。因此，在购买物理服务器时，在做出网络连接决策时，可以选择多种方式。大多数商用系统都提供各种 NIC 选项，可提供单端口和多端口选项，其速度和吞吐量各不相同。从 ONTAP Select 9.8 开始， VMware ESX 支持 25 Gb/ 秒和 40 Gb/ 秒 NIC 适配器。</block>
   <block id="1ff04d941ae1b8262465779276105e05" category="paragraph">由于 ONTAP Select VM 的性能与底层硬件的特性直接相关，因此，通过选择速度更高的 NIC 来增加 VM 的吞吐量可提高集群性能并改善整体用户体验。可以使用四个 10 Gb NIC 或两个高速 NIC （ 25/40 Gb/ 秒）来实现高性能网络布局。此外，还支持许多其他配置。对于双节点集群，支持 4 个 1 Gb 端口或 1 个 10 Gb 端口。对于单节点集群，支持 2 个 1 Gb 端口。</block>
   <block id="68a547a08a3ebb293924c580b641ce65" category="paragraph">* 网络最低配置和建议配置 *</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="cell"></block>
@@ -2138,7 +2137,6 @@
   <block id="6aade83f8151a6756008a80c389bef65" category="cell">不适用于一小时到七天</block>
   <block id="a051cb6fe36d0d57186040136f51ded4" category="cell">节点序列号</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">双 NIC 和四 NIC 配置的 ONTAP Select vSwitch 配置和负载平衡策略。</block>
-  <block id="492e974e8b190853245906ac4824304e" category="doc">VMware vSphere vSwitch 配置</block>
   <block id="96600f2ed0fb970e508d5209faa2adc5" category="paragraph">ONTAP Select 支持使用标准 vSwitch 配置和分布式 vSwitch 配置。分布式 vSwitch 支持链路聚合构造（ LACP ）。链路聚合是一种常见的网络构造，用于在多个物理适配器之间聚合带宽。LACP 是一种与供应商无关的标准，可为网络端点提供开放式协议，将物理网络端口组捆绑到一个逻辑通道中。ONTAP Select 可以与配置为链路聚合组（ LAG ）的端口组配合使用。但是， NetApp 建议使用各个物理端口作为简单上行链路（中继）端口，以避免使用 LAG 配置。在这些情况下，标准和分布式 vSwitch 的最佳实践是相同的。</block>
   <block id="10e7ad3863cdd2b48f9a7524784cedee" category="paragraph">本节介绍双 NIC 和四 NIC 配置中应使用的 vSwitch 配置和负载平衡策略。</block>
   <block id="da05a02ceee0169095d6250face3e1a6" category="paragraph">在配置 ONTAP Select 要使用的端口组时，应遵循以下最佳实践；端口组级别的负载平衡策略是基于源虚拟端口 ID 的路由。VMware 建议在连接到 ESXi 主机的交换机端口上将 STP 设置为 PortFast 。</block>
@@ -3230,7 +3228,6 @@
   <block id="029512cdc2b1f0fa16e4fc28ea554124" category="sidebar">单节点和多节点配置</block>
   <block id="bab8e5962588e40db65a36db5d916d05" category="sidebar">内部和外部网络</block>
   <block id="1f0b82560627b660c6c6958a1df834b8" category="sidebar">支持的配置</block>
-  <block id="5bb5c0519a3ead3dfe6030831305e46c" category="sidebar">VMware vSphere vSwitch 配置</block>
   <block id="52b9048ce13dbc3e7feb51e89c16b2e3" category="sidebar">数据和管理隔离</block>
   <block id="fb3d59ef8abb86b2989e3e7dcc13a94e" category="sidebar">高可用性架构</block>
   <block id="2ae32cce8d9e1bdcb0478c5f14d4be9c" category="sidebar">HA 配置</block>
@@ -3649,4 +3646,7 @@
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。</block>
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">建议为镜像聚合至少保留20%的可用空间、以获得最佳存储性能和可用性。虽然建议对非镜像聚合使用10%的空间、但文件系统可以使用额外的10%空间来吸收增量更改。由于ONTAP采用基于Snapshot的写时复制架构、增量更改可提高镜像聚合的空间利用率。不遵守这些最佳实践可能会对性能产生负面影响。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS是一项高级功能、需要高级版许可证或高级尊享版许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。高级XL许可证还支持创建NVMe驱动器。</block>
+  <block id="95e5f2861efdf3db12f1838f4cf18a88" category="doc">VMware vSphere vSwitch配置</block>
+  <block id="ced1d13b7a0a78acdbaf6a002e0e0063" category="paragraph">服务器供应商深知客户有不同的需求和选择至关重要。因此，在购买物理服务器时，在做出网络连接决策时，可以选择多种方式。大多数商用系统都提供各种 NIC 选项，可提供单端口和多端口选项，其速度和吞吐量各不相同。从ONTAP Select 9.8开始、VMware ESX支持25 Gb/秒和40 Gb/秒NIC适配器。</block>
+  <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch配置</block>
 </blocks>
