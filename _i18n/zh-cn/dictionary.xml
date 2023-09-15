@@ -1305,7 +1305,6 @@
   <block id="b87008505cc6fe630b46cc1e948e36f1" category="list-text">入门启动页面</block>
   <block id="8a8160f2e850747bb7fabd6819906b08" category="list-text">初始页面 * ONTAP Select Deploy 入门 * 将指导您完成创建集群的多步过程。主要步骤有五个，包括：</block>
   <block id="fb98e8390277794afc419e842f4bccd9" category="list-text">添加许可证</block>
-  <block id="d60f56bb9d55a941e09cc5c959de9a36" category="list-text">将主机添加到清单</block>
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">创建集群</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">网络预检</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">部署集群</block>
@@ -1313,8 +1312,6 @@
   <block id="9dae84e581f54bbd3529b1a828393655" category="list-text">网络检查程序</block>
   <block id="18889d3b7d7412c773430265b3f7a703" category="list-text">如果要部署多节点集群，则应熟悉网络检查程序。</block>
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">部署集群后</block>
-  <block id="3a4abd9eeeda413a4bf9956a7ec34228" category="paragraph">您可以使用 ONTAP Select Deploy Web 用户界面部署单节点 ONTAP Select 集群。</block>
-  <block id="25ba26f357a31d39960ce1746018e712" category="paragraph">为生产部署创建一个包含一个节点的 ONTAP Select 集群。</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">使用管理员帐户（ admin ）通过 Web 界面登录到 Deploy 实用程序。</block>
   <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">如果显示 * 欢迎使用 ONTAP Select * 弹出窗口，请确认您满足配置前提条件，然后单击 * 确定 * 。</block>
   <block id="ba7cc5d6bb74cdd0aaa5fe5a9bc4b4d3" category="list-text">如果未显示 * 入门 * 集群启动页面，请单击 <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> 在页面顶部，然后单击 * 开始使用 * 。</block>
@@ -1339,8 +1336,6 @@
   <block id="6e4ee895001e74a8e30d8d23a8ef73a4" category="list-text">单击 * 创建集群 * 以开始集群创建过程，然后单击弹出窗口中的 * 确定 * 。</block>
   <block id="aa28e7538205e834e26c77f5630f8893" category="list-text">监控多步集群创建过程，以确认集群已成功创建。</block>
   <block id="037cb8cf634438a48c4a376dd2eaecea" category="paragraph">此页面会定期自动刷新。</block>
-  <block id="e1fdfbd988f463b21214e88021ddf580" category="admonition">如果集群创建操作已启动，但无法完成，则可能无法注册您定义的 ONTAP 管理密码。在这种情况下，您可以使用 admin 帐户的密码 _changeme123_ 访问 ONTAP Select 集群的管理界面。</block>
-  <block id="d409594d71c1119a8e70a3f177e882c0" category="paragraph">您应确认已配置 ONTAP Select AutoSupport 功能，并备份 ONTAP Select Deploy 配置数据。</block>
   <block id="bd5ae2e61e1784e8eadc165e6029ecf8" category="summary">在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="doc">安全性</block>
   <block id="6ba2d4941e369d15ce3b54f9f454eabc" category="section-title">更改 Deploy 管理员密码</block>
@@ -1990,9 +1985,6 @@
   <block id="2e47d1812c96cee9e86c118c72c7c736" category="paragraph">在 VMware ESXi 虚拟机管理程序上部署 ONTAP Select 集群时，您可以使用 ONTAP Select 提供的软件 RAID 功能，而不是本地硬件 RAID 控制器。在使用软件 RAID 部署集群之前，您必须了解一些要求和限制。</block>
   <block id="a1a264e616e24563d4b8f8b5795ea403" category="section-title">一般要求</block>
   <block id="724e52bc94bfb8a8a2ac7b6bc981655c" category="paragraph">在 VMware ESXi 上部署软件 RAID 的环境必须满足以下核心要求：</block>
-  <block id="935b367303b47c19b9b62a47057f5d6c" category="list-text">VMware ESXi 版本：</block>
-  <block id="0ac68f79bc5b55360d35600434d8da5f" category="list-text">ESXi 6.5 U2 （内部版本 8294253 ）或更高版本</block>
-  <block id="69322b2256be20f40d4399494e6e5d1d" category="list-text">ESXi 6.7 GA （内部版本 8169922 ）或更高版本</block>
   <block id="7d92dddf3cdeb831e5c777dcd6e3edb1" category="list-text">ONTAP Select 9.5 或更高版本</block>
   <block id="cfc85f4f7df067874a4ebae923cfada5" category="list-text">ONTAP Select Deploy 2.10 或更高版本</block>
   <block id="2e5d3e181c7fbda932e522084a6325f4" category="list-text">仅限新的 ONTAP Select 集群</block>
@@ -3276,7 +3268,6 @@
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">早期版本</block>
   <block id="33b6370e1de46bd324564163dfaf48a9" category="list-text">VMware ESXi 7.0 GA (内部版本15843807或更高版本)、包括7.0 U1、U2和U3C</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">虚拟机管理程序您可以部署到ESXi或KVM (取决于Deploy版本)。部署到 ESXi 时，虚拟机管理程序可以由 vCenter 进行管理，也可以是独立主机。</block>
-  <block id="5f3026f83f6c32eec05d90d578a5e7ea" category="paragraph">请参见 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以准备部署集群。必须安装 Deploy 管理并对其进行初始配置（密码， AutoSupport ， vCenter ）。</block>
   <block id="d0a2c35dd24f48a701484a2c0e0e4e2a" category="list-text">支持ESX和KVM (ONTAP Select 9.10.1之前的版本)</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">ONTAP Select 文档</block>
   <block id="88d96915de77c1959098b364119959de" category="paragraph">请参见 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
@@ -3649,4 +3640,27 @@
   <block id="95e5f2861efdf3db12f1838f4cf18a88" category="doc">VMware vSphere vSwitch配置</block>
   <block id="ced1d13b7a0a78acdbaf6a002e0e0063" category="paragraph">服务器供应商深知客户有不同的需求和选择至关重要。因此，在购买物理服务器时，在做出网络连接决策时，可以选择多种方式。大多数商用系统都提供各种 NIC 选项，可提供单端口和多端口选项，其速度和吞吐量各不相同。从ONTAP Select 9.8开始、VMware ESX支持25 Gb/秒和40 Gb/秒NIC适配器。</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch配置</block>
+  <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">将主机添加到清单</block>
+  <block id="747777855f9e01e88df9a2f37da41753" category="section-title">创建单节点或多节点集群</block>
+  <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">您可以使用ONTAP Select Deploy Web用户界面部署单节点或多节点ONTAP Select集群。</block>
+  <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">请参见 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以准备部署集群。必须安装Deploy管理并进行初始配置(密码、AutoSupport和vCenter)。</block>
+  <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">为生产部署创建包含一个或多个节点的ONTAP Select集群。</block>
+  <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">您需要执行的步骤取决于是创建单节点集群还是多节点集群。</block>
+  <block id="d4f87fedecd0cb118e567859f3b4f8b0" category="admonition">如果集群创建操作已启动、但未能完成、则您定义的ONTAP管理密码可能未注册。在这种情况下，您可以使用 admin 帐户的密码 _changeme123_ 访问 ONTAP Select 集群的管理界面。</block>
+  <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">多节点集群</block>
+  <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">如果显示*Welcome to ONTAP Select (欢迎使用Windows *)弹出窗口，请确认您已满足配置前提条件，然后单击*OK*(确定)。</block>
+  <block id="736cb4ef7019568859d8e044e044c906" category="list-text">在 * 入门 * 页面上，单击 * 上传 * 并从本地工作站中选择一个许可证，然后单击 * 打开 * 上传此许可证。重复以添加第二个许可证。</block>
+  <block id="663e3ab8cb2a9c950e625cc8e58cc007" category="list-text">单击*Refresh*并确认已添加许可证。</block>
+  <block id="390100b77c52acdfcd83e4a92be2c51f" category="list-text">单击*Next*添加两个虚拟机管理程序主机，然后单击*Add*。</block>
+  <block id="a25302f443f60fa8f7aef0d5c122b11f" category="paragraph">您可以直接添加ESXi主机、也可以通过连接到vCenter Server来添加ESXi主机。根据需要提供相应的主机详细信息和凭据。</block>
+  <block id="6c5e52865ab96c25cdda81fff9412d0f" category="list-text">在*集群详细信息*部分中，为*集群大小*选择*2节点集群*，提供描述集群的所有必需信息，然后单击*Done。</block>
+  <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">在*Node Setup*下，提供节点管理IP地址并为每个节点选择许可证；您可以根据需要上传新许可证。如果需要、您还可以更改节点名称。</block>
+  <block id="c2ec94d47c341f2cb886dfa96e0ac4bb" category="paragraph">有三种节点配置可定义虚拟机大小和可用功能集。这些实例类型分别受所购买许可证的标准，高级和高级 XL 产品支持。为节点选择的许可证必须与实例类型匹配或超过此实例类型。</block>
+  <block id="5bcde1d421c75145a52950096b7fb58f" category="paragraph">选择虚拟机管理程序主机以及管理、数据和内部网络。</block>
+  <block id="48c8bfc451162cecf207d3586032c355" category="list-text">单击*Next*并通过单击*Run*运行网络预检。这将验证为ONTAP集群流量选择的内部网络是否正常运行。</block>
+  <block id="5ca1e08722935cc52d1e20fcea7b5428" category="paragraph">创建集群最多可能需要45分钟。</block>
+  <block id="8e8ec233d7d8b1670dc404b61b73a0b1" category="list-text">监控多步骤集群创建过程、以确认集群已成功创建。</block>
+  <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">您应确认已配置ONTAP Select AutoSupport功能、然后备份ONTAP Select Deploy配置数据。</block>
+  <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">中概述了外部存储支持信息 <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>。</block>
+  <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7.0 GA (内部版本为58043807)或更高版本</block>
 </blocks>

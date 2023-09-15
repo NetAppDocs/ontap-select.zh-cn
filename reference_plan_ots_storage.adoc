@@ -17,6 +17,9 @@ summary: 您应考虑几个与 ONTAP Select 主机存储相关的规划问题。
 您应考虑几个与 ONTAP Select 主机存储相关的规划问题。
 
 
+NOTE: 中概述了外部存储支持信息 link:reference_plan_ots_vnas.html["ONTAP Select vNAS 要求"]。
+
+
 
 == 硬件 RAID 控制器要求
 
@@ -60,12 +63,7 @@ RAID 控制器的最低要求包括：
 
 在 VMware ESXi 上部署软件 RAID 的环境必须满足以下核心要求：
 
-* VMware ESXi 版本：
-+
-** ESXi 6.5 U2 （内部版本 8294253 ）或更高版本
-** ESXi 6.7 GA （内部版本 8169922 ）或更高版本
-
-
+* VMware ESXi 7.0 GA (内部版本为58043807)或更高版本
 * ONTAP Select 9.5 或更高版本
 * ONTAP Select Deploy 2.10 或更高版本
 * 仅限新的 ONTAP Select 集群
