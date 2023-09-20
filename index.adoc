@@ -33,7 +33,7 @@ NetApp ONTAP Select 是一款软件定义的存储设备，您可以在运行 VM
 
 == 导航产品文档
 
-ONTAP Select 9.12.1可以部署在VMware ESXi上。此站点包含有关在VMware ESXi上运行的ONTAP Select 9.12.1、9.11.1、9.10.1、9.9.1、9.8和9.7的文档、以及与虚拟机管理程序无关的文档(例如REST API)。
+ONTAP Select 9.131可以部署在VMware ESXi上。此站点包含ONTAP Select 9.13.1, 9.12.1, 9.11.1, 9.10.1和9.9.1的文档。 9.8和9.7以及与虚拟机管理程序无关的文档(例如REST API)。
 
 您可以在上找到此产品的 KVM 版本的发行说明和文档 https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["ONTAP Select 产品库"^]。
 

@@ -25,6 +25,7 @@ NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP �
 
 ONTAP Select 附带了以下功能、默认情况下已获得许可：
 
+* 基于TCP的NVMe
 * NFS
 * CIFS
 * iSCSI

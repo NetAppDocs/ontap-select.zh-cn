@@ -37,6 +37,50 @@ ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF �
 
 
 
+== 验证ONTAP Select Deploy OVA签名
+
+在安装安装安装软件包之前、您应验证ONTAP Select开放式虚拟化设备(OVA)签名。
+
+.开始之前
+验证您的系统是否满足以下要求：
+
+* 用于基本验证的OpenSSL版本1.0.2至3.0
+* 可通过公共互联网访问联机证书状态协议(Online Certificate Status Protocol、OCSP)验证
+
+
+.步骤
+. 从NetApp 支持站点 上的产品下载页面获取以下文件：
++
+[cols="2*"]
+|===
+| 文件 | Description 
+
+
+| `ONTAP-Select-Deploy-Production.pub` | 用于验证签名的公共密钥。 
+
+
+| `csc-prod-chain-ONTAP-Select-Deploy.pem` | 公共证书颁发机构(CA)的信任链。 
+
+
+| `csc-prod-ONTAP-Select-Deploy.pem` | 用于生成密钥的证书。 
+
+
+| `ONTAPdeploy.ova` | 适用于ONTAP Select 9.13.1.的产品安装可执行文件。 
+
+
+| `ONTAPdeploy.ova.sig` | SHA-256算法经过哈希处理、然后由远程支持代理(RSA)使用进行签名 `csc-prod` 安装程序的密钥和签名。 
+|===
+. 验证是否已 `ONTAPdeploy.ova.sig` 文件正在使用关联的证书和验证命令。
+. 使用以下命令验证签名：
++
+[listing]
+----
+openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTAPdeploy.ova.sig  ONTAPdeploy.ova
+----
+
+
+
+
 == 部署虚拟机
 
 您必须使用 OVF 虚拟机映像安装和启动 ONTAP Select Deploy 虚拟机。在安装过程中，您必须将网络接口配置为使用 DHCP 或静态 IP 配置。
@@ -94,7 +138,7 @@ ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF �
 
 
 
-== 登录到 Deploy Web 界面
+== 登录到Deploy Web界面
 
 您应登录到 Web 用户界面以确认 Deploy 实用程序可用并执行初始配置。
 

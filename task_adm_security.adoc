@@ -66,3 +66,215 @@ summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项
 
 
 
+
+
+
+== 配置MFA
+
+从ONTAP Select 9.13.1开始、ONTAP Select Deploy管理员帐户支持多因素身份验证(MFA)：
+
+* link:task_adm_security.html#ontap-select-deploy-cli-mfa-login-using-yubikey-piv-or-fido2-authentication["使用YukiKey个人身份验证(PIV)或快速身份联机(FIDO2)身份验证登录ONTAP Select Deploy命令行界面MFA"]
+* <<使用ssh-keygen登录ONTAP Select Deploy命令行界面MFA>>
+
+
+
+
+== 使用YukiKey PIV或FIDO2身份验证登录ONTAP Select Deploy命令行界面MFA
+
+
+
+=== YukikiKey PIV
+
+按照中的步骤配置YukiKey PIN并生成或导入远程支持代理(RSA)或椭圆曲线数字签名算法(ECDSA)私钥和证书 link:https://docs.netapp.com/us-en/ontap-technical-reports/security.html#multifactor-authentication["TR-4647：《ONTAP中的多因素身份验证》"^]。
+
+* 对于Windows：技术报告的“* YukiKey PIV客户端Windows*配置”部分。
+* 对于MacOS：技术报告中用于MAC OS和Linux*的*YUBIKey PIV客户端配置部分。
+
+
+
+
+=== FIDO2
+
+如果选择使用YukiKey FIDO2身份验证、请使用YukiKey Manager配置YukbiKey FIDO2 PIN、并使用适用于Windows的PuTTY-CAC (通用访问卡)或适用于MacOS的ssh-keygen生成FIDO2密钥。执行此操作的步骤请见技术报告 link:https://docs.netapp.com/us-en/ontap-technical-reports/security.html#multifactor-authentication["TR-4647：《ONTAP中的多因素身份验证》"^]。
+
+* 对于Windows：技术报告的“Windows** YUBIKey FIDO2客户端配置”部分。
+* 对于MacOS：技术报告中用于Mac OS和Linux*的*YUBIKey FIDO2客户端配置部分。
+
+
+
+
+=== 获取YobiKey PIV或FIDO2公共密钥
+
+获取公共密钥取决于您是Windows客户端还是MacOS客户端、以及您使用的是PIV还是FIDO2。
+
+.对于 Windows ：
+* 按照TR-4647第16页的*为Windows PuTTY-CAC SSH客户端配置YUBIKey PIV身份验证*一节所述，使用SSH→证书下的*复制到剪贴板*功能导出PIV公共密钥。
+* 按照TR-4647第30页的*为Windows PuTTY-CAC SSH客户端配置YUBIKey FIDO2身份验证*一节所述，使用SSH→证书下的*复制到剪贴板*功能导出FIDO2公共密钥。
+
+
+.对于MacOS：
+* PIV公共密钥应使用导出 `ssh-keygen -e` 命令，如TR-4647第24页上的*为Mac OS或Linux SSH客户端配置YUBIKey PIV身份验证*一节所述。
+* FIDO2公共密钥位于中 `id_ecdsa_sk.pub` 文件或 `id_edd519_sk.pub` 文件(具体取决于使用的是ECDSA还是EDD519)、如TR-4647第39页的*为YUBIKey FIDO2身份验证配置MAC操作系统或Linux SSH客户端*一节所述。
+
+
+
+
+== 在ONTAP Select Deploy中配置公共密钥
+
+管理员帐户使用SSH执行公共密钥身份验证方法。无论身份验证方法是标准SSH公共密钥身份验证、YukiKey PIV还是FIDO2身份验证、使用的命令都相同。
+
+对于基于硬件的SSH MFA、除了在ONTAP Select Deploy上配置的公共密钥之外、身份验证因素如下所示：
+
+* PIV或FIDO2 PIN
+* 拥有YukiKey硬件设备。对于FIDO2、可通过在身份验证过程中物理触摸YukiKey来确认这一点。
+
+
+.开始之前
+设置为YukiKey配置的PIV或FIDO2公共密钥。ONTAP Select Deploy命令行界面命令 `security publickey add -key` 对于PIV或FIDO2是相同的、并且公共密钥字符串不同。
+
+公共密钥可从以下位置获取：
+
+* 用于PIV和FIDO2的PuTTY-CAC的*复制到剪贴板*功能(Windows)
+* 使用以SSH兼容格式导出公共密钥 `ssh-keygen -e` PIV命令
+* 位于中的公共密钥文件 `~/.ssh/id_***_sk.pub` FIDO2的文件(MacOS)
+
+
+.步骤
+. 在中查找生成的密钥 `.ssh/id_***.pub` 文件
+. 使用将生成的密钥添加到ONTAP Select Deploy `security publickey add -key <key>` 命令：
++
+[listing]
+----
+(ONTAPdeploy) security publickey add -key "ssh-rsa <key> user@netapp.com"
+----
+. 使用启用MFA身份验证 `security multifactor authentication enable` 命令：
++
+[listing]
+----
+(ONTAPdeploy) security multifactor authentication enable
+MFA enabled Successfully
+----
+
+
+
+
+== 通过SSH使用YukiKey PIV身份验证登录到ONTAP Select Deploy
+
+您可以使用基于SSH的YukiKey PIV身份验证登录到ONTAP Select Deploy。
+
+.步骤
+. 配置完YukiKey令牌、SSH客户端和ONTAP Select Deploy后、您可以通过SSH使用MFA YukiKey PIV身份验证。
+. 登录到ONTAP Select Deploy。如果您使用的是Windows PuTTY-CAC SSH客户端、则会弹出一个对话框、提示您输入YukiKey PIN。
+. 在连接了YukiKey的情况下从您的设备登录。
+
+
+.示例输出
+[listing]
+----
+login as: admin
+Authenticating with public key "<public_key>"
+Further authentication required
+<admin>'s password:
+
+NetApp ONTAP Select Deploy Utility.
+Copyright (C) NetApp Inc.
+All rights reserved.
+
+Version: NetApp Release 9.13.1 Build:6811765 08-17-2023 03:08:09
+
+(ONTAPdeploy)
+----
+
+
+== 使用ssh-keygen登录ONTAP Select Deploy命令行界面MFA
+
+。 `ssh-keygen` 命令是一种用于为SSH创建新身份验证密钥对的工具。密钥对用于自动执行登录、单点登录和主机身份验证。
+
+。 `ssh-keygen` 命令支持多种用于身份验证密钥的公共密钥算法。
+
+* 可使用选择算法 `-t` 选项
+* 密钥大小可通过选择 `-b` 选项
+
+
+.示例输出
+[listing]
+----
+ssh-keygen -t ecdsa -b 521
+ssh-keygen -t ed25519
+ssh-keygen -t ecdsa
+----
+.步骤
+. 在中查找生成的密钥 `.ssh/id_***.pub` 文件
+. 使用将生成的密钥添加到ONTAP Select Deploy `security publickey add -key <key>` 命令：
++
+[listing]
+----
+(ONTAPdeploy) security publickey add -key "ssh-rsa <key> user@netapp.com"
+----
+. 使用启用MFA身份验证 `security multifactor authentication enable` 命令：
++
+[listing]
+----
+(ONTAPdeploy) security multifactor authentication enable
+MFA enabled Successfully
+----
+. 启用MFA后、登录到ONTAP Select Deploy系统。您应收到类似于以下示例的输出。
++
+[listing]
+----
+[<user ID> ~]$ ssh <admin>
+Authenticated with partial success.
+<admin>'s password:
+
+NetApp ONTAP Select Deploy Utility.
+Copyright (C) NetApp Inc.
+All rights reserved.
+
+Version: NetApp Release 9.13.1 Build:6811765 08-17-2023 03:08:09
+
+(ONTAPdeploy)
+----
+
+
+
+
+=== 从MFA迁移到单因素身份验证
+
+可以使用以下方法为Deploy管理员帐户禁用MFA：
+
+* 如果您可以使用安全Shell (SSH)以管理员身份登录到Deploy命令行界面、请运行以禁用MFA `security multifactor authentication disable` 命令。
++
+[listing]
+----
+(ONTAPdeploy) security multifactor authentication disable
+MFA disabled Successfully
+----
+* 如果您无法使用SSH以管理员身份登录到Deploy命令行界面：
++
+.. 通过vCenter或vSphere连接到Deploy虚拟机(VM)视频控制台。
+.. 使用管理员帐户登录到Deploy命令行界面。
+.. 运行 `security multifactor authentication disable` 命令：
++
+[listing]
+----
+Debian GNU/Linux 11 <user ID> tty1
+
+<hostname> login: admin
+Password:
+
+NetApp ONTAP Select Deploy Utility.
+Copyright (C) NetApp Inc.
+All rights reserved.
+
+Version: NetApp Release 9.13.1 Build:6811765 08-17-2023 03:08:09
+
+(ONTAPdeploy) security multifactor authentication disable
+MFA disabled successfully
+
+(ONTAPdeploy)
+----
+
+
+* 管理员可以使用以下命令删除公共密钥：
+`security publickey delete -key`
+

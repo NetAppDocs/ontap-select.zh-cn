@@ -19,6 +19,17 @@ NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
 
 
 
+== ONTAP Select 9.13.1.
+
+ONTAP Select 9.13.1提供了几项新功能和改进功能。
+
+集群扩展:: ONTAP Select 9.13.1引入了集群扩展功能、可提供高可用性(HA)保护、防止节点中断对集群提供数据的能力造成影响。从ONTAP Select 9.13.1开始、您可以通过将单节点集群配置为HA对来将这两个节点扩展为双节点集群。操作步骤会自动执行、并可通过ONTAP Select Deploy使用命令行界面或Web界面启动。要执行此操作步骤、您必须满足特定的硬件和软件要求。 link:concept_cluster_expansion.html["了解更多信息。"]。
+支持基于TCP的NVMe:: 升级到ONTAP Select 9.13.1时、您必须具有新许可证才能支持基于TCP的NVMe。首次从9.131版部署ONTAP Select时、系统会自动包含此许可证。
+已更新VMware ESXi支持:: 从ONTAP 9.131开始、硬件版本4及更高版本支持VMware ESXi 8.0 GA (内部版本20513097)。
+
+
+
+
 == ONTAP Select 9.12.1
 
 ONTAP Select 9.12.1从当前版本的核心ONTAP 产品中的大多数新开发中受益。它不包括ONTAP Select 特有的任何新功能或改进。
