@@ -98,6 +98,7 @@ ONTAP Select 不支持多种 ONTAP 功能。在大多数情况下，这些功能
 * 防篡改Snapshot副本
 * SVM 迁移
 * VMware HCX
+* Storage VM灾难恢复(SVM DR)
 
 
 .相关信息
