@@ -167,7 +167,7 @@ image:ST_02.jpg["ESXi 集群"]
 您可以创建驻留在外部存储阵列上的 VMFS 数据存储库。可以使用多种不同的网络协议之一访问存储。下图显示了使用 iSCSI 协议访问的外部存储阵列上的 VMFS 数据存储库。
 
 
-NOTE: ONTAP Select 支持《 VMware 存储 /SAN 兼容性指南》中所述的所有外部存储阵列，包括 iSCSI ，光纤通道和以太网光纤通道。
+NOTE: ONTAP Select支持VMware存储/SAN兼容性文档中所述的所有外部存储阵列、包括iSCSI、光纤通道和以太网光纤通道。
 
 image:ST_03.jpg["ESXi 虚拟机管理程序主机"]
 

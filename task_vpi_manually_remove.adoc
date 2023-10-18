@@ -30,7 +30,7 @@ summary: 您可以从 vCenter Server 中手动删除 Deploy 插件。
 
 
 
-== 使用 VMware MOB 删除此插件
+== 使用VMware MOB删除此插件
 
 MOB 是一个 VMware 应用程序，可用于查看和管理 VMware vCenter 服务器上的对象。您可以使用 MOB 删除 Deploy vCenter 插件。
 
@@ -53,7 +53,7 @@ MOB 是一个 VMware 应用程序，可用于查看和管理 VMware vCenter 服�
 
 
 
-== 从 vSphere UI 文件夹中删除此插件
+== 从vSphere UI文件夹中删除此插件
 
 您应检查 vCenter 服务器上的 vSphere UI 目录，如果找到 Deploy 插件，则应将其删除。
 
@@ -93,7 +93,7 @@ MOB 是一个 VMware 应用程序，可用于查看和管理 VMware vCenter 服�
 
 
 
-== 从 vSphere 客户端文件夹中删除此插件
+== 从vSphere客户端文件夹中删除此插件
 
 您应检查 vCenter 服务器上的 vSphere Client 目录，如果找到 Deploy 插件，则应将其删除。虽然 Deploy 插件不使用闪存，但最佳做法是在删除插件操作步骤 时检查此目录。
 

@@ -4,7 +4,7 @@ permalink: task_adm_resize.html
 keywords: administer, administering, web, resizing nodes, resizing 
 summary: 部署 ONTAP Select 集群后，您可以使用 Deploy 管理实用程序升级节点的虚拟机管理程序实例类型。 
 ---
-= 调整 ONTAP Select 集群节点的大小
+= 调整ONTAP Select集群节点的大小
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

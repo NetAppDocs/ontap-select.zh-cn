@@ -4,7 +4,7 @@ permalink: task_vpi_access.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, access, accessing 
 summary: 您可以通过 vSphere Web Client 访问 Deploy vCenter 插件。 
 ---
-= 通过 vSphere 访问 vCenter 插件
+= 通过vSphere访问vCenter插件
 :allow-uri-read: 
 
 

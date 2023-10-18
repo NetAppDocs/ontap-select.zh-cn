@@ -60,7 +60,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 ----
 
 
-== 使用 vNAS 时将 ONTAP Select 节点并置
+== 使用vNAs时、请在ONTAP Select节点上配置
 
 ONTAP Select 支持在共享存储上使用多节点 ONTAP Select 集群。ONTAP Deploy 支持在同一 ESX 主机上配置多个 ONTAP Select 节点，前提是这些节点不属于同一集群。请注意，此配置仅适用于 vNAS 环境（共享数据存储库）。使用 DAS 存储时，不支持每个主机使用多个 ONTAP Select 实例，因为这些实例争用同一硬件 RAID 控制器。
 

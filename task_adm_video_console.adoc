@@ -4,7 +4,7 @@ permalink: task_adm_video_console.html
 keywords: administer, administering, web, video console 
 summary: 您可以访问运行 ONTAP Select 的 ESXi 虚拟机的视频控制台。 
 ---
-= 访问 ONTAP Select 视频控制台
+= 访问ONTAP Select视频控制台
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

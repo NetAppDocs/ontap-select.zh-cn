@@ -4,7 +4,7 @@ permalink: task_cli_deploy_image_add.html
 keywords: administer, administering, cli, deploy, ontap select image, add 
 summary: 您可以将 ONTAP Select 映像添加到 Deploy 管理实用程序实例中。安装映像后，您可以在部署 ONTAP Select 集群时使用它。 
 ---
-= 添加要部署的 ONTAP Select 映像
+= 添加要部署的ONTAP Select映像
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,7 +35,7 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 
 
 
-== 正在下载安装映像
+== 下载安装映像
 
 要开始向 Deploy 实用程序实例添加 ONTAP Select 映像的过程，您必须从 NetApp 支持站点下载此安装映像。ONTAP Select 安装映像的格式为一个压缩文件。
 
@@ -52,7 +52,7 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 
 
 
-== 将安装映像上传到 Deploy
+== 上传要部署的安装映像
 
 获取 ONTAP Select 安装映像后，必须将此文件上传到 Deploy 虚拟机。
 
@@ -87,7 +87,7 @@ exit
 
 
 
-== 正在添加安装映像
+== 添加安装映像
 
 您可以将 ONTAP Select 安装映像添加到 Deploy 映像目录中，以便在部署新集群时可以使用该映像。
 

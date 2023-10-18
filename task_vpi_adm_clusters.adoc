@@ -18,7 +18,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 
 
-== 将 ONTAP Select 集群移至脱机和联机状态
+== 将ONTAP Select集群置于脱机和联机状态
 
 创建集群后，您可以根据需要将其状态更改为脱机或联机。
 
@@ -30,7 +30,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 
 
-== 删除 ONTAP Select 集群
+== 删除ONTAP Select集群
 
 您可以删除不再需要的 ONTAP Select 集群。
 

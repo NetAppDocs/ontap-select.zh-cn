@@ -23,11 +23,11 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 确保在升级期间未使用 Deploy 执行任何其他任务。有关升级 Deploy 实用程序的信息和限制，请参见最新发行说明。
 
 
-NOTE: 如果您安装了ONTAP Select Deploy管理实用程序实例、则应考虑升级到最新版本。ONTAP Select节点和ONTAP Select Deploy组件会单独升级。请参见 link:concept_adm_upgrading_nodes.html["升级 ONTAP Select 节点"^] 了解更多详细信息。
+NOTE: 如果您安装了旧版ONTAP Select Deploy管理实用程序实例、则应升级到当前版本。ONTAP Select节点和ONTAP Select Deploy组件会单独升级。请参见 link:concept_adm_upgrading_nodes.html["升级ONTAP Select节点"^] 了解更多详细信息。
 
 
 
-== 正在下载升级软件包
+== 下载升级包
 
 要开始升级过程，您必须从 NetApp 支持站点下载相应的 Deploy 虚拟机升级文件。升级软件包的格式为一个压缩文件。
 
@@ -46,7 +46,7 @@ link:https://mysupport.netapp.com["NetApp 支持"^]
 
 
 
-== 将软件包上传到 Deploy 虚拟机
+== 将软件包上传到Deploy虚拟机
 
 获取升级软件包后，您必须将此文件上传到 Deploy 虚拟机。
 
@@ -72,7 +72,7 @@ scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide pas
 
 
 
-== 正在应用升级软件包
+== 应用升级软件包
 
 将升级文件上传到 Deploy 虚拟机后，您可以应用此升级。
 

@@ -18,7 +18,7 @@ summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项
 
 
 
-= 更改 Deploy 管理员密码
+= 更改Deploy管理员密码
 
 您可以根据需要使用命令行界面更改 Deploy 虚拟机管理员帐户的密码。
 

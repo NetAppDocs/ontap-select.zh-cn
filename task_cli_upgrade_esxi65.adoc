@@ -27,9 +27,9 @@ CAUTION: 如果选择升级到 VMware ESXi 6.5 ，则应升级到 ESXi U2 （内
 
 
 
-=== 熟悉如何升级 VMware ESXi
+=== 熟悉如何升级VMware ESXi
 
-VMware 介绍并支持升级 ESXi 软件的过程。使用 ONTAP Select 时，虚拟机管理程序升级过程属于更大的操作步骤 升级过程。有关详细信息，请参见 VMware 文档升级 ESXi 主机。
+VMware 介绍并支持升级 ESXi 软件的过程。使用 ONTAP Select 时，虚拟机管理程序升级过程属于更大的操作步骤 升级过程。有关详细信息、请参见VMware文档。
 
 
 
@@ -46,13 +46,13 @@ TIP: 您应选择使用 Deploy 管理实用程序的升级操作步骤 。
 
 使用 Deploy 管理实用程序执行 ESXi 升级是一个更普遍且更具弹性的选项。但是，在某些情况下，可能会出现 Deploy 不可用或无法使用的情况。例如、早期版本的ONTAP Select和Deploy管理实用程序不支持升级到ESXi 7.0。
 
-如果您使用的是这些早期版本并尝试升级，则 ONTAP Select 虚拟机可能会处于无法启动的状态。在这种情况下，您必须选择不使用 Deploy 的升级操作步骤 。有关详细信息，请参见 * 。 1172198* 。
+如果您使用的是这些早期版本并尝试升级，则 ONTAP Select 虚拟机可能会处于无法启动的状态。在这种情况下，您必须选择不使用 Deploy 的升级操作步骤 。请参见 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] 有关详细信息 ...
 
 
 
-=== 升级 Deploy 管理实用程序
+=== 升级Deploy管理实用程序
 
-在使用 Deploy 实用程序升级操作步骤 之前，您可能需要升级 Deploy 实例。通常，您应升级到最新版本的 Deploy 。您必须至少使用 Deploy 2.5 或更高版本。Deploy 实用程序必须支持您正在使用的 ONTAP Select 版本。有关详细信息，请参见 ONTAP Select 发行说明。
+在使用 Deploy 实用程序升级操作步骤 之前，您可能需要升级 Deploy 实例。通常，您应升级到最新版本的 Deploy 。Deploy 实用程序必须支持您正在使用的 ONTAP Select 版本。有关详细信息，请参见 ONTAP Select 发行说明。
 
 
 
@@ -62,12 +62,9 @@ TIP: 您应选择使用 Deploy 管理实用程序的升级操作步骤 。
 
 
 
-== 使用 Deploy 升级单节点集群
+== 使用Deploy升级单节点集群
 
 您可以在操作步骤 中使用 Deploy 管理实用程序来升级托管 ONTAP Select 单节点集群的 VMware ESXi 虚拟机管理程序。
-
-.开始之前
-您必须使用 Deploy 2.5 或更高版本。
 
 .步骤
 . 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
@@ -76,9 +73,6 @@ TIP: 您应选择使用 Deploy 管理实用程序的升级操作步骤 。
 示例 `node stop -cluster-name <clustername> -node-name <nodename>`
 
 . 使用VMware提供的操作步骤将运行ONTAP Select的虚拟机管理程序主机升级到ESXi 7.0或更高版本。
-+
-有关详细信息，请参见 _ 开始之前 _ 。
-
 . 将节点移至联机状态。
 +
 示例 `node start -cluster-name <clustername> -node-name <nodename>`
@@ -101,12 +95,9 @@ sdot-d200-011d true true
 
 
 
-== 使用 Deploy 升级多节点集群
+== 使用Deploy升级多节点集群
 
 您可以在操作步骤 中使用 Deploy 管理实用程序来升级托管 ONTAP Select 多节点集群的 VMware ESXi 虚拟机管理程序。
-
-.开始之前
-您必须使用 Deploy 2.5 或更高版本。
 
 .关于此任务
 您必须对集群中的每个节点执行此升级操作步骤 ，一次一个节点。如果集群包含四个或更多节点，则应先按顺序升级每个 HA 对中的节点，然后再继续执行下一个 HA 对。
@@ -152,7 +143,7 @@ sdot-d200-012d true true
 
 
 
-== 在不使用 Deploy 的情况下升级单节点集群
+== 无需Deploy即可升级单节点集群
 
 您可以升级托管 ONTAP Select 单节点集群的 VMware ESXi 虚拟机管理程序，而无需使用 Deploy 管理实用程序。
 
@@ -187,7 +178,7 @@ sdot-d200-011d true true
 
 
 
-== 在不使用 Deploy 的情况下升级多节点集群
+== 不使用Deploy升级多节点集群
 
 您可以升级托管 ONTAP Select 多节点集群的 VMware ESXi 虚拟机管理程序，而无需使用 Deploy 管理实用程序。
 
@@ -198,9 +189,6 @@ sdot-d200-011d true true
 . 登录到 ONTAP 命令行界面并暂停节点。
 . 使用 VMware vSphere 确认 ONTAP Select 虚拟机已关闭。
 . 使用VMware提供的操作步骤将运行ONTAP Select的虚拟机管理程序主机升级到ESXi 7.0或更高版本。
-+
-有关详细信息，请参见 _ 开始之前 _ 。
-
 . 使用 VMware vSphere 访问 vCenter 并执行以下操作：
 +
 .. 向 ONTAP Select 虚拟机添加软盘驱动器。

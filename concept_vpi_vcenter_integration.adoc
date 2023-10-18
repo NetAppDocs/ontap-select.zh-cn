@@ -32,7 +32,7 @@ ONTAP Select 集群作为一组或多个节点在 VMware 上运行。每个节�
 
 
 
-== 通过插件查看集群的 VMware 资源
+== 通过此插件查看集群的VMware资源
 
 您可以通过 Deploy 插件查看分配给 ONTAP Select 集群的 VMware 资源。
 
@@ -46,7 +46,7 @@ ONTAP Select 集群作为一组或多个节点在 VMware 上运行。每个节�
 
 
 
-== 通过 ESXi 虚拟机查看 ONTAP Select 集群
+== 通过ESXi虚拟机查看ONTAP Select集群
 
 您可以通过访问 VMware 虚拟机来查看 ONTAP Select 集群和关联的集群资源。
 
@@ -60,7 +60,7 @@ ONTAP Select 集群作为一组或多个节点在 VMware 上运行。每个节�
 
 
 
-== 在 ESXi 主机上创建单节点集群
+== 在ESXi主机上创建单节点集群
 
 您可以通过 vSphere 界面选择 ESXi 虚拟机管理程序主机，并部署 ONTAP Select 单节点集群。
 

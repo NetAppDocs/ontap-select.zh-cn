@@ -16,10 +16,6 @@ summary: 创建 ONTAP Select 集群后，您可以通过执行各种管理任务
 [role="lead"]
 创建 ONTAP Select 集群后，您可以通过执行各种管理任务来支持部署。需要注意一些一般注意事项。
 
-
-
-== 开始之前
-
 通常，您可以使用 Deploy Web 界面执行的过程分为三类。
 
 .部署 ONTAP Select 集群
@@ -33,32 +29,31 @@ summary: 创建 ONTAP Select 集群后，您可以通过执行各种管理任务
 
 
 
-== 管理 ONTAP Select
+== 管理ONTAP Select
 
-在支持 ONTAP Select 过程中，可以使用多种不同的管理过程。此外，还有一些特定于 Deploy 管理实用程序的过程。下面介绍了其中最重要的过程。通常，所有都使用 Deploy Web 用户界面。一个管理过程可以包含一个分步任务，也可以包含一系列多个任务。
-
-
-NOTE: 您也可以使用命令行界面管理 ONTAP Select 。有关详细信息，请参见 _Using the CLI_ 一节。
+在支持 ONTAP Select 过程中，可以使用多种不同的管理过程。此外，还有一些特定于 Deploy 管理实用程序的过程。下面介绍了其中最重要的过程。通常，所有都使用 Deploy Web 用户界面。
 
 
+NOTE: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_signing_in.html["使用命令行界面"] 以管理ONTAP Select。
 
-== 正在执行其他 ONTAP 配置
 
-部署 ONTAP Select 集群后，您可以像配置和管理基于硬件的 ONTAP 系统一样配置和管理集群。例如，您可以使用 OnCommand 系统管理器或 ONTAP 命令行界面配置 ONTAP Select 集群。
+
+== 执行其他ONTAP配置
+
+部署 ONTAP Select 集群后，您可以像配置和管理基于硬件的 ONTAP 系统一样配置和管理集群。例如、您可以使用ONTAP系统管理器或ONTAP命令行界面来配置ONTAP Select集群。
 
 .NetApp 客户端软件
 您可以使用以下受支持的 NetApp 客户端软件连接到 ONTAP Select ：
 
-* OnCommand 系统管理器
-* OnCommand 统一管理器
-* OnCommand 性能管理器
+* ONTAP 系统管理器
+* Active IQ Unified Manager
 * OnCommand Insight
 * OnCommand Workflow Automation
 * SnapCenter
 * 适用于 VMware vSphere 的 Virtual Storage Console
 
 
-要确定受支持的客户端软件版本，请查看 _NetApp 互操作性表工具 _ 。如果客户端软件支持 ONTAP 9 ，则 ONTAP Select 也支持相同的版本。
+要确定受支持的客户端软件版本、请查看 link:https://mysupport.netapp.com/matrix/["NetApp 互操作性表工具"^]。如果客户端软件支持 ONTAP 9 ，则 ONTAP Select 也支持相同的版本。
 
 
 NOTE: 使用 SnapCenter 和相应插件需要基于服务器的许可证。ONTAP Select 当前不支持 SnapCenter 插件的存储系统许可。
@@ -70,7 +65,7 @@ ONTAP Select 不支持列表中未包含的任何其他 NetApp 客户端软件�
 
 * 创建网络配置
 * 制定聚合布局
-* 创建数据 Storage Virtual Machine （ SVM ）
+* 创建数据Storage VM (SVM)
 
 
 .已购买含存储容量的许可证

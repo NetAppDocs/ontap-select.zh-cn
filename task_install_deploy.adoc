@@ -65,7 +65,7 @@ ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF �
 | `csc-prod-ONTAP-Select-Deploy.pem` | 用于生成密钥的证书。 
 
 
-| `ONTAPdeploy.ova` | 适用于ONTAP Select 9.13.1.的产品安装可执行文件。 
+| `ONTAPdeploy.ova` | ONTAP Select的产品安装可执行文件。 
 
 
 | `ONTAPdeploy.ova.sig` | SHA-256算法经过哈希处理、然后由远程支持代理(RSA)使用进行签名 `csc-prod` 安装程序的密钥和签名。 
@@ -159,4 +159,4 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 .相关信息
-link:task_cli_signing_in.html["使用 SSH 登录到 Deploy"]
+link:task_cli_signing_in.html["使用SSH登录到Deploy"]

@@ -18,9 +18,9 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 
 
 
-== 确定是使用 Deploy Web 用户界面还是使用命令行界面
+== 确定是使用Deploy Web用户界面还是命令行界面
 
-在大多数情况下，在管理 vCenter 插件时， Deploy Web 用户界面是最方便的选项，本指南中介绍了此选项。但是，您也可以使用 Deploy 命令行界面管理此插件。有关详细信息，请在 Deploy 命令行界面提示符处键入以下命令：
+在大多数情况下、Deploy Web用户界面是管理vCenter插件时最方便的选项、此选项在本操作步骤中进行了介绍。但是，您也可以使用 Deploy 命令行界面管理此插件。有关详细信息，请在 Deploy 命令行界面提示符处键入以下命令：
 
 * `d部署插件？` （子命令包括： install ， remove ， show 和 update ）
 * `deDeploy plugin-packages show` …
@@ -33,7 +33,8 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 无论执行何种管理任务，您都必须执行几个步骤。常见准备工作包括：
 
 * 阅读 " 开始熟悉 Deploy vCenter 插件 " 一节。
-* 确保 ONTAP Select Deploy 管理实用程序已安装并正在运行。有关详细信息，请参见《 VMware 安装和集群部署指南》。
+* 确保 ONTAP Select Deploy 管理实用程序已安装并正在运行。
+有关详细信息、请参见VMware的安装和集群部署文档。
 * 获取帐户凭据：
 +
 ** 部署管理员帐户
@@ -47,7 +48,7 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 
 
 
-== 准备 vCenter Server 帐户
+== 准备vCenter Server帐户
 
 在安装和使用 Deploy 插件之前，您必须使用所需权限创建 vCenter 帐户。您可以创建一个具有所有必要权限的帐户，也可以创建多个具有一个权限的帐户。为简单起见，以下示例将 vCenter 特权分布在三个不同的角色中，然后可以将这些角色分配给三个相应的帐户。
 
@@ -65,7 +66,7 @@ summary: 在安装和管理 Deploy vCenter 插件之前，您需要执行以下�
 
 
 
-=== 管理插件
+=== 管理此插件
 
 在 Deploy Web 用户界面中，您可以安装此插件，然后升级或删除它。每次执行其中一项管理操作时，系统都会在弹出窗口中提示您输入 vCenter 帐户。每个管理操作都通过一个单独的 vCenter 权限进行控制。
 

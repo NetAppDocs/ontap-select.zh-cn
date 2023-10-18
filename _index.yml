@@ -1,0 +1,41 @@
+---
+indexpage:
+  lead: NetApp ONTAP Select 是一款软件定义的存储设备，您可以在运行 VMware ESXi 虚拟机管理程序的各种商用硬件服务器上部署。它可以为您提供构建灵活且可扩展的私有云基础架构所需的灵活性。此站点包含ONTAP
+    Select 9.13.1, 9.12.1, 9.11.1, 9.10.1和9.9.1的文档。
+  tiles:
+  - title: 入门
+    links:
+    - title: 发行说明
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2885795
+    - title: 新增功能
+      url: "/reference_new_ots.html"
+    - title: 了解ONTAP Select
+      url: "/concept_ots_overview.html"
+    - title: 许可
+      url: "/concept_lic_production.html"
+    - title: 常见问题解答
+      url: "/reference_faq.html"
+  - title: 安装和管理
+    links:
+    - title: 规划部署
+      url: "/concept_workflow_deploy.html"
+    - title: 安装
+      url: "/task_install_deploy.html"
+    - title: 管理集群
+      url: "/concept_adm_before.html"
+    - title: 使用REST API
+      url: "/concept_api_how_access.html"
+  - title: 更多资源
+    links:
+    - title: ONTAP Select资源页面
+      url: https://www.netapp.com/data-management/ontap-select/documentation/
+    - title: ONTAP Select 产品库
+      url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293
+    - title: ONTAP 9 文档
+      url: https://docs.netapp.com/us-en/ontap/
+    - title: ONTAP Select博客
+      url: https://blog.netapp.com/tag/ontap-select/
+    - title: ONTAP Select社区
+      url: https://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select
+    - title: 互操作性表
+      url: https://mysupport.netapp.com/matrix/

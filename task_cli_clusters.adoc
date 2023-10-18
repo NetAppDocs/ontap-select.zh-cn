@@ -18,7 +18,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 
 
-== 删除 ONTAP Select 集群
+== 删除ONTAP Select集群
 
 您可以使用命令行界面删除不再需要的 ONTAP Select 集群。
 

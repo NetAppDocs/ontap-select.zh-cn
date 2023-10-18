@@ -17,6 +17,13 @@ summary: 当前版本不包含ONTAP Select 的任何新增功能或改进功能�
 [role="lead"]
 NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
 
+[NOTE]
+====
+* 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
+* 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
+
+
+====
 
 
 == ONTAP Select 9.13.1.
@@ -96,7 +103,7 @@ ONTAP Select 9.10.1包括多项新功能和改进功能。
 
 ONTAP Select 9.9.1包括多项新功能和改进功能。
 
-处理器系列支持:: 从ONTAP Select 9.1.1开始、ONTAP Select 仅支持来自Intel Xeon Sandy Bridge或更高版本的CPU型号。
+处理器系列支持:: 从ONTAP Select 9.9.1开始、ONTAP Select仅支持Intel Xeon桑迪桥或更高版本的CPU型号。
 已更新VMware ESXi支持:: ONTAP Select 9.1.1增强了对VMware ESXi的支持。现在支持以下版本：
 +
 --

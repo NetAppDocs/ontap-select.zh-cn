@@ -27,12 +27,9 @@ NOTE: 要了解有关如何在虚拟机管理程序主机上配置 vSwitch 以�
 
 
 
-== 升级到 VMXNET3
+== 升级到VMXNET3
 
-从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将现有 ONTAP Select 节点升级到 9.5 或更高版本，则不会自动升级此驱动程序。
-
-
-NOTE: 此时不需要升级到 VMXNET3 。但是，如果选择升级驱动程序，则必须手动执行升级。在这种情况下，请联系 NetApp 支持部门以获得帮助。
+从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将旧版ONTAP Select节点升级到9.5或更高版本、则不会自动升级此驱动程序。
 
 
 

@@ -123,7 +123,7 @@ NOTE: 根聚合的 RAID 组类型取决于可用磁盘的数量。ONTAP Deploy �
 
 
 
-== 将 ONTAP Select 磁盘与相应的 ESX 磁盘匹配
+== 将ONTAP Select磁盘与对应的ESX磁盘进行匹配
 
 ONTAP Select 磁盘通常标记为 NET x.y 。您可以使用以下 ONTAP 命令获取磁盘 UUID ：
 

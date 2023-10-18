@@ -53,7 +53,7 @@ Deploy 管理实用程序包含一个事件日志记录工具，可提供有关�
 
 
 
-== 启用 AutoSupport
+== 启用AutoSupport
 
 AutoSupport 是 NetApp 用于支持 ONTAP Select 的主要故障排除工具。您可以根据需要启用或禁用 AutoSupport 功能。
 
@@ -69,7 +69,7 @@ AutoSupport 是 NetApp 用于支持 ONTAP Select 的主要故障排除工具。�
 
 
 
-== 生成 AutoSupport 软件包
+== 生成AutoSupport软件包
 
 Deploy vCenter 插件可以生成 AutoSupport 软件包。您应生成软件包以调试问题，或者在支持人员要求时生成软件包。
 

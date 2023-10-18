@@ -93,14 +93,14 @@ vNAS 默认配置可启用称为单实例数据日志记录（ SIDl ）的写入
 --
 集群刷新:: 创建集群后，您可以使用 ONTAP 或虚拟机管理程序管理工具在 Deploy 实用程序之外更改集群或虚拟机配置。您还可以迁移导致配置更改的虚拟机。发生这些更改时， Deploy 实用程序不会自动更新，并且可能会与集群状态不同步。您可以使用集群刷新功能更新 Deploy 配置数据库。集群刷新可通过 Deploy Web 用户界面， CLI 管理 Shell 和 REST API 来实现。
 软件 RAID:: 使用直连存储（ DAS ）时， RAID 功能通常通过本地硬件 RAID 控制器提供。您可以改为将节点配置为使用 _software raid_ ，其中 ONTAP Select 节点提供 RAID 功能。如果使用软件 RAID ，则不再需要硬件 RAID 控制器。
-ONTAP Select 映像安装:: 从 ONTAP Select Deploy 2.8 开始， Deploy 管理实用程序仅包含一个版本的 ONTAP Select 。随附的版本是发布时的最新版本。例如， Deploy 2.8 包含 ONTAP Select 9.4 。通过 ONTAP Select 映像安装功能，您可以将早期版本的 ONTAP Select 添加到 Deploy 实用程序实例中，然后在部署 ONTAP Select 集群时使用此实例。请参见 link:task_cli_deploy_image_add.html["有关详细信息，请添加 ONTAP Select 映像"]。
+ONTAP Select 映像安装:: 从 ONTAP Select Deploy 2.8 开始， Deploy 管理实用程序仅包含一个版本的 ONTAP Select 。随附的版本是发布时的最新版本。通过 ONTAP Select 映像安装功能，您可以将早期版本的 ONTAP Select 添加到 Deploy 实用程序实例中，然后在部署 ONTAP Select 集群时使用此实例。请参见 link:task_cli_deploy_image_add.html["有关详细信息，请添加 ONTAP Select 映像"]。
 
 
 
-NOTE: 您只能添加版本早于 Deploy 实例附带的原始版本的 ONTAP Select 映像。不支持在更高版本的 ONTAP Select 可用时添加这些版本。
+NOTE: 您只能添加版本早于 Deploy 实例附带的原始版本的 ONTAP Select 映像。不支持在不更新Deploy的情况下添加更高版本的ONTAP Select。
 
 在部署 ONTAP Select 集群后对其进行管理:: 部署 ONTAP Select 集群后，您可以像配置基于硬件的 ONTAP 集群一样配置此集群。例如，您可以使用 System Manager 或标准 ONTAP 命令行界面配置 ONTAP Select 集群。
 
 
 .相关信息
-link:task_cli_deploy_image_add.html["添加要部署的 ONTAP Select 映像"]
+link:task_cli_deploy_image_add.html["添加要部署的ONTAP Select映像"]

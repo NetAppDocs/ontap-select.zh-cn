@@ -4,7 +4,7 @@ permalink: task_cli_signing_in.html
 keywords: administer, administering, cli, deploy, sign in, signing in 
 summary: 您需要使用 SSH 登录到 Deploy 管理 Shell 。登录后，您可以使用问题描述 命令行界面命令创建 ONTAP Select 集群并执行相关的管理过程。 
 ---
-= 使用 SSH 登录到 Deploy
+= 使用SSH登录到Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -50,7 +50,7 @@ NOTE: ESXi 6.5 GA和ESXi 6.7 GA的可用性即将结束。如果您的ONTAP Sele
 
 
 
-=== 升级到 VMware ESXi 6.5 U2 或更高版本
+=== 升级到VMware ESXi 6.5 U2或更高版本
 
 如果您当前已在 VMware ESXi 6.5 U1 上部署 ONTAP Select ，则应尽快升级到 ESXi 6.5 U2 或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。
 
@@ -90,7 +90,7 @@ NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge �
 |===
 
 
-| 集群大小 | 最低要求 | 建议 
+| 集群大小 | 最低要求 | 建议的要求 
 
 
 | 单节点集群 | 2个1GbE | 2 个 10GbE 

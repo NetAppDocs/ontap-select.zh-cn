@@ -92,19 +92,19 @@ ONTAP Select Deploy 选项大致相当于原生 Deploy Web 用户界面中的 * 
 |===
 
 
-== 将 vCenter 插件与原生 Deploy 用户界面进行比较
+== 将vCenter插件与本机Deploy用户界面进行比较
 
 通过 vSphere 提供的 vCenter 插件功能相当于原生 Deploy 用户界面。但是，插件不提供一些功能，这些功能仅在 Deploy 用户界面中可用。
 
 
 
-=== 管理 vCenter 插件
+=== 管理vCenter插件
 
 您不能使用 vCenter 插件安装，更新，删除或验证 vCenter 插件。您必须通过原生 Deploy 用户界面执行这些管理任务。
 
 
 
-=== 管理 vCenter 凭据
+=== 管理vCenter凭据
 
 在安装 vCenter 插件之前，您必须添加必要的 vCenter 凭据，以便使用原生 Deploy 用户界面进行部署。
 

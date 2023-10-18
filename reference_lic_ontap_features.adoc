@@ -45,7 +45,7 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 
 对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：
 
-* SnapLock 企业
+* SnapLock企业版(ONTAP Select不支持SnapLock合规性)
 * FabricPool
 * 数据可用性服务
 * FlexCache （零成本）

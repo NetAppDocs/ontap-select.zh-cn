@@ -64,14 +64,6 @@ RAID 控制器的最低要求包括：
 在 VMware ESXi 上部署软件 RAID 的环境必须满足以下核心要求：
 
 * VMware ESXi 7.0 GA (内部版本为58043807)或更高版本
-* ONTAP Select 9.5 或更高版本
-* ONTAP Select Deploy 2.10 或更高版本
-* 仅限新的 ONTAP Select 集群
-
-
-
-NOTE: 您必须使用 Deploy 管理实用程序使用 ONTAP Select 9.5 或更高版本部署新集群。不能对已从先前版本升级到 ONTAP Select 9.5 的现有节点使用软件 RAID 。
-
 * ONTAP Select 高级许可证或更高版本
 * 仅限本地 SSD 驱动器
 * 将系统磁盘与根聚合和数据聚合分离
@@ -82,6 +74,7 @@ NOTE: 您必须使用 Deploy 管理实用程序使用 ONTAP Select 9.5 或更高
 NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_chars.html["深度剖析存储"] 第节、了解其他配置要求。
 
 * 不支持 VMware VMotion ， HA 和 DRS
+* 您不能对从ONTAP Select 9.4或更早版本升级的节点使用软件RAID。如果出现这种情况、您需要为软件RAID部署创建一个新节点。
 
 
 
@@ -100,14 +93,14 @@ NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_c
 
 在规划 ONTAP Select 部署时，您应了解与存储分配和使用相关的限制。
 
-下面介绍了最重要的存储限制。有关详细信息，您还应查看 _NetApp 互操作性表工具 _ 。
+下面介绍了最重要的存储限制。您还应查看 link:https://mysupport.netapp.com/matrix/["NetApp 互操作性表工具"^] 了解更多详细信息。
 
 
-TIP: ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Select 集群或购买许可证之前，您应熟悉这些限制。有关详细信息，请参见 _License_ 一节。
+TIP: ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Select 集群或购买许可证之前，您应熟悉这些限制。请参见 link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["许可证"] 部分、了解更多信息。
 
 
 
-=== 正在计算原始存储容量
+=== 计算原始存储容量
 
 ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的虚拟数据和根磁盘的总允许大小。分配容量时应考虑这一点。
 
@@ -163,7 +156,7 @@ NOTE: 每个存储池会保留 2% 的未使用缓冲区，并且不需要容量�
 
 对于虚拟机管理程序核心硬件，您应考虑以下建议：
 
-* 一个 ONTAP Select 聚合中的所有驱动器都应采用相同的类型。例如，不应在同一聚合中混用 HDD 和 SSD 驱动器。
+* 一个ONTAP Select聚合中的所有驱动器类型都应相同。例如，不应在同一聚合中混用 HDD 和 SSD 驱动器。
 
 
 
@@ -199,10 +192,10 @@ NOTE: 高级许可证（仅 SSD ）和高级 XL 许可证（ SSD 或 NVMe ）支
 
 您可以将软件 RAID 配置为使用 NVMe SSD 驱动器。您的环境必须满足以下要求：
 
-* ONTAP Select 9.7 或更高版本以及关联的 Deploy 管理实用程序
+* ONTAP Select 9.7或更高版本以及受支持的Deploy管理实用程序
 * 高级 XL 平台许可证或 90 天评估许可证
 * VMware ESXi 6.7 或更高版本
 * 符合规格 1.0 或更高版本的 NVMe 设备
 
 
-在使用 NVMe 驱动器之前，您需要手动配置这些驱动器。请参见 link:task_chk_nvme_configure.html["配置主机以使用 NVMe 驱动器"] 有关详细信息 ...
+在使用 NVMe 驱动器之前，您需要手动配置这些驱动器。请参见 link:task_chk_nvme_configure.html["将主机配置为使用NVMe驱动器"] 有关详细信息 ...

@@ -54,7 +54,7 @@ image:ST_07.jpg["容量分布：对节点 1 执行两次额外的存储添加操
 
 
 
-== 使用软件 RAID 增加 ONTAP Select 的容量
+== 使用软件RAID增加ONTAP Select的容量
 
 同样，也可以使用 storage-add 向导来增加使用软件 RAID 的 ONTAP Select 节点所管理的容量。此向导仅会显示可用的 DAS SDD 驱动器，这些驱动器可以作为 RDM 映射到 ONTAP Select VM 。
 

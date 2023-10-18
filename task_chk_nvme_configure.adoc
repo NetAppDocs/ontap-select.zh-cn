@@ -21,7 +21,7 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 .开始之前
 确保您的部署环境满足以下最低要求：
 
-* ONTAP Select 9.7 或更高版本以及关联的 Deploy 管理实用程序
+* ONTAP Select 9.7或更高版本以及受支持的Deploy管理实用程序
 * 高级 XL 平台许可证或 90 天评估许可证
 * VMware ESXi 6.7 或更高版本
 * 符合规格 1.0 或更高版本的 NVMe 设备

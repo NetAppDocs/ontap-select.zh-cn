@@ -45,7 +45,7 @@ ONTAP Select 集群由一个，两个，四个，六个或八个节点组成。�
 Deploy 管理实用程序作为单独的 Linux 虚拟机打包并安装。您必须使用实用程序在生产环境中部署 ONTAP Select 集群。当前版本的 ONTAP Select 节点映像与 Deploy 实用程序捆绑在一起。
 
 
-NOTE: 从 ONTAP Select 9.7 开始，不再为 Deploy 管理实用程序分配单独的版本号。Deploy 的版本号与关联的 ONTAP Select 版本相同。但是，在特定 ONTAP Select 版本中， Deploy 实用程序的每个更新都有一个唯一的内部版本号。
+NOTE: 不会为Deploy管理实用程序分配单独的版本号。Deploy 的版本号与关联的 ONTAP Select 版本相同。但是，在特定 ONTAP Select 版本中， Deploy 实用程序的每个更新都有一个唯一的内部版本号。
 
 
 
@@ -57,7 +57,7 @@ image:ots_architecture.png["显示了使用 Deploy 管理实用程序创建的 O
 
 
 
-== 比较 ONTAP Select 和 ONTAP 9
+== 请比较ONTAP Select和ONTAP 9
 
 基于硬件的 ONTAP 和 ONTAP Select 均可提供企业级存储解决方案。但是，由于它们的设计和实施方式不同，因此它们可以满足不同的业务要求和使用情形。在规划 ONTAP Select 部署之前，您应熟悉各个平台之间的主要区别。
 

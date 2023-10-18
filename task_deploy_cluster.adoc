@@ -19,7 +19,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的 Web 用
 使用 Deploy 实用程序 Web 界面创建 ONTAP Select 集群时，系统会引导您完成一系列特定步骤。具体过程因部署单节点集群还是多节点集群而异。
 
 
-TIP: 您也可以使用 Deploy 实用程序命令行界面部署 ONTAP Select 集群。
+TIP: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_deploy_cluster.html["使用Deploy实用程序命令行界面部署ONTAP Select集群"]。
 
 
 
@@ -50,7 +50,7 @@ TIP: 您也可以使用 Deploy 实用程序命令行界面部署 ONTAP Select �
 --
 许可证文件:: 如果您计划在生产环境中部署集群，则必须根据您的许可模式获取存储许可证文件。
 部署安装和帐户凭据:: 您必须安装 Deploy 管理实用程序并执行初始配置。请参见 link:task_install_deploy.html["安装 ONTAP Select Deploy"] 有关详细信息 ...您需要具有在安装过程中配置的 Deploy 管理员帐户的密码。
-安装早期的 ONTAP Select 节点映像:: 默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则需要将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
+安装早期的 ONTAP Select 节点映像:: 默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则需要将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的ONTAP Select映像"] 有关详细信息 ...
 入门启动页面:: 初始页面 * ONTAP Select Deploy 入门 * 将指导您完成创建集群的多步过程。主要步骤有五个，包括：
 +
 --

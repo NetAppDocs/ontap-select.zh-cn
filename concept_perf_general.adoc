@@ -24,5 +24,3 @@ summary: 性能因硬件配置而异。
 * * RAID 组中的驱动器类型和驱动器数量 * 。
 * * 虚拟机管理程序版本和修补程序级别 * 。
 
-
-有关ONTAP Select 9.4、9.5和9.6的性能测试详细信息、请参见的_Data ONTAP Select Performance_一节 https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^]。

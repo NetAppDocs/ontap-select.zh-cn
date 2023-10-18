@@ -18,7 +18,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 
 
-== 使 ONTAP Select 集群脱机和联机
+== 将ONTAP Select集群脱机和联机
 
 创建集群后，您可以根据需要将其脱机和联机。
 
@@ -40,7 +40,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 
 
-== 删除 ONTAP Select 集群
+== 删除ONTAP Select集群
 
 您可以删除不再需要的 ONTAP Select 集群。
 
@@ -59,7 +59,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 
 
 
-== 刷新 Deploy 集群配置
+== 刷新Deploy集群配置
 
 创建 ONTAP Select 集群后，您可以使用 ONTAP 或虚拟机管理程序管理工具在 Deploy 实用程序之外更改集群或虚拟机配置。虚拟机的配置也可能在迁移后发生更改。
 

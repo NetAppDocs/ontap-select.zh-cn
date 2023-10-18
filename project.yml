@@ -141,11 +141,11 @@ sidebar:
       entries:
       - title: VM 视频控制台
         url: "/task_adm_video_console.html"
-      - title: 调整集群节点的大小
+      - title: 调整集群节点大小
         url: "/task_adm_resize.html"
-      - title: 更换发生故障的 SW RAID 驱动器
+      - title: 更换发生故障的SW RAID驱动器
         url: "/task_adm_replace_drives_swraid.html"
-      - title: 升级到 VMFS6
+      - title: 升级到VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
     - title: licenses
       url: "/task_adm_licenses.html"
@@ -255,19 +255,19 @@ sidebar:
         url: "/concept_api_before_browser.html"
       - title: 访问文档页面
         url: "/task_api_access_doc_page.html"
-      - title: 了解 API 调用
+      - title: 了解API调用
         url: "/task_api_understanding_call.html"
     - title: 工作流进程
       entries:
       - title: 开始之前
         url: "/concept_api_before_workflows.html"
-      - title: 工作流 1 创建集群
+      - title: 工作流1创建集群
         url: "/reference_api_workflow01.html"
     - title: 使用 Python 访问
       entries:
       - title: 开始之前
         url: "/concept_api_before_python.html"
-      - title: 了解脚本
+      - title: 了解这些脚本
         url: "/concept_api_understanding_scripts.html"
     - title: Python 代码示例
       entries:
@@ -287,8 +287,6 @@ sidebar:
     url: "/concept_automate_ansible.html"
   - title: 使用命令行界面
     entries:
-    - title: 开始之前
-      url: "/concept_cli_before.html"
     - title: 使用 SSH 登录
       url: "/task_cli_signing_in.html"
     - title: 部署集群
@@ -319,9 +317,5 @@ sidebar:
         url: "/task_cli_deploy_recover_two_node.html"
   - title: 常见问题解答
     url: "/reference_faq.html"
-  - title: 获取更多信息
-    url: "/reference_additional_info.html"
-  - title: 早期版本
-    url: "/reference_earlier_versions.html"
   - title: 法律声明
     url: "/reference_legal_notices.html"

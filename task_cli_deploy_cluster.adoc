@@ -4,7 +4,7 @@ permalink: task_cli_deploy_cluster.html
 keywords: administer, administering, cli, create cluster, deploy cluster 
 summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令行界面创建单节点或多节点 ONTAP Select 集群。 
 ---
-= 使用命令行界面部署 ONTAP Select 集群
+= 使用命令行界面部署ONTAP Select集群
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 
 
-=== 准备将存储连接到 ONTAP Select 节点
+=== 准备将存储连接到ONTAP Select节点
 
 如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根聚合和数据聚合至少创建一个存储池。在配置 ONTAP Select 节点时，您必须连接存储池。
 
@@ -34,11 +34,11 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 === 可用的 ONTAP Select 版本
 
-Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的 ONTAP Select 映像"] 有关详细信息 ...
+Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的ONTAP Select映像"] 有关详细信息 ...
 
 
 
-=== 为生产部署授予 ONTAP Select 许可
+=== 为生产部署授予ONTAP Select许可证
 
 在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 _capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool_ 型号为共享池授予许可。
 
@@ -173,7 +173,7 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 
 
-== 配置 ONTAP Select 节点
+== 配置ONTAP Select节点
 
 您必须配置 ONTAP Select 集群中的每个节点。
 
@@ -245,7 +245,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
-== 将存储连接到ONTAP Select 节点
+== 将存储连接到ONTAP Select节点
 
 您必须配置ONTAP Select 集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。
 

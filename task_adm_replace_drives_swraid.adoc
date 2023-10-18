@@ -4,7 +4,7 @@ permalink: task_adm_replace_drives_swraid.html
 keywords: administer, administering, web, software raid, replace drive 
 summary: 如果使用软件 RAID 的驱动器出现故障， ONTAP Select 将使用备用驱动器（如果有）并自动启动重建过程。这与 FAS 和 AFF 上的 ONTAP 的工作原理类似。但是，如果没有可用的备用驱动器，则需要向 ONTAP Select 节点添加一个。 
 ---
-= 使用软件 RAID 时更换故障驱动器
+= 使用SW RAID时更换故障驱动器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
