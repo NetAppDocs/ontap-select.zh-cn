@@ -32,17 +32,12 @@ NOTE: 如果您安装了旧版ONTAP Select Deploy管理实用程序实例、则�
 要开始升级过程，您必须从 NetApp 支持站点下载相应的 Deploy 虚拟机升级文件。升级软件包的格式为一个压缩文件。
 
 .步骤
-. 使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。
-. 单击 * 首要任务 * 下的 * 下载软件 * 并登录。
-. 单击 * 查找您的产品 * 。
-. 向下滚动并单击 * ONTAP Select Deploy Upgrade* 。
+. 访问 link:https://mysupport.netapp.com/site/["NetApp 支持站点"^] 使用Web浏览器并从“下载”菜单中选择*Downloads*。
+. 向下滚动并选择ONTAP Select Deploy Upgrade*。
 . 选择所需版本的升级软件包。
-. 查看最终用户许可协议（ EULA ），然后单击 * 接受并继续 * 。
+. 查看最终用户许可协议(EULA),并选择*Accept & Continue*。
 . 选择并下载相应的软件包，根据需要对环境中的所有提示做出响应。
 
-
-.相关信息
-link:https://mysupport.netapp.com["NetApp 支持"^]
 
 
 
@@ -95,4 +90,4 @@ deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 
 
 .完成后
-升级操作步骤 完成后，系统会要求您为 Deploy 虚拟机配置创建备份。您还应清除浏览器缓存，以便能够查看新创建的 Deploy 页面。
+在升级操作步骤完成之前、系统会要求您创建Deploy虚拟机配置的备份。此外、您还应清除浏览器缓存、以便查看新创建的Deploy页面。
