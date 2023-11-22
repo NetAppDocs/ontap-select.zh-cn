@@ -4,7 +4,7 @@ permalink: reference_plan_ots_vcenter.html
 keywords: plan, planning, vmware vcenter, vcenter server, vcenter 
 summary: 您应考虑与 VMware vCenter 相关的多项规划要求。 
 ---
-= VMware vCenter 服务器
+= 基于ESXi的VMware vCenter Server
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

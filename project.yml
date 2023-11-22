@@ -49,8 +49,12 @@ sidebar:
         url: "/reference_plan_ots_hardware.html"
       - title: 存储和 RAID
         url: "/reference_plan_ots_storage.html"
-      - title: ONTAP Select vNAS
-        url: "/reference_plan_ots_vnas.html"
+      - title: 外部存储要求
+        entries:
+        - title: VMware ESXi
+          url: "/reference_plan_ots_vnas.html"
+        - title: KVM
+          url: "/reference_plan_ots_kvm.html"
       - title: 网络
         url: "/reference_plan_ots_networking.html"
       - title: 双节点集群
@@ -59,10 +63,8 @@ sidebar:
         url: "/reference_plan_ots_robo.html"
       - title: MetroCluster SDS
         url: "/reference_plan_ots_mcc_sds.html"
-      - title: VMware vCenter
+      - title: 基于ESXi的VMware vCenter
         url: "/reference_plan_ots_vcenter.html"
-      - title: VMware vCenter 插件
-        url: "/reference_plan_ots_plugin.html"
     - title: ONTAP Select 部署
       entries:
       - title: 一般要求
@@ -195,44 +197,6 @@ sidebar:
         url: "/concept_perf_general.html"
       - title: ONTAP Select 9.6性能
         url: "/concept_perf_premium_ha_direct_ssd_96.html"
-  - title: 与 vCenter 集成
-    entries:
-    - title: 入门
-      entries:
-      - title: 概述
-        url: "/concept_vpi_overview.html"
-      - title: 架构
-        url: "/concept_vpi_architecture.html"
-      - title: 规划
-        url: "/concept_vpi_planning.html"
-    - title: 管理此插件
-      entries:
-      - title: 开始之前
-        url: "/concept_vpi_manage_before.html"
-      - title: 安装
-        url: "/task_vpi_install.html"
-      - title: 访问
-        url: "/task_vpi_access.html"
-      - title: 升级和删除
-        url: "/task_vpi_upgrade.html"
-    - title: 手动删除此插件
-      url: "/task_vpi_manually_remove.html"
-    - title: 部署集群
-      url: "/task_vpi_deploy_cluster.html"
-    - title: vCenter 集成
-      url: "/concept_vpi_vcenter_integration.html"
-    - title: 管理
-      entries:
-      - title: 诊断和支持
-        url: "/task_vpi_adm_support.html"
-      - title: 网络
-        url: "/task_vpi_adm_network.html"
-      - title: 集群
-        url: "/task_vpi_adm_clusters.html"
-      - title: licenses
-        url: "/task_vpi_adm_licenses.html"
-    - title: 故障排除
-      url: "/reference_vpi_troubleshooting.html"
   - title: 利用空闲实现自动化
     entries:
     - title: 概念

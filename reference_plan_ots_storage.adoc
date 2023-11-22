@@ -26,7 +26,7 @@ NOTE: 中概述了外部存储支持信息 link:reference_plan_ots_vnas.html["ON
 部署 ONTAP Select 的虚拟机管理程序主机上的 RAID 控制器必须满足多项要求。
 
 
-NOTE: 运行 ONTAP Select 的 ESXi 主机在使用随 ONTAP Select 提供的硬件 RAID 控制器或软件 RAID 功能时需要本地物理驱动器。如果使用 ONTAP Select vNAS 解决方案 访问外部存储，则不会使用本地 RAID 控制器和软件 RAID 功能。
+NOTE: 运行ONTAP Select的主机在使用随ONTAP Select提供的硬件RAID控制器或软件RAID功能时需要本地物理驱动器。如果使用 ONTAP Select vNAS 解决方案 访问外部存储，则不会使用本地 RAID 控制器和软件 RAID 功能。
 
 RAID 控制器的最低要求包括：
 
@@ -45,8 +45,8 @@ RAID 控制器的最低要求包括：
 
 * 必须根据以下准则执行 LUN 配置：
 +
-** 如果 RAID 组大小超过 64 TB 的最大 ESXi LUN 大小，则应配置多个大小相等的 LUN ，这些 LUN 会占用 RAID 组中的所有可用存储。
-** 如果 RAID 组大小小于 64 TB 的最大 ESXi LUN 大小，则应配置一个 LUN ，此 LUN 占用 RAID 组中的所有可用存储。
+** 如果RAID组大小超过最大LUN大小64 TB、则应配置多个大小相等的LUN、这些LUN占用RAID组中的所有可用存储空间。
+** 如果RAID组大小小于最大LUN大小64 TB、则应配置一个LUN、此LUN占用此RAID组中的所有可用存储。
 
 
 
@@ -55,13 +55,13 @@ RAID 控制器的最低要求包括：
 
 == 软件 RAID 要求
 
-在 VMware ESXi 虚拟机管理程序上部署 ONTAP Select 集群时，您可以使用 ONTAP Select 提供的软件 RAID 功能，而不是本地硬件 RAID 控制器。在使用软件 RAID 部署集群之前，您必须了解一些要求和限制。
+在虚拟机管理程序上部署ONTAP Select集群时、您可以使用ONTAP Select提供的软件RAID功能、而不是本地硬件RAID控制器。在使用软件 RAID 部署集群之前，您必须了解一些要求和限制。
 
 
 
 === 一般要求
 
-在 VMware ESXi 上部署软件 RAID 的环境必须满足以下核心要求：
+软件RAID部署环境必须满足以下核心要求：
 
 * VMware ESXi 7.0 GA (内部版本为58043807)或更高版本
 * ONTAP Select 高级许可证或更高版本
@@ -73,8 +73,49 @@ RAID 控制器的最低要求包括：
 
 NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_chars.html["深度剖析存储"] 第节、了解其他配置要求。
 
+
+
+=== ESXi特定要求
+
+* VMware ESXi 7.0 GA (内部版本为58043807)或更高版本
 * 不支持 VMware VMotion ， HA 和 DRS
 * 您不能对从ONTAP Select 9.4或更早版本升级的节点使用软件RAID。如果出现这种情况、您需要为软件RAID部署创建一个新节点。
+
+
+
+
+=== KVM特定要求
+
+此外、还需要满足特定的软件包配置要求。请参见 link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["准备Linux服务器"] 有关详细信息 ...
+
+KVM的介质要求:: 使用的SSD闪存存储设备必须满足以下附加要求：
++
+--
+* SSD设备必须通过以下方法准确、持久地向Linux主机报告自身情况：
++
+** # cat /sys/block/jue/queue <device>/ rotational
++
+为这些命令报告的值必须为"0"。
+
+
+
+* 设备应连接到HBA、或者在某些情况下连接到配置为在JBOD模式下运行的RAID控制器。使用RAID控制器时、必须在不覆盖任何RAID功能的情况下通过主机传递设备功能。在JBOD模式下使用RAID控制器时、您应查看RAID文档或根据需要联系供应商、以确保设备将转速报告为"0"。
+* 有两个单独的存储组件：
++
+** 虚拟机存储
++
+此LVM池(存储池)包含用于托管ONTAP Select虚拟机的系统数据。LVM池必须由高持久性闪存设备作为后备存储、并且可以是SAS、SATA或NVMe。建议使用NVMe设备以提高性能。
+
+** 数据磁盘
++
+这是一组用于数据管理的SAS或SATA SSD驱动器。SSD设备应为企业级且持久耐用。不支持NVMe接口。
+
+
+
+* 所有设备都必须使用512BPS进行格式化。
+
+
+--
 
 
 

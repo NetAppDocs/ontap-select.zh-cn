@@ -18,9 +18,7 @@ summary: 查找有关 ONTAP Select 的常见问题的答案。
 
 [NOTE]
 ====
-* 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
-* 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
-
+从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
 
 ====
 
@@ -118,7 +116,11 @@ AFF/FAS 上提供的所有 RAID 方法也可供 ONTAP Select 使用。其中包�
 
 软件 RAID 的一些要求如下：
 
-* 支持ESX和KVM (ONTAP Select 9.10.1之前的版本)
+* 支持ESX和KVM
++
+** 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持KVM虚拟机管理程序。
+
+
 * 支持的物理磁盘大小： 200 GB – 32 TB
 * 仅在 DAS 配置上受支持
 * 支持SSD或NVMe
@@ -203,21 +205,6 @@ ONTAP Select Deploy还必须能够按如下方式与ONTAP Select 节点和集群
 .要创建ONTAP Select 集群、ONTAP Select Deploy需要哪些vCenter权限？
 此处提供了所需的 vCenter 权限列表： link:reference_plan_ots_vcenter.html["VMware vCenter 服务器"]。
 
-.什么是 vCenter Deploy 插件？
-可以将vCenter Server中的ONTAP Select Deploy功能与ONTAP Select Deploy插件集成在一起。请注意、此插件不能替代ONTAP Select Deploy。而是在后台运行ONTAP Select Deploy、vCenter管理员可以使用此插件调用大多数ONTAP Select Deploy功能。某些ONTAP Select Deploy操作只能使用命令行界面进行。
-
-.有多少个ONTAP Select Deploy VM可以将其插件注册到一个vCenter Server？
-只有一个ONTAP Select Deploy虚拟机可以将其插件注册到特定的vCenter服务器。
-
-.ONTAP Select Deploy vCenter插件有何优势？
-此插件允许 vCenter 管理员和 IT 通才使用 vCenter HTML5 图形用户界面创建 ONTAP Select 集群。请注意，不支持 Flash vCenter GUI 。
-
-此外、它还允许ONTAP Select Deploy使用vCenter RBAC进行身份验证。授予使用ONTAP Select Deploy插件的vCenter权限的用户会将其vCenter帐户映射到ONTAP Select Deploy管理员用户。ONTAP Select Deploy会记录每个操作的用户ID、以下文件可用作基本审核日志：
-
-[listing]
-----
-nginx_access.log
-----
 
 
 == HA 和集群

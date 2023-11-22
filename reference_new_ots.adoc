@@ -17,13 +17,16 @@ summary: 当前版本不包含ONTAP Select 的任何新增功能或改进功能�
 [role="lead"]
 NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
 
-[NOTE]
-====
-* 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
-* 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
 
 
-====
+== ONTAP Select 9.14.1
+
+ONTAP Select 9.14.1提供了几项新功能和改进功能。
+
+支持KVM虚拟机管理程序:: 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
+不再支持部署VMware vCenter插件:: 从ONTAP Select 9.14.1开始、不再支持Deploy VMware vCenter插件。
+
+
 
 
 == ONTAP Select 9.13.1.

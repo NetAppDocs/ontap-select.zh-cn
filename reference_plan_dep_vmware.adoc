@@ -4,7 +4,7 @@ permalink: reference_plan_dep_vmware.html
 keywords: plan, planning, ontap select deploy, vmware requirements 
 summary: 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您应考虑 VMware 环境的一些特定要求和限制。 
 ---
-= VMware 虚拟机管理程序环境
+= 虚拟机管理程序主机注意事项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,61 @@ summary: 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您
 
 
 [role="lead"]
+您应考虑与虚拟机管理程序主机相关的多个规划问题。
+
+
+CAUTION: 除非 NetApp 支持人员指示，否则不应直接修改 ONTAP Select 虚拟机的配置。只能通过 Deploy 管理实用程序配置和修改虚拟机。在未获得 NetApp 支持的情况下，在 Deploy 实用程序之外对 ONTAP Select 虚拟机进行更改会导致发生原因 虚拟机出现故障并使其无法使用。
+
+
+
+== 独立于虚拟机管理程序
+
+ONTAP Select和ONTAP Select Deploy管理实用程序均独立于虚拟机管理程序。
+
+ONTAP Select和ONTAP Select Deploy管理均支持以下虚拟机管理程序：
+
+* VMware ESXi
+* 基于内核的虚拟机（ KVM ）
+
+
+
+NOTE: 有关受支持平台的更多详细信息，请参见虚拟机管理程序专用的规划信息和发行说明。
+
+.适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序
+Deploy管理实用程序和ONTAP Select节点均作为虚拟机运行。您为 Deploy 实用程序选择的虚拟机管理程序与您为 ONTAP Select 节点选择的虚拟机管理程序无关。您可以完全灵活地将这两者配对：
+
+* 在 VMware ESXi 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
+* 在 KVM 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
+
+
+.每个主机一个或多个 ONTAP Select 节点实例
+每个 ONTAP Select 节点都作为一个专用虚拟机运行。您可以在同一虚拟机管理程序主机上创建多个节点，但有以下限制：
+
+* 一个 ONTAP Select 集群中的多个节点不能在同一主机上运行。特定主机上的所有节点必须来自不同的 ONTAP Select 集群。
+* 您必须使用外部存储。
+* 如果使用软件 RAID ，则只能在主机上部署一个 ONTAP Select 节点。
+
+
+.集群中节点的虚拟机管理程序一致性
+ONTAP Select 集群中的所有主机都必须运行相同版本的虚拟机管理程序软件。
+
+.每个主机上的物理端口数
+您必须将每个主机配置为使用一个，两个或四个物理端口。虽然您可以灵活地配置网络端口，但应尽可能遵循以下建议：
+
+* 单节点集群中的主机应具有两个物理端口。
+* 多节点集群中的每个主机应具有四个物理端口
+
+
+.将ONTAP Select与基于ONTAP硬件的集群集成
+您不能将 ONTAP Select 节点直接添加到基于 ONTAP 硬件的集群中。但是，您也可以选择在 ONTAP Select 集群和基于硬件的 ONTAP 集群之间建立集群对等关系。
+
+
+
+== VMware 虚拟机管理程序环境
+
 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您应考虑 VMware 环境的一些特定要求和限制。
 
-
-
-== ESXi 主机服务器硬件要求
-
+.ESXi 主机服务器硬件要求
 ESXi 虚拟机管理程序主机必须满足几个最低资源要求。您应确保部署了 ONTAP Select 的主机满足以下基本要求：
 
 * ESXi 服务器：
@@ -34,10 +83,7 @@ ESXi 虚拟机管理程序主机必须满足几个最低资源要求。您应确
 * 已启用 DHCP （也可以分配静态 IP 地址）
 
 
-
-
-== 网络连接
-
+.网络连接
 您必须确保已配置 ONTAP Select Deploy 虚拟机网络接口并具有一个管理 IP 地址。您可以使用 DHCP 动态分配 IP 地址或手动配置静态 IP 地址。
 
 根据您的部署决策， Deploy 虚拟机必须能够连接到 vCenter 服务器， ESXi 虚拟机管理程序主机及其管理的 ONTAP Select 节点。您必须将防火墙配置为允许所需的流量。
@@ -51,18 +97,12 @@ Deploy 使用 VMware VIX API 与 vCenter 服务器和 ESXi 主机进行通信。
 * SSL （端口 443 ）
 
 
-
-
-== 支持 IP 版本 4
-
+.支持 IP 版本 4
 ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 （ IPv6 ）。此限制在以下方面影响 ONTAP Select ：
 
 * 您必须为 Deploy 虚拟机的管理 LIF 分配 IPv4 地址。
 * Deploy 无法创建配置为在 ONTAP LIF 上使用 IPv6 的 ONTAP Select 节点。
 
 
-
-
-== VMware vCenter 语言限制
-
+.VMware vCenter 语言限制
 如果您使用 ONTAP Select Deploy 通过 Windows Server 上的 vCenter 创建在 ESXi 上运行的集群，则必须使用英语版本。ONTAP Select Deploy 在非英语版本的 Windows 上不支持 vCenter 。

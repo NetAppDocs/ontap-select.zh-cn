@@ -16,7 +16,7 @@ summary: 在规划 MetroCluster ONTAP Select 部署时，您应考虑多项要�
 [role="lead"]
 在创建双节点 ONTAP Select 集群时， MetroCluster SDS 是一个配置选项。它与远程办公室 / 分支机构（ ROBO ）部署类似，但两个节点之间的距离最远可达 10 公里这种增强型双节点部署提供了其他用例场景。在准备部署 MetroCluster SDS 时，您应了解相关要求和限制。
 
-在部署 MetroCluster SDS 之前，必须确保满足以下要求。
+在部署MetroCluster SDS之前、请确认满足以下要求。
 
 .许可
 每个节点都必须具有高级或更高的 ONTAP Select 许可证。
@@ -26,9 +26,7 @@ MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一
 
 [NOTE]
 ====
-* 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
-* 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
-
+从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
 
 ====
 .网络配置：

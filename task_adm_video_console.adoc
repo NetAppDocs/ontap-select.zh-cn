@@ -14,7 +14,7 @@ summary: 您可以访问运行 ONTAP Select 的 ESXi 虚拟机的视频控制台
 
 
 [role="lead"]
-您可以访问运行 ONTAP Select 的 ESXi 虚拟机的视频控制台。
+您可以访问运行ONTAP Select的虚拟机管理程序虚拟机的视频控制台。
 
 .关于此任务
 您可能需要访问虚拟机控制台来对问题描述 进行故障排除，或者在 NetApp 支持人员要求时进行故障排除。

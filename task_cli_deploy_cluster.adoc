@@ -20,7 +20,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 == 开始之前
 
-在 ESXi 上创建 ONTAP Select 集群之前，您应了解所需的准备工作。
+在虚拟机管理程序上创建ONTAP Select集群之前、您应了解所需的准备工作。
 
 
 
@@ -57,7 +57,7 @@ NOTE: 如果您部署的集群仅用于评估，则可以跳过此步骤。
 .步骤
 . 在本地工作站上的命令 Shell 中，使用 sftp 实用程序将许可证文件上传到 Deploy 虚拟机。
 +
-示例
+示例输出
 
 +
 ....
@@ -81,9 +81,58 @@ exit
 
 
 
-== 添加ESXi虚拟机管理程序主机
+== 添加虚拟机管理程序主机
 
-您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。
+您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。
+
+[role="tabbed-block"]
+====
+.KVM
+--
+您必须注册要运行ONTAP Select节点的虚拟机管理程序主机。在此过程中、Deploy管理实用程序会向KVM主机进行身份验证。
+
+.关于此任务
+如果需要多个虚拟机管理程序主机、则应使用此操作步骤添加每个主机。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 注册主机：
++
+[source, asciidoc]
+----
+`host register -name <FQDN|IP> -hypervisor-type KVM -username KVM_USERNAME`
+----
++
+示例输出
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+根据提示提供主机帐户的密码。
+
+. 显示主机的状态并确认其已通过身份验证：
++
+[source, asciidoc]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+示例输出
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
+
+
+--
+.ESXi
+--
+在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。
 
 .关于此任务
 在注册由 vCenter 管理的主机之前，您必须为 vCenter Server 添加一个管理服务器帐户。如果主机不受 vCenter 管理，则可以在注册主机时提供主机凭据。您应使用此操作步骤 添加每个主机。
@@ -95,7 +144,7 @@ exit
 `credential add -hostname <FQDN_IP> -type vcenter -username vCenter_username`
 
 +
-示例
+示例输出
 
 +
 ....
@@ -107,7 +156,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** 注册vCenter管理的主机：
 `host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
-示例
+示例输出
 
 +
 ....
@@ -120,7 +169,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 `host show -name <FQDN_IP> -detailed`
 
 +
-示例
+示例输出
 
 +
 ....
@@ -128,6 +177,8 @@ host show -name 10.234.81.14 -detailed
 ....
 
 
+--
+====
 
 
 == 创建和配置 ONTAP Select 集群
@@ -147,7 +198,7 @@ host show -name 10.234.81.14 -detailed
 `cluster create -name clustername -node-count nodes`
 
 +
-示例
+示例输出
 
 +
 ....
@@ -158,7 +209,7 @@ cluster create -name test-cluster -node-count 1
 `cluster modify -name clustername -mgmt-ip ip_address -netmask netmask -gateway ip_address -dns-servers <FQDN_IP>_list -dns-domains domain_list`
 
 +
-示例
+示例输出
 
 +
 ....
@@ -191,7 +242,7 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 . 选择节点并执行基本配置： `node modify -name nodename -cluster-name clustername -host-name <FQDN_IP> -license-serial number number -instance-type -passthrough-disks false`
 +
-示例
+示例输出
 
 +
 ....
@@ -209,7 +260,7 @@ ONTAP Select 节点使用容量层许可证。
 `host network show -host-name <FQDN_IP> -detailed`
 
 +
-示例
+示例输出
 
 +
 ....
@@ -223,7 +274,7 @@ host network show -host-name 10.234.81.14 -detailed
 部署单节点集群时，您不需要内部网络，应删除 -internal-network 。
 
 +
-示例
+示例输出
 
 +
 ....
@@ -235,7 +286,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 `node show -name nodename -cluster-name clustername -detailed`
 
 +
-示例
+示例输出
 
 +
 ....
@@ -262,7 +313,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 `host storage pool show -host-name <FQDN_IP>`
 
 +
-示例
+示例输出
 
 +
 [listing]
@@ -280,7 +331,7 @@ host storage pool show -host-name 10.234.81.14
 如果包含 -capacity-limit 参数，请将此值指定为 GB 或 TB 。
 
 +
-示例
+示例输出
 
 +
 [listing]
@@ -293,7 +344,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 `node storage pool show -cluster-name clustername -node-name nodename`
 
 +
-示例
+示例输出
 
 +
 [listing]
@@ -305,7 +356,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 `node storage disk attach -node-name nodename -cluster-name clustername -disks list_of_drives`
 
 +
-示例
+示例输出
 
 +
 [listing]
@@ -317,7 +368,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 `node storage disk show -node-name nodename -cluster-name clustername`
 
 +
-示例
+示例输出
 
 +
 [listing]
@@ -342,7 +393,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 `cluster deploy -name clustername`
 
 +
-示例
+示例输出
 
 +
 [listing]

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_plan_ots_vnas.html 
-keywords: plan, planning, vnas 
-summary: 在使用 ONTAP Select vNAS 时，您应考虑几个规划问题。 
+keywords: plan, planning, vnas, vmware esxi, 
+summary: 在使用VMware ESXi时、您需要考虑几个规划问题。 
 ---
-= ONTAP Select vNAS 要求
+= VMware ESXi要求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 在使用 ONTAP Select vNAS 时，您应考虑几个规划问题。
 
 
 [role="lead"]
-ONTAP Select vNAS 是一种解决方案 ，允许 ONTAP Select 数据存储库位于运行 ONTAP Select 虚拟机的虚拟机管理程序主机外部。这些远程数据存储库可通过 VMware vSAN 或通用外部存储阵列进行访问。
+ONTAP Select vNAs是一个解决方案、可使ONTAP Select数据存储位于运行ONTAP Select虚拟机的ESXi虚拟机管理程序主机外部。这些远程数据存储可通过VMware vSAN或通用外部存储阵列进行访问。
 
 
 

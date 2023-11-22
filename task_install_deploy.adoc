@@ -23,7 +23,7 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 您可以从 NetApp 支持站点下载 ONTAP Select 软件包。
 
 .关于此任务
-ONTAP Select Deploy 管理实用程序会根据开放式虚拟化格式（ OVF ）标准打包为虚拟机。单个压缩文件的后缀为 `ova` 。
+ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀 `ova`。
 
 .步骤
 . 使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。
@@ -83,18 +83,18 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 == 部署虚拟机
 
-您必须使用 OVF 虚拟机映像安装和启动 ONTAP Select Deploy 虚拟机。在安装过程中，您必须将网络接口配置为使用 DHCP 或静态 IP 配置。
+您必须使用OVF虚拟机映像安装和启动ONTAP Select Deploy虚拟机。在安装过程中、您需要将网络接口配置为使用DHCP或静态IP配置。
 
 .开始之前
-您必须准备部署 ONTAP Select Deploy 虚拟机：
+对于ESXi虚拟机管理程序、您必须准备部署ONTAP Select Deploy虚拟机：
 
 * 通过安装 VMware Client Integration 插件或根据需要执行类似配置，在浏览器中启用 OVF 功能
-* 如果要为 Deploy 虚拟机动态分配 IP 地址，请在 VMware 环境中启用 DHCP
+* 如果要为Deploy虚拟机动态分配IP地址、请在VMware环境中启用DHCP
 
 
-您必须拥有创建虚拟机时要使用的配置信息，包括虚拟机名称，外部网络和主机名。定义静态网络配置时，需要以下追加信息 ：
+对于ESXi和KVM虚拟机管理程序、您必须知道创建虚拟机时要使用的配置信息、包括虚拟机名称、外部网络和主机名。定义静态网络配置时，需要以下追加信息 ：
 
-* Deploy 虚拟机的 IP 地址
+* Deploy虚拟机的IP地址
 * 网络掩码
 * 网关（路由器）的 IP 地址
 * 主 DNS 服务器的 IP 地址
@@ -103,17 +103,23 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 .关于此任务
-如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是，如果您选择不使用此表单，则可以改用 Deploy 虚拟机的控制台来配置网络。
+如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是、如果您选择不使用此表单、则可以改用Deploy虚拟机的控制台来配置网络。
 
 .步骤
+您需要执行的步骤取决于您使用的是ESXi虚拟机管理程序还是KVM虚拟机管理程序。
+
+[role="tabbed-block"]
+====
+.ESXi
+--
 . 访问 vSphere 客户端并登录。
 . 导航到层次结构中的相应位置，然后选择 * 部署 OVF 模板 * 。
 . 选择 OVA 文件并完成 Deploy OVF Template 向导，根据您的环境选择相应的选项。
 +
 您必须为管理员帐户定义密码。登录到 Deploy 实用程序时，需要提供此密码。
 
-. 部署虚拟机后，根据您在部署向导中输入的内容选择新虚拟机，如果尚未启动，请将其启动。
-. 如果需要，您可以使用虚拟机控制台配置 Deploy 网络：
+. 部署虚拟机后、选择新虚拟机、如果尚未启动、请根据您在部署向导中输入的内容将其启动。
+. 如果需要、您可以使用VM控制台配置Deploy网络：
 +
 .. 单击 * 控制台 * 选项卡以访问 ESXi 主机设置 Shell 并监控启动过程。
 .. 等待出现以下提示：
@@ -130,12 +136,65 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 +
 是否使用 DHCP 设置网络信息？[N] ：
 
-.. 键入 * 。 n* 定义静态 IP 配置，或者键入 y 以使用 DHCP ，然后按 * 。
+.. 键入*n*定义静态IP配置，或键入*y*使用DHCP，然后选择*Enter*。
 .. 如果选择静态配置，请根据需要提供所有网络配置信息。
 
 
 
 
+--
+.KVM
+--
+. 在Linux服务器上登录到命令行界面：
++
+[listing]
+----
+ssh root@<ip_address>
+----
+. 创建新目录并提取原始VM映像：
++
+[listing]
+----
+mkdir /home/select_deploy25
+cd /home/select_deploy25
+mv /root/<file_name> .
+tar -xzvf <file_name>
+----
+. 创建并启动运行Deploy管理实用程序的KVM VM：
++
+[listing]
+----
+virt-install --name=select-deploy --vcpus=2 --ram=4096 --os-variant=debian10 --controller=scsi,model=virtio-scsi --disk path=/home/deploy/ONTAPdeploy.raw,device=disk,bus=scsi,format=raw --network "type=bridge,source=ontap-br,model=virtio,virtualport_type=openvswitch" --console=pty --import --noautoconsole
+----
+. 如果需要、您可以使用VM控制台配置Deploy网络：
++
+.. 连接到VM控制台：
++
+[listing]
+----
+virsh console <vm_name>
+----
+.. 等待出现以下提示：
++
+[listing]
+----
+Host name :
+----
+.. 键入主机名并选择*Enter*。
+.. 等待出现以下提示：
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. 键入*n*定义静态IP配置，或键入*y*使用DHCP，然后选择*Enter*。
+.. 如果选择静态配置，请根据需要提供所有网络配置信息。
+
+
+
+
+--
+====
 
 
 == 登录到Deploy Web界面

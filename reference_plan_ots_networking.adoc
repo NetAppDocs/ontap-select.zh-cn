@@ -27,7 +27,7 @@ NOTE: 要了解有关如何在虚拟机管理程序主机上配置 vSwitch 以�
 
 
 
-== 升级到VMXNET3
+== 升级到VMXNET3 (仅限ESXi)
 
 从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将旧版ONTAP Select节点升级到9.5或更高版本、则不会自动升级此驱动程序。
 
@@ -49,7 +49,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 
 
 
-== 采用标准 vSwitch 的双 NIC 主机
+== 采用标准vSwitch的双NIC主机(仅限ESXi)
 
 为了提高双 NIC 配置中的 ONTAP Select 性能，您应使用两个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：
 
@@ -76,7 +76,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 
 
 
-== 采用标准 vSwitch 的四 NIC 主机
+== 采用标准vSwitch的四NIC主机(仅限ESXi)
 
 为了提高四 NIC 配置中的 ONTAP Select 性能，您应使用四个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：
 
@@ -123,8 +123,10 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 在 ONTAP Select 部署中，有多个参与者或实体会交换网络流量。这些内容将介绍，然后在网络流量要求的摘要问题描述 中使用。
 
 * 部署 ONTAP Select Deploy 管理实用程序
-* vSphere/ESXi 是 vSphere 服务器或 ESXi 主机，具体取决于在集群部署中对主机的管理方式
-* 虚拟机管理程序服务器 ESXi 虚拟机管理程序主机
+* vSphere (仅限ESXi)
+vSphere服务器或ESXi主机、具体取决于此主机在集群部署中的管理方式
+* 虚拟机管理程序服务器
+ESXi虚拟机管理程序主机或Linux KVM主机
 * OTS 节点 ONTAP Select 节点
 * OTS 集群一个 ONTAP Select 集群
 * 管理 WS 本地管理工作站
@@ -133,31 +135,34 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 .网络流量要求摘要
 下表介绍了 ONTAP Select 部署的网络流量要求。
 
-[cols="20,45,35"]
+[cols="20,20,35,25"]
 |===
-| 协议 / 端口 | 方向 | Description 
+| 协议 / 端口 | ESXi / KVM | 方向 | Description 
 
 
-| TLS （ 443 ） | 部署到 vCenter Server （受管）或 ESXi （非受管） | VMware VIX API 
+| TLS （ 443 ） | ESXi | 部署到vCenter Server (托管)或ESXi (托管或非托管) | VMware VIX API 
 
 
-| 902. | 部署到 vCenter Server （受管）或 ESXi （非受管） | VMware VIX API 
+| 902. | ESXi | 部署到 vCenter Server （受管）或 ESXi （非受管） | VMware VIX API 
 
 
-| ICMP | 部署到虚拟机管理程序服务器 | Ping 
+| ICMP | ESXi或KVM | 部署到虚拟机管理程序服务器 | Ping 
 
 
-| ICMP | 部署到每个 OTS 节点 | Ping 
+| ICMP | ESXi或KVM | 部署到每个 OTS 节点 | Ping 
 
 
-| SSH （ 22 ） | 管理每个 OTS 节点的 WS | 管理 
+| SSH （ 22 ） | ESXi或KVM | 管理每个 OTS 节点的 WS | 管理 
 
 
-| TLS （ 443 ） | 部署到 OTS 节点和集群 | 访问 ONTAP 
+| SSH （ 22 ） | KVM | 部署到虚拟机管理程序服务器节点 | 访问虚拟机管理程序服务器 
 
 
-| TLS （ 443 ） | 要部署的每个 OTS 节点 | 访问 Deploy 
+| TLS （ 443 ） | ESXi或KVM | 部署到 OTS 节点和集群 | 访问 ONTAP 
 
 
-| iSCSI （ 3260 ） | 要部署的每个 OTS 节点 | 调解器 / 邮箱磁盘 
+| TLS （ 443 ） | ESXi或KVM | 要部署的每个 OTS 节点 | Access Deploy (容量池许可) 
+
+
+| iSCSI （ 3260 ） | ESXi或KVM | 要部署的每个 OTS 节点 | 调解器 / 邮箱磁盘 
 |===

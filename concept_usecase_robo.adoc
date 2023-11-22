@@ -16,7 +16,7 @@ summary: 在远程办公室 / 分支机构（ ROBO ）环境中部署 ONTAP Sele
 [role="lead"]
 在远程办公室 / 分支机构（ ROBO ）环境中部署 ONTAP Select ，以支持小型办公室，同时保持集中管理和控制。
 
-VMware ESXi 支持以下 ROBO 配置：
+支持以下ROBO配置：
 
 * 具有 HA 功能的双节点集群
 * 单节点集群
@@ -31,7 +31,7 @@ NOTE: 由于所有 VMware vSphere 许可证均受支持，因此您可以选择 
 
 具有远程调解器的 ONTAP Select 双节点集群是一种适合小型数据中心的极具吸引力的解决方案 。在此配置中， HA 功能由 ONTAP Select 提供。双节点 ONTAP Select ROBO 解决方案 的最低网络连接要求是四个 1 Gb 链路。此外，还支持单个 10 Gb 网络连接。在 VSAN 上运行的 VNAS ONTAP Select 解决方案 （包括双节点 VSAN ROBO 配置）是另一个选项。在此配置中， HA 功能由 VSAN 提供。最后，将数据复制到核心位置的单节点 ONTAP Select 集群可以在商用服务器上提供一组强大的企业数据管理工具。
 
-下图显示了使用 ONTAP Select 的常见远程办公室配置。计划驱动型 SnapMirror 关系会定期将远程办公室中的数据复制到主数据中心内的一个经过专门设计的整合存储阵列中。
+下图展示了在VM ESXi上使用ONTAP Select的常见远程办公室配置。计划驱动型 SnapMirror 关系会定期将远程办公室中的数据复制到主数据中心内的一个经过专门设计的整合存储阵列中。
 
 * 将远程办公室按计划备份到企业数据中心 *
 

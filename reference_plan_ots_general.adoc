@@ -18,6 +18,49 @@ summary: 在规划 ONTAP Select 部署时，您应考虑几个一般要求。
 
 
 
+== KVM所需的Linux知识和技能
+
+使用KVM虚拟机管理程序的Linux是一个复杂的工作环境。在KVM上部署ONTAP Select之前、您必须具备必要的知识和技能。
+
+Linux服务器分发版:: 您应具备使用ONTAP Select部署所使用的特定Linux分发版的经验。具体来说、您应该能够执行以下任务：
++
+--
+* 安装Linux分发版
+* 使用命令行界面配置系统
+* 添加软件包以及任何依赖项
+
+
+--
+
+
+有关准备Linux服务器的详细信息、包括所需的配置和软件包、请参见主机配置检查清单。有关当前支持的Linux分发版、请参见虚拟机管理程序要求。
+
+KVM部署和管理:: 您应熟悉一般虚拟化概念。此外、在KVM环境中安装和管理ONTAP Select时、必须使用多个Linux命令行界面命令：
++
+--
+* `virt-install`
+* `virsh`
+* `lsblk`
+* `lvs`
+* `vgs`
+* `pvs`
+
+
+--
+网络连接和Open vSwitch配置:: 您应熟悉网络概念和网络交换机的配置。此外、您还应具备使用Open vSwitch的经验。在KVM环境中配置ONTAP Select网络时、必须使用以下网络命令：
++
+--
+* `ovs-vsctl`
+* `ip`
+* `ip link`
+* `systemctl`
+
+
+--
+
+
+
+
 == 集群大小及相关注意事项
 
 您应考虑与集群大小相关的多个规划问题。
@@ -28,7 +71,7 @@ summary: 在规划 ONTAP Select 部署时，您应考虑几个一般要求。
 
 
 
-== 虚拟机管理程序主机
+== 虚拟机管理程序主机注意事项
 
 您应考虑与虚拟机管理程序主机相关的多个规划问题。
 
@@ -46,7 +89,7 @@ CAUTION: 除非 NetApp 支持人员指示，否则不应直接修改 ONTAP Selec
 
 
 
-NOTE: 从ONTAP Select 9.10.1开始、部署新集群时不再支持KVM虚拟机管理程序。您仍然可以将 KVM 与受支持的早期版本结合使用。
+NOTE: 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
 
 有关受支持平台的更多详细信息，请参见虚拟机管理程序专用的规划信息和发行说明。
 
@@ -81,7 +124,7 @@ NOTE: 从ONTAP Select 9.10.1开始、部署新集群时不再支持KVM虚拟机�
 
 
 
-== 存储
+== 存储注意事项
 
 您应考虑几个与主机存储相关的规划问题。
 
@@ -109,6 +152,32 @@ RAID 类型:: 在 ESXi 上使用直连存储（ DAS ）时，您应确定是使�
 NOTE: ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数据磁盘允许的总大小。
 
 用于生产部署的许可模式:: 您必须为生产环境中部署的每个 ONTAP Select 集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。
+
+
+
+
+== 使用凭据存储进行身份验证
+
+ONTAP Select Deploy凭据存储是一个用于保存帐户信息的数据库。在集群创建和管理过程中， Deploy 会使用帐户凭据执行主机身份验证。您应了解在规划 ONTAP Select 部署时如何使用凭据存储。
+
+
+NOTE: 帐户信息使用高级加密标准(Advanced Encryption Standard、AES)加密算法和SHA-256哈希算法安全地存储在数据库中。
+
+凭据类型:: 支持以下类型的凭据：
++
+--
+* host
++
+host*凭据用于在将ONTAP Select节点直接部署到ESXi或KVM时对虚拟机管理程序主机进行身份验证。
+
+* vCenter
++
+如果主机由VMware vCenter管理，则在将ONTAP Select节点部署到ESXi时，可以使用*vCenter*凭据对vCenter Server进行身份验证。
+
+
+
+--
+访问:: 在使用 Deploy 执行常规管理任务（例如添加虚拟机管理程序主机）时，可以在内部访问凭据存储。您也可以直接通过 Deploy Web 用户界面和 CLI 管理凭据存储。
 
 
 .相关信息

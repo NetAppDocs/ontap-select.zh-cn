@@ -25,6 +25,50 @@ NOTE: 必须通过ONTAP Select Deploy删除故障驱动器和添加新驱动器(
 
 如果驱动器出现故障、您需要使用ONTAP 命令行界面来识别故障磁盘。
 
+[role="tabbed-block"]
+====
+.KVM
+--
+.开始之前
+您必须具有ONTAP Select虚拟机的VM ID以及ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
+
+.关于此任务
+只有当ONTAP Select节点运行在KVM上并配置为使用软件操作步骤时、才应使用此RAID。
+
+.步骤
+. 在ONTAP Select命令行界面中、确定要更换的磁盘：
++
+.. 按序列号、UUID或目标地址确定虚拟机中的磁盘。
++
+[listing]
+----
+disk show -fields serial,vmdisk-target-address,uuid
+----
+.. (可选)显示已分区磁盘的备用磁盘容量的完整列表。
+storage aggregate show-spare-disks
+
+
+. 在Linux命令行界面中、找到磁盘。
++
+.. 检查系统设备、搜索磁盘序列号或UUID (磁盘名称)：
++
+[listing]
+----
+find /dev/disk/by-id/<SN|ID>
+----
+.. 通过搜索目标地址检查虚拟机配置：
++
+[listing]
+----
+virsh dumpxml VMID
+----
+
+
+
+
+--
+.ESXi
+--
 .步骤
 . 使用管理员帐户登录到ONTAP 命令行界面。
 . 确定发生故障的磁盘驱动器。
@@ -39,27 +83,122 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 ----
 
 
+--
+====
 
 
 == 删除故障驱动器
 
 确定出现故障的驱动器后，请删除该磁盘。
 
+[role="tabbed-block"]
+====
+.使用Deploy配置KVM
+--
+您可以在更换磁盘期间或不再需要某个磁盘时将其与KVM主机断开。
+
+.开始之前
+您必须具有ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 选择页面顶部的*集群*选项卡，然后从列表中选择所需的集群。
+. 选择所需HA对或节点旁边的*。
++
+如果此选项处于禁用状态、则Deploy当前正在刷新存储信息。
+
+. 在*编辑节点存储*页面上选择*编辑存储*。
+. 取消选择要从节点断开的磁盘，输入ONTAP管理员凭据，然后选择*编辑存储*以应用更改。
+. 选择*Yes*以确认弹出窗口中的警告。
+. 选择集群的*事件*选项卡以监控并确认断开操作。
++
+您可以从主机中删除不再需要的物理磁盘。
+
+
+
+--
+.使用命令行界面的KVM
+--
+确定磁盘后、请执行以下步骤。
+
+.步骤
+. 将磁盘与虚拟机断开：
++
+.. 转储配置。
++
+[listing]
+----
+virsh dumpxml VMNAME > /PATH/disk.xml
+----
+.. 编辑此文件并删除除要与虚拟机断开连接的磁盘以外的所有内容。
++
+磁盘的目标地址应与ONTAP中的vmdisk-target-address字段相对应。
+
++
+[listing]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+.. 断开磁盘。
++
+[listing]
+----
+virsh detach-disk --persistent /PATH/disk.xml
+----
+
+
+. 更换物理磁盘：
++
+您可以使用等实用程序 `ledctl locate=` 查找物理磁盘(如果需要)。
+
++
+.. 从主机中删除磁盘。
+.. 选择一个新磁盘、并在必要时将其安装在主机中。
+
+
+. 编辑原始磁盘配置文件并添加新磁盘。
++
+您应根据需要更新磁盘路径和任何其他配置信息。
+
++
+[listing]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+
+
+--
+.ESXi
+--
 .步骤
 . 使用管理员帐户登录到 Deploy Web 用户界面。
-. 单击 * 集群 * 选项卡并选择相关集群。
+. 选择*群集*选项卡并选择相关的群集。
 +
 image:ST_22.jpg["节点详细信息"]
 
-. 单击 * + * 展开存储视图。
+. 选择*+*以展开存储视图。
 +
 image:ST_23.jpg["编辑节点存储"]
 
-. 单击 * 编辑 * 以更改连接的磁盘，然后取消选中故障驱动器。
+. 选择*Edit*对连接的磁盘进行更改，并取消选中故障驱动器。
 +
 image:ST_24.jpg["存储磁盘详细信息"]
 
-. 提供集群凭据，然后单击 * 编辑存储 * 。
+. 提供集群凭据并选择*编辑存储*。
 +
 image:ST_25.jpg["ONTAP 凭据"]
 
@@ -69,27 +208,77 @@ image:ST_26.jpg["警告"]
 
 
 
+--
+====
 
 
 == 添加新的备用驱动器
 
 删除故障驱动器后，请添加备用磁盘。
 
+[role="tabbed-block"]
+====
+.使用Deploy配置KVM
+--
+.使用Deploy连接磁盘
+您可以在更换磁盘或添加更多存储容量时将磁盘连接到KVM主机。
+
+.开始之前
+您必须具有ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
+
+新磁盘必须物理安装在KVM Linux主机上。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 选择页面顶部的*集群*选项卡，然后从列表中选择所需的集群。
+. 选择所需HA对或节点旁边的*。
++
+如果此选项处于禁用状态、则Deploy当前正在刷新存储信息。
+
+. 在*编辑节点存储*页面上选择*编辑存储*。
+. 选择要连接到节点的磁盘，输入ONTAP管理员凭据，然后选择*编辑存储*以应用更改。
+. 选择*事件*选项卡以监控和确认连接操作。
+. 检查节点存储配置以确认磁盘已连接。
+
+
+--
+.使用命令行界面的KVM
+--
+确定并删除故障驱动器后、您可以连接新驱动器。
+
+.步骤
+. 将新磁盘连接到虚拟机。
++
+[listing]
+----
+virsh attach-disk --persistent /PATH/disk.xml
+----
+
+
+.结果
+磁盘将分配为备用磁盘、并可供ONTAP Select使用。磁盘可能需要一分钟或更长时间才能可用。
+
+.完成后
+由于节点配置已更改、您应使用Deploy管理实用程序执行集群刷新操作。
+
+--
+.ESXi
+--
 .步骤
 . 使用管理员帐户登录到 Deploy Web 用户界面。
-. 单击 * 集群 * 选项卡并选择相关集群。
+. 选择*群集*选项卡并选择相关的群集。
 +
 image:ST_27.jpg["HA 对"]
 
-. 单击 * + * 展开存储视图。
+. 选择*+*以展开存储视图。
 +
 image:ST_28.jpg["编辑节点存储"]
 
-. 单击 * 编辑 * 并确认新驱动器可用并将其选中。
+. 选择*Edit*并确认新驱动器可用并将其选中。
 +
 image:ST_29.jpg["存储磁盘详细信息"]
 
-. 提供集群凭据，然后单击 * 编辑存储 * 。
+. 提供集群凭据并选择*编辑存储*。
 +
 image:ST_30.jpg["存储磁盘详细信息"]
 
@@ -98,3 +287,6 @@ image:ST_30.jpg["存储磁盘详细信息"]
 image:ST_31.jpg["存储磁盘详细信息"]
 
 
+
+--
+====
