@@ -1697,7 +1697,6 @@
   <block id="209d48c97092139c09f12b8b898b3ebb" category="cell">永久（无需续订）</block>
   <block id="fdad6dbf8e8406dac26765af9059a3a1" category="cell">根据购买情况确定固定期限（需要续订）</block>
   <block id="20e5e85bddb25cf1cf39977f4a5b8f1f" category="cell">数据聚合的租约期限</block>
-  <block id="6aade83f8151a6756008a80c389bef65" category="cell">不适用于一小时到七天</block>
   <block id="a051cb6fe36d0d57186040136f51ded4" category="cell">节点序列号</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">双 NIC 和四 NIC 配置的 ONTAP Select vSwitch 配置和负载平衡策略。</block>
   <block id="96600f2ed0fb970e508d5209faa2adc5" category="paragraph">ONTAP Select 支持使用标准 vSwitch 配置和分布式 vSwitch 配置。分布式 vSwitch 支持链路聚合构造（ LACP ）。链路聚合是一种常见的网络构造，用于在多个物理适配器之间聚合带宽。LACP 是一种与供应商无关的标准，可为网络端点提供开放式协议，将物理网络端口组捆绑到一个逻辑通道中。ONTAP Select 可以与配置为链路聚合组（ LAG ）的端口组配合使用。但是， NetApp 建议使用各个物理端口作为简单上行链路（中继）端口，以避免使用 LAG 配置。在这些情况下，标准和分布式 vSwitch 的最佳实践是相同的。</block>
@@ -3615,4 +3614,20 @@ storage aggregate show-spare-disks</block>
   <block id="e289810d4028b10554ae6b447fa581ee" category="sidebar">外部存储要求</block>
   <block id="a9e831fb19f71068ebfd5cb9b303ea66" category="sidebar">基于ESXi的VMware vCenter</block>
   <block id="314c09ddbe5ce5a2ebc071a5ba939ef6" category="sidebar">ONTAP Select 9.14.1文档</block>
+  <block id="e681a3b45989b468533c4b90ee960bf9" category="cell">不适用</block>
+  <block id="7ce9d272dad1050f5d215fea78fec004" category="cell">一小时到七天</block>
+  <block id="1106adf8812d775cf27b79c3606184f6" category="cell">九位数、等于许可证序列号</block>
+  <block id="cda405d8561cd2797065f70348fbe747" category="cell">二十位数、由License Manager生成</block>
+  <block id="db5eb84117d06047c97c9a0191b5fffe" category="cell">支持</block>
+  <block id="d7b5ad2c890d9e01c658dc9e1cc80af5" category="cell">附加项和有时限的</block>
+  <block id="b055659deac2e10b8eadf9bae15af191" category="cell">包含并共同命名</block>
+  <block id="2b2fba693aacdb90002ef3efdb1f458b" category="cell">许可证类型</block>
+  <block id="7c8735b3789d1d371da9c168d892b5b2" category="cell">标准、高级、高级XL</block>
+  <block id="f6f75165e8287838950283461281ea99" category="cell">提供评估许可证</block>
+  <block id="c8ce06302aadd8032e956b943dce085c" category="cell">评估到生产升级</block>
+  <block id="cfc60e5db5da2e3856f4ae65f1b4493b" category="cell">ONTAP Select虚拟机大小调整(小到中、中到大)</block>
+  <block id="5afd324114e926d9bb06b382e5c6f40e" category="cell">强制：许可证已过期</block>
+  <block id="71781f9ea0fb446c6a84f96eac4f474f" category="cell">是(无宽限期)</block>
+  <block id="ec9f3071a98530430c856aaab30c310b" category="paragraph">在估算HA对的存储量时、必须考虑所有聚合(根聚合和数据聚合)均已镜像。因此、聚合的每个丛会占用相等的存储量。</block>
+  <block id="909cd2b5288a2ed7dfbc029a25ad991d" category="paragraph">例如、创建2 TB聚合时、它会将2 TB分配给两个丛实例(2 TB用于plex0、2 TB用于plex1)、或者分配许可总存储量的4 TB。</block>
 </blocks>
