@@ -31,6 +31,7 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 * iSCSI
 * SnapMirror
 * SnapVault
+* FlexCache
 * FlexClone
 * SnapRestore
 * 重复数据删除和数据压缩
