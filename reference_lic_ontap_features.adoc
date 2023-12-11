@@ -25,19 +25,20 @@ NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP �
 
 ONTAP Select 附带了以下功能、默认情况下已获得许可：
 
-* 基于TCP的NVMe
-* NFS
 * CIFS
-* iSCSI
-* SnapMirror
-* SnapVault
+* 重复数据删除和数据压缩
 * FlexCache
 * FlexClone
-* SnapRestore
-* 重复数据删除和数据压缩
+* iSCSI
+* NDMP
+* NetApp 卷加密（仅限非受限国家或地区）
+* NFS
+* 基于TCP的NVMe
 * ONTAP 多租户功能
 * ONTAP S3
-* NetApp 卷加密（仅限非受限国家或地区）
+* SnapMirror
+* SnapRestore
+* SnapVault
 
 
 
@@ -46,12 +47,12 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 
 对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：
 
-* SnapLock企业版(ONTAP Select不支持SnapLock合规性)
-* FabricPool
 * 数据可用性服务
+* FabricPool
 * FlexCache （零成本）
-* SyncMirror （零成本）
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
+* SnapLock企业版(ONTAP Select不支持SnapLock合规性)
+* SyncMirror （零成本）
 
 
 
