@@ -916,7 +916,6 @@
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">单击页面顶部的 * 管理 * 选项卡。</block>
   <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">单击 * 许可证 * ，然后单击 * 容量层 * 。</block>
   <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">也可以单击 * 筛选器 * 并限制显示的许可证。</block>
-  <block id="394aecca280e07533a3d7792d8e0bed1" category="list-text">（可选）选择一个许可证并单击 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 以管理现有许可证</block>
   <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">要添加新许可证，请单击页面顶部的 * 添加 * ，然后单击 * 上传许可证 * 并从本地工作站中选择一个许可证文件。</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">您可以根据需要添加，编辑和删除 ONTAP Select 容量池许可证。</block>
   <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">单击 * 许可证 * ，然后单击 * 容量池 * 。</block>
@@ -2585,8 +2584,6 @@
   <block id="d598b7c596887c12a7901f81a1798bd3" category="list-text">硬盘驱动器（ HDD ）或固态驱动器（ SSD ）</block>
   <block id="242993ddd5be1ee9c2b34ac3d6e16525" category="list-text">本地硬件 RAID 控制器或软件 RAID</block>
   <block id="3df6de2a26f1404ca45737431d2a4afb" category="paragraph">高级 XL 产品提供以下功能：</block>
-  <block id="5e1e35787d312440de294099e5a73814" category="list-text">小型，中型或大型实例类型。</block>
-  <block id="d72f431c4274d31e60a80915e200ced0" category="list-text">本地硬件 RAID 控制器或软件 RAID 。</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">发行说明</block>
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
   <block id="4b983fff716674f120176e09551dd445" category="sidebar">产品概述</block>
@@ -3291,7 +3288,6 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="27867a85560994e09ee616b37ec585de" category="cell">部署到虚拟机管理程序服务器节点</block>
   <block id="2d81002b634550a1e266341254a2d597" category="cell">访问虚拟机管理程序服务器</block>
   <block id="0c0158fd50f7612ddfb9136e3de8e2be" category="cell">Access Deploy (容量池许可)</block>
-  <block id="577362db3aa99018c35d90bc2a1f3fff" category="admonition">您可以对任何配置使用大型实例类型(使用高级XL许可证)、但由于性能问题、KVM不支持此类型。</block>
   <block id="0777708201aec678f0082eec3aa98c10" category="list-text">基于内核的虚拟机</block>
   <block id="067c35f1ba98a705741486402c1dac18" category="list-text">基于内核的虚拟机(KVM)是Linux内核的一项虚拟化功能、可用作虚拟机管理程序平台。支持多种子操作系统。</block>
   <block id="f72371502203ff57c484242dbc67867e" category="list-text">在ESXi虚拟机上重新托管节点</block>
@@ -3636,4 +3632,9 @@ storage aggregate show-spare-disks</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
+  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型实例类型</block>
+  <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD、SSD或NVMe驱动器</block>
+  <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。</block>
+  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">要替换现有许可证、请选择一个许可证、然后单击 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>，然后选择*Update*。</block>
+  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">（可选）选择一个许可证并单击 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 管理现有许可证。</block>
 </blocks>

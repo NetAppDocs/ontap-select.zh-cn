@@ -65,12 +65,12 @@ summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层
 
 高级 XL 产品提供以下功能：
 
-* 小型，中型或大型实例类型。
-* 硬盘驱动器（ HDD ）或固态驱动器（ SSD ）
-* 本地硬件 RAID 控制器或软件 RAID 。
+* 小型、中型或大型实例类型
+* HDD、SSD或NVMe驱动器
+* 本地硬件 RAID 控制器或软件 RAID
 * vNAS
 * MetroCluster SDS
 
 
 
-NOTE: 您可以对任何配置使用大型实例类型(使用高级XL许可证)、但由于性能问题、KVM不支持此类型。
+NOTE: KVM不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。
