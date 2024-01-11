@@ -160,3 +160,9 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 == 管理已过期的容量池许可证
 
 通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。
+
+
+
+== 管理附加许可证
+
+对于ONTAP Select产品、附加许可证直接在ONTAP中应用、不通过ONTAP Select Deploy进行管理。请参见 link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理许可证概述（仅限集群管理员）"^] 和 link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["通过添加许可证密钥启用新功能"^] 有关详细信息 ...
