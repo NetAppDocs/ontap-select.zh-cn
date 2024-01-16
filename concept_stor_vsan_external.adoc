@@ -14,7 +14,7 @@ summary: 虚拟 NAS （ Virtual NAS ， vNAS ）部署支持 VSAN 上的 ONTAP S
 
 
 [role="lead"]
-虚拟 NAS （ Virtual NAS ， vNAS ）部署支持 VSAN 上的 ONTAP Select 集群，某些 HCI 产品， NetApp HCI 技术以及外部阵列类型的数据存储库。这些配置的底层基础架构可提供数据存储库故障恢复能力。
+虚拟NAS (vNAS)部署支持虚拟SAN (VSAN)上的ONTAP Select集群、某些HCI产品以及外部阵列类型的数据存储库。这些配置的底层基础架构可提供数据存储库故障恢复能力。
 
 最低要求是，底层配置受 VMware 支持，并应列在相应的 VMware HCL 上。
 

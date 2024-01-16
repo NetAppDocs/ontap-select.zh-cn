@@ -3641,4 +3641,5 @@ storage aggregate show-spare-disks</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理许可证概述（仅限集群管理员）</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">通过添加许可证密钥启用新功能</block>
   <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">对于ONTAP Select产品、附加许可证直接在ONTAP中应用、不通过ONTAP Select Deploy进行管理。请参见 <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> 和 <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
+  <block id="b5150f2681f3eb5a5b6aab4cbdadad34" category="paragraph">虚拟NAS (vNAS)部署支持虚拟SAN (VSAN)上的ONTAP Select集群、某些HCI产品以及外部阵列类型的数据存储库。这些配置的底层基础架构可提供数据存储库故障恢复能力。</block>
 </blocks>
