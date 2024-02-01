@@ -130,10 +130,6 @@ NOTE: 您可以通过单击页面顶部的选项卡（集群，虚拟机管理�
 +
 此页面会定期自动刷新。
 
-+
-
-TIP: 如果集群创建操作已启动、但未能完成、则您定义的ONTAP管理密码可能未注册。在这种情况下，您可以使用 admin 帐户的密码 _changeme123_ 访问 ONTAP Select 集群的管理界面。
-
 
 
 --
@@ -180,13 +176,19 @@ TIP: 如果集群创建操作已启动、但未能完成、则您定义的ONTAP�
 +
 此页面会定期自动刷新。
 
-+
-
-TIP: 如果集群创建操作已启动、但未能完成、则您定义的ONTAP管理密码可能未注册。在这种情况下，您可以使用 admin 帐户的密码 _changeme123_ 访问 ONTAP Select 集群的管理界面。
-
 
 
 --
 ====
 .完成后
 您应确认已配置ONTAP Select AutoSupport功能、然后备份ONTAP Select Deploy配置数据。
+
+[TIP]
+====
+如果集群创建操作已启动、但未能完成、则您定义的ONTAP管理密码可能不会应用。如果发生这种情况、您可以使用以下命令行界面命令确定ONTAP Select集群的临时管理密码：
+
+[listing]
+----
+(ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
+----
+====
