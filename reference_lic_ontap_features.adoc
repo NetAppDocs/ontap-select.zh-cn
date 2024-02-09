@@ -49,9 +49,12 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 
 * 数据可用性服务
 * FabricPool
-* FlexCache （零成本）
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
 * SnapLock企业版(ONTAP Select不支持SnapLock合规性)
++
+** 防篡改Snapshot副本
+
+
 * SyncMirror （零成本）
 
 
