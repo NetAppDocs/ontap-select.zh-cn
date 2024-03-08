@@ -161,6 +161,8 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。
 
+有关ONTAP Select和许可证续订的详细信息、请参见中的许可证、安装、升级和还原部分 link:https://docs.netapp.com/us-en/ontap-select/reference_faq.html#licenses-installation-upgrades-and-reverts["常见问题解答"]。
+
 
 
 == 管理附加许可证
