@@ -2718,7 +2718,6 @@
   <block id="aae4f232f5ffb9e9721fd019ba8b1efe" category="listing-title">如何访问ONTAP Select Deploy的Swagger API页面？</block>
   <block id="40a60db1cb196f556dfa7fc31b0fc0de" category="paragraph">是的。ONTAP Select Deploy实用程序可以独立于ONTAP Select 集群进行升级。同样、Select集群也可以独立于ONTAP Select Deploy实用程序进行升级。</block>
   <block id="59515ed968b51f31e5dba26d6fd648ce" category="paragraph">ONTAP Select Deploy可通过GUI、CLI或REST API使用集群刷新操作来识别对以下ONTAP Select 集群属性所做的更改：</block>
-  <block id="0505613d75e769b75ece38e7cd9acbeb" category="admonition">不支持更改ONTAP Select Deploy虚拟机的IP地址。</block>
   <block id="1c1b6371821b57c0181e5ac9c60110dd" category="paragraph">升级到ONTAP Select Deploy 2.6后、可以为已部署但尚未更改其原始配置的任何ONTAP Select 集群支持这些更改。换言之、如果使用System Manager或vCenter更改了上述ONTAP Select 集群属性、则升级到ONTAP Select Deploy 2.6不会修复这些不一致问题。必须先回滚ONTAP Select 属性更改、ONTAP Select Deploy才能将其唯一元数据添加到每个ONTAP Select VM。</block>
   <block id="19e3b046872155951a88cbd2e790b7e6" category="paragraph">是的。ONTAP Select Deploy可以安装在KVM或ESX上、并且这两种安装都可以在任一虚拟机管理程序上创建ONTAP Select 集群。</block>
   <block id="5a1db0789444e54a1e8a26c422380d57" category="paragraph">如果 ESX 主机获得了正确的许可，则无需由 vCenter Server 管理 ESX 主机。但是、如果主机由vCenter Server管理、则必须将ONTAP Select Deploy配置为使用该vCenter Server。也就是说、如果ESX主机由vCenter Server主动管理、则不能在ONTAP Select Deploy中将其配置为独立主机。请注意、由于vMotion或VMware HA事件、ONTAP Select Deploy虚拟机依靠vCenter来跟踪ESXi主机之间的所有ONTAP Select VM迁移。</block>
@@ -2794,7 +2793,6 @@
   <block id="ab7351a7aeb835a8c5a54bc22957dc89" category="paragraph-title">ONTAP Select 是否可以使用与 FAS 集群相同的操作步骤 进行升级？</block>
   <block id="a16c0a0ef72a1eb743acb4bc099a7f63" category="paragraph-title">是否可以使用与 FAS 集群相同的操作步骤 还原 ONTAP Select ？</block>
   <block id="6c934076f6916c570e1e192badaff0f6" category="paragraph-title">ONTAP MetroCluster SDS 是否至少需要高级版许可证？</block>
-  <block id="d2ff884cc30a8e5431e7b9a592afafd4" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy和ONTAP Select 集群和节点管理的IP地址？</block>
   <block id="635eb068c84d97fe678e1459fc684023" category="paragraph-title">单个ONTAP Select Deploy实例是否可以在ESX和KVM上创建集群？</block>
   <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="paragraph-title">ESX 上的 ONTAP Select 是否需要 vCenter ？</block>
   <block id="3690bfca39d229721656be52d6e38df1" category="paragraph-title">什么是软件 RAID ？</block>
@@ -3656,4 +3654,8 @@ storage aggregate show-spare-disks</block>
   <block id="79416550309ddcac023464218d55a23d" category="paragraph">如果容量层支持合同结束日期已过、则此节点可以继续运行、但如果未更新支持合同、您将无法下载和安装ONTAP更新、或者无法致电NetApp技术支持寻求帮助。</block>
   <block id="9b9568babf180c232b393ba5f95ff4c3" category="paragraph">如果某个容量池订阅失败、系统会首先向您发出警告、但在30天后、如果系统关闭、它将不会重新启动、直到在Deploy服务器上安装更新后的订阅为止。</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">有关ONTAP Select和许可证续订的详细信息、请参见中的许可证、安装、升级和还原部分 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
+  <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">安装后是否可以更改ONTAP Select集群网络配置？</block>
+  <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy网络配置？</block>
+  <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知识库文章-修改ONTAP Deploy实例的DNS配置</block>
+  <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支持修改Deploy实例在环境中运行后的网络连接详细信息。有关详细信息，请参见 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
 </blocks>

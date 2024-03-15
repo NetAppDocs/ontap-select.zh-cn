@@ -76,7 +76,7 @@ NOTE: API v3 版本与 API 的先前版本不向后兼容。上提供了一个�
 .ONTAP MetroCluster SDS 是否至少需要高级版许可证？
 是的。
 
-.安装后是否可以更改ONTAP Select Deploy和ONTAP Select 集群和节点管理的IP地址？
+.安装后是否可以更改ONTAP Select集群网络配置？
 ONTAP Select Deploy可通过GUI、CLI或REST API使用集群刷新操作来识别对以下ONTAP Select 集群属性所做的更改：
 
 * 网络配置（ IP 地址， DNS ， NTP ，网络掩码和网关）
@@ -89,10 +89,10 @@ ONTAP Select Deploy可通过GUI、CLI或REST API使用集群刷新操作来识�
 * 主机网络名称和存储池名称更改
 
 
-
-NOTE: 不支持更改ONTAP Select Deploy虚拟机的IP地址。
-
 升级到ONTAP Select Deploy 2.6后、可以为已部署但尚未更改其原始配置的任何ONTAP Select 集群支持这些更改。换言之、如果使用System Manager或vCenter更改了上述ONTAP Select 集群属性、则升级到ONTAP Select Deploy 2.6不会修复这些不一致问题。必须先回滚ONTAP Select 属性更改、ONTAP Select Deploy才能将其唯一元数据添加到每个ONTAP Select VM。
+
+.安装后是否可以更改ONTAP Select Deploy网络配置？
+不支持修改Deploy实例在环境中运行后的网络连接详细信息。有关详细信息，请参见 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["知识库文章-修改ONTAP Deploy实例的DNS配置"^]。
 
 .Deploy如何检测ONTAP Select许可证是否已续订？
 所有许可证的方法都相同、但具体情况因容量层许可证还是容量池许可证而异。
