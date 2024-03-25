@@ -3658,4 +3658,5 @@ storage aggregate show-spare-disks</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy网络配置？</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知识库文章-修改ONTAP Deploy实例的DNS配置</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支持修改Deploy实例在环境中运行后的网络连接详细信息。有关详细信息，请参见 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
+  <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1及更高版本现在支持将SVM DR作为源、最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2、例如9.12.1到9.14.1。</block>
 </blocks>

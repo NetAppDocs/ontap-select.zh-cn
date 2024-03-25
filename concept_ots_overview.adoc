@@ -97,7 +97,6 @@ ONTAP Select 不支持多种 ONTAP 功能。在大多数情况下，这些功能
 * ONTAP 端口属性不支持修改 ONTAP 端口的属性，包括速度，双工和流量控制。
 * 服务处理器
 * SVM 迁移
-* Storage VM灾难恢复(SVM DR)
 * SnapLock 合规性
 * VMware HCX
 
