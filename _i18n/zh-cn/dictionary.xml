@@ -755,8 +755,6 @@
   <block id="193036e83646828d4e1cd41104fdee82" category="paragraph">您必须为 Deploy 管理实用程序分配一个静态 IP 地址。此要求适用场景 All Deploy 实例用于管理一个或多个 ONTAP Select 双节点集群。</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">您需要安装 ONTAP Select Deploy 管理实用程序并使用该实用程序创建 ONTAP Select 集群。</block>
   <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">您可以从 NetApp 支持站点下载 ONTAP Select 软件包。</block>
-  <block id="97cb0dfea21cc934eab612152be86e44" category="list-text">使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。</block>
-  <block id="966c758e5fd0e52652aa5afbd8f22a24" category="list-text">单击 * 首要任务 * 下的 * 下载软件 * 并登录。</block>
   <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">单击 * 查找您的产品 * 。</block>
   <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">向下滚动并单击 * ONTAP Select * 。</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">选择所需的软件包版本。</block>
@@ -784,7 +782,6 @@
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">使用 IP 地址或域名将浏览器指向 Deploy 实用程序：</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph">` https://&lt;ip_address&gt;/`</block>
   <block id="533f8108cde4f7f1af2f1fb435cc4710" category="list-text">提供管理员（ admin ）帐户名称和密码并登录。</block>
-  <block id="001ba89c3853493a35f9ab59f150b2d6" category="list-text">如果显示 * 欢迎使用 ONTAP Select * 弹出窗口，请查看前提条件并单击 * 确定 * 继续。</block>
   <block id="1d2215b67b18c63fb1146b841d364f01" category="list-text">如果这是首次登录，而您未使用 vCenter 提供的向导安装 Deploy ，请在出现提示时提供以下配置信息：</block>
   <block id="f6c0536935d8c4b9da68277e49781b74" category="list-text">管理员帐户的新密码（必需）</block>
   <block id="0dd298d83de1b2c4259299d711cefb70" category="list-text">AutoSupport （可选）</block>
@@ -3263,7 +3260,6 @@
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">向下滚动并选择ONTAP Select Deploy Upgrade*。</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">查看最终用户许可协议(EULA),并选择*Accept &amp; Continue*。</block>
   <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">在升级操作步骤完成之前、系统会要求您创建Deploy虚拟机配置的备份。此外、您还应清除浏览器缓存、以便查看新创建的Deploy页面。</block>
-  <block id="cb09c1543f3641ccb98ebd45cc63490d" category="list-text">使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。请参见 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block> 有关详细升级操作步骤的信息。</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">您可以访问运行ONTAP Select的虚拟机管理程序虚拟机的视频控制台。</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">(可选)删除虚拟机管理程序主机的ONTAP Select映像。</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">ESXi示例</block>
@@ -3475,7 +3471,6 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="d337df11b3ebf63c5a2171392491798f" category="cell">安装了Deploy实用程序的VMware ESXi或KVM虚拟机管理程序主机的标识符。</block>
   <block id="e827723eb84c3ca87c21fd4dbca2ccda" category="cell">数据存储的名称</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">保存虚拟机文件的虚拟机管理程序数据存储的标识符(大约需要40 GB)。</block>
-  <block id="27c85ffe05d0705505febd16e11d1146" category="paragraph">ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。</block>
   <block id="1eadabe4e39cf3ae5ce71caf6ddc8447" category="paragraph">您必须使用OVF虚拟机映像安装和启动ONTAP Select Deploy虚拟机。在安装过程中、您需要将网络接口配置为使用DHCP或静态IP配置。</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">对于ESXi虚拟机管理程序、您必须准备部署ONTAP Select Deploy虚拟机：</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">如果要为Deploy虚拟机动态分配IP地址、请在VMware环境中启用DHCP</block>
@@ -3659,4 +3654,13 @@ storage aggregate show-spare-disks</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知识库文章-修改ONTAP Deploy实例的DNS配置</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支持修改Deploy实例在环境中运行后的网络连接详细信息。有关详细信息，请参见 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
   <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1及更高版本现在支持将SVM DR作为源、最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2、例如9.12.1到9.14.1。</block>
+  <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。VM可为ONTAP Select节点提供Deploy服务器和安装映像。</block>
+  <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">访问 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用Web浏览器并登录。</block>
+  <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">从菜单中选择*Downloads*，然后从下拉菜单中选择*Downloads*。</block>
+  <block id="ab0ffe542101d39137dce2c19869d545" category="list-text">在"Downloads"页面上的"All Products" A-Z下，选择字母*O*。</block>
+  <block id="a896447aac9deddba0f8b7bc142c079f" category="list-text">向下滚动并选择* ONTAP Select *。</block>
+  <block id="b41a57a870dbb2988a82d37df74541fa" category="list-text">如果显示*欢迎使用ONTAP Select *弹出窗口，请查看前提条件并选择*OK*继续。</block>
+  <block id="044e8c7d609a0b31483ad9c6588ccd58" category="admonition">只有ESXi才支持将大小调整为大型实例类型。</block>
+  <block id="afc299163ecc817c9d73bc5033f67218" category="admonition">不支持在正在运行的集群中的单链路拓扑和多链路拓扑之间进行转换、因为可能需要在每个拓扑所需的不同NIC绑定配置之间进行转换。</block>
+  <block id="8d3f7bf7a16e08794393171ba82658c1" category="list-text">使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关ONTAP升级操作步骤的详细信息、包括支持的升级路径等信息、请参见 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block>。</block>
 </blocks>

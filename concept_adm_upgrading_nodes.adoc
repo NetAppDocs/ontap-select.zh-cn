@@ -34,7 +34,7 @@ https://mysupport.netapp.com/site/downloads["NetApp 支持下载"^]
 +
 在升级 ONTAP Select 节点之前，请查看追加信息 发行说明以及所有必需的过程。
 
-. 使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。请参见 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP升级概述"^] 有关详细升级操作步骤的信息。
+. 使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关ONTAP升级操作步骤的详细信息、包括支持的升级路径等信息、请参见 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP升级概述"^]。
 
 
 

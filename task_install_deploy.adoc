@@ -23,15 +23,15 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 您可以从 NetApp 支持站点下载 ONTAP Select 软件包。
 
 .关于此任务
-ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀 `ova`。
+ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀 `ova`。VM可为ONTAP Select节点提供Deploy服务器和安装映像。
 
 .步骤
-. 使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。
-. 单击 * 首要任务 * 下的 * 下载软件 * 并登录。
-. 单击 * 查找您的产品 * 。
-. 向下滚动并单击 * ONTAP Select * 。
+. 访问 link:https://mysupport.netapp.com/site/["NetApp 支持站点"^] 使用Web浏览器并登录。
+. 从菜单中选择*Downloads*，然后从下拉菜单中选择*Downloads*。
+. 在"Downloads"页面上的"All Products" A-Z下，选择字母*O*。
+. 向下滚动并选择* ONTAP Select *。
 . 选择所需的软件包版本。
-. 查看最终用户许可协议（ EULA ），然后单击 * 接受并继续 * 。
+. 查看最终用户许可协议(EULA),并选择*Accept & Continue*。
 . 选择并下载相应的软件包，根据需要响应所有提示。
 
 
@@ -207,7 +207,7 @@ Use DHCP to set networking information? [n]:
 ` https://<ip_address>/`
 
 . 提供管理员（ admin ）帐户名称和密码并登录。
-. 如果显示 * 欢迎使用 ONTAP Select * 弹出窗口，请查看前提条件并单击 * 确定 * 继续。
+. 如果显示*欢迎使用ONTAP Select *弹出窗口，请查看前提条件并选择*OK*继续。
 . 如果这是首次登录，而您未使用 vCenter 提供的向导安装 Deploy ，请在出现提示时提供以下配置信息：
 +
 ** 管理员帐户的新密码（必需）
