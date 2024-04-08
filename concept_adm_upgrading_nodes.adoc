@@ -34,7 +34,7 @@ https://mysupport.netapp.com/site/downloads["NetApp 支持下载"^]
 +
 在升级 ONTAP Select 节点之前，请查看追加信息 发行说明以及所有必需的过程。
 
-. 使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关ONTAP升级操作步骤的详细信息、包括支持的升级路径等信息、请参见 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP升级概述"^]。
+. 使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关支持的升级路径的信息、请参见 link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["支持的ONTAP升级路径"^]。
 
 
 
@@ -52,3 +52,7 @@ https://mysupport.netapp.com/site/downloads["NetApp 支持下载"^]
 == 使用VMXNET3网络驱动程序
 
 VMXNET3是在VMware ESXi上部署新集群时附带的默认网络驱动程序。如果升级运行ONTAP Select 9.4或更早版本的现有ONTAP Select节点、则不会自动升级网络驱动程序。您必须手动升级到 VMXNET3 。您应联系 NetApp 支持部门以获得升级方面的帮助。
+
+.相关信息
+* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP升级概述"^]
+

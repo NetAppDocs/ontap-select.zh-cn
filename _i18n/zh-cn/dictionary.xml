@@ -3662,5 +3662,7 @@ storage aggregate show-spare-disks</block>
   <block id="b41a57a870dbb2988a82d37df74541fa" category="list-text">如果显示*欢迎使用ONTAP Select *弹出窗口，请查看前提条件并选择*OK*继续。</block>
   <block id="044e8c7d609a0b31483ad9c6588ccd58" category="admonition">只有ESXi才支持将大小调整为大型实例类型。</block>
   <block id="afc299163ecc817c9d73bc5033f67218" category="admonition">不支持在正在运行的集群中的单链路拓扑和多链路拓扑之间进行转换、因为可能需要在每个拓扑所需的不同NIC绑定配置之间进行转换。</block>
-  <block id="8d3f7bf7a16e08794393171ba82658c1" category="list-text">使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关ONTAP升级操作步骤的详细信息、包括支持的升级路径等信息、请参见 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block>。</block>
+  <block id="4d63a206f9a467135d39dc9c9512fc9e" category="inline-link-macro">支持的ONTAP升级路径</block>
+  <block id="8c3e5d2f8a26562237025f868ae58fd6" category="list-text">使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关支持的升级路径的信息、请参见 <block ref="641712e0b7bbcdbd0a030cb6eba15629" category="inline-link-macro-rx"></block>。</block>
+  <block id="c6747590f95713e2f203d616751eb4ea" category="list-text"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
 </blocks>
