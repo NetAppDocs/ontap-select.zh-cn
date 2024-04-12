@@ -3665,4 +3665,8 @@ storage aggregate show-spare-disks</block>
   <block id="4d63a206f9a467135d39dc9c9512fc9e" category="inline-link-macro">支持的ONTAP升级路径</block>
   <block id="8c3e5d2f8a26562237025f868ae58fd6" category="list-text">使用带有 ONTAP Select 升级文件的标准 ONTAP 升级过程升级 ONTAP Select 节点。有关支持的升级路径的信息、请参见 <block ref="641712e0b7bbcdbd0a030cb6eba15629" category="inline-link-macro-rx"></block>。</block>
   <block id="c6747590f95713e2f203d616751eb4ea" category="list-text"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
+  <block id="5c4629755c5a0a5545bb649c6d58d899" category="list-text">更新了ONTAP Select Deploy支持</block>
+  <block id="2dbcb54e47dfd070743afb26077cdc91" category="list-text">如果您运行的ONTAP Select Deploy 9.14.1版本低于9.14.1P2、则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="2183c79114d56889f4a8854299f703a5" category="list-text">自2024年4月起、ONTAP Select Deploy 9.13.1不再适用于NetApp 支持站点。如果您运行的是ONTAP Select Deploy 9.13.1,则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="6e1144fb904fc4097d1a90d7908b66cc" category="paragraph">自2024年4月起、ONTAP Select Deploy 9.12.1不再适用于NetApp 支持站点。如果您运行的是ONTAP Select Deploy 9.12.1、则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
 </blocks>

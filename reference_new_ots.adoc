@@ -25,6 +25,7 @@ ONTAP Select 9.14.1提供了几项新功能和改进功能。
 
 支持KVM虚拟机管理程序:: 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
 不再支持部署VMware vCenter插件:: 从ONTAP Select 9.14.1开始、不再支持Deploy VMware vCenter插件。
+更新了ONTAP Select Deploy支持:: 如果您运行的ONTAP Select Deploy 9.14.1版本低于9.14.1P2、则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["ONTAP Select 9.14.1发行说明"^]。
 
 
 
@@ -35,6 +36,7 @@ ONTAP Select 9.13.1提供了几项新功能和改进功能。
 
 支持基于TCP的NVMe:: 升级到ONTAP Select 9.13.1时、您必须具有新许可证才能支持基于TCP的NVMe。首次从9.131版部署ONTAP Select时、系统会自动包含此许可证。
 已更新VMware ESXi支持:: 从ONTAP 9.131开始、硬件版本4及更高版本支持VMware ESXi 8.0 GA (内部版本20513097)。
+更新了ONTAP Select Deploy支持:: 自2024年4月起、ONTAP Select Deploy 9.13.1不再适用于NetApp 支持站点。如果您运行的是ONTAP Select Deploy 9.13.1,则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["ONTAP Select 9.14.1发行说明"^]。
 
 
 
@@ -42,6 +44,8 @@ ONTAP Select 9.13.1提供了几项新功能和改进功能。
 == ONTAP Select 9.12.1
 
 ONTAP Select 9.12.1从当前版本的核心ONTAP 产品中的大多数新开发中受益。它不包括ONTAP Select 特有的任何新功能或改进。
+
+自2024年4月起、ONTAP Select Deploy 9.12.1不再适用于NetApp 支持站点。如果您运行的是ONTAP Select Deploy 9.12.1、则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["ONTAP Select 9.14.1发行说明"^]。
 
 
 
