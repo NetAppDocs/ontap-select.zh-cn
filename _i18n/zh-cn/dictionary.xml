@@ -3669,4 +3669,5 @@ storage aggregate show-spare-disks</block>
   <block id="2dbcb54e47dfd070743afb26077cdc91" category="list-text">如果您运行的ONTAP Select Deploy 9.14.1版本低于9.14.1P2、则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
   <block id="2183c79114d56889f4a8854299f703a5" category="list-text">自2024年4月起、ONTAP Select Deploy 9.13.1不再适用于NetApp 支持站点。如果您运行的是ONTAP Select Deploy 9.13.1,则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
   <block id="6e1144fb904fc4097d1a90d7908b66cc" category="paragraph">自2024年4月起、ONTAP Select Deploy 9.12.1不再适用于NetApp 支持站点。如果您运行的是ONTAP Select Deploy 9.12.1、则应尽快升级到ONTAP Select Deploy 9.14.1P2。有关详细信息，请参见 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="0eac7bd25176d9e38db43b4181062abe" category="list-text">多租户密钥管理器(MTKM)</block>
 </blocks>
