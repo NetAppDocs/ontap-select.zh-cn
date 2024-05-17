@@ -2,8 +2,7 @@
 sidebar: sidebar 
 permalink: reference_new_ots.html 
 keywords: new features 
-// summary: The current release includes several new features and improvements specific to ONTAP Select. 
-summary: 当前版本不包含ONTAP Select 的任何新增功能或改进功能。 
+summary: 当前版本包括ONTAP Select的几项新增功能或改进功能。 
 ---
 = 此版本中的新增功能
 :hardbreaks:
@@ -16,6 +15,31 @@ summary: 当前版本不包含ONTAP Select 的任何新增功能或改进功能�
 
 [role="lead"]
 NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
+
+
+
+== ONTAP Select 9.15.1.
+
+ONTAP Select 9.15.1提供了几项新功能和改进功能。
+
+支持集群扩展和缩减:: 从ONTAP Select 9.15.1开始、支持集群扩展和缩减。
++
+--
+* 将集群从六节点扩展为八节点集群
++
+您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。 link:task_cluster_expansion_contraction.html#expand-the-cluster["了解更多信息。"]。
+
+* 将八节点集群缩减为六节点集群
++
+您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。 link:task_cluster_expansion_contraction.html#contract-the-cluster["了解更多信息。"]。
+
+
+
+--
+
+
+
+NOTE: 对集群扩展和缩减的支持仅限于ESX集群。
 
 
 
