@@ -2,12 +2,12 @@
 indexpage:
   lead: NetApp ONTAP Select是一款软件定义的存储设备、您可以部署在运行VMware ESXi或基于内核的虚拟机(Kerner-Based
     Virtual Machine、KVM)虚拟机管理程序的各种商用硬件服务器上。它可以为您提供构建灵活且可扩展的私有云基础架构所需的灵活性。此站点包含ONTAP
-    Select 9.15.1.的文档。
+    Select 9.14.1的文档。
   tiles:
   - title: 入门
     links:
     - title: 发行说明
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3318065
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733
     - title: 新增功能
       url: "/reference_new_ots.html"
     - title: 了解ONTAP Select

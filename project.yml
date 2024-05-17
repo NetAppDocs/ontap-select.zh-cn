@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.15.1
-    url: "/ontap-select"
   - version-number: 9.14.1
-    url: "/ontap-select-9141"
+    url: "/ontap-select"
   - version-number: 9.13.1
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
   - version-number: 9.11.1
     url: "/ontap-select-9111"
+  - version-number: 9.10.1
+    url: "/ontap-select-9101"
   langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: ONTAP Select 9.151文档
+  - title: ONTAP Select 9.14.1文档
     url: "/index.html"
   - title: 发行说明
     entries:
@@ -149,11 +149,7 @@ sidebar:
     - title: 调解器
       url: "/task_adm_mediators.html"
     - title: 集群
-      entries:
-      - title: ONTAP Select 集群
-        url: "/task_adm_clusters.html"
-      - title: 扩展或缩减集群
-        url: "/task_cluster_expansion_contraction.html"
+      url: "/task_adm_clusters.html"
     - title: 节点和主机
       entries:
       - title: VM 视频控制台
