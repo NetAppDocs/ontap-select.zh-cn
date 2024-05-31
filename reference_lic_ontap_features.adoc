@@ -42,7 +42,7 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 * Storage VM灾难恢复(SVM DR)
 +
 
-NOTE: ONTAP Select 9.12.1及更高版本现在支持将SVM DR作为源、最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2、例如9.12.1到9.14.1。
+NOTE: ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和目标、并且最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2。例如、ONTAP Select 9.12.1源可以连接到目标ONTAP 9.12.1、9.13.1或9.14.1。
 
 
 

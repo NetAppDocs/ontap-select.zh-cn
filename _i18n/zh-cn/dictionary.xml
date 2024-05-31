@@ -3647,7 +3647,6 @@ storage aggregate show-spare-disks</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy网络配置？</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知识库文章-修改ONTAP Deploy实例的DNS配置</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支持修改Deploy实例在环境中运行后的网络连接详细信息。有关详细信息，请参见 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
-  <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1及更高版本现在支持将SVM DR作为源、最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2、例如9.12.1到9.14.1。</block>
   <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。VM可为ONTAP Select节点提供Deploy服务器和安装映像。</block>
   <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">访问 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用Web浏览器并登录。</block>
   <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">从菜单中选择*Downloads*，然后从下拉菜单中选择*Downloads*。</block>
@@ -3727,4 +3726,5 @@ storage aggregate show-spare-disks</block>
   <block id="012deed4bd1d789fa86812367047fe25" category="paragraph">集群可能需要长达30分钟才能签约。</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">监控多步集群缩减过程、以确认集群已成功缩减。</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.151文档</block>
+  <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和目标、并且最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2。例如、ONTAP Select 9.12.1源可以连接到目标ONTAP 9.12.1、9.13.1或9.14.1。</block>
 </blocks>
