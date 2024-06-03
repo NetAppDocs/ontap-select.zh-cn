@@ -103,6 +103,3 @@ ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 �
 * 您必须为 Deploy 虚拟机的管理 LIF 分配 IPv4 地址。
 * Deploy 无法创建配置为在 ONTAP LIF 上使用 IPv6 的 ONTAP Select 节点。
 
-
-.VMware vCenter 语言限制
-如果您使用 ONTAP Select Deploy 通过 Windows Server 上的 vCenter 创建在 ESXi 上运行的集群，则必须使用英语版本。ONTAP Select Deploy 在非英语版本的 Windows 上不支持 vCenter 。

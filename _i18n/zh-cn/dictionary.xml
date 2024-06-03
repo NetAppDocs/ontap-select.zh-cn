@@ -2562,8 +2562,6 @@
   <block id="db88ef4d05292b05026992fe3ca193af" category="paragraph">ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 （ IPv6 ）。此限制在以下方面影响 ONTAP Select ：</block>
   <block id="a808fd43c31372cb5ef7ac1ac9224c52" category="list-text">您必须为 Deploy 虚拟机的管理 LIF 分配 IPv4 地址。</block>
   <block id="b3a288a6973caafe5e4ff191758f8b98" category="list-text">Deploy 无法创建配置为在 ONTAP LIF 上使用 IPv6 的 ONTAP Select 节点。</block>
-  <block id="8d0030231ca098991021200ebed892e9" category="section-title">VMware vCenter 语言限制</block>
-  <block id="f3723501df4dfade0c26ca5e04290d9e" category="paragraph">如果您使用 ONTAP Select Deploy 通过 Windows Server 上的 vCenter 创建在 ESXi 上运行的集群，则必须使用英语版本。ONTAP Select Deploy 在非英语版本的 Windows 上不支持 vCenter 。</block>
   <block id="8249cf77b8d8e1a887c3064234f33f64" category="summary">您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
   <block id="d8ab7c9c78c21b4a22cdfba499be0102" category="section-title">平台许可证产品提供的功能</block>
   <block id="bf2bf32468663aa60c17572fd96be228" category="paragraph">特定的许可证选项在以下两个方面定义并限制虚拟机管理程序主机的功能：</block>
@@ -3727,4 +3725,5 @@ storage aggregate show-spare-disks</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">监控多步集群缩减过程、以确认集群已成功缩减。</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.151文档</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和目标、并且最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2。例如、ONTAP Select 9.12.1源可以连接到目标ONTAP 9.12.1、9.13.1或9.14.1。</block>
+  <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select最多支持四个vmnics。</block>
 </blocks>
