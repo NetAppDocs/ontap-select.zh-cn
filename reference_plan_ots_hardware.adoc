@@ -48,13 +48,7 @@ ONTAP Select 可以部署在以下虚拟机管理程序上：
 NOTE: 只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESXi 版本上使用 ONTAP Select 。
 
 
-NOTE: ESXi 6.5 GA和ESXi 6.7 GA的可用性即将结束。如果您的ONTAP Select集群使用这些版本、则必须按照升级到受支持的版本 https://mysupport.netapp.com/matrix["互操作性表工具（ IMT ）"^]。
-
-
-
-=== 升级到VMware ESXi 6.5 U2或更高版本
-
-如果您当前已在 VMware ESXi 6.5 U1 上部署 ONTAP Select ，则应尽快升级到 ESXi 6.5 U2 或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。
+NOTE: ESXi 6.5 GA和ESXi 6.7 GA已达到可用性结束状态。如果您的ONTAP Select集群使用这些版本、则必须按照升级到受支持的版本 https://mysupport.netapp.com/matrix["互操作性表工具（ IMT ）"^]。
 
 
 

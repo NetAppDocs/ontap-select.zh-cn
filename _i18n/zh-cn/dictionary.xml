@@ -2039,7 +2039,6 @@
   <block id="da132c60d8df0a4756d0a1e64618decf" category="section-title">软件兼容性</block>
   <block id="f2df12ffd4f2520acaaeab11317642da" category="paragraph">ONTAP Select 可以部署在以下虚拟机管理程序上：</block>
   <block id="3522298772b42c1feed00428b1765cfd" category="admonition">只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESXi 版本上使用 ONTAP Select 。</block>
-  <block id="10e25613e6e661d9225b8b8847992335" category="paragraph">如果您当前已在 VMware ESXi 6.5 U1 上部署 ONTAP Select ，则应尽快升级到 ESXi 6.5 U2 或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。</block>
   <block id="5c4eab167cc470fbe0f1b2e9a2449486" category="section-title">VMware vCenter 和独立 ESXi 主机</block>
   <block id="d8492e635eeb04bc232082f13805e768" category="paragraph">如果 ESXi 虚拟机管理程序主机由 vCenter Server 管理，则必须使用 vCenter 凭据将此主机注册到 Deploy 管理实用程序。您不能使用 ESXi 凭据将主机注册为独立主机。</block>
   <block id="d200a289a8ebcab27fa991f9d753e39c" category="section-title">核心硬件要求</block>
@@ -3003,7 +3002,6 @@
   <block id="64a49455734301778985c42afcafa1b5" category="list-text">VMware ESXi 8.0 GA (内部版本20513097)</block>
   <block id="9702dfddce9ca846a20b21815bd5bf71" category="list-text">VMware ESXi 8.0 U1 (内部版本21495797)</block>
   <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link">互操作性表工具（ IMT ）</block>
-  <block id="2dbfa835ab3a0bf6c79ee95b561f1daf" category="admonition">ESXi 6.5 GA和ESXi 6.7 GA的可用性即将结束。如果您的ONTAP Select集群使用这些版本、则必须按照升级到受支持的版本<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>。</block>
   <block id="be89bf0bd68c0f721ab7e25e408b6fa7" category="summary">如果您在VMware ESXi上运行ONTAP Select、则可以将ESXi软件从受支持的早期版本升级到ESXi 7.0或更高版本。在升级之前，您应了解此过程并选择相应的升级操作步骤 。</block>
   <block id="817a2297c74a908c3261968059682b32" category="paragraph">使用 Deploy 管理实用程序执行 ESXi 升级是一个更普遍且更具弹性的选项。但是，在某些情况下，可能会出现 Deploy 不可用或无法使用的情况。例如、早期版本的ONTAP Select和Deploy管理实用程序不支持升级到ESXi 7.0。</block>
   <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">使用VMware提供的操作步骤将运行ONTAP Select的虚拟机管理程序主机升级到ESXi 7.0或更高版本。</block>
@@ -3202,7 +3200,6 @@
   <block id="37ff470528fb108e5783094291a4fa39" category="section-title">上传并注册许可证文件</block>
   <block id="6a1aef20627259c0bc151f0c191b9cb8" category="section-title">配置ONTAP Select节点</block>
   <block id="feabcebe39f17dad32257d11d0077c91" category="section-title">将存储连接到ONTAP Select节点</block>
-  <block id="ce21532ed687995262d3680b0a7b3ce2" category="section-title">升级到VMware ESXi 6.5 U2或更高版本</block>
   <block id="a55b17d8324fe50e023be8010d4b5474" category="cell">最低要求</block>
   <block id="145a82122e23908d50818a5950c27509" category="cell">建议的要求</block>
   <block id="a5ce4a1eb8334399b5ae78ecb675d015" category="paragraph">请参见 <block ref="cc66674a6eca098ccdd0161214bd6b9f" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
@@ -3726,4 +3723,5 @@ storage aggregate show-spare-disks</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.151文档</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和目标、并且最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2。例如、ONTAP Select 9.12.1源可以连接到目标ONTAP 9.12.1、9.13.1或9.14.1。</block>
   <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select最多支持四个vmnics。</block>
+  <block id="28986937787872c11df39e20ca126e8d" category="admonition">ESXi 6.5 GA和ESXi 6.7 GA已达到可用性结束状态。如果您的ONTAP Select集群使用这些版本、则必须按照升级到受支持的版本<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>。</block>
 </blocks>
