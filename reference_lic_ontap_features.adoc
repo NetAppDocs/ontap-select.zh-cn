@@ -35,7 +35,6 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 * NFS
 * 基于TCP的NVMe
 * ONTAP 多租户功能
-* ONTAP S3
 * SnapMirror
 * SnapRestore
 * SnapVault
@@ -55,6 +54,7 @@ NOTE: ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和�
 * 数据可用性服务
 * FabricPool
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
+* ONTAP S3 (零成本)
 * SnapLock企业版(ONTAP Select不支持SnapLock合规性)
 +
 ** 防篡改Snapshot副本
@@ -68,4 +68,5 @@ NOTE: 使用 StorageGRID Webscale 时，您不需要 FabricPool 许可证。
 
 .相关信息
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["比较 ONTAP Select 和 ONTAP 9"]
+* link:https://mysupport.netapp.com/site/systems/master-license-keys["NetApp ONTAP 主许可证密钥"^]
 
