@@ -37,8 +37,8 @@ NOTE: 您应查看适用于您的 ONTAP Select 版本的最新发行说明，了
 
 ONTAP Select 可以部署在以下虚拟机管理程序上：
 
-* RedHat Enterprise Linux 8.6、8.7、8.8、9.0、9.1上的KVM 和9.2
-* 基于Rock基Linux 8和9的KVM
+* Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1上的KVM 9.2和9.4
+* 基于Rock基Linux 8.6、8.7、8.8、8.9、9.0的KVM 9.1、9.2、9.3和9.4
 * VMware ESXi 7.0 GA (内部版本15843807或更高版本)、包括7.0 U1、U2和U3C
 * VMware ESXi 8.0 GA (内部版本20513097)
 * VMware ESXi 8.0 U1 (内部版本21495797)

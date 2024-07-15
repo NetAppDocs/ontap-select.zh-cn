@@ -23,6 +23,7 @@ NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
 
 ONTAP Select 9.15.1提供了几项新功能和改进功能。
 
+已更新KVM虚拟机管理程序支持:: 从ONTAP Select 9.151开始、Red Hat Enterprise Linux (RHEL) 9.4和Rock-Linux 9.4支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。
 支持集群扩展和缩减:: 从ONTAP Select 9.15.1开始、支持集群扩展和缩减。
 +
 --
