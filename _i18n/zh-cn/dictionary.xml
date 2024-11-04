@@ -3730,4 +3730,6 @@ storage aggregate show-spare-disks</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1支持VMware ESXi 8.0.2。</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">从ESXi .13.1开始、ONTAP 9 8.0.1 GA (内部版本20513097)在硬件版本4及更高版本中受支持。</block>
+  <block id="066308395ea593f82277b09bef1304dc" category="list-text">保存原始Deploy虚拟机映像。</block>
+  <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">在本过程稍后的部分中、当您将Deploy配置数据从原始虚拟机还原到新虚拟机时、需要使用原始Deploy虚拟机映像。</block>
 </blocks>
