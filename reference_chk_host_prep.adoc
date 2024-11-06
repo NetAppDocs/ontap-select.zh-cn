@@ -33,7 +33,7 @@ NOTE: ONTAP Select Deploy 管理实用程序不会对虚拟机管理程序主机
 您必须准备部署ONTAP Select节点的每个Linux KVM服务器。此外、您还必须准备部署ONTAP Select Deploy管理实用程序的服务器。
 
 .安装 Red Hat Enterprise Linux
-您必须使用ISO映像安装Red Hat Enterprise Linux (RHEL)操作系统。在安装期间、您应按如下所示配置系统：
+您必须使用ISO映像安装Red Hat Enterprise Linux (RHEL)操作系统。有关支持的RHEL版本列表、请参见link:reference_plan_ots_hardware.html#software-compatibility["虚拟机管理程序的软件兼容性信息"]。在安装期间、您应按如下所示配置系统：
 
 * 选择默认作为安全策略
 * 选择"虚拟 化主机软件"选项
@@ -50,81 +50,7 @@ ONTAP Select需要多个额外的软件包。确切的软件包列表因所使�
 
 NOTE: 如果您在安装Linux服务器期间选择了"虚拟 化主机"作为软件选择、则某些必需的软件包可能已安装。您可能需要按照中所述从源代码安装此选项包 link:https://docs.openvswitch.org/en/latest/intro/install/general/["Open vSwitch文档"^]。
 
- For additional information about the necessary packages and other configuration requirements, see the link:https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^].
-.RHEL 7.7所需的其他软件包
-安装RHEL 7.6所需的同一组软件包。
-
-.RHEL 7.6所需的其他软件包
-使用RHEL 7.6或CentOS 7.6时、验证是否已安装以下软件包和依赖项。在每种情况下、都包含软件包名称和版本。
-
-* QEMU-KVM (1.5.3-160)
-+
-
-NOTE: 使用软件RAID时、必须改用2.9.0版。
-
-* libvirt (4.5.0-10)
-* 光开关(2.7.3)
-* virt-install (1.5.0-1)
-* lshw (B.02.18-12)
-* lsscsi (0.27-6)
-* Lsof (4.87-6)
-
-
-如果您正在KVM (外部存储)上使用vNAS、并计划将虚拟机从一台主机迁移到另一台主机、则应安装以下附加软件包和依赖项：
-
-* 围栏代理-全部(4.2.1-11)
-* LVM2集群(2.02.180-8)
-* 起搏器(1.1.19-8)
-* PCS (0.9.165-6)
-
-
-.RHEL 7.5所需的其他软件包
-使用RHEL 7.5或CentOS 7.5时、验证是否已安装以下软件包和依赖项。在每种情况下、都包含软件包名称和版本。
-
-* QEMU-KVM (1.5.3-141)
-+
-
-NOTE: 使用软件RAID时、必须改用2.9.0版。
-
-* libvirt (3.1.0)
-* 光开关(2.7.3)
-* virt-install (1.4.1-7)
-* lshw (B.02.18-12)
-* lsscsi (0.27-6)
-* Lsof (4.87-5)
-
-
-如果您正在KVM (外部存储)上使用vNAS、并计划将虚拟机从一台主机迁移到另一台主机、则应安装以下附加软件包和依赖项：
-
-* Fence-agents-all (4.0.11-86)
-* LVM2集群(2.02.177-4)
-* 起搏器(1.1.18-11)
-* PCS (0.9.16205)
-
-
-.RHEL 7.4所需的其他软件包
-使用RHEL 7.4或CentOS 7.4时、验证是否已安装以下软件包和依赖项。在每种情况下、都包含软件包名称和版本。
-
-* QEMU-KVM (1.5.3-141)
-+
-
-NOTE: 使用软件RAID时、必须改用2.9.0版。
-
-* libvirt (3.2.0-14)
-* 光开关(2.7.3)
-* virt-install (1.4.1-7)
-* lshw (B.02.18-7)
-* lsscsi (0.27-6)
-* Lsof (4.87-4)
-
-
-如果您正在KVM (外部存储)上使用vNAS、并计划将虚拟机从一台主机迁移到另一台主机、则应安装以下附加软件包和依赖项：
-
-* Fence-agents-all (4.0.11-66)
-* LVM2集群(2.02.171-8)
-* 起搏器(1.1.16-12)
-* PCS (0.9.158-6)
-
+有关所需软件包和其他配置要求的其他信息，请参见link:https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^]。
 
 .配置存储池
 ONTAP Select存储池是一种逻辑数据容器、用于抽象化底层物理存储。您必须管理部署ONTAP Select的KVM主机上的存储池。
