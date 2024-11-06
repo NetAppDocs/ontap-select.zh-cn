@@ -29,11 +29,11 @@ ONTAP Select 9.15.1提供了几项新功能和改进功能。
 --
 * 将集群从六节点扩展为八节点集群
 +
-您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。 link:task_cluster_expansion_contraction.html#expand-the-cluster["了解更多信息。"]。
+您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。目前不支持将集群从一节点、双节点或四节点集群扩展为六节点或八节点集群。link:task_cluster_expansion_contraction.html#expand-the-cluster["了解更多信息。"](英文)
 
 * 将八节点集群缩减为六节点集群
 +
-您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。 link:task_cluster_expansion_contraction.html#contract-the-cluster["了解更多信息。"]。
+您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。目前不支持将集群从六节点或八节点集群缩写为一节点、两节点或四节点集群。link:task_cluster_expansion_contraction.html#contract-the-cluster["了解更多信息。"](英文)
 
 
 

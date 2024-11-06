@@ -3627,9 +3627,7 @@ storage aggregate show-spare-disks</block>
   <block id="e84b565f766d2b63406ea62dbdd12c66" category="list-text">从ONTAP Select 9.15.1开始、支持集群扩展和缩减。</block>
   <block id="d535a23dc4caf42819a2764f917df8d4" category="list-text">将集群从六节点扩展为八节点集群</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">了解更多信息。</block>
-  <block id="46784c9ba69d72d62e5ff719f2e75e3f" category="paragraph">您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。 <block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>。</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">将八节点集群缩减为六节点集群</block>
-  <block id="3fa352640216b35ee8eded7e2c07ca96" category="paragraph">您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。 <block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>。</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">对集群扩展和缩减的支持仅限于ESX集群。</block>
   <block id="e967860b1a40b9dcdb66b252a950a240" category="inline-link">ONTAP Select 9.151发行说明</block>
   <block id="5eb820f5a922021204972230d9d4d93d" category="paragraph">您可以访问<block ref="a879f440894cff34b3d87053560dcd34" category="inline-link-rx"></block> 可查看有关当前版本的详细信息。</block>
@@ -3637,7 +3635,6 @@ storage aggregate show-spare-disks</block>
   <block id="c5f80e69da9019e045ae59cca1c9ae22" category="doc">扩展或缩减集群</block>
   <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。不支持其他集群扩展或缩减方案。</block>
   <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">操作步骤可使用命令行界面、API或Web界面从ONTAP Select Deploy启动。</block>
-  <block id="412c286ae37ff7a40b56dd84c3bf196c" category="section-title">硬件和存储要求</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">集群扩展和缩减功能受以下限制：</block>
   <block id="03a645906298706d76817495f4d8708a" category="list-text">仅支持在ESX虚拟机管理程序主机上创建的集群。以下ESX版本与ONTAP Select 9.15.1兼容：</block>
   <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
@@ -3645,8 +3642,6 @@ storage aggregate show-spare-disks</block>
   <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
   <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0u3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
-  <block id="2b2045e987020e440e1d72497530fdf6" category="list-text">只能从六节点集群扩展为八节点集群。</block>
-  <block id="39503511d67e0af8ddd6049c24f164f7" category="list-text">只能从八节点集群缩减为六节点集群。</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">展开集群</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">您可以通过集群扩展功能将现有集群的大小从六节点集群增加到八节点集群。</block>
   <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">在准备集群扩展操作步骤时、会向清单中添加新的ESX主机、并分配新节点的详细信息。在开始集群扩展过程之前、网络预检会验证选定的内部网络。</block>
@@ -3698,4 +3693,10 @@ storage aggregate show-spare-disks</block>
   <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">虚拟机管理程序的软件兼容性信息</block>
   <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">您必须使用ISO映像安装Red Hat Enterprise Linux (RHEL)操作系统。有关支持的RHEL版本列表、请参见<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。在安装期间、您应按如下所示配置系统：</block>
   <block id="97864053a66a3401d6a681c00bd2e4e3" category="paragraph">有关所需软件包和其他配置要求的其他信息，请参见<block ref="8929420574d68b861547fa3bcafe0ff2" category="inline-link-macro-rx"></block>。</block>
+  <block id="d62b4235cf2a29152b9bcb3eb1df59d8" category="paragraph">您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。目前不支持将集群从一节点、双节点或四节点集群扩展为六节点或八节点集群。<block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。目前不支持将集群从六节点或八节点集群缩写为一节点、两节点或四节点集群。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬件和存储注意事项</block>
+  <block id="04b2d3e0b04793e1eab99a7ce4905944" category="paragraph">目前不支持以下集群扩展和功能：</block>
+  <block id="246664f02679d184f0608a4d7824502b" category="list-text">从一节点、双节点或四节点集群扩展为六节点或八节点集群。</block>
+  <block id="226d8636aca6bd1bdcac58203b8ddcd2" category="list-text">从六节点或八节点集群缩写为一节点、两节点或四节点集群。</block>
 </blocks>
