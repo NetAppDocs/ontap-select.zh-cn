@@ -4,7 +4,7 @@ permalink: reference_host_modify_command.html
 keywords: host modify, command, syntax, host management server 
 summary: 您可以使用host modify命令修改使用此ONTAP Select Deploy实例的主机管理服务器。 
 ---
-= 修改主机管理服务器
+= 修改ONTAP Select Deploy的主机管理服务器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

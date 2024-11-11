@@ -4,7 +4,7 @@ permalink: concept_lic_cp_operation.html
 keywords: license, licensing, capacity pools, operation details 
 summary: 容量池许可模式与容量层模式不同。存储容量将分配给一个池并在多个节点之间共享，而不是为每个节点分配专用存储容量。我们还创建了其他组件和流程来支持容量池模型。 
 ---
-= 操作详细信息
+= ONTAP Select容量池许可模式的操作详细信息
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

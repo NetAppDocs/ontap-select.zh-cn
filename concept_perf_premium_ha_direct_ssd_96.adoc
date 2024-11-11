@@ -4,7 +4,7 @@ permalink: concept_perf_premium_ha_direct_ssd_96.html
 keywords: ontap select, performance 
 summary: ONTAP Select 9.6 性能的性能信息—高级 HA 直连 SSD 存储。 
 ---
-= 性能：高级HA直连SSD存储
+= ONTAP Select 9.6 性能：高级 HA 直连 SSD 存储
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

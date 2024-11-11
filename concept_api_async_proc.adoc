@@ -4,7 +4,7 @@ permalink: concept_api_async_proc.html
 keywords: rest api, deploy rest api, rest, asynchronous processing, job object 
 summary: 某些 Deploy API 调用（尤其是创建或修改资源的调用）可能需要比其他调用更长的时间才能完成。ONTAP Select Deploy 会异步处理这些长时间运行的请求。 
 ---
-= 使用作业对象进行异步处理
+= 使用ONTAP Select的作业对象进行异步处理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

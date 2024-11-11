@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 如果有可用的硬件 RAID 控制器， ONTAP Select 可以将 RAID 服务移至硬件控制器，以提高写入性能并防止物理驱动器出现故障。因此， ONTAP Select 集群中所有节点的 RAID 保护由本地连接的 RAID 控制器提供，而不是通过 ONTAP 软件 RAID 提供。 
 ---
-= 用于本地连接存储的硬件 RAID 服务
+= 适用于ONTAP Select本地连接存储的硬件RAID服务
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,6 +24,9 @@ NOTE: ONTAP Select 数据聚合配置为使用 RAID 0 ，因为物理 RAID 控�
 == 本地连接存储的 RAID 控制器配置
 
 为 ONTAP Select 提供后备存储的所有本地连接磁盘都必须位于 RAID 控制器后面。大多数商用服务器都随附多个 RAID 控制器选项，价格各不相同，每个控制器选项的功能级别各不相同。其目的是支持尽可能多的这些选项，前提是它们满足控制器上的某些最低要求。
+
+
+NOTE: 您不能将虚拟磁盘与使用硬件RAID配置的ONTAP Select VM断开连接。只有使用软件RAID配置的ONTAP Select VM才支持断开磁盘连接。有关详细信息、请参见 link:task_adm_replace_drives_swraid.html["更换ONTAP Select软件RAID配置中的故障驱动器"] 。
 
 管理 ONTAP Select 磁盘的 RAID 控制器必须满足以下要求：
 

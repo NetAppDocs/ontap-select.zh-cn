@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.15.1
+  - version-number: 9.16.1
     url: "/ontap-select"
+  - version-number: 9.15.1
+    url: "/ontap-select-9151"
   - version-number: 9.14.1
     url: "/ontap-select-9141"
   - version-number: 9.13.1
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  - version-number: 9.11.1
-    url: "/ontap-select-9111"
   langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: ONTAP Select 9.151文档
+  - title: ONTAP Select 9.161文档
     url: "/index.html"
   - title: 发行说明
     entries:
@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: 概念
     entries:
-    - title: 产品概述
+    - title: ONTAP Select 概述
       url: "/concept_ots_overview.html"
     - title: ONTAP Select 部署
       url: "/concept_ots_deploy.html"
@@ -142,11 +142,11 @@ sidebar:
       url: "/concept_adm_upgrading_nodes.html"
     - title: 诊断和支持
       url: "/task_adm_support.html"
-    - title: 安全性
+    - title: 安全ONTAP Select
       url: "/task_adm_security.html"
-    - title: 网络连接
+    - title: 确认网络连接
       url: "/task_adm_connectivity.html"
-    - title: 调解器
+    - title: 管理调解器服务
       url: "/task_adm_mediators.html"
     - title: 集群
       entries:
@@ -156,11 +156,11 @@ sidebar:
         url: "/task_cluster_expansion_contraction.html"
     - title: 节点和主机
       entries:
-      - title: VM 视频控制台
+      - title: 访问VM视频控制台
         url: "/task_adm_video_console.html"
       - title: 调整集群节点大小
         url: "/task_adm_resize.html"
-      - title: 更换发生故障的SW RAID驱动器
+      - title: 更换发生故障的软件RAID驱动器
         url: "/task_adm_replace_drives_swraid.html"
       - title: 升级到VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
@@ -278,7 +278,7 @@ sidebar:
       url: "/task_cli_clusters.html"
     - title: 节点和主机
       entries:
-      - title: 将 ESXi 升级到 6.5 及更高版本
+      - title: 将ESXi升级到6.5及更高版本
         url: "/task_cli_upgrade_esxi65.html"
       - title: 修改主机管理服务器
         url: "/reference_host_modify_command.html"

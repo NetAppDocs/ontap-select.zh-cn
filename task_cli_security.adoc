@@ -4,7 +4,7 @@ permalink: task_cli_security.html
 keywords: administer, administering, cli, security 
 summary: 在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。 
 ---
-= 安全性
+= 确保ONTAP Select部署的安全
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

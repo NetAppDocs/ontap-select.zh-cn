@@ -4,7 +4,7 @@ permalink: reference_plan_ots_general.html
 keywords: plan, planning, general requirements 
 summary: 在规划 ONTAP Select 部署时，您应考虑几个一般要求。 
 ---
-= 一般要求和规划注意事项
+= ONTAP Select要求和规划注意事项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

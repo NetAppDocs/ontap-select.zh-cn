@@ -4,7 +4,7 @@ permalink: task_adm_connectivity.html
 keywords: administer, administering, web, connectivity, network connectivity, network checker 
 summary: 您可以测试内部集群网络上两个或多个 ONTAP Select 节点之间的网络连接。通常，您可以在部署多节点集群之前运行此测试，以检测可能发生原因 导致操作失败的问题。 
 ---
-= 确认 ONTAP Select 节点之间的连接
+= 确认ONTAP Select节点之间的连接
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

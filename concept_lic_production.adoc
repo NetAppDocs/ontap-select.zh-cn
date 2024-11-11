@@ -4,7 +4,7 @@ permalink: concept_lic_production.html
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
 summary: 确定 ONTAP Select 适合您的组织后，您可以购买支持生产部署所需的许可证。您必须为每个部署选择容量层或容量池许可模式以及存储容量。 
 ---
-= 已为生产部署购买许可证
+= ONTAP Select为生产部署购买了许可证
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

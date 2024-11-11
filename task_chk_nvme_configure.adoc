@@ -4,7 +4,7 @@ permalink: task_chk_nvme_configure.html
 keywords: ontap select, nvme storage, host preparation 
 summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需要配置主机以识别这些驱动器。 
 ---
-= 配置主机以使用 NVMe 驱动器
+= 将ONTAP Select主机配置为使用NVMe驱动器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

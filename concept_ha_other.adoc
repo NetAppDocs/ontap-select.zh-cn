@@ -4,7 +4,7 @@ permalink: concept_ha_other.html
 keywords: ontap select, ha, high availability, disk heartbeating, heartbeating, mailbox, failover, giveback 
 summary: HA 磁盘检测信号， HA 邮箱， HA 检测信号， HA 故障转移和交还用于增强数据保护。 
 ---
-= HA 其他详细信息
+= ONTAP Select HA可增强数据保护
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: HA 磁盘检测信号， HA 邮箱， HA 检测信号， HA 故障转�
 
 
 [role="lead"]
-HA 磁盘检测信号， HA 邮箱， HA 检测信号， HA 故障转移和交还用于增强数据保护。
+高可用性(HA)磁盘检测信号、HA邮箱、HA检测信号、HA故障转移和交还工作可增强数据保护。
 
 
 

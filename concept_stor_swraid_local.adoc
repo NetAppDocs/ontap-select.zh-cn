@@ -4,7 +4,7 @@ permalink: concept_stor_swraid_local.html
 keywords: ontap select, software raid, local attached storage, protection 
 summary: 软件 RAID 是在 ONTAP 软件堆栈中实施的 RAID 抽象层。它提供的功能与 FAS 等传统 ONTAP 平台中的 RAID 层相同。RAID 层执行驱动器奇偶校验计算，并针对 ONTAP Select 节点中的各个驱动器故障提供保护。 
 ---
-= 用于本地连接存储的软件 RAID 服务
+= 适用于本地连接存储的ONTAP Select软件RAID配置服务
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

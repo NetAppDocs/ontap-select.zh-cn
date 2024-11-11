@@ -4,7 +4,7 @@ permalink: concept_ha_mirroring.html
 keywords: ontap select, ha, high availability, synchronous replication, mirrored aggregates, write path, raid syncmirror, rsm 
 summary: 使用 RAID SyncMirror （ RSM ），镜像聚合和写入路径防止数据丢失。 
 ---
-= HA RSM 和镜像聚合
+= ONTAP Select HA RSM和镜像聚合
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

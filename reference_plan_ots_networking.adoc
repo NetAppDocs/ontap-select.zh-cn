@@ -4,7 +4,7 @@ permalink: reference_plan_ots_networking.html
 keywords: plan, planning, networking, network, drivers, vmxnet3, cluster mtu, firewall 
 summary: 在部署 ONTAP Select 之前，您必须正确配置虚拟机管理程序网络。 
 ---
-= 网络连接注意事项
+= ONTAP Select网络注意事项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

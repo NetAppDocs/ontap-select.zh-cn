@@ -85,18 +85,37 @@ ONTAP Select 集群中的每个节点都会自动获得使用多项 ONTAP 功能
 
 ONTAP Select 不支持多种 ONTAP 功能。在大多数情况下，这些功能需要特殊硬件，而虚拟化 ONTAP Select 环境中不提供这些硬件。
 
-* 自主勒索软件保护(ARP)
+* 自动更新自动防兰软件(ARP)
++
+
+NOTE: 从ONTAP Select 9.161开始、支持手动更新ARP、NetApp许可证文件(NLG)中包含ARP功能许可证。
+
 * 集群 IP 空间
++
 不支持对集群IP空间进行任何修改、包括添加或删除端口、虚拟LAN (VLAN)或链路聚合组。
-* ESXi 8.0 U3
-* 不支持光纤通道光纤通道和以太网光纤通道。
-* 运行状况监控在基于硬件的 ONTAP 部署中使用的传统运行状况监控功能特定于底层硬件组件。由于 ONTAP Select 使用的是虚拟化环境，因此运行状况监控器不处于活动状态。
+
+* 光纤通道
++
+不支持光纤通道和以太网光纤通道。
+
+* 运行状况监控器
++
+在基于硬件的ONTAP部署中使用的传统运行状况监控特定于底层硬件组件。由于 ONTAP Select 使用的是虚拟化环境，因此运行状况监控器不处于活动状态。
+
 * 接口组
++
 不支持接口组。
+
 * 多租户密钥管理器(MTKM)
-* 支持 NIC 卸载由于 ONTAP Select 使用的是虚拟化环境，因此不支持 NIC 卸载工具。
+* NIC卸载支持
++
+由于ONTAP Select使用虚拟化环境、因此不支持NIC卸载工具。
+
 * NetApp 存储加密驱动器
-* ONTAP 端口属性不支持修改 ONTAP 端口的属性，包括速度，双工和流量控制。
+* ONTAP端口属性
++
+不支持修改ONTAP端口的属性、包括速度、双工和流量控制。
+
 * 服务处理器
 * SVM 迁移
 * SnapLock 合规性
@@ -104,5 +123,4 @@ ONTAP Select 不支持多种 ONTAP 功能。在大多数情况下，这些功能
 
 
 .相关信息
-* link:reference_lic_ontap_features.html["默认情况下， ONTAP 功能处于启用状态"]
-
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["默认情况下， ONTAP 功能处于启用状态"]

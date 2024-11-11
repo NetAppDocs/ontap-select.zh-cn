@@ -5,7 +5,7 @@ keywords: new features
 // summary: The current release includes several new features and improvements specific to ONTAP Select. 
 summary: 当前版本包括ONTAP Select的几项新增功能或改进功能。 
 ---
-= 此版本中的新增功能
+= ONTAP Select的新增功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -15,7 +15,23 @@ summary: 当前版本包括ONTAP Select的几项新增功能或改进功能。
 
 
 [role="lead"]
-NetApp会定期更新ONTAP Select 、为您提供新功能和增强功能。
+了解受支持的ONTAP Select版本中的新增功能和增强功能。
+
+
+
+== ONTAP Select 9.16.1.
+
+ONTAP Select 9.16.1提供了几项新功能和改进功能。
+
+更新了NetApp许可证文件支持:: 从ONTAP Select 9.161开始、更新了NetApp许可证文件(NLG)支持。新的NLL格式包括ARP、ONTAP S3和S3 SnapMirror功能的许可证。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["了解更多信息。"](英文)
++
+--
+对于新的ONTAP Select 9.16.1 Deploy、将自动应用新的NLG格式。将现有ONTAP Select Deploy升级到9.161时、不会应用新的NLG格式。要获取ARP、ONTAP S3和S3 SnapMirror功能许可证、必须在升级后下载更新的NLG。如果还原到ONTAP Select 9.151或更早版本、则必须重新安装升级之前拥有的功能许可证。
+
+--
+支持自动防兰森功能:: ONTAP Select 9.161引入了对自动防兰软件保护(ARP)的支持。ONTAP Select 9.161仅支持手动更新ARP、不支持自动更新。ONTAP Select 9.161的NLL中包含ARP功能许可证。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["了解更多信息。"](英文)
+增强了对VMware ESXi的支持:: ONTAP Select 9.16.1支持VMware ESXi 8.0 U3。
+
 
 
 

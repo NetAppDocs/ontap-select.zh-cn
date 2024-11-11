@@ -4,7 +4,7 @@ permalink: concept_api_before_browser.html
 keywords: rest api, deploy rest api, rest, access browser, before you begin 
 summary: 在使用 Deploy 联机文档页面之前，您应注意以下几点。 
 ---
-= 在使用浏览器访问 API 之前
+= 在使用浏览器访问ONTAP Select Deploy API之前
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

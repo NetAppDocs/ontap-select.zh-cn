@@ -4,7 +4,7 @@ permalink: reference_api_json_cc.html
 keywords: rest api, deploy rest api, rest, python script, json, create cluster 
 summary: 在使用 Python 代码示例创建或删除 ONTAP Select 集群时，必须提供一个 JSON 文件作为脚本的输入。您可以根据部署计划复制和修改相应的 JSON 示例。 
 ---
-= 用于创建集群的脚本的 JSON
+= JSON、用于创建ONTAP Select集群的脚本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

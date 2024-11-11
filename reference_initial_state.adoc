@@ -4,7 +4,7 @@ permalink: reference_initial_state.html
 keywords: install, installing, initial state, cluster initial state 
 summary: 在部署集群后，您应了解集群的初始状态，并根据需要为您的环境配置集群。 
 ---
-= 部署后集群的初始状态
+= 部署后ONTAP Select集群的初始状态
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

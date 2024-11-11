@@ -4,7 +4,7 @@ permalink: reference_lic_ontap_features.html
 keywords: license, licensing, ontap features, default ontap features 
 summary: ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。 
 ---
-= ONTAP 功能
+= ONTAP Select支持ONTAP功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -23,8 +23,9 @@ NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP �
 
 == 默认情况下、ONTAP 功能会自动启用
 
-ONTAP Select 附带了以下功能、默认情况下已获得许可：
+默认情况下、ONTAP Select支持并许可以下ONTAP功能：
 
+* 自主防兰软件(ARP)(手动更新)
 * CIFS
 * 重复数据删除和数据压缩
 * FlexCache
@@ -35,13 +36,15 @@ ONTAP Select 附带了以下功能、默认情况下已获得许可：
 * NFS
 * 基于TCP的NVMe
 * ONTAP 多租户功能
+* ONTAP S3
 * SnapMirror
+* S3 SnapMirror
 * SnapRestore
 * SnapVault
 * Storage VM灾难恢复(SVM DR)
 +
 
-NOTE: ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和目标、并且最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2。例如、ONTAP Select 9.12.1源可以连接到目标ONTAP 9.12.1、9.13.1或9.14.1。
+NOTE: ONTAP Select支持将SVM DR同时用作源和目标、并且最多具有16个关系。SVM DR支持仅限于使用源ONTAP版本+2。例如、ONTAP Select 9.12.1源可以连接到目标ONTAP 9.12.1、9.13.1或9.14.1。
 
 
 
@@ -51,20 +54,17 @@ NOTE: ONTAP Select 9.12.1及更高版本现在支持将SVM DR同时用作源和�
 
 对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：
 
-* 数据可用性服务
 * FabricPool
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
-* ONTAP S3 (零成本)
 * SnapLock企业版(ONTAP Select不支持SnapLock合规性)
 +
 ** 防篡改Snapshot副本
 
 
-* SyncMirror （零成本）
 
 
 
-NOTE: 使用 StorageGRID Webscale 时，您不需要 FabricPool 许可证。
+NOTE: 使用StorageGRID时、不需要FabricPool许可证。
 
 .相关信息
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["比较 ONTAP Select 和 ONTAP 9"]

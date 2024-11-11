@@ -4,7 +4,7 @@ permalink: concept_nw_single_multi_node.html
 keywords: ontap select, single node network configuration, multinode network configuration 
 summary: ONTAP Select 既支持单节点网络配置，也支持多节点网络配置。 
 ---
-= 单节点和多节点网络配置
+= ONTAP Select单节点和多节点网络配置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

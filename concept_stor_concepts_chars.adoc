@@ -4,7 +4,7 @@ permalink: concept_stor_concepts_chars.html
 keywords: ontap select, storage concepts 
 summary: 了解适用于 ONTAP Select 环境的常规存储概念，然后再了解特定存储组件。 
 ---
-= 存储：一般概念和特征
+= ONTAP Select存储：一般概念和特征
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

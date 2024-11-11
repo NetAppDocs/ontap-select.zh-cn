@@ -4,7 +4,7 @@ permalink: task_cluster_expansion_contraction.html
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
 summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。 
 ---
-= 扩展或缩减集群
+= 扩展或缩减ONTAP Select集群
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6
 
 集群扩展和缩减功能受以下限制：
 
-* 仅支持在ESX虚拟机管理程序主机上创建的集群。以下ESX版本与ONTAP Select 9.15.1兼容：
+* 仅支持在ESX虚拟机管理程序主机上创建的集群。以下ESX版本与ONTAP Select 9.151及更高版本兼容：
 +
 ** ESXi 8.0U2
 ** ESXi 8.0U1

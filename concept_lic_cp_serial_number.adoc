@@ -4,7 +4,7 @@ permalink: concept_lic_cp_serial_number.html
 keywords: license, licensing, capacity pools, node serial numbers 
 summary: 在容量层许可模式下，九位数节点序列号与分配给节点的许可证序列号相同。但是，使用容量池许可模式分配给节点的序列号格式不同。 
 ---
-= 节点序列号
+= ONTAP Select容量池许可模式的节点序列号
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

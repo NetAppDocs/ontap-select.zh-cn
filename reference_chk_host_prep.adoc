@@ -4,7 +4,7 @@ permalink: reference_chk_host_prep.html
 keywords: ontap select, pre-installation checklist, host preparation 
 summary: 准备部署 ONTAP Select 节点的每个虚拟机管理程序主机。在准备主机时，请仔细评估部署环境，以确保主机已正确配置并准备好支持 ONTAP Select 集群的部署。 
 ---
-= 主机配置和准备检查清单
+= ONTAP Select主机配置和准备检查清单
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_usecase_overview.html
 keywords: ontap select, business use case overview, deployment, storage, development and testing 
 summary: 根据通过虚拟机管理程序虚拟化提供的固有灵活性， ONTAP Select 适用于多种不同类型的应用程序。 
 ---
-= 业务需求和使用情形
+= ONTAP Select业务需求和使用场景
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

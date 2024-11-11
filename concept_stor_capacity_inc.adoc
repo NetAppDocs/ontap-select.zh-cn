@@ -4,7 +4,7 @@ permalink: concept_stor_capacity_inc.html
 keywords: ontap select, deploy, increase storage 
 summary: ONTAP Deploy 可用于为 ONTAP Select 集群中的每个节点添加和许可额外的存储。 
 ---
-= 增加存储容量
+= 增加ONTAP Select存储容量
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

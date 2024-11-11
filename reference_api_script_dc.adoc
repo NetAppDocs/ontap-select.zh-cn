@@ -4,7 +4,7 @@ permalink: reference_api_script_dc.html
 keywords: rest api, deploy rest api, rest, python script, delete cluster 
 summary: 您可以使用以下命令行界面脚本删除现有集群。 
 ---
-= 用于删除集群的脚本
+= 用于删除ONTAP Select集群的脚本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

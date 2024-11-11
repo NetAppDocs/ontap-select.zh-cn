@@ -4,7 +4,7 @@ permalink: reference_plan_ots_storage.html
 keywords: plan, planning, storage, software raid, hardware raid, raid, nvme 
 summary: 您应考虑几个与 ONTAP Select 主机存储相关的规划问题。 
 ---
-= 存储和 RAID 注意事项
+= ONTAP Select存储和RAID注意事项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

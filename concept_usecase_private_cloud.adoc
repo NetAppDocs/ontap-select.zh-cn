@@ -4,7 +4,7 @@ permalink: concept_usecase_private_cloud.html
 keywords: ontap select, private cloud 
 summary: ONTAP Select 非常适合支持组织中的一个或多个私有云。一个常见的使用情形是，为基于商用服务器构建的私有云提供存储服务。 
 ---
-= 私有云和数据中心
+= ONTAP Select支持私有云和数据中心
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

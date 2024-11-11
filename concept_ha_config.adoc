@@ -4,7 +4,7 @@ permalink: concept_ha_config.html
 keywords: ontap select, high availability configurations, two-node ha, multi-node ha, mc sds 
 summary: 发现高可用性选项，为您的环境选择最佳的 HA 配置。 
 ---
-= 高可用性配置
+= ONTAP Select高可用性配置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

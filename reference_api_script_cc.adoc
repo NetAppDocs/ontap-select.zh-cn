@@ -4,7 +4,7 @@ permalink: reference_api_script_cc.html
 keywords: rest api, deploy rest api, rest, python script, create cluster 
 summary: 您可以使用以下脚本根据脚本和 JSON 输入文件中定义的参数创建集群。 
 ---
-= 用于创建集群的脚本
+= 用于创建ONTAP Select集群的脚本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

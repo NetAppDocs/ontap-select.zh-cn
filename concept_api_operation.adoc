@@ -4,7 +4,7 @@ permalink: concept_api_operation.html
 keywords: rest api, deploy rest api, rest, operation, basic operation 
 summary: 虽然 REST 建立了一组通用的技术和最佳实践，但每个 API 的详细信息可能因设计选择而异。在使用 ONTAP Select Deploy API 之前，您应了解 API 的详细信息和操作特征。 
 ---
-= 基本操作特征
+= ONTAP Select Deploy API的基本操作特征
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

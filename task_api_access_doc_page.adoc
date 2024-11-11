@@ -4,7 +4,7 @@ permalink: task_api_access_doc_page.html
 keywords: rest api, deploy rest api, rest, deploy documentation, access, accessing 
 summary: 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 文档，并手动对 API 调用执行问题描述 。 
 ---
-= 访问Deploy文档页面
+= 访问ONTAP Select Deploy文档页面
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_adm_mediators.html
 keywords: administer, administering, web, mediators 
 summary: 每个 ONTAP Select 双节点集群都由调解器服务监控，该服务可帮助管理节点共享的 HA 功能。 
 ---
-= 管理 Deploy 调解器服务
+= 管理ONTAP Select Deploy调解器服务
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

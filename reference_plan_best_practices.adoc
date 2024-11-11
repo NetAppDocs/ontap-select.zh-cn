@@ -4,7 +4,7 @@ permalink: reference_plan_best_practices.html
 keywords: plan, planning, best practices, recommendations 
 summary: 在规划 ONTAP Select 部署时，您应考虑一些最佳实践。 
 ---
-= 最佳实践摘要
+= ONTAP Select部署最佳实践摘要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

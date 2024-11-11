@@ -4,7 +4,7 @@ permalink: reference_plan_ots_kvm.html
 keywords: plan, planning, vnas, kvm 
 summary: 在使用KVM虚拟机管理程序时、您应考虑几个规划问题。 
 ---
-= KVM要求
+= ONTAP Select KVM要求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference_api_script_common.html
 keywords: rest api, deploy rest api, rest, python script, common module 
 summary: 所有 Python 脚本都在一个模块中使用一个通用 Python 类。 
 ---
-= 通用支持模块
+= 通用支持ONTAP Select Python模块
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

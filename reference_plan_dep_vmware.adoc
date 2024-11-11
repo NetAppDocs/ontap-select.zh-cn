@@ -4,7 +4,7 @@ permalink: reference_plan_dep_vmware.html
 keywords: plan, planning, ontap select deploy, vmware requirements 
 summary: 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您应考虑 VMware 环境的一些特定要求和限制。 
 ---
-= 虚拟机管理程序主机注意事项
+= ONTAP Select Deploy虚拟机管理程序主机注意事项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

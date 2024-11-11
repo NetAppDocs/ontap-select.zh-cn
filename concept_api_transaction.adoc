@@ -4,7 +4,7 @@ permalink: concept_api_transaction.html
 keywords: rest api, deploy rest api, rest, transaction, request, response, headers, input, output 
 summary: 每次 Deploy API 调用都会作为 HTTP 请求执行给 Deploy 虚拟机，此请求会向客户端生成关联的响应。此请求 / 响应对被视为 API 事务。在使用 Deploy API 之前，您应熟悉可用于控制请求的输入变量以及响应输出的内容。 
 ---
-= 请求和响应 API 事务
+= ONTAP Select的请求和响应API事务
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

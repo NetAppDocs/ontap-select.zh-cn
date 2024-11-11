@@ -4,7 +4,7 @@ permalink: concept_lic_platforms.html
 keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
 summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。 
 ---
-= 了解平台许可证产品
+= 了解ONTAP Select的平台许可证产品
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

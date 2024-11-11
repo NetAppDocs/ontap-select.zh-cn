@@ -4,7 +4,7 @@ permalink: concept_lic_cp_benefits.html
 keywords: license, licensing, capacity pools, benefits 
 summary: 使用容量池许可模式而不是容量层许可模式具有多种优势。 
 ---
-= 优势摘要
+= ONTAP Select容量池许可优势摘要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_nw_physical_switch_config.html
 keywords: ontap select, upstream physical switch configuration 
 summary: 基于单交换机和多交换机环境的上游物理交换机配置详细信息。 
 ---
-= 物理交换机配置
+= ONTAP Select物理交换机配置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_api_understanding_call.html
 keywords: rest api, deploy rest api, rest, understanding, executing 
 summary: 所有 API 调用的详细信息均采用通用格式记录并显示在 ONTAP Select Deploy 联机文档网页上。通过了解单个 API 调用，您可以访问和解释所有 API 调用的详细信息。 
 ---
-= 了解并执行API调用
+= 了解并执行ONTAP Select Deploy API调用
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

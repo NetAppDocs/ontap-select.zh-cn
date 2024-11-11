@@ -4,7 +4,7 @@ permalink: concept_api_how_access.html
 keywords: rest api, deploy rest api, rest, access, accessing, how to access 
 summary: 由于 REST Web 服务具有固有的灵活性，因此可以通过多种不同的方式访问 ONTAP Select Deploy API 。 
 ---
-= 如何访问 Deploy API
+= 如何访问ONTAP Select Deploy API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

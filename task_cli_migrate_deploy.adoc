@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: 您可以使用命令行界面将 Deploy 管理实用程序的现有实例迁移到新虚拟机。 
 ---
-= 将Deploy实例迁移到新虚拟机
+= 将ONTAP Select Deploy实例迁移到新虚拟机
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

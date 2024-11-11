@@ -4,7 +4,7 @@ permalink: concept_api_understanding_scripts.html
 keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
 summary: 您可以使用示例 Python 脚本执行多种不同的任务。在实时 Deploy 实例中使用这些脚本之前，您应先了解这些脚本。 
 ---
-= 了解Python脚本
+= 了解适用于ONTAP Select Deploy的Python脚本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
