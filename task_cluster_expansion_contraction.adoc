@@ -26,10 +26,11 @@ summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6
 
 * 仅支持在ESX虚拟机管理程序主机上创建的集群。以下ESX版本与ONTAP Select 9.151及更高版本兼容：
 +
-** ESXi 8.0U2
-** ESXi 8.0U1
+** ESXi 8.0 U3
+** ESXi 8.0 U2
+** ESXi 8.0 U1
 ** ESXi 8.0GA
-** ESXi 7.0u3
+** ESXi 7.0 U3
 ** ESXi 7.0
 
 
