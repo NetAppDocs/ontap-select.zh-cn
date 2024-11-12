@@ -7,7 +7,7 @@ indexpage:
   - title: 入门
     links:
     - title: 发行说明
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3330673
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3332465
     - title: 新增功能
       url: "/reference_new_ots.html"
     - title: 了解ONTAP Select
