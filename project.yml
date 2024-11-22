@@ -19,7 +19,7 @@ settings:
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
+  langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
   - title: ONTAP Select 9.161文档
@@ -294,6 +294,8 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: 恢复双节点集群的 Deploy
         url: "/task_cli_deploy_recover_two_node.html"
+  - title: 快速开始部署VF模板
+    url: "/task_quick_start_for_ovf_template_deployments.html"
   - title: 常见问题解答
     url: "/reference_faq.html"
   - title: 法律声明

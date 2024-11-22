@@ -22,14 +22,6 @@ summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONT
 * 集群中使用多个节点或主机
 * 集群使用已购买的许可证部署在生产环境中
 * 使用的是KVM虚拟机管理程序、而不是VMware ESXi
-+
-[NOTE]
-====
-** 从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。
-** 从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。
-
-
-====
 
 
 
@@ -413,3 +405,6 @@ JSON 输入（第 10 步）:: 您必须提供 ONTAP 管理员帐户的密码。
 
 --
 
+
+.相关信息
+link:task_quick_start_for_ovf_template_deployments.html["适用于OVF模板部署的ONTAP Select快速入门"]

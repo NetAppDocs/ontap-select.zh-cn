@@ -2010,7 +2010,6 @@
   <block id="667aa4140034cc454b837db2fc24ce3d" category="inline-link">NetApp 互操作性表工具， window=_blank</block>
   <block id="e974ba73413c61605294fbea7a63f880" category="paragraph">请参见<block ref="6989237bb21ab12eea7660d1d2c0793b" category="inline-link-rx"></block> 有关详细信息 ...</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬件要求</block>
-  <block id="6e789a662664596fd2f867b83af8955a" category="paragraph">无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon 处理器， window=_blank</block>
   <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">适用于服务器的 Intel Xeon 处理器（请参见 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 有关详细信息，请参见）</block>
   <block id="7538c6fd2c1f96ec16f31ff621c5090f" category="list-text">2 个 10GbE</block>
@@ -3167,7 +3166,6 @@
   <block id="250f6d868aabeaced76663cb583769da" category="sidebar">管理集群</block>
   <block id="6a66d4f800a8576eee650d6dd676dd9d" category="sidebar">使用REST API</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多资源</block>
-  <block id="2cf665df8bcce3d8608ac2923c3934b2" category="sidebar">ONTAP Select资源页面</block>
   <block id="5c7750df890d8a1ae46102a5c56d163d" category="sidebar">ONTAP Select博客</block>
   <block id="bafb5d4f7ed06fcf88f3e77fadecc81b" category="sidebar">ONTAP Select社区</block>
   <block id="dd3d71b5f68ad8da8831a0b5ea514e35" category="sidebar">互操作性表</block>
@@ -3754,4 +3752,41 @@ storage aggregate show-spare-disks</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3</block>
+  <block id="2541fca0ad59c8199b8bb08b5020de58" category="inline-link-macro">适用于OVF模板部署的ONTAP Select快速入门</block>
+  <block id="eccbbc66ee95decf0d7c0595d219c92b" category="paragraph"><block ref="eccbbc66ee95decf0d7c0595d219c92b" category="inline-link-macro-rx"></block></block>
+  <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。</block>
+  <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">ONTAP Select不支持高级微设备(AMD)处理器。</block>
+  <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。</block>
+  <block id="08aeb5678ae03a8db1f16233a4a16070" category="paragraph">您可以使用开放式虚拟化格式(OVF)模板部署快速入门、在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。</block>
+  <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">您无需从NetApp获取序列号或存储容量许可证。</block>
+  <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">您可以为用户数据分配与已购买许可证相同的存储量。</block>
+  <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">您不能将此节点从评估版许可证升级为已购买许可证。</block>
+  <block id="de68e769353f85803d50af3ad5192201" category="list-text">您只能使用vCenter帐户部署OVF模板。目前不支持直接安装到ESXi主机。</block>
+  <block id="3becac3f3a46d46f0df7e4df7b69a359" category="list-text">您必须使用vSphere独立客户端或vSphere Web Client (ESXi 6.5及更高版本的唯一选项)安装ovf模板(包含在ova文件中)。请勿使用ONTAP Select Deploy管理实用程序。</block>
+  <block id="324b9a453c1c067658adca4be37dbae0" category="section-title">准备ONTAP Select集群主机</block>
+  <block id="1ec19b1e234462f154c2312b865baa14" category="paragraph">按照以下要求准备部署ONTAP Select集群的ESXi主机。此平台说明基于标准或小型实例类型配置、其中使用VMFS-5或VMFS-6文件系统格式化本地直连存储(DAS)。</block>
+  <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">准备ESXi主机的要求</block>
+  <block id="40500d60ce10678b5afdd4398f493978" category="paragraph"><block ref="40500d60ce10678b5afdd4398f493978" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9d35c0cb060ab36e25ffd3d93795556" category="inline-link-macro">ONTAP Select安装文档</block>
+  <block id="295c8d07537fb1be04c147371b26ece5" category="paragraph">有关主机配置选项的其他信息，请参见<block ref="cd27c348e940a3727b6807628855d8fd" category="inline-link-macro-rx"></block>。</block>
+  <block id="246320dc101bf0e3be5986b0320159e6" category="section-title">使用OVF模板部署单节点ONTAP Select集群</block>
+  <block id="a50cac13360eacf7961596b190047155" category="paragraph">在受支持的64位ESXi主机服务器上完成以下步骤。</block>
+  <block id="e7c78d04f4c3c4a7d36c59b9d2c2b9f7" category="list-text">转至NetApp评估产品程序页面并选择*OVF*将ONTAP Select ONTAP Select模板下载到本地工作站。</block>
+  <block id="04b1e5dd71a31edd4beba2e075fb1a5e" category="list-text">使用具有管理Privileges的帐户登录到VMware vSphere Web Client。</block>
+  <block id="b8d4fc60e9ceb80bf2fc078ddfdc693c" category="list-text">使用以下选项之一选择主机：</block>
+  <block id="a636f64e8e0f0ff7c201bcbe4197a1a8" category="list-text">选择 * 文件 * &gt; * 部署 OVF 模板 * 。</block>
+  <block id="96a3af93a31aa2d6987b7e0083ab462b" category="list-text">选择*Datacenter。然后右键单击并选择*部署OVF模板*。</block>
+  <block id="e0ccc728234a1a6f0227f25e6efde9d4" category="list-text">在本地工作站上选择ONTAP Select源OVA文件，然后选择*Next*。</block>
+  <block id="ea9ba5785c2b1398a34baf7fc0a68c67" category="list-text">查看OVF模板详细信息并选择*下一步*。</block>
+  <block id="9caf4332c798060a1cebc6b53f315bb7" category="list-text">查看EULA详细信息并选择*accept。然后选择*Next*。</block>
+  <block id="be18e91c73f7a7d7a9ae5462079f0ac7" category="list-text">键入新虚拟机的名称，然后选择*Next*。</block>
+  <block id="87d6a5bfde901ee6044d4f9ec142b4d6" category="list-text">如果有多个可用数据存储库，请选择该数据存储库并选择*Next*。</block>
+  <block id="44260bcf8bb9526a48d3725d7dccac06" category="list-text">选择*厚配置延迟置零*，然后选择*下一步*。</block>
+  <block id="d4de99256df06c0619573e5d37a5352d" category="list-text">选择数据和管理网络，然后选择*Next*。</block>
+  <block id="34fcbce1c7afc6b294a2a56ad5419543" category="list-text">在*Properties"(属性*)页上，提供所有必需的值，然后选择*Next*。</block>
+  <block id="dfe2716b8d1ea246f6e1aa9804752d1e" category="list-text">查看部署详细信息并选择*部署后开机*。</block>
+  <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">选择*完成*开始部署过程。</block>
+  <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">部署ONTAP Select集群后、您可以使用System Manager或命令行界面配置此集群。您必须使用标准ONTAP *disk assign*操作分配磁盘。</block>
+  <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
+  <block id="fa0d249cd337d58b40ea3c7cc54de247" category="sidebar">快速开始部署VF模板</block>
 </blocks>

@@ -54,3 +54,6 @@ ONTAP Select 评估版许可证具有以下特征：
 
 
 请参见 link:task_adm_licenses.html["将评估版许可证转换为生产许可证"] 有关详细信息 ...
+
+.相关信息
+link:task_quick_start_for_ovf_template_deployments.html["适用于OVF模板部署的ONTAP Select快速入门"]
