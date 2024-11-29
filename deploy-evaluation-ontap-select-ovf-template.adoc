@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_quick_start_for_ovf_template_deployments.html 
-keywords: ontap select, ovf, template, deployment, evaluation, license 
+permalink: deploy-evaluation-ontap-select-ovf-template.html 
+keywords: ontap, select, ovf, template, deployment, evaluation, license 
 summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。 
 ---
-= 适用于OVF模板部署的ONTAP Select快速入门
+= 部署ONTAP Select集群的90天评估实例
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Sel
 
 
 [role="lead"]
-您可以使用开放式虚拟化格式(OVF)模板部署快速入门、在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。
+您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。
 
 .关于此任务
 * 您无需从NetApp获取序列号或存储容量许可证。

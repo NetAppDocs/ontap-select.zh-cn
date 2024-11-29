@@ -26,8 +26,8 @@ indexpage:
       url: "/concept_adm_before.html"
     - title: 使用REST API
       url: "/concept_api_how_access.html"
-    - title: 快速开始部署VF模板
-      url: "/task_quick_start_for_ovf_template_deployments.html"
+    - title: 部署一个为期90天的集群评估实例
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: 更多资源
     links:
     - title: ONTAP Select 产品库

@@ -3752,12 +3752,9 @@ storage aggregate show-spare-disks</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3</block>
-  <block id="2541fca0ad59c8199b8bb08b5020de58" category="inline-link-macro">适用于OVF模板部署的ONTAP Select快速入门</block>
-  <block id="eccbbc66ee95decf0d7c0595d219c92b" category="paragraph"><block ref="eccbbc66ee95decf0d7c0595d219c92b" category="inline-link-macro-rx"></block></block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。</block>
   <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">ONTAP Select不支持高级微设备(AMD)处理器。</block>
   <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。</block>
-  <block id="08aeb5678ae03a8db1f16233a4a16070" category="paragraph">您可以使用开放式虚拟化格式(OVF)模板部署快速入门、在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">您无需从NetApp获取序列号或存储容量许可证。</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">您可以为用户数据分配与已购买许可证相同的存储量。</block>
   <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">您不能将此节点从评估版许可证升级为已购买许可证。</block>
@@ -3788,5 +3785,7 @@ storage aggregate show-spare-disks</block>
   <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">选择*完成*开始部署过程。</block>
   <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">部署ONTAP Select集群后、您可以使用System Manager或命令行界面配置此集群。您必须使用标准ONTAP *disk assign*操作分配磁盘。</block>
   <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
-  <block id="fa0d249cd337d58b40ea3c7cc54de247" category="sidebar">快速开始部署VF模板</block>
+  <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">部署ONTAP Select集群的90天评估实例</block>
+  <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
+  <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">部署一个为期90天的集群评估实例</block>
 </blocks>
