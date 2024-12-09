@@ -1034,11 +1034,7 @@
   <block id="7df2592d21ee2d7b12cfa029e519d7b9" category="list-text">ONTAP Select 版本</block>
   <block id="07c910df832eed07eccb9da18112e34b" category="list-text">主机准备</block>
   <block id="37d0d8277e2cec2cf18d723f103fbca0" category="list-text">您必须准备要运行 ONTAP Select 节点的虚拟机管理程序主机，并根据您的许可模式获取所需的存储许可证文件。要查看准备要求，请执行以下操作：</block>
-  <block id="c93ac09febb4264dc3b4e28bc4aa22ba" category="list-text">登录到 Deploy Web 用户界面。</block>
   <block id="9c3a59d6f34c8cd48494cf65ab055e67" category="inline-image-macro">问号</block>
-  <block id="34d1b92a9bea981532796b3947d5c933" category="list-text">单击 <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> 位于页面顶部。</block>
-  <block id="557b212863af34dee6642f1dd8feef4c" category="list-text">单击 * 前提条件 * 。</block>
-  <block id="a08bb19599dcb78fd73e7aa3b405980f" category="list-text">向下滚动以查看要求，然后单击 * 确定 * 。</block>
   <block id="d5b05ba2463ff6cca0078e72e50f28e7" category="list-text">许可证文件</block>
   <block id="85341d624e9b0303539956bd22bfd4d4" category="list-text">如果您计划在生产环境中部署集群，则必须根据您的许可模式获取存储许可证文件。</block>
   <block id="f0d5638b299d1abdeea7e3509c4a29b5" category="list-text">部署安装和帐户凭据</block>
@@ -1049,31 +1045,18 @@
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">创建集群</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">网络预检</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">部署集群</block>
-  <block id="4a27c1e90fe3acd696c1f0934ce7e3b5" category="admonition">您可以通过单击页面顶部的选项卡（集群，虚拟机管理程序主机，管理）来单独执行相同的步骤。</block>
   <block id="9dae84e581f54bbd3529b1a828393655" category="list-text">网络检查程序</block>
   <block id="18889d3b7d7412c773430265b3f7a703" category="list-text">如果要部署多节点集群，则应熟悉网络检查程序。</block>
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">部署集群后</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">使用管理员帐户（ admin ）通过 Web 界面登录到 Deploy 实用程序。</block>
-  <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">如果显示 * 欢迎使用 ONTAP Select * 弹出窗口，请确认您满足配置前提条件，然后单击 * 确定 * 。</block>
-  <block id="ba7cc5d6bb74cdd0aaa5fe5a9bc4b4d3" category="list-text">如果未显示 * 入门 * 集群启动页面，请单击 <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> 在页面顶部，然后单击 * 开始使用 * 。</block>
-  <block id="5d0652261e3e13ff5041f1c875d60d9c" category="list-text">在 * 入门 * 页面上，单击 * 上传 * 并从本地工作站中选择一个许可证，然后单击 * 打开 * 上传此许可证。</block>
-  <block id="3f4187941dcc4a52259a3955f138c314" category="list-text">单击 * 刷新 * 并确认已添加许可证。</block>
-  <block id="f11dc7320c4209cdff4f85de946666bf" category="list-text">单击 * 下一步 * 添加虚拟机管理程序主机，然后单击 * 添加 * 。</block>
-  <block id="180a2ecafc5641b9bb33d5a6fe6ba41d" category="list-text">单击 * 刷新 * 并确认主机的 * 类型 * 值为 * ESX 。</block>
   <block id="4693647f83597e4a631ffdc39034b06d" category="paragraph">您提供的任何帐户凭据都会添加到 Deploy 凭据数据库中。</block>
-  <block id="b46a9a6d9c38c08d97979def3d4a6e23" category="list-text">单击 * 下一步 * 开始集群创建过程。</block>
-  <block id="a291fbe570213bb24c1d06ffc86d2dc0" category="list-text">在 * 集群详细信息 * 部分中，提供描述集群的所有必要信息，然后单击 * 完成 * 。</block>
   <block id="0f602d7fe375d87b4dfff619bb7a3b50" category="list-text">在 * 节点设置 * 下，提供节点管理 IP 地址并为节点选择许可证；您可以根据需要上传新许可证。如果需要，您还可以更改节点名称。</block>
   <block id="a57c05031d6102136a8bfe300ea61093" category="list-text">提供 * 虚拟机管理程序 * 和 * 网络 * 配置。</block>
   <block id="f1928401d0f38929a4645cc2dbff7269" category="paragraph">有三种节点配置可定义虚拟机大小和可用功能集。这些实例类型分别受所购买许可证的标准，高级和高级 XL 产品支持。为节点选择的许可证必须与实例类型匹配或超过实例类型。</block>
   <block id="77bd5556fc873a5f14bb16bd6159b24f" category="paragraph">选择虚拟机管理程序主机以及管理和数据网络。</block>
-  <block id="3118e59890d54fc6e861b3ed19f01dd1" category="list-text">提供 * 存储 * 配置，然后单击 * 完成 * 。</block>
   <block id="1a61adfd179794f0468e7cc27a3731c5" category="paragraph">您可以根据平台许可证级别和主机配置选择驱动器。</block>
   <block id="83b2958f895c780b1ce04a69f29fa14f" category="list-text">查看并确认集群的配置。</block>
   <block id="7dce122004969d56ae2e0245cb754d35" category="inline-image-macro">编辑</block>
-  <block id="fc27442e8051c88f8a185d91ced22a20" category="paragraph">您可以通过单击来更改配置 <block ref="cd4fada87571e8da586532fce60b382a" category="inline-image-macro-rx" type="image"></block> 在相应部分中。</block>
-  <block id="674ac8fe871dc102602a9bf96882a339" category="list-text">单击 * 下一步 * 并提供 ONTAP 管理员密码。</block>
-  <block id="6e4ee895001e74a8e30d8d23a8ef73a4" category="list-text">单击 * 创建集群 * 以开始集群创建过程，然后单击弹出窗口中的 * 确定 * 。</block>
   <block id="aa28e7538205e834e26c77f5630f8893" category="list-text">监控多步集群创建过程，以确认集群已成功创建。</block>
   <block id="037cb8cf634438a48c4a376dd2eaecea" category="paragraph">此页面会定期自动刷新。</block>
   <block id="bd5ae2e61e1784e8eadc165e6029ecf8" category="summary">在确保 ONTAP Select 部署安全的过程中，您可以执行多项相关任务。</block>
@@ -2082,7 +2065,6 @@
   <block id="620e81c66c131f0b1e414614fed0e418" category="list-text">创建网络配置</block>
   <block id="cea548261425f3d897f63b97e936d640" category="list-text">制定聚合布局</block>
   <block id="c644c0897d8dc8d07dc010b0a5d1b341" category="paragraph">如果您决定在部署 ONTAP Select 集群时不安装具有存储容量的许可证文件，则必须在使用已购买许可证运行的集群的宽限期到期之前获取并安装这些许可证文件。</block>
-  <block id="92d7efa0a9c4eca7052897e58341d0b6" category="paragraph">Deploy 管理实用程序会从可用数据存储库空间（例如 Pool0 和 Pool1 ）在每个 ONTAP Select 节点上创建数据备用磁盘。要在多节点集群上为数据实施高可用性，您必须使用这些备用磁盘创建镜像聚合。</block>
   <block id="167b2e8c89f5ceb184efcaf133c27779" category="paragraph">您可以根据需要使用命令行界面更改 Deploy 虚拟机管理员帐户的密码。</block>
   <block id="6946015929ad4f656738c88a1535f3e0" category="list-text">使用管理员帐户登录到 Deploy 实用程序命令行界面。</block>
   <block id="79f41a0e0ccd4b8ecf18041e9a81199d" category="list-text">更改密码： `password modify`</block>
@@ -2914,24 +2896,16 @@
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS Deploy集群刷新失败并显示错误</block>
   <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息、请参见知识库文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。</block>
-  <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">建议为镜像聚合至少保留20%的可用空间、以获得最佳存储性能和可用性。虽然建议对非镜像聚合使用10%的空间、但文件系统可以使用额外的10%空间来吸收增量更改。由于ONTAP采用基于Snapshot的写时复制架构、增量更改可提高镜像聚合的空间利用率。不遵守这些最佳实践可能会对性能产生负面影响。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS是一项高级功能、需要高级版许可证或高级尊享版许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。高级XL许可证还支持创建NVMe驱动器。</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch配置</block>
   <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">将主机添加到清单</block>
   <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">您可以使用ONTAP Select Deploy Web用户界面部署单节点或多节点ONTAP Select集群。</block>
   <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">请参见 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以准备部署集群。必须安装Deploy管理并进行初始配置(密码、AutoSupport和vCenter)。</block>
   <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">为生产部署创建包含一个或多个节点的ONTAP Select集群。</block>
-  <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">您需要执行的步骤取决于是创建单节点集群还是多节点集群。</block>
   <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">多节点集群</block>
-  <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">如果显示*Welcome to ONTAP Select (欢迎使用Windows *)弹出窗口，请确认您已满足配置前提条件，然后单击*OK*(确定)。</block>
-  <block id="736cb4ef7019568859d8e044e044c906" category="list-text">在 * 入门 * 页面上，单击 * 上传 * 并从本地工作站中选择一个许可证，然后单击 * 打开 * 上传此许可证。重复以添加第二个许可证。</block>
-  <block id="663e3ab8cb2a9c950e625cc8e58cc007" category="list-text">单击*Refresh*并确认已添加许可证。</block>
-  <block id="390100b77c52acdfcd83e4a92be2c51f" category="list-text">单击*Next*添加两个虚拟机管理程序主机，然后单击*Add*。</block>
-  <block id="6c5e52865ab96c25cdda81fff9412d0f" category="list-text">在*集群详细信息*部分中，为*集群大小*选择*2节点集群*，提供描述集群的所有必需信息，然后单击*Done。</block>
   <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">在*Node Setup*下，提供节点管理IP地址并为每个节点选择许可证；您可以根据需要上传新许可证。如果需要、您还可以更改节点名称。</block>
   <block id="c2ec94d47c341f2cb886dfa96e0ac4bb" category="paragraph">有三种节点配置可定义虚拟机大小和可用功能集。这些实例类型分别受所购买许可证的标准，高级和高级 XL 产品支持。为节点选择的许可证必须与实例类型匹配或超过此实例类型。</block>
   <block id="5bcde1d421c75145a52950096b7fb58f" category="paragraph">选择虚拟机管理程序主机以及管理、数据和内部网络。</block>
-  <block id="48c8bfc451162cecf207d3586032c355" category="list-text">单击*Next*并通过单击*Run*运行网络预检。这将验证为ONTAP集群流量选择的内部网络是否正常运行。</block>
   <block id="5ca1e08722935cc52d1e20fcea7b5428" category="paragraph">创建集群最多可能需要45分钟。</block>
   <block id="8e8ec233d7d8b1670dc404b61b73a0b1" category="list-text">监控多步骤集群创建过程、以确认集群已成功创建。</block>
   <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">您应确认已配置ONTAP Select AutoSupport功能、然后备份ONTAP Select Deploy配置数据。</block>
@@ -3788,4 +3762,32 @@ storage aggregate show-spare-disks</block>
   <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">部署ONTAP Select集群的90天评估实例</block>
   <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
   <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">部署一个为期90天的集群评估实例</block>
+  <block id="ad152885aafb9bc53df5849eb7ca2f93" category="paragraph">Deploy管理实用程序会使用可用数据存储库空间(例如Pool0和Pool1)在每个ONTAP Select节点上创建数据备用磁盘。要在多节点集群上为数据实施高可用性，您必须使用这些备用磁盘创建镜像聚合。</block>
+  <block id="8e5126a524085c2d504ecc6a9ee619cb" category="admonition">只有在将数据聚合配置为镜像聚合时、才支持高可用性接管。</block>
+  <block id="5da001c2cdc95a4311e28cf37673f6ba" category="admonition">NetApp建议为镜像聚合至少保留20%的可用空间、以获得最佳存储性能和可用性。虽然建议对非镜像聚合使用10%的空间、但文件系统可以使用额外的10%空间来吸收增量更改。由于ONTAP采用基于Snapshot的写时复制架构、增量更改可提高镜像聚合的空间利用率。不遵守这些最佳实践可能会对性能产生负面影响。只有在将数据聚合配置为镜像聚合时、才支持高可用性接管。</block>
+  <block id="40164cee4e237bb78398a5485589b913" category="list-text">登录到Deploy Web UI。</block>
+  <block id="a46f1a6ef7f27e34e2b1ade44c188257" category="list-text">选择<block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block>页面顶部的。</block>
+  <block id="fe8dec8b217b332b88e66ecdf5472b01" category="list-text">选择*前提条件*。</block>
+  <block id="3929bbc1e55fa3a638006eb8e6566b4d" category="list-text">向下滚动以查看要求并选择*OK*。</block>
+  <block id="1339b9f22cb64ff9975ba4df2d3c543b" category="admonition">您可以通过选择页面顶部的选项卡("Clusters"(集群)、"Hypervisor"(虚拟机管理程序主机)、"Administration"(管理))来单独执行相同的步骤。</block>
+  <block id="f79319ec1d7b82161a58de3096cafdd0" category="paragraph">您需要执行的步骤取决于是创建单节点集群还是多节点集群。一个多节点集群可以包含两个、四个、六个或八个节点。</block>
+  <block id="555e1ae22bd894e4a9fe23fc5bb1ca5e" category="list-text">如果显示*欢迎使用ONTAP Select *弹出窗口，请确认您已满足配置前提条件并选择*OK*。</block>
+  <block id="1ade53760ce0b2b9ced3db48b79b4e51" category="list-text">如果未显示*Getting started*集群启动页面，请选择页面顶部的，然后选择<block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block>*Getting started*。</block>
+  <block id="820d1873bef6998cbee232163b828a57" category="list-text">在*入门*页上，选择*上传*，然后从本地工作站中选择一个许可证，然后选择*打开*以上传该许可证。</block>
+  <block id="68488b2b0b0bac78cf8e946ef52da267" category="list-text">选择*Refresh*并确认已添加许可证。</block>
+  <block id="3d549ad86001c792e0804733ec4c2957" category="list-text">选择*Next*以添加虚拟机管理程序主机，然后选择*Add*。</block>
+  <block id="d44b6331867f2132b1d71fa39b6807b4" category="list-text">选择*Refresh*并确认主机的*Type*值为*ESX*。</block>
+  <block id="c62cb76848266877f290be96b3ff294e" category="list-text">选择*Next*开始创建集群过程。</block>
+  <block id="6c7b66882eb92b081bda7b0b837ecadc" category="list-text">在*集群详细信息*部分中，提供描述集群的所有必需信息，然后选择*Done。</block>
+  <block id="e1c524d61c650626841b4dcb765c3916" category="list-text">提供*存储*配置并选择*完成*。</block>
+  <block id="aaa33d34d1d725c0a59b5dc1da1a9741" category="paragraph">您可以通过在相应部分中选择来更改配置<block ref="cd4fada87571e8da586532fce60b382a" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="83cce49c4543a6bd5a93689ecad56e5e" category="list-text">选择*Next*并提供ONTAP管理员密码。</block>
+  <block id="d66205342799ff313cc08b6f66303456" category="list-text">选择*Create Cluster*开始集群创建过程，然后在弹出窗口中选择*OK*。</block>
+  <block id="9108f18e4fb1ca838b140d2c60144a07" category="list-text">如果显示*Welcome to ONTAP Select (欢迎使用Windows *)弹出窗口，请确认您已满足配置前提条件，然后选择*OK*。</block>
+  <block id="875185b48917f696df4ff8fa2783728c" category="list-text">在*Getting Started (*入门*)页面上，选择*Upload (*上传)并从本地工作站中选择一个许可证，然后选择*Open*(*打开*)以上传该许可证。重复以添加其他许可证。</block>
+  <block id="7b22f8bd9968f64a1c7b9264a85c020c" category="list-text">选择*Refresh*并确认已添加许可证。</block>
+  <block id="7c5fd8d9b8b6482272535e13665a25a8" category="list-text">选择*下一步*以添加所有虚拟机管理程序主机，然后选择*添加*。</block>
+  <block id="944a1b1080e2860bd56c15282a8e476e" category="list-text">在*Cluster Details*部分中，选择所需的*Cluster Size*，提供描述群集的所有必需信息，然后选择*Done。</block>
+  <block id="8b5ceafca01d3a14f09a0d742cbb2cfb" category="list-text">选择*下一步*并通过选择*运行*来运行网络预检。这将验证为ONTAP集群流量选择的内部网络是否正常运行。</block>
+  <block id="2735f745a89477a2abc1f435e606bde3" category="list-text">选择*Create Cluster*开始集群创建过程，然后在弹出窗口中选择*OK*。</block>
 </blocks>
