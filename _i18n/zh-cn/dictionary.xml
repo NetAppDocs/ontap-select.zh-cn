@@ -216,54 +216,17 @@
   <block id="dbca2124e685af6158dfb16fa4b1f333" category="inline-image-macro">传入 ONTAP Select VM 的写入</block>
   <block id="bb4535bc16c1e303453a76a7d6669910" category="paragraph"><block ref="bb4535bc16c1e303453a76a7d6669910" category="inline-image-macro-rx" type="image"></block></block>
   <block id="83aee6fb82bd87d789e0851835b555f8" category="admonition">NVRAM 分区将在其自己的 VMDK 上分隔。该 VMDK 使用 ESX 6.5 或更高版本中提供的 vNVME 驱动程序进行连接。对于使用软件 RAID 的 ONTAP Select 安装来说，此更改最重要，因为这些安装不会从 RAID 控制器缓存中受益。</block>
-  <block id="c32e557727d87dabd26419e2d74fd541" category="summary">使用 Ansible 角色自动执行 ONTAP Select 部署。</block>
-  <block id="6a7bceb6d2b5ceedce475be4f9b01f70" category="doc">利用 Ansible 实现 ONTAP Select 部署自动化</block>
-  <block id="ef4813ca7c0fc0ff31c081f95744fca3" category="paragraph">使用 Ansible 角色和攻略手册自动执行 ONTAP Select 部署。</block>
-  <block id="53e3f47e6ca445e9be6f8424cc405d08" category="paragraph">Ansible 角色是一个标准化文件结构中的任务，模板，处理程序和变量的逻辑集合。使用这些角色促进，重复使用和模块化可独立使用的功能。在要执行的攻略手册中包括角色以及要运行这些角色的主机列表。安装 Ansible ，更新必要的模块并了解攻略手册后，您可以从 NetApp GitHub 下载 ONTAP Select （ OTS ）角色，创建并运行您自己的攻略手册来部署 ONTAP Select 集群。</block>
-  <block id="a5cd3ed116608dac017f14c046ea56bf" category="section-title">角色</block>
-  <block id="826d466edf75a6e091340a11b737b650" category="paragraph">ONTAP Select 可使用两个角色：</block>
-  <block id="efd9faa12026d5475636db4e69b74c88" category="section-title">na_ots_deploy</block>
-  <block id="43240aa487d9e87740e23d626da1a362" category="paragraph">此角色会将 ONTAP Select Deploy 的安装文件下载到 vCenter 或 ESXi 主机上。然后，它会创建并运行 Deploy VM 。</block>
-  <block id="295abdb722ec58f88548a860f1de3615" category="paragraph">此角色使用以下输入值：</block>
-  <block id="ce32e2e59fbccdfecf9783e364821344" category="list-text">vCenter 或 ESXi 主机凭据</block>
-  <block id="bcac6351d7ffa20621625e884ac48eef" category="list-text">部署 VM 创建，包括以下信息：</block>
-  <block id="75ba8d70e3692ba200f0e0df37b4d2ae" category="list-text">IP 地址</block>
   <block id="dae4a538d4ca7b6c0789932062fe718d" category="list-text">主机名</block>
-  <block id="99dea78007133396a7b8ed70578ac6ae" category="list-text">登录</block>
   <block id="dc647eb65e6711e155375218212b3964" category="list-text">Password</block>
   <block id="8a5227cc82d14862956938caffc1acf2" category="list-text">数据存储库</block>
   <block id="eec89088ee408b80387155272b113256" category="list-text">网络</block>
-  <block id="53c3b66ec700ff4dc91986d0dd8b16ac" category="list-text">OVA 文件的本地路径</block>
-  <block id="a494e509586e66c9858cd2b0032bbb59" category="paragraph">在运行攻略手册（包括角色）之前，请确保安装文件可用。</block>
-  <block id="67b626a26e85af31687eb59b04a92d36" category="admonition">提供这些输入值的最简单方法是使用 Yml 格式的全局变量文件。在攻略手册中传递此 Yml 文件。</block>
-  <block id="62f436a0c8a1102605e3a87bed8fb9bb" category="paragraph">该角色具有一个任务，用于将 Deploy OVA 文件导入到主机，创建虚拟机并运行该虚拟机。您可以从 NetApp Ansible GitHub 访问并下载此角色，网址为： <block ref="76046f5222ce385c10b6d73a03e82ba7" category="inline-link-macro-rx"></block></block>
-  <block id="844c277ee2d3a4ab83ef1f113352e100" category="section-title">na_ots_cluster</block>
-  <block id="7fd297e1f0beaa7151bd9285d7dff546" category="paragraph">此角色使用 ONTAP Select Deploy API 创建和部署 ONTAP Select 集群。它假定已创建 Deploy VM ，并且该 VM 已手动启动并正在运行，或者使用 * 角色 na_ots_deploy* 。此外，此角色还假定 Select 主机已正确配置 ONTAP Select 集群所需的网络和存储。</block>
-  <block id="f0257515d53312c2d8028409069c5d84" category="paragraph">此角色使用 vCenter 或 ESXi 凭据的输入值，并使用 Deploy VM 凭据来访问 API 以及创建 ONTAP Select 集群和节点 VM 所需的所有相关信息。</block>
-  <block id="ea6e2b68eae559d20093f0d7eae85fb8" category="paragraph">此角色将执行以下任务：</block>
-  <block id="de939cf4d4a045633c8a520b501bb40e" category="list-text">添加（ vCenter 或 ESXi ）主机凭据</block>
-  <block id="0b67a16a8394599f4eecf8683ef0d301" category="list-text">获取并注册主机 ID</block>
-  <block id="fa8c1aa26c03157b5e62997fd0fdaa14" category="list-text">验证内部网络（对于多节点集群）</block>
-  <block id="d7494ab1ca8800562b8faee8d3a4984e" category="list-text">正在创建集群</block>
-  <block id="073dd452840b7a9881432728f959cd2c" category="list-text">配置节点</block>
-  <block id="5b6e8147fdc6caa0b27d7fc75489608f" category="list-text">配置网络和存储池</block>
-  <block id="b6877b94a1e530ab0fc6b8d1545fd166" category="list-text">部署集群</block>
-  <block id="f8cac4cf1b1201d6a9386323183ca9c8" category="paragraph">因此，此角色将在集群虚拟机启动并运行且 ONTAP Select 集群完全部署的情况下完成。您可以从 NetApp Ansible GitHub 访问并下载此角色，网址为： <block ref="56a4d28e5b01605b6b865a56dead08da" category="inline-link-macro-rx"></block></block>
-  <block id="043194e296799e8dbefda7f37d0e101e" category="section-title">示例攻略手册</block>
-  <block id="483b9ffc2547d862835719e69821ce3e" category="paragraph">以下是一个称为这两个 ONTAP Select 角色的示例攻略手册。请注意，输入变量在 Yml 文件中定义，并通过 "vars_files" 传递。您可以在每个角色的 README 文件中找到更多详细信息。</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">此处</block>
-  <block id="006a0a02171a296bf3a320f8991be24a" category="paragraph">使用上述角色创建并运行 ONTAP Select 集群后，您可以利用丰富的 ONTAP Ansible 角色集进一步自动执行 ONTAP 特性和功能。可以访问可用的 ONTAP 角色 <block ref="4d400bdda09fce7a6e9e1a49c64cce9d" category="inline-link-macro-rx"></block>。总之， ONTAP Select Ansible 角色以及 ONTAP 角色可以让您完全自动化端到端工作流，以便使用 ONTAP Select 管理存储。</block>
   <block id="76848919ab4ad9c5a51b5f29720a249f" category="summary">在部署集群后，您应了解集群的初始状态，并根据需要为您的环境配置集群。</block>
   <block id="4f8adfce07663fda787740d49cd25397" category="paragraph">ONTAP Select 集群在创建后具有多个特征。</block>
   <block id="e6d9b928e48b5e5a2538b2bcdc515c95" category="paragraph">分配有两种类型的客户指定 LIF ：</block>
   <block id="7e8ceade9e54e9a912c6f9a52ea87658" category="list-text">集群管理（每个集群一个）</block>
   <block id="5e3a8851b34912653fbf0e9bbf3fc9d0" category="list-text">节点管理（每个节点一个）</block>
-  <block id="3013e63917da83ac89d317625e960fa3" category="paragraph">两个管理 SVM 处于活动状态：</block>
-  <block id="38cd25d85c8a7e96abb2aaf9d4009eb2" category="list-text">默认 SVM</block>
-  <block id="c6117cdbee2307d85ed57db8a195f4f8" category="list-text">集群 SVM</block>
   <block id="ebeedb9721ef0e0966825fecfef52bb5" category="paragraph">此时将创建根聚合。</block>
   <block id="d5daa4c0e0a3988a633eb5273b984697" category="paragraph">所有功能均已获得许可并可用。SnapLock 和 FabricPool 都需要单独的许可证。</block>
-  <block id="076515078e25047da0c60bc6f27e2c68" category="admonition">未创建任何数据 SVM 。此外，多节点集群还具有一个内部网络，其中包含自动生成的 LIF 。</block>
   <block id="7e4d14e940ca34d72bbdbc88f17285ad" category="inline-link-macro">默认情况下， ONTAP 功能处于启用状态</block>
   <block id="48bd47a31dab80aa978f949db8e14bb2" category="list-text"><block ref="48bd47a31dab80aa978f949db8e14bb2" category="inline-link-macro-rx"></block></block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="section-title">开始之前</block>
@@ -2567,7 +2530,6 @@
   <block id="eff97b5f2d2c83f1ed5631ba2caad4b3" category="sidebar">添加节点许可证</block>
   <block id="17a06a80e87a37d4e1892e8c0528b857" category="sidebar">删除集群</block>
   <block id="1ca48c398b8c739a9815d44011185388" category="sidebar">调整集群节点的大小</block>
-  <block id="46fc1cf655dd8158b6b58910cf88e653" category="sidebar">借助 Ansible 实现自动化</block>
   <block id="8a9e0f8224695e94f0988f444488877b" category="sidebar">使用命令行界面</block>
   <block id="89c5ba6f9355d2da97bb00bdf0ec66e5" category="sidebar">使用 SSH 登录</block>
   <block id="8c45b8a7e3dd4094586773bc09fc8842" category="sidebar">Deploy 实用程序</block>
@@ -2894,7 +2856,6 @@
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
   <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS Deploy集群刷新失败并显示错误</block>
-  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息、请参见知识库文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS是一项高级功能、需要高级版许可证或高级尊享版许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。高级XL许可证还支持创建NVMe驱动器。</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch配置</block>
@@ -3386,7 +3347,6 @@ storage aggregate show-spare-disks</block>
   <block id="f778b020848c4bce334b26593dd9cc1f" category="paragraph">磁盘将分配为备用磁盘、并可供ONTAP Select使用。磁盘可能需要一分钟或更长时间才能可用。</block>
   <block id="a743fc9c91bd7ab650676dc7bcff7cbe" category="paragraph">由于节点配置已更改、您应使用Deploy管理实用程序执行集群刷新操作。</block>
   <block id="2e34b681cc534c1f05dd05873a67719f" category="list-text">选择*Edit*并确认新驱动器可用并将其选中。</block>
-  <block id="33693ff3a7d631ea880e109dfc69ea97" category="paragraph">此声明文件提供了有关NetApp软件中使用的第三方版权和许可证的信息。</block>
   <block id="f371e1e74365e433f105f30c886225bf" category="inline-link">ONTAP Select 9.14.1发行说明</block>
   <block id="6e0dedd1d494cddc9086f77fa36f54a0" category="paragraph">ONTAP Select可以部署为单节点集群。虚拟机管理程序主机包括一个虚拟交换机、可用于访问外部网络。</block>
   <block id="6615bf96d027d0ff485c1b1838661527" category="admonition">运行ONTAP Select的主机在使用随ONTAP Select提供的硬件RAID控制器或软件RAID功能时需要本地物理驱动器。如果使用 ONTAP Select vNAS 解决方案 访问外部存储，则不会使用本地 RAID 控制器和软件 RAID 功能。</block>
@@ -3646,7 +3606,6 @@ storage aggregate show-spare-disks</block>
   <block id="567999f9c71634f001a831b733088bbc" category="doc">在远程办公室和分支机构中使用ONTAP Select</block>
   <block id="ecef17057a10f9337620a1aee67c110f" category="summary">NetApp ONTAP Select是一款软件定义的存储设备、您可以部署在运行VMware ESXi或基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序的各种商用硬件服务器上。它可以为您提供构建灵活且可扩展的私有云基础架构所需的灵活性。此站点包含ONTAP Select 9.16.1.的文档。</block>
   <block id="b38f50fa2d7eac1d0761ec2b46339f62" category="inline-link-macro">ONTAP Select 9.16.1.的通知</block>
-  <block id="561a04c4081432fad02b159522e1d02c" category="list-text"><block ref="561a04c4081432fad02b159522e1d02c" category="inline-link-macro-rx"></block></block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON、用于创建ONTAP Select集群的脚本</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">用于添加ONTAP Select节点许可证的脚本</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">用于创建ONTAP Select集群的脚本</block>
@@ -3790,4 +3749,16 @@ storage aggregate show-spare-disks</block>
   <block id="944a1b1080e2860bd56c15282a8e476e" category="list-text">在*Cluster Details*部分中，选择所需的*Cluster Size*，提供描述群集的所有必需信息，然后选择*Done。</block>
   <block id="8b5ceafca01d3a14f09a0d742cbb2cfb" category="list-text">选择*下一步*并通过选择*运行*来运行网络预检。这将验证为ONTAP集群流量选择的内部网络是否正常运行。</block>
   <block id="2735f745a89477a2abc1f435e606bde3" category="list-text">选择*Create Cluster*开始集群创建过程，然后在弹出窗口中选择*OK*。</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
+  <block id="4d5e19ca322ec82f576cffa70356d45b" category="paragraph"><block ref="4d5e19ca322ec82f576cffa70356d45b" category="inline-link-rx"></block></block>
+  <block id="dba6192da7444fc9e5fd32119193b12b" category="admonition">限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息，请参阅知识库文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
+  <block id="a97a40851f37ebfbf5db3d3bf28da58b" category="admonition">多节点集群具有一个具有自动生成的生命周期的内部网络。</block>
+  <block id="0f1007666fd5cc7934baffbdef1287d0" category="paragraph">三个SVM处于活动状态：</block>
+  <block id="070848ec049722b444235c5db132a1bb" category="list-text">管理SVM</block>
+  <block id="9392c5507686114a0bba1e8e0b5be096" category="list-text">节点SVM</block>
+  <block id="d78477ac5628a6dd2fb8c046564b2227" category="list-text">系统(集群) SVM</block>
+  <block id="93b1520005778e826c33efa7132d61c9" category="inline-link">创建SVM</block>
+  <block id="e0d52f0658828de62020550252885d55" category="admonition">数据SVM不会在ONTAP Select集群部署中创建。它们必须由集群管理员在部署后创建。有关详细信息，请参见<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>。</block>
+  <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">集群中包含的SVM类型</block>
+  <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
 </blocks>

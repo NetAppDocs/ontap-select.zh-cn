@@ -262,8 +262,6 @@ sidebar:
         url: "/reference_api_script_common.html"
       - title: 调整集群节点的大小
         url: "/reference_api_script_resize.html"
-  - title: 借助 Ansible 实现自动化
-    url: "/concept_automate_ansible.html"
   - title: 使用命令行界面
     entries:
     - title: 使用 SSH 登录

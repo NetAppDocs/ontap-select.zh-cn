@@ -19,7 +19,7 @@ summary: 在部署集群后，您应了解集群的初始状态，并根据需�
 ONTAP Select 集群在创建后具有多个特征。
 
 
-NOTE: 限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息、请参见知识库文章 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["OTS Deploy集群刷新失败并显示错误"^]。
+NOTE: 限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息，请参阅知识库文章 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["OTS Deploy集群刷新失败并显示错误"^]。
 
 .LIF
 分配有两种类型的客户指定 LIF ：
@@ -28,12 +28,19 @@ NOTE: 限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select De
 * 节点管理（每个节点一个）
 
 
+
+NOTE: 多节点集群具有一个具有自动生成的生命周期的内部网络。
+
 .svms
-两个管理 SVM 处于活动状态：
+三个SVM处于活动状态：
 
-* 默认 SVM
-* 集群 SVM
+* 管理SVM
+* 节点SVM
+* 系统(集群) SVM
 
+
+
+NOTE: 数据SVM不会在ONTAP Select集群部署中创建。它们必须由集群管理员在部署后创建。有关详细信息，请参见 https://docs.netapp.com/us-en/ontap/nfs-config/create-svms-data-access-task.html["创建SVM"^]。
 
 .聚合
 此时将创建根聚合。
@@ -41,9 +48,7 @@ NOTE: 限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select De
 .功能
 所有功能均已获得许可并可用。SnapLock 和 FabricPool 都需要单独的许可证。
 
-
-NOTE: 未创建任何数据 SVM 。此外，多节点集群还具有一个内部网络，其中包含自动生成的 LIF 。
-
 .相关信息
+* link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["集群中包含的SVM类型"^]
 * link:reference_lic_ontap_features.html["默认情况下， ONTAP 功能处于启用状态"]
 
