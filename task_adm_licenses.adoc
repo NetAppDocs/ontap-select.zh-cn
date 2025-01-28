@@ -4,7 +4,7 @@ permalink: task_adm_licenses.html
 keywords: administer, administering, web, licenses 
 summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关任务。 
 ---
-= ONTAP Select 许可证
+= 管理ONTAP Select许可证
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

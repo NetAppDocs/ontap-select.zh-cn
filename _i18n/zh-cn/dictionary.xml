@@ -134,7 +134,6 @@
   <block id="04ad7df80604af0ba0f4b5923ab1f2ae" category="list-text">您必须为生产环境中部署的每个 ONTAP Select 集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相关信息</block>
   <block id="680e9e82137091017ba19fdaa5193e04" category="list-text"><block ref="680e9e82137091017ba19fdaa5193e04" category="inline-link-macro-rx"></block></block>
-  <block id="8b60e6d501896a426a20e22fc6479aec" category="summary">性能因硬件配置而异。</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">* 核心频率 * 。一般来说，最好使用较高的频率。</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">* 单插槽与多插槽 * 。ONTAP Select 不使用多插槽功能，但支持多插槽配置所需的虚拟机管理程序开销会在整体性能方面造成一定程度的偏差。</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">* RAID 卡配置和关联的虚拟机管理程序驱动程序 * 。虚拟机管理程序提供的默认驱动程序可能需要替换为硬件供应商驱动程序。</block>
@@ -1428,14 +1427,11 @@
   <block id="8b3398557c7fb55b263bf52bece82b68" category="doc">评估版许可证</block>
   <block id="e009f07bc1785009a3ceb83036990929" category="section-title">许可特征</block>
   <block id="11731b987dc6227f75478145446eec49" category="paragraph">ONTAP Select 评估版许可证具有以下特征：</block>
-  <block id="1a722f6211174d2c13dea99241228cdd" category="list-text">不需要具有存储容量的生产许可证</block>
   <block id="da43be3a437b4b11176af278d2bf65e4" category="list-text">节点序列号为 20 位数，由 ONTAP Select Deploy 自动生成</block>
-  <block id="d81334460101f9ea4e0446684836ab2c" category="paragraph">（您不直接从 NetApp 获取）</block>
   <block id="b8c2c21a1451d44d469c74b3bc603f96" category="list-text">许可证提供的评估期最长可达 90 天</block>
   <block id="ad49b216aa656d515b04dd8c523873dd" category="list-text">每个节点分配的最大存储空间与生产许可证相同</block>
   <block id="238908176e0b205e68cd2d9e0c4972e5" category="paragraph">您可以升级 ONTAP Select 评估集群以使用生产许可证。您应了解以下限制：</block>
   <block id="60c8e16d600bd89fdcfca7dd31b63260" category="list-text">您必须使用 Deploy 管理实用程序执行许可证升级</block>
-  <block id="1e2f74556f8f29bf17e0d81fdf7f56ab" category="list-text">可以使用容量层许可证，但不支持容量池许可</block>
   <block id="040571bf34446f7204162544612cd237" category="list-text">必须根据集群大小为每个节点分配足够的存储，以满足生产许可证的最低要求</block>
   <block id="b00fa0d79083a8d6eae4f833835c1cda" category="doc">ONTAP Select vNAS 要求</block>
   <block id="aa5960e278cc090ee09a54daeb69b04f" category="section-title">基本要求和限制</block>
@@ -1989,7 +1985,6 @@
   <block id="440776946e3349ff3266a8cf25bef605" category="section-title">ONTAP Select Deploy 管理实用程序</block>
   <block id="deeb67d546017625d12dfbcf3d817a5c" category="paragraph">Deploy 管理实用程序作为单独的 Linux 虚拟机打包并安装。您必须使用实用程序在生产环境中部署 ONTAP Select 集群。当前版本的 ONTAP Select 节点映像与 Deploy 实用程序捆绑在一起。</block>
   <block id="d69f8aaae124c9269620ba7ca5678c34" category="section-title">典型部署图示</block>
-  <block id="60d804a6b011555fd729bcd0c5e206da" category="paragraph">下图显示了用于部署和支持四节点 ONTAP Select 集群的 ONTAP Select Deploy 管理实用程序。Deploy 实用程序和 ONTAP Select 节点在专用虚拟机管理程序主机上作为单独的虚拟机运行。</block>
   <block id="3163bfc32e34eb9c2f84e4c7a1535111" category="inline-image-macro">显示了使用 Deploy 管理实用程序创建的 ONTAP Select 四节点集群。</block>
   <block id="3e69161d02590dc69114626444a3d815" category="paragraph"><block ref="3e69161d02590dc69114626444a3d815" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f6d0a856320802e878fb73629ca6582d" category="paragraph">基于硬件的 ONTAP 和 ONTAP Select 均可提供企业级存储解决方案。但是，由于它们的设计和实施方式不同，因此它们可以满足不同的业务要求和使用情形。在规划 ONTAP Select 部署之前，您应熟悉各个平台之间的主要区别。</block>
@@ -3290,7 +3285,6 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="d98fb3ce51b49ee9b9e8ea2645524f08" category="list-text">Deploy虚拟机的IP地址</block>
   <block id="30e58d6b4fce06c690ff3897ae040f55" category="paragraph">如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是、如果您选择不使用此表单、则可以改用Deploy虚拟机的控制台来配置网络。</block>
   <block id="922bafb0938c68773e29242e2675f0b9" category="paragraph">您需要执行的步骤取决于您使用的是ESXi虚拟机管理程序还是KVM虚拟机管理程序。</block>
-  <block id="41c929e54fb793fb7a784130ebd7c7b1" category="list-text">部署虚拟机后、选择新虚拟机、如果尚未启动、请根据您在部署向导中输入的内容将其启动。</block>
   <block id="1c2f49da17d54e224e8288edcb35fd8b" category="list-text">如果需要、您可以使用VM控制台配置Deploy网络：</block>
   <block id="e24d94772b7fb552cdad8786d3972fe1" category="list-text">键入*n*定义静态IP配置，或键入*y*使用DHCP，然后选择*Enter*。</block>
   <block id="64c8e1a4f8f739423fd7163b603a4b32" category="list-text">在Linux服务器上登录到命令行界面：</block>
@@ -3561,7 +3555,6 @@ storage aggregate show-spare-disks</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">部署和支持评估版集群时、需要注意以下几个事项：</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能将集群用于评估目的。不得在生产环境中使用具有评估版许可证的集群。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在配置每台主机时、应按如下所示使用ONTAP Select Deploy管理实用程序：</block>
-  <block id="1b2bebf50d8caf7cae03b0a936752188" category="list-text">请勿提供序列号</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">配置以使用评估版许可证</block>
   <block id="21f27b191f1f034aa81e5f786bf9829c" category="doc">了解ONTAP Select的平台许可证产品</block>
   <block id="1b1ede8baae6a15d3ba60611103509a4" category="doc">ONTAP Select为生产部署购买了许可证</block>
@@ -3609,7 +3602,6 @@ storage aggregate show-spare-disks</block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON、用于创建ONTAP Select集群的脚本</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">用于添加ONTAP Select节点许可证的脚本</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">用于创建ONTAP Select集群的脚本</block>
-  <block id="41cfd9e48a1b6c66998391efe14f06f2" category="doc">通用支持ONTAP Select Python模块</block>
   <block id="d066221405020e2f85c198e0b44e228b" category="doc">用于删除ONTAP Select集群的脚本</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">用于调整ONTAP Select集群节点大小的脚本</block>
   <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">工作流1：在ESXi上创建ONTAP Select单节点评估集群</block>
@@ -3761,4 +3753,22 @@ storage aggregate show-spare-disks</block>
   <block id="e0d52f0658828de62020550252885d55" category="admonition">数据SVM不会在ONTAP Select集群部署中创建。它们必须由集群管理员在部署后创建。有关详细信息，请参见<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>。</block>
   <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">集群中包含的SVM类型</block>
   <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
+  <block id="c19cab121a967e7d4e145437fee16c02" category="doc">ONTAP Select部署的评估版许可证</block>
+  <block id="3ad47d20affd564b7db18fcaa67fb9ca" category="paragraph">要下载ONTAP Select Deploy管理实用程序、您需要满足以下要求：</block>
+  <block id="f2fd759d6c3aedc384b758263e96be4b" category="inline-link">用户注册</block>
+  <block id="ee071d378f5b3ec57e4eda0d66300334" category="list-text">已注册的NetApp支持站点帐户。如果您没有帐户，请参见<block ref="b0f5d39de7f85d20bb3da6a76b3c4368" category="inline-link-rx"></block>。</block>
+  <block id="4c38e9c9635f62bc0c98a4fc0dbf6f04" category="inline-link">接受最终用户许可协议</block>
+  <block id="bcb0a8f0933f79963f8da791712307a2" category="list-text"><block ref="b36a96015925128ab0074fda8004c795" category="inline-link-rx"></block>对于具有评估版许可证的ONTAP Select部署、为。</block>
+  <block id="76be33f6608866426ecccffc5acd6be8" category="list-text">请勿提供序列号</block>
+  <block id="2fcd5d5ae3d245e3d2870429d2c9381d" category="list-text">不需要具有存储容量的生产许可证</block>
+  <block id="695af2710450ef107be1555e59f22b01" category="paragraph">(您不会直接从NetApp购买)</block>
+  <block id="0fa0a315c1605e80221e4ae40cfaac60" category="list-text">可以使用容量层许可证、但不支持容量池许可</block>
+  <block id="d480e694d74a85a8bf679cab5063c9f1" category="paragraph">下图显示了用于部署和支持四节点ONTAP Select集群的NetApp ONTAP Select Deploy管理实用程序。Deploy 实用程序和 ONTAP Select 节点在专用虚拟机管理程序主机上作为单独的虚拟机运行。</block>
+  <block id="54d1b8efd5a74820db5617b48f538671" category="summary">ONTAP Select集群的性能可能会因硬件配置而异。</block>
+  <block id="123521c98d5a32b10ae4a2d5e59ed719" category="doc">ONTAP Select的通用支持Python模块</block>
+  <block id="b7a30ea4f45797fa98b43f64e7be11b9" category="doc">管理ONTAP Select许可证</block>
+  <block id="bf55dfa0f53f23704c47337781c41d3d" category="inline-link">您已注册NetApp支持站点帐户</block>
+  <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>(英文)</block>
+  <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">部署虚拟机后、选择新虚拟机。如果尚未根据您对部署向导的输入启动它、请手动启动它。</block>
+  <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">如果这是首次登录、但您未使用vCenter提供的向导安装Deploy、请在出现提示时提供以下配置信息：</block>
 </blocks>

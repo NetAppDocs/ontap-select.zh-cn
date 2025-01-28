@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_perf_general.html 
 keywords: ontap select, performance 
-summary: 性能因硬件配置而异。 
+summary: ONTAP Select集群的性能可能会因硬件配置而异。 
 ---
 = ONTAP Select性能概述
 :hardbreaks:
@@ -14,8 +14,6 @@ summary: 性能因硬件配置而异。
 
 
 [role="lead"]
-性能因硬件配置而异。
-
 由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。特定硬件配置是影响特定ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：
 
 * * 核心频率 * 。一般来说，最好使用较高的频率。
