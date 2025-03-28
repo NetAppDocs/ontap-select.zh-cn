@@ -854,19 +854,12 @@
   <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">您可以根据需要添加，编辑和删除 ONTAP Select 容量层许可证。</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">使用管理员帐户通过 Web 界面登录到 Deploy 实用程序。</block>
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">单击页面顶部的 * 管理 * 选项卡。</block>
-  <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">单击 * 许可证 * ，然后单击 * 容量层 * 。</block>
-  <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">也可以单击 * 筛选器 * 并限制显示的许可证。</block>
-  <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">要添加新许可证，请单击页面顶部的 * 添加 * ，然后单击 * 上传许可证 * 并从本地工作站中选择一个许可证文件。</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">您可以根据需要添加，编辑和删除 ONTAP Select 容量池许可证。</block>
-  <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">单击 * 许可证 * ，然后单击 * 容量池 * 。</block>
-  <block id="8e2791365de62e59e56b5d6fcdd0f3e2" category="list-text">要添加新许可证或续订现有许可证，请单击页面顶部的 * 添加 * ，然后单击 * 上传许可证 * 并从本地工作站中选择一个许可证文件。</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">要查看容量池列表，请执行以下操作：</block>
-  <block id="b14052b3af7caf15ec0beb76766be24f" category="list-text">单击 * 摘要 * 。</block>
   <block id="e034cc23606a54a163075931f70dbbab" category="list-text">选择并展开一个池以查看从池中租赁存储的集群和节点。</block>
   <block id="8797856e9d86b8ee20026b14229ca29a" category="list-text">在 * 许可证信息 * 下查看许可证的当前状态。</block>
   <block id="21b26341db1dfa394a993c5d152ccf13" category="list-text">您可以在 Lease expiration 下更改为池颁发的租约的持续时间。</block>
   <block id="a0d12512fae580ca38325fe122b9f447" category="list-text">要查看集群列表，请执行以下操作：</block>
-  <block id="8ab91110ae01f9e5c2c34364ebb2da32" category="list-text">单击 * 详细信息 * 。</block>
   <block id="31881fb30a812ef998d7f2111d7bcc44" category="list-text">选择并展开集群以查看存储利用率。</block>
   <block id="844c5fe8a900e62416848502a4af7fdf" category="paragraph">每个活动容量池许可证都会锁定到一个特定的 License Manager 实例，该实例包含在一个 Deploy 管理实用程序实例中。如果您使用的是容量池许可证，然后还原或恢复 Deploy 实例，则原始许可证将不再有效。您必须生成新的容量许可证文件，然后将此许可证安装到新的 Deploy 实例。</block>
   <block id="be0411c455172a2eece4547673c61675" category="list-text">确定原始 Deploy 实例使用的所有容量池许可证。</block>
@@ -877,8 +870,6 @@
   <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">请联系 NetApp 支持部门，取消绑定并取消注册原始 Deploy 实例的所有容量池许可证。</block>
   <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">获取并下载每个容量池许可证的新许可证文件。</block>
   <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">在新 Deploy 实例上安装容量池许可证：</block>
-  <block id="99683d4e14f8df30b153000825273e2d" category="list-text">单击 * 许可证 * ，然后单击 * 容量池 * 。</block>
-  <block id="095bb96ffb3551a58960c96316107d76" category="list-text">单击 * 添加 * ，然后单击 * 上传许可证 * 以选择并上传许可证。</block>
   <block id="e05566aa3784020545c76d92dcb376ab" category="list-text">如果您在未还原备份的情况下创建了新的 Deploy 实例，或者使用的备份不是最新的，则必须更新序列号：</block>
   <block id="1c4bd3e7e2bc88b1415fade6249d5a46" category="list-text">使用管理员帐户登录到 Deploy 实用程序命令行界面。</block>
   <block id="1de9bd334d99fc24b79e751ee32ab23c" category="list-text">显示原始 Deploy 实例最近创建的节点的序列号：</block>
@@ -899,11 +890,7 @@
   <block id="bc882e7be43ec2480a6be229d77c8eaf" category="list-text">每个节点都必须分配足够的存储，以满足生产许可证的最低要求。</block>
   <block id="b94a9bad5ae121ac9e7cd292197b59e1" category="list-text">评估集群中的每个节点都必须具有容量层许可证。</block>
   <block id="f5d5a8d93d0ff3b80b514c776adc3d06" category="paragraph">修改单节点集群的集群许可证会造成中断。但是，对于多节点集群，情况并非如此，因为转换过程一次重新启动一个节点以应用许可证。</block>
-  <block id="2bb59383631b39d52464741628ce0ca4" category="list-text">单击页面顶部的 * 集群 * 选项卡 A ，然后选择所需的集群。</block>
-  <block id="2b92ba791b5d35e9921e9be06d12553c" category="list-text">在集群详细信息页面顶部，单击 * 单击此处 * 以修改集群许可证。</block>
-  <block id="3ec0b37e2f174766469a343ec8265983" category="paragraph">您也可以单击 * 集群详细信息 * 部分中评估版许可证旁边的 * 修改 * 。</block>
   <block id="5a3b7bb229a1d7655341b191f93fef35" category="list-text">为每个节点选择一个可用的生产许可证，或者根据需要上传其他许可证。</block>
-  <block id="36d90e9baa4dfd0dda8eeaac2623f12c" category="list-text">提供 ONTAP 凭据并单击 * 修改 * 。</block>
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">集群的许可证升级可能需要几分钟时间。请先完成此过程，然后再退出此页面或进行任何其他更改。</block>
   <block id="58c19e610497280d55686885113b1e5a" category="paragraph">最初为评估部署分配给每个节点的 20 位节点序列号将替换为用于升级的生产许可证中的 9 位序列号。</block>
   <block id="7436b418bed093768e360d32105591d2" category="doc">ONTAP Select 文档</block>
@@ -3424,8 +3411,6 @@ storage aggregate show-spare-disks</block>
   <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型实例类型</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD、SSD或NVMe驱动器</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。</block>
-  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">要替换现有许可证、请选择一个许可证、然后单击 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>，然后选择*Update*。</block>
-  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">（可选）选择一个许可证并单击 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 管理现有许可证。</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加许可证</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理许可证概述（仅限集群管理员）</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">通过添加许可证密钥启用新功能</block>
@@ -3771,4 +3756,28 @@ storage aggregate show-spare-disks</block>
   <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>(英文)</block>
   <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">部署虚拟机后、选择新虚拟机。如果尚未根据您对部署向导的输入启动它、请手动启动它。</block>
   <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">如果这是首次登录、但您未使用vCenter提供的向导安装Deploy、请在出现提示时提供以下配置信息：</block>
+  <block id="c2fffdb7e5db1a96deec5901fd1a882b" category="list-text">选择页面顶部的*管理*选项卡。</block>
+  <block id="7f73b891b6f89493a9a42f78c96dfbde" category="list-text">选择*许可证*，然后选择*容量层*。</block>
+  <block id="ac058bee21b19fb7d5683b470b430bce" category="list-text">(可选)选择*Filter*并限制显示的许可证。</block>
+  <block id="f76e9a144df7cb5bf308e94a6e908da4" category="list-text">要替换现有许可证，请选择所需许可证，<block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>然后选择*更新*。</block>
+  <block id="2a312f34de3de288696c20c1e8fdab8c" category="list-text">要添加新许可证，请选择页面顶部的*Add*，然后选择*Upload Licenses*，并从本地工作站中选择一个许可证文件。</block>
+  <block id="e138becae13ca9b3317ae72cd807b7ed" category="list-text">选择*许可证*，然后选择*容量池*。</block>
+  <block id="e4dbf5646ea0f3591d85a89dcc220112" category="list-text">(可选)选择*Filter*并限制显示的许可证。</block>
+  <block id="0238150d48dcbb89f61418a79faf879c" category="list-text">(可选)选择一个许可证、然后选择<block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>管理现有许可证。</block>
+  <block id="f675b264e07a6d56cc74839352166e25" category="list-text">添加新许可证或续订现有许可证：</block>
+  <block id="e1ff67a9ee704536271bf20bae768184" category="open-title">添加新许可证</block>
+  <block id="85c89e836071c9255062f2c7b147db6a" category="paragraph">要添加新许可证，请选择页面顶部的*Add*。</block>
+  <block id="bbb047a51418944f835ae59b4e145de5" category="open-title">续订现有许可证</block>
+  <block id="612b39eeafbac7f4962e5513903d070d" category="paragraph">续订现有许可证：</block>
+  <block id="6e1121544cd3144bdf088e3fc4c6d58e" category="list-text">选择<block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>现有许可证。</block>
+  <block id="1f20356b85cdefac297216209ca2bcb1" category="list-text">选择*上传许可证*。</block>
+  <block id="7d2e20d8c3e5ebfbdbd81ec85b9c313e" category="list-text">从本地工作站选择一个许可证文件。</block>
+  <block id="3e4b3d97ed721fa6c588b33d67e7327a" category="list-text">选择*摘要*。</block>
+  <block id="522aeaf73b031c733a2277fe9eadd494" category="list-text">选择 * 详细信息 * 。</block>
+  <block id="055dab4754e0e1d62a339ad80dcac225" category="list-text">选择*许可证*，然后选择*容量池*。</block>
+  <block id="8ad539dc195e039c5437c07b3d810ad8" category="list-text">选择*添加*，然后选择*上传许可证*以选择并上传许可证。</block>
+  <block id="1a9274360bc45212a6a014b4c6df1e9c" category="list-text">选择页面顶部的*群集*选项卡A，然后选择所需的群集。</block>
+  <block id="e951843bb1ba0912165bd527e8312bec" category="list-text">在集群详细信息页面顶部、选择*单击此处*以修改集群许可证。</block>
+  <block id="17d9cc4f645deac6e5e367f0ef6fd4ee" category="paragraph">您也可以在*Cluster Details*部分中选择评估版许可证旁边的*Modify*。</block>
+  <block id="380ce7f967546f46005a7cb8b03e358c" category="list-text">提供ONTAP凭据并选择*Modify*。</block>
 </blocks>
