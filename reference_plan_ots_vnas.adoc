@@ -22,8 +22,7 @@ ONTAP Select vNAs是一个解决方案、可使ONTAP Select数据存储位于运
 
 ONTAP Select vNAS 解决方案 可用于任何大小的 ONTAP Select 集群。
 
-所有相关存储组件（包括硬件，软件和功能要求）都必须符合中所述的要求
-link:https://mysupport.netapp.com/matrix/["NetApp 互操作性表工具"^]。此外、ONTAP Select还支持VMware存储/SAN兼容性文档中所述的所有外部存储阵列、包括iSCSI、NAS (NFSv3)、光纤通道和以太网光纤通道。外部阵列支持受 ONTAP Select 支持的 ESXi 版本限制。
+所有相关存储组件(包括硬件、软件和功能要求)都必须遵循中所述的要求link:https://mysupport.netapp.com/matrix/["互操作性表工具"^]。此外、ONTAP Select还支持VMware存储/SAN兼容性文档中所述的所有外部存储阵列、包括iSCSI、NAS (NFSv3)、光纤通道和以太网光纤通道。外部阵列支持受 ONTAP Select 支持的 ESXi 版本限制。
 
 使用 ONTAP Select vNAS 部署集群时，支持以下 VMware 功能：
 

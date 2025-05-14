@@ -63,4 +63,4 @@ image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 
 
 .相关信息
-link:http://mysupport.netapp.com/matrix["NetApp 互操作性表工具"^]
+link:http://mysupport.netapp.com/matrix["互操作性表工具"^]

@@ -53,7 +53,7 @@ NOTE: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_sign
 * 适用于 VMware vSphere 的 Virtual Storage Console
 
 
-要确定受支持的客户端软件版本、请查看 link:https://mysupport.netapp.com/matrix/["NetApp 互操作性表工具"^]。如果客户端软件支持 ONTAP 9 ，则 ONTAP Select 也支持相同的版本。
+要确定支持的客户端软件版本，请查看link:https://mysupport.netapp.com/matrix/["互操作性表工具"^]。如果客户端软件支持 ONTAP 9 ，则 ONTAP Select 也支持相同的版本。
 
 
 NOTE: 使用 SnapCenter 和相应插件需要基于服务器的许可证。ONTAP Select 当前不支持 SnapCenter 插件的存储系统许可。

@@ -40,7 +40,7 @@ Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用�
 
 === 为生产部署授予ONTAP Select许可证
 
-在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 _capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool_ 型号为共享池授予许可。
+在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用_Capacity Tier_模式为每个节点上的存储授予许可、也可以使用_Capacity Pools_模式为共享池授予许可。
 
 
 
@@ -229,10 +229,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 您必须配置 ONTAP Select 集群中的每个节点。
 
 .开始之前
-您必须具有节点的配置信息。应在 Deploy 实用程序中上传并安装容量层许可证文件。
+您必须具有节点的配置信息。应在Deploy实用程序中上传并安装容量层许可证文件。
 
 .关于此任务
-您应使用此操作步骤 配置每个节点。在此示例中，将为节点应用容量层许可证。
+您应使用此操作步骤 配置每个节点。此示例中的节点应用了容量层许可证。
 
 .步骤
 . 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
@@ -253,7 +253,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 节点的 RAID 配置使用 _passthrough-disks_参数 指示。如果使用的是本地硬件 RAID 控制器，则此值必须为 false 。如果使用的是软件 RAID ，则此值必须为 true 。
 
 +
-ONTAP Select 节点使用容量层许可证。
+ONTAP Select节点会使用容量层许可证。
 
 . 显示主机上可用的网络配置：
 +

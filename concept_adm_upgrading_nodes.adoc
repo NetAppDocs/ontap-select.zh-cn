@@ -54,5 +54,4 @@ https://mysupport.netapp.com/site/downloads["NetApp 支持下载"^]
 VMXNET3是在VMware ESXi上部署新集群时附带的默认网络驱动程序。如果升级运行ONTAP Select 9.4或更早版本的现有ONTAP Select节点、则不会自动升级网络驱动程序。您必须手动升级到 VMXNET3 。您应联系 NetApp 支持部门以获得升级方面的帮助。
 
 .相关信息
-* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP升级概述"^]
-
+link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP升级概述"^]

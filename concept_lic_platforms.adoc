@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_lic_platforms.html 
 keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
-summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。 
+summary: 您可以购买三种平台容量级别之一的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。 
 ---
 = 了解ONTAP Select的平台许可证产品
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层
 
 
 [role="lead"]
-您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。
+您可以购买标准、高级或高级XL级别的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。
 
 
 
 == 平台许可证产品提供的功能
 
-特定的许可证选项在以下两个方面定义并限制虚拟机管理程序主机的功能：
+特定许可证产品在以下两个方面定义并限制虚拟机管理程序主机的功能：
 
 * 实例类型（ CPU ，内存）
 * 其他功能
@@ -53,7 +53,7 @@ summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层
 高级版产品提供以下功能：
 
 * 小型或中型实例类型
-* 硬盘驱动器（ HDD ）或固态驱动器（ SSD ）
+* 硬盘驱动器(HDD)或固态驱动器(SSD)
 * 本地硬件 RAID 控制器或软件 RAID
 * vNAS
 * MetroCluster SDS
@@ -73,4 +73,112 @@ summary: 您可以购买三个平台容量级别之一的 ONTAP Select 容量层
 
 
 
-NOTE: KVM不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。
+NOTE: 基于内核的虚拟机(KVM)不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。
+
+
+
+== 比较平台许可证产品的硬件支持
+
+标准、高级和高级XL许可证产品支持广泛的硬件和软件。有关硬件和软件版本的最新信息，请参见link:https://mysupport.netapp.com/matrix/["互操作性表工具"^]。
+
+[role="tabbed-block"]
+====
+.核心项目
+--
+[cols="5"30"]
+|===
+
+
+2+| 核心项目类型 3+| Description 
+
+
+2+| 主机协议 3+| NFS、SMB/CCIFS、iSCSI和基于TCP的NVMe 
+
+
+2+| Deployment options 3+| 单节点双节点集群(HA对)四节点、六节点或八节点集群 
+
+
+2+| 支持的容量(每个节点) 3+| 高达400 TB原始数据(ESXi和KVM) 
+|===
+--
+.硬件
+--
+[cols="5"30"]
+|===
+
+
+2+| 硬件类型 3+| Description 
+
+
+2+| 实例大小 | 小型 | 中等 | 大型 
+
+
+2+| CPU系列 | Intel Xeon E5-26xx v3 (Haswell)或更高版本 | Intel Xeon E5-26xx v3 (Haswell)或更高版本 | Intel Xeon E5-26xx v3 (Haswell)或更高版本 
+
+
+2+| ONTAP Select CPU/内存 | 4个虚拟CPU (vCPU)/16 GB RAM | 8个vCPS/64 GB RAM | 16个vCP0/128 GB RAM 
+
+
+2+| 主机CPU/内存最低要求^1^ | 6个核心/24 GB RAM | 10个核心/72 GB RAM | 18个核心/136 GB RAM 
+
+
+2+| 网络(每个节点) 3+| 对于一个单节点集群、至少需要两个1GbE端口对于一个双节点集群(HA对)、至少需要四个1GbE端口对于四节点、六节点或八节点集群、至少需要两个10GbE端口 
+|===
+^1^假设虚拟机管理程序具有两个核心和8 Gb RAM。
+
+--
+.Storage type
+--
+下表提供了指定存储所需的最低许可证类型。 
+
+[cols="5"30"]
+|===
+
+
+2+| Storage type 3+| Description 
+
+
+2+| 许可证类型 | 标准 | 高级版 | Pemium XL 
+
+
+2+| 实例大小 | 小型 | 小型和中型 | 小型、中型和大型 
+
+
+2+| 具有硬件RAID控制器的本地DAS | 8到60个驱动器 | 8到60个驱动器 | 8到60个驱动器 
+
+
+2+| HDD (SAS、NL) SAS、SATA | 不适用 | 4–60个驱动器 | 4–60个驱动器 
+
+
+2+| SSD (SAS) | 不适用 | 4–60个驱动器(仅限SSD) | 4–60个驱动器(仅限SSD) 
+
+
+2+| 使用软件RAID的本地DAS | 不适用 | 不适用 | 4 - 14个驱动器(仅限NVMe) 
+
+
+2+| 外部阵列^1^μ m 3+| 外部阵列上托管的数据存储库通过FC、FCoE、iSCSI和NFS进行连接(KVM不支持NFS)。这些数据存储库可提供高可用性和故障恢复能力。 
+|===
+^1^外部阵列协议支持反映了网络存储连接。
+
+--
+.软件
+--
+[cols="5"30"]
+|===
+
+
+2+| 软件类型 3+| Description 
+
+
+2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 7.0GA、更新1到3C VMware vSphere 8.0GA以及更新1到3 
+
+
+2+| 虚拟机管理程序支持(KVM) 3+| RedHat Enterprise Linux 64位(KVM) 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7和8.6洛基Linux (KVM) 9和8 
+
+
+2+| 管理软件 3+| NetApp Active IQ Unified Manager管理套件ONTAP Select Deploy实用程序SnapCenter (可选) 
+|===
+--
+====
+.相关信息
+link:concept_lic_production.html["了解容量层和容量池许可证类型"](英文)

@@ -134,7 +134,7 @@ KVM的介质要求:: 使用的SSD闪存存储设备必须满足以下附加要�
 
 在规划 ONTAP Select 部署时，您应了解与存储分配和使用相关的限制。
 
-下面介绍了最重要的存储限制。您还应查看 link:https://mysupport.netapp.com/matrix/["NetApp 互操作性表工具"^] 了解更多详细信息。
+下面介绍了最重要的存储限制。您还应查看link:https://mysupport.netapp.com/matrix/["互操作性表工具"^]以了解更多详细信息。
 
 
 TIP: ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Select 集群或购买许可证之前，您应熟悉这些限制。请参见 link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["许可证"] 部分、了解更多信息。

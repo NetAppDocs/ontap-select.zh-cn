@@ -31,6 +31,7 @@ ONTAP Select 9.16.1提供了几项新功能和改进功能。
 --
 支持自动防兰森功能:: ONTAP Select 9.161引入了对自动防兰软件保护(ARP)的支持。ONTAP Select 9.161仅支持手动更新ARP、不支持自动更新。ONTAP Select 9.161的NLL中包含ARP功能许可证。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["了解更多信息。"](英文)
 增强了对VMware ESXi的支持:: ONTAP Select 9.16.1支持VMware ESXi 8.0 U3。
+已更新KVM虚拟机管理程序支持:: 从ONTAP Select 9.161开始、Red Hat Enterprise Linux (RHEL) 9.5和Rock-Linux 9.5支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。
 
 
 
@@ -39,7 +40,7 @@ ONTAP Select 9.16.1提供了几项新功能和改进功能。
 
 ONTAP Select 9.15.1提供了几项新功能和改进功能。
 
-已更新KVM虚拟机管理程序支持:: 从ONTAP Select 9.151开始、Red Hat Enterprise Linux (RHEL) 9.4和Rock-Linux 9.4支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。
+已更新KVM虚拟机管理程序支持:: 从ONTAP Select 9.15.1开始、RHEL 9.4和洛基Linux 9.4支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。
 支持集群扩展和缩减:: 从ONTAP Select 9.15.1开始、支持集群扩展和缩减。
 +
 --

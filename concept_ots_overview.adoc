@@ -4,7 +4,7 @@ permalink: concept_ots_overview.html
 keywords: overview, software defined storage, sds, typical deployment, ontap 9 
 summary: ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在虚拟机管理程序主机上。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。 
 ---
-= ONTAP Select 概述
+= 了解ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,21 @@ summary: ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在
 
 
 [role="lead"]
-ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。
+ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是主流FAS、AFF和ASA ONTAP产品套件以及Cloud Volumes ONTAP等其他纯软件选项的补充。
+
+ONTAP Select可将内部磁盘驱动器、NVMe、SSD或HDD以及外部阵列存储转换为一个灵活的存储系统、该存储系统具有专用ONTAP存储系统提供的许多相同优势。您还可以在新服务器或现有服务器基础架构上部署ONTAP Select。ONTAP Select易于管理、并利用与基于ONTAP的解决方案相同的管理软件、这意味着降低了运营开销和培训要求。
+
+ONTAP Select通过两种互补的许可模式(容量层和完全灵活的容量池)来适应您的容量消耗需求。这两种许可模式都支持以低至1 TB的增量增加容量。例如、您可以从几TB开始、然后随着项目增长动态添加容量。如果您使用的是容量池、则可以在项目完成后根据需要重新分配容量。
+
+ONTAP Select已集成到VMware vSphere等云管理框架中。这有助于加快文件服务、主目录、软件开发环境和应用程序测试等新项目的部署速度。
+
+借助SnapMirror软件、您可以在混合云中的ONTAP存储之间移动数据、以便可以在所需位置轻松访问数据。例如、您可以快速启动一个环境来证明一个想法。之后、您可以将项目移至专用存储平台进行生产部署、或者在开发工作流中使其在云中更易于访问。
 
 
 
 == 软件定义的存储
 
-通过软件实施和交付 IT 服务，管理员可以快速灵活地配置资源，而这是以前无法做到的。随着现代数据中心迁移到软件定义的基础架构（ SDI ）架构，最有价值的 IT 资产可以与底层物理基础架构分离，从而提供灵活性，可扩展性和可编程性。
+通过软件实施和交付 IT 服务，管理员可以快速灵活地配置资源，而这是以前无法做到的。随着现代数据中心迁移到软件定义的基础架构(Software definable Infrastructure、SDI)架构、您可以将最有价值的IT资产与底层物理基础架构分离、从而提供灵活性、可扩展性和可编程性。
 
 在一个商业环境中，数据在直连存储（ DAS ）的孤岛之间分散，数据移动性和管理已成为更加复杂的问题。软件定义的存储（ SDS ）已成为 SDI 环境中解决这些问题和其他问题的重要组成部分。
 
@@ -71,7 +79,7 @@ image:ots_architecture.png["显示了使用 Deploy 管理实用程序创建的 O
 
 === 容量许可
 
-ONTAP Select 引入了一种基于使用量的许可模式。在生产环境中部署 ONTAP Select 集群时，您必须为每个节点或共享容量池购买一个含存储容量的许可证。您必须使用 Deploy 实用程序应用用于为集群节点建立存储容量的许可证文件。
+ONTAP Select 引入了一种基于使用量的许可模式。在生产环境中部署ONTAP Select集群时、您必须为每个节点或共享容量池购买含存储容量的许可证。您必须使用 Deploy 实用程序应用用于为集群节点建立存储容量的许可证文件。
 
 
 
@@ -123,4 +131,4 @@ NOTE: 从ONTAP Select 9.161开始、支持手动更新ARP、NetApp许可证文�
 
 
 .相关信息
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["默认情况下， ONTAP 功能处于启用状态"]
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["了解默认情况下启用的ONTAP功能"] link:concept_lic_evaluation.html["了解ONTAP Select许可证选项"]

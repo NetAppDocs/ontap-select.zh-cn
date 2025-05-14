@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: 概念
     entries:
-    - title: ONTAP Select 概述
+    - title: 了解ONTAP Select
       url: "/concept_ots_overview.html"
     - title: ONTAP Select 部署
       url: "/concept_ots_deploy.html"
@@ -44,8 +44,8 @@ sidebar:
         url: "/concept_usecase_robo.html"
       - title: 私有云和数据中心
         url: "/concept_usecase_private_cloud.html"
-      - title: MetroCluster SDS
-        url: "/concept_usecase_mc_sds.html"
+      - title: 数据保护和效率
+        url: "/concept-data-protection-and-efficiency.html"
     - title: 术语
       url: "/concept_terminology.html"
   - title: 规划

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
-keywords: license, licensing, capacity pools, capacity tiers, comparing 
-summary: 容量池和容量层许可模式之间存在多种差异。 
+keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
+summary: 容量池和容量层许可模式之间存在一些差异。 
 ---
 = 比较ONTAP Select容量池和容量层许可
 :hardbreaks:
@@ -21,7 +21,7 @@ summary: 容量池和容量层许可模式之间存在多种差异。
 |  | 容量层 | 容量池 
 
 
-| 许可证序列号 | 由 NetApp 生成并分配给节点的九位数 | 由 NetApp 生成并分配给容量池的九位数 
+| 许可证序列号 | 由 NetApp 生成并分配给节点的九位数 | 九位数、由NetApp生成并分配给容量池 
 
 
 | 许可证锁定 | 已锁定到 ONTAP Select 节点 | 已锁定到 License Manager 实例 

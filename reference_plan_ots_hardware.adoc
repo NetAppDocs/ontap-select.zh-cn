@@ -37,8 +37,8 @@ NOTE: 您应查看适用于您的 ONTAP Select 版本的最新发行说明，了
 
 ONTAP Select 可以部署在以下虚拟机管理程序上：
 
-* Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1上的KVM 9.2和9.4
-* 基于Rock基Linux 8.6、8.7、8.8、8.9、9.0的KVM 9.1、9.2、9.3和9.4
+* Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1、9.2、9.4和9.5上的KVM
+* 基于RockyLinux 8.6、8.7、8.8、8.9、9.0、9.1、9.2、9.3、9.4和9.5的KVM
 * VMware ESXi 7.0 GA (内部版本15843807或更高版本)、包括7.0 U1、U2和U3C
 * VMware ESXi 8.0 GA (内部版本20513097)
 * VMware ESXi 8.0 U1 (内部版本21495797)
@@ -67,7 +67,7 @@ NOTE: ESXi 6.5 GA和ESXi 6.7 GA已达到可用性结束状态。如果您的ONTA
 
 NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。
 
-请参见 https://mysupport.netapp.com/matrix["NetApp 互操作性表工具， window=_blank"] 有关详细信息 ...
+有关详细信息、请参见 https://mysupport.netapp.com/matrix["互操作性表工具、window=_blank"]。
 
 
 

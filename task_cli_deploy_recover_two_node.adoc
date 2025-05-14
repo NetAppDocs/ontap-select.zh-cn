@@ -41,7 +41,7 @@ summary: 如果 ONTAP Select Deploy 实用程序因某种原因失败或变得�
 您必须知道出现故障的原始 Deploy 实用程序虚拟机的 IP 地址。
 
 .存储容量许可
-您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可，则必须在恢复或还原 Deploy 实例后重新安装每个容量池许可证。
+您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可、则必须在恢复或还原Deploy实例后重新安装每个容量池许可证。
 
 .确定要使用的恢复操作步骤
 您必须确定在恢复 ONTAP Select Deploy 实用程序实例时要使用的操作步骤 。您的决定取决于您是否已从包含 ONTAP Select 双节点集群的原始故障 Deploy 实用程序中备份配置数据。
@@ -115,7 +115,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .完成后
-如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见 _Reinstalling a Capacity Pool license_ 。
+如果使用容量池许可、则必须重新安装每个容量池许可证。有关更多详细信息、请参见_重新安装容量池许可证_。
 
 
 
@@ -207,7 +207,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .完成后
-如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见重新安装容量池许可证。
+如果使用容量池许可、则必须重新安装每个容量池许可证。有关其他详细信息、请参见重新安装容量池许可证。
 
 .相关信息
 * link:task_install_deploy.html["安装 ONTAP Select Deploy"]

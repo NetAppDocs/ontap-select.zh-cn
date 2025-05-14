@@ -131,7 +131,6 @@
   <block id="7aef2921a7d9da0c29e1025af9b9bc9b" category="list-text">您应确定 ONTAP Select 节点需要多少存储。在获取具有存储容量的已购买许可证时，需要提供此信息。有关详细信息，请参见存储容量限制。</block>
   <block id="514d658beb8d2ad9347d561c047df99c" category="admonition">ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数据磁盘允许的总大小。</block>
   <block id="71d95f80f78afeb107caa45cdd0d4b5a" category="list-text">用于生产部署的许可模式</block>
-  <block id="04ad7df80604af0ba0f4b5923ab1f2ae" category="list-text">您必须为生产环境中部署的每个 ONTAP Select 集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相关信息</block>
   <block id="680e9e82137091017ba19fdaa5193e04" category="list-text"><block ref="680e9e82137091017ba19fdaa5193e04" category="inline-link-macro-rx"></block></block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">* 核心频率 * 。一般来说，最好使用较高的频率。</block>
@@ -588,7 +587,6 @@
   <block id="54a5865954a8d4427e8776dfd8d07256" category="list-text">部署日志由 ONTAP Select Deploy 实用程序创建的日志文件</block>
   <block id="d2b05906fb625ce78c262b153a08cad2" category="list-text">对有关虚拟机管理程序主机和 ONTAP Select 节点的故障排除和调试信息进行故障排除</block>
   <block id="52dcae8592240a7a7f84bb108da40091" category="list-text">有关虚拟机管理程序主机和 ONTAP Select 节点的性能信息</block>
-  <block id="9ed4a475dd3705157a9fed8811f63ce2" category="section-title">NetApp 互操作性表工具</block>
   <block id="540a1899c1be5ac42092dad9fefe4e2a" category="summary">虚拟 NAS （ Virtual NAS ， vNAS ）部署支持 VSAN 上的 ONTAP Select 集群，某些 HCI 产品， NetApp HCI 技术以及外部阵列类型的数据存储库。这些配置的底层基础架构可提供数据存储库故障恢复能力。</block>
   <block id="6b49a92f07f85cf298a2f9ca217c257d" category="doc">vSAN 和外部阵列配置</block>
   <block id="9fdd7c03284cb54741d141ac1c486c9f" category="paragraph">最低要求是，底层配置受 VMware 支持，并应列在相应的 VMware HCL 上。</block>
@@ -627,7 +625,6 @@
   <block id="618aade87a4c0dc9b9fe7ea456efd7ad" category="paragraph">如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根聚合和数据聚合至少创建一个存储池。在配置 ONTAP Select 节点时，您必须连接存储池。</block>
   <block id="c423fd05ac4075cd52ed8e9ec9961c3f" category="paragraph">如果使用软件 RAID ，则必须为系统数据创建存储池，并确保 SSD 驱动器可用于根聚合和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。</block>
   <block id="d5ba525828b35ea241ddabb08b074ffd" category="section-title">可用的 ONTAP Select 版本</block>
-  <block id="9526942f4f0cae81c16b2f122cce2a1e" category="paragraph">在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用 _capacity 第层 _ 型号在每个节点上为存储授予许可，也可以使用 _capacity pool_ 型号为共享池授予许可。</block>
   <block id="973a0d9d3fbac9204b63c3c4b4ef0e8e" category="paragraph">获取具有存储容量的许可证文件后，必须将包含许可证的文件上传到 Deploy 虚拟机并进行注册。</block>
   <block id="2fec03a9efc770f765197fa8c7911b8b" category="admonition">如果您部署的集群仅用于评估，则可以跳过此步骤。</block>
   <block id="b9f0026a35bc57805d0d99fdcdfe0dd7" category="paragraph">您必须具有管理员用户帐户的密码。</block>
@@ -658,13 +655,10 @@
   <block id="5f503a75cbd22c8269b0eb1377d09880" category="list-text">显示集群的配置和状态：</block>
   <block id="fbba132f8bfb4917ab068c504260e91d" category="paragraph">`cluster show -name clustername -detailed`</block>
   <block id="fb395229c68cbade5ef8a29846dadf96" category="paragraph">您必须配置 ONTAP Select 集群中的每个节点。</block>
-  <block id="5ce515418398a169e0380c3856289f5f" category="paragraph">您必须具有节点的配置信息。应在 Deploy 实用程序中上传并安装容量层许可证文件。</block>
-  <block id="5d74908d060471342c6387e13df8ef36" category="paragraph">您应使用此操作步骤 配置每个节点。在此示例中，将为节点应用容量层许可证。</block>
   <block id="ca43b0b07b80357b6b79621504c12e57" category="list-text">确定分配给集群节点的名称：</block>
   <block id="f9b851f69cae3703f91dd7f46ee96be9" category="paragraph">`node show -cluster-name clustername`</block>
   <block id="8b5cb1e38684b903416c8da0166076b5" category="list-text">选择节点并执行基本配置： `node modify -name nodename -cluster-name clustername -host-name &lt;FQDN_IP&gt; -license-serial number number -instance-type -passthrough-disks false`</block>
   <block id="6dd204eccb05c441b87e6a643950694d" category="paragraph">节点的 RAID 配置使用 _passthrough-disks_参数 指示。如果使用的是本地硬件 RAID 控制器，则此值必须为 false 。如果使用的是软件 RAID ，则此值必须为 true 。</block>
-  <block id="7efc18a8265e9977fb3518551ff21574" category="paragraph">ONTAP Select 节点使用容量层许可证。</block>
   <block id="2b24bc0f21d6bbbaef36e09ddfa027a0" category="list-text">显示主机上可用的网络配置：</block>
   <block id="e5cc61140754d924e9497ca93ae33daf" category="paragraph">`host network show -host-name &lt;FQDN_IP&gt; -detailed`</block>
   <block id="bb7ea5508da973d7f3f3a022afe1dd6b" category="list-text">执行节点的网络配置：</block>
@@ -782,9 +776,7 @@
   <block id="215de3e5f96b8c1af251af4fe73048a7" category="list-text">具有添加许可证权限的 ONTAP 用户名</block>
   <block id="cb82d6b5d827c4174c5d988710af4fe5" category="list-text">ONTAP 用户的密码</block>
   <block id="6ee704534d0c8e37fdbab37fa7c81db3" category="paragraph">您可以使用脚本 _delete_cluster.py_ 删除现有 ONTAP Select 集群。</block>
-  <block id="e4bd755214153474324cb3c791d0988e" category="summary">确定 ONTAP Select 适合您的组织后，您可以购买支持生产部署所需的许可证。您必须为每个部署选择容量层或容量池许可模式以及存储容量。</block>
   <block id="3c868759d0863801160ccec7f31cd26a" category="section-title">通用许可特征</block>
-  <block id="5f878954b0c63a957a4fca43d50b03b3" category="paragraph">容量层 _ 和容量池 _ 许可模式在几个方面截然不同。但是，这两种许可模式具有以下几个共同特征：</block>
   <block id="1e27a8e66b6c9b86c6097d597ad1aae5" category="list-text">在生产环境中部署 ONTAP Select 时，您必须根据需要购买一个或多个许可证。</block>
   <block id="15dffe620a63cf36cf7950870eb1dd7f" category="list-text">许可证的存储容量以 1 TB 为增量进行分配。</block>
   <block id="e87c2d5c68d6bca7e5d00d0f9ba86e6c" category="list-text">存储容量用于标识原始容量，并对应于 ONTAP Select 虚拟机可用数据磁盘的总允许大小。</block>
@@ -794,25 +786,13 @@
   <block id="c84d0d15d89203b240d22009f0e21410" category="list-text">安装并应用许可证后，您可以联系您的 NetApp 客户团队或合作伙伴来购买更新后的许可证来添加额外容量。</block>
   <block id="a3263397bbc31693f6873997c36fe75d" category="list-text">HA 对中的两个节点必须具有相同的存储和许可证容量。</block>
   <block id="d86f9ceaae5a2db2c1aefdb22d547e86" category="list-text">最初使用已购买许可证部署的 ONTAP Select 节点无法转换为评估版许可证。</block>
-  <block id="f9e76b1ce7aec73ae826282e626e80ed" category="section-title">容量层许可模式</block>
-  <block id="07d2c59cd8b3d442f434212582fce4bc" category="paragraph">容量层许可模式具有多个独特的特征，包括：</block>
   <block id="871e597c4ae832351177624116bba41c" category="list-text">您必须为每个 ONTAP Select 节点购买许可证。</block>
   <block id="13bcda60ca431e945b05ba49704703a7" category="list-text">您可以购买的最小容量为 1 TB 。</block>
-  <block id="171f2b7f54fcb35f8671d5a99f59cf4c" category="list-text">每个容量层许可证都有一个存储容量，并锁定到特定节点。</block>
   <block id="41a121513d59eed4db3a4c7f1fc6d0ba" category="list-text">NetApp 会为每个 ONTAP Select 节点生成一个九位数的许可证序列号。</block>
   <block id="b7fb304e7a779889262a8b4612155a54" category="list-text">分配给节点的存储是永久的（无需续订）。</block>
   <block id="a1039017542e538bd9f244ed701a0b65" category="list-text">节点序列号为九位数，等于许可证序列号。</block>
   <block id="d9e741d943a65e9ffbf3b085cb693ee3" category="list-text">您可以在集群部署期间或创建集群后 30 天内应用此许可证文件。</block>
-  <block id="f06bc89da14b727a7173d325c2f414f2" category="section-title">容量池许可模式</block>
-  <block id="d7ca8d1fad156c6e5fcd9a56e10d2455" category="paragraph">容量池许可模式具有多个独特的特征，包括：</block>
-  <block id="cbdbae6aeb6edf0b767c6aa5e5e98d07" category="list-text">您必须为每个共享容量池购买许可证。</block>
   <block id="cb58a864ca9b83c561396808328e023e" category="list-text">您可以购买的最低容量为 2 TB 。</block>
-  <block id="0d728590b1ea6bc8ad55fef75c463c29" category="list-text">每个容量池许可证都有一个存储容量，并锁定到特定的 License Manager 实例。</block>
-  <block id="1bcb44fe448d5052f21974775c2594bf" category="list-text">NetApp 会为每个容量池生成一个九位数的许可证序列号。</block>
-  <block id="06b92373d44bb688094b05df7cf1ff8e" category="list-text">根据购买情况，分配给容量池的存储仅在特定时间内有效（需要续订）。</block>
-  <block id="03aef2179b374f799679e6b0d6c70010" category="list-text">节点序列号为 20 位数，由 License Manager 根据容量池许可证序列号生成。</block>
-  <block id="a6483e971a591957efb5493b5bb42291" category="list-text">每个节点都会自动从共享容量池为其本地数据聚合租用存储容量。</block>
-  <block id="4f1b3cd9fba2e292ff3f1a184f8331f0" category="paragraph">有关容量池许可模式的详细信息，请参见 _capacity pools 许可模式 _ 了解详细信息。</block>
   <block id="ef063895a1ede73693b222ec3a2f0a63" category="summary">选择最佳硬件并配置网络以优化性能和故障恢复能力。</block>
   <block id="1ff04d941ae1b8262465779276105e05" category="paragraph">由于 ONTAP Select VM 的性能与底层硬件的特性直接相关，因此，通过选择速度更高的 NIC 来增加 VM 的吞吐量可提高集群性能并改善整体用户体验。可以使用四个 10 Gb NIC 或两个高速 NIC （ 25/40 Gb/ 秒）来实现高性能网络布局。此外，还支持许多其他配置。对于双节点集群，支持 4 个 1 Gb 端口或 1 个 10 Gb 端口。对于单节点集群，支持 2 个 1 Gb 端口。</block>
   <block id="68a547a08a3ebb293924c580b641ce65" category="paragraph">* 网络最低配置和建议配置 *</block>
@@ -851,25 +831,17 @@
   <block id="5f81c29f30b61204b5999a7d3c42704f" category="list-text">单击 * 开始 * 以开始网络连接测试。</block>
   <block id="893c95c096fab305c703479243f6943c" category="summary">在管理 ONTAP Select 许可证过程中，您可以执行多项相关任务。</block>
   <block id="9eb6b36f84e03f93cb360a15fa276ffb" category="doc">ONTAP Select 许可证</block>
-  <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">您可以根据需要添加，编辑和删除 ONTAP Select 容量层许可证。</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">使用管理员帐户通过 Web 界面登录到 Deploy 实用程序。</block>
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">单击页面顶部的 * 管理 * 选项卡。</block>
-  <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">您可以根据需要添加，编辑和删除 ONTAP Select 容量池许可证。</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">要查看容量池列表，请执行以下操作：</block>
   <block id="e034cc23606a54a163075931f70dbbab" category="list-text">选择并展开一个池以查看从池中租赁存储的集群和节点。</block>
   <block id="8797856e9d86b8ee20026b14229ca29a" category="list-text">在 * 许可证信息 * 下查看许可证的当前状态。</block>
   <block id="21b26341db1dfa394a993c5d152ccf13" category="list-text">您可以在 Lease expiration 下更改为池颁发的租约的持续时间。</block>
   <block id="a0d12512fae580ca38325fe122b9f447" category="list-text">要查看集群列表，请执行以下操作：</block>
   <block id="31881fb30a812ef998d7f2111d7bcc44" category="list-text">选择并展开集群以查看存储利用率。</block>
-  <block id="844c5fe8a900e62416848502a4af7fdf" category="paragraph">每个活动容量池许可证都会锁定到一个特定的 License Manager 实例，该实例包含在一个 Deploy 管理实用程序实例中。如果您使用的是容量池许可证，然后还原或恢复 Deploy 实例，则原始许可证将不再有效。您必须生成新的容量许可证文件，然后将此许可证安装到新的 Deploy 实例。</block>
-  <block id="be0411c455172a2eece4547673c61675" category="list-text">确定原始 Deploy 实例使用的所有容量池许可证。</block>
   <block id="80098f7971b686ffe786b2703cea27f2" category="list-text">如果在创建新 Deploy 实例期间还原备份，请确定此备份是否为最新的最新备份。</block>
   <block id="9ea0cf0b607e87c61eee72761d5f73a5" category="list-text">找到原始 Deploy 实例最近创建的 ONTAP Select 节点（仅当原始 Deploy 实例的最新备份未还原到新 Deploy 实例时）。</block>
   <block id="36ee47cdf830e8ef804643369ae9cb6f" category="list-text">还原或重新创建 Deploy 实例</block>
-  <block id="3e7e570e683be353e09e19562e3196f3" category="paragraph">从较高层面来看，此任务由三部分组成。您必须重新生成并安装 Deploy 实例使用的所有容量池许可证。将所有许可证重新安装到新的 Deploy 实例后，您可以根据需要重置序列号。最后，如果 Deploy IP 地址已更改，则必须更新使用容量池许可证的每个 ONTAP Select 节点。</block>
-  <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">请联系 NetApp 支持部门，取消绑定并取消注册原始 Deploy 实例的所有容量池许可证。</block>
-  <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">获取并下载每个容量池许可证的新许可证文件。</block>
-  <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">在新 Deploy 实例上安装容量池许可证：</block>
   <block id="e05566aa3784020545c76d92dcb376ab" category="list-text">如果您在未还原备份的情况下创建了新的 Deploy 实例，或者使用的备份不是最新的，则必须更新序列号：</block>
   <block id="1c4bd3e7e2bc88b1415fade6249d5a46" category="list-text">使用管理员帐户登录到 Deploy 实用程序命令行界面。</block>
   <block id="1de9bd334d99fc24b79e751ee32ab23c" category="list-text">显示原始 Deploy 实例最近创建的节点的序列号：</block>
@@ -878,7 +850,6 @@
   <block id="6b5a573590d2b4e33bc4abb08fbfc691" category="list-text">将 20 添加到序列号中以创建新的序列号。</block>
   <block id="569ba0d8b8c86f41c90c5df6e562c9a2" category="list-text">设置新 Deploy 实例的序列号：</block>
   <block id="0426f75052d2375cd4d03853499c9218" category="paragraph">`license-manager modify -serial seq_number`</block>
-  <block id="ab5251cc25a6494baca2bffd2a2d2a30" category="list-text">如果分配给新 Deploy 实例的 IP 地址与原始 Deploy 实例的 IP 地址不同，则必须更新使用容量池许可证的每个 ONTAP Select 节点上的 IP 地址：</block>
   <block id="d4e6e8c5111a4fa039aeebcb814b9716" category="list-text">登录到 ONTAP Select 节点的 ONTAP 命令行界面。</block>
   <block id="5172e21efeb1892262831ef5031d5316" category="list-text">进入高级权限模式：</block>
   <block id="8751fc11929a47a202fa63c5dca19f5c" category="paragraph">`set Adv.`</block>
@@ -886,9 +857,7 @@
   <block id="0751f3a066840ee186e51768399a17d4" category="paragraph">`ssystem license license-manager show`</block>
   <block id="98f8649e2f83d631b66784b6b451ed1c" category="list-text">设置节点使用的 License Manager （ Deploy ） IP 地址：</block>
   <block id="f06ba64d3be7b8d25f7ebbcfc88db033" category="paragraph">`ssystem license license-manager modify -host new_ip_address`</block>
-  <block id="de2312541c249bc72eb1d78f6c56e732" category="paragraph">您可以通过 Deploy 管理实用程序升级 ONTAP Select 评估集群以使用生产容量层许可证。</block>
   <block id="bc882e7be43ec2480a6be229d77c8eaf" category="list-text">每个节点都必须分配足够的存储，以满足生产许可证的最低要求。</block>
-  <block id="b94a9bad5ae121ac9e7cd292197b59e1" category="list-text">评估集群中的每个节点都必须具有容量层许可证。</block>
   <block id="f5d5a8d93d0ff3b80b514c776adc3d06" category="paragraph">修改单节点集群的集群许可证会造成中断。但是，对于多节点集群，情况并非如此，因为转换过程一次重新启动一个节点以应用许可证。</block>
   <block id="5a3b7bb229a1d7655341b191f93fef35" category="list-text">为每个节点选择一个可用的生产许可证，或者根据需要上传其他许可证。</block>
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">集群的许可证升级可能需要几分钟时间。请先完成此过程，然后再退出此页面或进行任何其他更改。</block>
@@ -1028,15 +997,11 @@
   <block id="ee2ee700615c2258dc72b2287ee4ebea" category="list-text">更新凭据</block>
   <block id="9d7584891713572b5d5bd09e474db779" category="list-text">验证凭据</block>
   <block id="ccc612cd14c06b1f422a5bb1a7ec9dd4" category="list-text">删除管理服务器</block>
-  <block id="5f21d6245c5bb0178e94ca31973b2629" category="summary">使用容量池许可模式而不是容量层许可模式具有多种优势。</block>
   <block id="f375253c446097df1911643c823bcebc" category="doc">优势摘要</block>
   <block id="9d7eafb0b72f9b5f7663e196c8c405d4" category="section-title">更高效地利用存储容量</block>
-  <block id="045609ee650288df1c254d2307390990" category="paragraph">使用容量层许可时，您可以为每个节点分配一个固定存储容量。任何未使用的空间都不能与其他节点共享，因此实际上会被浪费。通过容量池许可，每个节点仅会根据数据聚合的大小使用所需的容量。</block>
   <block id="c49054c6883b9886c6f31a2e8723ffe6" category="paragraph">由于容量固定在一个中央池中，因此可以在组织中的多个节点之间共享。</block>
   <block id="5aaf2ab29a3c1228e8c4125acd634e5e" category="section-title">显著降低管理开销，从而降低成本</block>
-  <block id="d103dad4fce7c3b935c3371288ee0e36" category="paragraph">如果使用容量层许可证，则必须为每个节点获取并安装许可证。使用容量池时，每个共享池有一个许可证。这样可以显著降低管理开销并降低成本。</block>
   <block id="1e8785eff311926f53d67ca62acdaa7b" category="section-title">改进了使用情况指标</block>
-  <block id="c9e41b9dec6359fc66760c0eb4d6fa5f" category="paragraph">Deploy Web 用户界面提供了增强的容量池使用情况信息。您可以快速确定容量池中已用和可用的存储容量，哪些节点正在使用池中的存储以及集群从中分配容量的池。</block>
   <block id="3db3547bcabe9c3ed4c1a8d9ade67c26" category="summary">软件 RAID 是在 ONTAP 软件堆栈中实施的 RAID 抽象层。它提供的功能与 FAS 等传统 ONTAP 平台中的 RAID 层相同。RAID 层执行驱动器奇偶校验计算，并针对 ONTAP Select 节点中的各个驱动器故障提供保护。</block>
   <block id="72516b350fb14e2e3d6c3218313ea038" category="doc">用于本地连接存储的软件 RAID 服务</block>
   <block id="3687f8d0eeb8ce0b039211af5645386b" category="paragraph">ONTAP Select 还提供了一个软件 RAID 选项，与硬件 RAID 配置无关。在某些环境中，硬件 RAID 控制器可能不可用或不受欢迎，例如在小型商用硬件上部署 ONTAP Select 时。软件 RAID 扩展了可用的部署选项，以包括此类环境。要在您的环境中启用软件 RAID ，请记住以下几点：</block>
@@ -1158,13 +1123,9 @@
   <block id="6bc6433efd5abd7e3ac98556742ca0e4" category="paragraph">在使用 Deploy 执行常规管理任务（例如添加虚拟机管理程序主机）时，可以在内部访问凭据存储。您也可以直接通过 Deploy Web 用户界面和 CLI 管理凭据存储。</block>
   <block id="545d5da191e6a6ba8756e03d9e72b5d9" category="summary">您可以按照工作流为 ONTAP Select 部署购买和应用许可证。</block>
   <block id="67f277ce98738f33f83293525780e9a2" category="paragraph">以下工作流说明了为 ONTAP Select 部署购买和应用许可证的过程。购买许可证时，必须选择许可模式和存储容量。</block>
-  <block id="6fff1f3e41423b59b387036f1c43f446" category="paragraph">具体过程因您使用的是容量层许可证还是容量池许可证而异：</block>
   <block id="0062e2b8fb35cb9835391a2defa6a065" category="list-text">九位数许可证序列号</block>
-  <block id="79e0e2c63445d0a61c41da376fa86f53" category="list-text">序列号适用场景 节点（容量层）或存储池（容量池）</block>
   <block id="466feccbc5c615c8c64edaa9f141fd74" category="list-text">许可证锁定 ID</block>
-  <block id="8a1682395c44d437628616757dac21b3" category="list-text">使用容量池许可证时，您必须具有 Deploy 实例的许可证锁定 ID</block>
   <block id="c6fdf62cd5d566315189e3fc6458c3d7" category="list-text">许可网站</block>
-  <block id="43180a10c14034015ad04f63c4222224" category="list-text">您可以在不同的网站上获取容量层和容量池许可证</block>
   <block id="d981b46179e3f91d5fe1f32dd9134fff" category="inline-image-macro">介绍用于为生产 ONTAP Select 部署购买和安装存储许可证的过程。</block>
   <block id="87f55f3b9d86ff28fa332ac74ae68458" category="paragraph"><block ref="87f55f3b9d86ff28fa332ac74ae68458" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1aa66ef3a8e34a7a538960a80d2e1e31" category="cell">ESXi</block>
@@ -1205,9 +1166,7 @@
   <block id="468c7067a5232ce7f7b5f71d1c6e1685" category="paragraph">如果满足某些最低要求，则可以在两个位置之间延伸双节点集群。此架构可完美地位于基于硬件的 MetroCluster 和单个数据中心集群（硬件定义或软件定义）之间。ONTAP Select MetroCluster SDS 的要求突出了软件定义的存储解决方案的一般灵活性，以及它与基于硬件的 MetroCluster SDS 之间的区别。不需要专有硬件。</block>
   <block id="189f86e135df200ab301cdba9724b737" category="paragraph">与 MetroCluster 不同， ONTAP Select 使用现有网络基础架构，并支持高达 5 毫秒 RTT 的网络延迟，最大抖动高达 5 毫秒，总最大延迟为 10 毫秒。此外，还要求最长距离为 10 公里，但延迟配置文件更为重要。市场空间的隔离要求与物理隔离有关，而不是与实际距离有关。在某些情况下，这可能意味着不同的建筑物。在其他情况下，这可能意味着同一建筑中的不同房间。无论实际的物理位置如何，将双节点集群定义为 MetroCluster SDS 的是每个节点都使用一个单独的上行链路交换机。</block>
   <block id="c0a1eea8b1af6026a021d360f96c66d8" category="paragraph">在双节点 HA 配置中，需要使用调解器在故障转移期间正确识别活动节点，并避免出现在网络分区期间两个节点均独立保持活动状态的任何脑裂情形。此操作与先前提供的常规双节点 HA 配置相同。为了在站点故障期间提供适当的保护和故障转移，调解器应位于与两个 HA 节点不同的站点上。调解器与每个 ONTAP Select 节点之间的最大延迟不能超过 125 毫秒。</block>
-  <block id="94552a5199f7104b614575781d58ffef" category="paragraph">借助此解决方案 ，企业客户可以放心地在商用硬件上利用软件定义的存储解决方案 的灵活性。他们可以放心地进行部署，因为他们知道自己的数据受企业级 0 RPO 解决方案 的保护。</block>
   <block id="7df0d3f86ea85895ce805f02d425a395" category="paragraph">ONTAP Select MetroCluster SDS 具有以下优势：</block>
-  <block id="55f4eec83ef8167eeb9aae4734147eab" category="list-text">MetroCluster SDS 为 ONTAP Select 提供了另一个保护维度（从数据中心到数据中心）。除了利用软件定义的存储和 ONTAP 的所有优势之外，客户现在还可以利用这种额外级别的保护。</block>
   <block id="efd88036e2c90f7b3284371d9cdbb406" category="list-text">MetroCluster SDS 可通过 0 RPO 和自动故障转移提供业务关键型数据保护。数据存储和应用程序访问点都会自动切换到运行正常的数据中心或节点，无需任何干预。</block>
   <block id="31414fd6f8904fe7a521040b566ba467" category="list-text">MetroCluster SDS 经济高效。它可以利用现有网络基础架构在 HA 对之间实现延伸型弹性，无需额外的硬件。它还可以在同一集群中提供主动 / 主动数据访问和数据中心冗余。</block>
   <block id="d6f1b8d7589890e7cbb2e641d329ba0b" category="paragraph">* MetroCluster SD*</block>
@@ -1259,9 +1218,7 @@
   <block id="f83c877592ae6667e4f8b98d490281d8" category="paragraph">Deploy API 使用以下安全技术：</block>
   <block id="1993a29cd22f4d42c6925aedd2416473" category="list-text">传输层安全性通过网络在 Deploy 服务器和客户端之间发送的所有流量均通过 TLS 加密。不支持在未加密的通道上使用 HTTP 协议。支持 TLS 1.2 版。</block>
   <block id="21392618546d9ab8ba4ef3600ae3644e" category="list-text">HTTP 身份验证基本身份验证用于每个 API 事务。每个请求都会添加一个 HTTP 标头，其中包含 base64 字符串中的用户名和密码。</block>
-  <block id="6fad90e28618e0a28b3096e32fc10067" category="summary">使用容量层许可时，您需要为每个 ONTAP Select 节点获取一个许可证文件。此许可证文件定义了节点的存储容量，并通过 NetApp 分配的唯一九位序列号锁定到节点。</block>
   <block id="b83de81d9df2daba7b299079440e4a70" category="paragraph">您必须已获得 NetApp 为节点分配的九位数许可证序列号。在尝试获取许可证文件之前，您应在采购订单发货日期之后至少等待 24 小时。</block>
-  <block id="6bb55d7bed113bc9f1eb1ceaa56c67c3" category="paragraph">您必须对需要容量层许可证的每个 ONTAP Select 节点执行此任务。</block>
   <block id="f1119e2a8337db49fe7086c2b2267602" category="list-text">使用 Web 浏览器访问 ONTAP Select 许可证站点：</block>
   <block id="ac8e78a77fe7ca32132b86474e8c9de5" category="paragraph">`https://register.netapp.com/register/getlicensefile`</block>
   <block id="84db9bc9926628faaa27e124a2df79bb" category="list-text">使用您的 NetApp 帐户凭据登录。</block>
@@ -1345,9 +1302,7 @@
   <block id="347f9f134138bbcb42fa67aed2fbddba" category="list-text">Model 如果单击 _Model_ ，则会显示一个完整的 JSON 参数列表，其中每个参数都有一个问题描述 。</block>
   <block id="564b7e56e433323571bde06fbe6a5d83" category="section-title">发出 API 调用时的注意事项</block>
   <block id="cc7b50f7c16a19e77b53fc2c649a6a2c" category="paragraph">使用 Deploy 文档页面执行的所有 API 操作均为实时操作。请注意，不要错误地创建，更新或删除配置或其他数据。</block>
-  <block id="9cbb2237779591c572f2e7fa9444989e" category="summary">在容量层许可模式下，九位数节点序列号与分配给节点的许可证序列号相同。但是，使用容量池许可模式分配给节点的序列号格式不同。</block>
   <block id="875d6acfb9499e910c2863da32d9284e" category="doc">节点序列号</block>
-  <block id="5c8c6a008855a7326fa4629a85dd127e" category="paragraph">使用容量池许可的节点的序列号格式如下：</block>
   <block id="3341673f4960921bc2834aa8bfa4ac44" category="paragraph">`999 ppppppppp nnnnnnnn`</block>
   <block id="8488b21dee18149216107700b6943d61" category="admonition">为清晰起见，添加了空格，但实际序列号不包含这些空格。</block>
   <block id="eea8b1995d50aa53af45e544818f8706" category="paragraph">下表从左到右介绍了节点序列号的各个部分。</block>
@@ -1355,10 +1310,7 @@
   <block id="04adb8320a112460030976076e1b41c5" category="cell">'999'</block>
   <block id="94c8db1e39e106761ed9c4db655dd019" category="cell">NetApp 保留的三位数不变值。</block>
   <block id="0c59088c12981c5178183df5dc1d06ec" category="cell">ppppppppppp</block>
-  <block id="2d11bc3376ef9a1325097fc3bdf98e3b" category="cell">NetApp 分配给容量池的可变九位数许可证序列号</block>
   <block id="6eff2276c4f875c14c569fbc11e4c2a0" category="cell">nnnnnnnn</block>
-  <block id="28166a3ae8b939ecccabac1b217dd6b9" category="cell">License Manager 为使用容量池的每个节点生成的可变八位值</block>
-  <block id="d5b7ad6085f954060b4b4df44a320995" category="admonition">注意：在向 NetApp 支持部门创建涉及使用容量池许可证的节点的案例时，您无法提供完整的 20 位节点序列号。而是必须提供九位数的容量池许可证序列号。您可以从节点序列号派生许可证序列号，如上所示。跳过节点序列号的前三位数字（ 999 ），然后提取下九位数字（ ppppppppppp ）。</block>
   <block id="86b544aab279dcb98c0ac9a8a2cfce27" category="summary">准备部署 ONTAP Select 节点的每个虚拟机管理程序主机。在准备主机时，请仔细评估部署环境，以确保主机已正确配置并准备好支持 ONTAP Select 集群的部署。</block>
   <block id="2185b12253fdb08ce9e5bab96ce67841" category="admonition">ONTAP Select Deploy 管理实用程序不会对虚拟机管理程序主机执行所需的网络和存储配置。在部署 ONTAP Select 集群之前，您必须手动准备每个主机。</block>
   <block id="a623b323ce5bde34ceed491f235e772c" category="section-title">虚拟机管理程序常规准备</block>
@@ -1570,13 +1522,9 @@
   <block id="9fbbd5bdac28c04c1d8551e94ce3f619" category="doc">《 ONTAP Select 发行说明》</block>
   <block id="12f423cf4aa4ff75a7ca9220c1c56cd8" category="paragraph">ONTAP Select 发行说明提供了特定于版本的信息，包括新功能，支持的配置，升级说明，已知问题， 已修复的问题和已知限制。</block>
   <block id="e1060dc2ca9dac04bf54c9156ff74480" category="admonition">要访问发行说明，您需要一个帐户才能登录到 NetApp 支持站点。</block>
-  <block id="f7cbb5649dbc857609b9017aafeee7f1" category="summary">容量池和容量层许可模式之间存在多种差异。</block>
   <block id="bed7832e3f97e759fd2581b465169890" category="paragraph">下表对 ONTAP Select 支持的两种生产许可模式进行了比较。</block>
-  <block id="40cc20fb536f79b4342dc02e04418031" category="cell">容量层</block>
-  <block id="3824ce9b3abc70c7c5c21eda0ab912d0" category="cell">容量池</block>
   <block id="d8c97127df818e94ea6e6ac7b50e96b4" category="cell">许可证序列号</block>
   <block id="74eb298f532f82b217f8fd4335a9809f" category="cell">由 NetApp 生成并分配给节点的九位数</block>
-  <block id="91bc1f85b954434200a85f3bb06ad036" category="cell">由 NetApp 生成并分配给容量池的九位数</block>
   <block id="cfe9ad257383707f3fd7fae02d04d37c" category="cell">许可证锁定</block>
   <block id="d62725d2824f19699315182c0a6b0376" category="cell">已锁定到 ONTAP Select 节点</block>
   <block id="d38016c64850189116e2066e441f03ee" category="cell">已锁定到 License Manager 实例</block>
@@ -1787,7 +1735,6 @@
   <block id="92a71e755753127bb017bb1fe9bad028" category="paragraph">您必须确定是否已备份包含 ONTAP Select 双节点集群的失败 Deploy 实用程序实例中的配置数据。您的备份可能不包含集群。</block>
   <block id="618988b1c7baef58636565874807619a" category="paragraph">根据使用的恢复操作步骤 ，您应该能够还原 Deploy 配置数据的备份。</block>
   <block id="88178796123172aa042c2352197e09e0" category="paragraph">您必须知道出现故障的原始 Deploy 实用程序虚拟机的 IP 地址。</block>
-  <block id="fb66c65c562c0e260ab33c68ef45f2c7" category="paragraph">您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可，则必须在恢复或还原 Deploy 实例后重新安装每个容量池许可证。</block>
   <block id="378cdb3591ae498a782312834334c853" category="paragraph">您必须确定在恢复 ONTAP Select Deploy 实用程序实例时要使用的操作步骤 。您的决定取决于您是否已从包含 ONTAP Select 双节点集群的原始故障 Deploy 实用程序中备份配置数据。</block>
   <block id="11530c57a897d905bc943331e58f56b0" category="cell">是否具有包含双节点集群的 Deploy 备份？</block>
   <block id="b42236ddc43aefb700714337ec5fe465" category="cell">要使用的恢复操作步骤</block>
@@ -1808,7 +1755,6 @@
   <block id="1146fee0eb880f0892a23e726ca0a4d2" category="list-text">将邮箱磁盘分配给两个节点：</block>
   <block id="9d070d121ee26abdb5d314d6fff4c15c" category="list-text">验证是否已启用存储故障转移：</block>
   <block id="751035e5db88d172e881299c202d9b13" category="paragraph">`s存储故障转移显示`</block>
-  <block id="0e6429e5a26e1f9ea7c357f0cd190a54" category="paragraph">如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见 _Reinstalling a Capacity Pool license_ 。</block>
   <block id="569f883a1fcdb29c5aa5e29f182e9dd9" category="paragraph">如果您没有包含双节点集群的失败 Deploy 实用程序实例的备份，则必须在新的 Deploy 虚拟机中配置调解器 iSCSI 目标和邮箱。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。</block>
   <block id="1b8f191261c89384d2a9550aaac5eac0" category="paragraph">您必须具有新 Deploy 实用程序实例的调解器目标名称。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。</block>
   <block id="b641370bc8479ac609268e5b798181a7" category="paragraph">您可以选择将配置备份还原到新的 Deploy 虚拟机，即使该虚拟机不包含双节点集群也是如此。由于不会在还原时重新创建双节点集群，因此您必须通过 Deploy 上的 ONTAP Select 联机文档网页将调解器 iSCSI 目标和邮箱手动添加到新的 Deploy 实用程序实例中。您必须能够登录到双节点集群并知道这两个节点的 ONTAP 名称。</block>
@@ -1831,7 +1777,6 @@
   <block id="109c8e36bc942c26365dbf0801f87f3d" category="list-text">单击 * 试用！ * 以创建调解器 iSCSI 目标。</block>
   <block id="3d85b7e0ce2983da3c1d066243516254" category="paragraph">如果请求成功，您将收到 HTTP 状态代码 200 。</block>
   <block id="4da2af2783b38d64f7ad51f0188043f0" category="list-text">如果新 Deploy 虚拟机的 IP 地址与原始 Deploy 虚拟机不同，则必须使用 ONTAP 命令行界面删除旧调解器 iSCSI 目标并添加新目标：</block>
-  <block id="9d0ce8b3bd13c88962b5522282ef1f2a" category="paragraph">如果使用容量池许可，则必须重新安装每个容量池许可证。有关其他详细信息，请参见重新安装容量池许可证。</block>
   <block id="f003eee578389a046f25dba6e783a672" category="summary">ONTAP Select 非常适合支持组织中的一个或多个私有云。一个常见的使用情形是，为基于商用服务器构建的私有云提供存储服务。</block>
   <block id="fb4b04f0bbd3011e95882612761e5f4a" category="doc">私有云和数据中心</block>
   <block id="cc2d9bf42776eb79fe1ddb4e755eff01" category="paragraph">与公有 云一样，私有云也提供了灵活性以及快速设置和卸载。此外，私有云还可以提高安全性和控制力。</block>
@@ -1868,26 +1813,14 @@
   <block id="aa6b728c36f1bd39c6a235c165e2dbc2" category="list-text">使用管理员帐户使用 SSH 登录到 ONTAP 命令行界面。</block>
   <block id="42fd4c247ebbe7dfca417006d76edd84" category="paragraph">您可以升级托管 ONTAP Select 多节点集群的 VMware ESXi 虚拟机管理程序，而无需使用 Deploy 管理实用程序。</block>
   <block id="c94bc3200f704807c4c41ce4c2e2b2d8" category="paragraph">您必须对 ONTAP Select 集群中使用的每个主机执行升级操作步骤 。</block>
-  <block id="7807c1892c85ba4af2d3c779c7823c25" category="summary">下面介绍了使用容量池许可模式时适用的限制。</block>
-  <block id="3e786bde6715be4e14e3475dd6ed4cce" category="paragraph">一个 ONTAP Select 集群中的所有节点都必须使用相同的许可模式，即容量层或容量池。您不能在一个集群中混用节点的许可类型。</block>
-  <block id="1698dae6a4f7df9ce924018053e98157" category="paragraph">ONTAP Select 集群中具有容量池许可证的所有节点都必须使用同一个 License Manager 实例。由于每个 Deploy 实例中都有一个 License Manager 实例，因此，此限制重新说明了一个集群中的所有节点都必须由同一个 Deploy 实例管理的现有要求。</block>
-  <block id="44f8a5fada3e18e6f15ff271b3edc087" category="paragraph">每个节点只能从一个容量池租用存储。一个节点不能使用两个或更多池。</block>
-  <block id="9f9dee89e91dda6c0bed11a752b85182" category="paragraph">一个 HA 对中的两个节点都必须从同一个容量池租用存储。但是，同一集群中的不同 HA 对可以从同一 License Manager 管理的不同池中租用存储。</block>
   <block id="ae060de04aca5e325886869d3119eab9" category="paragraph">从 NetApp 获取存储许可证时，必须选择许可证有效期。例如，许可证的有效期可能为一年。</block>
-  <block id="3684db008f18e1ffdeda56bf51708696" category="paragraph">当 ONTAP Select 节点请求数据聚合的存储租约时，许可证管理器会根据容量池的配置提供一个特定持续时间的租约。您可以将每个池的租约期限配置为一小时到七天之间。默认租约有效期为 24 小时。</block>
-  <block id="987ded954f3b3c95296c03ab6b45ec09" category="paragraph">使用容量池许可时，您必须为 Deploy 管理实用程序分配一个静态 IP 地址。</block>
-  <block id="3de1ca7c5efc91bb5c6c3fe1667e7f17" category="summary">您必须为 ONTAP Select 节点使用的每个容量池获取一个许可证文件。此许可证文件用于定义池的存储容量和到期时间。它将通过 NetApp 分配的唯一许可证序列号以及与 Deploy 实例关联的许可证锁定 ID 组合而锁定到 License Manager 。</block>
-  <block id="e26cab9e8e6b8390bd5be41af1d4052a" category="paragraph">您必须已获得 NetApp 为容量池分配的九位数许可证序列号。在尝试获取许可证文件之前，您应在采购订单发货日期之后至少等待 24 小时。</block>
-  <block id="3268086c81bdd4a048f2802c1261a578" category="paragraph">您必须对 ONTAP Select 节点使用的每个容量池执行此任务。</block>
   <block id="7456bc766f2bb265ca706274029a4d1d" category="list-text">使用 Web 浏览器访问 NetApp 支持站点并登录。</block>
   <block id="89d470e4f09750972e667a0aa66f60da" category="list-text">单击顶部的 * 系统 * ，然后单击 * 软件许可证 * 。</block>
-  <block id="b8c28c22670acd8bd63bb0a805272088" category="list-text">键入容量池的许可证序列号，然后单击 * 执行！ * 。</block>
   <block id="ae9aa26e0640b9c3d2d442b604f354ee" category="list-text">在许可证详细信息页面上，导航到 * 产品详细信息 * 列。</block>
   <block id="706a307ae92c25933ca962eb6dbd8560" category="list-text">单击相应行上的 * 获取 NetApp 许可证文件 * 。</block>
   <block id="e3a2b007e462109d35d40e5a66167dd3" category="list-text">键入 ONTAP Select Deploy 实例的许可证锁定 ID ，然后单击 * 提交 * 。</block>
   <block id="428eaaa9f14db57c6bd3b4e5dc5b258f" category="list-text">选择适当的交付方法并单击 * 提交 * 。</block>
   <block id="e65eef77c34710d04f651265a36f1383" category="list-text">单击传送确认窗口中的 * 确定 * 。</block>
-  <block id="f9398cacd5f1ebcc0aca8d8b93299cb5" category="paragraph">您必须先将许可证文件上传到 Deploy 管理实用程序，然后 ONTAP Select 节点才能使用容量池。</block>
   <block id="010b1bb88703436584f35ee315ce708a" category="summary">您可以使用命令行界面将 Deploy 管理实用程序的现有实例迁移到新虚拟机。</block>
   <block id="55327b42261932bc23e2c7dff5397072" category="paragraph">此操作步骤 基于使用原始虚拟机中的配置数据创建新虚拟机。新虚拟机和原始虚拟机必须运行相同版本的 Deploy 实用程序。您不能迁移到其他版本的 Deploy 实用程序。</block>
   <block id="50292085f30b7587c02bf7a7bdb68a00" category="paragraph">在迁移虚拟机时，您必须为 Deploy 配置数据创建一份备份。您还应在部署 ONTAP Select 集群后创建备份。数据将保存到一个加密文件中，您可以将该文件下载到本地工作站。</block>
@@ -1936,8 +1869,6 @@
   <block id="d200a289a8ebcab27fa991f9d753e39c" category="section-title">核心硬件要求</block>
   <block id="09b8a8e0dc5db4d03118426909a90e16" category="paragraph">部署 ONTAP Select 的物理虚拟机管理程序主机必须满足多个硬件要求。您可以为虚拟机管理程序主机选择任何平台，只要该主机满足最低硬件要求即可。以下供应商提供受支持的硬件平台： Cisco ， Dell ， HP ， Fujitsu ， Lenovo ， 和 Supermicro 。</block>
   <block id="54046c200f18c7f662cdbd80eaba39a0" category="admonition">从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。</block>
-  <block id="667aa4140034cc454b837db2fc24ce3d" category="inline-link">NetApp 互操作性表工具， window=_blank</block>
-  <block id="e974ba73413c61605294fbea7a63f880" category="paragraph">请参见<block ref="6989237bb21ab12eea7660d1d2c0793b" category="inline-link-rx"></block> 有关详细信息 ...</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬件要求</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon 处理器， window=_blank</block>
   <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">适用于服务器的 Intel Xeon 处理器（请参见 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 有关详细信息，请参见）</block>
@@ -1959,10 +1890,7 @@
   <block id="ccda35bfbfdd918d2a198f71367f7d9d" category="inline-link-macro">存储和 RAID</block>
   <block id="9a44a4605ab254ea4e284ea83fc225b0" category="admonition">根据平台许可证，还有其他磁盘要求。请参见 <block ref="a3c4eb4ff3e5c01e8b1b86f1b4351b6c" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="d5955f327d5d79aa3434b5772a31b4d8" category="summary">ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在虚拟机管理程序主机上。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。</block>
-  <block id="7cc14acbe7c6207c4a44a5e6e60f0a80" category="doc">ONTAP Select 概述</block>
-  <block id="2a0e91436f90a22cb84ac4d4041e2aa5" category="paragraph">ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。</block>
   <block id="9ed6c695ae7ec8113471a76ddcea07cf" category="section-title">软件定义的存储</block>
-  <block id="3d55457ab585cd891246ed7dff68b788" category="paragraph">通过软件实施和交付 IT 服务，管理员可以快速灵活地配置资源，而这是以前无法做到的。随着现代数据中心迁移到软件定义的基础架构（ SDI ）架构，最有价值的 IT 资产可以与底层物理基础架构分离，从而提供灵活性，可扩展性和可编程性。</block>
   <block id="718d7c969f416878691ffcaa2bdf3ca1" category="paragraph">在一个商业环境中，数据在直连存储（ DAS ）的孤岛之间分散，数据移动性和管理已成为更加复杂的问题。软件定义的存储（ SDS ）已成为 SDI 环境中解决这些问题和其他问题的重要组成部分。</block>
   <block id="b2c8689de5a7643d75bcb087da31d4a0" category="paragraph">ONTAP Select 是适用于 SDS 市场的 NetApp 解决方案 。ONTAP Select 将企业级存储管理功能引入软件定义的数据中心，并将 NetApp Data Fabric 架构扩展到最极端的边缘用例，包括物联网（ Internet of Things ， IoT ）和战术服务器。</block>
   <block id="5e75bdbfd3f02cf9f655d512b767dc1f" category="section-title">两个软件组件</block>
@@ -1978,7 +1906,6 @@
   <block id="c6d43ec5b0b49fe2c3f127531903582c" category="section-title">不同的 HA 架构</block>
   <block id="881afa18564b62e47e6c83658db1df5a" category="paragraph">根据您在集群中定义的节点数， ONTAP Select 可提供 HA 功能。例如，一个四节点集群包含两个 HA 对。ONTAP Select 使用的 HA 架构基于非共享存储模式。也就是说， HA 对中的一个节点无法直接访问另一个节点所拥有的存储。此设计可能会影响某些 ONTAP Select 操作特征。</block>
   <block id="799a3fe6cff876fa3027852cc5707a2e" category="section-title">容量许可</block>
-  <block id="ac0038e6c040d26c9e742bc6b66ed6be" category="paragraph">ONTAP Select 引入了一种基于使用量的许可模式。在生产环境中部署 ONTAP Select 集群时，您必须为每个节点或共享容量池购买一个含存储容量的许可证。您必须使用 Deploy 实用程序应用用于为集群节点建立存储容量的许可证文件。</block>
   <block id="1881f93f26871d54aaa9ae5669b15643" category="section-title">ONTAP 功能许可</block>
   <block id="3a621a06fd7d2a8267661a7bbea67799" category="paragraph">ONTAP Select 集群中的每个节点都会自动获得使用多项 ONTAP 功能的许可。您无需手动安装或应用这些功能许可证。</block>
   <block id="7718fb3bf518427efc070f44f598bda4" category="section-title">ONTAP Select 不支持 ONTAP 功能</block>
@@ -2097,10 +2024,7 @@
   <block id="1e738b21b4088a71993efbdd8baca955" category="list-text">许可模式</block>
   <block id="83f73443b8e5ae5f7dc3654ef7bffac3" category="list-text">存储容量</block>
   <block id="2d97b8a3010b7d7eb0dc173f2d9af444" category="list-text">平台许可证服务</block>
-  <block id="dd2cce5aedf6d2f673323b5aa2546e29" category="list-text">在为 ONTAP Select 部署授予存储许可时，容量层许可模式是最初的选项。它基于与 NetApp AFF 和 FAS 结合使用的 ONTAP 模型。每个节点都需要一个单独的许可证。存储容量将锁定到节点并永久存在（无需续订）。</block>
-  <block id="54f1ce370f3764196052d27fb5bc23bd" category="list-text">容量池许可模式是在使用 Deploy 2.10 的 ONTAP Select 9.5 中引入的。每个存储容量池都需要一个单独的许可证。容量池许可证会锁定到 License Manager 实例（即 Deploy 实例），并且必须根据购买条款进行续订。您可以在组织中许可和使用任意数量的容量池。但是，由于容量池由 ONTAP Select 节点共享，因此所需的许可证通常少于容量层许可。</block>
   <block id="da2d544df7edf3f50bd8cae1e601264a" category="list-text">许可证管理器</block>
-  <block id="e77002bd32b8903c6909b75ca9d0986b" category="list-text">License Manager 是一个支持容量池许可的软件组件。它目前是 Deploy 管理实用程序的一部分。LM 会从其管理的共享池中将存储租用给 ONTAP Select 节点。_License Lock ID_ 是一个数字字符串，用于唯一标识每个 LM 实例以及每个 Deploy 实例。您必须同时使用容量池许可证序列号和 LLID 来生成许可证文件。</block>
   <block id="6ce3d683f11be5f1e22f253158d4c047" category="list-text">平台许可证产品</block>
   <block id="3cfbc322e3cddd57d170712cdb477d47" category="list-text">您可以通过三种许可证选项来确定购买许可证时 ONTAP Select 虚拟机的大小功能：</block>
   <block id="b23921d037d566b4c86b49c1a7df885c" category="paragraph">有关详细信息，请参见 _Plan_ 和 _License_ 这两个部分。</block>
@@ -2340,28 +2264,20 @@
   <block id="c23dd0988ced74624b54dfe472669701" category="paragraph"><block ref="c23dd0988ced74624b54dfe472669701" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5745af152ecc8b464559f811aa23d6fa" category="paragraph"><block ref="5745af152ecc8b464559f811aa23d6fa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="33627b673d322256698561b99c348e04" category="paragraph"><block ref="33627b673d322256698561b99c348e04" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1fa376cad2ffe76e02ea9d82c3eb6d9c" category="summary">容量池许可模式与容量层模式不同。存储容量将分配给一个池并在多个节点之间共享，而不是为每个节点分配专用存储容量。我们还创建了其他组件和流程来支持容量池模型。</block>
   <block id="1a2858c08187c4c1503bdd84f6814aa7" category="doc">操作详细信息</block>
-  <block id="f80fce6ffa62c519c91dbe6256373e6e" category="list-text">根据容量池许可证序列号为每个节点生成唯一的 20 位序列号</block>
-  <block id="2b2888d3189fe96ab747317d559c34f6" category="list-text">根据 ONTAP Select 节点的请求，从共享容量池创建容量租约</block>
   <block id="18267b7796271fa458d6c8f635e9cebb" category="list-text">通过 Deploy 用户界面报告池使用情况信息</block>
   <block id="52e472917eedf9e8a785e7c56e92d749" category="section-title">租约特征</block>
-  <block id="54e5aaa838921f915019ec44b1e43fa3" category="paragraph">使用容量池许可证为节点上的每个数据聚合分配的存储必须具有关联的租约。节点请求存储租约，如果有可用容量，则 License Manager 将以租约的形式做出响应。每个租约都具有以下显式或隐式属性：</block>
   <block id="5fe818f94cd9173f284c2cb187775708" category="list-text">许可证管理器每个 ONTAP Select 节点都与一个许可证管理器实例关联</block>
-  <block id="26151cc6bc3f2e8bac3b52e9a8cad859" category="list-text">容量池每个 ONTAP Select 节点都与一个容量池相关联</block>
   <block id="d671bee3ba61f48b2736b6e6d38fbf16" category="list-text">存储分配租约中会分配特定的容量值</block>
   <block id="8a41c43a78c273b7090dd972cb11c8fa" category="list-text">到期日期和时间租约的持续时间介于一小时到七天之间，具体取决于用户配置。</block>
-  <block id="8ddd4ae6565aad8e0220721a3b0b115f" category="paragraph">License Manager 的每个实例以及相应的每个 Deploy 实用程序实例都使用一个唯一的 128 位编号进行标识。此数量与九位数的容量池许可证序列号相结合，可将池锁定到特定的 License Manager 实例（实际上是一个 Deploy 实例）。在生成 NetApp 许可证文件（ NLF ）过程中，您必须在 NetApp 支持站点上提供这两个值。</block>
   <block id="c35b911ba82c4e39b4517e38d1a88551" category="paragraph">您可以通过以下方式使用 Web 用户界面确定 Deploy 实例的许可证锁定 ID ：</block>
   <block id="93147ad40002fa287e2077d09284c452" category="list-text">开始使用页面首次登录到 Deploy 时，将显示此页面。您也可以通过单击页面右上角的下拉框并选择 Getting Started 来显示此页面。LLID 将显示在 Add Licenses 部分中。</block>
   <block id="f51e8d01c52b31dc2ac35fcbc93eca28" category="list-text">管理单击页面顶部的 * 管理 * 选项卡 A ，然后单击 * 系统 * 和 * 设置 * 。</block>
   <block id="bc165811908b5de0b53e3fb455b59f7d" category="section-title">基本租赁操作</block>
-  <block id="e02846e806da1a115348e9fee40e2ff8" category="paragraph">每次创建，扩展或更改数据聚合时， ONTAP Select 节点都必须找到或请求有效的容量租约。可以使用从先前请求中获取但仍然有效的租约，也可以根据需要请求新租约。ONTAP Select 节点会执行以下步骤来查找容量池租约：</block>
   <block id="7d9520f0fa2db8b35655f9495b62e220" category="list-text">如果节点上存在现有租约，则只要符合以下所有条件，就会使用此租约：</block>
   <block id="841155ef8ec7759dbe94406233eb27b5" category="list-text">租约未过期</block>
   <block id="25784b4e2979db42de075e5e9dd10079" category="list-text">聚合的存储请求不超过租约容量</block>
   <block id="e854418dddc00af07fa6200a4ede9a50" category="list-text">如果找不到现有租约，则节点将从 License Manager 请求新租约。</block>
-  <block id="4834df5eda0b47ccabbdf06e24c846dd" category="paragraph">存储容量可根据需要从容量池中分配，每个新请求都会减少池中的可用存储。在以下几种情况下，存储容量会返回到池中：</block>
   <block id="25e8c3dfe0fc86ab114fd57ec6ff2450" category="list-text">数据聚合的租约到期，节点不会续订</block>
   <block id="c368765dd32d8b7199f9250b99a8087b" category="list-text">已删除数据聚合</block>
   <block id="afcc04ba59c0e5b7c23adba80994022a" category="admonition">如果删除了 ONTAP Select 虚拟机，则任何活动租约将一直有效，直到到期为止。发生这种情况时，容量将返回到池。</block>
@@ -2439,9 +2355,7 @@
   <block id="db88ef4d05292b05026992fe3ca193af" category="paragraph">ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 （ IPv6 ）。此限制在以下方面影响 ONTAP Select ：</block>
   <block id="a808fd43c31372cb5ef7ac1ac9224c52" category="list-text">您必须为 Deploy 虚拟机的管理 LIF 分配 IPv4 地址。</block>
   <block id="b3a288a6973caafe5e4ff191758f8b98" category="list-text">Deploy 无法创建配置为在 ONTAP LIF 上使用 IPv6 的 ONTAP Select 节点。</block>
-  <block id="8249cf77b8d8e1a887c3064234f33f64" category="summary">您可以购买三个平台容量级别之一的 ONTAP Select 容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
   <block id="d8ab7c9c78c21b4a22cdfba499be0102" category="section-title">平台许可证产品提供的功能</block>
-  <block id="bf2bf32468663aa60c17572fd96be228" category="paragraph">特定的许可证选项在以下两个方面定义并限制虚拟机管理程序主机的功能：</block>
   <block id="3c1861aaa9fcf5a348da316345ccfdb6" category="list-text">实例类型（ CPU ，内存）</block>
   <block id="09bf8b227659727142783e5535a49102" category="list-text">其他功能</block>
   <block id="640b087d140d4a80f7e7d94ebcced847" category="paragraph">许可证产品按从标准到高级 XL 的功能升序排列。通常，您选择的许可证选项会授予您该级别以及所有更低级别的功能。例如，高级级别既提供高级功能，又提供标准功能。</block>
@@ -2452,7 +2366,6 @@
   <block id="9f0890b87339c093ced753d756bc24fa" category="list-text">vNAS</block>
   <block id="9796a14555a2c8bf2cbefd825c3168c8" category="paragraph">高级版产品提供以下功能：</block>
   <block id="dcf1bea6142acd68dc8ee180fa525686" category="list-text">小型或中型实例类型</block>
-  <block id="d598b7c596887c12a7901f81a1798bd3" category="list-text">硬盘驱动器（ HDD ）或固态驱动器（ SSD ）</block>
   <block id="242993ddd5be1ee9c2b34ac3d6e16525" category="list-text">本地硬件 RAID 控制器或软件 RAID</block>
   <block id="3df6de2a26f1404ca45737431d2a4afb" category="paragraph">高级 XL 产品提供以下功能：</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">发行说明</block>
@@ -2469,7 +2382,6 @@
   <block id="794df3791a8c800841516007427a2aa3" category="sidebar">许可证</block>
   <block id="187e115b0c10602baa476f64acc86a80" category="sidebar">生产许可证</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="sidebar">限制</block>
-  <block id="b2fa85b6d75024ce8b7618eccad51ef7" category="sidebar">容量池与容量层</block>
   <block id="76b6a47a02685d51794b9fdb095512e5" category="sidebar">购买</block>
   <block id="d707dd0578f8287a0a8a84e71f612e87" category="sidebar">许可工作流</block>
   <block id="f33b49f74fc8933d903baf71e893888b" category="sidebar">ONTAP 功能</block>
@@ -2642,7 +2554,6 @@
   <block id="47228ec57373d626b6ba8033642aa844" category="paragraph-title">有关 DAS SSD 配置的升级行为的注释</block>
   <block id="06be3d2851694a8ac21502e41f3e4305" category="paragraph-title">每个集群的许可模式一致</block>
   <block id="4b0e422dcf415e37a99fb9240372b2e7" category="paragraph-title">集群中的所有节点都使用同一个 License Manager 实例</block>
-  <block id="02adb22963ca335394cfa32d81eb77c1" category="paragraph-title">每个节点一个容量池</block>
   <block id="b738a2037fc94e2290be56df30341770" category="paragraph-title">HA 对中的节点使用同一个池</block>
   <block id="affb254e2447d7a107f972ff759efbb0" category="paragraph-title">存储许可证持续时间</block>
   <block id="231c03420ee8b0ab0994fb02ab1e1c01" category="paragraph-title">数据聚合租约有效期</block>
@@ -2836,7 +2747,6 @@
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">防篡改Snapshot副本</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM 迁移</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
-  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS Deploy集群刷新失败并显示错误</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS是一项高级功能、需要高级版许可证或高级尊享版许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。高级XL许可证还支持创建NVMe驱动器。</block>
@@ -2973,8 +2883,6 @@
   <block id="95caa54794f3f2e01024925ee49db3db" category="paragraph">下表汇总了各种可用的存储效率选项、默认情况下启用的选项或默认情况下不启用但建议使用的选项、具体取决于介质类型和软件许可证。</block>
   <block id="e4182895110dd07e2aace12387fe72a4" category="admonition">ONTAP Select支持VMware存储/SAN兼容性文档中所述的所有外部存储阵列、包括iSCSI、光纤通道和以太网光纤通道。</block>
   <block id="403c94a11e9f3b463bb8ab8ee8b5f368" category="section-title">查看调解器服务的状态</block>
-  <block id="cabaafab34446bfc39babebeb820ad0a" category="paragraph">所有相关存储组件（包括硬件，软件和功能要求）都必须符合中所述的要求
-<block ref="aaa18d9ccb38f09094f0c241a8585efd" category="inline-link-macro-rx"></block>。此外、ONTAP Select还支持VMware存储/SAN兼容性文档中所述的所有外部存储阵列、包括iSCSI、NAS (NFSv3)、光纤通道和以太网光纤通道。外部阵列支持受 ONTAP Select 支持的 ESXi 版本限制。</block>
   <block id="6a76e5eccaae065aae5cd7a8193204ff" category="paragraph">您可以部署单节点或多节点集群。请参见 <block ref="4452a56e6eb6220413b5f5ed2b39c2eb" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="d2f67fbcdde5ccb2059e155c4507f07d" category="section-title">管理ONTAP Select</block>
   <block id="1a7f92b5b7c947bfb70b208837107708" category="paragraph">在支持 ONTAP Select 过程中，可以使用多种不同的管理过程。此外，还有一些特定于 Deploy 管理实用程序的过程。下面介绍了其中最重要的过程。通常，所有都使用 Deploy Web 用户界面。</block>
@@ -2983,7 +2891,6 @@
   <block id="0fff1320bbb426b546cc717659845cf2" category="section-title">执行其他ONTAP配置</block>
   <block id="efc65817e295ad904ce33fec808387bc" category="paragraph">部署 ONTAP Select 集群后，您可以像配置和管理基于硬件的 ONTAP 系统一样配置和管理集群。例如、您可以使用ONTAP系统管理器或ONTAP命令行界面来配置ONTAP Select集群。</block>
   <block id="5ecb6b24c169667ff1a176768115659e" category="list-text">Active IQ Unified Manager</block>
-  <block id="2a5240540ad0583c2eeed83da7cbc0ed" category="paragraph">要确定受支持的客户端软件版本、请查看 <block ref="aaa18d9ccb38f09094f0c241a8585efd" category="inline-link-macro-rx"></block>。如果客户端软件支持 ONTAP 9 ，则 ONTAP Select 也支持相同的版本。</block>
   <block id="44d05de3077b3838b8ce9d9ad5d45351" category="list-text">创建数据Storage VM (SVM)</block>
   <block id="6b58c1940f3237f8b68aff9dee0612c0" category="section-title">查询与API请求关联的作业对象</block>
   <block id="cd5b6640283cfb064f238f20f8cf467f" category="doc">了解平台许可证产品</block>
@@ -2992,13 +2899,10 @@
   <block id="06a53967f62b6ebf8a1fba55cabdfecf" category="list-text"><block ref="06a53967f62b6ebf8a1fba55cabdfecf" category="inline-link-macro-rx"></block></block>
   <block id="89ac05efab2228e74e12191efccdf85c" category="inline-link-macro">将Deploy配置数据还原到新虚拟机</block>
   <block id="9731a2aaf926f5fd46b5a7343839efb4" category="list-text"><block ref="9731a2aaf926f5fd46b5a7343839efb4" category="inline-link-macro-rx"></block></block>
-  <block id="86e72ee91d7354c4e08385ba07861bd9" category="inline-link-macro">重新安装容量池许可证</block>
-  <block id="88e1ef271e0da2ef1b1734cbd286219c" category="list-text"><block ref="88e1ef271e0da2ef1b1734cbd286219c" category="inline-link-macro-rx"></block></block>
   <block id="47546bf1e2847e2d81e73bde93926649" category="section-title">将ONTAP Select集群脱机和联机</block>
   <block id="60458f1485d61e13b322742ae9f0113a" category="section-title">刷新Deploy集群配置</block>
   <block id="c5eb28f60f3d5beee457404724018eb2" category="section-title">删除ONTAP Select集群</block>
   <block id="24c77c4c999a67b38b8910008fcbf84a" category="paragraph">License Manager会在每个Deploy管理实用程序实例中作为一个单独的进程运行。LM 提供的一些功能包括：</block>
-  <block id="7f00ef1ed77e1ee61534d0095471e191" category="section-title">将存储容量归还给容量池</block>
   <block id="7df4c22f834073378cbc7bda2a69e5d8" category="section-title">备份Deploy配置数据</block>
   <block id="a1f19e06427877524f78f5c30de18fb0" category="section-title">安装Deploy虚拟机的新实例</block>
   <block id="fb9a355d46a44ee7087bc1fb6669f2f5" category="paragraph">从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将旧版ONTAP Select节点升级到9.5或更高版本、则不会自动升级此驱动程序。</block>
@@ -3006,7 +2910,6 @@
   <block id="f25b2c6dc6839bba6b8b58cc63c55b3c" category="section-title">对输出集中的对象进行排序</block>
   <block id="bbd1bf9de2e4077d7d60ab5cd0b761b0" category="section-title">解释 API 响应</block>
   <block id="0eb6f6088fedfb69df393e6f09f93699" category="list-text">您不能对从ONTAP Select 9.4或更早版本升级的节点使用软件RAID。如果出现这种情况、您需要为软件RAID部署创建一个新节点。</block>
-  <block id="e7a0da12e39522bffee10137c534d871" category="paragraph">下面介绍了最重要的存储限制。您还应查看 <block ref="aaa18d9ccb38f09094f0c241a8585efd" category="inline-link-macro-rx"></block> 了解更多详细信息。</block>
   <block id="4e452735041997669420c443fdc5dd4b" category="admonition">ONTAP Select 会对存储分配和使用实施多项限制。在部署 ONTAP Select 集群或购买许可证之前，您应熟悉这些限制。请参见 <block ref="3b292653c3539e42e716109703c672f6" category="inline-link-macro-rx"></block> 部分、了解更多信息。</block>
   <block id="21415e3d95f2107f49f15bae446d575b" category="section-title">计算原始存储容量</block>
   <block id="57f64e74028c39685007270c2544c90f" category="list-text">一个ONTAP Select聚合中的所有驱动器类型都应相同。例如，不应在同一聚合中混用 HDD 和 SSD 驱动器。</block>
@@ -3033,11 +2936,6 @@
   <block id="6f79f88c3d3696fcca3ac6e4f78fd71f" category="admonition">向 ONTAP Select VM 添加容量可能会导致 VMDK 的大小不同。有关详细信息，请参见一节 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。与 FAS 系统不同，同一聚合中可以存在不同大小的 VMDK 。ONTAP Select 会在这些 VMDK 之间使用 RAID 0 条带，从而可以完全使用每个 VMDK 中的所有空间，而不管其大小如何。</block>
   <block id="5498e86ddbc371087e391d7f3cae5701" category="list-text">SnapLock企业版(ONTAP Select不支持SnapLock合规性)</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">更改Deploy管理员密码</block>
-  <block id="e4faeb8305c0591d2d61731e2acd18d9" category="section-title">管理容量层许可证</block>
-  <block id="8332a78d15667768802110db7d461f39" category="section-title">管理容量池许可证</block>
-  <block id="a04752e304246fb808d9263e3b56379b" category="inline-link-macro">获取容量池许可证</block>
-  <block id="659d7307965808b9de5245b56fa7b572" category="paragraph">请参见 <block ref="4548fbfe7e75938d91eeeb4f1520ad00" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
-  <block id="9a74a1f7ca60edeb651edcb6f305db61" category="section-title">管理已过期的容量池许可证</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用命令行界面部署ONTAP Select集群</block>
   <block id="6f78f7cef2637ad960245873ccb009cc" category="section-title">准备将存储连接到ONTAP Select节点</block>
   <block id="ad34b3ead133ac2946581ad99de776f1" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
@@ -3113,7 +3011,6 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="d9817ded489aaa35d8ba40ab33bdfd4b" category="cell">KVM</block>
   <block id="27867a85560994e09ee616b37ec585de" category="cell">部署到虚拟机管理程序服务器节点</block>
   <block id="2d81002b634550a1e266341254a2d597" category="cell">访问虚拟机管理程序服务器</block>
-  <block id="0c0158fd50f7612ddfb9136e3de8e2be" category="cell">Access Deploy (容量池许可)</block>
   <block id="0777708201aec678f0082eec3aa98c10" category="list-text">基于内核的虚拟机</block>
   <block id="067c35f1ba98a705741486402c1dac18" category="list-text">基于内核的虚拟机(KVM)是Linux内核的一项虚拟化功能、可用作虚拟机管理程序平台。支持多种子操作系统。</block>
   <block id="f72371502203ff57c484242dbc67867e" category="list-text">在ESXi虚拟机上重新托管节点</block>
@@ -3410,7 +3307,6 @@ storage aggregate show-spare-disks</block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
   <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型实例类型</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD、SSD或NVMe驱动器</block>
-  <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加许可证</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理许可证概述（仅限集群管理员）</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">通过添加许可证密钥启用新功能</block>
@@ -3418,19 +3314,12 @@ storage aggregate show-spare-disks</block>
   <block id="b5150f2681f3eb5a5b6aab4cbdadad34" category="paragraph">虚拟NAS (vNAS)部署支持虚拟SAN (VSAN)上的ONTAP Select集群、某些HCI产品以及外部阵列类型的数据存储库。这些配置的底层基础架构可提供数据存储库故障恢复能力。</block>
   <block id="106b2acee8931f9a5618948233ee3f9a" category="paragraph">如果集群创建操作已启动、但未能完成、则您定义的ONTAP管理密码可能不会应用。如果发生这种情况、您可以使用以下命令行界面命令确定ONTAP Select集群的临时管理密码：</block>
   <block id="728dae8c09c02d31a488c58d0abbc713" category="paragraph-title">Deploy如何检测ONTAP Select许可证是否已续订？</block>
-  <block id="1c404f221fc19754e03aac9abdf229e0" category="paragraph">所有许可证的方法都相同、但具体情况因容量层许可证还是容量池许可证而异。</block>
   <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">NetApp 支持站点</block>
   <block id="7eb90e44cd52166d38ee412a0232d948" category="list-text">ONTAP Select Deploy会通过从NetApp购买更新的许可证文件来检测是否续订了许可证和支持合同。许可证文件(.nlf)包括容量、开始和结束日期；在上生成 <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>，然后在Deploy服务器上进行更新。</block>
-  <block id="df893ad066dabfa13efd91221b3bccff" category="admonition">您可以使用*Add*和*Update*功能将NLG加载到Deploy服务器中。*Add*向服务器添加新许可证，*Update*使用容量、节点许可证(标准、高级、高级XL)、支持开始和结束日期(容量层许可证)或订阅开始和结束日期(容量池许可证)等信息更新现有文件。</block>
   <block id="d39f37cf3f2791c375e1df22336bc0c1" category="admonition">请勿尝试修改许可证文件。这样做会使安全密钥失效并使许可证无效。</block>
-  <block id="8f5801f55c8818fb8546dec02aa0cb36" category="list-text">容量层许可证*是指与ONTAP Select节点序列号绑定的每节点永久许可证。它与单独的支持合同一起销售。如果许可证是永久许可证、则必须续订支持合同才能访问ONTAP Select升级并获得NetApp技术支持的帮助。要更改许可证参数(例如容量或节点大小)、还需要当前的支持合同。</block>
-  <block id="477c7238569246f69cc9ae8f8ecc6b57" category="paragraph">购买容量层许可证更新、参数更改或支持合同续订时、需要在订单中提供节点序列号。容量层节点序列号的长度为九位数、以数字"32"开头。</block>
   <block id="ea9589592b98533b70a296a006630c8b" category="paragraph">购买完成并生成许可证文件后，使用*Update*功能将其上传到Deploy服务器。</block>
-  <block id="6e6f36110dec05c8c4b7d9473e704fee" category="list-text">*容量池许可证*是指有权使用特定容量池和节点大小(标准、高级、高级XL)部署一个或多个集群的订阅。订阅包括在指定期限内使用许可证和支持的权利。使用许可证和支持合同的权利已指定开始和结束日期。</block>
   <block id="920b036cff328a6924c0fbdd7ab08f4d" category="paragraph-title">Deploy如何检测节点是否已续订许可证或支持合同？</block>
   <block id="c3975d39937733b863b8e078a435a60a" category="paragraph">购买、生成和上传更新的许可证文件是Deploy检测续订许可证和支持合同的方式。</block>
-  <block id="79416550309ddcac023464218d55a23d" category="paragraph">如果容量层支持合同结束日期已过、则此节点可以继续运行、但如果未更新支持合同、您将无法下载和安装ONTAP更新、或者无法致电NetApp技术支持寻求帮助。</block>
-  <block id="9b9568babf180c232b393ba5f95ff4c3" category="paragraph">如果某个容量池订阅失败、系统会首先向您发出警告、但在30天后、如果系统关闭、它将不会重新启动、直到在Deploy服务器上安装更新后的订阅为止。</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">有关ONTAP Select和许可证续订的详细信息、请参见中的许可证、安装、升级和还原部分 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
   <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">安装后是否可以更改ONTAP Select集群网络配置？</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy网络配置？</block>
@@ -3502,15 +3391,11 @@ storage aggregate show-spare-disks</block>
   <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">NetApp ONTAP 主许可证密钥</block>
   <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
   <block id="f588ddb32cd79889160082356416d2f3" category="list-text">已更新KVM虚拟机管理程序支持</block>
-  <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">从ONTAP Select 9.151开始、Red Hat Enterprise Linux (RHEL) 9.4和Rock-Linux 9.4支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。</block>
-  <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1上的KVM 9.2和9.4</block>
-  <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">基于Rock基Linux 8.6、8.7、8.8、8.9、9.0的KVM 9.1、9.2、9.3和9.4</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">从ESXi .13.1开始、ONTAP 9 8.0.1 GA (内部版本20513097)在硬件版本4及更高版本中受支持。</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">保存原始Deploy虚拟机映像。</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">在本过程稍后的部分中、当您将Deploy配置数据从原始虚拟机还原到新虚拟机时、需要使用原始Deploy虚拟机映像。</block>
   <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">虚拟机管理程序的软件兼容性信息</block>
   <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">您必须使用ISO映像安装Red Hat Enterprise Linux (RHEL)操作系统。有关支持的RHEL版本列表、请参见<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。在安装期间、您应按如下所示配置系统：</block>
-  <block id="97864053a66a3401d6a681c00bd2e4e3" category="paragraph">有关所需软件包和其他配置要求的其他信息，请参见<block ref="8929420574d68b861547fa3bcafe0ff2" category="inline-link-macro-rx"></block>。</block>
   <block id="d62b4235cf2a29152b9bcb3eb1df59d8" category="paragraph">您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。目前不支持将集群从一节点、双节点或四节点集群扩展为六节点或八节点集群。<block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。目前不支持将集群从六节点或八节点集群缩写为一节点、两节点或四节点集群。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬件和存储注意事项</block>
@@ -3531,17 +3416,11 @@ storage aggregate show-spare-disks</block>
   <block id="c849264ebb01817c7925cd0a068007af" category="doc">ONTAP Select HA RSM和镜像聚合</block>
   <block id="ec8ac2a2aba486a14f418e0d73aa199d" category="doc">ONTAP Select HA可增强数据保护</block>
   <block id="2f1f8f7609cf43a281fbca2068eb08b8" category="paragraph">高可用性(HA)磁盘检测信号、HA邮箱、HA检测信号、HA故障转移和交还工作可增强数据保护。</block>
-  <block id="f2bf1c1269a6e0c1a495f75b5c9f308e" category="doc">ONTAP Select容量池许可优势摘要</block>
-  <block id="747313594c8e769ed4bf654668df2753" category="doc">比较ONTAP Select容量池和容量层许可</block>
-  <block id="61750e2717477039b22a307414c9311b" category="doc">ONTAP Select容量池许可模式的操作详细信息</block>
-  <block id="0a00b84f2a503924f11abc21254dffab" category="doc">ONTAP Select容量池许可的部署限制</block>
-  <block id="6cc6c24434af53794977cd3f0355096d" category="doc">ONTAP Select容量池许可模式的节点序列号</block>
   <block id="55734e2f86357f8b0f60cd204e105d21" category="paragraph">您可以使用评估版许可证或已购买许可证部署ONTAP Select。您选择的许可证必须应用于ONTAP Select集群中的每个节点、因此也适用于整个集群。如果您要在决定购买之前评估 ONTAP Select ，可以使用评估版许可证。评估版许可证随 ONTAP Select Deploy 管理实用程序一起提供，并在评估版部署中自动应用于每个 ONTAP Select 节点。</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">部署和支持评估版集群时、需要注意以下几个事项：</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能将集群用于评估目的。不得在生产环境中使用具有评估版许可证的集群。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在配置每台主机时、应按如下所示使用ONTAP Select Deploy管理实用程序：</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">配置以使用评估版许可证</block>
-  <block id="21f27b191f1f034aa81e5f786bf9829c" category="doc">了解ONTAP Select的平台许可证产品</block>
   <block id="1b1ede8baae6a15d3ba60611103509a4" category="doc">ONTAP Select为生产部署购买了许可证</block>
   <block id="711f738f1281862e087807884aa5cd1c" category="doc">购买ONTAP Select许可证时的工作流</block>
   <block id="8c2b226cf8dfc01c2d5885e6b1dc9fd2" category="paragraph"><block ref="8c2b226cf8dfc01c2d5885e6b1dc9fd2" category="inline-link-macro-rx"></block></block>
@@ -3566,7 +3445,6 @@ storage aggregate show-spare-disks</block>
   <block id="e1822392dfeb820c1cca38e5e718a61f" category="paragraph">由于ONTAP Select使用虚拟化环境、因此不支持NIC卸载工具。</block>
   <block id="6c9348bc5d04685460e6acda750ab989" category="list-text">ONTAP端口属性</block>
   <block id="b360fb78c737d920cd251b2f7358f606" category="paragraph">不支持修改ONTAP端口的属性、包括速度、双工和流量控制。</block>
-  <block id="89661a8f5ae5f3b88ab1a6ba4ba0dbf0" category="paragraph"><block ref="89661a8f5ae5f3b88ab1a6ba4ba0dbf0" category="inline-link-macro-rx"></block></block>
   <block id="fcc22b4e3de45bbac50b32226efb8e8c" category="doc">ONTAP Select性能概述</block>
   <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">ONTAP Select 9.6 性能：高级 HA 直连 SSD 存储</block>
   <block id="5b7b913b9183b40db3cdac93dcffe3d9" category="doc">增加ONTAP Select存储容量</block>
@@ -3578,7 +3456,6 @@ storage aggregate show-spare-disks</block>
   <block id="07c6a664d186f44a90042e2245e46aad" category="doc">适用于本地连接存储的ONTAP Select软件RAID配置服务</block>
   <block id="3e1672f186d30598b8343a9dbdd833ae" category="doc">ONTAP Select VSAN和外部阵列配置</block>
   <block id="e263536030472b1b884032009157f00c" category="doc">ONTAP Select术语和重要概念</block>
-  <block id="fac92aa1bceedd34bdbd54ea3a5c1d41" category="doc">ONTAP Select MetroCluster软件定义的存储</block>
   <block id="b993d6b1ae8a2148a7be773127a7d668" category="doc">ONTAP Select业务需求和使用场景</block>
   <block id="18ea6d668ccbbc1b64935d2ae14d9c63" category="doc">ONTAP Select支持私有云和数据中心</block>
   <block id="567999f9c71634f001a831b733088bbc" category="doc">在远程办公室和分支机构中使用ONTAP Select</block>
@@ -3645,8 +3522,6 @@ storage aggregate show-spare-disks</block>
   <block id="bd633f5da3bfc77af90d4c908e9bf8ac" category="doc">扩展或缩减ONTAP Select集群</block>
   <block id="e6bf3ba5fe1006a55faeef44787ee469" category="list-text">仅支持在ESX虚拟机管理程序主机上创建的集群。以下ESX版本与ONTAP Select 9.151及更高版本兼容：</block>
   <block id="d4597f95391a261a44459b6a1ddb6a8e" category="list-text">为第四个HA对选择高可用性(HA)对配置详细信息、包括：</block>
-  <block id="e3d070f7498c7e147dc4f645a0d0165d" category="doc">获取ONTAP Select容量池许可证</block>
-  <block id="28f937bb8b94ebdea4af2d6d321d545b" category="doc">获取ONTAP Select容量层许可证</block>
   <block id="269ec7d71e2b69e0e1efbee545e82252" category="sidebar">ONTAP Select 9.161文档</block>
   <block id="10094bc8718a18a18fcc32e3cd50df4c" category="sidebar">安全ONTAP Select</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">确认网络连接</block>
@@ -3694,7 +3569,6 @@ storage aggregate show-spare-disks</block>
   <block id="dfe2716b8d1ea246f6e1aa9804752d1e" category="list-text">查看部署详细信息并选择*部署后开机*。</block>
   <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">选择*完成*开始部署过程。</block>
   <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">部署ONTAP Select集群后、您可以使用System Manager或命令行界面配置此集群。您必须使用标准ONTAP *disk assign*操作分配磁盘。</block>
-  <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
   <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">部署ONTAP Select集群的90天评估实例</block>
   <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
   <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">部署一个为期90天的集群评估实例</block>
@@ -3747,7 +3621,6 @@ storage aggregate show-spare-disks</block>
   <block id="76be33f6608866426ecccffc5acd6be8" category="list-text">请勿提供序列号</block>
   <block id="2fcd5d5ae3d245e3d2870429d2c9381d" category="list-text">不需要具有存储容量的生产许可证</block>
   <block id="695af2710450ef107be1555e59f22b01" category="paragraph">(您不会直接从NetApp购买)</block>
-  <block id="0fa0a315c1605e80221e4ae40cfaac60" category="list-text">可以使用容量层许可证、但不支持容量池许可</block>
   <block id="d480e694d74a85a8bf679cab5063c9f1" category="paragraph">下图显示了用于部署和支持四节点ONTAP Select集群的NetApp ONTAP Select Deploy管理实用程序。Deploy 实用程序和 ONTAP Select 节点在专用虚拟机管理程序主机上作为单独的虚拟机运行。</block>
   <block id="54d1b8efd5a74820db5617b48f538671" category="summary">ONTAP Select集群的性能可能会因硬件配置而异。</block>
   <block id="123521c98d5a32b10ae4a2d5e59ed719" category="doc">ONTAP Select的通用支持Python模块</block>
@@ -3780,4 +3653,195 @@ storage aggregate show-spare-disks</block>
   <block id="e951843bb1ba0912165bd527e8312bec" category="list-text">在集群详细信息页面顶部、选择*单击此处*以修改集群许可证。</block>
   <block id="17d9cc4f645deac6e5e367f0ef6fd4ee" category="paragraph">您也可以在*Cluster Details*部分中选择评估版许可证旁边的*Modify*。</block>
   <block id="380ce7f967546f46005a7cb8b03e358c" category="list-text">提供ONTAP凭据并选择*Modify*。</block>
+  <block id="918d32b75f0ab883abba3a8dc0c3ae8d" category="inline-link-macro">互操作性表工具</block>
+  <block id="e417b438eac96386f4107e979870c70f" category="paragraph">要确定支持的客户端软件版本，请查看<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。如果客户端软件支持 ONTAP 9 ，则 ONTAP Select 也支持相同的版本。</block>
+  <block id="8dd24bef30862ad2a7813bfc4c46d79c" category="summary">使用容量池许可模式而非容量层许可模式有多个优势。</block>
+  <block id="860aff0d822e08d1cb7d1f79ee16667e" category="doc">ONTAP Select容量池许可优势摘要</block>
+  <block id="3840ec18790ba33b63a3a6e22afe1a99" category="paragraph">使用容量层许可时、您可以为每个节点分配一个固定的存储容量。任何未使用的空间都不能与其他节点共享，因此实际上会被浪费。使用容量池许可时、每个节点仅会根据数据聚合的大小使用所需的容量。</block>
+  <block id="49466a9207c7bafb807837aa58b28a65" category="paragraph">如果使用容量层许可证、则必须为每个节点获取并安装一个许可证。使用容量池时、每个共享池具有一个许可证。这样可以显著降低管理开销并降低成本。</block>
+  <block id="393a145ee32920c6a9dce6c89774161b" category="paragraph">Deploy Web用户界面提供了容量池的增强使用情况信息。您可以快速确定容量池中已使用和可用的存储容量、正在使用池中存储的节点以及集群从中分配容量的池。</block>
+  <block id="020fa1d798f607b3ef39647558b0e171" category="summary">容量池和容量层许可模式之间存在一些差异。</block>
+  <block id="befac9828a8ee884df5e223362669974" category="doc">比较ONTAP Select容量池和容量层许可</block>
+  <block id="52d1f8cb6e7593cd562d4522014e106d" category="cell">容量层</block>
+  <block id="a74c45c38136d5cb4b7be385e3a8c24e" category="cell">容量池</block>
+  <block id="b3e10a17f0986c4e189b80192f1c0f19" category="cell">九位数、由NetApp生成并分配给容量池</block>
+  <block id="a3719249a1f3a7b49dd84d53689289f9" category="summary">容量池许可模式与容量层模式不同。存储容量将分配给一个池并在多个节点之间共享，而不是为每个节点分配专用存储容量。为了支持容量池模型、还创建了其他组件和流程。</block>
+  <block id="020714b69513bf3a78c5bf5e611bbf05" category="doc">ONTAP Select容量池许可模式的操作详细信息</block>
+  <block id="58e2309fa8979e52ed4f424f7ee35b93" category="list-text">根据容量池许可证序列号为每个节点生成唯一的20位序列号</block>
+  <block id="3dc7acfb50ee98a5c175fb8cdf20a88d" category="list-text">根据ONTAP Select节点的请求为共享容量池中的容量创建租约</block>
+  <block id="11b2d2fecd3396efb87558be584a6d41" category="paragraph">使用容量池许可证为节点上的每个数据聚合分配的存储必须具有关联的租约。节点请求存储租约，如果有可用容量，则 License Manager 将以租约的形式做出响应。每个租约都具有以下显式或隐式属性：</block>
+  <block id="9bb09439dbf58c43c8434974e261285c" category="list-text">容量池每个ONTAP Select节点都与一个容量池相关联</block>
+  <block id="c57cd85a32e181fb83420d2adb23427d" category="paragraph">License Manager 的每个实例以及相应的每个 Deploy 实用程序实例都使用一个唯一的 128 位编号进行标识。此数量与九位数的容量池许可证序列号相结合、可将池锁定到特定的License Manager实例(实际上是一个Deploy实例)。在生成 NetApp 许可证文件 (NLF) 过程中，您必须在 NetApp 支持站点上提供这两个值。</block>
+  <block id="3ccfdfb46d04e07ae1d6fe35a8cbb514" category="paragraph">每次创建，扩展或更改数据聚合时， ONTAP Select 节点都必须找到或请求有效的容量租约。可以使用从先前请求中获取但仍然有效的租约，也可以根据需要请求新租约。ONTAP Select节点会执行以下步骤来查找容量池租约：</block>
+  <block id="4760e200c006091f431ae756ea50eb83" category="section-title">将存储容量归还给容量池</block>
+  <block id="b6249920b182baff7dc50dc8c3c21811" category="paragraph">存储容量会根据需要从容量池中分配、每个新请求都可以减少该池中的可用存储。在以下几种情况下，存储容量会返回到池中：</block>
+  <block id="d65c8696b5fd8387f8b3f5f6c5c24418" category="summary">下面介绍了使用容量池许可模式时适用的限制。</block>
+  <block id="810bc88512dd1c6822f4992dd8667995" category="doc">ONTAP Select容量池许可的部署限制</block>
+  <block id="87734871bc5735c84e6ee48cdfdad1b3" category="paragraph">一个ONTAP Select集群中的所有节点都必须使用相同的许可模式、可以是容量层、也可以是容量池。您不能在一个集群中混用节点的许可类型。</block>
+  <block id="96344640227999714b6bc9eb179a6b3d" category="paragraph">ONTAP Select集群中具有容量池许可证的所有节点都必须使用同一个许可证管理器实例。由于每个 Deploy 实例中都有一个 License Manager 实例，因此，此限制重新说明了一个集群中的所有节点都必须由同一个 Deploy 实例管理的现有要求。</block>
+  <block id="7b0e0ad6985cddb5b8e0a150a2fc65fb" category="paragraph-title">每个节点一个容量池</block>
+  <block id="3618eed950da22dba9e302693bf31644" category="paragraph">每个节点只能从一个容量池中租用存储。一个节点不能使用两个或更多池。</block>
+  <block id="a68727c2470d44ca2bcd0b95331bfb0c" category="paragraph">一个HA对中的两个节点都必须从同一个容量池租用存储。但是，同一集群中的不同 HA 对可以从同一 License Manager 管理的不同池中租用存储。</block>
+  <block id="121aeb58b15f5021ad094c25b9ab6875" category="paragraph">当ONTAP Select节点请求数据聚合的存储租约时、许可证管理器会根据容量池的配置提供一个特定期限的租约。您可以将每个池的租约期限配置为一小时到七天之间。默认租约有效期为 24 小时。</block>
+  <block id="dffc25a8660670650d9dadda393882ec" category="paragraph">使用容量池许可时、您必须为Deploy管理实用程序分配静态IP地址。</block>
+  <block id="fdaaffd277a294e5ad05141047b5c8f9" category="summary">对于容量层许可模式、九位数的节点序列号与分配给节点的许可证序列号相同。但是、使用容量池许可模式分配给节点的序列号具有不同的格式。</block>
+  <block id="aca287ce24cdc5e2ad3d2e36becf7d37" category="doc">ONTAP Select容量池许可模式的节点序列号</block>
+  <block id="a875da8c90c98e4c0f1e4e3e3d4d81a7" category="paragraph">使用容量池许可的节点的序列号格式如下：</block>
+  <block id="769d960ab0e824951746a3c368509fcd" category="cell">NetApp分配给容量池的可变九位许可证序列号</block>
+  <block id="28ec4566b445eb67771a9a111611e502" category="cell">License Manager为使用容量池的每个节点生成的可变八位值</block>
+  <block id="9aaa5ca53edcd9baf965b66b1fba1368" category="admonition">注意：在向NetApp支持部门创建涉及使用容量池许可证的节点的案例时、您无法提供完整的20位节点序列号。而是必须提供九位数的容量池许可证序列号。您可以从节点序列号派生许可证序列号，如上所示。跳过节点序列号的前三位数字（ 999 ），然后提取下九位数字（ ppppppppppp ）。</block>
+  <block id="35892d48da3c4641520dc5f89430eeaa" category="list-text">您可以使用容量层许可证、但不支持容量池许可</block>
+  <block id="1538605c931beb7706c95917ca61c48d" category="summary">您可以购买三种平台容量级别之一的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
+  <block id="4be94941d4ae435ad44487d075e7a367" category="doc">了解ONTAP Select的平台许可证产品</block>
+  <block id="9cdcaf5a7aae0807b2a785f7d26f1f3f" category="paragraph">您可以购买标准、高级或高级XL级别的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
+  <block id="d6a54d06ffa7a2e05f6c0d035a345cb1" category="paragraph">特定许可证产品在以下两个方面定义并限制虚拟机管理程序主机的功能：</block>
+  <block id="3e98038f4cdd32e64d0357acf2d03cda" category="list-text">硬盘驱动器(HDD)或固态驱动器(SSD)</block>
+  <block id="56dce1f406f2aca239ffdd315cc83d5d" category="admonition">基于内核的虚拟机(KVM)不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。</block>
+  <block id="2f2718c8a2f261e7775daae8fff84dbc" category="section-title">比较平台许可证产品的硬件支持</block>
+  <block id="46fa26efbd4810693c18739e5417980e" category="paragraph">标准、高级和高级XL许可证产品支持广泛的硬件和软件。有关硬件和软件版本的最新信息，请参见<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。</block>
+  <block id="06efa63cc6d93bbf842cc0f903057606" category="open-title">核心项目</block>
+  <block id="a3090b498c20b75b1533765619b273a0" category="cell">核心项目类型</block>
+  <block id="6bf08a2d2d231573eaa714b5221158e6" category="cell">主机协议</block>
+  <block id="d9271d1702d6357cd68d0248f2b98bfb" category="cell">NFS、SMB/CCIFS、iSCSI和基于TCP的NVMe</block>
+  <block id="e2c5a3645710b0ed6fec1053fdfe0ead" category="cell">Deployment options</block>
+  <block id="eb09c1a5eb262d090f2cc7e8158cae4e" category="cell">单节点双节点集群(HA对)四节点、六节点或八节点集群</block>
+  <block id="8557a15ebd845a53c232f882fe21205a" category="cell">支持的容量(每个节点)</block>
+  <block id="e8551ae26bc9361887df2597e2a2ea57" category="cell">高达400 TB原始数据(ESXi和KVM)</block>
+  <block id="3c02a379965ab0dfcd77b1c484450433" category="open-title">硬件</block>
+  <block id="440222a5c365cf69d621e3526ea562c4" category="cell">硬件类型</block>
+  <block id="719033e288b59becdea112c671c54bda" category="cell">实例大小</block>
+  <block id="7ddc213b44b1caa736b0d7f1efe305df" category="cell">CPU系列</block>
+  <block id="794e40c13e8053b2f637ceb39fb2d773" category="cell">Intel Xeon E5-26xx v3 (Haswell)或更高版本</block>
+  <block id="7c806fdbaff43b9704153f0c5c81482c" category="cell">ONTAP Select CPU/内存</block>
+  <block id="cfff052f97e49b5003f78ce3678da6de" category="cell">4个虚拟CPU (vCPU)/16 GB RAM</block>
+  <block id="a0275a50dc79599db737a8bc1a17cba6" category="cell">8个vCPS/64 GB RAM</block>
+  <block id="426c3105a73b89195130759dbbb3f08a" category="cell">16个vCP0/128 GB RAM</block>
+  <block id="2c7f3dfe816e26a26331c6cc50536754" category="cell">主机CPU/内存最低要求^1^</block>
+  <block id="4ec4f4725cc876bcb95183576c366df4" category="cell">6个核心/24 GB RAM</block>
+  <block id="0a63727fe995fb5d301d20fb9140de4d" category="cell">10个核心/72 GB RAM</block>
+  <block id="e73d640a676c83c4510d0212e506bb38" category="cell">18个核心/136 GB RAM</block>
+  <block id="522c4ec4d9d59e1a992d989c8d770589" category="cell">网络(每个节点)</block>
+  <block id="d5fda742cbaf307ce4ca202b12335858" category="cell">对于一个单节点集群、至少需要两个1GbE端口对于一个双节点集群(HA对)、至少需要四个1GbE端口对于四节点、六节点或八节点集群、至少需要两个10GbE端口</block>
+  <block id="c65eee5a4810d852ee01a79b87c993f3" category="paragraph">^1^假设虚拟机管理程序具有两个核心和8 Gb RAM。</block>
+  <block id="f0cb6783b152b19ceab16227ca3976a2" category="open-title">Storage type</block>
+  <block id="5939197c86f855d26c9639db3b9a29d6" category="paragraph">下表提供了指定存储所需的最低许可证类型。 </block>
+  <block id="1138bbb83d6525f914cbce8dccc4a874" category="cell">Pemium XL</block>
+  <block id="e629ab9880aae245163ce498ab9e1389" category="cell">小型和中型</block>
+  <block id="a09a88160dc1591cac42ba911581e599" category="cell">小型、中型和大型</block>
+  <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">具有硬件RAID控制器的本地DAS</block>
+  <block id="2feb1874507e2463194f3c757efe6209" category="cell">8到60个驱动器</block>
+  <block id="7742d08808786c4493a46e06b5648ff9" category="cell">HDD (SAS、NL) SAS、SATA</block>
+  <block id="fea45fcfeb873048ff2e2be995d8cb77" category="cell">4–60个驱动器</block>
+  <block id="bb878052f3499d534f13d06526b7d885" category="cell">SSD (SAS)</block>
+  <block id="25a5b17224d1f38c386742ec7cbc343b" category="cell">4–60个驱动器(仅限SSD)</block>
+  <block id="d8e31ece33b3b9fb9373e996815932a7" category="cell">使用软件RAID的本地DAS</block>
+  <block id="a64e775634e2bf5c5e3f63f149af2601" category="cell">4 - 14个驱动器(仅限NVMe)</block>
+  <block id="518c7a2538245dd75c6daac2212b8316" category="cell">外部阵列^1^μ m</block>
+  <block id="8731210144d2e5094fb4001b893115d2" category="cell">外部阵列上托管的数据存储库通过FC、FCoE、iSCSI和NFS进行连接(KVM不支持NFS)。这些数据存储库可提供高可用性和故障恢复能力。</block>
+  <block id="563a5726768d43a126f11bc13b3361dd" category="paragraph">^1^外部阵列协议支持反映了网络存储连接。</block>
+  <block id="719d067b229178f03bcfa1da4ac4dede" category="open-title">软件</block>
+  <block id="e94dfbdb85e6f13fea9179c0fd50d81f" category="cell">软件类型</block>
+  <block id="9295b1d52d6b9b34b829dfb4fabf6d05" category="cell">虚拟机管理程序支持(VMware)</block>
+  <block id="4a9dffc4c71f7a56c8a8d9b0e4381f90" category="cell">VMware vSphere 7.0GA、更新1到3C VMware vSphere 8.0GA以及更新1到3</block>
+  <block id="4f17c009683074f845007741fa1c26dd" category="cell">虚拟机管理程序支持(KVM)</block>
+  <block id="e12f83762dfb76b01ed77a9370b24967" category="cell">RedHat Enterprise Linux 64位(KVM) 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7和8.6洛基Linux (KVM) 9和8</block>
+  <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">管理软件</block>
+  <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">NetApp Active IQ Unified Manager管理套件ONTAP Select Deploy实用程序SnapCenter (可选)</block>
+  <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">了解容量层和容量池许可证类型</block>
+  <block id="10aa5d1416b41ba5cd05d276a6c13328" category="paragraph"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">确定 ONTAP Select 适合您的组织后，您可以购买支持生产部署所需的许可证。您必须为每个部署选择容量层或容量池许可模式以及存储容量。</block>
+  <block id="580ede122197eca33afea87d209746f9" category="paragraph">Capacity Tier_和_Capacity Pools_许可模式在几个方面截然不同。但是，这两种许可模式具有以下几个共同特征：</block>
+  <block id="8e8e728e920aef8a8e61276592f8f07a" category="section-title">容量层许可模式</block>
+  <block id="f57d33a41fff8f72b8541732b6d8adf0" category="paragraph">容量层许可模式具有几个独特的特征、包括：</block>
+  <block id="ba83abe50eb1c6316ad583689b2834f6" category="list-text">每个容量层许可证都有一个存储容量、并锁定到特定节点。</block>
+  <block id="9e586a550fe27d06853aa45ee04db107" category="section-title">容量池许可模式</block>
+  <block id="5308e94ce80081b419db4c906ea0e711" category="paragraph">容量池许可模式具有几个独特的特征、包括：</block>
+  <block id="a5c50f7ef156865bfd5e9875fc89d1f6" category="list-text">您必须为每个共享容量池购买一个许可证。</block>
+  <block id="1f463a24c9d024f8fdaeb1e4ad716c1d" category="list-text">每个容量池许可证都有一个存储容量、并锁定到特定的License Manager实例。</block>
+  <block id="72845ca8a5a798fdf6f61c6d2bed72b4" category="list-text">NetApp会为每个容量池生成一个九位数的许可证序列号。</block>
+  <block id="77ba5c2fc03c677b9c3fe2b00b4439fa" category="list-text">根据购买情况、分配给容量池的存储仅在特定时间内有效(需要续订)。</block>
+  <block id="d150443cb572e514bfd51ac57dab1fce" category="list-text">节点序列号为20位数、由License Manager根据容量池许可证序列号生成。</block>
+  <block id="f658732514353ebc97c68b22fba83311" category="list-text">每个节点都会自动从共享容量池中为其本地数据聚合租用存储容量。</block>
+  <block id="260ed5703a4e4e3c27063e5ad62d8426" category="paragraph">有关容量池许可模式的详细信息、请参见_容量池许可模式_以了解详细信息。</block>
+  <block id="52736b6c929e3fcbb90ce69d40477b01" category="paragraph">根据您使用的是容量层许可证还是容量池许可证、确切过程会有所不同：</block>
+  <block id="371311feed51b9a8b306f029ede6fb62" category="list-text">序列号适用于节点(容量层)或存储池(容量池)</block>
+  <block id="1e3bb0b8e7ecbce202ac714bd6e3f265" category="list-text">使用容量池许可证时、您必须具有Deploy实例的许可证锁定ID</block>
+  <block id="461ecad85ce670905ab753be871deb71" category="list-text">您可以从不同的网站获取容量层和容量池许可证</block>
+  <block id="69bbee1943d709d1872e201eef4b29a8" category="paragraph">ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是主流FAS、AFF和ASA ONTAP产品套件以及Cloud Volumes ONTAP等其他纯软件选项的补充。</block>
+  <block id="00a3caa2896a927e39b353d23b56eb2d" category="paragraph">ONTAP Select可将内部磁盘驱动器、NVMe、SSD或HDD以及外部阵列存储转换为一个灵活的存储系统、该存储系统具有专用ONTAP存储系统提供的许多相同优势。您还可以在新服务器或现有服务器基础架构上部署ONTAP Select。ONTAP Select易于管理、并利用与基于ONTAP的解决方案相同的管理软件、这意味着降低了运营开销和培训要求。</block>
+  <block id="8307546cfa4f0ccad4627a2dcd4f46fa" category="paragraph">ONTAP Select通过两种互补的许可模式(容量层和完全灵活的容量池)来适应您的容量消耗需求。这两种许可模式都支持以低至1 TB的增量增加容量。例如、您可以从几TB开始、然后随着项目增长动态添加容量。如果您使用的是容量池、则可以在项目完成后根据需要重新分配容量。</block>
+  <block id="d88f78a3aeac7464dce1dfe85df34e06" category="paragraph">ONTAP Select已集成到VMware vSphere等云管理框架中。这有助于加快文件服务、主目录、软件开发环境和应用程序测试等新项目的部署速度。</block>
+  <block id="39de1f5e6bbe7e17017c377d3305e9fd" category="paragraph">借助SnapMirror软件、您可以在混合云中的ONTAP存储之间移动数据、以便可以在所需位置轻松访问数据。例如、您可以快速启动一个环境来证明一个想法。之后、您可以将项目移至专用存储平台进行生产部署、或者在开发工作流中使其在云中更易于访问。</block>
+  <block id="9c191e042a5bb50dde6bcacd73b9fc18" category="paragraph">通过软件实施和交付 IT 服务，管理员可以快速灵活地配置资源，而这是以前无法做到的。随着现代数据中心迁移到软件定义的基础架构(Software definable Infrastructure、SDI)架构、您可以将最有价值的IT资产与底层物理基础架构分离、从而提供灵活性、可扩展性和可编程性。</block>
+  <block id="cc0ffc2288900bd57ac4b3e354e5fb49" category="paragraph">ONTAP Select 引入了一种基于使用量的许可模式。在生产环境中部署ONTAP Select集群时、您必须为每个节点或共享容量池购买含存储容量的许可证。您必须使用 Deploy 实用程序应用用于为集群节点建立存储容量的许可证文件。</block>
+  <block id="bf66cac9fd96db287cb8aa533ce84928" category="inline-link-macro">了解默认情况下启用的ONTAP功能</block>
+  <block id="b0781771d593eb6be846237468e85b53" category="inline-link-macro">了解ONTAP Select许可证选项</block>
+  <block id="7096efe9fc5e8c50e1866399304968bf" category="paragraph"><block ref="dd2fc3d451e43974d9ba6b2330d17e5b" category="inline-link-macro-rx"></block> <block ref="89ee8792b4466624e22db7a555dbec1c" category="inline-link-macro-rx"></block></block>
+  <block id="1d4d54ea9194ada2657bbedc16facf76" category="list-text">最初选择使用容量层许可模式为ONTAP Select部署授予存储许可。它基于与 NetApp AFF 和 FAS 结合使用的 ONTAP 模型。每个节点都需要一个单独的许可证。存储容量将锁定到节点并永久存在（无需续订）。</block>
+  <block id="4336ee0e2315cb2014ffbaddbb71d150" category="list-text">容量池许可模式是在使用Deploy 2.10的ONTAP Select 9.5中推出的。每个存储容量池都需要一个单独的许可证。容量池许可证会锁定到License Manager实例(即Deploy实例)、必须根据购买条款续订。您可以在组织中许可和使用任意数量的容量池。但是、由于容量池由ONTAP Select节点共享、因此所需许可证通常比容量层许可少。</block>
+  <block id="07dd1826d2d39d21b05b11f5f59d47dd" category="list-text">License Manager是一个支持容量池许可的软件组件。它目前是 Deploy 管理实用程序的一部分。LM 会从其管理的共享池中将存储租用给 ONTAP Select 节点。_License Lock ID_ 是一个数字字符串，用于唯一标识每个 LM 实例以及每个 Deploy 实例。要生成许可证文件、必须同时使用容量池许可证序列号和LLID。</block>
+  <block id="43b16943d6d5ff73da96f41d29e4303d" category="paragraph"><block ref="43b16943d6d5ff73da96f41d29e4303d" category="inline-link-macro-rx"></block></block>
+  <block id="24d0d0c7fc9a3866a568dea751e3cd63" category="doc">了解ONTAP Select数据保护和效率</block>
+  <block id="05ed3d70c9259c59c7d687abfdcbf9be" category="paragraph">ONTAP Select基于ONTAP存储软件构建、可通过高度可用的无共享横向扩展架构高效地提供企业级存储服务。您可以部署具有一个、两个、四个、六个或八个节点的解决方案、每个节点的原始容量高达400 TB、用于NFS、SMB/CCIFS和iSCSI连接存储。您可以利用本机重复数据删除和数据压缩来增加有效容量、从而降低存储成本。横向扩展架构可实现高可用性和无中断数据移动性、以实现负载平衡或硬件服务。</block>
+  <block id="b489b293d6cbe8b86835d3cac8c315fb" category="section-title">Snapshot数据保护</block>
+  <block id="467385c0c4913cc96395e5493d47b3bc" category="paragraph">ONTAP Select包括数据保护功能、包括Snapshot和SnapMirror软件。您可以快速将数据复制到其他ONTAP存储、无论是内部、远程站点还是云端。如果您必须快速恢复数据、SnapRestore软件可以使用本地快照在几秒钟内恢复整个文件系统或数据卷、而不管容量或文件数量如何。</block>
+  <block id="787fb8fbafed37b77c3881f9e0c851a0" category="section-title">MetroCluster 软件定义的存储</block>
+  <block id="12402222727a1e6976eb8efff78d2bfe" category="paragraph">ONTAP Select MetroCluster软件定义的存储(SDS)可提供增强的保护功能和经济高效的实施。</block>
+  <block id="c5d9de22973474c51d806858e261da44" category="list-text">MetroCluster SDS 为 ONTAP Select 提供了另一个保护维度（从数据中心到数据中心）。除了利用软件定义的存储和ONTAP的所有优势之外、您现在还可以利用这种额外级别的保护。</block>
+  <block id="81256dd6a1d2918b467fe7ea3176a702" category="paragraph"><block ref="81256dd6a1d2918b467fe7ea3176a702" category="inline-link-macro-rx"></block></block>
+  <block id="1849d8fe80a23e86f80eb67cb29950f0" category="paragraph">有关所需软件包和其他配置要求的其他信息，请参见<block ref="d663e2c355c00396895dd4c79ec8b92b" category="inline-link-macro-rx"></block>。</block>
+  <block id="e8ea4a01792e4295b57655f0af615398" category="paragraph">所有许可证的方法都相同、但具体情况因容量层许可证还是容量池许可证而异。</block>
+  <block id="9dc93dd55c92caac98cabff37fbdc64d" category="admonition">您可以使用*Add*和*Update*功能将NLG加载到Deploy服务器中。*Add*向服务器添加新许可证，*Update*使用容量、节点许可证(标准、高级、高级XL)、支持开始和结束日期(容量层许可证)或订阅开始和结束日期(容量池许可证)等信息更新现有文件。</block>
+  <block id="88379325a2a95cc4cf31ec59c1b8d0ab" category="list-text">容量层许可证*是指与ONTAP Select节点序列号关联的每节点永久许可证。它与单独的支持合同一起销售。如果许可证是永久许可证、则必须续订支持合同才能访问ONTAP Select升级并获得NetApp技术支持的帮助。要更改许可证参数(例如容量或节点大小)、还需要当前的支持合同。</block>
+  <block id="a7ac9aa264c0f49d4bb74a0a19f309d8" category="paragraph">购买容量层许可证更新、参数更改或支持合同续订时、需要在订单中提供节点序列号。容量层节点序列号的长度为九位数、以数字"32"开头。</block>
+  <block id="2475e8d85e4c431ed7c77eaf00da0050" category="list-text">*容量池许可证*是指有权使用特定容量池和节点大小(标准、高级、高级XL)部署一个或多个集群的订阅。订阅包括在指定期限内使用许可证和支持的权利。使用许可证和支持合同的权利已指定开始和结束日期。</block>
+  <block id="65ce848134fed42df7f25dc0a3d9d329" category="paragraph">如果容量层支持合同结束日期已过、则此节点可以继续运行、但如果未更新支持合同、您将无法下载和安装ONTAP更新、或者无法致电NetApp技术支持寻求帮助。</block>
+  <block id="f72a27c1465f1a231c0f2c030e6f7e8b" category="paragraph">如果某个容量池订阅失败、系统会首先向您发出警告、但在30天后、如果系统关闭、它将不会重新启动、直到在Deploy服务器上安装更新后的订阅为止。</block>
+  <block id="24b48c88df61ec1a7a95e26d1445ce5d" category="list-text">从ONTAP Select 9.161开始、Red Hat Enterprise Linux (RHEL) 9.5和Rock-Linux 9.5支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。</block>
+  <block id="c747e5d99e0cdd0a943b0b532dc7eca4" category="list-text">从ONTAP Select 9.15.1开始、RHEL 9.4和洛基Linux 9.4支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。</block>
+  <block id="932c03094f0a77749cc455e341a3ea08" category="list-text">您必须为生产环境中部署的每个ONTAP Select集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。</block>
+  <block id="479c7e016ce22da77ff8520b53179a68" category="list-text">Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1、9.2、9.4和9.5上的KVM</block>
+  <block id="41e0fd5b57f80140c6e78c70ec352bc7" category="list-text">基于RockyLinux 8.6、8.7、8.8、8.9、9.0、9.1、9.2、9.3、9.4和9.5的KVM</block>
+  <block id="317a67df30f2813de3d883f1e7b38374" category="inline-link">互操作性表工具、window=_blank</block>
+  <block id="64bdc3c3e77297346c380f015196bdd8" category="paragraph">有关详细信息、请参见<block ref="6d25ea14bebd4b4dc452bcd44cab22c3" category="inline-link-rx"></block>。</block>
+  <block id="85d20cd418b9cf016df4a897af907e84" category="cell">Access Deploy (容量池许可)</block>
+  <block id="a2a620f52d496d9ff18156031c1fd725" category="paragraph">下面介绍了最重要的存储限制。您还应查看<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>以了解更多详细信息。</block>
+  <block id="0df2aea977fec70784930b32e9e165c5" category="paragraph">所有相关存储组件(包括硬件、软件和功能要求)都必须遵循中所述的要求<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。此外、ONTAP Select还支持VMware存储/SAN兼容性文档中所述的所有外部存储阵列、包括iSCSI、NAS (NFSv3)、光纤通道和以太网光纤通道。外部阵列支持受 ONTAP Select 支持的 ESXi 版本限制。</block>
+  <block id="942d9b4c043168e08967b0c909910bfe" category="section-title">管理容量层许可证</block>
+  <block id="5ad35c10c680ba726e50d40a631ed9ff" category="paragraph">您可以根据需要添加、编辑和删除ONTAP Select容量层许可证。</block>
+  <block id="f39a3b280b8ce0907f247b1ecaaf100f" category="section-title">管理容量池许可证</block>
+  <block id="7d5596892567a74637429d5d68b05f0b" category="paragraph">您可以根据需要添加、编辑和删除ONTAP Select容量池许可证。</block>
+  <block id="6c0b8fd8fa018a586b3d5d04652f30ac" category="section-title">重新安装容量池许可证</block>
+  <block id="ee516c5383dfd5e420f4e45c5bda7495" category="paragraph">每个活动容量池许可证都锁定到特定的License Manager实例、该实例包含在Deploy管理实用程序的实例中。如果您正在使用容量池许可证、然后还原或恢复Deploy实例、则原始许可证将不再有效。您必须生成新的容量许可证文件，然后将此许可证安装到新的 Deploy 实例。</block>
+  <block id="53f982214be91d0894e566a5ddb62557" category="list-text">确定原始Deploy实例使用的所有容量池许可证。</block>
+  <block id="09d5514aa379a7f21298f917a2b1119e" category="paragraph">从较高层面来看，此任务由三部分组成。您必须重新生成并安装Deploy实例使用的所有容量池许可证。将所有许可证重新安装到新的 Deploy 实例后，您可以根据需要重置序列号。最后、如果Deploy IP地址已更改、则必须更新使用容量池许可证的每个ONTAP Select节点。</block>
+  <block id="00a96bebeb044c0b128ac4826a9e84dd" category="list-text">请联系NetApp支持部门、取消绑定并取消注册原始Deploy实例的所有容量池许可证。</block>
+  <block id="d4fba2927da7e42e3ecf128519764890" category="list-text">为每个容量池许可证获取并下载新的许可证文件。</block>
+  <block id="f957819aabc968edb10b9f8a7cd31369" category="inline-link-macro">获取容量池许可证</block>
+  <block id="efbea3f99a53c818e1b75ecc2e4f83b6" category="paragraph">有关详细信息、请参见 <block ref="feab67090b12910c2c14365471a86ed6" category="inline-link-macro-rx"></block> 。</block>
+  <block id="6a0e12d4c1f68fa836d49eacdbdd6d22" category="list-text">在新Deploy实例中安装容量池许可证：</block>
+  <block id="f88bd3dead6f3ecc398404ba720d110d" category="list-text">如果分配给新Deploy实例的IP地址与原始Deploy实例的IP地址不同、则必须在使用容量池许可证的每个ONTAP Select节点上更新此IP地址：</block>
+  <block id="0656abd1f496ae9e196a1b6b0c589259" category="paragraph">您可以通过Deploy管理实用程序升级ONTAP Select评估版集群以使用生产容量层许可证。</block>
+  <block id="9ea928d7a888b1b6dd05218df42c1863" category="list-text">评估版集群中的每个节点都必须具有容量层许可证。</block>
+  <block id="6bc11a9dac55ab4bd5f801441e32be3e" category="section-title">管理已过期的容量池许可证</block>
+  <block id="235d833d1553c6ac3ef4b59a69b7709d" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
+  <block id="799f1b966e3a6731dcf1bdc532fd6e05" category="paragraph">在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用_Capacity Tier_模式为每个节点上的存储授予许可、也可以使用_Capacity Pools_模式为共享池授予许可。</block>
+  <block id="4f48353f20e29f22472de3805fec8341" category="paragraph">您必须具有节点的配置信息。应在Deploy实用程序中上传并安装容量层许可证文件。</block>
+  <block id="751e45429506270501500591ecf71f63" category="paragraph">您应使用此操作步骤 配置每个节点。此示例中的节点应用了容量层许可证。</block>
+  <block id="f5eacefd45f87cad9eca589aeba17364" category="paragraph">ONTAP Select节点会使用容量层许可证。</block>
+  <block id="70c6ed94827afcf20125ed21cfa0d45d" category="paragraph">您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可、则必须在恢复或还原Deploy实例后重新安装每个容量池许可证。</block>
+  <block id="29f5b284a6c121e6b86e23d26c5492d7" category="paragraph">如果使用容量池许可、则必须重新安装每个容量池许可证。有关更多详细信息、请参见_重新安装容量池许可证_。</block>
+  <block id="ad8df021d39702efa54a5c4a58d4c408" category="paragraph">如果使用容量池许可、则必须重新安装每个容量池许可证。有关其他详细信息、请参见重新安装容量池许可证。</block>
+  <block id="907984c60dd3b3b1d06b28812739f3a3" category="list-text"><block ref="907984c60dd3b3b1d06b28812739f3a3" category="inline-link-macro-rx"></block></block>
+  <block id="b28ceb45f344ed12e54e3531ae0bac88" category="summary">您必须为ONTAP Select节点使用的每个容量池获取一个许可证文件。此许可证文件用于定义池的存储容量和到期时间。它将通过 NetApp 分配的唯一许可证序列号以及与 Deploy 实例关联的许可证锁定 ID 组合而锁定到 License Manager 。</block>
+  <block id="b06635debd20e5d8f23e5fd54016e095" category="doc">获取ONTAP Select容量池许可证</block>
+  <block id="332320e6473eb55e261b81cf0938cfbc" category="paragraph">您必须已获得NetApp分配给容量池的九位许可证序列号。在尝试获取许可证文件之前，您应在采购订单发货日期之后至少等待 24 小时。</block>
+  <block id="0e1bb7bb179252e22d246c94c588991c" category="paragraph">您必须对ONTAP Select节点使用的每个容量池执行此任务。</block>
+  <block id="1a053c6f3c727874cbf13edff1c8a80e" category="list-text">键入容量池的许可证序列号，然后单击*GO！*。</block>
+  <block id="69d0d1235d3907b389980501bf178f3e" category="paragraph">您必须先将此许可证文件上传到Deploy管理实用程序、ONTAP Select节点才能使用此容量池。</block>
+  <block id="e34af85c97201b9096873d4c2ad19cf3" category="summary">使用容量层许可时、您需要为每个ONTAP Select节点获取一个许可证文件。此许可证文件定义了节点的存储容量，并通过 NetApp 分配的唯一九位序列号锁定到节点。</block>
+  <block id="884816b6d5a6ed8f167117fc8af0b452" category="doc">获取ONTAP Select容量层许可证</block>
+  <block id="6a83549be60e71831bbfcda50973a52e" category="paragraph">您必须对需要容量层许可证的每个ONTAP Select节点执行此任务。</block>
+  <block id="9e2e9cf9504e665219344b4d7647d396" category="sidebar">数据保护和效率</block>
+  <block id="7b1e0be7876419647c8d2d4cd1e3444e" category="sidebar">容量池与容量层</block>
 </blocks>

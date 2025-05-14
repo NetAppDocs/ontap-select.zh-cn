@@ -50,7 +50,7 @@ ONTAP Select需要多个额外的软件包。确切的软件包列表因所使�
 
 NOTE: 如果您在安装Linux服务器期间选择了"虚拟 化主机"作为软件选择、则某些必需的软件包可能已安装。您可能需要按照中所述从源代码安装此选项包 link:https://docs.openvswitch.org/en/latest/intro/install/general/["Open vSwitch文档"^]。
 
-有关所需软件包和其他配置要求的其他信息，请参见link:https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^]。
+有关所需软件包和其他配置要求的其他信息，请参见link:https://imt.netapp.com/matrix/#welcome["互操作性表工具"^]。
 
 .配置存储池
 ONTAP Select存储池是一种逻辑数据容器、用于抽象化底层物理存储。您必须管理部署ONTAP Select的KVM主机上的存储池。
