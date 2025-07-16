@@ -44,7 +44,6 @@
   <block id="a811207ba17996dc78a58667cd177a13" category="inline-link-macro">主机准备检查清单</block>
   <block id="8e0cad5fe5b287e29619e8a65612c78e" category="inline-link-macro">Deploy 实用程序安装所需信息</block>
   <block id="34ff1dcc504899915d2e35990a309b3a" category="inline-link-macro">ONTAP Select 安装所需的信息</block>
-  <block id="71dd62058e9b3b3ce83dc30fe496352e" category="paragraph">按照 <block ref="440b18c7eb072bb28a31c8035fcc65ca" category="inline-link-macro-rx"></block>，查看 <block ref="9cd091a25bce78cdf0c1ef780ca4d19c" category="inline-link-macro-rx"></block>和 <block ref="fb856bc56f17c64169f73fa6665ecd51" category="inline-link-macro-rx"></block> 有关详细信息，请参见相关主题。</block>
   <block id="712a3f9a4e93375653a979ba058c3eb7" category="paragraph">此操作步骤 可在创建新 ONTAP Select 集群之前执行。您还可以执行操作步骤 为现有的 SW-RAID NVMe 集群配置其他 NVMe 驱动器。在这种情况下，配置驱动器后，您必须通过 Deploy 添加这些驱动器，就像添加其他 SSD 驱动器一样。主要区别在于， Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的信息：</block>
   <block id="fd5c5757c7f7041a2e15ed74c2c32432" category="list-text">Deploy 负责处理重新启动流程编排。</block>
   <block id="668ad5825e6f031e6f06ed116fda245d" category="list-text">HA 接管和交还会按顺序执行，但重新同步聚合可能会很耗时。</block>
@@ -473,7 +472,6 @@
   <block id="85b8b2674420975b303ca7af2cceb0b1" category="inline-link-macro">VMware vCenter 服务器</block>
   <block id="a7e7272f62fd6ddeec2a8fce21757dbf" category="paragraph">此处提供了所需的 vCenter 权限列表： <block ref="b5bc3984b5dc3be4e25e9aa47658f334" category="inline-link-macro-rx"></block>。</block>
   <block id="8aeec027b27415f6c0c3d1335de4508f" category="section-title">HA 和集群</block>
-  <block id="a6bd8e6869506e1e1f9d1c161d200e90" category="paragraph">MetroCluster SDS 是一种成本较低的同步复制选项，属于 NetApp 的 MetroCluster 业务连续性解决方案类别。与 NetApp MetroCluster 在 FAS 混合闪存， AFF ，适用于云的 NetApp 私有存储和 NetApp FlexArray ® 技术上推出的 NetApp 不同，它仅适用于 ONTAP Select 。</block>
   <block id="f782a001664af23a9a479ac7f8af14db" category="paragraph">MetroCluster SDS 提供了同步复制解决方案 ，并属于 NetApp MetroCluster 解决方案的范畴。但是，主要区别在于支持的距离（~10 公里与 300 公里）和连接类型（仅支持 IP 网络，而不是 FC 和 IP ）。</block>
   <block id="e390fc325e0e3f48a60a9e0c68c6a1b2" category="paragraph">双节点集群定义为一个集群，其中两个节点位于同一数据中心内，彼此相差 300 米以内。通常，两个节点都具有指向同一网络交换机或一组通过交换机间链路连接的网络交换机的上行链路。</block>
   <block id="e3000fa150dd97eaa370fd81237fc013" category="paragraph">双节点 MetroCluster SDS 的定义是一个集群，其节点在物理上是分开的（不同的房间，不同的建筑物或不同的数据中心），并且每个节点的上行链路连接都连接到不同的网络交换机。尽管 MetroCluster SDS 不需要专用硬件，但环境应支持一组最低要求，即延迟（ 5 毫秒 RTT 和 5 毫秒抖动，最大总时间为 10 毫秒）和物理距离（ 10 公里）。</block>
@@ -622,8 +620,6 @@
   <block id="5b7407231012a40dd88287373070ae98" category="inline-image-macro">ONTAP Deploy 日志</block>
   <block id="35f218ae1f484b62612317226b29e4b3" category="paragraph"><block ref="35f218ae1f484b62612317226b29e4b3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a8522b0cf05272f59ef17c0af3731d6" category="summary">您可以使用 ONTAP Select Deploy 管理实用程序提供的命令行界面创建单节点或多节点 ONTAP Select 集群。</block>
-  <block id="618aade87a4c0dc9b9fe7ea456efd7ad" category="paragraph">如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根聚合和数据聚合至少创建一个存储池。在配置 ONTAP Select 节点时，您必须连接存储池。</block>
-  <block id="c423fd05ac4075cd52ed8e9ec9961c3f" category="paragraph">如果使用软件 RAID ，则必须为系统数据创建存储池，并确保 SSD 驱动器可用于根聚合和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。</block>
   <block id="d5ba525828b35ea241ddabb08b074ffd" category="section-title">可用的 ONTAP Select 版本</block>
   <block id="973a0d9d3fbac9204b63c3c4b4ef0e8e" category="paragraph">获取具有存储容量的许可证文件后，必须将包含许可证的文件上传到 Deploy 虚拟机并进行注册。</block>
   <block id="2fec03a9efc770f765197fa8c7911b8b" category="admonition">如果您部署的集群仅用于评估，则可以跳过此步骤。</block>
@@ -632,55 +628,30 @@
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="paragraph">示例</block>
   <block id="d3da597cbedb34e76303c54f2958f024" category="list-text">使用 SSH 使用管理员帐户登录到 Deploy 实用程序命令行界面。</block>
   <block id="fce170f0d7ad55c661366ec716bc61e0" category="list-text">注册许可证：</block>
-  <block id="20ab7302be55d4dc1a0ba5575d411e18" category="paragraph">`license add -file-name filename`</block>
   <block id="433e51a365a7b38eca70ff3fb9842f4f" category="paragraph">根据提示提供管理员帐户密码。</block>
   <block id="8321447cfcedfbf85f936b6d5ffebfe0" category="list-text">显示系统中的许可证以确认已正确添加此许可证：</block>
-  <block id="8822a9cc146d06e4ec77936054fb11ca" category="paragraph">`许可证显示`</block>
   <block id="dd18331505610da0aa987b27dd5c8b25" category="paragraph">在注册由 vCenter 管理的主机之前，您必须为 vCenter Server 添加一个管理服务器帐户。如果主机不受 vCenter 管理，则可以在注册主机时提供主机凭据。您应使用此操作步骤 添加每个主机。</block>
   <block id="c1f1fdaeb1fc7d288d9969efdd963bcc" category="list-text">使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。</block>
   <block id="783f31ff95f455c1c7bb62214f87fdd1" category="list-text">如果主机由 vCenter Server 管理，请添加 vCenter 帐户凭据：</block>
-  <block id="12c193f5dcc3f99c7a295445ebc9b455" category="paragraph">`credential add -hostname &lt;FQDN_IP&gt; -type vcenter -username vCenter_username`</block>
   <block id="c61720431284d81fa9e02425c5f95ab6" category="list-text">注册主机：</block>
-  <block id="05a199c9e0f61506eaad93a8dc60682f" category="list-text">注册不受 vCenter 管理的独立主机： `host register -name &lt;FQDN_IP&gt; -hypervisor 类型的 ESX -username ESX_username`</block>
-  <block id="72d7c672225aae34bedacaaa9e067e1b" category="list-text">显示主机的状态并确认其已验证。</block>
-  <block id="86cc5166af9ee54f72113259fac2f069" category="paragraph">`host show -name &lt;FQDN_IP&gt; -detailed`</block>
-  <block id="9654fb56bf1aee9815d9cad239ed20e6" category="section-title">创建和配置 ONTAP Select 集群</block>
   <block id="b53d497702708c1435cf9d82b4dd011d" category="paragraph">您必须创建并配置 ONTAP Select 集群。配置集群后，您可以配置各个节点。</block>
-  <block id="6a24e211b3a07c627c36842a7b023db3" category="paragraph">您必须确定集群包含的节点数，并具有关联的配置信息。</block>
   <block id="438a70bbcab0041f9a67a5699ee42b1d" category="paragraph">创建 ONTAP Select 集群时， Deploy 实用程序会根据您提供的集群名称和节点数自动生成节点名称。此外， Deploy 还会生成唯一的节点标识符。</block>
   <block id="11398628eae69f15ea89db484fceb50e" category="list-text">创建集群：</block>
-  <block id="62f2cd8373d9724c99d2f13d42ee8c6c" category="paragraph">`cluster create -name clustername -node-count nodes`</block>
   <block id="b1ac594c1239eacf78f84af51768bd15" category="list-text">配置集群：</block>
-  <block id="fb9cd8b192d5d7274652934a6f7c4f32" category="paragraph">`cluster modify -name clustername -mgmt-ip ip_address -netmask netmask -gateway ip_address -dns-servers &lt;FQDN_IP&gt;_list -dns-domains domain_list`</block>
   <block id="5f503a75cbd22c8269b0eb1377d09880" category="list-text">显示集群的配置和状态：</block>
-  <block id="fbba132f8bfb4917ab068c504260e91d" category="paragraph">`cluster show -name clustername -detailed`</block>
   <block id="fb395229c68cbade5ef8a29846dadf96" category="paragraph">您必须配置 ONTAP Select 集群中的每个节点。</block>
   <block id="ca43b0b07b80357b6b79621504c12e57" category="list-text">确定分配给集群节点的名称：</block>
-  <block id="f9b851f69cae3703f91dd7f46ee96be9" category="paragraph">`node show -cluster-name clustername`</block>
-  <block id="8b5cb1e38684b903416c8da0166076b5" category="list-text">选择节点并执行基本配置： `node modify -name nodename -cluster-name clustername -host-name &lt;FQDN_IP&gt; -license-serial number number -instance-type -passthrough-disks false`</block>
-  <block id="6dd204eccb05c441b87e6a643950694d" category="paragraph">节点的 RAID 配置使用 _passthrough-disks_参数 指示。如果使用的是本地硬件 RAID 控制器，则此值必须为 false 。如果使用的是软件 RAID ，则此值必须为 true 。</block>
   <block id="2b24bc0f21d6bbbaef36e09ddfa027a0" category="list-text">显示主机上可用的网络配置：</block>
-  <block id="e5cc61140754d924e9497ca93ae33daf" category="paragraph">`host network show -host-name &lt;FQDN_IP&gt; -detailed`</block>
   <block id="bb7ea5508da973d7f3f3a022afe1dd6b" category="list-text">执行节点的网络配置：</block>
-  <block id="441178de1ea2785382b8f6b0fe383636" category="paragraph">`node modify -name nodename -cluster-name clustername -mgmt-ip ip -management-network network_name -data-network network_name -internal-network network_name`</block>
-  <block id="f3c1a1c8717be55597746058712a8a41" category="paragraph">部署单节点集群时，您不需要内部网络，应删除 -internal-network 。</block>
   <block id="c2f2bd4587b8c71cf8e299f386400e66" category="list-text">显示节点的配置：</block>
-  <block id="733447df59e9b9f51345490bc3341e5d" category="paragraph">`node show -name nodename -cluster-name clustername -detailed`</block>
   <block id="d07e64799eaa81c2e7811d55f1faaaf1" category="list-text">显示主机上可用的存储池：</block>
-  <block id="9646f070282208e61d267e28e7ef6bb1" category="paragraph">`host storage pool show -host-name &lt;FQDN_IP&gt;`</block>
   <block id="3457f038144b809169e1a74a423ab6b6" category="paragraph">您也可以通过 VMware vSphere 获取可用存储池。</block>
   <block id="07f1307518e7117c7c488ec13d22f13b" category="list-text">将可用存储池连接到 ONTAP Select 节点：</block>
-  <block id="6b72087e7adfa45d3c96a64dbb0e0943" category="paragraph">`node storage pool attach -name poolname -cluster-name clustername -node-name nodename -capacity-limit limit`</block>
-  <block id="4f1ade48acd4f9017fb7aba3b36c6398" category="paragraph">如果包含 -capacity-limit 参数，请将此值指定为 GB 或 TB 。</block>
   <block id="9283f6c409a12ec191b624c73670243a" category="list-text">显示连接到节点的存储池：</block>
-  <block id="16ae8f69d20416e19ed384c85392ce7f" category="paragraph">`node storage pool show -cluster-name clustername -node-name nodename`</block>
   <block id="4b1e89748ee273a82d72c64ef89f9a39" category="paragraph">配置集群和节点后，您可以部署集群。</block>
-  <block id="68051fa26ab75827c550ca4c3606cba1" category="paragraph">在部署多节点集群之前，您应运行网络连接检查程序以确认内部网络上各个集群节点之间的连接。</block>
   <block id="29bcfb9b8c7f3dd5f5123092080684d8" category="list-text">部署 ONTAP Select 集群：</block>
-  <block id="121916d45fa0b5e9fcf763bc06702c33" category="paragraph">`cluster deploy -name clustername`</block>
   <block id="3170be01fdc45e3e10fbe83b1d2be644" category="paragraph">出现提示时，提供要用于 ONTAP 管理员帐户的密码。</block>
   <block id="1d8edcb67cffc7ed8d5c5ba0f36578b7" category="list-text">显示集群的状态以确定集群何时成功部署：</block>
-  <block id="e8cda75e7e5da3e0963e9bf30c7fe4c4" category="paragraph">`cluster show -name clustername`</block>
   <block id="a1b2fc65ee3382a95ecb29d66110e2ad" category="paragraph">您应备份 ONTAP Select Deploy 配置数据。</block>
   <block id="f32f31f3f65cf8fd06f0af930a71a5a1" category="paragraph">在创建双节点 ONTAP Select 集群时， MetroCluster SDS 是一个配置选项。它与远程办公室 / 分支机构（ ROBO ）部署类似，但两个节点之间的距离最远可达 10 公里这种增强型双节点部署提供了其他用例场景。在准备部署 MetroCluster SDS 时，您应了解相关要求和限制。</block>
   <block id="b06ea299e97a88792e784ae5e265bc85" category="paragraph">每个节点都必须具有高级或更高的 ONTAP Select 许可证。</block>
@@ -942,30 +913,19 @@
   <block id="a070d5cad46a2ff939c511d82e8fa8a6" category="list-text">键入 * ？ * 并按 * Enter * 以显示可用管理 Shell 命令的列表。</block>
   <block id="a24ca07ebedf77f4a6bb2763a6a344d9" category="summary">您可以使用 ONTAP Select Deploy 管理实用程序提供的 Web 用户界面来部署单节点或多节点 ONTAP Select 集群。</block>
   <block id="4bdcc660d7ba4c9d9cca694831038425" category="paragraph">使用 Deploy 实用程序 Web 界面创建 ONTAP Select 集群时，系统会引导您完成一系列特定步骤。具体过程因部署单节点集群还是多节点集群而异。</block>
-  <block id="efad7811273daca9266e086dc55571c9" category="paragraph">您应做好部署准备，以确保部署成功。</block>
-  <block id="411e79ebb4981efce9ce6a2b1f40a34f" category="list-text">初始规划</block>
-  <block id="f5a6377fa98426b942cb6b4550d297da" category="list-text">查看文档中的 _Plan_ 和 _License_ 部分。根据这一情况，您可以对集群做出决定，包括：</block>
   <block id="1b21b0d71706897b69f108572c444d40" category="list-text">虚拟机管理程序</block>
   <block id="0ce159ef649591974fe60d01c47f9f48" category="list-text">节点数</block>
   <block id="82060d81b7ce43c57280e879899f9a2c" category="list-text">许可证类型</block>
   <block id="da194a96f5d968cb44a162849f8db7ea" category="list-text">平台大小（实例类型）</block>
   <block id="7df2592d21ee2d7b12cfa029e519d7b9" category="list-text">ONTAP Select 版本</block>
-  <block id="07c910df832eed07eccb9da18112e34b" category="list-text">主机准备</block>
   <block id="37d0d8277e2cec2cf18d723f103fbca0" category="list-text">您必须准备要运行 ONTAP Select 节点的虚拟机管理程序主机，并根据您的许可模式获取所需的存储许可证文件。要查看准备要求，请执行以下操作：</block>
   <block id="9c3a59d6f34c8cd48494cf65ab055e67" category="inline-image-macro">问号</block>
-  <block id="d5b05ba2463ff6cca0078e72e50f28e7" category="list-text">许可证文件</block>
   <block id="85341d624e9b0303539956bd22bfd4d4" category="list-text">如果您计划在生产环境中部署集群，则必须根据您的许可模式获取存储许可证文件。</block>
-  <block id="f0d5638b299d1abdeea7e3509c4a29b5" category="list-text">部署安装和帐户凭据</block>
-  <block id="aed014e58fdd7a5646368dcc7246b28f" category="list-text">安装早期的 ONTAP Select 节点映像</block>
-  <block id="b87008505cc6fe630b46cc1e948e36f1" category="list-text">入门启动页面</block>
   <block id="8a8160f2e850747bb7fabd6819906b08" category="list-text">初始页面 * ONTAP Select Deploy 入门 * 将指导您完成创建集群的多步过程。主要步骤有五个，包括：</block>
   <block id="fb98e8390277794afc419e842f4bccd9" category="list-text">添加许可证</block>
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">创建集群</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">网络预检</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">部署集群</block>
-  <block id="9dae84e581f54bbd3529b1a828393655" category="list-text">网络检查程序</block>
-  <block id="18889d3b7d7412c773430265b3f7a703" category="list-text">如果要部署多节点集群，则应熟悉网络检查程序。</block>
-  <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">部署集群后</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">使用管理员帐户（ admin ）通过 Web 界面登录到 Deploy 实用程序。</block>
   <block id="4693647f83597e4a631ffdc39034b06d" category="paragraph">您提供的任何帐户凭据都会添加到 Deploy 凭据数据库中。</block>
   <block id="0f602d7fe375d87b4dfff619bb7a3b50" category="list-text">在 * 节点设置 * 下，提供节点管理 IP 地址并为节点选择许可证；您可以根据需要上传新许可证。如果需要，您还可以更改节点名称。</block>
@@ -1311,42 +1271,23 @@
   <block id="94c8db1e39e106761ed9c4db655dd019" category="cell">NetApp 保留的三位数不变值。</block>
   <block id="0c59088c12981c5178183df5dc1d06ec" category="cell">ppppppppppp</block>
   <block id="6eff2276c4f875c14c569fbc11e4c2a0" category="cell">nnnnnnnn</block>
-  <block id="86b544aab279dcb98c0ac9a8a2cfce27" category="summary">准备部署 ONTAP Select 节点的每个虚拟机管理程序主机。在准备主机时，请仔细评估部署环境，以确保主机已正确配置并准备好支持 ONTAP Select 集群的部署。</block>
-  <block id="2185b12253fdb08ce9e5bab96ce67841" category="admonition">ONTAP Select Deploy 管理实用程序不会对虚拟机管理程序主机执行所需的网络和存储配置。在部署 ONTAP Select 集群之前，您必须手动准备每个主机。</block>
-  <block id="a623b323ce5bde34ceed491f235e772c" category="section-title">虚拟机管理程序常规准备</block>
-  <block id="4f70f438bc71ffe3cc266bbdbd64dd4c" category="paragraph">您必须准备虚拟机管理程序主机。</block>
-  <block id="157082075cf8ebd954c056e836434d09" category="paragraph">必须为每个主机配置以下配置：</block>
   <block id="24204c997b3d030f4d9ce5fcea7002fe" category="list-text">预安装且受支持的虚拟机管理程序</block>
   <block id="411cd9469768abc767a0d3bac2cdf6a7" category="list-text">VMware vSphere 许可证</block>
-  <block id="eeb652490d57d0a6e0d8c4df44d30196" category="paragraph">此外，同一 vCenter Server 必须能够管理集群中部署了 ONTAP Select 节点的所有主机。</block>
-  <block id="be7ba1cc5d733e1a1147dfcb706ba07e" category="paragraph">此外，您还应确保已将防火墙端口配置为允许访问 vSphere 。这些端口必须处于打开状态，才能支持与 ONTAP Select 虚拟机的串行端口连接。</block>
   <block id="64e9bd801fb1d92798105981e35f9849" category="paragraph">默认情况下， VMware 允许通过以下端口进行访问：</block>
   <block id="338fd1d1b83d5d0138568986650d8dc2" category="list-text">端口 22 和端口 1024 – 65535 （入站流量）</block>
   <block id="ad85e3d4f8993ecc55cfc896cea6dc3a" category="list-text">端口 0 – 65535 （出站流量）</block>
-  <block id="a9461ad4bdcaf1c7202fdc5b685ae53b" category="paragraph">NetApp 建议打开以下防火墙端口以允许访问 vSphere ：</block>
   <block id="752d7150e9a84bfe1a31fbe987989ac9" category="list-text">端口 7200 – 7400 （入站和出站流量）</block>
-  <block id="f392a4c2089f47d56aaf2604d51a0212" category="paragraph">您还应熟悉所需的 vCenter 权限。请参见 <block ref="b5bc3984b5dc3be4e25e9aa47658f334" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
-  <block id="0fb894a7b1c4fc2e3053e0d8e16e28bb" category="section-title">ONTAP Select 集群网络准备</block>
-  <block id="c543be005c793f5c1453419ee22fdb86" category="paragraph">您可以将 ONTAP Select 部署为多节点集群或单节点集群。在许多情况下，由于存储容量和 HA 功能增加，因此最好使用多节点集群。</block>
-  <block id="d50c9bc4edee53c577b0f49de0372b74" category="section-title">ONTAP Select 网络和节点示意图</block>
-  <block id="bdeb743cae55db0d19ef5bb601af8d02" category="paragraph">下图说明了单节点集群和四节点集群使用的网络。</block>
   <block id="b8bacb4f33d1e9dea63f9ab11ce19732" category="section-title">显示一个网络的单节点集群</block>
   <block id="58198336ded054ee055d62950ea47a49" category="paragraph">下图显示了一个单节点集群。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。</block>
   <block id="e4de6945234664828cf04b9124c5dad3" category="paragraph"><block ref="e4de6945234664828cf04b9124c5dad3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5f738af515e6134e45621304b009e7c5" category="section-title">显示两个网络的四节点集群</block>
-  <block id="d0c98acebd4a01ddf3e6391db82cf8cc" category="paragraph">下图显示了一个四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。</block>
   <block id="d903217e89ca4f8dc5faaecd0d175f0c" category="paragraph"><block ref="d903217e89ca4f8dc5faaecd0d175f0c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6ead2b5cc2e9a07c3c837cd527eae680" category="section-title">四节点集群中的单个节点</block>
   <block id="0e17d1b8e444a58b17e21b8d633cf3c9" category="paragraph">下图显示了四节点集群中单个 ONTAP Select 虚拟机的典型网络配置。有两个单独的网络： ONTAP 内部网络和 ONTAP 外部网络。</block>
   <block id="ab818ab7a96525155b780ef59003cf8c" category="paragraph"><block ref="ab818ab7a96525155b780ef59003cf8c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="56e2b9daec1637993e5182fd117827a3" category="section-title">虚拟机管理程序主机上的 vSwitch 配置</block>
   <block id="c44b5d59bfc3b0196028c522c56aa989" category="paragraph">vSwitch 是用于支持内部和外部网络连接的核心虚拟机管理程序组件。在配置每个虚拟机管理程序 vSwitch 时，应考虑以下几点。</block>
-  <block id="5850fac42ee19999fd3b74ae172f1a3d" category="section-title">具有两个物理端口（ 2 个 10 Gb ）的主机的 vSwitch 配置</block>
-  <block id="eda37297768fb66316ec0c97afd29213" category="paragraph">如果每个主机包含两个 10 Gb 端口，则应按如下所示配置 vSwitch ：</block>
-  <block id="a86f2765e738940e7dd8fdf6da677fd5" category="list-text">配置 vSwitch 并将这两个端口分配给 vSwitch 。使用这两个端口创建 NIC 组。</block>
   <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">将负载平衡策略设置为 "Route based on the originating virtual port ID" 。</block>
   <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">vSwitch 属性）</block>
-  <block id="fee017d680804978d6f31a0149d3356f" category="list-text">将 " 故障恢复 " 设置设置为 " 是 " 。<block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">将 vSwitch 配置为使用巨型帧（ 9000 MTU ）。</block>
   <block id="e954024be7362eabbc9a349d62fdd4d4" category="list-text">在 vSwitch 上为内部流量（ ONTAP 内部）配置端口组：</block>
   <block id="a75b88570c3f7c89c4fc7aa2f4ab0862" category="list-text">端口组将分配给用于集群， HA 互连和镜像流量的 ONTAP Select 虚拟网络适配器 e0c-e0g 。</block>
@@ -1354,9 +1295,6 @@
   <block id="1d73953b34ca84fbbf679a9071108259" category="list-text">端口组的负载平衡，故障恢复和故障转移顺序设置应与 vSwitch 相同。</block>
   <block id="b7760ca7d6bf308d66b54dafb201dee0" category="list-text">在 vSwitch 上为外部流量（ ONTAP 外部）配置端口组：</block>
   <block id="cc60c471b3f7c93bb39710ddf02f3de5" category="list-text">端口组将分配给用于数据和管理流量的 ONTAP Select 虚拟网络适配器 e0a-e0c 。</block>
-  <block id="be1192e22ed4b2278c16d618bdfb26db" category="list-text">端口组可以位于可路由的 VLAN 上。此外，根据网络环境的不同，您应添加适当的 VLAN 标记或为端口组配置 VLAN 中继。</block>
-  <block id="aeb674f30505441361603daaf231026f" category="list-text">端口组的负载平衡，故障恢复和故障转移顺序设置应与 vSwitch 相同。</block>
-  <block id="6b59ceccf3ee7910ade2c094fe636bb7" category="paragraph">上述 vSwitch 配置适用于典型网络环境中具有 2 个 10 Gb 端口的主机。</block>
   <block id="f5b241fc250b3d06edf589b105596935" category="summary">所有 API 调用的详细信息均采用通用格式记录并显示在 ONTAP Select Deploy 联机文档网页上。通过了解单个 API 调用，您可以访问和解释所有 API 调用的详细信息。</block>
   <block id="f88210d2eab3d233e5af40136f634e78" category="paragraph">您必须登录到 ONTAP Select Deploy 联机文档网页。您必须具有创建集群时为 ONTAP Select 集群分配的唯一标识符。</block>
   <block id="a1f5081f3dbf077035f1e845de86d7f2" category="paragraph">您可以使用 ONTAP Select 集群的唯一标识符检索描述该集群的配置信息。在此示例中，将返回归类为 " 低成本 " 的所有字段。但是，作为最佳实践，您应仅请求所需的特定字段。</block>
@@ -2445,14 +2383,10 @@
   <block id="04985546e9771cbfe818d7c08949cb4e" category="paragraph">如果驱动器出现故障、您需要使用ONTAP 命令行界面来识别故障磁盘。</block>
   <block id="76b45a86afe9ddfec423de5caad088a5" category="list-text">使用管理员帐户登录到ONTAP 命令行界面。</block>
   <block id="56f32587956bc806f4ffe1823a1a1872" category="list-text">确定发生故障的磁盘驱动器。</block>
-  <block id="866ece73832a5308b812e48e59ba8a4f" category="paragraph">您必须配置ONTAP Select 集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。</block>
-  <block id="f31242a3b10d57ca87f84e612994d57c" category="paragraph">您必须使用VMware vSphere创建存储池。如果您使用的是软件RAID、则还需要至少一个可用磁盘驱动器。</block>
   <block id="2976fb0a07ffd25ea274d2cc9bc187be" category="paragraph">使用本地硬件RAID控制器时、需要执行步骤1到4。使用软件RAID时、您需要执行步骤1到步骤6。</block>
   <block id="cc6982c020bc97509cfd68e72db0524e" category="list-text">使用管理员帐户凭据使用SSH登录到Deploy实用程序命令行界面。</block>
   <block id="1d0fd2b207143cd0cbfe1f1eca67206a" category="list-text">如果您使用的是软件RAID、请连接可用驱动器：</block>
-  <block id="477b4fc07bc021818bf99ca0a2f9a370" category="paragraph">`node storage disk attach -node-name nodename -cluster-name clustername -disks list_of_drives`</block>
   <block id="10d4b2d6f8c74f79bcce5324cfbda150" category="list-text">如果您使用的是软件RAID、请显示连接到节点的磁盘：</block>
-  <block id="f1efe358bd22df5ef0bdf73fc9e8d10b" category="paragraph">`node storage disk show -node-name nodename -cluster-name clustername`</block>
   <block id="1a4f0dd8a8bf6109c981c282ef6e87c9" category="paragraph">支持的微处理器包括：</block>
   <block id="9adc1cc3490cf88dcf6538833825d06d" category="paragraph">根据集群大小、可以使用多种受支持的以太网配置。</block>
   <block id="28f29271814291e43be7deaba751046b" category="cell">集群大小</block>
@@ -2653,7 +2587,6 @@
   <block id="75907379a71ad8ffa5e06073ace36e0d" category="list-text">不再支持ESXi 6.0</block>
   <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">使用的是KVM虚拟机管理程序、而不是VMware ESXi</block>
   <block id="cb8338f0bc7e868c1dca9f89ef69705a" category="paragraph">MetroCluster SDS 可以部署在 ROBO 环境中双节点集群所支持的同一 VMware ESXi 和 KVM 虚拟机管理程序上。</block>
-  <block id="7e2fe14c99e2697025b2031aedd0ec68" category="list-text">注册vCenter管理的主机：<block ref="06cf66b5547f9422d5a9c37b6cfb3aca" prefix=" " category="inline-code"></block></block>
   <block id="18d733133eb14f6d577f2d278fac37a1" category="summary">您可以使用host modify命令修改使用此ONTAP Select Deploy实例的主机管理服务器。</block>
   <block id="35f41fa38694b23a0654a4a8c0dd359b" category="doc">修改主机管理服务器</block>
   <block id="88f06314571793a45376bea0a67c1684" category="paragraph">您可以使用<block ref="efefae9f89e157498d052edf2886fd00" prefix=" " category="inline-code"></block> 用于使用此ONTAP Select Deploy实例修改主机管理服务器的命令。</block>
@@ -2753,7 +2686,6 @@
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch配置</block>
   <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">将主机添加到清单</block>
   <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">您可以使用ONTAP Select Deploy Web用户界面部署单节点或多节点ONTAP Select集群。</block>
-  <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">请参见 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以准备部署集群。必须安装Deploy管理并进行初始配置(密码、AutoSupport和vCenter)。</block>
   <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">为生产部署创建包含一个或多个节点的ONTAP Select集群。</block>
   <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">多节点集群</block>
   <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">在*Node Setup*下，提供节点管理IP地址并为每个节点选择许可证；您可以根据需要上传新许可证。如果需要、您还可以更改节点名称。</block>
@@ -2859,10 +2791,7 @@
   <block id="fdd1d325ffe2bc60f1cb8023f18ff770" category="paragraph">请参见 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block> 适用于追加信息 。</block>
   <block id="03d76d78faf307e9a28053a9961e39b9" category="inline-link-macro">使用Deploy实用程序命令行界面部署ONTAP Select集群</block>
   <block id="a86b0aeeb47174a94a9b648d015c71d1" category="admonition">您也可以 <block ref="ea53b27a388cf53d44c3f702619eab0e" category="inline-link-macro-rx"></block>。</block>
-  <block id="e0cc9223324ac532a641decf83c6e9b5" category="list-text">您必须安装 Deploy 管理实用程序并执行初始配置。请参见 <block ref="06a53967f62b6ebf8a1fba55cabdfecf" category="inline-link-macro-rx"></block> 有关详细信息 ...您需要具有在安装过程中配置的 Deploy 管理员帐户的密码。</block>
   <block id="cf86e8b21059cea7afe42d59893ab1bb" category="inline-link-macro">添加要部署的ONTAP Select映像</block>
-  <block id="8cc0af6f6e47d25f8709bf9afbd00f15" category="list-text">默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则需要将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
-  <block id="d62734538fb96b5ef45355daf822cb1a" category="section-title">创建单节点或多节点集群</block>
   <block id="f300769ad7ade3ee1597c88f58750b97" category="doc">升级ONTAP Select节点</block>
   <block id="2e17a67d810d937603511ac8eb9044c5" category="paragraph">在升级 ONTAP Select 节点之前，请查看追加信息 发行说明以及所有必需的过程。</block>
   <block id="2a883d1fe3d932e9f2fc25c99deaa4b9" category="inline-link-macro">ONTAP升级概述</block>
@@ -2938,11 +2867,7 @@
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">更改Deploy管理员密码</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用命令行界面部署ONTAP Select集群</block>
   <block id="6f78f7cef2637ad960245873ccb009cc" category="section-title">准备将存储连接到ONTAP Select节点</block>
-  <block id="ad34b3ead133ac2946581ad99de776f1" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则必须先将 ONTAP Select 映像添加到 Deploy 实例中。请参见 <block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="1b1ef1407797edfb0f8a19eb7e5bfcf0" category="section-title">为生产部署授予ONTAP Select许可证</block>
-  <block id="37ff470528fb108e5783094291a4fa39" category="section-title">上传并注册许可证文件</block>
-  <block id="6a1aef20627259c0bc151f0c191b9cb8" category="section-title">配置ONTAP Select节点</block>
-  <block id="feabcebe39f17dad32257d11d0077c91" category="section-title">将存储连接到ONTAP Select节点</block>
   <block id="a55b17d8324fe50e023be8010d4b5474" category="cell">最低要求</block>
   <block id="145a82122e23908d50818a5950c27509" category="cell">建议的要求</block>
   <block id="a5ce4a1eb8334399b5ae78ecb675d015" category="paragraph">请参见 <block ref="cc66674a6eca098ccdd0161214bd6b9f" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
@@ -3088,25 +3013,11 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="ac6f6351adbefa5e8dddb3979a00a210" category="section-title">KVM的虚拟交换机选项</block>
   <block id="14958037abd0c9d4d81d8f56f5e5e6dd" category="inline-link-macro">KVM上的ONTAP Select产品架构和最佳实践</block>
   <block id="4f3a24de1cd0e2c9a65d69f3cb150ca6" category="paragraph">要了解有关如何在虚拟机管理程序主机上配置Open vSwitch的更多信息、请参见 <block ref="2b1f7dd3493f53e1ee03e8fab05e0af0" category="inline-link-macro-rx"></block> 技术报告。</block>
-  <block id="de797f6783630aa8fc2138dde8e9120c" category="section-title">KVM虚拟机管理程序</block>
-  <block id="b2e7abe45d5aa586a8f3507497cdd9f9" category="paragraph-title">准备Linux服务器</block>
-  <block id="b09f29f89d723a464604296e2e5e07ac" category="paragraph">您必须准备部署ONTAP Select节点的每个Linux KVM服务器。此外、您还必须准备部署ONTAP Select Deploy管理实用程序的服务器。</block>
-  <block id="fc8913280cdc00a30c367fb6cad82a5a" category="paragraph-title">安装 Red Hat Enterprise Linux</block>
-  <block id="4adf8d273405d567b3c04578e7587fcc" category="list-text">选择默认作为安全策略</block>
-  <block id="b7ed0ef33f8535f13a2a8c61b522db5c" category="list-text">选择"虚拟 化主机软件"选项</block>
-  <block id="beb8bb5c30618e7ed13d13dae4f958bd" category="list-text">目标应是本地启动磁盘、而不是ONTAP Select使用的RAID LUN</block>
-  <block id="10c868a17c5e398c81dd9b50639763c4" category="list-text">启动系统后、验证主机管理接口是否已启动</block>
   <block id="aaac1d103d5aeeb7d73b6d5e1bdc1994" category="admonition">您可以在/etc/sysconfig/network-scripts下编辑正确的网络配置文件、然后使用启动此接口<block ref="6ba111013553581c1c2e4d92b952a427" prefix=" " category="inline-code"></block> 命令：</block>
-  <block id="ab254b430433275f124379adb4311d9e" category="paragraph-title">安装ONTAP Select所需的其他软件包</block>
-  <block id="3738f55ea208199f5c75954580847670" category="paragraph">ONTAP Select需要多个额外的软件包。确切的软件包列表因所使用的Linux版本而异。首先、验证yum存储库是否在您的服务器上可用。如果此选项不可用、您可以使用检索它<block ref="a52a983e58d14432379ef732f02ff1ab" prefix=" " category="inline-code"></block> 命令：</block>
   <block id="99965beffa3302f13c927db3818d3722" category="inline-link-macro">Open vSwitch文档</block>
   <block id="ef81ea587a9f08c529a68f4615638a9f" category="admonition">如果您在安装Linux服务器期间选择了"虚拟 化主机"作为软件选择、则某些必需的软件包可能已安装。您可能需要按照中所述从源代码安装此选项包 <block ref="7514235d0c1cb4fbed4568e20a4d9277" category="inline-link-macro-rx"></block>。</block>
-  <block id="3fec9570e277fe5ca33bf5e5dc7cf266" category="paragraph-title">配置存储池</block>
   <block id="4a1a2ddde34541bd47c25ab818424838" category="paragraph">ONTAP Select存储池是一种逻辑数据容器、用于抽象化底层物理存储。您必须管理部署ONTAP Select的KVM主机上的存储池。</block>
-  <block id="694bb5d3641d16eb91812f8515d06f39" category="section-title">创建存储池</block>
-  <block id="58e5c137a00faec1de944bacb75ca632" category="paragraph">您必须在每个ONTAP Select节点上至少创建一个存储池。如果使用软件RAID而不是本地硬件RAID、则存储磁盘会连接到根聚合和数据聚合的节点。在这种情况下、您仍必须为系统数据创建存储池。</block>
   <block id="d06dd7938588e509ae84facb39c806cd" category="paragraph">验证您是否可以在部署ONTAP Select的主机上登录到Linux命令行界面。</block>
-  <block id="16b00c8abcc647df1731f70f3b3aee4f" category="paragraph">ONTAP Select Deploy管理实用程序要求将存储池的目标位置指定为&lt;pool_name&gt;、其中&lt;pool_name&gt;是主机上的唯一池名称。</block>
   <block id="6f92c22ea4481dc877af6451c00b7600" category="admonition">创建存储池时会分配LUN的全部容量。</block>
   <block id="91e1bea618239574736ff58d1555ee78" category="list-text">显示Linux主机上的本地设备、并选择要包含存储池的LUN：</block>
   <block id="1c26a9b8b6ff9130f9fe3d768a2bb1b1" category="paragraph">相应的LUN可能是存储容量最大的设备。</block>
@@ -3116,8 +3027,6 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="415a28ab034c4b366ebca0e1fa301877" category="list-text">启动存储池：</block>
   <block id="d3df2906140890200ea275d3126da11e" category="list-text">将存储池配置为在系统启动时自动启动：</block>
   <block id="524cde9f98f335dbb104964e066dfce1" category="list-text">验证是否已创建存储池：</block>
-  <block id="69e1bc44aa452878b78f550b1157f17f" category="section-title">删除存储池</block>
-  <block id="14afacaaf46b8168da545a92865b948b" category="paragraph">您可以删除不再需要的存储池。</block>
   <block id="a14f2866686fa22df758f2e2b00f0b70" category="paragraph">验证您是否可以登录到部署ONTAP Select的Linux命令行界面。</block>
   <block id="dd35639e9fd740146b934fb640bccf13" category="paragraph">ONTAP Select Deploy管理实用程序要求将存储池的目标位置指定为<block ref="319a1c81657d8dc3b673f17368a886b7" prefix=" " category="inline-code"></block>、其中<block ref="f07904d2382b0c9f106ac0aed199bfa5" prefix=" " category="inline-code"></block> 是主机上的唯一池名称。</block>
   <block id="6d8662996e69f1e3c536b02d02d5787d" category="list-text">验证是否已定义存储池：</block>
@@ -3133,10 +3042,7 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="18be2ae62eb484adbc3df06931ebe10e" category="list-text">验证是否已删除物理卷：</block>
   <block id="f8e80305c6a752fa480425736440f0ae" category="list-text">显示物理卷：</block>
   <block id="683ecb73afda15fde88ea1f13553db88" category="list-text">如果池中存在物理卷、请将其删除：</block>
-  <block id="03249d27c310c32513a2cb9a94f2392e" category="section-title">ESXi虚拟机管理程序</block>
   <block id="648b7564cebb88ef62230c6f20be68e5" category="section-title">KVM主机</block>
-  <block id="fad67eca4bbb6c614ba95a7621feb115" category="section-title">在KVM主机上配置Open vSwitch</block>
-  <block id="499b1345f49647b53688c5793ad6fd16" category="paragraph">您必须使用Open vSwitch在每个ONTAP Select节点上配置一个软件定义的交换机。</block>
   <block id="50d78cdae1dbe643fde69294232f2373" category="paragraph">验证网络管理器是否已禁用、以及本机Linux网络服务是否已启用。</block>
   <block id="61265c1e27724fae1f9a2cd60d857810" category="paragraph">ONTAP Select需要两个单独的网络、这两个网络都利用端口绑定为网络提供HA功能。</block>
   <block id="b4a77e012bdccdd189f5aef0dce990f6" category="list-text">验证Open vSwitch在主机上是否处于活动状态：</block>
@@ -3146,7 +3052,6 @@ ESXi虚拟机管理程序主机或Linux KVM主机</block>
   <block id="a1c899987e93a415b9a1b29b831d64a5" category="paragraph">如果尚未在主机上配置Open vSwitch、则此配置将显示为空。</block>
   <block id="40779d988534a99007cdc886bc32993e" category="list-text">添加新的vSwitch实例：</block>
   <block id="e72eb41a052109bb91a2314fa0d6e4fc" category="list-text">关闭网络接口：</block>
-  <block id="5acc57693e4f9cd8ef816c9879f58020" category="list-text">使用LACP合并链路：</block>
   <block id="ccaee579ce14596b2dda7bc7da054d94" category="admonition">只有当存在多个接口时、才需要配置绑定。</block>
   <block id="646f02137c96603aa789a9457d4d0957" category="list-text">启动网络接口：</block>
   <block id="52a1e1faba85313e38b02d33db3e72fa" category="section-title">ESXi主机</block>
@@ -3234,8 +3139,6 @@ storage aggregate show-spare-disks</block>
   <block id="1bc4b1f653eec748e8950fe95542c6c7" category="paragraph">软件RAID部署环境必须满足以下核心要求：</block>
   <block id="359d6740356700577c670323f7cbac37" category="section-title">ESXi特定要求</block>
   <block id="2224687ecf21b1675a7abec3ca811ea2" category="section-title">KVM特定要求</block>
-  <block id="53ff7224e49cc038362b652ed53367b7" category="inline-link-macro">准备Linux服务器</block>
-  <block id="0f075a8bba820354a296c7a6914f8394" category="paragraph">此外、还需要满足特定的软件包配置要求。请参见 <block ref="3f2bac8bad540a9c2f37d4f37d1b8355" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="c2d9e9c4506ed8ccbe8db249dce9164a" category="list-text">KVM的介质要求</block>
   <block id="aa006251ff33a6971a452339afffc2c3" category="list-text">使用的SSD闪存存储设备必须满足以下附加要求：</block>
   <block id="00bd07af9fad9ff431eee2c2198976da" category="list-text">SSD设备必须通过以下方法准确、持久地向Linux主机报告自身情况：</block>
@@ -3257,10 +3160,8 @@ storage aggregate show-spare-disks</block>
   <block id="07631781f5db0609861ec2caaf896f03" category="list-text">此配置无法识别精简配置的存储。</block>
   <block id="10c8d042ce17abdbd1b2872cc10224fd" category="admonition">您指定的存储容量必须在外部存储允许的存储限制范围内。如果未提供容量限制或在磁盘创建操作期间外部存储用尽空间、则会发生错误。</block>
   <block id="d6a8d8a553fafc77be3bbc3532a06ef8" category="paragraph">在虚拟机管理程序上创建ONTAP Select集群之前、您应了解所需的准备工作。</block>
-  <block id="e14fdf26f8c6aa9539b5cd6e06f4e6a0" category="section-title">添加虚拟机管理程序主机</block>
   <block id="54b9e9bd1204847d62dd385e0a878825" category="paragraph">您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。</block>
   <block id="821f64723dcb51116d658f57a357ea8d" category="paragraph">您必须注册要运行ONTAP Select节点的虚拟机管理程序主机。在此过程中、Deploy管理实用程序会向KVM主机进行身份验证。</block>
-  <block id="02d016ce2e517695f7acf4b6eec3505d" category="paragraph">如果需要多个虚拟机管理程序主机、则应使用此操作步骤添加每个主机。</block>
   <block id="b35deab8fe517b712dd5772aba668caa" category="paragraph">根据提示提供主机帐户的密码。</block>
   <block id="746634143c62da1653effd6247a8bc0c" category="list-text">显示主机的状态并确认其已通过身份验证：</block>
   <block id="3cea28153feb7166a8a64b4330b70220" category="paragraph">在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。</block>
@@ -3351,15 +3252,11 @@ storage aggregate show-spare-disks</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">将八节点集群缩减为六节点集群</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">对集群扩展和缩减的支持仅限于ESX集群。</block>
   <block id="e35a91dc5473bf4a53204a2bd1366d7e" category="summary">从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。</block>
-  <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。不支持其他集群扩展或缩减方案。</block>
-  <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">操作步骤可使用命令行界面、API或Web界面从ONTAP Select Deploy启动。</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">集群扩展和缩减功能受以下限制：</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">展开集群</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">您可以通过集群扩展功能将现有集群的大小从六节点集群增加到八节点集群。</block>
   <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">在准备集群扩展操作步骤时、会向清单中添加新的ESX主机、并分配新节点的详细信息。在开始集群扩展过程之前、网络预检会验证选定的内部网络。</block>
-  <block id="7c96df80e019ac7201d76d07cb2c8c3b" category="inline-link-macro">网络连接检查程序</block>
-  <block id="4ae4de42a8fcf95f1eb770acae4690f2" category="list-text">部署多节点集群时、您应熟悉 <block ref="db3262d1c88b720b4d17a260091e6a75" category="inline-link-macro-rx"></block>。</block>
   <block id="30230ebf7e780c11cfcde8274fc17934" category="list-text">验证您是否知道新节点的许可证详细信息。</block>
   <block id="70be200347cc17e3939c72792fe71b15" category="list-text">选择页面顶部的*Cluster*选项卡，然后从列表中选择所需的集群。</block>
   <block id="83d473b2e8f1c324b60e13d720cac51a" category="list-text">在集群详细信息页面上、选择页面右侧的齿轮图标、然后选择*扩展集群*。</block>
@@ -3395,12 +3292,9 @@ storage aggregate show-spare-disks</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">保存原始Deploy虚拟机映像。</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">在本过程稍后的部分中、当您将Deploy配置数据从原始虚拟机还原到新虚拟机时、需要使用原始Deploy虚拟机映像。</block>
   <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">虚拟机管理程序的软件兼容性信息</block>
-  <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">您必须使用ISO映像安装Red Hat Enterprise Linux (RHEL)操作系统。有关支持的RHEL版本列表、请参见<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。在安装期间、您应按如下所示配置系统：</block>
   <block id="d62b4235cf2a29152b9bcb3eb1df59d8" category="paragraph">您可以通过集群扩展功能将集群大小从六节点集群增加到八节点集群。目前不支持将集群从一节点、双节点或四节点集群扩展为六节点或八节点集群。<block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。目前不支持将集群从六节点或八节点集群缩写为一节点、两节点或四节点集群。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬件和存储注意事项</block>
-  <block id="04b2d3e0b04793e1eab99a7ce4905944" category="paragraph">目前不支持以下集群扩展和功能：</block>
-  <block id="246664f02679d184f0608a4d7824502b" category="list-text">从一节点、双节点或四节点集群扩展为六节点或八节点集群。</block>
   <block id="226d8636aca6bd1bdcac58203b8ddcd2" category="list-text">从六节点或八节点集群缩写为一节点、两节点或四节点集群。</block>
   <block id="054e946fb0b83b6a666a6ad91e898f0a" category="doc">使用ONTAP Select的作业对象进行异步处理</block>
   <block id="1203a64f6c4121eab9dbc97f2336a51b" category="doc">在使用浏览器访问ONTAP Select Deploy API之前</block>
@@ -3468,7 +3362,6 @@ storage aggregate show-spare-disks</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">用于调整ONTAP Select集群节点大小的脚本</block>
   <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">工作流1：在ESXi上创建ONTAP Select单节点评估集群</block>
   <block id="169dafc7979793a9e61147f233aa45c3" category="doc">ONTAP Select Deploy实用程序安装所需信息</block>
-  <block id="952cea38c1f18dae7e337ec5342feda3" category="doc">ONTAP Select主机配置和准备检查清单</block>
   <block id="d94db1fe93dcae57541a64d1d1664af0" category="doc">有关ONTAP Select的常见问题解答</block>
   <block id="cddb93cf729be75720f6155855c70d38" category="doc">修改ONTAP Select Deploy的主机管理服务器</block>
   <block id="7ccffa1050dd38b57df1fa0990bb72a7" category="doc">部署后ONTAP Select集群的初始状态</block>
@@ -3550,7 +3443,6 @@ storage aggregate show-spare-disks</block>
   <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">准备ESXi主机的要求</block>
   <block id="40500d60ce10678b5afdd4398f493978" category="paragraph"><block ref="40500d60ce10678b5afdd4398f493978" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a9d35c0cb060ab36e25ffd3d93795556" category="inline-link-macro">ONTAP Select安装文档</block>
-  <block id="295c8d07537fb1be04c147371b26ece5" category="paragraph">有关主机配置选项的其他信息，请参见<block ref="cd27c348e940a3727b6807628855d8fd" category="inline-link-macro-rx"></block>。</block>
   <block id="246320dc101bf0e3be5986b0320159e6" category="section-title">使用OVF模板部署单节点ONTAP Select集群</block>
   <block id="a50cac13360eacf7961596b190047155" category="paragraph">在受支持的64位ESXi主机服务器上完成以下步骤。</block>
   <block id="e7c78d04f4c3c4a7d36c59b9d2c2b9f7" category="list-text">转至NetApp评估产品程序页面并选择*OVF*将ONTAP Select ONTAP Select模板下载到本地工作站。</block>
@@ -3586,7 +3478,6 @@ storage aggregate show-spare-disks</block>
   <block id="820d1873bef6998cbee232163b828a57" category="list-text">在*入门*页上，选择*上传*，然后从本地工作站中选择一个许可证，然后选择*打开*以上传该许可证。</block>
   <block id="68488b2b0b0bac78cf8e946ef52da267" category="list-text">选择*Refresh*并确认已添加许可证。</block>
   <block id="3d549ad86001c792e0804733ec4c2957" category="list-text">选择*Next*以添加虚拟机管理程序主机，然后选择*Add*。</block>
-  <block id="d44b6331867f2132b1d71fa39b6807b4" category="list-text">选择*Refresh*并确认主机的*Type*值为*ESX*。</block>
   <block id="c62cb76848266877f290be96b3ff294e" category="list-text">选择*Next*开始创建集群过程。</block>
   <block id="6c7b66882eb92b081bda7b0b837ecadc" category="list-text">在*集群详细信息*部分中，提供描述集群的所有必需信息，然后选择*Done。</block>
   <block id="e1c524d61c650626841b4dcb765c3916" category="list-text">提供*存储*配置并选择*完成*。</block>
@@ -3825,8 +3716,6 @@ storage aggregate show-spare-disks</block>
   <block id="9ea928d7a888b1b6dd05218df42c1863" category="list-text">评估版集群中的每个节点都必须具有容量层许可证。</block>
   <block id="6bc11a9dac55ab4bd5f801441e32be3e" category="section-title">管理已过期的容量池许可证</block>
   <block id="235d833d1553c6ac3ef4b59a69b7709d" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
-  <block id="799f1b966e3a6731dcf1bdc532fd6e05" category="paragraph">在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。您可以使用_Capacity Tier_模式为每个节点上的存储授予许可、也可以使用_Capacity Pools_模式为共享池授予许可。</block>
-  <block id="4f48353f20e29f22472de3805fec8341" category="paragraph">您必须具有节点的配置信息。应在Deploy实用程序中上传并安装容量层许可证文件。</block>
   <block id="751e45429506270501500591ecf71f63" category="paragraph">您应使用此操作步骤 配置每个节点。此示例中的节点应用了容量层许可证。</block>
   <block id="f5eacefd45f87cad9eca589aeba17364" category="paragraph">ONTAP Select节点会使用容量层许可证。</block>
   <block id="70c6ed94827afcf20125ed21cfa0d45d" category="paragraph">您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可、则必须在恢复或还原Deploy实例后重新安装每个容量池许可证。</block>
@@ -3844,4 +3733,124 @@ storage aggregate show-spare-disks</block>
   <block id="6a83549be60e71831bbfcda50973a52e" category="paragraph">您必须对需要容量层许可证的每个ONTAP Select节点执行此任务。</block>
   <block id="9e2e9cf9504e665219344b4d7647d396" category="sidebar">数据保护和效率</block>
   <block id="7b1e0be7876419647c8d2d4cd1e3444e" category="sidebar">容量池与容量层</block>
+  <block id="82f452184fa717ab2fcdbde25eea3a2b" category="inline-link-macro">了解生产部署的许可证</block>
+  <block id="74d4caeb059278dbd1c813ff422126a8" category="list-text"><block ref="74d4caeb059278dbd1c813ff422126a8" category="inline-link-macro-rx"></block></block>
+  <block id="8c091dbfff8264fef2b6558a0443daa3" category="paragraph">有关主机配置选项的其他信息，请参见<block ref="d26ab879e3e1e4419b35eeaaf3d601a9" category="inline-link-macro-rx"></block>。</block>
+  <block id="ac40d7358d4d4fc23aa16496ea43e162" category="summary">准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，请仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
+  <block id="48a140923c82edfd6e65489c46f2fd26" category="doc">ONTAP Select的 ESXi 主机配置和准备清单</block>
+  <block id="cd4dd6c5342dd2939f0e0bdd97cfa640" category="paragraph">准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
+  <block id="6943ac53dc25f522d2ecc61d1df4d254" category="admonition">ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主机所需的网络和存储配置。您必须在部署ONTAP Select集群之前手动准备每个主机。</block>
+  <block id="423f466fab8357286c6cf217990032a9" category="section-title">步骤 1：准备 ESXi 虚拟机管理程序主机</block>
+  <block id="ffcbf41bb4fefee8d2ebaec73aee544e" category="paragraph">验证 ESXi 主机和防火墙端口的配置。</block>
+  <block id="4bfbb417b8a4bf09330cd603a8d2149d" category="list-text">验证每个 ESXi 是否配置了以下内容：</block>
+  <block id="7f7b0cd7587096f8738b62b3bb89f75d" category="list-text">验证同一个 vCenter 服务器是否可以管理集群内部署了ONTAP Select节点的所有主机。</block>
+  <block id="8e965c6efff0ec42edb4d98c4b4f267c" category="list-text">验证防火墙端口是否配置为允许访问 vSphere。这些端口必须处于打开状态，才能支持与 ONTAP Select 虚拟机的串行端口连接。</block>
+  <block id="654866693fd91ce8e9764a218f569918" category="open-title">建议</block>
+  <block id="48b57a8b558957dd3e7441bb0f96fc17" category="paragraph">NetApp建议您打开以下防火墙端口以允许访问 vSphere：</block>
+  <block id="7a1920d61156abc05a60135aefe8bc67" category="open-title">默认</block>
+  <block id="12462521a7bfaae88612e67a6cc7b1d6" category="inline-link-macro">Broadcom VMware vSphere 文档</block>
+  <block id="d85d91c3c7391a8cc1abbaa4bf03a69f" category="paragraph">有关详细信息，请参见<block ref="f57712c95026a899c2b4a681c2f5806d" category="inline-link-macro-rx"></block>。</block>
+  <block id="060278236e2a36f8b466d6ba28cd0b0a" category="list-text">熟悉所需的 vCenter 权限。有关详细信息、请参见 <block ref="b5bc3984b5dc3be4e25e9aa47658f334" category="inline-link-macro-rx"></block> 。</block>
+  <block id="476adabeb93cd47e40f395777bcd9096" category="section-title">步骤 2：检查ONTAP Select集群配置</block>
+  <block id="00fd1befd47f1352fb810d1098ccd34c" category="paragraph">您可以将 ONTAP Select 部署为多节点集群或单节点集群。在许多情况下，多节点集群是首选，因为它具有额外的存储容量和高可用性 (HA) 功能。</block>
+  <block id="1abfe64fc729ead26726164b794bcc72" category="paragraph">下图展示了单节点集群和四节点集群使用的ONTAP Select网络。</block>
+  <block id="2e5a1a6424ee2d0aa549b427d2f571d2" category="open-title">四节点集群</block>
+  <block id="e6a67192413f528c465842e03f8443e0" category="paragraph">下图展示了一个包含两个网络的四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。</block>
+  <block id="c3a20bbad365631eadc5b2dca8f640b3" category="section-title">步骤3：配置Open vSwitch</block>
+  <block id="d1beebffe274c5b13d29f2fbfaa10b06" category="paragraph">以下步骤适用于典型网络环境中具有两个物理端口（2x10Gb）的 ESXi 主机的 vSwitch 配置。</block>
+  <block id="720708f411d277d77845e1db4cee83de" category="inline-link-macro">配置 vSwitch 并将两个端口分配给 vSwitch</block>
+  <block id="f07356480e3047e35b4cb99dbcc748e2" category="list-text"><block ref="2076eeb99e46600240fb1d963411bb31" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="bf87bb05f214f1b9f8546e218338fb13" category="inline-link-macro">使用两个端口创建 NIC 团队</block>
+  <block id="32d6da19d2584fe97eb75d6418af8ca3" category="list-text"><block ref="4d5b30272096305aaf5c4ffdca2a1db5" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="5a9f02bdaab74c00379f1d1e19fe6c57" category="list-text">将 " 故障恢复 " 设置设置为 " 是 " 。</block>
+  <block id="f2456bc45004bdf347023d01536a2379" category="paragraph"><block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c0cdffd9a10aa81c87d6972a4d9f884" category="list-text">端口组可以位于可路由的 VLAN 上。根据网络环境，您还应该添加适当的 VLAN 标签或配置 VLAN 中继的端口组。</block>
+  <block id="fae4bee7c370d0d0391b8ef189079d46" category="list-text">端口组的负载平衡、故障回复和故障转移顺序设置应与 vSwitch 相同。</block>
+  <block id="9450ade0fc753dddabd4ea63d8bb1187" category="summary">准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
+  <block id="6ca9942b969b8c587ad10afd9e0ef119" category="doc">ONTAP Select的 KVM 主机配置和准备清单</block>
+  <block id="75b870251dc6cf53eee7c05860c964ad" category="paragraph">准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
+  <block id="70927fa219016e15d1c052484c1bd8b6" category="section-title">步骤 1：准备 KVM 虚拟机管理程序主机</block>
+  <block id="f815b88c3f2e295185a91f57bfa50353" category="paragraph">您需要准备部署ONTAP Select节点的每个 Linux KVM 服务器。此外、您还必须准备部署ONTAP Select Deploy管理实用程序的服务器。</block>
+  <block id="c241fe11e545bc063ad09b24a98effc6" category="list-text">安装 Red Hat Enterprise Linux (RHEL)。</block>
+  <block id="2ff736caf3983658e4ec79ee3819c922" category="paragraph">使用 ISO 镜像安装 RHEL 操作系统，有关支持的RHEL版本列表、请参见<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。安装过程中请按如下方式配置系统：</block>
+  <block id="1dba0423db6561f7f586bce7bb6464ed" category="list-text">选择默认作为安全策略。</block>
+  <block id="1229bc8d8ed41fbcf405e751fcd267c9" category="list-text">选择虚拟化主机软件选择。</block>
+  <block id="0a9285d59d241ef6e2a097eb12348745" category="list-text">验证目标是本地启动磁盘而不是ONTAP Select使用的 RAID LUN。</block>
+  <block id="6063f8b6c26d320baa62a530f64fca5f" category="list-text">启动系统后，验证主机管理接口是否已启动。</block>
+  <block id="44f034e8bddc7f54effe05cffba765e2" category="list-text">安装ONTAP Select所需的附加软件包。</block>
+  <block id="a9c724e8713ef58dc2c356a27af21d10" category="paragraph">ONTAP Select需要多个额外的软件包。具体的软件包列表会根据您使用的 Linux 版本而有所不同。首先、验证yum存储库是否在您的服务器上可用。如果找不到，您可以使用<block ref="a52a983e58d14432379ef732f02ff1ab" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="3b91df101d076e959178a9e5b582bbd0" category="list-text">配置存储池。</block>
+  <block id="f1fd06fa3cd1b6e284695b5e85530723" category="section-title">步骤 2：创建存储池</block>
+  <block id="50b1e4b274ff41d84812d72ec4d0366f" category="paragraph">在每个ONTAP Select节点上创建至少一个存储池。如果使用软件RAID而不是本地硬件RAID、则存储磁盘会连接到根聚合和数据聚合的节点。在这种情况下、您仍必须为系统数据创建存储池。</block>
+  <block id="5a8a791a5a894dce740a8fd22318e379" category="section-title">步骤 3：（可选）删除存储池</block>
+  <block id="415879a334c93c7ef8d6b030a1907b1c" category="paragraph">当不再需要存储池时，您可以删除它。</block>
+  <block id="e42020f303d4086997fbf896eaa7ce6f" category="section-title">步骤 4：检查ONTAP Select集群配置</block>
+  <block id="9cd673848f022f2072dcf928ef5baa6f" category="paragraph">下图说明了用于 ESXi 主机的单节点集群和四节点集群的ONTAP Select网络。</block>
+  <block id="4796e2b2317eb3e84c57c714137b49ea" category="section-title">步骤5：配置Open vSwitch</block>
+  <block id="ef3573d3acc7d720d6f59357fc39c64b" category="paragraph">使用 Open vSwitch 在每个 KVM 主机节点上配置一个软件定义的交换机。</block>
+  <block id="bb3bd4b178c4e41ee14b531882270811" category="list-text">使用链路聚合控制协议 (LACP) 合并链路：</block>
+  <block id="d099d0357fc4b6bd5f674bf948ccd8ef" category="paragraph">MetroCluster SDS 是一种成本较低的同步复制选项，属于 NetApp 的 MetroCluster 业务连续性解决方案类别。它仅适用于ONTAP Select，而NetApp MetroCluster则适用于FAS混合闪存、 AFF和NetApp Private Storage for Cloud。</block>
+  <block id="49282a1612672f029a74fc4fccd6b9b8" category="inline-link-macro">Linux 服务器的准备</block>
+  <block id="be3ccaa1ff931b5bcff2fef8fbd77e26" category="paragraph">此外、还需要满足特定的软件包配置要求。查看<block ref="8d0fd2fb7c740b9cefef72702e4861cc" category="inline-link-macro-rx"></block>步骤获取更多信息。</block>
+  <block id="e8b072936a8e7fac47ec8283f096be17" category="doc">管理ONTAP Select集群</block>
+  <block id="af858b3b9bb1921933e293e43cd28e6b" category="paragraph">有关详细信息<block ref="aa150fc2553a8a0c846847314bde8f61" category="inline-link-macro-rx"></block>，请按照，查看<block ref="9cd091a25bce78cdf0c1ef780ca4d19c" category="inline-link-macro-rx"></block>和<block ref="fb856bc56f17c64169f73fa6665ecd51" category="inline-link-macro-rx"></block>主题。</block>
+  <block id="b43dccc6180e02d25b94d717af59c5d5" category="section-title">步骤 1：准备部署</block>
+  <block id="14ce7f56600ce32dd333637eed98cd8f" category="open-title">硬件 RAID</block>
+  <block id="66ef34be992df3691380b5f366935c14" category="inline-link-macro">存储池（KVM）</block>
+  <block id="e6590b92b825641d452dbbfa0d4cf1d1" category="paragraph">如果使用本地硬件 RAID 控制器，则必须创建至少一个数据存储区 (ESX) 或一个<block ref="a828881b33208a7c4812d178d14998a2" category="inline-link-macro-rx"></block>每个节点上的系统数据以及根和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池。</block>
+  <block id="19d8e46deea8d239f3274a92f88038ab" category="paragraph">如果使用软件 RAID，则必须创建至少一个数据存储区 (ESX) 或一个<block ref="a828881b33208a7c4812d178d14998a2" category="inline-link-macro-rx"></block>用于系统数据，并确保 SSD 驱动器可用于根和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。</block>
+  <block id="908272d4cd58c61b9a3bc042f376ee86" category="inline-link-macro">添加ONTAP Select映像</block>
+  <block id="e037f6aae5e648de44fa07863c350701" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的ONTAP Select部署集群，您必须首先<block ref="6403b9b63d70488e119e79bd63bd10d8" category="inline-link-macro-rx"></block>到您的 Deploy 实例。</block>
+  <block id="2d9d6efa5bb5baaf1e0bfc7ac2970b34" category="inline-link-macro">在每个节点上许可存储</block>
+  <block id="0e2d788174d92e5c522bb94eb4614635" category="paragraph">在生产环境中部署 ONTAP Select 集群之前，您必须购买存储容量许可证并下载关联的许可证文件。你可以<block ref="5d215f99cd493426ea4f2be40c5f97db" category="inline-link-macro-rx"></block>使用_Capacity Tiers_模型或使用_Capacity Pools_模型许可共享池。</block>
+  <block id="3eb5f6fbb37c205e7b0f3c2e27e5cc78" category="section-title">步骤 2：上传并注册许可证文件</block>
+  <block id="325678dcce8d3c398635db2108eb241f" category="section-title">步骤 3：添加虚拟机管理程序主机</block>
+  <block id="b42660378fe63209a930909cf4a8b897" category="paragraph">如果需要多个虚拟机管理程序主机，请使用此过程添加每个主机。</block>
+  <block id="dbcc7264f72f882e166f34c140babcf6" category="list-text">注册不受vCenter管理的独立主机：</block>
+  <block id="ee0a7d9166d8172b15b42ad8e568a954" category="list-text">注册vCenter管理的主机：</block>
+  <block id="472f0e9090fb7d93c5e0a1a06b6b4cc5" category="list-text">显示主机的状态并确认其已通过身份验证。</block>
+  <block id="02c20e0ad493146563361a596ed3b6aa" category="section-title">步骤 4：创建并配置ONTAP Select集群</block>
+  <block id="86f6a7060970787f82c24fe758f4ae4d" category="paragraph">确定集群包含多少个节点并具有相关的配置信息。</block>
+  <block id="af834676057429af957436aead793160" category="section-title">步骤 5：配置ONTAP Select节点</block>
+  <block id="db05eae1b9f552b5242689958b3185f8" category="list-text">验证您是否拥有该节点的配置信息。</block>
+  <block id="775730986921b238cf92eae155f0529b" category="list-text">验证容量层或容量池许可证文件是否已上传并安装在部署实用程序中。</block>
+  <block id="7f5998d97e997d06b38dd40acb4989ae" category="list-text">选择节点并执行基本配置：</block>
+  <block id="c3794766c1eefd3c0199789cfde830f8" category="paragraph">节点的 RAID 配置使用 _passthrough-disks_参数 指示。如果您使用的是本地硬件 RAID 控制器，则此值必须为“false”。如果您使用的是软件 RAID，则此值必须为“true”。</block>
+  <block id="dc5b4c51869a4ecbfbe5cff29deb8bf9" category="paragraph">部署单节点集群时，不需要内部网络，应删除“-internal-network”。</block>
+  <block id="59fe213da926a8376160783d1f58f451" category="section-title">步骤 6：将存储连接到ONTAP Select节点</block>
+  <block id="7744678a51ad75d0a7914c6be524b07f" category="paragraph">配置ONTAP Select集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。</block>
+  <block id="35ce7f1e4644c12a41871d3574e5f4c3" category="paragraph">使用 VMware vSphere 创建存储池。如果您使用的是软件RAID、则还需要至少一个可用磁盘驱动器。</block>
+  <block id="3125556cd0faed6822a27c4dd74e7f66" category="paragraph">如果包含“-capacity-limit”参数，请将值指定为 GB 或 TB。</block>
+  <block id="9422500ba9ca059a6142954aaf694ce3" category="section-title">步骤 7：部署ONTAP Select集群</block>
+  <block id="deb20e04b6a7cd797c67d023a7919cc9" category="inline-link-macro">网页用户界面</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="inline-link-macro">命令行界面</block>
+  <block id="9b7a3cef1d3f98a8d89d5d50af86ae90" category="paragraph">使用以下方式运行网络连接检查器<block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block>或<block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block>确认内部网络上的集群节点之间的连通性。</block>
+  <block id="3e7c1c2f4ff8e34c82dbce131bf96f39" category="paragraph">不支持以下集群扩展和收缩：</block>
+  <block id="399ac94f70d77c6189cd7c4808326bdd" category="list-text">从一节点、双节点或四节点集群扩展为六节点或八节点集群。</block>
+  <block id="f7dcf9444b81db6d7f05c66ad816c0fe" category="paragraph">要将集群中的节点数更改为集群扩展或收缩不支持的大小，您需要执行以下任务：</block>
+  <block id="f878a51040555cefe376b9b5a963ff25" category="list-text">使用<block ref="e244d19d71425b6ce1016edcf4f160e2" category="inline-link-macro-rx"></block>或<block ref="e7b95b44ed2cf30f5122b04d3c4d28be" category="inline-link-macro-rx"></block>随ONTAP Select Deploy 管理实用程序一起提供。</block>
+  <block id="a1f41e52e9ddbd9f87ecd032c237b1c0" category="inline-link-macro">SnapMirror 复制</block>
+  <block id="f2a5934dd0746752f0c18f9c7345174c" category="list-text">如果适用，使用以下方式将数据迁移到新集群<block ref="968561cde231c01bbf82ff0390d26f84" category="inline-link-macro-rx"></block> 。</block>
+  <block id="c630ce0380a19f100f797f38c49d39bd" category="paragraph">您可以使用 CLI、API 或 Web 界面从ONTAP Select Deploy 启动集群扩展和收缩过程。</block>
+  <block id="6f32bc87686311f97a78df38edf22268" category="list-text">部署多节点集群时，您应该熟悉网络连接检查器。您可以使用<block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block>或<block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block> 。</block>
+  <block id="2da03f325cfe181d05a9428d38580d4f" category="paragraph">做好部署准备以确保其成功。</block>
+  <block id="4e70bfd1f0f16decda9550994494f29f" category="list-text">初步规划。</block>
+  <block id="7ea1f49dd9c8e949497eb26df1cc7b38" category="paragraph">回顾<block ref="38f89fcd934fcec61c15c58ea26b8003" category="inline-link-macro-rx"></block>和<block ref="9575ba7bfcdc84cc585701a17575801c" category="inline-link-macro-rx"></block>部分。基于此审查，您可以做出有关集群的决策，包括：</block>
+  <block id="d02fabb7acb756736edf4931e98fb1b6" category="list-text">准备好宿主。</block>
+  <block id="937a4d8444a9ed859034883a297e6862" category="list-text">获取许可证文件。</block>
+  <block id="c5f7e068810e1d69c250eb1f7292c87e" category="list-text">部署安装和帐户凭据。</block>
+  <block id="13102e9d5268a6698cd488661246dd90" category="inline-link-macro">安装 Deploy 管理实用程序并执行初始配置</block>
+  <block id="c97b7d7b540f48af39821239acbda954" category="paragraph"><block ref="6c4df47b04608996684fabe341a23010" category="inline-link-macro-rx"></block>(英文)您需要具有在安装过程中配置的 Deploy 管理员帐户的密码。</block>
+  <block id="6c624cba781d51a1e3fb8fb6029e586f" category="list-text">或者，安装早期版本的ONTAP Select节点映像。</block>
+  <block id="b40890461bb2fade4789e27c5bcf9ee6" category="inline-link-macro">将ONTAP Select映像添加到您的 Deploy 实例</block>
+  <block id="251c843d8b2ea0a6806a6d476abdd4cf" category="paragraph">默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的ONTAP Select部署集群，您需要<block ref="94d476619ebf306b7b8c214ba77969ca" category="inline-link-macro-rx"></block> 。</block>
+  <block id="a4e7cd108396bfe0867075802e330c8c" category="list-text">了解“入门”启动页面。</block>
+  <block id="7381db70b0f9d2f885ee4cba8ede7b98" category="list-text">检查网络检查器。</block>
+  <block id="c65f7e7d46833afe91ee028aca918c05" category="paragraph">如果您正在部署多节点集群，您应该熟悉网络检查器。您可以使用<block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block>或<block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block> 。</block>
+  <block id="6351bd39d411592c7341e6df24bca63e" category="section-title">步骤 2：创建单节点或多节点集群</block>
+  <block id="76bd80cda7eacafb97f61a8cac5c273c" category="paragraph">验证您已安装 Deploy 管理并完成初始配置（密码、 AutoSupport和 vCenter）。</block>
+  <block id="3ce3947b444d6f91f7a8b85b972fe58a" category="list-text">选择*刷新*并确认主机的*类型*值为*ESX*或*KVM*。</block>
+  <block id="1b5226a9b144cf3cfc703d8ec6db57ef" category="section-title">步骤 3：完成后</block>
+  <block id="f3a5d576716c34a4548a66aa3126c77d" category="sidebar">KVM 主机检查清单</block>
+  <block id="935f419c21e41ca992af1333488fd110" category="sidebar">ESXi 主机清单</block>
 </blocks>

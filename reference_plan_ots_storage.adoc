@@ -86,7 +86,7 @@ NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_c
 
 === KVM特定要求
 
-此外、还需要满足特定的软件包配置要求。请参见 link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["准备Linux服务器"] 有关详细信息 ...
+此外、还需要满足特定的软件包配置要求。查看link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["Linux 服务器的准备"]步骤获取更多信息。
 
 KVM的介质要求:: 使用的SSD闪存存储设备必须满足以下附加要求：
 +

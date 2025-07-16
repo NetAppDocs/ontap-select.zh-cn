@@ -4,7 +4,7 @@ permalink: task_adm_clusters.html
 keywords: administer, administering, web, clusters 
 summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。 
 ---
-= ONTAP Select 集群
+= 管理ONTAP Select集群
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

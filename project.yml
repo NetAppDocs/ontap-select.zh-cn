@@ -121,7 +121,11 @@ sidebar:
     - title: 安装前检查清单
       entries:
       - title: 主机准备检查清单
-        url: "/reference_chk_host_prep.html"
+        entries:
+        - title: KVM 主机检查清单
+          url: "/kvm-host-configuration-and-preparation-checklist.html"
+        - title: ESXi 主机清单
+          url: "/esxi-host-configuration-and-preparation-checklist.html"
       - title: Deploy 实用程序所需信息
         url: "/reference_chk_deploy_req_info.html"
       - title: ONTAP Select 所需信息

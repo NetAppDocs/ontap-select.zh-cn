@@ -14,9 +14,24 @@ summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6
 
 
 [role="lead"]
-从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。不支持其他集群扩展或缩减方案。
+从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。
 
-操作步骤可使用命令行界面、API或Web界面从ONTAP Select Deploy启动。
+不支持以下集群扩展和收缩：
+
+* 从一节点、双节点或四节点集群扩展为六节点或八节点集群。
+* 从六节点或八节点集群缩写为一节点、两节点或四节点集群。
+
+
+[NOTE]
+====
+要将集群中的节点数更改为集群扩展或收缩不支持的大小，您需要执行以下任务：
+
+. 使用link:task_cli_deploy_cluster.html["命令行界面"]或link:task_deploy_cluster.html["网页用户界面"]随ONTAP Select Deploy 管理实用程序一起提供。
+. 如果适用，使用以下方式将数据迁移到新集群link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["SnapMirror 复制"^] 。
+
+
+====
+您可以使用 CLI、API 或 Web 界面从ONTAP Select Deploy 启动集群扩展和收缩过程。
 
 
 
@@ -36,12 +51,6 @@ summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6
 
 
 
-目前不支持以下集群扩展和功能：
-
-* 从一节点、双节点或四节点集群扩展为六节点或八节点集群。
-* 从六节点或八节点集群缩写为一节点、两节点或四节点集群。
-
-
 
 
 == 展开集群
@@ -52,7 +61,7 @@ summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6
 在准备集群扩展操作步骤时、会向清单中添加新的ESX主机、并分配新节点的详细信息。在开始集群扩展过程之前、网络预检会验证选定的内部网络。
 
 .开始之前
-* 部署多节点集群时、您应熟悉 link:https://docs.netapp.com/us-en/ontap-select/task_adm_connectivity.html["网络连接检查程序"]。
+* 部署多节点集群时，您应该熟悉网络连接检查器。您可以使用link:task_adm_connectivity.html["网页用户界面"]或link:task_cli_connectivity.html["命令行界面"] 。
 * 验证您是否知道新节点的许可证详细信息。
 
 

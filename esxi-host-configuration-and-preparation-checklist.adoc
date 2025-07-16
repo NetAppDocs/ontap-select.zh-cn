@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: esxi-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, esxi, host preparation 
+summary: 准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，请仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。 
+---
+= ONTAP Select的 ESXi 主机配置和准备清单
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。
+
+
+NOTE: ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主机所需的网络和存储配置。您必须在部署ONTAP Select集群之前手动准备每个主机。
+
+
+
+== 步骤 1：准备 ESXi 虚拟机管理程序主机
+
+验证 ESXi 主机和防火墙端口的配置。
+
+.步骤
+. 验证每个 ESXi 是否配置了以下内容：
++
+** 预安装且受支持的虚拟机管理程序
+** VMware vSphere 许可证
+
+
+. 验证同一个 vCenter 服务器是否可以管理集群内部署了ONTAP Select节点的所有主机。
+. 验证防火墙端口是否配置为允许访问 vSphere。这些端口必须处于打开状态，才能支持与 ONTAP Select 虚拟机的串行端口连接。
++
+[role="tabbed-block"]
+====
+.建议
+--
+NetApp建议您打开以下防火墙端口以允许访问 vSphere：
+
+** 端口 7200 – 7400 （入站和出站流量）
+
+
+--
+.默认
+--
+默认情况下， VMware 允许通过以下端口进行访问：
+
+** 端口 22 和端口 1024 – 65535 （入站流量）
+** 端口 0 – 65535 （出站流量）
+
+
+--
+====
++
+有关详细信息，请参见link:https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security-8-0/securing-esxi-hosts/customizing-hosts-with-the-security-profile/esxi-firewall-configuration.html["Broadcom VMware vSphere 文档"^]。
+
+. 熟悉所需的 vCenter 权限。有关详细信息、请参见 link:reference_plan_ots_vcenter.html["VMware vCenter 服务器"] 。
+
+
+
+
+== 步骤 2：检查ONTAP Select集群配置
+
+您可以将 ONTAP Select 部署为多节点集群或单节点集群。在许多情况下，多节点集群是首选，因为它具有额外的存储容量和高可用性 (HA) 功能。
+
+下图展示了单节点集群和四节点集群使用的ONTAP Select网络。
+
+[role="tabbed-block"]
+====
+.单节点集群
+--
+下图显示了一个单节点集群。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。
+
+image:CHK_01.jpg["显示一个网络的单节点集群"]
+
+--
+.四节点集群
+--
+下图展示了一个包含两个网络的四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。
+
+image:CHK_02.jpg["显示两个网络的四节点集群"]
+
+--
+.四节点集群中的单个节点
+--
+下图显示了四节点集群中单个 ONTAP Select 虚拟机的典型网络配置。有两个单独的网络： ONTAP 内部网络和 ONTAP 外部网络。
+
+image:CHK_03.jpg["四节点集群中的单个节点"]
+
+--
+====
+
+
+== 步骤3：配置Open vSwitch
+
+vSwitch 是用于支持内部和外部网络连接的核心虚拟机管理程序组件。在配置每个虚拟机管理程序 vSwitch 时，应考虑以下几点。
+
+以下步骤适用于典型网络环境中具有两个物理端口（2x10Gb）的 ESXi 主机的 vSwitch 配置。
+
+.步骤
+. link:concept_nw_vsphere_vswitch_config.html["配置 vSwitch 并将两个端口分配给 vSwitch"](英文)
+. link:concept_nw_vsphere_vswitch_config.html["使用两个端口创建 NIC 团队"](英文)
+. 将负载平衡策略设置为 "Route based on the originating virtual port ID" 。
+. 将两个适配器标记为"活动"或将一个适配器标记为"活动"、将另一个适配器标记为"备用"。
+. 将 " 故障恢复 " 设置设置为 " 是 " 。
++
+image:CHK_04.jpg["vSwitch 属性）"]
+
+. 将 vSwitch 配置为使用巨型帧（ 9000 MTU ）。
+. 在 vSwitch 上为内部流量（ ONTAP 内部）配置端口组：
++
+** 端口组将分配给用于集群， HA 互连和镜像流量的 ONTAP Select 虚拟网络适配器 e0c-e0g 。
+** 端口组应位于不可路由的 VLAN 上，因为此网络应为专用网络。您应将适当的 VLAN 标记添加到端口组中以考虑此问题。
+** 端口组的负载平衡，故障恢复和故障转移顺序设置应与 vSwitch 相同。
+
+
+. 在 vSwitch 上为外部流量（ ONTAP 外部）配置端口组：
++
+** 端口组将分配给用于数据和管理流量的 ONTAP Select 虚拟网络适配器 e0a-e0c 。
+** 端口组可以位于可路由的 VLAN 上。根据网络环境，您还应该添加适当的 VLAN 标签或配置 VLAN 中继的端口组。
+** 端口组的负载平衡、故障回复和故障转移顺序设置应与 vSwitch 相同。
+
+
+

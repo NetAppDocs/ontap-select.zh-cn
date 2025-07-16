@@ -23,62 +23,76 @@ TIP: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_deplo
 
 
 
-== 开始之前
+== 步骤 1：准备部署
 
-您应做好部署准备，以确保部署成功。
+做好部署准备以确保其成功。
 
-初始规划:: 查看文档中的 _Plan_ 和 _License_ 部分。根据这一情况，您可以对集群做出决定，包括：
+.步骤
+. 初步规划。
 +
---
-* 虚拟机管理程序
-* 节点数
-* 许可证类型
-* 平台大小（实例类型）
-* ONTAP Select 版本
+回顾link:concept_workflow_deploy.html["规划"]和link:concept_lic_evaluation.html["许可证"]部分。基于此审查，您可以做出有关集群的决策，包括：
 
-
---
-主机准备:: 您必须准备要运行 ONTAP Select 节点的虚拟机管理程序主机，并根据您的许可模式获取所需的存储许可证文件。要查看准备要求，请执行以下操作：
 +
---
-. 登录到Deploy Web UI。
-. 选择image:icon_question_mark.gif["问号"]页面顶部的。
-. 选择*前提条件*。
-. 向下滚动以查看要求并选择*OK*。
+** 虚拟机管理程序
+** 节点数
+** 许可证类型
+** 平台大小（实例类型）
+** ONTAP Select 版本
 
 
---
-许可证文件:: 如果您计划在生产环境中部署集群，则必须根据您的许可模式获取存储许可证文件。
-部署安装和帐户凭据:: 您必须安装 Deploy 管理实用程序并执行初始配置。请参见 link:task_install_deploy.html["安装 ONTAP Select Deploy"] 有关详细信息 ...您需要具有在安装过程中配置的 Deploy 管理员帐户的密码。
-安装早期的 ONTAP Select 节点映像:: 默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的 ONTAP Select 部署集群，则需要将 ONTAP Select 映像添加到 Deploy 实例中。请参见 link:task_cli_deploy_image_add.html["添加要部署的ONTAP Select映像"] 有关详细信息 ...
-入门启动页面:: 初始页面 * ONTAP Select Deploy 入门 * 将指导您完成创建集群的多步过程。主要步骤有五个，包括：
+. 准备好宿主。
 +
---
-* 添加许可证
-* 将主机添加到清单
-* 创建集群
-* 网络预检
-* 部署集群
+您必须准备要运行 ONTAP Select 节点的虚拟机管理程序主机，并根据您的许可模式获取所需的存储许可证文件。要查看准备要求，请执行以下操作：
+
++
+.. 登录到Deploy Web UI。
+.. 选择image:icon_question_mark.gif["问号"]页面顶部的。
+.. 选择*前提条件*。
+.. 向下滚动以查看要求并选择*OK*。
 
 
---
+. 获取许可证文件。
++
+如果您计划在生产环境中部署集群，则必须根据您的许可模式获取存储许可证文件。
 
+. 部署安装和帐户凭据。
++
+link:task_install_deploy.html["安装 Deploy 管理实用程序并执行初始配置"](英文)您需要具有在安装过程中配置的 Deploy 管理员帐户的密码。
 
+. 或者，安装早期版本的ONTAP Select节点映像。
++
+默认情况下， Deploy 管理实用程序包含发布时最新版本的 ONTAP Select 。如果要使用早期版本的ONTAP Select部署集群，您需要link:task_cli_deploy_image_add.html["将ONTAP Select映像添加到您的 Deploy 实例"] 。
+
+. 了解“入门”启动页面。
++
+初始页面 * ONTAP Select Deploy 入门 * 将指导您完成创建集群的多步过程。主要步骤有五个，包括：
+
++
+** 添加许可证
+** 将主机添加到清单
+** 创建集群
+** 网络预检
+** 部署集群
++
 
 NOTE: 您可以通过选择页面顶部的选项卡("Clusters"(集群)、"Hypervisor"(虚拟机管理程序主机)、"Administration"(管理))来单独执行相同的步骤。
 
-网络检查程序:: 如果要部署多节点集群，则应熟悉网络检查程序。
-部署集群后:: 您应备份 ONTAP Select Deploy 配置数据。
+
+
+. 检查网络检查器。
++
+如果您正在部署多节点集群，您应该熟悉网络检查器。您可以使用link:task_adm_connectivity.html["网页用户界面"]或link:task_cli_connectivity.html["命令行界面"] 。
 
 
 
 
-== 创建单节点或多节点集群
+
+== 步骤 2：创建单节点或多节点集群
 
 您可以使用ONTAP Select Deploy Web用户界面部署单节点或多节点ONTAP Select集群。
 
 .开始之前
-请参见 link:task_deploy_cluster.html#before-you-begin["开始之前"] 以准备部署集群。必须安装Deploy管理并进行初始配置(密码、AutoSupport和vCenter)。
+验证您已安装 Deploy 管理并完成初始配置（密码、 AutoSupport和 vCenter）。
 
 .关于此任务
 为生产部署创建包含一个或多个节点的ONTAP Select集群。
@@ -99,7 +113,7 @@ NOTE: 您可以通过选择页面顶部的选项卡("Clusters"(集群)、"Hyperv
 +
 您可以直接添加虚拟机管理程序主机、也可以通过连接到vCenter Server来添加此主机。根据需要提供相应的主机详细信息和凭据。
 
-. 选择*Refresh*并确认主机的*Type*值为*ESX*。
+. 选择*刷新*并确认主机的*类型*值为*ESX*或*KVM*。
 +
 您提供的任何帐户凭据都会添加到 Deploy 凭据数据库中。
 
@@ -144,7 +158,7 @@ NOTE: 您可以通过选择页面顶部的选项卡("Clusters"(集群)、"Hyperv
 +
 您可以直接添加虚拟机管理程序主机、也可以通过连接到vCenter Server来添加虚拟机管理程序主机。根据需要提供相应的主机详细信息和凭据。
 
-. 选择*Refresh*并确认主机的*Type*值为*ESX*。
+. 选择*刷新*并确认主机的*类型*值为*ESX*或*KVM*。
 +
 您提供的任何帐户凭据都会添加到 Deploy 凭据数据库中。
 
@@ -180,7 +194,10 @@ NOTE: 您可以通过选择页面顶部的选项卡("Clusters"(集群)、"Hyperv
 
 --
 ====
-.完成后
+
+
+== 步骤 3：完成后
+
 您应确认已配置ONTAP Select AutoSupport功能、然后备份ONTAP Select Deploy配置数据。
 
 [TIP]

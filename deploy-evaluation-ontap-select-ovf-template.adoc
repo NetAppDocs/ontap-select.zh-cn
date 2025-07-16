@@ -32,7 +32,7 @@ summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Sel
 
 image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 
-有关主机配置选项的其他信息，请参见link:reference_chk_host_prep.html["ONTAP Select安装文档"]。
+有关主机配置选项的其他信息，请参见link:esxi-host-configuration-and-preparation-checklist.html["ONTAP Select安装文档"]。
 
 
 

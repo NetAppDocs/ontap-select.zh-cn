@@ -1,0 +1,321 @@
+---
+sidebar: sidebar 
+permalink: kvm-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, kvm, host preparation 
+summary: 准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。 
+---
+= ONTAP Select的 KVM 主机配置和准备清单
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。
+
+
+NOTE: ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主机所需的网络和存储配置。您必须在部署ONTAP Select集群之前手动准备每个主机。
+
+
+
+== 步骤 1：准备 KVM 虚拟机管理程序主机
+
+您需要准备部署ONTAP Select节点的每个 Linux KVM 服务器。此外、您还必须准备部署ONTAP Select Deploy管理实用程序的服务器。
+
+.步骤
+. 安装 Red Hat Enterprise Linux (RHEL)。
++
+使用 ISO 镜像安装 RHEL 操作系统，有关支持的RHEL版本列表、请参见link:reference_plan_ots_hardware.html#software-compatibility["虚拟机管理程序的软件兼容性信息"]。安装过程中请按如下方式配置系统：
+
++
+.. 选择默认作为安全策略。
+.. 选择虚拟化主机软件选择。
+.. 验证目标是本地启动磁盘而不是ONTAP Select使用的 RAID LUN。
+.. 启动系统后，验证主机管理接口是否已启动。
++
+
+NOTE: 您可以在/etc/sysconfig/network-scripts下编辑正确的网络配置文件、然后使用启动此接口 `ifup` 命令：
+
+
+
+. 安装ONTAP Select所需的附加软件包。
++
+ONTAP Select需要多个额外的软件包。具体的软件包列表会根据您使用的 Linux 版本而有所不同。首先、验证yum存储库是否在您的服务器上可用。如果找不到，您可以使用 `wget your_repository_location`命令。
+
++
+
+NOTE: 如果您在安装Linux服务器期间选择了"虚拟 化主机"作为软件选择、则某些必需的软件包可能已安装。您可能需要按照中所述从源代码安装此选项包 link:https://docs.openvswitch.org/en/latest/intro/install/general/["Open vSwitch文档"^]。
+
++
+有关所需软件包和其他配置要求的其他信息，请参见link:https://imt.netapp.com/matrix/#welcome["互操作性表工具"^]。
+
+. 配置存储池。
++
+ONTAP Select存储池是一种逻辑数据容器、用于抽象化底层物理存储。您必须管理部署ONTAP Select的KVM主机上的存储池。
+
+
+
+
+
+== 步骤 2：创建存储池
+
+在每个ONTAP Select节点上创建至少一个存储池。如果使用软件RAID而不是本地硬件RAID、则存储磁盘会连接到根聚合和数据聚合的节点。在这种情况下、您仍必须为系统数据创建存储池。
+
+.开始之前
+验证您是否可以在部署ONTAP Select的主机上登录到Linux命令行界面。
+
+.关于此任务
+ONTAP Select Deploy管理实用程序要求将存储池的目标位置指定为 `/dev/<pool_name>`、其中 `<pool_name>` 是主机上的唯一池名称。
+
+
+NOTE: 创建存储池时会分配LUN的全部容量。
+
+.步骤
+. 显示Linux主机上的本地设备、并选择要包含存储池的LUN：
++
+[source, cli]
+----
+lsblk
+----
++
+相应的LUN可能是存储容量最大的设备。
+
+. 在设备上定义存储池：
++
+[source, cli]
+----
+virsh pool-define-as <pool_name> logical --source-dev <device_name> --target=/dev/<pool_name>
+----
++
+例如：
+
++
+[listing]
+----
+virsh pool-define-as select_pool logical --source-dev /dev/sdb --target=/dev/select_pool
+----
+. 构建存储池：
++
+[source, cli]
+----
+virsh pool-build <pool_name>
+----
+. 启动存储池：
++
+[source, cli]
+----
+virsh pool-start <pool_name>
+----
+. 将存储池配置为在系统启动时自动启动：
++
+[source, cli]
+----
+virsh pool-autostart <pool_name>
+----
+. 验证是否已创建存储池：
++
+[source, cli]
+----
+virsh pool-list
+----
+
+
+
+
+== 步骤 3：（可选）删除存储池
+
+当不再需要存储池时，您可以删除它。
+
+.开始之前
+验证您是否可以登录到部署ONTAP Select的Linux命令行界面。
+
+.关于此任务
+ONTAP Select Deploy管理实用程序要求将存储池的目标位置指定为 `/dev/<pool_name>`、其中 `<pool_name>` 是主机上的唯一池名称。
+
+.步骤
+. 验证是否已定义存储池：
++
+[source, cli]
+----
+virsh pool-list
+----
+. 销毁存储池：
++
+[source, cli]
+----
+virsh pool-destroy <pool_name>
+----
+. 取消定义非活动存储池的配置：
++
+[source, cli]
+----
+virsh pool-undefine <pool_nanme>
+----
+. 验证存储池是否已从主机中删除：
++
+[source, cli]
+----
+virsh pool-list
+----
+. 验证是否已删除存储池卷组的所有逻辑卷。
++
+.. 显示逻辑卷：
++
+[source, cli]
+----
+lvs
+----
+.. 如果池中存在任何逻辑卷、请将其删除：
++
+[source, cli]
+----
+lvremove <logical_volume_name>
+----
+
+
+. 验证卷组是否已删除：
++
+.. 显示卷组：
++
+[source, cli]
+----
+vgs
+----
+.. 如果池中存在卷组、请将其删除：
++
+[source, cli]
+----
+vgremove <volume_group_name>
+----
+
+
+. 验证是否已删除物理卷：
++
+.. 显示物理卷：
++
+[source, cli]
+----
+pvs
+----
+.. 如果池中存在物理卷、请将其删除：
++
+[source, cli]
+----
+pvremove <physical_volume_name>
+----
+
+
+
+
+
+
+== 步骤 4：检查ONTAP Select集群配置
+
+您可以将 ONTAP Select 部署为多节点集群或单节点集群。在许多情况下，多节点集群是首选，因为它具有额外的存储容量和高可用性 (HA) 功能。
+
+下图说明了用于 ESXi 主机的单节点集群和四节点集群的ONTAP Select网络。
+
+[role="tabbed-block"]
+====
+.单节点集群
+--
+下图显示了一个单节点集群。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。
+
+image:CHK_01.jpg["显示一个网络的单节点集群"]
+
+--
+.四节点集群
+--
+下图展示了一个包含两个网络的四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。
+
+image:CHK_02.jpg["显示两个网络的四节点集群"]
+
+--
+.四节点集群中的单个节点
+--
+下图显示了四节点集群中单个 ONTAP Select 虚拟机的典型网络配置。有两个单独的网络： ONTAP 内部网络和 ONTAP 外部网络。
+
+image:CHK_03.jpg["四节点集群中的单个节点"]
+
+--
+====
+
+
+== 步骤5：配置Open vSwitch
+
+使用 Open vSwitch 在每个 KVM 主机节点上配置一个软件定义的交换机。
+
+.开始之前
+验证网络管理器是否已禁用、以及本机Linux网络服务是否已启用。
+
+.关于此任务
+ONTAP Select需要两个单独的网络、这两个网络都利用端口绑定为网络提供HA功能。
+
+.步骤
+. 验证Open vSwitch在主机上是否处于活动状态：
++
+.. 确定Open vSwitch是否正在运行：
++
+[source, cli]
+----
+systemctl status openvswitch
+----
+.. 如果Open vSwitch未运行、请启动它：
++
+[source, cli]
+----
+systemctl start openvswitch
+----
+
+
+. 显示Open vSwitch配置：
++
+[source, cli]
+----
+ovs-vsctl show
+----
++
+如果尚未在主机上配置Open vSwitch、则此配置将显示为空。
+
+. 添加新的vSwitch实例：
++
+[source, cli]
+----
+ovs-vsctl add-br <bridge_name>
+----
++
+例如：
+
++
+[source, cli]
+----
+ovs-vsctl add-br ontap-br
+----
+. 关闭网络接口：
++
+[source, cli]
+----
+ifdown <interface_1>
+ifdown <interface_2>
+----
+. 使用链路聚合控制协议 (LACP) 合并链路：
++
+[source, cli]
+----
+ovs-vsctl add-bond <internal_network> bond-br <interface_1> <interface_2> bond_mode=balance-slb lacp=active other_config:lacp-time=fast
+----
++
+
+NOTE: 只有当存在多个接口时、才需要配置绑定。
+
+. 启动网络接口：
++
+[source, cli]
+----
+ifup <interface_1>
+ifup <interface_2>
+----
+

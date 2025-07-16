@@ -244,7 +244,7 @@ ONTAP Select Deploy还必须能够按如下方式与ONTAP Select 节点和集群
 与主要使用ONTAP Select Deploy VM创建集群的四节点、六节点和八节点集群不同、双节点集群持续依赖ONTAP Select Deploy VM进行HA仲裁。如果ONTAP Select Deploy虚拟机不可用、则故障转移服务将被禁用。
 
 .什么是 MetroCluster SDS ？
-MetroCluster SDS 是一种成本较低的同步复制选项，属于 NetApp 的 MetroCluster 业务连续性解决方案类别。与 NetApp MetroCluster 在 FAS 混合闪存， AFF ，适用于云的 NetApp 私有存储和 NetApp FlexArray ® 技术上推出的 NetApp 不同，它仅适用于 ONTAP Select 。
+MetroCluster SDS 是一种成本较低的同步复制选项，属于 NetApp 的 MetroCluster 业务连续性解决方案类别。它仅适用于ONTAP Select，而NetApp MetroCluster则适用于FAS混合闪存、 AFF和NetApp Private Storage for Cloud。
 
 .MetroCluster SDS 与 NetApp MetroCluster 有何不同？
 MetroCluster SDS 提供了同步复制解决方案 ，并属于 NetApp MetroCluster 解决方案的范畴。但是，主要区别在于支持的距离（~10 公里与 300 公里）和连接类型（仅支持 IP 网络，而不是 FC 和 IP ）。
