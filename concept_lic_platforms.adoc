@@ -73,7 +73,7 @@ summary: 您可以购买三种平台容量级别之一的ONTAP Select容量层�
 
 
 
-NOTE: 基于内核的虚拟机(KVM)不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。
+NOTE: 基于内核的虚拟机 (KVM) 不支持在软件 RAID 配置中使用大型实例类型。
 
 
 
@@ -170,10 +170,10 @@ NOTE: 基于内核的虚拟机(KVM)不支持在SW-RAID配置中使用大型实�
 2+| 软件类型 3+| Description 
 
 
-2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 7.0GA、更新1到3C VMware vSphere 8.0GA以及更新1到3 
+2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 8.0GA 及更新 1 至 3 VMware vSphere 7.0GA 及更新 1 至 3C 
 
 
-2+| 虚拟机管理程序支持(KVM) 3+| RedHat Enterprise Linux 64位(KVM) 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7和8.6洛基Linux (KVM) 9和8 
+2+| 虚拟机管理程序支持(KVM) 3+| Red Hat Enterprise Linux 64 位 (KVM) 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6 Rocky Linux (KVM) 9.6 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 
 
 
 2+| 管理软件 3+| NetApp Active IQ Unified Manager管理套件ONTAP Select Deploy实用程序SnapCenter (可选) 

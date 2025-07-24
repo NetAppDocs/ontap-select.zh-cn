@@ -2,7 +2,8 @@
 layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: 'NetApp ONTAP Select是一款软件定义的存储设备、您可以部署在运行VMware ESXi或基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序的各种商用硬件服务器上。它可以为您提供构建灵活且可扩展的私有云基础架构所需的灵活性。此站点包含ONTAP Select 9.16.1.的文档。' 
+keywords: ontap, select, software, documentation 
+summary: 'NetApp ONTAP Select是一款软件定义的存储设备，您可以将其部署在运行 VMware ESXi 或基于内核的虚拟机 (KVM) 管理程序的各种商用硬件服务器上。它能够提供您构建灵活且可扩展的私有云基础架构所需的敏捷性。此站点包含ONTAP Select 9.17.1 的文档。' 
 ---
 = ONTAP Select 文档
 :hardbreaks:

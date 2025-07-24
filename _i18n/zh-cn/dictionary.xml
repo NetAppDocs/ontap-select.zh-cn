@@ -42,30 +42,21 @@
   <block id="dd95946e5f91bc0eefaa0662bef76947" category="list-text">VMware ESXi 6.7 或更高版本</block>
   <block id="67217e5ba4d416b3ec157550a03becb2" category="list-text">符合规格 1.0 或更高版本的 NVMe 设备</block>
   <block id="a811207ba17996dc78a58667cd177a13" category="inline-link-macro">主机准备检查清单</block>
-  <block id="8e0cad5fe5b287e29619e8a65612c78e" category="inline-link-macro">Deploy 实用程序安装所需信息</block>
-  <block id="34ff1dcc504899915d2e35990a309b3a" category="inline-link-macro">ONTAP Select 安装所需的信息</block>
-  <block id="712a3f9a4e93375653a979ba058c3eb7" category="paragraph">此操作步骤 可在创建新 ONTAP Select 集群之前执行。您还可以执行操作步骤 为现有的 SW-RAID NVMe 集群配置其他 NVMe 驱动器。在这种情况下，配置驱动器后，您必须通过 Deploy 添加这些驱动器，就像添加其他 SSD 驱动器一样。主要区别在于， Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的信息：</block>
   <block id="fd5c5757c7f7041a2e15ed74c2c32432" category="list-text">Deploy 负责处理重新启动流程编排。</block>
   <block id="668ad5825e6f031e6f06ed116fda245d" category="list-text">HA 接管和交还会按顺序执行，但重新同步聚合可能会很耗时。</block>
   <block id="42487effe01c2291861c49031271a081" category="list-text">单节点集群将发生停机。</block>
   <block id="0c6f7899d8537fb7854dbebd827f96ec" category="list-text">访问主机上的 * BIOS 配置 * 菜单，以支持 I/O 虚拟化。</block>
-  <block id="ff1093e5148bed2c1a1afa07042e46fd" category="list-text">启用 * 定向 I/O （ VT-d ）的 Intel （ R ） VT 设置。</block>
   <block id="b8a8e221d048b479cfd64e7b3b67ea08" category="inline-image-macro">套接字配置</block>
   <block id="e95bc1b908ab6027450bc8aa967f3573" category="paragraph"><block ref="e95bc1b908ab6027450bc8aa967f3573" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="81a8899c7bb0834c05ead11a32e230b4" category="list-text">某些服务器支持 * Intel 卷管理设备（ Intel VMD ） * 。如果启用此选项，则 ESXi 虚拟机管理程序将无法识别可用的 NVMe 设备；请先禁用此选项，然后再继续。</block>
   <block id="262ed6b63bfd7128c7e60d2c221b0f22" category="inline-image-macro">套接字配置， VMD</block>
   <block id="cc6e577c260893921bf62096a5e1ed4d" category="paragraph"><block ref="cc6e577c260893921bf62096a5e1ed4d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c7ce3b5be4a31c489adcac6f9afb8103" category="list-text">配置 NVMe 驱动器以传递到虚拟机。</block>
-  <block id="18bac6afdf360dfe0f44f753b79d337d" category="list-text">在 vSphere 中，打开主机 * 配置 * 视图，然后单击 * 硬件： PCI 设备 * 下的 * 编辑 * 。</block>
   <block id="e8eaf97de142a452e4a7e36eb009d0dd" category="list-text">选择要用于 ONTAP Select 的 NVMe 驱动器。</block>
   <block id="64a4204188e36709c65fb1015fcfaee1" category="inline-image-macro">编辑 PCI 设备可用性</block>
   <block id="370dbdfb395c46bb7a54ea411f17b869" category="paragraph"><block ref="370dbdfb395c46bb7a54ea411f17b869" category="inline-image-macro-rx" type="image"></block></block>
   <block id="60aec31b3251291387e46c00b45b67d4" category="admonition">您需要一个 VMFS 数据存储库，该数据存储库也由 NVMe 设备提供支持，以托管 ONTAP Select VM 系统磁盘和虚拟 NVRAM 。在为其他 NVMe 驱动器配置 PCI 直通时，至少保留一个 NVMe 驱动器可用于此目的。</block>
-  <block id="6334b1d13625d19f7de068238bbf7055" category="list-text">单击 * 确定 * 。选定设备指示 * 可用（待定） * 。</block>
-  <block id="0eb8ed19621c3c66eea99364d51e4514" category="list-text">单击 * 重新启动主机 * 。</block>
   <block id="58b365b1fc9581d3607e3b5a4075921b" category="inline-image-macro">重新启动此主机</block>
   <block id="0628d504dd961620b8a3eba11eb48696" category="paragraph"><block ref="0628d504dd961620b8a3eba11eb48696" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9418a111cd090e22b610dbb1e055a395" category="paragraph">准备好主机后，您可以安装 ONTAP Select Deploy 实用程序。Deploy 可指导您在新准备的主机上创建 ONTAP Select 存储集群。在此过程中， Deploy 将检测是否存在配置为直通的 NVMe 驱动器，并自动选择这些驱动器以用作 ONTAP 数据磁盘。您可以根据需要调整默认选择。</block>
   <block id="9e0dfa4dfcc314b7fbc0b7d29e510db2" category="admonition">每个 ONTAP Select 节点最多支持 14 个 NVMe 设备。</block>
   <block id="3c0867afa1e727ea16a03079d27e16e8" category="inline-image-macro">ONTAP Select 部署集群</block>
   <block id="458ac02aa24064def3c70dac7b54b342" category="paragraph"><block ref="458ac02aa24064def3c70dac7b54b342" category="inline-image-macro-rx" type="image"></block></block>
@@ -969,22 +960,15 @@
   <block id="eebf6ea2ee46e8530008306b8870d60a" category="list-text">它仅支持 SSD 或 NVMe （需要高级 XL 许可证）驱动器用于 ONTAP 根磁盘和数据磁盘。</block>
   <block id="c76e75604936e38a9f0ecb8870e09062" category="list-text">ONTAP Select VM 启动分区需要一个单独的系统磁盘。</block>
   <block id="fa246858b45dc233a0bdb89592ce5ecd" category="list-text">选择一个单独的磁盘，即 SSD 或 NVMe 驱动器，以便为系统磁盘（在多节点设置中为 NVRAM ，启动 /CF 卡，核心转储和调解器）创建数据存储库。</block>
-  <block id="28f44037af103f0c930309365629f8ef" category="paragraph">* 注释 *</block>
   <block id="e706626e85410ea82090ae7851391f6a" category="list-text">术语服务磁盘和系统磁盘可互换使用。</block>
-  <block id="f7f94501061697350cc8cc8923e9f01c" category="list-text">服务磁盘是指在 ONTAP Select VM 中用于为集群，启动等各种项目提供服务的 VMDK 。</block>
   <block id="d5286ac0f0cb4a9ebadbf1e2284c0036" category="list-text">服务磁盘实际位于一个物理磁盘上（统称为服务 / 系统物理磁盘），就像主机中显示的那样。该物理磁盘必须包含 DAS 数据存储库。ONTAP Deploy 会在集群部署期间为 ONTAP Select VM 创建这些服务磁盘。</block>
   <block id="8e06bfc0d19fc77ae0afdb8d915cba44" category="list-text">无法在多个数据存储库之间或多个物理驱动器之间进一步分隔 ONTAP Select 系统磁盘。</block>
   <block id="ae53f0b18ae561048e9e68da79653a2c" category="list-text">硬件 RAID 未弃用。</block>
   <block id="60244f3ca85db5e7a5a991f8d7390183" category="section-title">本地连接存储的软件 RAID 配置</block>
   <block id="44041c5e10d06ec4fea2969c916c19d5" category="paragraph">使用软件 RAID 时，最好不要使用硬件 RAID 控制器，但是，如果系统确实具有现有 RAID 控制器，则必须满足以下要求：</block>
-  <block id="53fb23810df5a40d55b84f003ecfe715" category="list-text">必须禁用硬件 RAID 控制器，以便可以将磁盘直接提供给系统（ JBOD ）。此更改通常可在 RAID 控制器 BIOS 中进行</block>
-  <block id="2c1d0dc8c738fb8cd53919ff88936761" category="list-text">或者，硬件 RAID 控制器应处于 SAS HBA 模式。例如，除了 RAID 之外，某些 BIOS 配置还允许使用 "AHCI" 模式，可以选择此模式来启用 JBOD 模式。这样可以启用直通，以便可以将物理驱动器视为主机上的物理驱动器。</block>
-  <block id="f91c8d369d9bc5534cc65fdd0cf87f50" category="paragraph">根据控制器支持的最大驱动器数，可能需要额外的控制器。在 SAS HBA 模式下，确保 IO 控制器（ SAS HBA ）至少支持 6 Gb/ 秒的速度。但是， NetApp 建议使用 12 Gbps 的速度。</block>
-  <block id="7236710018f688fcbfb73a07698e1dc0" category="paragraph">不支持其他硬件 RAID 控制器模式或配置。例如，某些控制器允许 RAID 0 支持，这种支持可能会人为地使磁盘实现直通，但其影响可能不受欢迎。支持的物理磁盘大小（仅限 SSD ）介于 200 GB 到 16 TB 之间。</block>
   <block id="7c075be1e0db241c27816a229098fd87" category="admonition">管理员需要跟踪 ONTAP Select VM 正在使用哪些驱动器，并防止在主机上无意中使用这些驱动器。</block>
   <block id="cf3ece53165fb12e6a62c8c31bb10b74" category="section-title">ONTAP Select 虚拟和物理磁盘</block>
   <block id="047a82130a722cc87d04ce1c3c768e41" category="paragraph">对于使用硬件 RAID 控制器的配置，物理磁盘冗余由 RAID 控制器提供。ONTAP Select 会显示一个或多个 VMDK ， ONTAP 管理员可以从中配置数据聚合。这些 VMDK 采用 RAID 0 格式进行条带化，因为使用 ONTAP 软件 RAID 会因硬件级别提供的故障恢复能力而变得冗余，效率低下且效率低下。此外，用于系统磁盘的 VMDK 与用于存储用户数据的 VMDK 位于同一个数据存储库中。</block>
-  <block id="6a13d03cae29f356b7fc6b0917986685" category="paragraph">使用软件 RAID 时， ONTAP Deploy 会为 ONTAP Select 提供一组虚拟磁盘（ VMDK ）和物理磁盘原始设备映射（ RDM ），用于 SSD ，并为 NVMes 提供直通或 DirectPath IO 设备。</block>
   <block id="c1aafe133c0b3ba98838fb81849a7116" category="paragraph">下图更详细地显示了这种关系，突出显示了用于 ONTAP Select VM 内部的虚拟化磁盘与用于存储用户数据的物理磁盘之间的区别。</block>
   <block id="cef8adb4c866583d14e938aa050f98d8" category="paragraph">* ONTAP Select 软件 RAID ：使用虚拟化磁盘和 RDM *</block>
   <block id="9c6ce597c0c93e3268f8d2583b8cb7f0" category="inline-image-macro">ONTAP Select 软件 RAID ：使用虚拟化磁盘和 RDM</block>
@@ -994,35 +978,27 @@
   <block id="538c97540e657f23b7d18dc28e89ce28" category="paragraph"><block ref="538c97540e657f23b7d18dc28e89ce28" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6fc33fd5fc34cd4d0e1c573fe07dbfc6" category="paragraph">系统磁盘（ VMDK ）位于同一个数据存储库中，并且位于同一个物理磁盘上。虚拟 NVRAM 磁盘需要一个快速且持久的介质。因此，仅支持 NVMe 和 SSD 类型的数据存储库。在使用 NVMe 驱动器存储数据时，出于性能原因，系统磁盘也应是 NVMe 设备。在全 NVMe 配置中，最好使用 Intel Optane 卡作为系统磁盘。</block>
   <block id="2171a187e31b22b36301174d9bf05b3a" category="admonition">在当前版本中，无法在多个数据存储库或多个物理驱动器之间进一步分隔 ONTAP Select 系统磁盘。</block>
-  <block id="db287db693103f0eb0bc0980a4f1a354" category="paragraph">每个数据磁盘分为三部分：一个小根分区（条带）和两个大小相等的分区，用于创建 ONTAP Select VM 中可以看到的两个数据磁盘。对于单节点集群和 HA 对中的节点，分区使用根数据数据（ RD2 ）模式，如下图所示。</block>
-  <block id="dca5b62211054283d4211aef3e88f4c8" category="paragraph">`P` 表示奇偶校验驱动器。`dP` 表示双奇偶校验驱动器， `s` 表示备用驱动器。</block>
   <block id="f318527ee8916e5ca47f3d5ed9945b54" category="paragraph">* 用于单节点集群的 RDD 磁盘分区 *</block>
   <block id="fc8e2c1dda0465d080cba6462209023c" category="inline-image-macro">适用于单节点集群的 RDD 磁盘分区</block>
   <block id="7ac31542e221cec8982a853b92968209" category="paragraph"><block ref="7ac31542e221cec8982a853b92968209" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6bf481156f28eb413de2a86da5c02655" category="paragraph">* 多节点集群（ HA 对）的 RDD 磁盘分区 *</block>
   <block id="0d705f093e6a9c502f09f0101718b722" category="inline-image-macro">多节点集群的 RDD 磁盘分区（ HA 对）</block>
   <block id="87b7be5aa608878acc67090d7376b040" category="paragraph"><block ref="87b7be5aa608878acc67090d7376b040" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b22bc536dec106d0fd23eb107a048c4c" category="paragraph">ONTAP 软件 RAID 支持以下 RAID 类型： RAID 4 ， RAID-DP 和 RAID-TEC 。这些 RAID 构造与 FAS 和 AFF 平台使用的 RAID 构造相同。对于根配置， ONTAP Select 仅支持 RAID 4 和 RAID-DP 。对数据聚合使用 RAID-TEC 时，整体保护为 RAID-DP 。ONTAP Select HA 使用无共享架构将每个节点的配置复制到另一节点。这意味着每个节点都必须存储其根分区及其对等方根分区的副本。由于数据磁盘具有一个根分区，因此数据磁盘的最小数量将因 ONTAP Select 节点是否属于 HA 对而异。</block>
   <block id="6c1c3b52b9fafd2100a63b937535e0f3" category="paragraph">对于单节点集群，所有数据分区都用于存储本地（活动）数据。对于属于 HA 对的节点，一个数据分区用于存储该节点的本地（活动）数据，另一个数据分区用于镜像来自 HA 对等方的活动数据。</block>
   <block id="aa91cf53bb1527f525c6fdf50ca815d5" category="section-title">直通（ DirectPath IO ）设备与原始设备映射（ RDM ）</block>
-  <block id="b22e6426b8ceb501eb1ce0d225e63b38" category="paragraph">VMware ESX 当前不支持将 NVMe 磁盘作为原始设备映射。要使 ONTAP Select 直接控制 NVMe 磁盘，必须在 ESX 中将 NVMe 驱动器配置为直通设备。请注意，将 NVMe 设备配置为直通设备需要服务器 BIOS 的支持，这是一个中断过程，需要重新启动 ESX 主机。此外，每个 ESX 主机的最大直通设备数为 16 。但是， ONTAP Deploy 将此限制为 14 。每个 ONTAP Select 节点最多 14 个 NVMe 设备这一限制意味着，全 NVMe 配置将提供极高的 IOPS 密度（ IOPS/TB ），但会影响总容量。或者，如果需要具有更大存储容量的高性能配置，建议的配置为：较大的 ONTAP Select VM 大小，系统磁盘的 Intel Optane 卡以及用于数据存储的 SSD 驱动器的标称数量。</block>
   <block id="7a4bd36022e514de0f12d5bae592d99d" category="admonition">要充分利用 NVMe 性能，请考虑较大的 ONTAP Select VM 大小。</block>
-  <block id="7bc139a0138c6067c327337cb182f8e0" category="paragraph">直通设备和 RDM 之间还有其他区别。RDM 可以映射到正在运行的虚拟机。直通设备需要重新启动 VM 。这意味着，任何 NVMe 驱动器更换或容量扩展（驱动器添加）操作步骤 都需要重新启动 ONTAP Select VM 。驱动器更换和容量扩展（驱动器添加）操作由 ONTAP Deploy 中的工作流决定。ONTAP Deploy 可管理单节点集群的 ONTAP Select 重新启动以及 HA 对的故障转移 / 故障恢复。但是，请务必注意使用 SSD 数据驱动器（无需 ONTAP Select 重新启动 / 故障转移）与使用 NVMe 数据驱动器（需要 ONTAP Select 重新启动 / 故障转移）之间的区别。</block>
   <block id="bfe1db46b73b47c7ae447ac33fb69e45" category="section-title">物理和虚拟磁盘配置</block>
   <block id="0f2dd21a47272055ac8bb22a37ed1c81" category="paragraph">为了提供更加简化的用户体验， ONTAP Deploy 会自动从指定的数据存储库（物理系统磁盘）配置系统（虚拟）磁盘，并将其连接到 ONTAP Select VM 。此操作会在初始设置期间自动执行，以便 ONTAP Select VM 可以启动。RDM 将进行分区，并自动构建根聚合。如果 ONTAP Select 节点属于 HA 对，则数据分区会自动分配给本地存储池和镜像存储池。此分配会在集群创建操作和存储添加操作期间自动进行。</block>
   <block id="cee5e25191b9dce69623e9ea9da32f76" category="paragraph">由于 ONTAP Select VM 上的数据磁盘与底层物理磁盘相关联，因此使用更多物理磁盘创建配置会对性能产生影响。</block>
   <block id="92697c9f70bfac874ab426e8b9d6fdf7" category="admonition">根聚合的 RAID 组类型取决于可用磁盘的数量。ONTAP Deploy 会选择适当的 RAID 组类型。如果为节点分配了足够的磁盘，则会使用 RAID-DP ，否则会创建 RAID-4 根聚合。</block>
-  <block id="699c39c6bac177f440d7e25a11eb2a32" category="paragraph">与 FAS 和 AFF 系统类似，只能向现有 RAID 组添加容量相等或更大的驱动器。容量较大的驱动器的大小合适。如果要创建新的 RAID 组，则新的 RAID 组大小应与现有 RAID 组大小匹配，以确保整体聚合性能不会下降。</block>
   <block id="a44033dbfcef3014d1535041b262038f" category="paragraph">ONTAP Select 磁盘通常标记为 NET x.y 。您可以使用以下 ONTAP 命令获取磁盘 UUID ：</block>
   <block id="82130f34a60b2de00ac2e3139e13fb5b" category="inline-image-macro">将 ONTAP Select 磁盘与相应的 ESX 磁盘匹配</block>
   <block id="74a7c8af4aa4bac9725ff850beb40b8d" category="paragraph"><block ref="74a7c8af4aa4bac9725ff850beb40b8d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2a65a90733b904bc599f431b2bacdf4b" category="paragraph">在 ESXi Shell 中，您可以输入以下命令，使给定物理磁盘（通过 na.unique-id 标识）的 LED 闪烁。</block>
   <block id="b318e3ce8108059983a7b332b8d1047f" category="section-title">使用软件 RAID 时出现多个驱动器故障</block>
   <block id="adde1f59e221bd8bc0f7b097114c5b3a" category="paragraph">系统可能会遇到多个驱动器同时处于故障状态的情况。系统的行为取决于聚合 RAID 保护和故障驱动器的数量。</block>
   <block id="22e734a7b15ad33b4b32a5a36e1625e5" category="paragraph">RAID4 聚合可以承受一个磁盘故障， RAID-DP 聚合可以承受两个磁盘故障，而 RAID-TEC 聚合可以承受三个磁盘故障。</block>
   <block id="406158272ee9bca8ac0cb6fb1cbda719" category="paragraph">如果故障磁盘数小于 RAID 类型支持的最大故障数，并且备用磁盘可用，则重建过程将自动开始。如果备用磁盘不可用，则聚合将在降级状态下提供数据，直到添加备用磁盘为止。</block>
   <block id="7660ce9a6e2c4e7dfc2fdec1d7cba702" category="paragraph">如果故障磁盘数超过 RAID 类型支持的最大故障数，则本地丛将标记为故障，并且聚合状态为降级。数据由 HA 配对节点上的第二个丛提供。这意味着，节点 1 的任何 I/O 请求都会通过集群互连端口 e0e （ iSCSI ）发送到物理上位于节点 2 上的磁盘。如果第二个丛也发生故障，则聚合将标记为发生故障，并且数据不可用。</block>
-  <block id="fc009512059b2e62d9f72f2b6648313c" category="paragraph">必须删除并重新创建故障丛，才能恢复正确的数据镜像。请注意，如果多磁盘故障导致数据聚合降级，则根聚合也会降级。ONTAP Select 使用根 - 数据 - 数据（ RDD ）分区方案将每个物理驱动器拆分为一个根分区和两个数据分区。因此，丢失一个或多个磁盘可能会影响多个聚合，包括本地根聚合或远程根聚合的副本，以及本地数据聚合和远程数据聚合的副本。</block>
   <block id="f7f034960d16c32b605295a9e39541cd" category="admonition">要测试或模拟一个或多个驱动器故障，请使用 `storage disk fail -disk NET-x.y -immediate` 命令。如果系统中有备用磁盘，聚合将开始重建。您可以使用命令 `storage aggregate show` 检查重建的状态。您可以使用 ONTAP Deploy 删除模拟故障驱动器。请注意， ONTAP 已将此驱动器标记为 `Broken` 。驱动器实际上未损坏，可以使用 ONTAP Deploy 重新添加。要擦除损坏的标签，请在 ONTAP Select 命令行界面中输入以下命令：</block>
   <block id="7900f137f5b84159e689df34552f1fdb" category="paragraph">最后一个命令的输出应为空。</block>
   <block id="a18d9a58110d3cb59ca5ec3ac833794b" category="paragraph">NetApp FAS 系统通常配备物理 NVRAM PCI 卡。此卡是一种高性能卡，包含非易失性闪存，可显著提升写入性能。为此，它授予 ONTAP 立即确认传入的写入客户端的能力。此外，它还可以计划在一个称为转存的过程中将修改后的数据块移回速度较慢的存储介质。</block>
@@ -1609,7 +1585,6 @@
   <block id="5ca7ce8323f7b11744e86ef1f4f9606f" category="paragraph">ONTAP Select 不会因增加 RAID 组中的 LUN 数量而获得任何性能优势。只能使用多个 LUN 来遵循 SATA/NL-SAS 配置的最佳实践或绕过虚拟机管理程序文件系统限制。</block>
   <block id="1089735339643620b5910924c5320981" category="section-title">VMware ESXi 主机</block>
   <block id="2dfed98838decebcc7246099986d6886" category="paragraph">NetApp 建议为托管系统磁盘的数据存储库使用 ESX 6.5 U2 或更高版本以及 NVMe 磁盘。此配置可为 NVRAM 分区提供最佳性能。</block>
-  <block id="b311582b38b62f230c4a262d909d908c" category="admonition">在 ESX 6.5 U2 及更高版本上安装时，无论系统磁盘位于 SSD 还是 NVMe 磁盘上， ONTAP Select 都使用 vNVME 驱动程序。此操作会将 VM 硬件级别设置为 13 ，此级别与 ESX 6.5 及更高版本兼容。</block>
   <block id="883debc749a79a13f46992bc1c04b69a" category="paragraph">为 ONTAP Select 网络和外部存储（使用 iSCSI 或 NFS 时为 VMware vSAN 和通用存储阵列流量）定义专用网络端口，带宽和 vSwitch 配置。</block>
   <block id="7858be6b65b0176805cc934c2f21d6dd" category="paragraph">配置容量选项以限制存储利用率（ ONTAP Select 不能占用外部 vNAS 数据存储库的全部容量）。</block>
   <block id="8a7d1abfb409902e561b13c9ab0a53b7" category="paragraph">确保所有通用外部存储阵列尽可能使用可用的冗余和 HA 功能。</block>
@@ -1800,7 +1775,6 @@
   <block id="203736fadeb2bd7c77491d72c4dec6b4" category="section-title">VMware 许可</block>
   <block id="880e4da9bcc9725e517c69e219a63339" category="paragraph">要部署 ONTAP Select 集群，您的组织必须为运行 ONTAP Select 的虚拟机管理程序主机拥有有效的 VMware vSphere 许可证。您应使用适合您的部署的许可证。</block>
   <block id="da132c60d8df0a4756d0a1e64618decf" category="section-title">软件兼容性</block>
-  <block id="f2df12ffd4f2520acaaeab11317642da" category="paragraph">ONTAP Select 可以部署在以下虚拟机管理程序上：</block>
   <block id="3522298772b42c1feed00428b1765cfd" category="admonition">只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESXi 版本上使用 ONTAP Select 。</block>
   <block id="5c4eab167cc470fbe0f1b2e9a2449486" category="section-title">VMware vCenter 和独立 ESXi 主机</block>
   <block id="d8492e635eeb04bc232082f13805e768" category="paragraph">如果 ESXi 虚拟机管理程序主机由 vCenter Server 管理，则必须使用 vCenter 凭据将此主机注册到 Deploy 管理实用程序。您不能使用 ESXi 凭据将主机注册为独立主机。</block>
@@ -1809,22 +1783,12 @@
   <block id="54046c200f18c7f662cdbd80eaba39a0" category="admonition">从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬件要求</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon 处理器， window=_blank</block>
-  <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">适用于服务器的 Intel Xeon 处理器（请参见 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 有关详细信息，请参见）</block>
   <block id="7538c6fd2c1f96ec16f31ff621c5090f" category="list-text">2 个 10GbE</block>
   <block id="d55a9ba430190ded23c2d10278bfb65d" category="section-title">根据实例类型确定的其他硬件要求</block>
   <block id="bfc8cbb02384bbb523227067dcadb07e" category="paragraph">根据节点实例类型，还需要满足多项其他硬件要求。</block>
   <block id="2660064e68655415da2628c2ae2f7592" category="list-text">小型</block>
-  <block id="0f388b65d306e7f09fac50abc309278b" category="list-text">CPU 核心 6 个或更多物理核心，其中 4 个为 ONTAP Select 预留。</block>
-  <block id="727aba38094b8ba7f1c05edf4b594878" category="list-text">24 GB 或更大的内存，其中 16 GB 为 ONTAP Select 预留。</block>
-  <block id="1b1bcbc5bef4914aba7474fdc935bf7a" category="list-text">提供标准，高级或高级 XL 的所需平台许可证</block>
   <block id="87f8a6ab85c9ced3702b4ea641ad4bb5" category="list-text">中等</block>
-  <block id="b4719369a085a3a9eadcc89a75cc3015" category="list-text">CPU 核心 10 个或更多物理核心，其中 8 个为 ONTAP Select 预留。</block>
-  <block id="a5cad44535baf99d478fd298efce915c" category="list-text">72 GB 或更大的内存，其中 64 GB 预留用于 ONTAP Select</block>
-  <block id="49a424b177ede0679de0a453cb851491" category="list-text">提供高级版或高级版 XL 的所需平台许可证</block>
   <block id="3a69b34ce86dacb205936a8094f6c743" category="list-text">大型</block>
-  <block id="007c5cd914103b408c6c2a68d320195d" category="list-text">CPU 核心为 18 个或更多物理核心，其中 16 个为 ONTAP Select 预留。</block>
-  <block id="fcda6b9d9feeeb26502f015e242ed459" category="list-text">内存为 136 GB 或更大，为 ONTAP Select 预留 128 GB</block>
-  <block id="b29d65d42585bb4f3ac0f65c9283ee2d" category="list-text">提供 Premium XL 的所需平台许可证</block>
   <block id="ccda35bfbfdd918d2a198f71367f7d9d" category="inline-link-macro">存储和 RAID</block>
   <block id="9a44a4605ab254ea4e284ea83fc225b0" category="admonition">根据平台许可证，还有其他磁盘要求。请参见 <block ref="a3c4eb4ff3e5c01e8b1b86f1b4351b6c" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="d5955f327d5d79aa3434b5772a31b4d8" category="summary">ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在虚拟机管理程序主机上。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。</block>
@@ -2371,7 +2335,6 @@
   <block id="0a15f7ba73868a32304fdf52855463c9" category="sidebar">删除 ONTAP Select 映像</block>
   <block id="afc9d68a1be701598b5ef94dc0be2844" category="sidebar">恢复双节点集群的 Deploy</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常见问题解答</block>
-  <block id="33b6370e1de46bd324564163dfaf48a9" category="list-text">VMware ESXi 7.0 GA (内部版本15843807或更高版本)、包括7.0 U1、U2和U3C</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">虚拟机管理程序您可以部署到ESXi或KVM (取决于Deploy版本)。部署到 ESXi 时，虚拟机管理程序可以由 vCenter 进行管理，也可以是独立主机。</block>
   <block id="d0730ff14b2f6fb53d9e49978a76660e" category="summary">ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。</block>
   <block id="0deac5caf37785bb3c3ce0d80f8d8d18" category="admonition">ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP 功能。</block>
@@ -2387,7 +2350,6 @@
   <block id="cc6982c020bc97509cfd68e72db0524e" category="list-text">使用管理员帐户凭据使用SSH登录到Deploy实用程序命令行界面。</block>
   <block id="1d0fd2b207143cd0cbfe1f1eca67206a" category="list-text">如果您使用的是软件RAID、请连接可用驱动器：</block>
   <block id="10d4b2d6f8c74f79bcce5324cfbda150" category="list-text">如果您使用的是软件RAID、请显示连接到节点的磁盘：</block>
-  <block id="1a4f0dd8a8bf6109c981c282ef6e87c9" category="paragraph">支持的微处理器包括：</block>
   <block id="9adc1cc3490cf88dcf6538833825d06d" category="paragraph">根据集群大小、可以使用多种受支持的以太网配置。</block>
   <block id="28f29271814291e43be7deaba751046b" category="cell">集群大小</block>
   <block id="c76e3867213cff8946148c6510af0736" category="cell">建议</block>
@@ -2804,8 +2766,6 @@
   <block id="bc49d1f5d2a485c9943e8c2a2a2bc4e0" category="section-title">使用VMXNET3网络驱动程序</block>
   <block id="f5397683296c4bac6fda66aaf747da16" category="paragraph">VMXNET3是在VMware ESXi上部署新集群时附带的默认网络驱动程序。如果升级运行ONTAP Select 9.4或更早版本的现有ONTAP Select节点、则不会自动升级网络驱动程序。您必须手动升级到 VMXNET3 。您应联系 NetApp 支持部门以获得升级方面的帮助。</block>
   <block id="f5fb21ca1cbb0f80e3bd39e8e2cdc385" category="section-title">确认已完成长时间运行的作业</block>
-  <block id="52b36e38f5557ae0240199f1a1ae8025" category="paragraph">在使用软件 RAID 向 ONTAP Select VM 添加容量时，管理员必须考虑物理驱动器大小和所需的驱动器数量。有关详细信息，请参见一节 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。</block>
-  <block id="6ee0fd1c12c5fa32d712d27f3dbe6591" category="section-title">将ONTAP Select磁盘与对应的ESX磁盘进行匹配</block>
   <block id="8aa55be05177e5bb5561de524ca4fe42" category="section-title">启用AutoSupport</block>
   <block id="60dd7d876105bb04790738b3d13a4f51" category="doc">从Deploy中删除ONTAP Select映像</block>
   <block id="f5bc6ad1ffe8721334b4b90294bc5750" category="inline-link-macro">添加管理服务器帐户</block>
@@ -3252,11 +3212,8 @@ storage aggregate show-spare-disks</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">将八节点集群缩减为六节点集群</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">对集群扩展和缩减的支持仅限于ESX集群。</block>
   <block id="e35a91dc5473bf4a53204a2bd1366d7e" category="summary">从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。</block>
-  <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">集群扩展和缩减功能受以下限制：</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">展开集群</block>
-  <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">您可以通过集群扩展功能将现有集群的大小从六节点集群增加到八节点集群。</block>
-  <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">在准备集群扩展操作步骤时、会向清单中添加新的ESX主机、并分配新节点的详细信息。在开始集群扩展过程之前、网络预检会验证选定的内部网络。</block>
   <block id="30230ebf7e780c11cfcde8274fc17934" category="list-text">验证您是否知道新节点的许可证详细信息。</block>
   <block id="70be200347cc17e3939c72792fe71b15" category="list-text">选择页面顶部的*Cluster*选项卡，然后从列表中选择所需的集群。</block>
   <block id="83d473b2e8f1c324b60e13d720cac51a" category="list-text">在集群详细信息页面上、选择页面右侧的齿轮图标、然后选择*扩展集群*。</block>
@@ -3268,7 +3225,6 @@ storage aggregate show-spare-disks</block>
   <block id="2e52445fb8b7773f56a2d476ede7614d" category="list-text">网络配置</block>
   <block id="3efe5ea2c836d42be34a86ff14766d09" category="list-text">存储配置(RAID类型和存储池)</block>
   <block id="b0ef8babe86043b130158076a23be483" category="list-text">选择*保存HA对*以保存配置详细信息。</block>
-  <block id="0feca9c8f9ca7540a5f57c1669c20751" category="list-text">提供ONTAP凭据，然后选择*扩展Cluster*。</block>
   <block id="740ba937a1a632ef3c9794b633eb57cb" category="list-text">选择*下一步*并通过选择*运行*来运行网络预检。</block>
   <block id="9f3d040cc965516d902623e208c24eb4" category="paragraph">网络预检将验证为ONTAP集群流量选择的内部网络是否正常运行。</block>
   <block id="9e517b46e538766946d13c3518579521" category="list-text">选择*Expand Cluster*开始集群扩展过程，然后在对话框中选择*OK*。</block>
@@ -3277,7 +3233,6 @@ storage aggregate show-spare-disks</block>
   <block id="4f98a584f43949379b32f8cd6c99f91d" category="list-text">有关操作进度的定期更新，请参见*Events*选项卡。此页面会定期自动刷新。</block>
   <block id="e6df350174b5d12142460122061720b4" category="paragraph">扩展集群后、您应备份ONTAP Select Deploy配置数据。</block>
   <block id="5a9eb2ea7b273c031f127ee246370399" category="section-title">缩减集群</block>
-  <block id="c724f8ae06aec94fe391a5c014d22227" category="paragraph">您可以通过集群缩减功能将现有集群的大小从八节点集群减小到六节点集群。</block>
   <block id="a1350246f96d12c2861aa0111c1d5369" category="paragraph">系统会选择集群中所需的HA节点对、以便在操作步骤期间为集群缩减做准备。</block>
   <block id="e1f3084dd5c5d44b681a43aa203f948d" category="list-text">在集群详细信息页面上、选择页面右侧的齿轮图标、然后选择*合同集群*。</block>
   <block id="ea8ea8523f4b42addd79a435f0b6ff5c" category="list-text">选择要删除的任何HA对的HA对配置详细信息并提供ONTAP凭据、然后选择*合同集群*。</block>
@@ -3353,8 +3308,6 @@ storage aggregate show-spare-disks</block>
   <block id="b993d6b1ae8a2148a7be773127a7d668" category="doc">ONTAP Select业务需求和使用场景</block>
   <block id="18ea6d668ccbbc1b64935d2ae14d9c63" category="doc">ONTAP Select支持私有云和数据中心</block>
   <block id="567999f9c71634f001a831b733088bbc" category="doc">在远程办公室和分支机构中使用ONTAP Select</block>
-  <block id="ecef17057a10f9337620a1aee67c110f" category="summary">NetApp ONTAP Select是一款软件定义的存储设备、您可以部署在运行VMware ESXi或基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序的各种商用硬件服务器上。它可以为您提供构建灵活且可扩展的私有云基础架构所需的灵活性。此站点包含ONTAP Select 9.16.1.的文档。</block>
-  <block id="b38f50fa2d7eac1d0761ec2b46339f62" category="inline-link-macro">ONTAP Select 9.16.1.的通知</block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON、用于创建ONTAP Select集群的脚本</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">用于添加ONTAP Select节点许可证的脚本</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">用于创建ONTAP Select集群的脚本</block>
@@ -3397,7 +3350,6 @@ storage aggregate show-spare-disks</block>
   <block id="852ae4fc33b89c5131b8050b8ab9b9de" category="doc">ONTAP Select存储和RAID注意事项</block>
   <block id="744c7aceadded1b7d2f7dbabcbe794a8" category="doc">基于ESXi的ONTAP Select VMware vCenter Server</block>
   <block id="634920e565b06acb85fcaff73d20a15d" category="doc">ONTAP Select VMware ESXi要求</block>
-  <block id="0edc199faf78056856f9f042ee780e07" category="inline-link">ONTAP Select 9.161发行说明</block>
   <block id="023deab3a8c9b82a9bfd452c0b68af9b" category="doc">确认ONTAP Select节点之间的连接</block>
   <block id="8a96228950f9c48cb7f24c3b98404d49" category="doc">管理ONTAP Select Deploy调解器服务</block>
   <block id="d2bdabf740cddb35328041a6ee746b12" category="doc">更换ONTAP Select的故障软件RAID驱动器</block>
@@ -3413,9 +3365,6 @@ storage aggregate show-spare-disks</block>
   <block id="6a72bf96d9b994589542338ffd146590" category="doc">升级ONTAP Select Deploy实例</block>
   <block id="c71000b965f24ab9f5c3995026415d28" category="doc">将ONTAP Select VMware ESXi升级到7.0或更高版本</block>
   <block id="bd633f5da3bfc77af90d4c908e9bf8ac" category="doc">扩展或缩减ONTAP Select集群</block>
-  <block id="e6bf3ba5fe1006a55faeef44787ee469" category="list-text">仅支持在ESX虚拟机管理程序主机上创建的集群。以下ESX版本与ONTAP Select 9.151及更高版本兼容：</block>
-  <block id="d4597f95391a261a44459b6a1ddb6a8e" category="list-text">为第四个HA对选择高可用性(HA)对配置详细信息、包括：</block>
-  <block id="269ec7d71e2b69e0e1efbee545e82252" category="sidebar">ONTAP Select 9.161文档</block>
   <block id="10094bc8718a18a18fcc32e3cd50df4c" category="sidebar">安全ONTAP Select</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">确认网络连接</block>
   <block id="4ce7782445b66c31b4b4d786806ae7a1" category="sidebar">管理调解器服务</block>
@@ -3424,7 +3373,6 @@ storage aggregate show-spare-disks</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">更换发生故障的软件RAID驱动器</block>
   <block id="e2e19484d2146649c758acb6e826707f" category="sidebar">将ESXi升级到6.5及更高版本</block>
   <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1支持VMware ESXi 8.0 U2。</block>
-  <block id="b7d2c3ffb4e7ab988d8422ff889440b1" category="paragraph">您可以访问<block ref="cf1ab4e8632efa681982f5c2d85eebd4" category="inline-link-macro-rx"></block>以查看有关当前版本的详细信息。</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8.0 U2</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
@@ -3492,7 +3440,6 @@ storage aggregate show-spare-disks</block>
   <block id="8b5ceafca01d3a14f09a0d742cbb2cfb" category="list-text">选择*下一步*并通过选择*运行*来运行网络预检。这将验证为ONTAP集群流量选择的内部网络是否正常运行。</block>
   <block id="2735f745a89477a2abc1f435e606bde3" category="list-text">选择*Create Cluster*开始集群创建过程，然后在弹出窗口中选择*OK*。</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
-  <block id="4d5e19ca322ec82f576cffa70356d45b" category="paragraph"><block ref="4d5e19ca322ec82f576cffa70356d45b" category="inline-link-rx"></block></block>
   <block id="dba6192da7444fc9e5fd32119193b12b" category="admonition">限制ONTAP管理员帐户的角色和权限可能会限制ONTAP Select Deploy管理集群的能力。有关详细信息，请参阅知识库文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
   <block id="a97a40851f37ebfbf5db3d3bf28da58b" category="admonition">多节点集群具有一个具有自动生成的生命周期的内部网络。</block>
   <block id="0f1007666fd5cc7934baffbdef1287d0" category="paragraph">三个SVM处于活动状态：</block>
@@ -3587,7 +3534,6 @@ storage aggregate show-spare-disks</block>
   <block id="9cdcaf5a7aae0807b2a785f7d26f1f3f" category="paragraph">您可以购买标准、高级或高级XL级别的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
   <block id="d6a54d06ffa7a2e05f6c0d035a345cb1" category="paragraph">特定许可证产品在以下两个方面定义并限制虚拟机管理程序主机的功能：</block>
   <block id="3e98038f4cdd32e64d0357acf2d03cda" category="list-text">硬盘驱动器(HDD)或固态驱动器(SSD)</block>
-  <block id="56dce1f406f2aca239ffdd315cc83d5d" category="admonition">基于内核的虚拟机(KVM)不支持在SW-RAID配置中使用大型实例类型或NVMe驱动器。</block>
   <block id="2f2718c8a2f261e7775daae8fff84dbc" category="section-title">比较平台许可证产品的硬件支持</block>
   <block id="46fa26efbd4810693c18739e5417980e" category="paragraph">标准、高级和高级XL许可证产品支持广泛的硬件和软件。有关硬件和软件版本的最新信息，请参见<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。</block>
   <block id="06efa63cc6d93bbf842cc0f903057606" category="open-title">核心项目</block>
@@ -3633,9 +3579,7 @@ storage aggregate show-spare-disks</block>
   <block id="719d067b229178f03bcfa1da4ac4dede" category="open-title">软件</block>
   <block id="e94dfbdb85e6f13fea9179c0fd50d81f" category="cell">软件类型</block>
   <block id="9295b1d52d6b9b34b829dfb4fabf6d05" category="cell">虚拟机管理程序支持(VMware)</block>
-  <block id="4a9dffc4c71f7a56c8a8d9b0e4381f90" category="cell">VMware vSphere 7.0GA、更新1到3C VMware vSphere 8.0GA以及更新1到3</block>
   <block id="4f17c009683074f845007741fa1c26dd" category="cell">虚拟机管理程序支持(KVM)</block>
-  <block id="e12f83762dfb76b01ed77a9370b24967" category="cell">RedHat Enterprise Linux 64位(KVM) 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7和8.6洛基Linux (KVM) 9和8</block>
   <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">管理软件</block>
   <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">NetApp Active IQ Unified Manager管理套件ONTAP Select Deploy实用程序SnapCenter (可选)</block>
   <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">了解容量层和容量池许可证类型</block>
@@ -3688,11 +3632,8 @@ storage aggregate show-spare-disks</block>
   <block id="2475e8d85e4c431ed7c77eaf00da0050" category="list-text">*容量池许可证*是指有权使用特定容量池和节点大小(标准、高级、高级XL)部署一个或多个集群的订阅。订阅包括在指定期限内使用许可证和支持的权利。使用许可证和支持合同的权利已指定开始和结束日期。</block>
   <block id="65ce848134fed42df7f25dc0a3d9d329" category="paragraph">如果容量层支持合同结束日期已过、则此节点可以继续运行、但如果未更新支持合同、您将无法下载和安装ONTAP更新、或者无法致电NetApp技术支持寻求帮助。</block>
   <block id="f72a27c1465f1a231c0f2c030e6f7e8b" category="paragraph">如果某个容量池订阅失败、系统会首先向您发出警告、但在30天后、如果系统关闭、它将不会重新启动、直到在Deploy服务器上安装更新后的订阅为止。</block>
-  <block id="24b48c88df61ec1a7a95e26d1445ce5d" category="list-text">从ONTAP Select 9.161开始、Red Hat Enterprise Linux (RHEL) 9.5和Rock-Linux 9.5支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。</block>
   <block id="c747e5d99e0cdd0a943b0b532dc7eca4" category="list-text">从ONTAP Select 9.15.1开始、RHEL 9.4和洛基Linux 9.4支持基于内核的虚拟机(Kerner-Based Virtual Machine、KVM)虚拟机管理程序。</block>
   <block id="932c03094f0a77749cc455e341a3ea08" category="list-text">您必须为生产环境中部署的每个ONTAP Select集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。</block>
-  <block id="479c7e016ce22da77ff8520b53179a68" category="list-text">Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1、9.2、9.4和9.5上的KVM</block>
-  <block id="41e0fd5b57f80140c6e78c70ec352bc7" category="list-text">基于RockyLinux 8.6、8.7、8.8、8.9、9.0、9.1、9.2、9.3、9.4和9.5的KVM</block>
   <block id="317a67df30f2813de3d883f1e7b38374" category="inline-link">互操作性表工具、window=_blank</block>
   <block id="64bdc3c3e77297346c380f015196bdd8" category="paragraph">有关详细信息、请参见<block ref="6d25ea14bebd4b4dc452bcd44cab22c3" category="inline-link-rx"></block>。</block>
   <block id="85d20cd418b9cf016df4a897af907e84" category="cell">Access Deploy (容量池许可)</block>
@@ -3793,7 +3734,6 @@ storage aggregate show-spare-disks</block>
   <block id="49282a1612672f029a74fc4fccd6b9b8" category="inline-link-macro">Linux 服务器的准备</block>
   <block id="be3ccaa1ff931b5bcff2fef8fbd77e26" category="paragraph">此外、还需要满足特定的软件包配置要求。查看<block ref="8d0fd2fb7c740b9cefef72702e4861cc" category="inline-link-macro-rx"></block>步骤获取更多信息。</block>
   <block id="e8b072936a8e7fac47ec8283f096be17" category="doc">管理ONTAP Select集群</block>
-  <block id="af858b3b9bb1921933e293e43cd28e6b" category="paragraph">有关详细信息<block ref="aa150fc2553a8a0c846847314bde8f61" category="inline-link-macro-rx"></block>，请按照，查看<block ref="9cd091a25bce78cdf0c1ef780ca4d19c" category="inline-link-macro-rx"></block>和<block ref="fb856bc56f17c64169f73fa6665ecd51" category="inline-link-macro-rx"></block>主题。</block>
   <block id="b43dccc6180e02d25b94d717af59c5d5" category="section-title">步骤 1：准备部署</block>
   <block id="14ce7f56600ce32dd333637eed98cd8f" category="open-title">硬件 RAID</block>
   <block id="66ef34be992df3691380b5f366935c14" category="inline-link-macro">存储池（KVM）</block>
@@ -3853,4 +3793,117 @@ storage aggregate show-spare-disks</block>
   <block id="1b5226a9b144cf3cfc703d8ec6db57ef" category="section-title">步骤 3：完成后</block>
   <block id="f3a5d576716c34a4548a66aa3126c77d" category="sidebar">KVM 主机检查清单</block>
   <block id="935f419c21e41ca992af1333488fd110" category="sidebar">ESXi 主机清单</block>
+  <block id="e7413dab214cef43694e01b289962db2" category="admonition">基于内核的虚拟机 (KVM) 不支持在软件 RAID 配置中使用大型实例类型。</block>
+  <block id="891e3168577f6225cc6bf3c35aafa9e2" category="cell">VMware vSphere 8.0GA 及更新 1 至 3 VMware vSphere 7.0GA 及更新 1 至 3C</block>
+  <block id="1a847c26edb3f3d6892cfa25198b2272" category="cell">Red Hat Enterprise Linux 64 位 (KVM) 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6 Rocky Linux (KVM) 9.6 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
+  <block id="637c87a94a9976e074cd8762dd5e83ec" category="list-text">服务磁盘是ONTAP Select VM 内用于服务各种项目（例如集群、启动等）的虚拟磁盘 (VMDK)。</block>
+  <block id="4cc17558d82286e7c9b33471e70c4844" category="list-text">您必须禁用硬件 RAID 控制器，以便磁盘可以直接呈现给系统（JBOD）。通常，您可以在 RAID 控制器 BIOS 中进行此更改。</block>
+  <block id="a9f1943148bcf4e2c2dec30dea4ba389" category="list-text">或者，硬件 RAID 控制器应处于 SAS HBA 模式。例如，某些 BIOS 配置除了 RAID 之外还允许使用“AHCI”模式，您可以选择启用 JBOD 模式。这将启用直通功能，以便物理驱动器在主机上可以按原样显示。</block>
+  <block id="c7aa49dbe6474688abf6e4f77a77963b" category="paragraph">根据控制器支持的最大驱动器数量，可能需要额外的控制器。在 SAS HBA 模式下，请确保 I/O 控制器 (SAS HBA) 至少支持 6Gbps 的速度。不过， NetApp建议使用 12Gbps 的速度。</block>
+  <block id="e297f5e737877accfc734b4251306152" category="paragraph">不支持任何其他硬件 RAID 控制器模式或配置。例如，某些控制器允许 RAID 0 支持，这可以人为地启用磁盘直通功能，但其后果可能不堪设想。支持的物理磁盘（仅限 SSD）大小在 200GB 到 16TB 之间。</block>
+  <block id="82a06c9df229016abb3c4375936e57a8" category="paragraph">使用软件 RAID 时， ONTAP Deploy 会向ONTAP Select提供一组 VMDK 和物理磁盘原始设备映射 [RDM]（用于 SSD）以及直通或 DirectPath IO 设备（用于 NVMe）。</block>
+  <block id="4c311f7693055e2e1706a01241eb5a8f" category="paragraph">每个数据磁盘分为三部分：一个小的根分区（条带）和两个大小相等的分区，从而创建在ONTAP Select虚拟机中可见的两个数据磁盘。分区使用根数据 (RD2) 模式，如下图所示，分别针对单节点集群和高可用性 (HA) 对中的节点。</block>
+  <block id="cfb747cea4702a4be972ef230ee7ba2d" category="paragraph"><block ref="44c29edb103a2872f519ad0c9a0fdaaa" prefix="" category="inline-code"></block>表示奇偶校验驱动器， <block ref="e2fca8135c2fadca093abd79a6b1c0d2" prefix=" " category="inline-code"></block>表示双奇偶校验驱动器，并且<block ref="5dbc98dcc983a70728bd082d1a47546e" prefix=" " category="inline-code"></block>表示备用驱动器。</block>
+  <block id="e95d355b6009270b0fb78de95e17b376" category="paragraph">ONTAP软件 RAID 支持以下 RAID 类型：RAID 4、RAID-DP 和RAID-TEC。这些是FAS和AFF平台使用的相同 RAID 结构。对于根配置， ONTAP Select仅支持 RAID 4 和 RAID-DP。当使用RAID-TEC进行数据聚合时，整体保护是 RAID-DP。ONTAPONTAP Select HA 使用无共享架构，将每个节点的配置复制到另一个节点。这意味着每个节点都必须存储其根分区及其对等节点根分区的副本。数据磁盘有一个根分区。这意味着数据磁盘的最小数量取决于ONTAP Select节点是否属于 HA 对。</block>
+  <block id="f6566a25d7b852e1188da6a99b8c7e28" category="paragraph">ESX 和 KVM 虚拟机管理程序不支持将 NVMe 磁盘用作原始设备映射 (RDM)。要允许ONTAP Select直接控制 NVMe 磁盘，您必须在 ESX 或 KVM 中将这些驱动器配置为直通设备。将 NVMe 设备配置为直通设备时，需要服务器 BIOS 支持，并且可能需要重新启动主机。此外，每个主机可分配的直通设备数量存在限制，具体数量可能因平台而异。但是， ONTAP Deploy 将此限制为每个ONTAP Select节点 14 个 NVMe 设备。这意味着 NVMe 配置以牺牲总容量为代价，提供了非常高的 IOP 密度 (IOPs/TB)。或者，如果您需要具有更大存储容量的高性能配置，建议的配置是：较大的ONTAP Select VM 大小、用于系统磁盘的 INTEL Optane 卡以及用于数据存储的一定数量的 SSD 驱动器。</block>
+  <block id="8512c0ed74c689714d6ae7ab7bcab8a7" category="paragraph">直通设备和 RDM 之间还有一个区别。RDM可以映射到正在运行的虚拟机。直通设备需要重新启动虚拟机。这意味着任何 NVMe 驱动器更换或容量扩展（驱动器添加）过程都需要重新启动ONTAP Select虚拟机。驱动器更换和容量扩展（驱动器添加）操作由ONTAP Deploy 中的工作流驱动。ONTAPONTAP管理单节点集群的ONTAP Select重新启动以及 HA 对的故障转移/故障恢复。但是，务必注意使用 SSD 数据驱动器（无需ONTAP Select重新启动/故障转移）和使用 NVMe 数据驱动器（需要ONTAP Select重新启动/故障转移）之间的区别。</block>
+  <block id="9d249683d287246a4cfcd50471562c4d" category="paragraph">使用软件 RAID 为ONTAP Select虚拟机添加容量时，管理员必须考虑物理驱动器的大小以及所需的驱动器数量。有关详细信息，请参阅<block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block> 。</block>
+  <block id="9d99b1e4b1f697c0f5feafda2dee7123" category="paragraph">与FAS和AFF系统类似，您只能向现有 RAID 组添加容量相等或更大的驱动器。容量更大的驱动器大小合适。如果您要创建新的 RAID 组，则新 RAID 组的大小应与现有 RAID 组的大小匹配，以确保整体聚合性能不会下降。</block>
+  <block id="28a68bc56d41587b76eca428ce33291b" category="section-title">将ONTAP Select磁盘与相应的 ESX 或 KVM 磁盘匹配</block>
+  <block id="1feeb707c66237a9541ece77e3e4d28f" category="paragraph">在 ESXi 或 KVM shell 中，您可以输入以下命令来使给定物理磁盘（由其 naa.unique-id 标识）的 LED 闪烁。</block>
+  <block id="8317b4a3fa4d9966b617b5491f76a3b8" category="open-title">ESX</block>
+  <block id="9c1fae3eadcb237fdb7615bb300fbc53" category="paragraph">必须删除并重新创建发生故障的丛，才能恢复正确的数据镜像。请注意，多磁盘故障导致数据聚合降级，也会导致根聚合降级。ONTAPONTAP Select使用根-数据-数据 (RDD) 分区模式将每个物理驱动器拆分为一个根分区和两个数据分区。因此，丢失一个或多个磁盘可能会影响多个聚合，包括本地根聚合或远程根聚合的副本，以及本地数据聚合和远程数据聚合的副本。</block>
+  <block id="3076e2016b53038d778618dee10b478d" category="paragraph">在以下示例输出中，发生故障的 plex 被删除并重新创建：</block>
+  <block id="859b3e34f415b642df5044600cd81ad1" category="summary">NetApp ONTAP Select是一款软件定义的存储设备，您可以将其部署在运行 VMware ESXi 或基于内核的虚拟机 (KVM) 管理程序的各种商用硬件服务器上。它能够提供您构建灵活且可扩展的私有云基础架构所需的敏捷性。此站点包含ONTAP Select 9.17.1 的文档。</block>
+  <block id="0f1f9d8aa7712455b66d5e8b4b971a5b" category="list-text">为 NVMe 磁盘配置 PCI 直通。</block>
+  <block id="b6edb9d93c4b2803ccdda9357c898c2a" category="paragraph">如果您在配置中使用 NVMe 磁盘，则需要配置 PCI 直通 (DirectPath IO)，以便 KVM 主机能够直接访问ONTAP Select集群中本地连接的 NVMe 磁盘。您需要直接访问才能执行以下任务：</block>
+  <block id="f5b991faffa2b9298c79245107008a5c" category="inline-link-macro">配置 KVM 主机以使用 NVMe 驱动器</block>
+  <block id="46929c4e8b255c2d76dd4c43fc6ceda0" category="list-text"><block ref="46929c4e8b255c2d76dd4c43fc6ceda0" category="inline-link-macro-rx"></block></block>
+  <block id="38b8597ea0c7e467749ecc68e98b6fca" category="inline-link-macro">部署集群后使用软件 RAID</block>
+  <block id="9ad4168b96591d3ce9f13beb07f453ad" category="list-text"><block ref="9ad4168b96591d3ce9f13beb07f453ad" category="inline-link-macro-rx"></block></block>
+  <block id="5f6ac3389caa4915b5df5ea4e23cdf3b" category="inline-link-macro">Red Hat 文档</block>
+  <block id="1f04c0d85dac41d18c5e719982d2453c" category="paragraph">查看<block ref="9253ef5506cce823166f2bdf01913569" category="inline-link-macro-rx"></block>有关如何为 KVM 虚拟机管理程序配置 PCI 直通（DirectPath IO）的说明。</block>
+  <block id="43d46885286ff6d9d1bb3e3666375d7c" category="inline-link">ONTAP Select 9.17.1 通知</block>
+  <block id="381d9d218a33c87fe7a65bdd140b7718" category="paragraph"><block ref="381d9d218a33c87fe7a65bdd140b7718" category="inline-link-rx"></block></block>
+  <block id="3a7c61c685981e316491699fa430a141" category="list-text">SnapMirror云</block>
+  <block id="c5f33228fc937ef0d8daa944cc220984" category="section-title">ONTAP Select 9.17.1</block>
+  <block id="621bccb3ca618202d65c825d13f5c7cc" category="paragraph">ONTAP Select 9.17.1 包含多项新功能和改进。</block>
+  <block id="a1ccdb52aaae23908c894a50ab1c7942" category="list-text">KVM 主机上本地连接的 NVMe 磁盘的软件 RAID 支持</block>
+  <block id="7da7c34592a8b282c418910ab837fc00" category="list-text">ONTAP Select 9.17.1 引入了对基于内核的虚拟机 (KVM) 虚拟机管理程序主机上ONTAP Select本地连接的 NVMe 磁盘的软件 RAID 支持。</block>
+  <block id="1dc28449401a7f910c3a8509d1d50bae" category="inline-link-macro">配置 PCI 直通（DirectPath IO）</block>
+  <block id="ce852277feeccc60284004ea91d44a6b" category="paragraph">要对本地连接的 NVMe 磁盘使用软件 RAID，您需要<block ref="7f09a366467fae8f2933e62f5a1d3600" category="inline-link-macro-rx"></block>当您准备 KVM 主机时。这为 KVM 主机提供了对本地连接的 NVMe 磁盘的直接访问，这是以下任务所必需的：</block>
+  <block id="f108a9e768021a9f2fa770b5ebcbf4ae" category="list-text">配置 KVM 主机以使用 NVMe 驱动器</block>
+  <block id="d05329fb152bc7466331771720c213a7" category="list-text">部署集群后使用软件 RAID</block>
+  <block id="d21334ffd4138404242bb0fece3f2bd0" category="inline-link-macro">了解本地连接存储的软件 RAID 配置服务</block>
+  <block id="2fd8d0de580745829d296cf2e993545d" category="paragraph"><block ref="6028b3dbcf992c3366009d78bd8049c4" category="inline-link-macro-rx"></block> 。</block>
+  <block id="135bd09a77549202951b40cf5c9539fb" category="list-text">支持KVM主机集群扩容和缩容</block>
+  <block id="84e08508432791f43f95437369ac2aa3" category="list-text">从ONTAP Select 9.17.1 开始，基于内核的虚拟机 (KVM) 和 ESXi 虚拟机管理程序主机均支持集群扩展和收缩功能。对于ONTAP Select 9.16.1 和 9.15.1，仅 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。</block>
+  <block id="0a0cc9b2212847ba1af46f41c160bb46" category="paragraph">您可以使用现有ONTAP Select集群上的集群扩展和收缩功能将集群规模从六节点增加到八节点，或者将集群规模从八节点减少到六节点。</block>
+  <block id="22cb6accb0a27ceffd521fb74834c16a" category="inline-link-macro">了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本</block>
+  <block id="3c14c9e8cb33411708f168ddc9b0d40c" category="paragraph"><block ref="f426c2cadf7fc519436e151211954c8a" category="inline-link-macro-rx"></block> 。</block>
+  <block id="8c4c7ec85ddc20b785383c7e3b83aaf3" category="list-text">支持SnapMirror云</block>
+  <block id="8e6364cfe908f51088b3ba968ff3a1ef" category="list-text">从ONTAP Select 9.17.1 开始， ONTAP Select支持SnapMirror云。SnapMirrorSnapMirror是一项获得许可的ONTAP功能，在部署ONTAP Select 9.17.1 集群或将现有ONTAP Select集群升级到 9.17.1 版本时默认启用。</block>
+  <block id="138c7cd45c4194bbbdcc248c8d717a95" category="inline-link">了解SnapMirror云备份到对象存储</block>
+  <block id="a674f1954e78adeee48a68d3b46f7329" category="paragraph"><block ref="e78089da9b0e2900996a3bebc3fd1588" category="inline-link-rx"></block> 。</block>
+  <block id="8636e1dc9721a5c30a4e439da7b5f9a1" category="list-text">更新了 NDA 驱动程序支持</block>
+  <block id="47a73413b58dd69883b3d5bfcaf3ae17" category="list-text">从ONTAP Select 9.17.1 开始，FreeBSD NDA（NVMe 直接访问）设备驱动程序取代了 NVD（NVMe 快速磁盘驱动程序）。FreeBSD驱动程序通过实施 NVMe 命令协议来支持直接访问设备。当您部署ONTAP Select 9.17.1 集群或将现有ONTAP Select集群升级到 9.17.1 版本时，配置 NVMe 设备时会默认启动 FreeBSD 驱动程序。</block>
+  <block id="9fe4db073ef9cb1070ea002413806d7b" category="paragraph">对于ONTAP Select 9.16.1 及更早版本，NVD 将继续为ONTAP Select部署中的 NVMe 设备提供支持。</block>
+  <block id="4d4e935615049b9792b8ee30fa5c71d3" category="list-text">从ONTAP Select 9.17.1 开始，Red Hat Enterprise Linux (RHEL) 9.6 和 Rocky Linux 9.6 支持 KVM 虚拟机管理程序。</block>
+  <block id="ac171b57f5c680bf4d0f02d3a2a4fc1f" category="list-text">从ONTAP Select 9.16.1 开始，RHEL 9.5 和 Rocky Linux 9.5 支持 KVM 虚拟机管理程序。</block>
+  <block id="0ea945de4d54019107b304aa9eca8fa3" category="admonition">在 ESX 6.5 U2 及更高版本上安装时，无论系统磁盘位于 SSD 还是 NVMe 磁盘上， ONTAP Select都会使用 vNVMEe 驱动程序。这会将虚拟机硬件级别设置为 13，与 ESX 6.5 及更高版本兼容。</block>
+  <block id="b819d70810100dd612c72123ee67224d" category="paragraph">您可以在 KVM 和 ESXi 虚拟机管理程序上部署ONTAP Select 。</block>
+  <block id="5c4913dc2f0c23f4a31e20e72374ec36" category="paragraph">ONTAP Select支持以下 KVM 虚拟机管理程序版本：</block>
+  <block id="106afc8ef14315f6a60e49c2f0227fcf" category="list-text">Red Hat Enterprise Linux 9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM</block>
+  <block id="b2270c4043a2f0c3e82238730523c1bd" category="list-text">Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 上的 KVM</block>
+  <block id="88f7643f9d6082d2e385207946c3b5a2" category="paragraph">ONTAP Select支持以下 ESXi 虚拟机管理程序版本：</block>
+  <block id="8a64553b73285bd3d9851c3641c74431" category="list-text">VMware ESXi 7.0 GA（内部版本 15843807 或更高版本），包括 7.0 U3C、U2 和 U1</block>
+  <block id="2a861cd8eb5ba0785391c4057414e36a" category="paragraph">支持的微处理器包括用于服务器的 Intel Xeon 处理器，请参阅<block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block>了解更多信息。</block>
+  <block id="576be828257fef81586078e09f023f12" category="cell">节点大小</block>
+  <block id="3498e0560fa8448ff0a0f15cd1b168f7" category="cell">CPU 核心</block>
+  <block id="4789f23283b3a61f858b641a1bef19a3" category="cell">内存</block>
+  <block id="36f21b96c1838ff0570ea01be9758afd" category="cell">所需的平台许可证产品</block>
+  <block id="5018463a0effef82b35416e53ca87e71" category="cell">六个或更多物理核心，其中四个保留用于ONTAP Select</block>
+  <block id="2d9df0a7fb6c54973389b67ba24378c8" category="cell">24 GB 或更大，其中 16 GB 预留给ONTAP Select</block>
+  <block id="3e08340ed47cba6444847302e8e59010" category="cell">标准型、高级型或高级 XL 型</block>
+  <block id="ca5677b4536257e1197810eecd904660" category="cell">十个或更多物理核心，其中八个保留用于ONTAP Select</block>
+  <block id="8e6d3ad54d3ad2cc559440462160d18a" category="cell">72GB 或更大，其中 64GB 预留给ONTAP Select</block>
+  <block id="640e223edcd3fe1348f1d6ff235a0f90" category="cell">Premium 或 Premium XL</block>
+  <block id="84bfed00d5c0f440cfe0522a957d8c09" category="cell">十八个或更多物理核心，其中十六个保留用于ONTAP Select</block>
+  <block id="2ab3f2081ffa300f8e39f366212f2346" category="cell">136GB 或更大，其中 128GB 预留给ONTAP Select</block>
+  <block id="71e456c9cf1560175095f47063b9f150" category="inline-link-macro">ONTAP Select 9.17.1 发行说明</block>
+  <block id="7a0780d1a75284704296fa1d6669fe55" category="paragraph">您可以访问<block ref="578177b2068e55f730d2ab8da37ff1a6" category="inline-link-macro-rx"></block>查看当前版本的详细信息。</block>
+  <block id="a8fb2d9d2ce588a77ffb778ffb1f4887" category="paragraph">如果您计划将 NVMe 驱动器与软件 RAID 一起使用，则需要配置 ESXi 或 KVM 主机以识别驱动器。</block>
+  <block id="8fce0c649f4d72f417cda254112e0124" category="list-text">对于 ESX 主机，ONTAP Select 9.7 或更高版本以及受支持的 Deploy 管理实用程序</block>
+  <block id="c06f7735bf993ec75621b52838eec06d" category="list-text">对于 KVM 主机， ONTAP Select 9.17.1 带有受支持的 Deploy 管理实用程序</block>
+  <block id="69376d0181427bc8147aa66d54429340" category="list-text">ESXi 或 KVM 主机正在运行受支持的虚拟机管理程序版本：</block>
+  <block id="f151466e45805b85c179d53c716d1730" category="paragraph">以下虚拟机管理程序版本支持 ESXi：</block>
+  <block id="938bda7b4f477005ecd5a1be655a2d94" category="list-text">VMware ESXi 7.0 GA（内部版本 15843807 或更高版本），包括 7.0 U1、U2 和 U3C</block>
+  <block id="b9f88b3e1ffa6ae7d67f237344be95ad" category="paragraph">以下虚拟机管理程序版本支持 KVM：</block>
+  <block id="94df876ea98d3d9e82f501c53ff28527" category="list-text">Red Hat Enterprise Linux 9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
+  <block id="9fed076770017e73835f398d2e5b8714" category="list-text">Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
+  <block id="3f47eb1c93cfecc035015d51dea43351" category="inline-link-macro">部署实用程序安装</block>
+  <block id="650b54030913723e437a2beaa84f5e95" category="inline-link-macro">ONTAP Select安装</block>
+  <block id="2eb8006ba6af294cdeda2a87c467fa5c" category="paragraph">关注<block ref="98f788baf075ad6e86ad4cdcdcd40ae3" category="inline-link-macro-rx"></block> ，并审查所需的信息<block ref="5f52a4a178eaea2e0c4812fd7a9f2757" category="inline-link-macro-rx"></block>和<block ref="b3b43e0c3f8f2e7f8b8f596dd2656645" category="inline-link-macro-rx"></block>了解更多信息。</block>
+  <block id="9ee25f36a4c63773203c1547efed4fc1" category="paragraph">您必须在创建新的ONTAP Select集群之前执行此过程。您还可以执行此过程为现有软件 RAID NVMe 集群配置额外的 NVMe 驱动器。在这种情况下，配置驱动器后，您必须像添加额外的 SSD 驱动器一样通过 Deploy 添加它们。主要区别在于 Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的事项：</block>
+  <block id="ad1e77dc2d8bf573173118e7a9612d61" category="list-text">启用*Intel VT for Directed I/O (VT-d)* 设置。</block>
+  <block id="4c223b348646a303ade4760a9df80f2f" category="list-text">某些服务器支持*Intel 卷管理设备 (Intel VMD)*。启用后，可用的 NVMe 设备将对 ESXi 或 KVM 虚拟机管理程序不可见；请先禁用此选项，然后再继续操作。</block>
+  <block id="5e72e3fe82bf71f2450e67351bb4e9ba" category="list-text">在 vSphere 中，打开主机 *配置* 视图并选择 *硬件：PCI 设备* 下的 *编辑*。</block>
+  <block id="79c4d60ab9b9722aa87290dc7dd8f658" category="paragraph">以下示例输出显示了 ESXi 主机的可用驱动器：</block>
+  <block id="814e7eb00b5aa100eaba4779662c4e69" category="list-text">选择“确定”。所选设备将显示“可用（待处理）”*。</block>
+  <block id="a19233fed380d5b231b023ea93dbe258" category="list-text">选择“*重新启动此主机*”。</block>
+  <block id="26fe0a3b24674c6c3152ba4fb0ee4ed3" category="paragraph">以下示例输出针对 ESXi 主机：</block>
+  <block id="1055142d0c7647a07a5e1422110286e5" category="paragraph">主机准备好后，您可以安装ONTAP Select Deploy 实用程序。Deploy将指导您在新准备的主机上创建ONTAP Select存储集群。在此过程中，Deploy 会检测到已配置为直通的 NVMe 驱动器，并自动选择它们用作ONTAP数据磁盘。您可以根据需要调整默认选择。</block>
+  <block id="d36012a6f1af06ad2e32fd0380ecd688" category="paragraph">您可以将现有ONTAP Select集群的大小从六节点集群增加到八节点集群，也可以将集群大小从八节点集群减少到六节点集群</block>
+  <block id="1337ed24c95634be31bc604f5d1e6297" category="paragraph">KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。</block>
+  <block id="9c33111b54c52c9fcb0abaf82c9004f8" category="paragraph">从ONTAP Select 9.17.1 开始，KVM 虚拟机管理程序主机支持集群扩展和收缩。</block>
+  <block id="342972daa4f7bc941a67318ae7af313b" category="paragraph">以下 KVM 虚拟机管理程序版本支持集群扩展和收缩：</block>
+  <block id="e05b0c53b1a0c5711591f986de5de129" category="list-text">Red Hat Enterprise Linux 64 位 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
+  <block id="a60b141bdd70b40e77bf0e83f56ade8d" category="paragraph">从ONTAP Select 9.15.1 开始，ESXi 虚拟机管理程序主机支持集群扩展和收缩。</block>
+  <block id="1062164d3bf1751bfb605324bcaf3e29" category="paragraph">以下 ESXi 虚拟机管理程序版本支持集群扩展和收缩：</block>
+  <block id="e86abbb4089bb949221427ad94aa636a" category="paragraph">使用集群扩展功能将现有集群的大小从六个节点增加到八个节点。</block>
+  <block id="305009997eb17ffe0901beb32fdc2040" category="paragraph">在准备集群扩展时，新的 ESXi 和 KVM 主机会被添加到清单中，并分配新节点的详细信息。在开始集群扩展过程之前，网络预检查会验证所选的内部网络。</block>
+  <block id="1c53d6d4916415921dddecf6128580f3" category="list-text">为第四个 HA 对选择以下高可用性 (HA) 对配置详细信息：</block>
+  <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">提供ONTAP凭据，然后选择*扩展集群*。</block>
+  <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">使用集群收缩功能将现有集群的大小从 8 个节点减少到 6 个节点。</block>
+  <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 文档</block>
 </blocks>

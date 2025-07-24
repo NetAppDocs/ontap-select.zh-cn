@@ -35,15 +35,28 @@ NOTE: 您应查看适用于您的 ONTAP Select 版本的最新发行说明，了
 
 === 软件兼容性
 
-ONTAP Select 可以部署在以下虚拟机管理程序上：
+您可以在 KVM 和 ESXi 虚拟机管理程序上部署ONTAP Select 。
 
-* Red Hat Enterprise Linux 8.6、8.7、8.8、9.0、9.1、9.2、9.4和9.5上的KVM
-* 基于RockyLinux 8.6、8.7、8.8、8.9、9.0、9.1、9.2、9.3、9.4和9.5的KVM
-* VMware ESXi 7.0 GA (内部版本15843807或更高版本)、包括7.0 U1、U2和U3C
-* VMware ESXi 8.0 GA (内部版本20513097)
-* VMware ESXi 8.0 U1 (内部版本21495797)
-* VMware ESXi 8.0 U2
+[role="tabbed-block"]
+====
+.KVM
+--
+ONTAP Select支持以下 KVM 虚拟机管理程序版本：
+
+* Red Hat Enterprise Linux 9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM
+* Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 上的 KVM
+
+
+--
+.ESXi
+--
+ONTAP Select支持以下 ESXi 虚拟机管理程序版本：
+
 * VMware ESXi 8.0 U3
+* VMware ESXi 8.0 U2
+* VMware ESXi 8.0 U1 (内部版本21495797)
+* VMware ESXi 8.0 GA (内部版本20513097)
+* VMware ESXi 7.0 GA（内部版本 15843807 或更高版本），包括 7.0 U3C、U2 和 U1
 
 
 
@@ -52,6 +65,8 @@ NOTE: 只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESX
 
 NOTE: ESXi 6.5 GA和ESXi 6.7 GA已达到可用性结束状态。如果您的ONTAP Select集群使用这些版本、则必须按照升级到受支持的版本 https://mysupport.netapp.com/matrix["互操作性表工具（ IMT ）"^]。
 
+--
+====
 
 
 === VMware vCenter 和独立 ESXi 主机
@@ -76,10 +91,7 @@ NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge �
 无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。
 
 .处理器
-支持的微处理器包括：
-
-* 适用于服务器的 Intel Xeon 处理器（请参见 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 处理器， window=_blank"] 有关详细信息，请参见）
-
+支持的微处理器包括用于服务器的 Intel Xeon 处理器，请参阅link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 处理器， window=_blank"]了解更多信息。
 
 
 NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
@@ -87,10 +99,8 @@ NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
 .以太网配置
 根据集群大小、可以使用多种受支持的以太网配置。
 
-[cols="30,35,35"]
+[cols="2,3,3"]
 |===
-
-
 | 集群大小 | 最低要求 | 建议的要求 
 
 
@@ -110,23 +120,18 @@ NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
 
 请参见 link:concept_lic_platforms.html["了解平台许可证产品"] 有关详细信息 ...
 
-.小型
-* CPU 核心 6 个或更多物理核心，其中 4 个为 ONTAP Select 预留。
-* 24 GB 或更大的内存，其中 16 GB 为 ONTAP Select 预留。
-* 提供标准，高级或高级 XL 的所需平台许可证
+[cols="a1,a2,a2,a2"]
+|===
+| 节点大小 | CPU 核心 | 内存 | 所需的平台许可证产品 
 
 
-.中等
-* CPU 核心 10 个或更多物理核心，其中 8 个为 ONTAP Select 预留。
-* 72 GB 或更大的内存，其中 64 GB 预留用于 ONTAP Select
-* 提供高级版或高级版 XL 的所需平台许可证
+| 小型 | 六个或更多物理核心，其中四个保留用于ONTAP Select | 24 GB 或更大，其中 16 GB 预留给ONTAP Select | 标准型、高级型或高级 XL 型 
 
 
-.大型
-* CPU 核心为 18 个或更多物理核心，其中 16 个为 ONTAP Select 预留。
-* 内存为 136 GB 或更大，为 ONTAP Select 预留 128 GB
-* 提供 Premium XL 的所需平台许可证
+| 中等 | 十个或更多物理核心，其中八个保留用于ONTAP Select | 72GB 或更大，其中 64GB 预留给ONTAP Select | Premium 或 Premium XL 
 
 
+| 大型 | 十八个或更多物理核心，其中十六个保留用于ONTAP Select | 136GB 或更大，其中 128GB 预留给ONTAP Select | 高级版 xl 
+|===
 
 NOTE: 根据平台许可证，还有其他磁盘要求。请参见 link:reference_plan_ots_storage.html["存储和 RAID"] 有关详细信息 ...

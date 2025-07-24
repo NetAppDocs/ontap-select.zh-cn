@@ -52,6 +52,18 @@ NOTE: 如果您在安装Linux服务器期间选择了"虚拟 化主机"作为软
 +
 有关所需软件包和其他配置要求的其他信息，请参见link:https://imt.netapp.com/matrix/#welcome["互操作性表工具"^]。
 
+. 为 NVMe 磁盘配置 PCI 直通。
++
+如果您在配置中使用 NVMe 磁盘，则需要配置 PCI 直通 (DirectPath IO)，以便 KVM 主机能够直接访问ONTAP Select集群中本地连接的 NVMe 磁盘。您需要直接访问才能执行以下任务：
+
++
+** link:task_chk_nvme_configure.html["配置 KVM 主机以使用 NVMe 驱动器"]
+** link:concept_stor_swraid_local.html["部署集群后使用软件 RAID"]
+
+
++
+查看link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/virtualization/chap-virtualization-pci_passthrough#sect-Virtualization-PCI_passthrough-AI_device_to_a_host["Red Hat 文档"^]有关如何为 KVM 虚拟机管理程序配置 PCI 直通（DirectPath IO）的说明。
+
 . 配置存储池。
 +
 ONTAP Select存储池是一种逻辑数据容器、用于抽象化底层物理存储。您必须管理部署ONTAP Select的KVM主机上的存储池。

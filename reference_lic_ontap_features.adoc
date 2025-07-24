@@ -37,8 +37,9 @@ NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP �
 * 基于TCP的NVMe
 * ONTAP 多租户功能
 * ONTAP S3
-* SnapMirror
 * S3 SnapMirror
+* SnapMirror
+* SnapMirror云
 * SnapRestore
 * SnapVault
 * Storage VM灾难恢复(SVM DR)

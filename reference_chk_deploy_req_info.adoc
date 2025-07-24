@@ -1,5 +1,5 @@
 ---
-bar: sidebar 
+sidebar: sidebar 
 permalink: reference_chk_deploy_req_info.html 
 keywords: ontap select, deploy, pre-installation, vmware 
 summary: 在 VMware 环境中安装 Deploy 管理实用程序之前，请查看基本要求并准备成功部署。 

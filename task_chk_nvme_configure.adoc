@@ -14,23 +14,49 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 
 
 [role="lead"]
-如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需要配置主机以识别这些驱动器。
+如果您计划将 NVMe 驱动器与软件 RAID 一起使用，则需要配置 ESXi 或 KVM 主机以识别驱动器。
 
 在 NVMe 设备上使用 VMDirectPath I/O 直通可最大限度地提高数据效率。此设置会将驱动器公开给 ONTAP Select 虚拟机，从而使 ONTAP 可以通过 PCI 直接访问设备。
 
 .开始之前
 确保您的部署环境满足以下最低要求：
 
-* ONTAP Select 9.7或更高版本以及受支持的Deploy管理实用程序
+* 对于 ESX 主机，ONTAP Select 9.7 或更高版本以及受支持的 Deploy 管理实用程序
+* 对于 KVM 主机， ONTAP Select 9.17.1 带有受支持的 Deploy 管理实用程序
 * 高级 XL 平台许可证或 90 天评估许可证
-* VMware ESXi 6.7 或更高版本
+* ESXi 或 KVM 主机正在运行受支持的虚拟机管理程序版本：
++
+[role="tabbed-block"]
+====
+.ESXi
+--
+以下虚拟机管理程序版本支持 ESXi：
+
+** VMware ESXi 8.0 U3
+** VMware ESXi 8.0 U2
+** VMware ESXi 8.0 U1 (内部版本21495797)
+** VMware ESXi 8.0 GA (内部版本20513097)
+** VMware ESXi 7.0 GA（内部版本 15843807 或更高版本），包括 7.0 U1、U2 和 U3C
+
+
+--
+.KVM
+--
+以下虚拟机管理程序版本支持 KVM：
+
+** Red Hat Enterprise Linux 9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6
+** Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6
+
+
+--
+====
 * 符合规格 1.0 或更高版本的 NVMe 设备
 
 
-有关详细信息link:kvm-host-configuration-and-preparation-checklist.html["主机准备检查清单"]，请按照，查看link:reference_chk_deploy_req_info.html["Deploy 实用程序安装所需信息"]和link:reference_chk_select_req_info.html["ONTAP Select 安装所需的信息"]主题。
+关注link:kvm-host-configuration-and-preparation-checklist["主机准备检查清单"] ，并审查所需的信息link:reference_chk_deploy_req_info.html["部署实用程序安装"]和link:reference_chk_select_req_info.html["ONTAP Select安装"]了解更多信息。
 
 .关于此任务
-此操作步骤 可在创建新 ONTAP Select 集群之前执行。您还可以执行操作步骤 为现有的 SW-RAID NVMe 集群配置其他 NVMe 驱动器。在这种情况下，配置驱动器后，您必须通过 Deploy 添加这些驱动器，就像添加其他 SSD 驱动器一样。主要区别在于， Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的信息：
+您必须在创建新的ONTAP Select集群之前执行此过程。您还可以执行此过程为现有软件 RAID NVMe 集群配置额外的 NVMe 驱动器。在这种情况下，配置驱动器后，您必须像添加额外的 SSD 驱动器一样通过 Deploy 添加它们。主要区别在于 Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的事项：
 
 * Deploy 负责处理重新启动流程编排。
 * HA 接管和交还会按顺序执行，但重新同步聚合可能会很耗时。
@@ -41,18 +67,21 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 
 .步骤
 . 访问主机上的 * BIOS 配置 * 菜单，以支持 I/O 虚拟化。
-. 启用 * 定向 I/O （ VT-d ）的 Intel （ R ） VT 设置。
+. 启用*Intel VT for Directed I/O (VT-d)* 设置。
 +
 image:nvme_01.png["套接字配置"]
 
-. 某些服务器支持 * Intel 卷管理设备（ Intel VMD ） * 。如果启用此选项，则 ESXi 虚拟机管理程序将无法识别可用的 NVMe 设备；请先禁用此选项，然后再继续。
+. 某些服务器支持*Intel 卷管理设备 (Intel VMD)*。启用后，可用的 NVMe 设备将对 ESXi 或 KVM 虚拟机管理程序不可见；请先禁用此选项，然后再继续操作。
 +
 image:nvme_07.png["套接字配置， VMD"]
 
 . 配置 NVMe 驱动器以传递到虚拟机。
 +
-.. 在 vSphere 中，打开主机 * 配置 * 视图，然后单击 * 硬件： PCI 设备 * 下的 * 编辑 * 。
+.. 在 vSphere 中，打开主机 *配置* 视图并选择 *硬件：PCI 设备* 下的 *编辑*。
 .. 选择要用于 ONTAP Select 的 NVMe 驱动器。
++
+以下示例输出显示了 ESXi 主机的可用驱动器：
+
 +
 image:nvme_02.png["编辑 PCI 设备可用性"]
 
@@ -60,20 +89,25 @@ image:nvme_02.png["编辑 PCI 设备可用性"]
 
 NOTE: 您需要一个 VMFS 数据存储库，该数据存储库也由 NVMe 设备提供支持，以托管 ONTAP Select VM 系统磁盘和虚拟 NVRAM 。在为其他 NVMe 驱动器配置 PCI 直通时，至少保留一个 NVMe 驱动器可用于此目的。
 
-.. 单击 * 确定 * 。选定设备指示 * 可用（待定） * 。
+.. 选择“确定”。所选设备将显示“可用（待处理）”*。
 
 
-. 单击 * 重新启动主机 * 。
+. 选择“*重新启动此主机*”。
++
+以下示例输出针对 ESXi 主机：
+
 +
 image:nvme_03.png["重新启动此主机"]
 
 
 
 .完成后
-准备好主机后，您可以安装 ONTAP Select Deploy 实用程序。Deploy 可指导您在新准备的主机上创建 ONTAP Select 存储集群。在此过程中， Deploy 将检测是否存在配置为直通的 NVMe 驱动器，并自动选择这些驱动器以用作 ONTAP 数据磁盘。您可以根据需要调整默认选择。
+主机准备好后，您可以安装ONTAP Select Deploy 实用程序。Deploy将指导您在新准备的主机上创建ONTAP Select存储集群。在此过程中，Deploy 会检测到已配置为直通的 NVMe 驱动器，并自动选择它们用作ONTAP数据磁盘。您可以根据需要调整默认选择。
 
 
 NOTE: 每个 ONTAP Select 节点最多支持 14 个 NVMe 设备。
+
+以下示例输出针对 ESXi 主机：
 
 image:nvme_04.png["ONTAP Select 部署集群"]
 
