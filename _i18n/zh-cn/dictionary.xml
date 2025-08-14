@@ -3793,7 +3793,6 @@ storage aggregate show-spare-disks</block>
   <block id="1b5226a9b144cf3cfc703d8ec6db57ef" category="section-title">步骤 3：完成后</block>
   <block id="f3a5d576716c34a4548a66aa3126c77d" category="sidebar">KVM 主机检查清单</block>
   <block id="935f419c21e41ca992af1333488fd110" category="sidebar">ESXi 主机清单</block>
-  <block id="e7413dab214cef43694e01b289962db2" category="admonition">基于内核的虚拟机 (KVM) 不支持在软件 RAID 配置中使用大型实例类型。</block>
   <block id="891e3168577f6225cc6bf3c35aafa9e2" category="cell">VMware vSphere 8.0GA 及更新 1 至 3 VMware vSphere 7.0GA 及更新 1 至 3C</block>
   <block id="1a847c26edb3f3d6892cfa25198b2272" category="cell">Red Hat Enterprise Linux 64 位 (KVM) 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6 Rocky Linux (KVM) 9.6 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
   <block id="637c87a94a9976e074cd8762dd5e83ec" category="list-text">服务磁盘是ONTAP Select VM 内用于服务各种项目（例如集群、启动等）的虚拟磁盘 (VMDK)。</block>
@@ -3906,4 +3905,5 @@ storage aggregate show-spare-disks</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">提供ONTAP凭据，然后选择*扩展集群*。</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">使用集群收缩功能将现有集群的大小从 8 个节点减少到 6 个节点。</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 文档</block>
+  <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">基于内核的虚拟机 (KVM) 不支持使用大型实例类型。</block>
 </blocks>
