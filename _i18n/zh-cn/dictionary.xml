@@ -882,17 +882,11 @@
   <block id="2c3df213abea0ad1cb494572704542f9" category="inline-image-macro">介绍部署 ONTAP Select 集群所需的完整工作流。</block>
   <block id="bc0723c49208cb7ede4ce6ea0a477957" category="paragraph"><block ref="bc0723c49208cb7ede4ce6ea0a477957" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">您可以使用命令行界面原位升级现有的 Deploy 实用程序虚拟机。</block>
-  <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">确保在升级期间未使用 Deploy 执行任何其他任务。有关升级 Deploy 实用程序的信息和限制，请参见最新发行说明。</block>
-  <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">要开始升级过程，您必须从 NetApp 支持站点下载相应的 Deploy 虚拟机升级文件。升级软件包的格式为一个压缩文件。</block>
   <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">选择所需版本的升级软件包。</block>
   <block id="def8f653fff47640d3bcce40244c6331" category="list-text">选择并下载相应的软件包，根据需要对环境中的所有提示做出响应。</block>
-  <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">获取升级软件包后，您必须将此文件上传到 Deploy 虚拟机。</block>
-  <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">您必须在本地工作站上提供升级文件。您还必须具有管理员用户帐户的密码。</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">此任务介绍了一种将文件上传到 Deploy 虚拟机的方法。可能还有其他更适合您的环境的选项。</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">升级文件存储在管理员用户的主目录中。</block>
-  <block id="baa4f96e18f8e9fced4eec3f5a81a23a" category="paragraph">将升级文件上传到 Deploy 虚拟机后，您可以应用此升级。</block>
-  <block id="dbb14ca7f13323519486701e4b502763" category="paragraph">您必须知道此升级文件位于 Deploy 实用程序虚拟机上的哪个目录中。此外，请确保在执行升级期间不使用 Deploy 执行任何其他任务。</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">使用适当的目录路径和文件名执行升级：</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph">`deDeploy upgrade -package-path filepath`</block>
   <block id="e5338fa1dff19c951b23cd8d57a1bb1d" category="summary">您需要使用 SSH 登录到 Deploy 管理 Shell 。登录后，您可以使用问题描述 命令行界面命令创建 ONTAP Select 集群并执行相关的管理过程。</block>
@@ -2509,7 +2503,6 @@
   <block id="58af1c2597d085d648724676529071f9" category="paragraph-title">虚拟机管理程序平台</block>
   <block id="ef85c9b02f4296b633e43a4931df8c2f" category="paragraph-title">节点之间的延迟</block>
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">ONTAP Select 的当前版本</block>
-  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">关于此任务</block>
   <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">由于底层硬件和配置的特征， ONTAP Select 集群的性能可能会有很大差异。特定硬件配置是影响特定ONTAP Select 实例性能的最大因素。以下是影响特定 ONTAP Select 实例性能的一些因素：</block>
   <block id="507f8233cb2eb908786a8439f415fee2" category="list-text">从ONTAP Select 9.10.1开始、您无法再在KVM虚拟机管理程序上部署新集群。</block>
   <block id="93ffd34ce676a00f4a126c465fc48130" category="list-text">从ONTAP Select 9.11.1开始、除了脱机和删除功能之外、现有KVM集群和主机不再具有所有易管理性功能。</block>
@@ -2638,7 +2631,6 @@
   <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">性能概述</block>
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">ONTAP Select 9.6性能</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。</block>
-  <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">在本地工作站上的命令Shell中、使用scp实用程序将映像文件上传到Deploy虚拟机。</block>
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">防篡改Snapshot副本</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM 迁移</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
@@ -2816,9 +2808,6 @@
   <block id="a576bfb8d18800b15b695bc702167ec1" category="admonition">您只能添加版本早于 Deploy 实例附带的原始版本的 ONTAP Select 映像。不支持在不更新Deploy的情况下添加更高版本的ONTAP Select。</block>
   <block id="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="paragraph"><block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block></block>
   <block id="298707edb3b539391aec5a5a89670001" category="admonition">如果您安装了旧版ONTAP Select Deploy管理实用程序实例、则应升级到当前版本。ONTAP Select节点和ONTAP Select Deploy组件会单独升级。请参见 <block ref="fb380fde33185400cd8ee6587621860d" category="inline-link-macro-rx"></block> 了解更多详细信息。</block>
-  <block id="dded0118bab7e4547129d9826a3a53bf" category="section-title">下载升级包</block>
-  <block id="295a9acceaedaed57f5a69a9e9479d14" category="section-title">将软件包上传到Deploy虚拟机</block>
-  <block id="89a9fa7a63f2114c1852ebceaf021995" category="section-title">应用升级软件包</block>
   <block id="4d0baad02721160fc108f9d6af73fec0" category="doc">访问ONTAP Select视频控制台</block>
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">确认ONTAP Select节点之间的网络连接</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">初始集群创建可用于创建占用初始数据存储库中部分或全部空间的 ONTAP Select 集群。第二步是使用其他数据存储库执行一个或多个容量添加操作，直到达到所需的总容量为止。有关此功能的详细信息，请参见一节 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。</block>
@@ -2878,7 +2867,6 @@
   <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">访问 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用Web浏览器并从“下载”菜单中选择*Downloads*。</block>
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">向下滚动并选择ONTAP Select Deploy Upgrade*。</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">查看最终用户许可协议(EULA),并选择*Accept &amp; Continue*。</block>
-  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">在升级操作步骤完成之前、系统会要求您创建Deploy虚拟机配置的备份。此外、您还应清除浏览器缓存、以便查看新创建的Deploy页面。</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">您可以访问运行ONTAP Select的虚拟机管理程序虚拟机的视频控制台。</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">(可选)删除虚拟机管理程序主机的ONTAP Select映像。</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">ESXi示例</block>
@@ -3906,4 +3894,21 @@ storage aggregate show-spare-disks</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">使用集群收缩功能将现有集群的大小从 8 个节点减少到 6 个节点。</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 文档</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">基于内核的虚拟机 (KVM) 不支持使用大型实例类型。</block>
+  <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">您可以使用 ONTAP ONTAP Select ONTAP Select Deploy 实用程序虚拟机。</block>
+  <block id="37d4c938e6c31c7ec9166448ac3458f3" category="paragraph">确保在升级期间不使用ONTAP Select Deploy 执行任何其他任务。有关升级ONTAP Select Deploy 实用程序的信息和限制，请参阅当前发行说明。</block>
+  <block id="a59e9f814fd25c07ec74e51d966be96f" category="paragraph">您可以从ONTAP Select Deploy 9.16.1 或 9.15.1 升级到ONTAP Select Deploy 9.17.1。要从ONTAP Select Deploy 9.14.1 或更早版本升级，请查看ONTAP Select版本的发行说明。</block>
+  <block id="db1b7c6bff7b0da47260c4e758478bf5" category="section-title">步骤 1：下载软件包</block>
+  <block id="c81ba5c62604d6722d8975fb55e13972" category="paragraph">要开始升级过程，ONTAP Select从<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>。升级包格式为单个压缩文件。</block>
+  <block id="1bd278b7a759195dc2c65f644c38efc6" category="section-title">步骤 2：将软件包上传到ONTAP Select Deploy 虚拟机</block>
+  <block id="58d35d75d5ec4b24d42607d4bf519bb0" category="paragraph">下载软件包后，您需要将文件上传到ONTAP Select Deploy 虚拟机。</block>
+  <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">此任务介绍了一种将文件上传到ONTAP Select Deploy 虚拟机的方法。可能还有其他选项更适合您的环境。</block>
+  <block id="c99ab6326cfb96cafe5cf69a39bf5e79" category="list-text">验证升级文件是否在本地工作站上可用。</block>
+  <block id="e2a672c847bad2863e57f277c323553c" category="list-text">验证您是否拥有管理员用户帐户的密码。</block>
+  <block id="e60c1aa35e0fea0a6ef96ddaa4b018f8" category="list-text">在本地工作站的命令 shell 中，使用<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block>（安全复制协议）实用程序将映像文件上传到ONTAP Select Deploy 虚拟机。</block>
+  <block id="fc979b5c6d5eef1f824052719f508095" category="section-title">步骤3：应用升级包</block>
+  <block id="8b24796d99b30623379a77021195b47e" category="paragraph">将升级文件上传到ONTAP Select Deploy 虚拟机后，即可应用升级。</block>
+  <block id="91aa908b0f2003054a80626907b7d18a" category="list-text">验证升级文件在ONTAP Select Deploy 实用程序虚拟机中放置的目录。</block>
+  <block id="b2fb3f45f259e44e136bed021ae55392" category="list-text">验证在执行升级时ONTAP Select Deploy 未用于执行任何其他任务。</block>
+  <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">使用管理员帐户通过 SSHSign in到ONTAP Select Deploy 实用程序 CLI。</block>
+  <block id="87a5212e058c62281b89455df9a32603" category="paragraph">在升级过程完成之前，系统会要求您创建ONTAP Select Deploy 虚拟机配置的备份。此外，您应该清除浏览器缓存，以便可以查看新创建的ONTAP Select Deploy 页面。</block>
 </blocks>
