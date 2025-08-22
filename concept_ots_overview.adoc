@@ -127,6 +127,7 @@ NOTE: 从ONTAP Select 9.161开始、支持手动更新ARP、NetApp许可证文�
 * 服务处理器
 * SVM 迁移
 * SnapLock 合规性
+* SnapMirror主动同步
 * VMware HCX
 
 
