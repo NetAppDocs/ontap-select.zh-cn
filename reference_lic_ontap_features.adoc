@@ -57,11 +57,16 @@ NOTE: ONTAP Select支持将SVM DR同时用作源和目标、并且最多具有16
 
 * FabricPool
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
-* SnapLock企业版(ONTAP Select不支持SnapLock合规性)
+* SnapLock Enterprise for ONTAP Select 9.16.1 及更早版本（可从link:https://mysupport.netapp.com/site/["NetApp 支持站点"^])
++
+
+NOTE: ONTAP Select不支持SnapLock Compliance 。
+
 +
 ** 防篡改Snapshot副本
 
 
+* SnapLock Select
 
 
 

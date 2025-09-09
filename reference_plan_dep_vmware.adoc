@@ -103,3 +103,24 @@ ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 �
 * 您必须为 Deploy 虚拟机的管理 LIF 分配 IPv4 地址。
 * Deploy 无法创建配置为在 ONTAP LIF 上使用 IPv6 的 ONTAP Select 节点。
 
+
+
+
+== ONTAP Select部署 VMware vCenter 服务器注意事项
+
+
+
+=== ESA 的 VMware vSphere 权限
+
+以下列出了在 vCenter 中创建和管理 vSAN Express 存储架构 (ESA) 所需的 vSphere 内容库的特定权限：
+
+* 添加库项目
+* 创建本地库
+* 删除库项目
+* 删除本地库
+* 读取存储
+* 更新文件
+* 更新库
+* 更新库项目
+* 更新本地库
+

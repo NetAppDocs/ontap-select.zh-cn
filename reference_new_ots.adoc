@@ -43,11 +43,59 @@ link:concept_stor_swraid_local.html["了解本地连接存储的软件 RAID 配�
 link:task_cluster_expansion_contraction.html["了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本"] 。
 
 --
-支持SnapMirror云:: 从ONTAP Select 9.17.1 开始， ONTAP Select支持SnapMirror云。SnapMirrorSnapMirror是一项获得许可的ONTAP功能，在部署ONTAP Select 9.17.1 集群或将现有ONTAP Select集群升级到 9.17.1 版本时默认启用。
+增强对 ESXi 主机上的集群扩展和收缩的支持:: 从ONTAP Select 9.17.1 开始，ESXi 主机上的六节点集群和十二节点集群之间支持集群扩展和收缩：
 +
 --
+--
+您可以按以下增量增加现有 ESXi 群集的群集大小：
+
+* 从六个节点到八个、十个或十二个节点
+* 从八个节点到十个或十二个节点
+* 从十到十二个节点
+
+
+您可以按以下增量减少现有 ESXi 群集的群集大小：
+
+* 从十二个节点到十个、八个或六个节点
+* 从十个节点到八个或六个节点
+* 从八个节点到六个节点
+
+
+--
+link:task_cluster_expansion_contraction.html["了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本"] 。
+
+--
+支持ONTAP功能:: 从ONTAP Select 9.17.1 开始， ONTAP Select支持以下许可的ONTAP功能：
++
+--
+* SnapLock Select
++
+从ONTAP Select 9.17.1 开始，新部署将自动获得SnapLock Select 许可。对于从ONTAP Select 9.16.1 及更早版本升级，您需要SnapLocklink:https://mysupport.netapp.com/site/["NetApp 支持站点"^]并手动应用它。
+
+* SnapMirror云
++
+从ONTAP Select 9.17.1 开始， ONTAP Select支持SnapMirror云。SnapMirrorSnapMirror是一项获得许可的ONTAP功能，在部署ONTAP Select 9.17.1 集群或将现有ONTAP Select集群升级到 9.17.1 版本时默认启用。
+
++
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["了解SnapMirror云备份到对象存储"^] 。
 
+
+
+--
+在多节点集群上支持 vSAN ESA:: 从ONTAP Select 9.17.1 开始，对 vSAN Express 存储架构 (ESA) 的支持得到扩展，以部署多节点集群。此增强功能使您能够部署 vSAN ESA 配置。
++
+--
+vSAN ESA 是一种 ESX 特定配置，是 vSphere 8 中引入的 VMware vSAN 的新架构。vSAN ESA 旨在提供增强的效率、可扩展性和性能，尤其是在使用基于 NVMe 的 TLC 闪存设备时。
+
+ONTAP Select Deploy 和ONTAP Select for ESX 支持配置ONTAP Select单节点和多节点集群，使用 vSAN 或外部阵列类型的数据存储作为其存储池。
+
+[NOTE]
+====
+要执行内容库操作，您需要访问额外的权限级别。如果您使用受限角色，则这对于 vSAN ESA 部署是必需的。
+
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["了解内容库操作的访问权限级别"^] 。
+
+====
 --
 更新了 NDA 驱动程序支持:: 从ONTAP Select 9.17.1 开始，FreeBSD NDA（NVMe 直接访问）设备驱动程序取代了 NVD（NVMe 快速磁盘驱动程序）。FreeBSD驱动程序通过实施 NVMe 命令协议来支持直接访问设备。当您部署ONTAP Select 9.17.1 集群或将现有ONTAP Select集群升级到 9.17.1 版本时，配置 NVMe 设备时会默认启动 FreeBSD 驱动程序。
 +

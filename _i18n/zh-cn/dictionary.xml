@@ -2812,7 +2812,6 @@
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">确认ONTAP Select节点之间的网络连接</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">初始集群创建可用于创建占用初始数据存储库中部分或全部空间的 ONTAP Select 集群。第二步是使用其他数据存储库执行一个或多个容量添加操作，直到达到所需的总容量为止。有关此功能的详细信息，请参见一节 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。</block>
   <block id="6f79f88c3d3696fcca3ac6e4f78fd71f" category="admonition">向 ONTAP Select VM 添加容量可能会导致 VMDK 的大小不同。有关详细信息，请参见一节 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。与 FAS 系统不同，同一聚合中可以存在不同大小的 VMDK 。ONTAP Select 会在这些 VMDK 之间使用 RAID 0 条带，从而可以完全使用每个 VMDK 中的所有空间，而不管其大小如何。</block>
-  <block id="5498e86ddbc371087e391d7f3cae5701" category="list-text">SnapLock企业版(ONTAP Select不支持SnapLock合规性)</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">更改Deploy管理员密码</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用命令行界面部署ONTAP Select集群</block>
   <block id="6f78f7cef2637ad960245873ccb009cc" category="section-title">准备将存储连接到ONTAP Select节点</block>
@@ -3352,7 +3351,6 @@ storage aggregate show-spare-disks</block>
   <block id="43e827b042cf746a0442b15558031d99" category="doc">使用SSH登录到ONTAP Select Deploy</block>
   <block id="6a72bf96d9b994589542338ffd146590" category="doc">升级ONTAP Select Deploy实例</block>
   <block id="c71000b965f24ab9f5c3995026415d28" category="doc">将ONTAP Select VMware ESXi升级到7.0或更高版本</block>
-  <block id="bd633f5da3bfc77af90d4c908e9bf8ac" category="doc">扩展或缩减ONTAP Select集群</block>
   <block id="10094bc8718a18a18fcc32e3cd50df4c" category="sidebar">安全ONTAP Select</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">确认网络连接</block>
   <block id="4ce7782445b66c31b4b4d786806ae7a1" category="sidebar">管理调解器服务</block>
@@ -3753,7 +3751,6 @@ storage aggregate show-spare-disks</block>
   <block id="deb20e04b6a7cd797c67d023a7919cc9" category="inline-link-macro">网页用户界面</block>
   <block id="91af5705f16502125e8b2187e64202c0" category="inline-link-macro">命令行界面</block>
   <block id="9b7a3cef1d3f98a8d89d5d50af86ae90" category="paragraph">使用以下方式运行网络连接检查器<block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block>或<block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block>确认内部网络上的集群节点之间的连通性。</block>
-  <block id="3e7c1c2f4ff8e34c82dbce131bf96f39" category="paragraph">不支持以下集群扩展和收缩：</block>
   <block id="399ac94f70d77c6189cd7c4808326bdd" category="list-text">从一节点、双节点或四节点集群扩展为六节点或八节点集群。</block>
   <block id="f7dcf9444b81db6d7f05c66ad816c0fe" category="paragraph">要将集群中的节点数更改为集群扩展或收缩不支持的大小，您需要执行以下任务：</block>
   <block id="f878a51040555cefe376b9b5a963ff25" category="list-text">使用<block ref="e244d19d71425b6ce1016edcf4f160e2" category="inline-link-macro-rx"></block>或<block ref="e7b95b44ed2cf30f5122b04d3c4d28be" category="inline-link-macro-rx"></block>随ONTAP Select Deploy 管理实用程序一起提供。</block>
@@ -3828,7 +3825,6 @@ storage aggregate show-spare-disks</block>
   <block id="0a0cc9b2212847ba1af46f41c160bb46" category="paragraph">您可以使用现有ONTAP Select集群上的集群扩展和收缩功能将集群规模从六节点增加到八节点，或者将集群规模从八节点减少到六节点。</block>
   <block id="22cb6accb0a27ceffd521fb74834c16a" category="inline-link-macro">了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本</block>
   <block id="3c14c9e8cb33411708f168ddc9b0d40c" category="paragraph"><block ref="f426c2cadf7fc519436e151211954c8a" category="inline-link-macro-rx"></block> 。</block>
-  <block id="8c4c7ec85ddc20b785383c7e3b83aaf3" category="list-text">支持SnapMirror云</block>
   <block id="8e6364cfe908f51088b3ba968ff3a1ef" category="list-text">从ONTAP Select 9.17.1 开始， ONTAP Select支持SnapMirror云。SnapMirrorSnapMirror是一项获得许可的ONTAP功能，在部署ONTAP Select 9.17.1 集群或将现有ONTAP Select集群升级到 9.17.1 版本时默认启用。</block>
   <block id="138c7cd45c4194bbbdcc248c8d717a95" category="inline-link">了解SnapMirror云备份到对象存储</block>
   <block id="a674f1954e78adeee48a68d3b46f7329" category="paragraph"><block ref="e78089da9b0e2900996a3bebc3fd1588" category="inline-link-rx"></block> 。</block>
@@ -3880,18 +3876,14 @@ storage aggregate show-spare-disks</block>
   <block id="a19233fed380d5b231b023ea93dbe258" category="list-text">选择“*重新启动此主机*”。</block>
   <block id="26fe0a3b24674c6c3152ba4fb0ee4ed3" category="paragraph">以下示例输出针对 ESXi 主机：</block>
   <block id="1055142d0c7647a07a5e1422110286e5" category="paragraph">主机准备好后，您可以安装ONTAP Select Deploy 实用程序。Deploy将指导您在新准备的主机上创建ONTAP Select存储集群。在此过程中，Deploy 会检测到已配置为直通的 NVMe 驱动器，并自动选择它们用作ONTAP数据磁盘。您可以根据需要调整默认选择。</block>
-  <block id="d36012a6f1af06ad2e32fd0380ecd688" category="paragraph">您可以将现有ONTAP Select集群的大小从六节点集群增加到八节点集群，也可以将集群大小从八节点集群减少到六节点集群</block>
-  <block id="1337ed24c95634be31bc604f5d1e6297" category="paragraph">KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。</block>
   <block id="9c33111b54c52c9fcb0abaf82c9004f8" category="paragraph">从ONTAP Select 9.17.1 开始，KVM 虚拟机管理程序主机支持集群扩展和收缩。</block>
   <block id="342972daa4f7bc941a67318ae7af313b" category="paragraph">以下 KVM 虚拟机管理程序版本支持集群扩展和收缩：</block>
   <block id="e05b0c53b1a0c5711591f986de5de129" category="list-text">Red Hat Enterprise Linux 64 位 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="a60b141bdd70b40e77bf0e83f56ade8d" category="paragraph">从ONTAP Select 9.15.1 开始，ESXi 虚拟机管理程序主机支持集群扩展和收缩。</block>
   <block id="1062164d3bf1751bfb605324bcaf3e29" category="paragraph">以下 ESXi 虚拟机管理程序版本支持集群扩展和收缩：</block>
-  <block id="e86abbb4089bb949221427ad94aa636a" category="paragraph">使用集群扩展功能将现有集群的大小从六个节点增加到八个节点。</block>
   <block id="305009997eb17ffe0901beb32fdc2040" category="paragraph">在准备集群扩展时，新的 ESXi 和 KVM 主机会被添加到清单中，并分配新节点的详细信息。在开始集群扩展过程之前，网络预检查会验证所选的内部网络。</block>
   <block id="1c53d6d4916415921dddecf6128580f3" category="list-text">为第四个 HA 对选择以下高可用性 (HA) 对配置详细信息：</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">提供ONTAP凭据，然后选择*扩展集群*。</block>
-  <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">使用集群收缩功能将现有集群的大小从 8 个节点减少到 6 个节点。</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 文档</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">基于内核的虚拟机 (KVM) 不支持使用大型实例类型。</block>
   <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">您可以使用 ONTAP ONTAP Select ONTAP Select Deploy 实用程序虚拟机。</block>
@@ -3912,4 +3904,49 @@ storage aggregate show-spare-disks</block>
   <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">使用管理员帐户通过 SSHSign in到ONTAP Select Deploy 实用程序 CLI。</block>
   <block id="87a5212e058c62281b89455df9a32603" category="paragraph">在升级过程完成之前，系统会要求您创建ONTAP Select Deploy 虚拟机配置的备份。此外，您应该清除浏览器缓存，以便可以查看新创建的ONTAP Select Deploy 页面。</block>
   <block id="c0b79db5f258f0c991a383cbdbf001dd" category="list-text">SnapMirror主动同步</block>
+  <block id="4d9c10203def873e1c71f3e63344c26f" category="list-text">SnapLock Enterprise for ONTAP Select 9.16.1 及更早版本（可从<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>)</block>
+  <block id="2f6bbdcc3a16c2d18a29e52e65bcab80" category="admonition">ONTAP Select不支持SnapLock Compliance 。</block>
+  <block id="047fc3d7b951880ca6749f6433cfe2bf" category="list-text">SnapLock Select</block>
+  <block id="eb35a2f875dfa96447c622fdb66d279e" category="list-text">增强对 ESXi 主机上的集群扩展和收缩的支持</block>
+  <block id="2654d7a70d79a555a3d2a067d08ca074" category="list-text">从ONTAP Select 9.17.1 开始，ESXi 主机上的六节点集群和十二节点集群之间支持集群扩展和收缩：</block>
+  <block id="983f8945aaf0213b99984eb7d1654484" category="paragraph">您可以按以下增量增加现有 ESXi 群集的群集大小：</block>
+  <block id="1ba5d5a69c22e4227b754eb7f598a6fc" category="list-text">从六个节点到八个、十个或十二个节点</block>
+  <block id="32f41e079924563332d58835bc015a2a" category="list-text">从八个节点到十个或十二个节点</block>
+  <block id="10edaf0aa7c8fb32db8c46287cc0d719" category="list-text">从十到十二个节点</block>
+  <block id="e2853d368ec6d993d5cfe565327e81ea" category="paragraph">您可以按以下增量减少现有 ESXi 群集的群集大小：</block>
+  <block id="be51a9b186841f2d88f0b97954d5bb75" category="list-text">从十二个节点到十个、八个或六个节点</block>
+  <block id="9b08665180caa1c2f681ecd893474c76" category="list-text">从十个节点到八个或六个节点</block>
+  <block id="fb6ec34800c58ebc5bb6517ce0db74b8" category="list-text">从八个节点到六个节点</block>
+  <block id="1cee57b3ea5529f5b9a7c47c1ca78952" category="list-text">支持ONTAP功能</block>
+  <block id="61016eff3249741d1200f508768ca397" category="list-text">从ONTAP Select 9.17.1 开始， ONTAP Select支持以下许可的ONTAP功能：</block>
+  <block id="cf17614f3329e90d510d18602d4ce8db" category="paragraph">从ONTAP Select 9.17.1 开始，新部署将自动获得SnapLock Select 许可。对于从ONTAP Select 9.16.1 及更早版本升级，您需要SnapLock<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>并手动应用它。</block>
+  <block id="e9d1284d8df9151f9bec7a163cd5c363" category="list-text">在多节点集群上支持 vSAN ESA</block>
+  <block id="4ba59a7efee785c52f70cdae7fca55c3" category="list-text">从ONTAP Select 9.17.1 开始，对 vSAN Express 存储架构 (ESA) 的支持得到扩展，以部署多节点集群。此增强功能使您能够部署 vSAN ESA 配置。</block>
+  <block id="e9c8709140b0de62f90e930862c6b06a" category="paragraph">vSAN ESA 是一种 ESX 特定配置，是 vSphere 8 中引入的 VMware vSAN 的新架构。vSAN ESA 旨在提供增强的效率、可扩展性和性能，尤其是在使用基于 NVMe 的 TLC 闪存设备时。</block>
+  <block id="ea6c62adffdf9ab5a61acdbc4608592e" category="paragraph">ONTAP Select Deploy 和ONTAP Select for ESX 支持配置ONTAP Select单节点和多节点集群，使用 vSAN 或外部阵列类型的数据存储作为其存储池。</block>
+  <block id="9f2987dffbb8cc07dc722392ca553e1e" category="paragraph">要执行内容库操作，您需要访问额外的权限级别。如果您使用受限角色，则这对于 vSAN ESA 部署是必需的。</block>
+  <block id="6146fd29f571a044684d201d9c796583" category="inline-link-macro">了解内容库操作的访问权限级别</block>
+  <block id="23add99dd3b98f3716a4830bf3524c6e" category="paragraph"><block ref="0338668b24eba8707cba4da17831f4b6" category="inline-link-macro-rx"></block> 。</block>
+  <block id="2e4143d0df24451229cbcf21d106b6c5" category="section-title">ONTAP Select部署 VMware vCenter 服务器注意事项</block>
+  <block id="0cdb970631a712b516a9779c1d127d32" category="section-title">ESA 的 VMware vSphere 权限</block>
+  <block id="fe2a57ed0ddb8d9b57b737aff59f340b" category="paragraph">以下列出了在 vCenter 中创建和管理 vSAN Express 存储架构 (ESA) 所需的 vSphere 内容库的特定权限：</block>
+  <block id="7fda80facd4b5302f2a2c887c2ecb595" category="list-text">添加库项目</block>
+  <block id="5ac2b813625b685d2cd86e5bbd2e2259" category="list-text">创建本地库</block>
+  <block id="036e7b8c4bda5955184609f09f458e15" category="list-text">删除库项目</block>
+  <block id="7ae429c7f415cbd07d1b30147ee76846" category="list-text">删除本地库</block>
+  <block id="bf0d559fc72e2b15ec4b32db14be07ad" category="list-text">读取存储</block>
+  <block id="693401b7881f3c546e1c1e7ac9f6c7e7" category="list-text">更新文件</block>
+  <block id="cbec5c675188a8b88f95c1615c33fb39" category="list-text">更新库</block>
+  <block id="cbbbf9758b7ac41123821f7ea427538f" category="list-text">更新库项目</block>
+  <block id="845b12256749d66531d9afd69bc3a33c" category="list-text">更新本地库</block>
+  <block id="26f7069f09ce96914fa8e8c3a68a4191" category="doc">扩展或收缩ONTAP Select ESXi 或 KVM 集群</block>
+  <block id="b6901598f11464666113bfe479efe49f" category="paragraph">您可以增加 ESXi 和 KVM 虚拟机管理程序主机的现有ONTAP Select集群的集群大小。对于 KVM 主机，您可以将集群大小从 6 个节点增加到 8 个节点，或者将集群大小从 8 个节点减少到 6 个节点。对于 ESXi 主机，您可以在 6 到 12 个节点之间以增量增加或减少集群大小。</block>
+  <block id="936ee35c221853e402fecb3657e726ba" category="paragraph">ESXi 和 KVM 主机不支持以下集群扩展和收缩：</block>
+  <block id="ca069be0eeb72c96905b0cdbf504214d" category="paragraph">以下 KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。</block>
+  <block id="e408638ff8e3e34af8feb723461e1722" category="paragraph">使用集群扩展功能来增加现有 ESXi 或 KVM 集群的大小。</block>
+  <block id="3678d282a88e095e0e76381ffa83ff7c" category="paragraph">您可以按以下增量增加现有 ESXi 群集的大小：</block>
+  <block id="ba14db9083442c41643b3455693e3ee2" category="paragraph">您可以将现有 KVM 集群的大小从六个节点增加到八个节点。</block>
+  <block id="dbdf8658126f3cab82aa007ed31794d3" category="paragraph">使用集群收缩功能来减少现有 ESXi 或 KVM 集群的大小。</block>
+  <block id="419d991bb53188641539fa8dfe55b258" category="paragraph">您可以按以下增量减少现有 ESXi 群集的大小：</block>
+  <block id="50261774776b49c62695c35def3230b0" category="paragraph">您可以将现有集群的大小从八个节点减少到六个节点。</block>
 </blocks>
