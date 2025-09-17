@@ -3153,7 +3153,6 @@ storage aggregate show-spare-disks</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
-  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型实例类型</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD、SSD或NVMe驱动器</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加许可证</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理许可证概述（仅限集群管理员）</block>
@@ -3545,10 +3544,8 @@ storage aggregate show-spare-disks</block>
   <block id="e73d640a676c83c4510d0212e506bb38" category="cell">18个核心/136 GB RAM</block>
   <block id="522c4ec4d9d59e1a992d989c8d770589" category="cell">网络(每个节点)</block>
   <block id="d5fda742cbaf307ce4ca202b12335858" category="cell">对于一个单节点集群、至少需要两个1GbE端口对于一个双节点集群(HA对)、至少需要四个1GbE端口对于四节点、六节点或八节点集群、至少需要两个10GbE端口</block>
-  <block id="c65eee5a4810d852ee01a79b87c993f3" category="paragraph">^1^假设虚拟机管理程序具有两个核心和8 Gb RAM。</block>
   <block id="f0cb6783b152b19ceab16227ca3976a2" category="open-title">Storage type</block>
   <block id="5939197c86f855d26c9639db3b9a29d6" category="paragraph">下表提供了指定存储所需的最低许可证类型。 </block>
-  <block id="1138bbb83d6525f914cbce8dccc4a874" category="cell">Pemium XL</block>
   <block id="e629ab9880aae245163ce498ab9e1389" category="cell">小型和中型</block>
   <block id="a09a88160dc1591cac42ba911581e599" category="cell">小型、中型和大型</block>
   <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">具有硬件RAID控制器的本地DAS</block>
@@ -3569,7 +3566,6 @@ storage aggregate show-spare-disks</block>
   <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">管理软件</block>
   <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">NetApp Active IQ Unified Manager管理套件ONTAP Select Deploy实用程序SnapCenter (可选)</block>
   <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">了解容量层和容量池许可证类型</block>
-  <block id="10aa5d1416b41ba5cd05d276a6c13328" category="paragraph"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">确定 ONTAP Select 适合您的组织后，您可以购买支持生产部署所需的许可证。您必须为每个部署选择容量层或容量池许可模式以及存储容量。</block>
   <block id="580ede122197eca33afea87d209746f9" category="paragraph">Capacity Tier_和_Capacity Pools_许可模式在几个方面截然不同。但是，这两种许可模式具有以下几个共同特征：</block>
   <block id="8e8e728e920aef8a8e61276592f8f07a" category="section-title">容量层许可模式</block>
@@ -3949,4 +3945,8 @@ storage aggregate show-spare-disks</block>
   <block id="dbdf8658126f3cab82aa007ed31794d3" category="paragraph">使用集群收缩功能来减少现有 ESXi 或 KVM 集群的大小。</block>
   <block id="419d991bb53188641539fa8dfe55b258" category="paragraph">您可以按以下增量减少现有 ESXi 群集的大小：</block>
   <block id="50261774776b49c62695c35def3230b0" category="paragraph">您可以将现有集群的大小从八个节点减少到六个节点。</block>
+  <block id="64f27557c7c3169a5053aaf03c554939" category="list-text">小型、中型或大型实例类型</block>
+  <block id="4e59a04163b76608c718d51a77e0ab85" category="paragraph">^1^ 假设虚拟机管理程序有两个核心和 8GB RAM。</block>
+  <block id="8b8284ef1bc414b0568b54a0a11232ad" category="cell">适用的</block>
+  <block id="6799f681592f9a0a7cf264c2b7bcd3d7" category="list-text"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block></block>
 </blocks>
