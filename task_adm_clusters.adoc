@@ -83,7 +83,7 @@ summary: 您可以执行多项相关任务来管理 ONTAP Select 集群。
 您可以使用 Web 用户界面执行集群刷新以更新 Deploy 配置数据库。
 
 
-NOTE: 您可以在 Deploy 命令行界面 Shell 中使用 cluster refresh 命令刷新集群，而不使用 Deploy 图形用户界面。
+NOTE: 您可以使用 Deploy CLI shell 中的 cluster refresh 命令来刷新集群，而不必使用 Deploy UI。
 
 集群和虚拟机配置:: 一些配置值可能会发生更改，并且发生原因 Deploy 数据库会变得不同步，这些配置值包括：
 +

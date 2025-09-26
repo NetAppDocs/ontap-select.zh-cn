@@ -250,7 +250,6 @@
   <block id="5bacdabaf1613776c4f9741328ea9f7d" category="list-text">迁移 VM 后</block>
   <block id="6e2af1337e1be3ce5edcac22759c574e" category="list-text">迁移运行 ONTAP Select 的虚拟机后，必须先使用 Deploy 实用程序创建新主机，然后再执行集群刷新。</block>
   <block id="dba47ba2e33ef05bb98b2d3b91625fcd" category="paragraph">您可以使用 Web 用户界面执行集群刷新以更新 Deploy 配置数据库。</block>
-  <block id="79fd23ce1c6c0f9489c886caa7c1e04d" category="admonition">您可以在 Deploy 命令行界面 Shell 中使用 cluster refresh 命令刷新集群，而不使用 Deploy 图形用户界面。</block>
   <block id="a45d2ebc1ef2c66397f13a2639ce7a9d" category="list-text">集群和虚拟机配置</block>
   <block id="3c751052c474b8a3e161f069e8cb9522" category="list-text">一些配置值可能会发生更改，并且发生原因 Deploy 数据库会变得不同步，这些配置值包括：</block>
   <block id="817e7580f8422be93706a715f2f662c6" category="list-text">集群和节点名称</block>
@@ -416,7 +415,6 @@
   <block id="dbb69dfed0d5d67f6ab5857dd72da676" category="list-text">管理过程按不同类别进行组织，例如 _Security_ 和 _Clusters_ 。</block>
   <block id="471f5c9978ed52845e14e134805c65ca" category="list-text">在 Deploy 实用程序上执行操作步骤</block>
   <block id="e597139c74e6edb603d769f2441e9aec" category="list-text">特定于部署的过程有多种（例如更改管理员密码）。</block>
-  <block id="44c3d61a6cd78f834dce18458a846592" category="summary">查找有关 ONTAP Select 的常见问题的答案。</block>
   <block id="0db377921f4ce762c62526131097968f" category="section-title">常规</block>
   <block id="4bb58627c56be70a8962dc013fdfb0ff" category="paragraph">与 FAS 上的 ONTAP 一样，应使用 perfstat 实用程序收集性能数据。以下是一个命令示例：</block>
   <block id="1b3537665f74d77bd14a7f35ea69a8f6" category="inline-link">Field Portal</block>
@@ -426,7 +424,6 @@
   <block id="aa51945d1870dd55304c887631cab7dc" category="paragraph">可以， ONTAP Select 集群的还原操作步骤 与 FAS 集群的还原操作步骤 几乎相同。但是，存在一些差异：</block>
   <block id="d7a59cd36e2f7dfae40f95771a024421" category="list-text">只能还原已升级的 ONTAP Select 实例，并且只能还原到原始安装版本。即使 ONTAP Select 通常支持旧版代码，新安装也无法还原到旧版代码。</block>
   <block id="85e233caf564642a5e155bc4aac7d67a" category="list-text">对于使用软件 RAID 的 ONTAP Select （ KVM ）和 ONTAP Select （ ESX ），无法还原到不支持软件 RAID 的先前版本。此外，在 ESX 上新安装的 ONTAP Select 9.5 或更高版本会使用 VMXNET3 网络驱动程序，并在可能的情况下使用 vNMVE 驱动程序。这些新安装无法还原到先前版本的 ONTAP Select 。</block>
-  <block id="52ecd883835a7af5f8d256d58d2abe6e" category="list-text">如果 ONTAP Select VM 也已升级到大型实例（使用高级 XL 许可证），则不支持还原到 9.6 之前的先前版本，因为大型实例功能在早期版本中不可用。</block>
   <block id="b127099c71415d532da3a26ed73eb041" category="paragraph">是的。</block>
   <block id="bbb35a1e775c0757714d8b256538794e" category="list-text">网络配置（ IP 地址， DNS ， NTP ，网络掩码和网关）</block>
   <block id="568db67896a68d00d01c4318b9923a4f" category="list-text">ONTAP Select 集群，节点名称和版本</block>
@@ -443,7 +440,6 @@
   <block id="f249bf8d9e4b8c7b417b66fb9c6c3c90" category="list-text">必须将基于专用 LUN 的 LVM 存储池或数据存储库用于系统磁盘：核心转储，启动 /NVRAM 和调解器。</block>
   <block id="98188cc87f947a659e62ebdc6dab134c" category="paragraph">在 KVM 上安装时，必须使用一个绑定和一个网桥。具有两个或四个物理端口的主机应将所有端口置于同一个绑定中。</block>
   <block id="56bf9f6724c0961bfe3efdd9a5936afd" category="paragraph">使用硬件 RAID 控制器时， ONTAP Select 在很大程度上不了解底层服务器问题。如果服务器是根据我们的最佳实践配置的，则应存在一定数量的冗余。我们建议使用 RAID 5/6 ，以避免驱动器出现故障。对于软件 RAID 配置， ONTAP 负责发出有关磁盘故障的警报，如果有备用驱动器，则启动驱动器重建。</block>
-  <block id="a2f6b74c2700adf79d2359dceccee7cf" category="paragraph">对于双节点或四节点集群，所有其他错误均由 ONTAP HA 处理。如果需要更换虚拟机管理程序服务器，并且需要使用新服务器重新创建 ONTAP Select 集群，请联系 NetApp 技术支持。</block>
   <block id="5328a869dd2ed37e5be32f4f227e54d6" category="paragraph">包括 vSAN 在内的所有配置均支持每个 ONTAP Select 节点 400 TB 的存储。</block>
   <block id="4906d0b814c398d1e0b3d033c584f66b" category="paragraph">如果在大于支持的最大大小的数据存储库上安装，则必须在产品设置期间使用容量上限。</block>
   <block id="867e236daae335162d347f2d0854e90c" category="paragraph">存储添加还支持软件 RAID 。但是，对于软件 RAID ，必须向 ONTAP Select VM 添加更多物理驱动器。在这种情况下，存储添加与管理 FAS 或 AFF 阵列类似。使用软件 RAID 向 ONTAP Select 节点添加存储时，必须考虑 RAID 组大小和驱动器大小。</block>
@@ -1469,7 +1465,6 @@
   <block id="0ef10a28f40d6a98fb3983f2dd0bcc57" category="cell">备用 1</block>
   <block id="d94fa2a78079f5abd87da24f3276a7a8" category="cell">备用 2.</block>
   <block id="8db50c64fe82f7e3ba39400bf0e2448c" category="cell">备用 3.</block>
-  <block id="7d4cb3a2bac5403801df724f6bba7fef" category="paragraph">下图显示了 vCenter GUI （ ONTAP 外部和 ONTAP 外部端口 2 ）中外部网络端口组的配置。请注意，活动适配器来自不同的网卡。在此设置中， vmnic 4 和 vmnic 5 是同一物理 NIC 上的双端口，而 vmnic 6 和 vminc 7 是同一个 NIC 上的类似双端口（本示例不使用 vnmic 0 到 3 ）。备用适配器的顺序提供了一个分层故障转移，内部网络中的端口也是最后一个。备用列表中的内部端口顺序在两个外部端口组之间进行类似的交换。</block>
   <block id="67c5191756ff6641299dfa3f89e3cadb" category="paragraph">* 第 1 部分： ONTAP Select 外部端口组配置 *</block>
   <block id="1e2d44143ade39d315b6ab568463b4a6" category="inline-image-macro">第 1 部分： ONTAP Select 外部端口组配置</block>
   <block id="726b632058175e9fcb3cc4b6316928f5" category="paragraph"><block ref="726b632058175e9fcb3cc4b6316928f5" category="inline-image-macro-rx" type="image"></block></block>
@@ -1875,7 +1870,6 @@
   <block id="db150684ad3c26748ca005606a37bc64" category="section-title">访问 Deploy 实用程序的方式</block>
   <block id="818ee2a50b0efd3b0d795b284a96048e" category="paragraph">访问 Deploy 管理实用程序时，您可以使用多个选项。所有外部接口在功能上都是等效的。您应选择最符合您的特定部署目标和要求的访问选项。在所有情况下，您都必须使用管理员帐户使用有效密码登录。</block>
   <block id="a678448725863a8de1badedbf9fd3c20" category="section-title">Web 图形用户界面</block>
-  <block id="b16b6a8c321bf7f5df5434c2ec306d4f" category="paragraph">您可以通过现代 Web 浏览器访问 Deploy 实用程序。Web 图形用户界面提供了一个直观易用的界面，在大多数情况下，它将成为您使用该实用程序时的主要界面。</block>
   <block id="31581907c3d44270d8d9879f8e2de965" category="section-title">命令行界面</block>
   <block id="572bdb8b69501a98995ebfe23c114b9c" category="paragraph">可通过管理 Shell 使用基于文本的命令行界面。您可以通过以下方式访问命令行界面管理 Shell ：</block>
   <block id="fe3e97a91ec45eebec3962d20c2fe29b" category="list-text">安全 Shell （ SSH ）</block>
@@ -2204,7 +2198,6 @@
   <block id="a3de182062915588646145ace36c3e22" category="paragraph">可以使用网络连接检查程序功能验证多节点集群中的内部网络。可以从运行 `network connectivity-check start` 命令的 Deploy 命令行界面调用此功能。</block>
   <block id="48d34abcc024a4f782dd82b39ba8903e" category="paragraph">运行以下命令以查看测试的输出：</block>
   <block id="20d413e9a1ee99efe0d4db895abdbc51" category="paragraph">此工具仅适用于对多节点 Select 集群中的内部网络进行故障排除。不应使用此工具对单节点集群（包括 vNAS 配置）， ONTAP Deploy 到 ONTAP Select 连接或客户端连接问题进行故障排除。</block>
-  <block id="723585e97ef1695bd9e2ba9e636d1970" category="paragraph">集群创建向导（ ONTAP Deploy GUI 的一部分）包含内部网络检查程序，作为创建多节点集群期间可用的可选步骤。鉴于内部网络在多节点集群中发挥的重要作用，将此步骤加入集群创建工作流可提高集群创建操作的成功率。</block>
   <block id="16992ee8f8caed0bb049b0e9dd94317f" category="paragraph">从 ONTAP Deploy 2.10 开始，内部网络使用的 MTU 大小可以设置为 7 ， 500 到 9 ， 000 之间。此外，还可以使用网络连接检查程序测试介于 7 ， 500 和 9 ， 000 之间的 MTU 大小。默认 MTU 值设置为虚拟网络交换机的值。如果环境中存在 VXLAN 等网络覆盖，则必须将此默认值替换为较小的值。</block>
   <block id="31de76b28cce5b959eace72203221efb" category="section-title">ONTAP Select 外部网络</block>
   <block id="ec44df3839cd96996dd8f5244ea696eb" category="paragraph">ONTAP Select 外部网络负责集群的所有出站通信，因此，无论是单节点配置还是多节点配置都存在。尽管此网络没有对内部网络严格定义的吞吐量要求，但管理员应注意不要在客户端和 ONTAP VM 之间创建网络瓶颈，因为性能问题可能会被错误地描述为 ONTAP Select 问题。</block>
@@ -2384,16 +2377,13 @@
   <block id="44e02585603e7fcc790e0ab829ef1024" category="paragraph">ONTAP Select Deploy是一个包含ONTAP Select 映像的虚拟机。在集群安装期间、ONTAP Select Deploy会执行多项检查、以帮助确保满足ONTAP Select 的最低要求。ONTAP Select Deploy VM和Select集群可以单独升级。</block>
   <block id="aae4f232f5ffb9e9721fd019ba8b1efe" category="listing-title">如何访问ONTAP Select Deploy的Swagger API页面？</block>
   <block id="40a60db1cb196f556dfa7fc31b0fc0de" category="paragraph">是的。ONTAP Select Deploy实用程序可以独立于ONTAP Select 集群进行升级。同样、Select集群也可以独立于ONTAP Select Deploy实用程序进行升级。</block>
-  <block id="59515ed968b51f31e5dba26d6fd648ce" category="paragraph">ONTAP Select Deploy可通过GUI、CLI或REST API使用集群刷新操作来识别对以下ONTAP Select 集群属性所做的更改：</block>
   <block id="1c1b6371821b57c0181e5ac9c60110dd" category="paragraph">升级到ONTAP Select Deploy 2.6后、可以为已部署但尚未更改其原始配置的任何ONTAP Select 集群支持这些更改。换言之、如果使用System Manager或vCenter更改了上述ONTAP Select 集群属性、则升级到ONTAP Select Deploy 2.6不会修复这些不一致问题。必须先回滚ONTAP Select 属性更改、ONTAP Select Deploy才能将其唯一元数据添加到每个ONTAP Select VM。</block>
   <block id="19e3b046872155951a88cbd2e790b7e6" category="paragraph">是的。ONTAP Select Deploy可以安装在KVM或ESX上、并且这两种安装都可以在任一虚拟机管理程序上创建ONTAP Select 集群。</block>
   <block id="5a1db0789444e54a1e8a26c422380d57" category="paragraph">如果 ESX 主机获得了正确的许可，则无需由 vCenter Server 管理 ESX 主机。但是、如果主机由vCenter Server管理、则必须将ONTAP Select Deploy配置为使用该vCenter Server。也就是说、如果ESX主机由vCenter Server主动管理、则不能在ONTAP Select Deploy中将其配置为独立主机。请注意、由于vMotion或VMware HA事件、ONTAP Select Deploy虚拟机依靠vCenter来跟踪ESXi主机之间的所有ONTAP Select VM迁移。</block>
   <block id="c18d02964afefd62e8842192dcbd79b4" category="paragraph">ONTAP Select Deploy包含一个存储添加工作流、该工作流支持在ONTAP Select 节点上执行容量扩展操作。您可以使用同一数据存储库中的空间（如果仍有可用空间）来扩展所管理的存储，也可以从单独的数据存储库中添加空间。不支持在同一聚合中混合使用本地数据存储库和远程数据存储库。</block>
   <block id="007a3aa807452417b6230146b6781e19" category="paragraph">ONTAP Select Deploy和ONTAP Select for ESX支持使用vSAN或外部阵列类型的数据存储库配置ONTAP Select 单节点集群的存储池。</block>
   <block id="6ec35a9fea619f9056b56a9cceaecd8a" category="paragraph">ONTAP Select Deploy和ONTAP Select for KVM支持在外部阵列上使用共享逻辑存储池类型配置ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE 。不支持其他类型的存储池。</block>
-  <block id="7941c39c5fa9506f9466dead024a9800" category="paragraph">虽然ONTAP Select Deploy增加了对同一主机上多个ONTAP Select VM的支持、但在创建集群期间、不允许这些实例属于同一个ONTAP Select 集群。对于 ESX 环境， NetApp 建议创建 VM 反关联性规则，以便 VMware HA 不会尝试将多个 ONTAP Select VM 从同一个 ONTAP Select 集群迁移到一个 ESX 主机上。此外、如果ONTAP Select Deploy检测到ONTAP Select VM的管理(用户启动) vMotion或实时迁移导致违反我们的最佳实践、例如两个ONTAP Select 节点最终位于同一物理主机上、 ONTAP Select Deploy会在Deploy图形用户界面和日志中发布警报。ONTAP Select Deploy了解ONTAP Select VM位置的唯一方法是执行集群刷新操作、这是ONTAP Select Deploy管理员必须启动的手动操作。ONTAP Select Deploy中没有可启用主动监控的功能、只有通过Deploy图形用户界面或日志才能看到警报。换言之，此警报无法转发到集中式监控基础架构。</block>
   <block id="efc2e6333a58c7723007fa20d72bb37d" category="paragraph">支持 NSX-V VXLAN 端口组。对于包括 ONTAP MetroCluster SDS 在内的多节点 HA ，请确保将内部网络 MTU 配置为 7500 到 8900 （而不是 9000 ）之间，以满足 VXLAN 开销的要求。在集群部署期间、可以使用ONTAP Select Deploy配置内部网络MTU。</block>
-  <block id="f6d275cbcd3f49d01c3fb09afa8f2a58" category="paragraph">ONTAP Select Deploy使用VMware VIX API与vCenter和/或ESX主机进行通信。VMware 文档指出，与 vCenter Server 或 ESX 主机的初始连接是使用 TCP 端口 443 上的 HTTPS/SOAP 完成的。此端口用于通过 TLS/SSL 实现安全 HTTP 。其次，在 TCP 端口 902 的插槽上打开与 ESX 主机的连接。通过此连接的数据将使用 SSL 进行加密。此外、ONTAP Select Deploy会发出`ping`命令、以验证是否有ESX主机在您指定的IP地址处做出响应。</block>
   <block id="38f6621fec19ff801692cfd74b3d8e9a" category="paragraph">ONTAP Select Deploy还必须能够按如下方式与ONTAP Select 节点和集群管理IP地址进行通信：</block>
   <block id="fc46f3e8b95ad7a4187367a3d699fabf" category="paragraph">对于双节点集群、ONTAP Select Deploy托管集群邮箱。每个ONTAP Select 节点都必须能够通过iSCSI (端口3260)访问ONTAP Select Deploy。</block>
   <block id="81cd6c8ef1512058861a9e8233376fb2" category="paragraph">与主要使用ONTAP Select Deploy VM创建集群的四节点、六节点和八节点集群不同、双节点集群持续依赖ONTAP Select Deploy VM进行HA仲裁。如果ONTAP Select Deploy虚拟机不可用、则故障转移服务将被禁用。</block>
@@ -3170,8 +3160,6 @@ storage aggregate show-spare-disks</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">有关ONTAP Select和许可证续订的详细信息、请参见中的许可证、安装、升级和还原部分 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
   <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">安装后是否可以更改ONTAP Select集群网络配置？</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">安装后是否可以更改ONTAP Select Deploy网络配置？</block>
-  <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知识库文章-修改ONTAP Deploy实例的DNS配置</block>
-  <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支持修改Deploy实例在环境中运行后的网络连接详细信息。有关详细信息，请参见 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
   <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标准打包为虚拟机(VM)。单个压缩文件具有后缀<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。VM可为ONTAP Select节点提供Deploy服务器和安装映像。</block>
   <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">访问 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用Web浏览器并登录。</block>
   <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">从菜单中选择*Downloads*，然后从下拉菜单中选择*Downloads*。</block>
@@ -3301,7 +3289,6 @@ storage aggregate show-spare-disks</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">用于调整ONTAP Select集群节点大小的脚本</block>
   <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">工作流1：在ESXi上创建ONTAP Select单节点评估集群</block>
   <block id="169dafc7979793a9e61147f233aa45c3" category="doc">ONTAP Select Deploy实用程序安装所需信息</block>
-  <block id="d94db1fe93dcae57541a64d1d1664af0" category="doc">有关ONTAP Select的常见问题解答</block>
   <block id="cddb93cf729be75720f6155855c70d38" category="doc">修改ONTAP Select Deploy的主机管理服务器</block>
   <block id="7ccffa1050dd38b57df1fa0990bb72a7" category="doc">部署后ONTAP Select集群的初始状态</block>
   <block id="c05931b717a76d4cc74840146d98c8ce" category="doc">ONTAP Select支持ONTAP功能</block>
@@ -3949,4 +3936,20 @@ storage aggregate show-spare-disks</block>
   <block id="4e59a04163b76608c718d51a77e0ab85" category="paragraph">^1^ 假设虚拟机管理程序有两个核心和 8GB RAM。</block>
   <block id="8b8284ef1bc414b0568b54a0a11232ad" category="cell">适用的</block>
   <block id="6799f681592f9a0a7cf264c2b7bcd3d7" category="list-text"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block></block>
+  <block id="b40b101fdcaae7891ab38512cf2966e0" category="paragraph">集群创建向导（ ONTAP Deploy UI 的一部分）包含内部网络检查器，作为创建多节点集群期间可用的可选步骤。鉴于内部网络在多节点集群中发挥的重要作用，将此步骤作为集群创建工作流的一部分可以提高集群创建操作的成功率。</block>
+  <block id="533eb39cd8f514c69a3b793cb415846c" category="paragraph">下图显示了 vCenter UI 中外部网络端口组的配置（ONTAP-External 和ONTAP-External2）。请注意，活动适配器来自不同的网卡。在此设置中，vmnic 4 和 vmnic 5 是同一物理网卡上的双端口，而 vmnic 6 和 vminc 7 同样是单独网卡上的双端口（本例中未使用 vnmics 0 至 3）。备用适配器的顺序提供了分层故障转移，其中来自内部网络的端口位于最后。备用列表中的内部端口顺序在两个外部端口组之间进行类似交换。</block>
+  <block id="ab4f5bbd14a1da16094b721d652002c0" category="paragraph">您可以通过现代 Web 浏览器访问 Deploy 实用程序。WebUI 提供了直观易用的界面，在大多数情况下，它将是您使用该实用程序时的主要界面。</block>
+  <block id="3aac2efb8a7255b5ac9f1b084d845577" category="summary">查找有关ONTAP Select 的常见问题的答案。</block>
+  <block id="de33ed291c3df683a85142390232f631" category="doc">ONTAP Select常见问题解答</block>
+  <block id="54875964c87087366969064b5992b17a" category="list-text">如果ONTAP Select VM 也升级为大型实例（使用 Premium XL 许可证），则不支持恢复到 9.6 之前的版本，因为早期版本中不提供大型实例功能。</block>
+  <block id="f95228c1447fbfbcc268c9e29a47e566" category="paragraph">ONTAP Select Deploy 使用可通过 UI、CLI 或 REST API 提供的集群刷新操作识别对以下ONTAP Select集群属性的更改：</block>
+  <block id="e4287add8bf98d32cb33a6381f785aae" category="inline-link-macro">修改ONTAP Deploy 实例的 DNS 配置</block>
+  <block id="e939e2321491f9e204c37a21f46a514a" category="paragraph">不支持在 Deploy 实例在环境中运行后修改其网络详细信息。有关更多信息，请参阅知识库文章<block ref="1f47723f3d53f678e4270c8826127324" category="inline-link-macro-rx"></block> 。</block>
+  <block id="276276f87bc6c736a139268c25777a8c" category="paragraph">对于双节点或四节点集群，所有其他错误均由ONTAP HA 处理。如果需要更换虚拟机管理程序服务器，并且需要使用新服务器重建ONTAP Select集群，请参阅_我可以恢复ONTAP Select节点吗？_。</block>
+  <block id="74e61dc59e4ef482524693f1cc388972" category="paragraph-title">我可以恢复ONTAP Select节点吗？</block>
+  <block id="98d3f47bc017ab1008ec094c1314320c" category="inline-link-macro">灾难发生时ONTAP Select节点虚拟机恢复</block>
+  <block id="34ecd35e89cf3e691f83516b09dba3d5" category="paragraph">如果您需要恢复ONTAP Select节点（例如，如果ONTAP Select VM 或主机完全丢失或单节点集群被意外删除），请联系NetApp技术支持。有关更多信息，请参阅知识库文章<block ref="6bcd08825607343c167fd40133e564c3" category="inline-link-macro-rx"></block> 。</block>
+  <block id="b8b596ec3027adcedd866d3ab958f258" category="paragraph">尽管ONTAP Select Deploy 增加了在同一主机上部署多个ONTAP Select虚拟机的支持，但它不允许这些实例在集群创建期间成为同一个ONTAP Select集群的一部分。对于 ESX 环境， NetApp建议创建虚拟机反关联性规则，以便 VMware HA 不会尝试将多个ONTAP Select虚拟机从同一个ONTAP Select集群迁移到单个 ESX 主机。此外，如果ONTAP Select Deploy 检测到ONTAP Select虚拟机的管理（用户启动）vMotion 或实时迁移违反了我们的最佳实践，例如两个ONTAP Select节点最终位于同一物理主机上，则ONTAP Select Deploy 会在 Deploy UI 和日志中发出警报。ONTAPONTAP Select Deploy 获知ONTAP Select虚拟机位置的唯一方式是通过集群刷新操作，这是ONTAP Select Deploy 管理员必须启动的手动操作。ONTAP Select Deploy 中没有启用主动监控的功能，警报只能通过 Deploy UI 或日志查看。换句话说，此警报无法转发到集中监控基础架构。</block>
+  <block id="603c5c21076887dcf2e1370932da42a4" category="paragraph">ONTAP Select Deploy 使用 VMware VIX API 与 vCenter、ESX 主机或两者进行通信。文档指出，与 vCenter Server 或 ESX 主机的初始连接是使用 TCP 端口 443 上的 HTTPS/SOAP 建立的。这是用于通过 TLS/SSL 进行安全 HTTP 的端口。其次，在 TCP 端口 902 上的套接字上打开与 ESX 主机的连接。通过此连接传输的数据使用 SSL 加密。此外， ONTAP Select Deploy 会发出<block ref="e07ff41a486c27c095a15898dcca34d1" prefix=" " category="inline-code"></block>命令来验证是否有 ESX 主机在您指定的 IP 地址上做出响应。</block>
+  <block id="23277c434dc865d64e91bd2232622f8e" category="admonition">您可以使用 Deploy CLI shell 中的 cluster refresh 命令来刷新集群，而不必使用 Deploy UI。</block>
 </blocks>
