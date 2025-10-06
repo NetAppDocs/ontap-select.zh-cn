@@ -14,7 +14,7 @@ summary: ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、�
 
 
 [role="lead"]
-ONTAP Select 完全支持大多数ONTAP 功能。在部署集群时、每个节点都会自动获得许多ONTAP 功能的许可。但是、某些功能需要单独的许可证。
+ONTAP Select支持大多数ONTAP功能。部署集群时，许多ONTAP功能都会自动为每个节点授予许可。但是，某些功能需要单独的许可证。
 
 
 NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP 功能。
@@ -53,25 +53,20 @@ NOTE: ONTAP Select支持将SVM DR同时用作源和目标、并且最多具有16
 
 == 单独许可的ONTAP 功能
 
-对于默认情况下未启用的任何ONTAP 功能、您必须获取单独的许可证、包括：
+对于任何默认未启用的ONTAP功能，您需要获取单独的许可证，包括：
 
 * FabricPool
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
-* SnapLock Enterprise for ONTAP Select 9.16.1 及更早版本（可从link:https://mysupport.netapp.com/site/["NetApp 支持站点"^])
-+
-
-NOTE: ONTAP Select不支持SnapLock Compliance 。
-
-+
-** 防篡改Snapshot副本
 
 
-* SnapLock Select
+[NOTE]
+====
+* 对于ONTAP Select 9.16.1 及更早版本， SnapLock Select Enterprise（包括防篡改快照锁定）可从link:https://mysupport.netapp.com/site/["NetApp 支持站点"^]。
+* ONTAP Select不支持SnapLock Compliance 。
+* 使用StorageGRID时、不需要FabricPool许可证。
 
 
-
-NOTE: 使用StorageGRID时、不需要FabricPool许可证。
-
+====
 .相关信息
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["比较 ONTAP Select 和 ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["NetApp ONTAP 主许可证密钥"^]

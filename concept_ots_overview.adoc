@@ -132,4 +132,6 @@ NOTE: 从ONTAP Select 9.161开始、支持手动更新ARP、NetApp许可证文�
 
 
 .相关信息
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["了解默认情况下启用的ONTAP功能"] link:concept_lic_evaluation.html["了解ONTAP Select许可证选项"]
+* link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["了解默认情况下启用的ONTAP功能"]
+* link:concept_lic_evaluation.html["了解ONTAP Select许可证选项"]
+
