@@ -224,8 +224,6 @@ sidebar:
         url: "/concept_api_rest.html"
       - title: 访问 Deploy API
         url: "/concept_api_how_access.html"
-      - title: 部署 API 版本控制
-        url: "/concept_api_versions.html"
       - title: 基本操作
         url: "/concept_api_operation.html"
       - title: 请求和响应事务

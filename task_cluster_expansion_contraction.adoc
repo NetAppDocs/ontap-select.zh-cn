@@ -47,6 +47,7 @@ ESXi 和 KVM 主机不支持以下集群扩展和收缩：
 
 以下 ESXi 虚拟机管理程序版本支持集群扩展和收缩：
 
+* ESXi 9.0
 * ESXi 8.0 U3
 * ESXi 8.0 U2
 * ESXi 8.0 U1
@@ -131,7 +132,7 @@ ESXi 和 KVM 主机不支持以下集群扩展和收缩：
 
 
 .完成后
-扩展集群后、您应备份ONTAP Select Deploy配置数据。
+link:task_cli_clusters.html["备份ONTAP Select Deploy 配置数据"]。
 
 
 

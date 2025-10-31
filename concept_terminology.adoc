@@ -98,7 +98,7 @@ vNAS 默认配置可启用称为单实例数据日志记录（ SIDl ）的写入
 
 
 [[ontap-select-image-install]]
-ONTAP Select 映像安装:: 从 ONTAP Select Deploy 2.8 开始， Deploy 管理实用程序仅包含一个版本的 ONTAP Select 。随附的版本是发布时的最新版本。通过 ONTAP Select 映像安装功能，您可以将早期版本的 ONTAP Select 添加到 Deploy 实用程序实例中，然后在部署 ONTAP Select 集群时使用此实例。请参见 link:task_cli_deploy_image_add.html["有关详细信息，请添加 ONTAP Select 映像"]。
+ONTAP Select 映像安装:: 部署管理实用程序仅包含一个版本的ONTAP Select。其中包含的版本是发行时可用的最新版本。ONTAPONTAP Select映像安装功能允许您将早期版本的ONTAP Select添加到 Deploy 实用程序实例中，然后在部署ONTAP Select集群时使用该实例。看link:task_cli_deploy_image_add.html["有关详细信息，请添加 ONTAP Select 映像"]。
 
 
 

@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_esxi65.html
 keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
 summary: 如果您在VMware ESXi上运行ONTAP Select、则可以将ESXi软件从受支持的早期版本升级到ESXi 7.0或更高版本。在升级之前，您应了解此过程并选择相应的升级操作步骤 。 
 ---
-= 将ONTAP Select VMware ESXi升级到7.0或更高版本
+= 将 VMware ESXi 升级到 7.0 或更高版本以使用ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

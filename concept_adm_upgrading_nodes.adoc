@@ -43,8 +43,8 @@ https://mysupport.netapp.com/site/downloads["NetApp 支持下载"^]
 
 您不能将ONTAP Select节点还原到最初安装该节点的版本之前的版本。例如：
 
-最初安装的是ONTAP Select 9.7:: 您可以将节点升级到9.8版、然后根据需要还原回9.7版。
-最初安装的是ONTAP Select 9.8:: 无法还原到9.7版、因为此版本早于最初安装的版本。
+初始安装的是ONTAP Select 9.16.1。:: 您可以将节点升级到版本 9.17.1，如果需要，再恢复到版本 9.16.1。
+初始安装的是ONTAP Select 9.17.1。:: 由于之前没有安装过旧版本，因此无法回滚。
 
 
 

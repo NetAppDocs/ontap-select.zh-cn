@@ -18,10 +18,16 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 
 在 NVMe 设备上使用 VMDirectPath I/O 直通可最大限度地提高数据效率。此设置会将驱动器公开给 ONTAP Select 虚拟机，从而使 ONTAP 可以通过 PCI 直接访问设备。
 
+
+
+== 步骤 1：配置主机
+
+配置 ESXi 或 KVM 主机以识别驱动器。
+
 .开始之前
 确保您的部署环境满足以下最低要求：
 
-* 对于 ESX 主机，ONTAP Select 9.7 或更高版本以及受支持的 Deploy 管理实用程序
+* 对于 ESX 主机，请使用受支持的部署管理实用程序运行ONTAP Select。
 * 对于 KVM 主机， ONTAP Select 9.17.1 带有受支持的 Deploy 管理实用程序
 * 高级 XL 平台许可证或 90 天评估许可证
 * ESXi 或 KVM 主机正在运行受支持的虚拟机管理程序版本：
@@ -32,6 +38,7 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 --
 以下虚拟机管理程序版本支持 ESXi：
 
+** VMware ESXi 9.0
 ** VMware ESXi 8.0 U3
 ** VMware ESXi 8.0 U2
 ** VMware ESXi 8.0 U1 (内部版本21495797)
@@ -101,7 +108,10 @@ image:nvme_03.png["重新启动此主机"]
 
 
 
-.完成后
+
+
+== 步骤 2：安装ONTAP Select Deploy 实用程序
+
 主机准备好后，您可以安装ONTAP Select Deploy 实用程序。Deploy将指导您在新准备的主机上创建ONTAP Select存储集群。在此过程中，Deploy 会检测到已配置为直通的 NVMe 驱动器，并自动选择它们用作ONTAP数据磁盘。您可以根据需要调整默认选择。
 
 
@@ -111,7 +121,7 @@ NOTE: 每个 ONTAP Select 节点最多支持 14 个 NVMe 设备。
 
 image:nvme_04.png["ONTAP Select 部署集群"]
 
-成功部署集群后，您可以使用 ONTAP System Manager 根据最佳实践配置存储。ONTAP 将自动启用闪存优化的存储效率功能，以充分利用您的 NVMe 存储。
+集群成功部署后， ONTAP系统管理器允许您根据最佳实践配置存储。ONTAPONTAP会自动启用闪存优化存储效率功能，从而最大限度地利用您的 NVMe 存储。
 
 image:nvme_05.png["正在准备本地存储"]
 

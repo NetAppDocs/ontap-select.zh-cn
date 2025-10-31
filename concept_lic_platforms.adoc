@@ -162,7 +162,7 @@ NOTE: 基于内核的虚拟机 (KVM) 不支持大型实例类型。
 2+| 软件类型 3+| Description 
 
 
-2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 8.0GA 及更新 1 至 3 VMware vSphere 7.0GA 及更新 1 至 3C 
+2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 9.0、VMware vSphere 8.0GA 及更新 1 至 3、VMware vSphere 7.0GA 及更新 1 至 3C 
 
 
 2+| 虚拟机管理程序支持(KVM) 3+| Red Hat Enterprise Linux 64 位 (KVM) 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6 Rocky Linux (KVM) 9.6 9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 

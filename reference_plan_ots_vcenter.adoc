@@ -81,3 +81,6 @@ Configuration:: 此类别中的所有权限。
 === vApp
 
 此类别中的所有权限。
+
+.相关信息
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html#ontap-select-deploy-vmware-vcenter-server-considerations["了解 vCenter 中 vSAN ESA 的 VMware vSphere 权限"]

@@ -23,7 +23,7 @@ summary: 与 VMware 环境相关，您应考虑几个硬件要求和规划问题
 与运行 ONTAP Select 的虚拟机管理程序相关的要求有多种。
 
 
-NOTE: 您应查看适用于您的 ONTAP Select 版本的最新发行说明，了解任何其他已知限制。
+NOTE: 你应该复习一下link:reference_release_notes.html["《 ONTAP Select 发行说明》"]任何其他已知的限制或约束。
 
 
 
@@ -52,6 +52,7 @@ ONTAP Select支持以下 KVM 虚拟机管理程序版本：
 --
 ONTAP Select支持以下 ESXi 虚拟机管理程序版本：
 
+* VMware ESXi 9.0
 * VMware ESXi 8.0 U3
 * VMware ESXi 8.0 U2
 * VMware ESXi 8.0 U1 (内部版本21495797)
@@ -80,7 +81,7 @@ NOTE: ESXi 6.5 GA和ESXi 6.7 GA已达到可用性结束状态。如果您的ONTA
 部署 ONTAP Select 的物理虚拟机管理程序主机必须满足多个硬件要求。您可以为虚拟机管理程序主机选择任何平台，只要该主机满足最低硬件要求即可。以下供应商提供受支持的硬件平台： Cisco ， Dell ， HP ， Fujitsu ， Lenovo ， 和 Supermicro 。
 
 
-NOTE: 从 ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。
+NOTE: 从ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。
 
 有关详细信息、请参见 https://mysupport.netapp.com/matrix["互操作性表工具、window=_blank"]。
 
@@ -110,7 +111,7 @@ NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
 | 双节点集群或MetroCluster SDS | 4个1GbE或1个10GbE | 2 个 10GbE 
 
 
-| 4/6/8节点集群 | 2 个 10GbE | 4个10GbE或2个25/40GbE 
+| 四节点、六节点或八节点集群 | 2 个 10GbE | 4个10GbE或2个25/40GbE 
 |===
 
 
