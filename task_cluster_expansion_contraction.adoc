@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_cluster_expansion_contraction.html 
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
-summary: 从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。 
+summary: 从ONTAP Select 9.15.1 开始，您可以增加或减少现有集群的大小。 
 ---
-= 扩展或收缩ONTAP Select ESXi 或 KVM 集群
+= 在 ESXi 或 KVM 主机上扩展或收缩ONTAP Select集群
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

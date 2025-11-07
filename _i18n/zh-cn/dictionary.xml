@@ -646,8 +646,6 @@
   <block id="193036e83646828d4e1cd41104fdee82" category="paragraph">您必须为 Deploy 管理实用程序分配一个静态 IP 地址。此要求适用场景 All Deploy 实例用于管理一个或多个 ONTAP Select 双节点集群。</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">您需要安装 ONTAP Select Deploy 管理实用程序并使用该实用程序创建 ONTAP Select 集群。</block>
   <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">您可以从 NetApp 支持站点下载 ONTAP Select 软件包。</block>
-  <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">单击 * 查找您的产品 * 。</block>
-  <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">向下滚动并单击 * ONTAP Select * 。</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">选择所需的软件包版本。</block>
   <block id="9bf3ac5f4cb6341117598df735958bdf" category="list-text">查看最终用户许可协议（ EULA ），然后单击 * 接受并继续 * 。</block>
   <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">选择并下载相应的软件包，根据需要响应所有提示。</block>
@@ -869,13 +867,11 @@
   <block id="2c3df213abea0ad1cb494572704542f9" category="inline-image-macro">介绍部署 ONTAP Select 集群所需的完整工作流。</block>
   <block id="bc0723c49208cb7ede4ce6ea0a477957" category="paragraph"><block ref="bc0723c49208cb7ede4ce6ea0a477957" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">您可以使用命令行界面原位升级现有的 Deploy 实用程序虚拟机。</block>
-  <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">选择所需版本的升级软件包。</block>
   <block id="def8f653fff47640d3bcce40244c6331" category="list-text">选择并下载相应的软件包，根据需要对环境中的所有提示做出响应。</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">此任务介绍了一种将文件上传到 Deploy 虚拟机的方法。可能还有其他更适合您的环境的选项。</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">升级文件存储在管理员用户的主目录中。</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">使用适当的目录路径和文件名执行升级：</block>
-  <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph">`deDeploy upgrade -package-path filepath`</block>
   <block id="e5338fa1dff19c951b23cd8d57a1bb1d" category="summary">您需要使用 SSH 登录到 Deploy 管理 Shell 。登录后，您可以使用问题描述 命令行界面命令创建 ONTAP Select 集群并执行相关的管理过程。</block>
   <block id="1e1c82929b36e8b866f932a031b19c58" category="paragraph">您必须具有 Deploy 管理员（ admin ）帐户的当前密码。如果您是首次登录并使用 vCenter 安装 Deploy 虚拟机，则应使用安装期间设置的密码。</block>
   <block id="ccb606fde10157eafe6d1e665b68829a" category="list-text">使用 Deploy 虚拟机的管理员帐户和管理 IP 地址登录；例如：</block>
@@ -1017,12 +1013,9 @@
   <block id="bdcc30baa721ccd0a5acff90c91be1eb" category="paragraph">您可以删除当前未由集群使用或计划在未来集群部署中使用的旧 ONTAP Select 映像。</block>
   <block id="782ecd049df8bffe850b977d8d9ef2dd" category="list-text">使用管理员（ admin ）帐户使用 SSH 登录到 Deploy 实用程序命令行界面。</block>
   <block id="fa1108d6713a8e964a0091afacde76b4" category="list-text">显示 Deploy 管理的集群并记录正在使用的 ONTAP 映像：</block>
-  <block id="494cb4f7976c64f111b74e9089d5bbd5" category="paragraph">`cluster show`</block>
   <block id="bc51625a3fe6a0e7ccf7a1059630b41c" category="paragraph">记下每种情况下的版本号和虚拟机管理程序平台。</block>
   <block id="8b7bd3ee934f35f730dee72837b5aee2" category="list-text">启动 Bash Shell ：</block>
-  <block id="34eaf92501247fea4a9be97412cef6df" category="paragraph">`shell bash`</block>
   <block id="75c67769109540e212db27715ac58ee9" category="list-text">显示所有可用的 ONTAP Select 映像：</block>
-  <block id="bac8e85676787adaae3dcc2dd52d64fa" category="paragraph">`ls -lh /opt/netapp/images`</block>
   <block id="cf3870a4ea8df9ca19bca44e9ddb94ff" category="summary">在规划安装 ONTAP Select Deploy 管理实用程序时，您应考虑几个一般要求。</block>
   <block id="dbc858bba588a84f31510f7236fc9029" category="doc">ONTAP Select Deploy 的一般要求和规划</block>
   <block id="69bed9e4fad549efbae3d288b2a4e6ac" category="section-title">将 Deploy 实用程序与 ONTAP Select 集群配对</block>
@@ -1103,7 +1096,6 @@
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="eab10597f9ef50e8058170729878869e" category="list-text">MetroCluster SDS （ ONTAP Select 高级许可证产品）</block>
   <block id="c3c1ba002ed4d0d1ae23559793a734bd" category="inline-link-macro">比较 ONTAP Select 和 ONTAP 9</block>
-  <block id="77aaedb7dde5f69b11a5683a958edbfc" category="list-text"><block ref="77aaedb7dde5f69b11a5683a958edbfc" category="inline-link-macro-rx"></block></block>
   <block id="5cd0ad520dbcfbdeee9d38a1ad945c17" category="summary">部署 ONTAP Select 集群后，您可以根据需要使用标准 ONTAP 软件升级操作步骤 升级每个节点的 ONTAP 映像。</block>
   <block id="047bc25615b74f5ee9ad03d531e71221" category="paragraph">部署 ONTAP Select 集群后，您可以根据需要升级集群中每个节点上的 ONTAP 映像。</block>
   <block id="30cf2dd94fe579c8d10145706d2803f2" category="admonition">您不能使用 Deploy 管理实用程序升级现有 ONTAP Select 节点。Deploy 实用程序只能用于创建新的 ONTAP Select 集群。</block>
@@ -1588,80 +1580,45 @@
   <block id="ca91eb0ffb4e943653e46e9be3d1522e" category="summary">所有 Python 脚本都在一个模块中使用一个通用 Python 类。</block>
   <block id="66cebfc655fc14a70cafa6f4ef31ce39" category="doc">通用支持模块</block>
   <block id="6738f098cd2bba79a1109b07a6b3a4e3" category="summary">您可以将 ONTAP Select 映像添加到 Deploy 管理实用程序实例中。安装映像后，您可以在部署 ONTAP Select 集群时使用它。</block>
-  <block id="7f7382cd875100edcc778a758c7b1209" category="paragraph">总体而言，用于向 Deploy 实例添加 ONTAP Select 映像的过程包括四个步骤：</block>
-  <block id="4270b6b39fbe76ef4939c93514f88e51" category="list-text">正在下载安装映像</block>
-  <block id="0142950d64779e553d9f91719bd60ead" category="list-text">将安装映像上传到 Deploy 虚拟机</block>
-  <block id="a1383adc5e3ac160ba2699050ca39978" category="list-text">正在添加安装映像</block>
-  <block id="aa8c9595fedf9966773a268dbec612aa" category="list-text">显示可用的安装映像</block>
   <block id="ff2a9bd49048e73baaf69d5e3097f161" category="paragraph">在将任何新的 ONTAP Select 映像添加到 Deploy 之前，您应先删除任何不需要的映像。</block>
   <block id="7e0a8cfbb81693d645b2e510efe248df" category="admonition">您只能添加版本早于 Deploy 实用程序实例附带的原始版本的 ONTAP Select 映像。不支持添加从 NetApp 获得的更高版本的 ONTAP Select 。</block>
   <block id="807ad9e65833a6b39b8d8286e8b783f8" category="paragraph">要开始向 Deploy 实用程序实例添加 ONTAP Select 映像的过程，您必须从 NetApp 支持站点下载此安装映像。ONTAP Select 安装映像的格式为一个压缩文件。</block>
-  <block id="3778083b3c866c64222ea90c43b33055" category="list-text">单击 * 首要任务 * 下的 * 下载软件 * 并登录到站点。</block>
-  <block id="5f76f77f8f2d50493666c4d9eb015d66" category="list-text">在 * 其他可用 Select 软件 * 下，单击 * 部署升级，节点升级，映像安装 * 。</block>
   <block id="219698a1df9fbd3c16f4a498102fbc3e" category="paragraph">获取 ONTAP Select 安装映像后，必须将此文件上传到 Deploy 虚拟机。</block>
   <block id="2a5d9f3f5564baf37e1d1a8cf1a3b68c" category="paragraph">您必须在本地工作站上提供安装映像文件。您还必须具有 Deploy 管理员用户帐户的密码。</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">步骤</block>
-  <block id="63b64c746e35843656c2e5ab351a6058" category="list-text">在本地工作站上的命令 Shell 中，将映像文件上传到 Deploy 虚拟机。</block>
   <block id="1c654c4358e2d4003c74f40926274452" category="paragraph">节点安装文件存储在管理员用户的主目录中。</block>
-  <block id="16fc31448477212537b6e77370eb37c1" category="paragraph">您可以将 ONTAP Select 安装映像添加到 Deploy 映像目录中，以便在部署新集群时可以使用该映像。</block>
   <block id="1c6a034b63f5d95f8ce563a77103fb05" category="paragraph">您必须知道此安装映像文件位于 Deploy 实用程序虚拟机上的哪个目录中。假定文件位于管理员的主目录中。</block>
-  <block id="418076c036187fc2b385bdd1281ce8bc" category="list-text">将安装映像文件置于映像目录中。</block>
-  <block id="c0549956556109e315a844c123220537" category="paragraph">示例 `tar -xf image_v_93_install_esx.tgz -C /opt/netapp/images/`</block>
-  <block id="9ef896581aaec3297fd8373103d43cef" category="paragraph">您可以显示部署新集群时可用的 ONTAP Select 映像。</block>
   <block id="723658df342d95ccbf42a5f9c876dfee" category="list-text">在 Deploy 实用程序虚拟机上访问联机文档网页，并使用管理员（ admin ）帐户登录：</block>
   <block id="dc43755d370f894f2f9d7a9da08ce7e2" category="paragraph">` http://&lt;FQDN|IP_ADDRESS&gt;/api/ui`</block>
   <block id="cc95115e3088d1f2d90bf48fa98be3d5" category="paragraph">使用 Deploy 虚拟机的域名或 IP 地址。</block>
-  <block id="a80b761ab06a4ff6731297d4de180b0b" category="list-text">导航到页面底部，单击 * 部署 * ，然后单击 * 获取 /images* 。</block>
-  <block id="d7053ec6f3f2e9697233f406d33a87fb" category="list-text">单击 * 试用！ * 以显示可用的 ONTAP Select 映像。</block>
   <block id="c5db03c3f05f8d27a033a2f8f7fbf211" category="list-text">确认所需的映像可用。</block>
   <block id="4497c744476a3b6774a7e4659e36bb37" category="summary">如果 ONTAP Select Deploy 实用程序因某种原因失败或变得不可用，您将无法管理 ONTAP Select 节点和集群。此外，由于 Deploy 附带的调解器服务不可用，所有双节点集群都将失去 HA 功能。如果发生不可恢复的故障，您必须恢复 Deploy 实用程序实例以还原管理和 HA 功能。</block>
-  <block id="732fff5218e24bea555b4f8de50d2d22" category="paragraph">您应在尝试恢复 Deploy 实用程序实例之前做好准备，以确保成功。</block>
-  <block id="4e5bd66d05ea6e0425032aae26d54f07" category="paragraph">您应熟悉几个管理过程并掌握所需的信息。</block>
-  <block id="e9b71fd1c3e60cd227138ff80d4b34dd" category="paragraph">您必须能够在虚拟机管理程序环境中安装 ONTAP Select Deploy 实用程序的新实例。</block>
-  <block id="d9b585388e199d807960be00480d9c37" category="paragraph">您必须能够登录到 ONTAP Select 集群的 ONTAP 命令行界面并使用 Shell 界面。</block>
-  <block id="92a71e755753127bb017bb1fe9bad028" category="paragraph">您必须确定是否已备份包含 ONTAP Select 双节点集群的失败 Deploy 实用程序实例中的配置数据。您的备份可能不包含集群。</block>
-  <block id="618988b1c7baef58636565874807619a" category="paragraph">根据使用的恢复操作步骤 ，您应该能够还原 Deploy 配置数据的备份。</block>
-  <block id="88178796123172aa042c2352197e09e0" category="paragraph">您必须知道出现故障的原始 Deploy 实用程序虚拟机的 IP 地址。</block>
-  <block id="378cdb3591ae498a782312834334c853" category="paragraph">您必须确定在恢复 ONTAP Select Deploy 实用程序实例时要使用的操作步骤 。您的决定取决于您是否已从包含 ONTAP Select 双节点集群的原始故障 Deploy 实用程序中备份配置数据。</block>
   <block id="11530c57a897d905bc943331e58f56b0" category="cell">是否具有包含双节点集群的 Deploy 备份？</block>
-  <block id="b42236ddc43aefb700714337ec5fe465" category="cell">要使用的恢复操作步骤</block>
   <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">否</block>
   <block id="4780c03db443ef1fccbe9971eeda0df0" category="paragraph">如果您已为包含双节点集群的失败 Deploy 实用程序实例创建备份，则可以将配置数据还原到新的 Deploy 虚拟机实例。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。</block>
-  <block id="50f2c67c1d54b1604865c0785336a1bf" category="paragraph">您必须备份包含双节点集群的原始故障 Deploy 虚拟机中的配置数据。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。</block>
   <block id="04707b3ca56ea70a35e5f72497444b18" category="paragraph">由于您还原的配置备份包含双节点集群，因此会在新的 Deploy 实用程序虚拟机中重新创建调解器 iSCSI 目标和邮箱。</block>
   <block id="10d3454e4067c478fcd215352578896c" category="list-text">准备新的 ONTAP Select Deploy 实用程序实例：</block>
   <block id="392ad4630b9353f5418297f40a2e9465" category="list-text">安装新的 Deploy 实用程序虚拟机。</block>
   <block id="a5817a7120ba5c7f40fbeec33918b40c" category="list-text">将 Deploy 配置从先前的备份还原到新虚拟机。</block>
   <block id="2a0f6c83e2e8656a3009a7768b3bac83" category="paragraph">有关安装和还原过程的更多详细信息，请参见相关任务。</block>
   <block id="3edf4cb19512d4630e64407fdbfacf0f" category="list-text">登录到 ONTAP Select 双节点集群的 ONTAP 命令行界面。</block>
-  <block id="232499f93d4af76d76aa851010a3d601" category="list-text">如果新 Deploy 虚拟机的 IP 地址与原始 Deploy 虚拟机不同，则必须删除旧的调解器 iSCSI 目标并添加新目标：</block>
   <block id="59375550d620fe069d214b870c7e2f34" category="paragraph">` &lt;ip_address&gt;` 参数是新 Deploy 虚拟机的 IP 地址。</block>
   <block id="2cc23b20b088fcaa02f28b1f9267a13e" category="paragraph">通过这些命令， ONTAP Select 节点可以发现新 Deploy 实用程序虚拟机上的邮箱磁盘。</block>
   <block id="3718a86363802a2f1f5a36285c76206a" category="list-text">确定调解器磁盘的名称：</block>
-  <block id="bd0690415958671ed80cf4e26c22e637" category="paragraph">`disk show -container-type mediator`</block>
   <block id="1146fee0eb880f0892a23e726ca0a4d2" category="list-text">将邮箱磁盘分配给两个节点：</block>
   <block id="9d070d121ee26abdb5d314d6fff4c15c" category="list-text">验证是否已启用存储故障转移：</block>
-  <block id="751035e5db88d172e881299c202d9b13" category="paragraph">`s存储故障转移显示`</block>
-  <block id="569f883a1fcdb29c5aa5e29f182e9dd9" category="paragraph">如果您没有包含双节点集群的失败 Deploy 实用程序实例的备份，则必须在新的 Deploy 虚拟机中配置调解器 iSCSI 目标和邮箱。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。</block>
-  <block id="1b8f191261c89384d2a9550aaac5eac0" category="paragraph">您必须具有新 Deploy 实用程序实例的调解器目标名称。您必须能够登录到双节点集群的 ONTAP 命令行界面并知道两个节点的 ONTAP 名称。</block>
   <block id="b641370bc8479ac609268e5b798181a7" category="paragraph">您可以选择将配置备份还原到新的 Deploy 虚拟机，即使该虚拟机不包含双节点集群也是如此。由于不会在还原时重新创建双节点集群，因此您必须通过 Deploy 上的 ONTAP Select 联机文档网页将调解器 iSCSI 目标和邮箱手动添加到新的 Deploy 实用程序实例中。您必须能够登录到双节点集群并知道这两个节点的 ONTAP 名称。</block>
   <block id="a4e19764a9b0a95876226c599e6aab9a" category="admonition">恢复操作步骤 的目标是将双节点集群还原到运行状况良好的状态，在此状态下可以执行正常的 HA 接管和交还操作。</block>
   <block id="f5eb374c041ad769f9b37edbfcfdc016" category="list-text">也可以将 Deploy 配置从先前的备份还原到新虚拟机。</block>
   <block id="1a811df4dc00792e0b4812c49edd60bc" category="paragraph">如果还原先前的备份，则新的 Deploy 实例将不包含双节点集群。有关安装和还原过程的更多详细信息，请参见 " 相关信息 " 部分。</block>
   <block id="ccade42401bf54d1ace0721ed8894959" category="list-text">进入高级特权模式：</block>
   <block id="cffcfc00e24ed8ca2b18bf4a888e0070" category="list-text">获取调解器 iSCSI 目标名称：</block>
-  <block id="0b8eead8cff957b1221c528cc5815b22" category="paragraph">`storage iscsi-initiator show -target-type mailbox`</block>
   <block id="6beda81a8ccb785c3706cadbcacf79db" category="list-text">在新的 Deploy 实用程序虚拟机上访问联机文档网页，然后使用管理员帐户登录：</block>
   <block id="5bdffc33624cf554ff99229cfbc8bc1c" category="paragraph">` http://&lt;ip_address&gt;/api/ui`</block>
   <block id="9cf0c17a75f430132839d17e4cdf2734" category="paragraph">您必须使用 Deploy 虚拟机的 IP 地址。</block>
-  <block id="c30d588450ec2670c8abb4c5bdfcf92a" category="list-text">单击 * 调解器 * ，然后单击 * 获取 /mediators * 。</block>
-  <block id="896a10bc0a8946569552955f1a8b3e4c" category="list-text">单击 * 试用！ * 可显示 Deploy 维护的调解器列表。</block>
   <block id="7e1f9afbb0146bf2210d834ead709d47" category="paragraph">记下所需调解器实例的 ID 。</block>
-  <block id="deaae3056bff3505c8cf3c3e5f9394f4" category="list-text">单击 * 调解器 * ，然后单击 * 发布 * 。</block>
   <block id="040012e13bef5621713bec788252ef98" category="list-text">为 mediate_id 提供值。</block>
-  <block id="f256ba989ef4bd8aa23530c93ff59b5e" category="list-text">单击 `iscsi_target` 旁边的 * 型号 * 并填写名称值。</block>
   <block id="e11663ca33d9f0461cabf12f56a8c381" category="paragraph">使用目标名称作为 iqn_name 参数。</block>
-  <block id="109c8e36bc942c26365dbf0801f87f3d" category="list-text">单击 * 试用！ * 以创建调解器 iSCSI 目标。</block>
   <block id="3d85b7e0ce2983da3c1d066243516254" category="paragraph">如果请求成功，您将收到 HTTP 状态代码 200 。</block>
   <block id="4da2af2783b38d64f7ad51f0188043f0" category="list-text">如果新 Deploy 虚拟机的 IP 地址与原始 Deploy 虚拟机不同，则必须使用 ONTAP 命令行界面删除旧调解器 iSCSI 目标并添加新目标：</block>
   <block id="f003eee578389a046f25dba6e783a672" category="summary">ONTAP Select 非常适合支持组织中的一个或多个私有云。一个常见的使用情形是，为基于商用服务器构建的私有云提供存储服务。</block>
@@ -1671,19 +1628,11 @@
   <block id="413237c8cac3c7cf3437693d9962b1fb" category="paragraph">这是一种面向服务的私有云模式。使用 ONTAP Select 的 HA 版本可以创建与成本较高的 FAS 阵列相同的 ONTAP 体验。存储服务器资源仅由 ONTAP Select VM 使用，而应用程序 VM 托管在单独的物理基础架构上。</block>
   <block id="fb6f9f37085215c30bff064542d11394" category="paragraph">* 基于 DAS* 的私有云</block>
   <block id="df4928efb348e7abebffb938d05f9853" category="paragraph"><block ref="df4928efb348e7abebffb938d05f9853" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ce78f638c1329fc432323298fd5ab053" category="paragraph">在托管 ONTAP Select 集群的虚拟机管理程序上升级 ESXi 软件之前，您应准备并选择适合您环境的升级操作步骤 。</block>
-  <block id="a74a74cc9eac206cd17b389aebee1edf" category="admonition">如果选择升级到 VMware ESXi 6.5 ，则应升级到 ESXi U2 （内部版本 8294253 ）或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。</block>
   <block id="a06d958d7c1e780db3a597737559b331" category="paragraph">有多种升级过程可供选择。您应根据以下条件选择适用的操作步骤 ：</block>
   <block id="d98bf1b619a94ca49b2cf4e249269541" category="list-text">ONTAP Select 集群大小支持单节点和多节点集群。</block>
-  <block id="c9a714bea6de08f5989eee603a121dae" category="list-text">无论是否使用 Deploy 实用程序，都可以使用 ONTAP Select Deploy 升级。</block>
   <block id="649ae0572dea5b8bc6208820d18b8e73" category="admonition">您应选择使用 Deploy 管理实用程序的升级操作步骤 。</block>
-  <block id="0fca1939c8c0500fa2f3ed6bfce03d40" category="section-title">更新操作步骤 完成后</block>
   <block id="3020c5e4f7e244ad0af7d9b1e1c3f9cc" category="paragraph">如果您选择使用 Deploy 实用程序的升级操作步骤 ，则应在所有节点升级后使用 Deploy 执行集群刷新操作。有关详细信息，请参见刷新 Deploy 集群配置。</block>
   <block id="2b02207ef454c2c6aeeedf7644fa1821" category="paragraph">您可以在操作步骤 中使用 Deploy 管理实用程序来升级托管 ONTAP Select 单节点集群的 VMware ESXi 虚拟机管理程序。</block>
-  <block id="681dd84e331133125fc528e3066ea4b7" category="list-text">将节点移至脱机状态。</block>
-  <block id="3a5d7f86dd219466ffbcb0e2f8ffd034" category="paragraph">示例 `node stop -cluster-name &lt;clustername&gt; -node-name &lt;nodename&gt;`</block>
-  <block id="d1c1e91e03c71fa9882b17583973d0c4" category="list-text">将节点移至联机状态。</block>
-  <block id="fb373c881fd0931abd6943e8bcf86440" category="paragraph">示例 `node start -cluster-name &lt;clustername&gt; -node-name &lt;nodename&gt;`</block>
   <block id="2bcdcfed9ba53c3c8ca4e481e1451e94" category="list-text">节点启动后，验证集群是否运行正常。</block>
   <block id="bba96a171c35e11e4bf7eb548e322d78" category="paragraph">您应使用 Deploy 管理实用程序执行集群刷新操作。</block>
   <block id="c924506282a3ae2065b516094cff9672" category="paragraph">您可以在操作步骤 中使用 Deploy 管理实用程序来升级托管 ONTAP Select 多节点集群的 VMware ESXi 虚拟机管理程序。</block>
@@ -1714,11 +1663,9 @@
   <block id="a2223560f3daace4da811f50f2f76708" category="paragraph">确保 Deploy 在备份操作期间未执行任何其他任务。</block>
   <block id="28026b3bb14f3c97b11f481645caf565" category="paragraph">您创建的备份文件会捕获虚拟机中的所有配置数据。此数据介绍了部署环境的各个方面，包括 ONTAP Select 集群。</block>
   <block id="c4e676380560c2d76ac3009addaa66eb" category="list-text">创建 Deploy 配置数据的备份，该数据存储在 Deploy 服务器的内部目录中：</block>
-  <block id="d52ea963a3560a70eafe6249384cad0e" category="paragraph">`d部署备份创建`</block>
   <block id="5a6f96ad4278c1232327847e0020aeca" category="list-text">根据提示提供备份密码。</block>
   <block id="57049f039b8ba3ed7da7870227bf63cf" category="paragraph">备份文件将根据密码进行加密。</block>
   <block id="5a9fe4be7a45fa497ce5ed098b3a3aff" category="list-text">显示系统中的可用备份：</block>
-  <block id="08df971d378fcae2bcfc934ca648d17c" category="paragraph">`deDeploy backup show -detailed`</block>
   <block id="1a5cb9ce2867d3b5aa027c79d38b9b4c" category="list-text">根据 * 已创建 * 字段中的日期选择备份文件并记录 * 下载 URL* 值。</block>
   <block id="cf3583e0957dd7c033dd10fc82650d20" category="paragraph">您可以通过 URL 访问备份文件。</block>
   <block id="aeb4d606f61c7fabca15a3d3661cc539" category="list-text">使用 Web 浏览器或 Curl 等实用程序，使用 URL 将备份文件下载到本地工作站。</block>
@@ -1731,9 +1678,6 @@
   <block id="bc53d5b8393b0e7bd459582f7c4fe869" category="list-text">使用 SSH 访问 Deploy 实用程序。</block>
   <block id="0354884312c6d9734c8ccd7979edbee9" category="paragraph">您必须将配置数据从原始 Deploy 实用程序虚拟机还原到新虚拟机。数据位于一个文件中，您必须从本地工作站上传该文件。</block>
   <block id="1b364349b93e82578cfe461dabadd928" category="paragraph">您必须具有先前备份中的配置数据。这些数据包含在一个文件中，并且必须在本地工作站上可用。</block>
-  <block id="f81fbf9d5f689fab977e68417016783a" category="list-text">在本地工作站上的命令 Shell 中，使用 sftp 实用程序将备份文件上传到 Deploy 虚拟机。</block>
-  <block id="61606c32a4feee098448dfcafda7350b" category="list-text">还原配置数据。</block>
-  <block id="b69a9048a49045497e1363c3dd4d30a0" category="paragraph">`d部署备份还原 -path pathname -filename filename`</block>
   <block id="3d76d8ade4be6a0fa76347dff9a10a88" category="paragraph">`deDeploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`</block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">部署 ONTAP Select 集群后，您可以使用 Deploy 管理实用程序升级节点的虚拟机管理程序实例类型。</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">集群必须处于联机状态。</block>
@@ -2367,14 +2311,6 @@
   <block id="d670b307adcbd20c75b779bb62ae10bc" category="paragraph">[小型]#^1^ONTAP Select 9.6支持新许可证(高级XL)和新的VM大小(大型)。但是，只有使用软件 RAID 的 DAS 配置才支持大型 VM 。在9.6版中、大型ONTAP Select VM不支持硬件RAID和vNAS配置。#</block>
   <block id="2b306d5ec9ffced1b4c962a0d5f78acb" category="paragraph">升级到ONTAP Select 9.6或更高版本后、请等待<block ref="65c6cabf39cf5a036e1dff5fc1483802" prefix=" " category="inline-code"></block> 命令以指示升级已完成、然后再验证现有卷的存储效率值。</block>
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升级到ONTAP Select 9.6或更高版本的系统上、在现有聚合或新创建的聚合上创建的新卷与在全新部署中创建的卷具有相同的行为。已进行 ONTAP Select 代码升级的现有卷与新创建的卷具有大多数相同的存储效率策略，但存在一些变体：</block>
-  <block id="201d6cf1ba171c49bcdcb0766d20f3f9" category="paragraph-title">所需技能和信息</block>
-  <block id="7322a68bf06479e293387c20bf0f3e8e" category="paragraph-title">安装 Deploy 虚拟机</block>
-  <block id="816d0d92458bc1f7a68303a845228dde" category="paragraph-title">ONTAP 命令行界面</block>
-  <block id="fe8a09bfef8f50e4e72bec1b0f9c18db" category="paragraph-title">Deploy 实用程序配置备份的可用性</block>
-  <block id="8fbcf0a0690f2df2d9b37ca23e0733f5" category="paragraph-title">还原 Deploy 配置的备份</block>
-  <block id="d929d228dc7d6e05fe2b30f1a5826c49" category="paragraph-title">原始 Deploy 虚拟机的 IP 地址</block>
-  <block id="b957b13a65ee2e9c4a639a76b0b7cce7" category="paragraph-title">存储容量许可</block>
-  <block id="ed67f205040bfaf568fb57e318f22a15" category="paragraph-title">确定要使用的恢复操作步骤</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">关于此任务</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">结果</block>
   <block id="801333bc71ada3c7b40aa384a24d7978" category="paragraph-title">网络最低配置和建议配置</block>
@@ -2603,7 +2539,6 @@
   <block id="9702dfddce9ca846a20b21815bd5bf71" category="list-text">VMware ESXi 8.0 U1 (内部版本21495797)</block>
   <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link">互操作性表工具（ IMT ）</block>
   <block id="be89bf0bd68c0f721ab7e25e408b6fa7" category="summary">如果您在VMware ESXi上运行ONTAP Select、则可以将ESXi软件从受支持的早期版本升级到ESXi 7.0或更高版本。在升级之前，您应了解此过程并选择相应的升级操作步骤 。</block>
-  <block id="817a2297c74a908c3261968059682b32" category="paragraph">使用 Deploy 管理实用程序执行 ESXi 升级是一个更普遍且更具弹性的选项。但是，在某些情况下，可能会出现 Deploy 不可用或无法使用的情况。例如、早期版本的ONTAP Select和Deploy管理实用程序不支持升级到ESXi 7.0。</block>
   <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">使用VMware提供的操作步骤将运行ONTAP Select的虚拟机管理程序主机升级到ESXi 7.0或更高版本。</block>
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1.</block>
   <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1提供了几项新功能和改进功能。</block>
@@ -2721,8 +2656,6 @@
   <block id="acac68a1e439a88d2d2599418fc3ace8" category="cell">使用配置备份还原Deploy实用程序实例</block>
   <block id="e46ac92a715b42bd2cfc9c8c53a2230c" category="cell">重新配置和恢复Deploy实用程序实例</block>
   <block id="06a53967f62b6ebf8a1fba55cabdfecf" category="list-text"><block ref="06a53967f62b6ebf8a1fba55cabdfecf" category="inline-link-macro-rx"></block></block>
-  <block id="89ac05efab2228e74e12191efccdf85c" category="inline-link-macro">将Deploy配置数据还原到新虚拟机</block>
-  <block id="9731a2aaf926f5fd46b5a7343839efb4" category="list-text"><block ref="9731a2aaf926f5fd46b5a7343839efb4" category="inline-link-macro-rx"></block></block>
   <block id="47546bf1e2847e2d81e73bde93926649" category="section-title">将ONTAP Select集群脱机和联机</block>
   <block id="60458f1485d61e13b322742ae9f0113a" category="section-title">刷新Deploy集群配置</block>
   <block id="24c77c4c999a67b38b8910008fcbf84a" category="paragraph">License Manager会在每个Deploy管理实用程序实例中作为一个单独的进程运行。LM 提供的一些功能包括：</block>
@@ -2762,21 +2695,13 @@
   <block id="7616bc7ca1d0f5d08301e0593d0e18ca" category="section-title">请比较ONTAP Select和ONTAP 9</block>
   <block id="811d71286df166f702ec9b42c249d145" category="section-title">了解工作流中使用的API调用</block>
   <block id="494bbba02a6f83c76ae18eeba756eafc" category="section-title">构建一个URL以直接访问REST API</block>
-  <block id="84bee6f12ed24b78dc6e3d711f489517" category="section-title">熟悉如何升级VMware ESXi</block>
   <block id="879d008da9e1adcaebd71393252b5f05" category="paragraph">VMware 介绍并支持升级 ESXi 软件的过程。使用 ONTAP Select 时，虚拟机管理程序升级过程属于更大的操作步骤 升级过程。有关详细信息、请参见VMware文档。</block>
-  <block id="9fb992cde692e6edf5e0ff97d5e5f2f8" category="section-title">选择升级操作步骤</block>
   <block id="7040c3ccc544e203d76cb7ffe82f6911" category="inline-link-macro">1172198</block>
   <block id="2e6761a6be39f375b42a759a4e5b2ce9" category="paragraph">如果您使用的是这些早期版本并尝试升级，则 ONTAP Select 虚拟机可能会处于无法启动的状态。在这种情况下，您必须选择不使用 Deploy 的升级操作步骤 。请参见 <block ref="45788d744a81e57f6ed35cd7105ed791" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
-  <block id="eb09ec92cf869be7597c08b1ed36d886" category="section-title">升级Deploy管理实用程序</block>
-  <block id="684106fd704b339617fbc6743afe92b6" category="paragraph">在使用 Deploy 实用程序升级操作步骤 之前，您可能需要升级 Deploy 实例。通常，您应升级到最新版本的 Deploy 。Deploy 实用程序必须支持您正在使用的 ONTAP Select 版本。有关详细信息，请参见 ONTAP Select 发行说明。</block>
   <block id="5b8325e442ddd32629c86630fde418de" category="section-title">使用Deploy升级单节点集群</block>
   <block id="2863feac8b058188a45f49deaf504ce8" category="section-title">使用Deploy升级多节点集群</block>
   <block id="77313127f25a198a72521f0ce3437025" category="section-title">无需Deploy即可升级单节点集群</block>
   <block id="4724841b242993261d4bc5bf0b22e4da" category="section-title">不使用Deploy升级多节点集群</block>
-  <block id="e4384ef53374e50c408aa4f320771fc7" category="section-title">下载安装映像</block>
-  <block id="ae5dce558cc0a937c60691c0f0837ca5" category="section-title">上传要部署的安装映像</block>
-  <block id="df16cb9f82c152af98cbdb57cc06f0d9" category="section-title">添加安装映像</block>
-  <block id="5b9b5bb226a6c70daff9ed71955c175e" category="section-title">显示可用的安装映像</block>
   <block id="f47ad6e4bc9bad323a7e49da78e990bc" category="doc">调整ONTAP Select集群节点的大小</block>
   <block id="afe2fb2999af41d32655dc1f20500f66" category="list-text">从ONTAP Select 9.9.1开始、ONTAP Select仅支持Intel Xeon桑迪桥或更高版本的CPU型号。</block>
   <block id="0fa9a0b98f503373d1e8310c7c58315c" category="cell">ONTAP Select的产品安装可执行文件。</block>
@@ -3132,7 +3057,6 @@ storage aggregate show-spare-disks</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">了解更多信息。</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">将八节点集群缩减为六节点集群</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">对集群扩展和缩减的支持仅限于ESX集群。</block>
-  <block id="e35a91dc5473bf4a53204a2bd1366d7e" category="summary">从ONTAP Select 9.15.1开始、您可以将现有集群的节点数从6个增加到8个、并将集群大小从8个节点减少到6个节点。</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">展开集群</block>
   <block id="30230ebf7e780c11cfcde8274fc17934" category="list-text">验证您是否知道新节点的许可证详细信息。</block>
@@ -3286,7 +3210,6 @@ storage aggregate show-spare-disks</block>
   <block id="697112fb0ffb252e40d60a5a007943a2" category="sidebar">扩展或缩减集群</block>
   <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">访问VM视频控制台</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">更换发生故障的软件RAID驱动器</block>
-  <block id="e2e19484d2146649c758acb6e826707f" category="sidebar">将ESXi升级到6.5及更高版本</block>
   <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1支持VMware ESXi 8.0 U2。</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8.0 U2</block>
@@ -3568,10 +3491,6 @@ storage aggregate show-spare-disks</block>
   <block id="235d833d1553c6ac3ef4b59a69b7709d" category="admonition">如果使用容量层许可模式和容量池许可模式、则可以执行集群节点大小调整操作。</block>
   <block id="751e45429506270501500591ecf71f63" category="paragraph">您应使用此操作步骤 配置每个节点。此示例中的节点应用了容量层许可证。</block>
   <block id="f5eacefd45f87cad9eca589aeba17364" category="paragraph">ONTAP Select节点会使用容量层许可证。</block>
-  <block id="70c6ed94827afcf20125ed21cfa0d45d" category="paragraph">您必须确定使用的是容量池还是容量层许可。如果您使用容量池许可、则必须在恢复或还原Deploy实例后重新安装每个容量池许可证。</block>
-  <block id="29f5b284a6c121e6b86e23d26c5492d7" category="paragraph">如果使用容量池许可、则必须重新安装每个容量池许可证。有关更多详细信息、请参见_重新安装容量池许可证_。</block>
-  <block id="ad8df021d39702efa54a5c4a58d4c408" category="paragraph">如果使用容量池许可、则必须重新安装每个容量池许可证。有关其他详细信息、请参见重新安装容量池许可证。</block>
-  <block id="907984c60dd3b3b1d06b28812739f3a3" category="list-text"><block ref="907984c60dd3b3b1d06b28812739f3a3" category="inline-link-macro-rx"></block></block>
   <block id="b28ceb45f344ed12e54e3531ae0bac88" category="summary">您必须为ONTAP Select节点使用的每个容量池获取一个许可证文件。此许可证文件用于定义池的存储容量和到期时间。它将通过 NetApp 分配的唯一许可证序列号以及与 Deploy 实例关联的许可证锁定 ID 组合而锁定到 License Manager 。</block>
   <block id="b06635debd20e5d8f23e5fd54016e095" category="doc">获取ONTAP Select容量池许可证</block>
   <block id="332320e6473eb55e261b81cf0938cfbc" category="paragraph">您必须已获得NetApp分配给容量池的九位许可证序列号。在尝试获取许可证文件之前，您应在采购订单发货日期之后至少等待 24 小时。</block>
@@ -3646,8 +3565,6 @@ storage aggregate show-spare-disks</block>
   <block id="b43dccc6180e02d25b94d717af59c5d5" category="section-title">步骤 1：准备部署</block>
   <block id="14ce7f56600ce32dd333637eed98cd8f" category="open-title">硬件 RAID</block>
   <block id="66ef34be992df3691380b5f366935c14" category="inline-link-macro">存储池（KVM）</block>
-  <block id="e6590b92b825641d452dbbfa0d4cf1d1" category="paragraph">如果使用本地硬件 RAID 控制器，则必须创建至少一个数据存储区 (ESX) 或一个<block ref="a828881b33208a7c4812d178d14998a2" category="inline-link-macro-rx"></block>每个节点上的系统数据以及根和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池。</block>
-  <block id="19d8e46deea8d239f3274a92f88038ab" category="paragraph">如果使用软件 RAID，则必须创建至少一个数据存储区 (ESX) 或一个<block ref="a828881b33208a7c4812d178d14998a2" category="inline-link-macro-rx"></block>用于系统数据，并确保 SSD 驱动器可用于根和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。</block>
   <block id="908272d4cd58c61b9a3bc042f376ee86" category="inline-link-macro">添加ONTAP Select映像</block>
   <block id="e037f6aae5e648de44fa07863c350701" category="paragraph">Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用早期版本的ONTAP Select部署集群，您必须首先<block ref="6403b9b63d70488e119e79bd63bd10d8" category="inline-link-macro-rx"></block>到您的 Deploy 实例。</block>
   <block id="2d9d6efa5bb5baaf1e0bfc7ac2970b34" category="inline-link-macro">在每个节点上许可存储</block>
@@ -3814,7 +3731,6 @@ storage aggregate show-spare-disks</block>
   <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">此任务介绍了一种将文件上传到ONTAP Select Deploy 虚拟机的方法。可能还有其他选项更适合您的环境。</block>
   <block id="c99ab6326cfb96cafe5cf69a39bf5e79" category="list-text">验证升级文件是否在本地工作站上可用。</block>
   <block id="e2a672c847bad2863e57f277c323553c" category="list-text">验证您是否拥有管理员用户帐户的密码。</block>
-  <block id="e60c1aa35e0fea0a6ef96ddaa4b018f8" category="list-text">在本地工作站的命令 shell 中，使用<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block>（安全复制协议）实用程序将映像文件上传到ONTAP Select Deploy 虚拟机。</block>
   <block id="fc979b5c6d5eef1f824052719f508095" category="section-title">步骤3：应用升级包</block>
   <block id="8b24796d99b30623379a77021195b47e" category="paragraph">将升级文件上传到ONTAP Select Deploy 虚拟机后，即可应用升级。</block>
   <block id="91aa908b0f2003054a80626907b7d18a" category="list-text">验证升级文件在ONTAP Select Deploy 实用程序虚拟机中放置的目录。</block>
@@ -3852,7 +3768,6 @@ storage aggregate show-spare-disks</block>
   <block id="cbec5c675188a8b88f95c1615c33fb39" category="list-text">更新库</block>
   <block id="cbbbf9758b7ac41123821f7ea427538f" category="list-text">更新库项目</block>
   <block id="845b12256749d66531d9afd69bc3a33c" category="list-text">更新本地库</block>
-  <block id="26f7069f09ce96914fa8e8c3a68a4191" category="doc">扩展或收缩ONTAP Select ESXi 或 KVM 集群</block>
   <block id="b6901598f11464666113bfe479efe49f" category="paragraph">您可以增加 ESXi 和 KVM 虚拟机管理程序主机的现有ONTAP Select集群的集群大小。对于 KVM 主机，您可以将集群大小从 6 个节点增加到 8 个节点，或者将集群大小从 8 个节点减少到 6 个节点。对于 ESXi 主机，您可以在 6 到 12 个节点之间以增量增加或减少集群大小。</block>
   <block id="936ee35c221853e402fecb3657e726ba" category="paragraph">ESXi 和 KVM 主机不支持以下集群扩展和收缩：</block>
   <block id="ca069be0eeb72c96905b0cdbf504214d" category="paragraph">以下 KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。</block>
@@ -3913,7 +3828,6 @@ storage aggregate show-spare-disks</block>
   <block id="a72643a79ec8e9d1d5c61ff835cabbeb" category="list-text">初始安装的是ONTAP Select 9.16.1。</block>
   <block id="588a4431a3d49dda029dcc4161fc2be3" category="list-text">您可以将节点升级到版本 9.17.1，如果需要，再恢复到版本 9.16.1。</block>
   <block id="c762418e7ca866adad88c4350fc20ef0" category="list-text">初始安装的是ONTAP Select 9.17.1。</block>
-  <block id="02214bce8cef8e578251dc5cdd19f814" category="list-text">由于之前没有安装过旧版本，因此无法回滚。</block>
   <block id="0bb5222a5975edbdfb5210abc7bbc0d5" category="admonition">ONTAP Select Deploy 附带的 REST API 已分配一个版本号。API版本号与 Deploy 版本号无关。ONTAP Select 9.17.1 Deploy 管理实用程序包含 REST API 版本 3。</block>
   <block id="7b5019dce3bb835acb62c31388f47aef" category="cell">VMware vSphere 9.0、VMware vSphere 8.0GA 及更新 1 至 3、VMware vSphere 7.0GA 及更新 1 至 3C</block>
   <block id="98a200153c1be0c16d526cf021fc6c2c" category="cell">四节点、六节点或八节点集群</block>
@@ -3928,7 +3842,6 @@ storage aggregate show-spare-disks</block>
   <block id="aea2ef463d548798da986814b7163a65" category="list-text">使用受支持的部署管理实用程序ONTAP Select</block>
   <block id="26a1590332f300c4ec3aa0f686d62125" category="admonition">如果您有一个或多个活动的双节点集群，则管理这些集群的ONTAP Select Deploy 虚拟机必须始终处于运行状态。如果ONTAP Select Deploy 虚拟机停止运行或发生故障，则中介服务不可用，并且双节点集群的 HA 功能将丢失。</block>
   <block id="0657a1213e1f6d89d22c78ddc4608384" category="paragraph">由于双节点集群通常部署在远程或分支机构，因此它们可能远离企业数据中心和提供管理支持的ONTAP Select Deploy 实用程序。通过这种配置， ONTAP Select Deploy 实用程序和集群之间的管理流量将通过 WAN 传输。有关限制和约束的更多信息，请参阅发行说明。</block>
-  <block id="b83e9ae7e9a3ccc11cef740f2d5aa5f2" category="list-text">为ONTAP Select Deploy 分配静态 IP 地址</block>
   <block id="ed89295e41e84f73a1840cf9d0bc49c6" category="paragraph">您必须为ONTAP Select Deploy 管理实用程序分配静态 IP 地址。此要求适用于管理一个或多个ONTAP Select双节点集群的所有ONTAP Select Deploy 实例。</block>
   <block id="ee1aadb3a9fa619eb12db5d1e58032b4" category="inline-link-macro">了解 vCenter 中 vSAN ESA 的 VMware vSphere 权限</block>
   <block id="653a421852b6e9fc7e8da536351d6d57" category="paragraph"><block ref="653a421852b6e9fc7e8da536351d6d57" category="inline-link-macro-rx"></block></block>
@@ -3952,8 +3865,79 @@ storage aggregate show-spare-disks</block>
   <block id="2dd89f547668d42e92b18453b0fc2db7" category="section-title">步骤 2：安装 Deploy 虚拟机的新实例</block>
   <block id="20db79ddbcecf961179a8654cf93bdfa" category="section-title">步骤 3：将部署配置数据恢复到新的虚拟机</block>
   <block id="35767fb08a64b94abf91d7c25ea1b1d5" category="paragraph">您可以从 ONTAP ONTAP Select ONTAP Select Deploy 9.17.1。要从ONTAP Select Deploy 9.14.1 或更早版本升级，请查看ONTAP Select版本的发行说明。</block>
-  <block id="f8828e764d46e46d1990e6a2dec9744f" category="doc">将 VMware ESXi 升级到 7.0 或更高版本以使用ONTAP Select</block>
   <block id="4c2a7675fb89ee6113fb93327fabd5f6" category="list-text">ESXi 9.0</block>
   <block id="90facdbe61c2fda7ac079c021778069e" category="section-title">步骤 3：完成部署</block>
-  <block id="0ccf5aad6da0b37b9ee3f6128be956c7" category="paragraph">集群部署完成后，确认ONTAP Select AutoSupport功能已配置。<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block> 。</block>
+  <block id="7a0165449b5773328368f60f5c262ddd" category="doc">将ONTAP Select升级到 VMware ESXi 7.0 或更高版本</block>
+  <block id="dd1789a087eda271d0e3deee49558019" category="section-title">准备升级 VMware ESXi</block>
+  <block id="82c36f45db475277ee2310dec3c1e939" category="paragraph">在升级托管ONTAP Select集群的虚拟机管理程序上的 ESXi 软件之前，请准备并选择适合您环境的升级程序。</block>
+  <block id="0926feade48ead905fb59c610b0ac7fd" category="list-text">*熟悉如何升级 VMware ESXi*</block>
+  <block id="1ca1aaf5b842ffb10893e476d56ee6d7" category="list-text">*选择升级流程*</block>
+  <block id="8378d8bf20941add9c4df91829cd0827" category="list-text">使用ONTAP Select部署</block>
+  <block id="4057b7ca0c19f851f63420c9ec32a889" category="paragraph">可以使用 Deploy 工具进行升级，也可以不使用 Deploy 工具进行升级。</block>
+  <block id="017c62abcb9c0a7a31f008ff45eca54a" category="paragraph">使用 Deploy 管理实用程序执行 ESXi 升级是更通用且更具弹性的选项。但是，有时可能会出现部署不可用或无法使用的情况。例如，早期版本的ONTAP Select和 Deploy 管理实用程序不支持升级到 ESXi 7.0。</block>
+  <block id="2e0e9d07ffda2d85422b14435c592a64" category="list-text">*升级部署管理实用程序*</block>
+  <block id="c3a59d3a6472b3e407374a73000fa2d0" category="inline-link-macro">ONTAP Select发行说明</block>
+  <block id="f5d84950dbef357c088050b223201054" category="paragraph">在使用 Deploy 实用程序执行升级过程之前，您可能需要升级您的 Deploy 实例。通常，您应该升级到最新版本的 Deploy。Deploy实用程序必须支持您正在使用的ONTAP Select版本。请参阅<block ref="d849cafcad7044085f0bad0e874b53aa" category="inline-link-macro-rx"></block>了解更多信息。</block>
+  <block id="652257fc3daae6b4fad2e2bd425ff0e3" category="list-text">*更新程序完成后*</block>
+  <block id="20f9850b56f2eecea40a57c75ab5c890" category="list-text">将节点移至离线状态：</block>
+  <block id="13cc9f6fa9c854f457ba342b6ca56703" category="list-text">将节点移至在线状态：</block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">示例：</block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">显示示例</block>
+  <block id="fc0aa017cb8518a7c70f2a39ae6553c1" category="list-text">由于之前没有安装过旧版本，因此无法回滚。</block>
+  <block id="6e1243914ebc1fc5867ce44540c39b39" category="list-text"><block ref="6e1243914ebc1fc5867ce44540c39b39" category="inline-link-macro-rx"></block></block>
+  <block id="7df4c22f834073378cbc7bda2a69e5d8" category="paragraph-title">备份 Deploy 配置数据</block>
+  <block id="92a0bc38a55c8986f72a9e2f38fb2581" category="paragraph">最佳实践是<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block>定期进行，包括在创建集群之后。这对于双节点集群尤为重要，因为备份中包含了中介器配置数据。</block>
+  <block id="12702c2f8c71548bcc7c156da7d7e810" category="paragraph">如果使用本地硬件 RAID 控制器，则必须至少创建一个数据存储 (ESX) 或一个<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>在每个节点上，系统数据以及根节点和数据聚合。您必须在配置ONTAP Select节点的过程中连接存储池。</block>
+  <block id="d79e665d74455e96fa5fff08009d57ce" category="paragraph">如果使用软件 RAID，则必须至少创建一个数据存储 (ESX) 或一个<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>确保系统数据可用，并确保 SSD 驱动器可用于根目录和数据聚合。您必须在配置ONTAP Select节点的过程中连接存储池和磁盘。</block>
+  <block id="374fcbe92413e77c7fc7cda40bfb3be6" category="section-title">步骤 1：下载安装镜像</block>
+  <block id="42cd2a8efe7c9aac811d923637a0f193" category="list-text">使用网络浏览器访问NetApp支持网站，然后选择“支持快速链接”。</block>
+  <block id="6168f6eb3f1b81ec759f515fdd7bab98" category="list-text">在“热门任务”下选择“下载软件”，然后登录网站。</block>
+  <block id="84791eb50904d5d426f95112ce50d397" category="list-text">选择“查找您的产品”。</block>
+  <block id="676522edf33055c4e8da85feed945dc5" category="list-text">在“其他可用软件”下，选择“部署升级”、“节点升级”、“镜像安装”。</block>
+  <block id="4ec4ff4105057abcf44071cf2a8f84b6" category="section-title">步骤 2：将安装镜像上传到 Deploy 平台</block>
+  <block id="3ad5852905f7d86a4b551630b78bec6f" category="list-text">在本地工作站的命令 shell 中，将映像文件上传到 Deploy 虚拟机，如下示例所示：</block>
+  <block id="9c0d19167b1e62192d344c74670ab607" category="section-title">步骤 3：添加安装镜像</block>
+  <block id="b9f4869d7f31d53b61f29fe4bedd37d1" category="paragraph">将ONTAP Select安装映像添加到部署映像目录，以便在部署新集群时可以使用。</block>
+  <block id="461e33e15d96d32a3253838cc3faf280" category="list-text">将安装镜像文件放入 images 目录，如下例所示：</block>
+  <block id="152d8684d752984c61ac93dd6e93ca75" category="paragraph"><block ref="a424c72865fc5e3d7ef425ffe24358a0" prefix="" category="inline-code"></block></block>
+  <block id="55a1dda936b17c10bd6fe08210028b1d" category="section-title">步骤 4：显示可用的安装映像</block>
+  <block id="bd721bab2f4844ced6ea0eeba243f8d3" category="paragraph">显示部署新集群时可用的ONTAP Select镜像。</block>
+  <block id="0130d1c399b188129dee9e6cb685faf8" category="list-text">导航到页面底部，选择“部署”，然后选择“获取/images”。</block>
+  <block id="9e4d41c6ecc4cf9937f573e802d657c6" category="list-text">选择“立即体验！”以显示可用的ONTAP Select图片。</block>
+  <block id="7237d8c12d94e5a5d31950f37ac0bf7a" category="section-title">准备恢复部署实用程序</block>
+  <block id="d0d9ebbdf3a513d091f96cf877073d3f" category="paragraph">在尝试恢复 Deploy 实用程序实例之前，您需要做好准备以确保成功。您必须熟悉若干行政程序并掌握所需信息。</block>
+  <block id="97987a90b942fca343d336e1e3407ce1" category="list-text">确认您可以在虚拟机管理程序环境中安装ONTAP Select Deploy 实用程序的新实例。</block>
+  <block id="de7a4f435396962b2c5793b09e623040" category="inline-link-macro">了解如何安装ONTAP Select Deploy 实用程序</block>
+  <block id="931c4bc1734c8552932d13706ff5d778" category="paragraph"><block ref="931c4bc1734c8552932d13706ff5d778" category="inline-link-macro-rx"></block></block>
+  <block id="a7e32b3c69ec3a084438d9fdb77bc17c" category="list-text">确认您可以登录到ONTAP Select集群并访问ONTAP集群 shell (CLI)。</block>
+  <block id="18a7df977db43c60a4c6a47400953591" category="list-text">确定您是否拥有包含ONTAP Select双节点集群的失败部署实用程序实例的配置数据备份。您可能拥有不包含该集群的备份。</block>
+  <block id="01db345147b0b1e4da305d7ddea3f030" category="list-text">根据所使用的恢复程序，验证是否可以恢复部署配置数据的备份。</block>
+  <block id="783e545e51986edbc17afe85eea0faa9" category="inline-link-macro">了解如何将部署配置数据恢复到新的虚拟机</block>
+  <block id="eec0b20b3b13caf4c707ba03e2af8e20" category="paragraph"><block ref="eec0b20b3b13caf4c707ba03e2af8e20" category="inline-link-macro-rx"></block></block>
+  <block id="aafccebf49ebd86d0297ed3c4cb4bcf8" category="list-text">您拥有发生故障的原始部署实用程序虚拟机的 IP 地址。</block>
+  <block id="b5d76ca91cc6a4bfaa8e7bf5e92bb436" category="list-text">确定采用容量池许可还是容量层级许可。如果使用容量池许可，则必须在恢复或还原 Deploy 实例后重新安装每个容量池许可证。</block>
+  <block id="256f2b5a82e33e1addfa3baf312579ad" category="list-text">决定在恢复ONTAP Select Deploy 实用程序实例时使用哪个程序。您的决定取决于您是否拥有包含ONTAP Select双节点集群的原始故障 Deploy 实用程序的配置数据备份。</block>
+  <block id="231f652ef60095cb1f5635c5883bc6be" category="cell">使用恢复程序……</block>
+  <block id="da5f86a9d9885a0a4f3fae17be5714c1" category="cell"><block ref="a667be25a78a5bb37fad6661b93342ca" category="inline-xref-macro-rx"></block></block>
+  <block id="254bdc26db86eb9026bb2f2a17bdfb96" category="cell"><block ref="05da0447e48edcc2947b385468da9d92" category="inline-xref-macro-rx"></block></block>
+  <block id="fa044af206f38606c388f360f301e4ae" category="paragraph">备份包含双节点集群的原始部署失败虚拟机的配置数据。您必须能够登录双节点集群的ONTAP CLI，并且知道这两个节点的ONTAP名称。</block>
+  <block id="e8a314dd4d9f7c33b9bbed1a31bce762" category="list-text">如果新部署虚拟机的 IP 地址与原部署虚拟机的 IP 地址不同，请删除旧的中介 iSCSI 目标并添加新目标：</block>
+  <block id="6b23d5e89df595635ec3a54090e64fa9" category="paragraph">如果您使用容量池许可，请重新安装每个容量池许可证。看<block ref="241b4315fc3c4e6905896340939f6270" category="inline-link-macro-rx"></block>更多详情请见下文。</block>
+  <block id="9b5fe6a20fe2a058892201f5f80f1856" category="paragraph">如果您没有包含双节点集群的失败部署实用程序实例的备份，请在新的部署虚拟机中配置中介 iSCSI 目标和邮箱。然后，通过对ONTAP Select集群中的两个节点进行额外配置来完成恢复。</block>
+  <block id="f1c1b76c2a435830bd391c2c408efc67" category="paragraph">请确认您已获取新部署实用程序实例的中介目标名称。您必须能够登录双节点集群的ONTAP CLI，并且知道这两个节点的ONTAP名称。</block>
+  <block id="87ccb73575035c302ba7c38920d907ae" category="list-text">选择 *Mediator*，然后选择 *GET /mediators*。</block>
+  <block id="eb39326ecb8194aed00f77063e484a57" category="list-text">选择“试用！”以显示 Deploy 维护的中介器列表。</block>
+  <block id="a78d26c86f8e1bc3f99deea85ab123e3" category="list-text">选择“中介者”，然后选择“POST”。</block>
+  <block id="5c9d811abf74644dc7a5840670a2323a" category="list-text">选择旁边的“型号”<block ref="afd1be8124115a780c2ac5cb3db1f36d" prefix=" " category="inline-code"></block>并填写名称值。</block>
+  <block id="69c2330b72fdbb0f24306b5344fc83ca" category="list-text">选择“试用！”以创建中介 iSCSI 目标。</block>
+  <block id="e2cd7ceedce46e4ea3fd8396ef4baa97" category="list-text">在本地工作站的命令 shell 中，使用 sftp 实用程序将备份文件上传到 Deploy 虚拟机，如下例所示：</block>
+  <block id="5c7a95e189e375455d7a7bdc02ec54ba" category="list-text">恢复配置数据：</block>
+  <block id="662385e6e7c81bc5868ecc810d1b4419" category="paragraph">示例命令</block>
+  <block id="86069ab716d4c2ffd77a81bd3827427f" category="list-text">在本地工作站的命令提示符中，使用<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block>使用（安全复制协议）实用程序将映像文件上传到ONTAP Select Deploy 虚拟机，如下示例所示：</block>
+  <block id="52396dafee59debc72b8fccab2acb4c5" category="paragraph">示例命令：</block>
+  <block id="3817e5dd56e94cb6952f7eb0ab2a6acd" category="summary">从ONTAP Select 9.15.1 开始，您可以增加或减少现有集群的大小。</block>
+  <block id="b4ec4e16d52cf8a4ab8bd5925fba2631" category="doc">在 ESXi 或 KVM 主机上扩展或收缩ONTAP Select集群</block>
+  <block id="7e6bf0ef053af206603d7df47832fbd5" category="inline-link-macro">确认ONTAP Select AutoSupport功能已配置</block>
+  <block id="785cc01cf7efbfd5a1fd1d4863d9b83a" category="paragraph">集群部署完成后，<block ref="af0babf33c9640eb381afcb6484c80f3" category="inline-link-macro-rx"></block>进而<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block>。</block>
+  <block id="b7f5f41e99a6f8c3c3a0c1843b24c17b" category="sidebar">升级 ESXi</block>
 </blocks>

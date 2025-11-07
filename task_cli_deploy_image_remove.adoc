@@ -26,19 +26,25 @@ CAUTION: 您不应删除集群正在使用的任何 ONTAP Select 映像。
 . 使用管理员（ admin ）帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
 . 显示 Deploy 管理的集群并记录正在使用的 ONTAP 映像：
 +
-`cluster show`
-
+[source, cli]
+----
+cluster show
+----
 +
 记下每种情况下的版本号和虚拟机管理程序平台。
 
 . 启动 Bash Shell ：
 +
-`shell bash`
-
+[source, cli]
+----
+shell bash
+----
 . 显示所有可用的 ONTAP Select 映像：
 +
-`ls -lh /opt/netapp/images`
-
+[source, cli]
+----
+ls -lh /opt/netapp/images
+----
 . (可选)删除虚拟机管理程序主机的ONTAP Select映像。
 +
 [role="tabbed-block"]

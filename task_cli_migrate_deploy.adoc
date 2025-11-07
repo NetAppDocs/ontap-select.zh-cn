@@ -40,16 +40,20 @@ CAUTION: 在本过程稍后的部分中、当您将Deploy配置数据从原始�
 . 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
 . 创建 Deploy 配置数据的备份，该数据存储在 Deploy 服务器的内部目录中：
 +
-`d部署备份创建`
-
+[source, cli]
+----
+deploy backup create
+----
 . 根据提示提供备份密码。
 +
 备份文件将根据密码进行加密。
 
 . 显示系统中的可用备份：
 +
-`deDeploy backup show -detailed`
-
+[source, cli]
+----
+deploy backup show -detailed
+----
 . 根据 * 已创建 * 字段中的日期选择备份文件并记录 * 下载 URL* 值。
 +
 您可以通过 URL 访问备份文件。
@@ -92,10 +96,7 @@ link:task_install_deploy.html["安装 ONTAP Select Deploy"]
 您必须具有先前备份中的配置数据。这些数据包含在一个文件中，并且必须在本地工作站上可用。
 
 .步骤
-. 在本地工作站上的命令 Shell 中，使用 sftp 实用程序将备份文件上传到 Deploy 虚拟机。
-+
-示例
-
+. 在本地工作站的命令 shell 中，使用 sftp 实用程序将备份文件上传到 Deploy 虚拟机，如下例所示：
 +
 ....
 sftp admin@10.234.81.101 (provide password when prompted)
@@ -103,12 +104,14 @@ put deploy_backup_20190601162151.tar.gz
 exit
 ....
 . 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
-. 还原配置数据。
+. 恢复配置数据：
 +
-`d部署备份还原 -path pathname -filename filename`
-
+[source, cli]
+----
+deploy backup restore -path <path_name> -filename <file_name>
+----
 +
-示例
+示例命令
 
 +
 `deDeploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`

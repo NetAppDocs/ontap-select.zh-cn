@@ -55,7 +55,7 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 
 
 .步骤
-. 在本地工作站的命令 shell 中，使用 `scp`（安全复制协议）实用程序将映像文件上传到ONTAP Select Deploy 虚拟机。
+. 在本地工作站的命令提示符中，使用 `scp`使用（安全复制协议）实用程序将映像文件上传到ONTAP Select Deploy 虚拟机，如下示例所示：
 +
 ....
 scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
@@ -80,7 +80,12 @@ scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide pas
 . 使用管理员帐户通过 SSHSign in到ONTAP Select Deploy 实用程序 CLI。
 . 使用适当的目录路径和文件名执行升级：
 +
-`deDeploy upgrade -package-path filepath`
+[source, cli]
+----
+deploy upgrade -package-path <file_path>
+----
++
+示例命令：
 
 +
 ....

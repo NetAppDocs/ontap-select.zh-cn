@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_cli_upgrade_esxi65.html 
-keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
+permalink: cli-upgrade-esxi.html 
+keywords: administer, administering, cli, esxi, upgrade, esxi 7.0 
 summary: 如果您在VMware ESXi上运行ONTAP Select、则可以将ESXi软件从受支持的早期版本升级到ESXi 7.0或更高版本。在升级之前，您应了解此过程并选择相应的升级操作步骤 。 
 ---
-= 将 VMware ESXi 升级到 7.0 或更高版本以使用ONTAP Select
+= 将ONTAP Select升级到 VMware ESXi 7.0 或更高版本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,47 +18,46 @@ summary: 如果您在VMware ESXi上运行ONTAP Select、则可以将ESXi软件�
 
 
 
-== 开始之前
+== 准备升级 VMware ESXi
 
-在托管 ONTAP Select 集群的虚拟机管理程序上升级 ESXi 软件之前，您应准备并选择适合您环境的升级操作步骤 。
+在升级托管ONTAP Select集群的虚拟机管理程序上的 ESXi 软件之前，请准备并选择适合您环境的升级程序。
 
-
-CAUTION: 如果选择升级到 VMware ESXi 6.5 ，则应升级到 ESXi U2 （内部版本 8294253 ）或更高版本。使用 ESXi 6.5 U1 可能会因已知 VMware 错误而导致虚拟机出现故障。
-
-
-
-=== 熟悉如何升级VMware ESXi
-
+.步骤
+. *熟悉如何升级 VMware ESXi*
++
 VMware 介绍并支持升级 ESXi 软件的过程。使用 ONTAP Select 时，虚拟机管理程序升级过程属于更大的操作步骤 升级过程。有关详细信息、请参见VMware文档。
 
-
-
-=== 选择升级操作步骤
-
+. *选择升级流程*
++
 有多种升级过程可供选择。您应根据以下条件选择适用的操作步骤 ：
 
-* ONTAP Select 集群大小支持单节点和多节点集群。
-* 无论是否使用 Deploy 实用程序，都可以使用 ONTAP Select Deploy 升级。
++
+** ONTAP Select 集群大小支持单节点和多节点集群。
+** 使用ONTAP Select部署
++
+可以使用 Deploy 工具进行升级，也可以不使用 Deploy 工具进行升级。
 
-
++
 
 TIP: 您应选择使用 Deploy 管理实用程序的升级操作步骤 。
 
-使用 Deploy 管理实用程序执行 ESXi 升级是一个更普遍且更具弹性的选项。但是，在某些情况下，可能会出现 Deploy 不可用或无法使用的情况。例如、早期版本的ONTAP Select和Deploy管理实用程序不支持升级到ESXi 7.0。
++
+使用 Deploy 管理实用程序执行 ESXi 升级是更通用且更具弹性的选项。但是，有时可能会出现部署不可用或无法使用的情况。例如，早期版本的ONTAP Select和 Deploy 管理实用程序不支持升级到 ESXi 7.0。
 
++
 如果您使用的是这些早期版本并尝试升级，则 ONTAP Select 虚拟机可能会处于无法启动的状态。在这种情况下，您必须选择不使用 Deploy 的升级操作步骤 。请参见 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] 有关详细信息 ...
 
 
 
-=== 升级Deploy管理实用程序
+. *升级部署管理实用程序*
++
+在使用 Deploy 实用程序执行升级过程之前，您可能需要升级您的 Deploy 实例。通常，您应该升级到最新版本的 Deploy。Deploy实用程序必须支持您正在使用的ONTAP Select版本。请参阅link:reference_release_notes.html["ONTAP Select发行说明"]了解更多信息。
 
-在使用 Deploy 实用程序升级操作步骤 之前，您可能需要升级 Deploy 实例。通常，您应升级到最新版本的 Deploy 。Deploy 实用程序必须支持您正在使用的 ONTAP Select 版本。有关详细信息，请参见 ONTAP Select 发行说明。
-
-
-
-=== 更新操作步骤 完成后
-
+. *更新程序完成后*
++
 如果您选择使用 Deploy 实用程序的升级操作步骤 ，则应在所有节点升级后使用 Deploy 执行集群刷新操作。有关详细信息，请参见刷新 Deploy 集群配置。
+
+
 
 
 
@@ -68,25 +67,29 @@ TIP: 您应选择使用 Deploy 管理实用程序的升级操作步骤 。
 
 .步骤
 . 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
-. 将节点移至脱机状态。
+. 将节点移至离线状态：
 +
-示例 `node stop -cluster-name <clustername> -node-name <nodename>`
-
+[source, cli]
+----
+node stop --cluster-name <cluster_name> --node-name <node_name>
+----
 . 使用VMware提供的操作步骤将运行ONTAP Select的虚拟机管理程序主机升级到ESXi 7.0或更高版本。
-. 将节点移至联机状态。
+. 将节点移至在线状态：
 +
-示例 `node start -cluster-name <clustername> -node-name <nodename>`
-
+[source, cli]
+----
+node start --cluster-name <cluster_name> --node-name <node_name>
+----
 . 节点启动后，验证集群是否运行正常。
 +
-示例
+示例：
 
 +
 ....
 ESX-1N::> cluster show
-Node Health Eligibility
---------------------- ------- ------------
-sdot-d200-011d true true
+Node           Health  Eligibility
+-------------- ------- ------------
+sdot-d200-011d true    true
 ....
 
 
@@ -104,24 +107,29 @@ sdot-d200-011d true true
 
 .步骤
 . 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
-. 将节点移至脱机状态。
+. 将节点移至离线状态：
 +
-示例 `node stop -cluster-name <clustername> -node-name <nodename>`
-
+[source, cli]
+----
+node stop --cluster-name <cluster_name> --node-name <node_name>
+----
 . 使用VMware提供的操作步骤将运行ONTAP Select的虚拟机管理程序主机升级到ESXi 7.0或更高版本。
 +
 有关详细信息，请参见准备升级 VMware ESXi 。
 
-. 将节点移至联机状态。
+. 将节点移至在线状态：
 +
-示例 `node start -cluster-name <clustername> -node-name <nodename>`
-
+[source, cli]
+----
+node start --cluster-name <cluster_name> --node-name <node_name>
+----
 . 节点启动后，验证是否已启用存储故障转移且集群运行状况良好。
 +
-示例
-
-+
-....
+.显示示例
+[%collapsible]
+====
+[listing]
+----
 ESX-2N_I2_N11N12::> storage failover show
 Takeover
 Node Partner Possible State Description
@@ -135,7 +143,8 @@ Node Health Eligibility
 sdot-d200-011d true true
 sdot-d200-012d true true
 2 entries were displayed.
-....
+----
+====
 
 
 .完成后
@@ -163,16 +172,17 @@ sdot-d200-012d true true
 
 . 节点启动后，验证集群是否运行正常。
 +
-示例
+示例：
 
-
-
++
 ....
 ESX-1N::> cluster show
-Node Health Eligibility
---------------------- ------- ------------
-sdot-d200-011d true true
+Node           Health  Eligibility
+-------------- ------- ------------
+sdot-d200-011d true    true
 ....
+
+
 .完成后
 您应使用 Deploy 管理实用程序执行集群刷新操作。
 
@@ -198,10 +208,11 @@ sdot-d200-011d true true
 
 . 节点启动后，验证是否已启用存储故障转移且集群运行状况良好。
 +
-示例
-
-+
-....
+.显示示例
+[%collapsible]
+====
+[listing]
+----
 ESX-2N_I2_N11N12::> storage failover show
 Takeover
 Node Partner Possible State Description
@@ -215,7 +226,8 @@ Node Health Eligibility
 sdot-d200-011d true true
 sdot-d200-012d true true
 2 entries were displayed.
-....
+----
+====
 
 
 .完成后

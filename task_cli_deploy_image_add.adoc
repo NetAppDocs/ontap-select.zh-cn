@@ -16,18 +16,7 @@ summary: 您可以将 ONTAP Select 映像添加到 Deploy 管理实用程序实�
 [role="lead"]
 您可以将 ONTAP Select 映像添加到 Deploy 管理实用程序实例中。安装映像后，您可以在部署 ONTAP Select 集群时使用它。
 
-
-
-== 开始之前
-
-总体而言，用于向 Deploy 实例添加 ONTAP Select 映像的过程包括四个步骤：
-
-. 正在下载安装映像
-. 将安装映像上传到 Deploy 虚拟机
-. 正在添加安装映像
-. 显示可用的安装映像
-
-
+.开始之前
 在将任何新的 ONTAP Select 映像添加到 Deploy 之前，您应先删除任何不需要的映像。
 
 
@@ -35,16 +24,16 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 
 
 
-== 下载安装映像
+== 步骤 1：下载安装镜像
 
 要开始向 Deploy 实用程序实例添加 ONTAP Select 映像的过程，您必须从 NetApp 支持站点下载此安装映像。ONTAP Select 安装映像的格式为一个压缩文件。
 
 .步骤
-. 使用 Web 浏览器访问 NetApp 支持站点，然后单击 * 支持快速链接 * 。
-. 单击 * 首要任务 * 下的 * 下载软件 * 并登录到站点。
-. 单击 * 查找您的产品 * 。
-. 向下滚动并单击 * ONTAP Select * 。
-. 在 * 其他可用 Select 软件 * 下，单击 * 部署升级，节点升级，映像安装 * 。
+. 使用网络浏览器访问NetApp支持网站，然后选择“支持快速链接”。
+. 在“热门任务”下选择“下载软件”，然后登录网站。
+. 选择“查找您的产品”。
+. 向下滚动并选择* ONTAP Select *。
+. 在“其他可用软件”下，选择“部署升级”、“节点升级”、“镜像安装”。
 . 选择所需版本的升级软件包。
 . 查看最终用户许可协议（ EULA ），然后单击 * 接受并继续 * 。
 . 选择并下载相应的软件包，根据需要对环境中的所有提示做出响应。
@@ -52,7 +41,7 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 
 
 
-== 上传要部署的安装映像
+== 步骤 2：将安装镜像上传到 Deploy 平台
 
 获取 ONTAP Select 安装映像后，必须将此文件上传到 Deploy 虚拟机。
 
@@ -63,17 +52,11 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 此任务介绍了一种将文件上传到 Deploy 虚拟机的方法。可能还有其他更适合您的环境的选项。
 
 .步骤
-. 在本地工作站上的命令 Shell 中，将映像文件上传到 Deploy 虚拟机。
-+
-示例
-
+. 在本地工作站的命令 shell 中，将映像文件上传到 Deploy 虚拟机，如下示例所示：
 +
 ....
 scp image_v_93_install_esx.tgz admin@10.234.81.101:/home/admin (provide password when prompted)
 ....
-+
-示例
-
 +
 ....
 sftp admin@10.234.81.101 (provide password when prompted)
@@ -87,9 +70,9 @@ exit
 
 
 
-== 添加安装映像
+== 步骤 3：添加安装镜像
 
-您可以将 ONTAP Select 安装映像添加到 Deploy 映像目录中，以便在部署新集群时可以使用该映像。
+将ONTAP Select安装映像添加到部署映像目录，以便在部署新集群时可以使用。
 
 .开始之前
 您必须知道此安装映像文件位于 Deploy 实用程序虚拟机上的哪个目录中。假定文件位于管理员的主目录中。
@@ -97,20 +80,23 @@ exit
 .步骤
 . 使用管理员（ admin ）帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
 . 启动 Bash Shell ：
+
+
+[listing]
+----
+shell bash
+----
+. 将安装镜像文件放入 images 目录，如下例所示：
 +
-`shell bash`
-
-. 将安装映像文件置于映像目录中。
-+
-示例 `tar -xf image_v_93_install_esx.tgz -C /opt/netapp/images/`
+`tar -xf image_v_93_install_esx.tgz -C /opt/netapp/images/`
 
 
 
 
 
-== 显示可用的安装映像
+== 步骤 4：显示可用的安装映像
 
-您可以显示部署新集群时可用的 ONTAP Select 映像。
+显示部署新集群时可用的ONTAP Select镜像。
 
 .步骤
 . 在 Deploy 实用程序虚拟机上访问联机文档网页，并使用管理员（ admin ）帐户登录：
@@ -120,7 +106,7 @@ exit
 +
 使用 Deploy 虚拟机的域名或 IP 地址。
 
-. 导航到页面底部，单击 * 部署 * ，然后单击 * 获取 /images* 。
-. 单击 * 试用！ * 以显示可用的 ONTAP Select 映像。
+. 导航到页面底部，选择“部署”，然后选择“获取/images”。
+. 选择“立即体验！”以显示可用的ONTAP Select图片。
 . 确认所需的映像可用。
 

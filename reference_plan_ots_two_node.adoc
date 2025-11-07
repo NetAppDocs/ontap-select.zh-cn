@@ -34,7 +34,8 @@ CAUTION: 如果您有一个或多个活动的双节点集群，则管理这些�
 .集群和调解器服务的位置
 由于双节点集群通常部署在远程或分支机构，因此它们可能远离企业数据中心和提供管理支持的ONTAP Select Deploy 实用程序。通过这种配置， ONTAP Select Deploy 实用程序和集群之间的管理流量将通过 WAN 传输。有关限制和约束的更多信息，请参阅发行说明。
 
-. 为ONTAP Select Deploy 分配静态 IP 地址
+.备份 Deploy 配置数据
+最佳实践是link:task_cli_clusters.html["备份ONTAP Select Deploy 配置数据"]定期进行，包括在创建集群之后。这对于双节点集群尤为重要，因为备份中包含了中介器配置数据。
 
-
+.分配给 Deploy 的静态 IP 地址
 您必须为ONTAP Select Deploy 管理实用程序分配静态 IP 地址。此要求适用于管理一个或多个ONTAP Select双节点集群的所有ONTAP Select Deploy 实例。

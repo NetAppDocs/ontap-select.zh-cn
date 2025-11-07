@@ -29,12 +29,12 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 ====
 .硬件 RAID
 --
-如果使用本地硬件 RAID 控制器，则必须创建至少一个数据存储区 (ESX) 或一个link:reference_chk_host_prep.html#create-storage-pool["存储池（KVM）"]每个节点上的系统数据以及根和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池。
+如果使用本地硬件 RAID 控制器，则必须至少创建一个数据存储 (ESX) 或一个link:kvm-host-configuration-and-preparation-checklist.html#step-2-create-a-storage-pool["存储池（KVM）"]在每个节点上，系统数据以及根节点和数据聚合。您必须在配置ONTAP Select节点的过程中连接存储池。
 
 --
 .软件 RAID
 --
-如果使用软件 RAID，则必须创建至少一个数据存储区 (ESX) 或一个link:reference_chk_host_prep.html#create-storage-pool["存储池（KVM）"]用于系统数据，并确保 SSD 驱动器可用于根和数据聚合。在配置 ONTAP Select 节点时，您必须连接存储池和磁盘。
+如果使用软件 RAID，则必须至少创建一个数据存储 (ESX) 或一个link:kvm-host-configuration-and-preparation-checklist.html#step-2-create-a-storage-pool["存储池（KVM）"]确保系统数据可用，并确保 SSD 驱动器可用于根目录和数据聚合。您必须在配置ONTAP Select节点的过程中连接存储池和磁盘。
 
 --
 ====
