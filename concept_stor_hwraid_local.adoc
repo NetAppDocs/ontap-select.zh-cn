@@ -160,7 +160,7 @@ NetApp FAS 系统通常配备物理 NVRAM PCI 卡，这是一种包含非易失�
 
 商用系统通常不安装此类设备。因此，此 NVRAM 卡的功能已虚拟化并置于 ONTAP Select 系统启动磁盘上的分区中。因此，放置实例的系统虚拟磁盘极为重要。这也是该产品要求为本地连接的存储配置提供具有弹性缓存的物理 RAID 控制器的原因。
 
-NVRAM 放置在自己的 VMDK 上。通过将 NVRAM 拆分为自己的 VMDK ， ONTAP Select VM 可以使用 vNVMe 驱动程序与其 NVRAM VMDK 进行通信。此外，还要求 ONTAP Select VM 使用与 ESX 6.5 及更高版本兼容的硬件版本 13 。
+NVRAM位于其自己的 VMDK 上。将NVRAM拆分到其自己的 VMDK 中，可使ONTAP Select虚拟机使用 vNVMe 驱动程序与其NVRAM VMDK 通信。它还要求ONTAP Select VM 使用硬件版本 13，该版本与 ESX 8.0 及更高版本兼容。
 
 
 
@@ -184,4 +184,4 @@ NOTE: 尽管 NVRAM VMDK 上更改的块会缓存在本地 RAID 控制器缓存�
 image:ST_13.jpg["传入 ONTAP Select VM 的写入"]
 
 
-NOTE: NVRAM 分区将在其自己的 VMDK 上分隔。该 VMDK 使用 ESX 6.5 或更高版本中提供的 vNVME 驱动程序进行连接。对于使用软件 RAID 的 ONTAP Select 安装来说，此更改最重要，因为这些安装不会从 RAID 控制器缓存中受益。
+NOTE: NVRAM分区在其自己的 VMDK 上独立存在。该 VMDK 使用 ESX 8.0 或更高版本中提供的 vNVME 驱动程序进行连接。此更改对于使用软件 RAID 的ONTAP Select安装最为重要，因为此类安装无法从 RAID 控制器缓存中获益。

@@ -63,7 +63,7 @@ RAID 控制器的最低要求包括：
 
 软件RAID部署环境必须满足以下核心要求：
 
-* VMware ESXi 7.0 GA (内部版本为58043807)或更高版本
+* VMware ESXi 8.0 GA（内部版本 20513097）或更高版本
 * ONTAP Select 高级许可证或更高版本
 * 仅限本地 SSD 驱动器
 * 将系统磁盘与根聚合和数据聚合分离
@@ -77,7 +77,7 @@ NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_c
 
 === ESXi特定要求
 
-* VMware ESXi 7.0 GA (内部版本为58043807)或更高版本
+* VMware ESXi 8.0 GA（内部版本 20513097）或更高版本
 * 不支持 VMware VMotion ， HA 和 DRS
 * 您不能对从ONTAP Select 9.4或更早版本升级的节点使用软件RAID。如果出现这种情况、您需要为软件RAID部署创建一个新节点。
 
@@ -241,7 +241,7 @@ NOTE: 高级许可证（仅 SSD ）和高级 XL 许可证（ SSD 或 NVMe ）支
 
 * 使用受支持的部署管理实用程序ONTAP Select
 * 高级 XL 平台许可证或 90 天评估许可证
-* VMware ESXi 6.7 或更高版本
+* VMware ESXi 8.0 或更高版本
 * 符合规格 1.0 或更高版本的 NVMe 设备
 
 

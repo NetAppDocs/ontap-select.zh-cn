@@ -27,8 +27,8 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 .开始之前
 确保您的部署环境满足以下最低要求：
 
-* 对于 ESX 主机，请使用受支持的部署管理实用程序运行ONTAP Select。
-* 对于 KVM 主机， ONTAP Select 9.17.1 带有受支持的 Deploy 管理实用程序
+* 对于 ESX 主机，ONTAP Select 9.7 或更高版本以及受支持的 Deploy 管理实用程序
+* 对于 KVM 主机，需要ONTAP Select 9.17.1 或更高版本以及受支持的部署管理实用程序。
 * 高级 XL 平台许可证或 90 天评估许可证
 * ESXi 或 KVM 主机正在运行受支持的虚拟机管理程序版本：
 +
@@ -43,7 +43,6 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 ** VMware ESXi 8.0 U2
 ** VMware ESXi 8.0 U1 (内部版本21495797)
 ** VMware ESXi 8.0 GA (内部版本20513097)
-** VMware ESXi 7.0 GA（内部版本 15843807 或更高版本），包括 7.0 U1、U2 和 U3C
 
 
 --

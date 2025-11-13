@@ -21,7 +21,7 @@ summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Sel
 * 您可以为用户数据分配与已购买许可证相同的存储量。
 * 您不能将此节点从评估版许可证升级为已购买许可证。
 * 您只能使用vCenter帐户部署OVF模板。目前不支持直接安装到ESXi主机。
-* 您必须使用vSphere独立客户端或vSphere Web Client (ESXi 6.5及更高版本的唯一选项)安装ovf模板(包含在ova文件中)。请勿使用ONTAP Select Deploy管理实用程序。
+* 您必须使用 vSphere 独立客户端或 vSphere Web 客户端（ESXi 8.0 及更高版本的唯一选项）安装 OVF 模板（包含在 ova 文件中）。请勿使用ONTAP Select Deploy 管理实用程序。
 
 
 

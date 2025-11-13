@@ -71,10 +71,10 @@ ONTAP Select 不会因增加 RAID 组中的 LUN 数量而获得任何性能优�
 
 === VMware ESXi 主机
 
-NetApp 建议为托管系统磁盘的数据存储库使用 ESX 6.5 U2 或更高版本以及 NVMe 磁盘。此配置可为 NVRAM 分区提供最佳性能。
+NetApp建议使用 ESX 8.0 或更高版本，并使用 NVMe 磁盘作为托管系统磁盘的数据存储。此配置可为NVRAM分区提供最佳性能。
 
 
-NOTE: 在 ESX 6.5 U2 及更高版本上安装时，无论系统磁盘位于 SSD 还是 NVMe 磁盘上， ONTAP Select都会使用 vNVMEe 驱动程序。这会将虚拟机硬件级别设置为 13，与 ESX 6.5 及更高版本兼容。
+NOTE: 在 ESX 8.0 或更高版本上安装时，无论系统磁盘位于 SSD 还是 NVMe 磁盘上， ONTAP Select都会使用 vNVMEe 驱动程序。这会将虚拟机硬件级别设置为 13，与 ESX 8.0 及更高版本兼容。
 
 为 ONTAP Select 网络和外部存储（使用 iSCSI 或 NFS 时为 VMware vSAN 和通用存储阵列流量）定义专用网络端口，带宽和 vSwitch 配置。
 

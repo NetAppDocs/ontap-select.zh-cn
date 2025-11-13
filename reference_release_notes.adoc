@@ -20,4 +20,4 @@ ONTAP Select 发行说明提供了特定于版本的信息，包括新功能，�
 NOTE: 要访问发行说明，您需要一个帐户才能登录到 NetApp 支持站点。
 
 .ONTAP Select 的当前版本
-您可以访问link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3351669["ONTAP Select 9.17.1 发行说明"^]查看当前版本的详细信息。
+您可以访问link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3365264["ONTAP Select 9.18.1 发行说明"^]查看当前版本详情。

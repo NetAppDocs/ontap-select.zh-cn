@@ -19,7 +19,7 @@ summary: 在您开始探索 ONTAP Select 并规划部署时，首先熟悉术语
 ONTAP Select 部署:: ONTAP Select Deploy 是用于部署 ONTAP Select 集群的管理实用程序。Deploy 实用程序在专用 Linux 虚拟机中运行。您可以通过 Web 用户界面， CLI 管理 Shell 和 REST API 访问 Deploy 实用程序。
 基于内核的虚拟机:: 基于内核的虚拟机(KVM)是Linux内核的一项虚拟化功能、可用作虚拟机管理程序平台。支持多种子操作系统。
 虚拟机管理程序主机与 ONTAP Select 节点:: 虚拟机管理程序 host_ 是托管 ONTAP Select 虚拟机的核心硬件平台。在虚拟机管理程序主机上部署 ONTAP Select 虚拟机并使其处于活动 ONTAP Select 状态时，该虚拟机将被视为 _vp 节点 _ 。
-ONTAP Select 集群:: 您可以创建一 ONTAP Select 个 _cluster cluster_ ，其中包含一个，两个，四个，六个或八个节点。多节点集群始终包含一个或多个 HA 对。例如，一个四节点集群包含两个 HA 对。单节点集群不提供 HA 功能。
+ONTAP Select 集群:: 您可以创建一个由一个、两个、四个、六个、八个、十个或十二个节点组成的_ONTAP Select集群_。多节点集群始终包含一个或多个 HA 对。例如，一个四节点集群由两个 HA 对组成。单节点集群不提供 HA 功能。
 准备虚拟机管理程序主机环境:: 在使用 Deploy 管理实用程序部署 ONTAP Select 集群之前，您需要准备要运行 ONTAP Select 的虚拟机管理程序主机，包括存储和网络环境。此主机预配置是在 ONTAP Select 产品之外根据当前要求和限制完成的。
 评估与生产部署:: 每个 ONTAP Select 节点都使用 _evaluation_license_ 或 _purchased license_ 运行。您可以使用评估版许可证在将 ONTAP Select 部署到生产环境之前对其进行评估。评估版许可证会自动生成并应用。如果在生产环境中部署集群，则必须购买许可证，其中包括选择：
 +

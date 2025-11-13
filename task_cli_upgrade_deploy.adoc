@@ -23,7 +23,7 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 ====
 如果您安装了旧版ONTAP Select Deploy管理实用程序实例、则应升级到当前版本。ONTAP Select节点和ONTAP Select Deploy组件会单独升级。请参见 link:concept_adm_upgrading_nodes.html["升级ONTAP Select节点"^] 了解更多详细信息。
 
-您可以从 ONTAP ONTAP Select ONTAP Select Deploy 9.17.1。要从ONTAP Select Deploy 9.14.1 或更早版本升级，请查看ONTAP Select版本的发行说明。
+您可以从 ONTAP ONTAP Select ONTAP Select Deploy 9.18.1。要从ONTAP Select Deploy 9.15.1 或更早版本升级，请查看ONTAP Select版本的发行说明。
 
 ====
 
