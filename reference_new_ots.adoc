@@ -121,7 +121,21 @@ link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["
 对于ONTAP Select 9.16.1 及更早版本，NVD 将继续为ONTAP Select部署中的 NVMe 设备提供支持。
 
 --
-已更新KVM虚拟机管理程序支持:: 从ONTAP Select 9.17.1 开始，Red Hat Enterprise Linux (RHEL) 9.6 和 Rocky Linux 9.6 支持 KVM 虚拟机管理程序。
+已更新KVM虚拟机管理程序支持:: 从ONTAP Select 9.17.1 开始，Red Hat Enterprise Linux (RHEL) 10.0 和 9.6 以及 Rocky Linux 10.0 和 9.6 支持 KVM 虚拟机管理程序。
++
+--
+[NOTE]
+====
+在 RHEL 10.0 和 Rocky Linux 10.0 主机上，KVM 虚拟机管理程序存在软件 RAID 工作流程限制。更多信息，请参阅以下知识库文章：
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020： ONTAP Select Deploy：使用 RHEL 10 和 ROCKY 10 创建集群 HWR 时出现警告消息"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025： ONTAP Select DeployGUI：在运行 RHEL10/Rocky 10 的主机上，集群创建页面中 SWR 的存储池和存储磁盘不可见"^]
+
+
+====
+--
+
+
 增强了对VMware ESXi的支持:: ONTAP Select 9.17.1 包含对 VMware ESXi 9.0 的支持。
 
 
