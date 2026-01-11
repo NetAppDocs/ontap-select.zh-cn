@@ -13,7 +13,9 @@ indexpage:
     - title: 了解ONTAP Select
       url: "/concept_ots_overview.html"
     - title: 许可
-      url: "/concept_lic_production.html"
+      url: "/concept_lic_evaluation.html"
+    - title: 试试ONTAP Select
+      url: "/access-evaluation-software.html"
     - title: 常见问题解答
       url: "/reference_faq.html"
   - title: 安装和管理

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: deploy-evaluation-ontap-select-ovf-template.html 
 keywords: ontap, select, ovf, template, deployment, evaluation, license 
-summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。 
+summary: 您可以部署一个单节点ONTAP Select集群的 90 天评估实例。 
 ---
 = 部署ONTAP Select集群的90天评估实例
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Sel
 
 
 [role="lead"]
-您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Select集群的90天评估实例。
+您可以使用 OVF 模板在 VMware ESXi 上部署ONTAP select 集群的 90 天评估实例，集群规模从单节点到 99 个节点不等。如果您是现有客户或新客户，您可以下载评估许可证。例如，您是现有客户，您想在购买许可证之前尝试一种新的配置。
 
 .关于此任务
 * 您无需从NetApp获取序列号或存储容量许可证。
@@ -26,7 +26,7 @@ summary: 您可以在VMware ESXi上使用OVF模板快速部署单节点ONTAP Sel
 
 
 
-== 准备ONTAP Select集群主机
+== 步骤 1：准备ONTAP Select集群主机
 
 按照以下要求准备部署ONTAP Select集群的ESXi主机。此平台说明基于标准或小型实例类型配置、其中使用VMFS-5或VMFS-6文件系统格式化本地直连存储(DAS)。
 
@@ -36,7 +36,7 @@ image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 
 
 
-== 使用OVF模板部署单节点ONTAP Select集群
+== 步骤 2：使用 OVF 模板部署单节点ONTAP Select集群
 
 在受支持的64位ESXi主机服务器上完成以下步骤。
 
@@ -63,4 +63,6 @@ image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 
 
 .相关信息
-link:http://mysupport.netapp.com/matrix["互操作性表工具"^]
+* link:concept_lic_evaluation.html["了解ONTAP Select部署的评估许可证"]
+* link:http://mysupport.netapp.com/matrix["互操作性表工具"^]
+

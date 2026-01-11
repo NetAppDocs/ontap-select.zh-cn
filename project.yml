@@ -294,8 +294,12 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: 恢复双节点集群的 Deploy
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: 部署一个为期90天的集群评估实例
-    url: "/deploy-evaluation-ontap-select-ovf-template.html"
+  - title: 试试ONTAP Select
+    entries:
+    - title: 访问评估软件
+      url: "/access-evaluation-software.html"
+    - title: 部署一个为期90天的集群评估实例
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: 常见问题解答
     url: "/reference_faq.html"
   - title: 法律声明

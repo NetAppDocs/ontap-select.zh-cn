@@ -18,9 +18,9 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 
 
 
-== 下载虚拟机映像
+== 步骤 1：下载虚拟机镜像
 
-您可以从 NetApp 支持站点下载 ONTAP Select 软件包。
+从NetApp支持网站下载ONTAP Select软件包。
 
 .开始之前
 https://mysupport.netapp.com/site/user/registration["您已注册NetApp支持站点帐户"^](英文)
@@ -40,9 +40,9 @@ ONTAP Select Deploy管理实用程序会根据开放式虚拟化格式(OVF)标�
 
 
 
-== 验证ONTAP Select Deploy OVA签名
+== 步骤 2：验证ONTAP Select Deploy OVA 签名
 
-在安装安装安装软件包之前、您应验证ONTAP Select开放式虚拟化设备(OVA)签名。
+安装安装包之前，请验证ONTAP Select开放虚拟化设备 (OVA) 签名。
 
 .开始之前
 验证您的系统是否满足以下要求：
@@ -84,9 +84,9 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 
-== 部署虚拟机
+== 步骤 3：部署虚拟机
 
-您必须使用OVF虚拟机映像安装和启动ONTAP Select Deploy虚拟机。在安装过程中、您需要将网络接口配置为使用DHCP或静态IP配置。
+使用 OVF VM 映像安装并启动ONTAP Select Deploy VM。作为安装过程的一部分，您需要配置网络接口以使用 DHCP 或静态 IP 配置。
 
 .开始之前
 对于ESXi虚拟机管理程序、您必须准备部署ONTAP Select Deploy虚拟机：
@@ -200,9 +200,9 @@ Use DHCP to set networking information? [n]:
 ====
 
 
-== 登录到Deploy Web界面
+== 步骤 4：Sign inDeploy Web 界面
 
-您应登录到 Web 用户界面以确认 Deploy 实用程序可用并执行初始配置。
+Sign in到 Web 用户界面以确认部署实用程序可用并执行初始配置。
 
 .步骤
 . 使用 IP 地址或域名将浏览器指向 Deploy 实用程序：

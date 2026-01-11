@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: access-evaluation-software.html 
+keywords: ontap select, evaluation, software, register, download, access 
+summary: 请求访问以下载ONTAP Select评估软件。 
+---
+= 访问ONTAP Select评估软件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以访问 link:https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["ONTAP Select评估软件"^] 如果您是ONTAP Select的现有客户，并且拥有有效的授权，或者您是NetApp合作伙伴，并且想要下载新的容量层级评估许可证。
+
+如果您不属于以上任何一种情况，并且想要试用ONTAP Select进行评估，您可以按照以下步骤申请下载评估软件。
+
+.关于此任务
+* 本说明适用于与NetApp有业务往来的NetApp销售人员、合作伙伴和潜在客户。
+* ONTAP Select Capacity Tiers 评估许可证的有效期为自安装之日起 90 天。
++
+
+NOTE: 评估许可证无法延期。90 天期满后，许可证将失效，您将无法访问相关数据。
+
+* 评估软件包含下载ONTAP Select Deploy 管理实用程序和部署集群所需的所有信息。
+
+
+
+
+== 第一步：注册账号
+
+如有需要，完成NetApp帐户注册，并申请潜在客户访问权限。
+
+.步骤
+. 创建新账户或退出现有账户。
++
+[role="tabbed-block"]
+====
+.创建新帐户
+--
+在以下网站注册一个帐户： link:https://mysupport.netapp.com/site/user/registration["NetApp 支持站点"^] 使用您的企业邮箱。
+
+
+NOTE: 免费邮箱账户，例如 Gmail 或 Yahoo，是不可接受的。
+
+请确保您没有使用新创建的帐户登录。
+
+--
+.现有账户
+--
+如果您已有账户，请前往 link:https://mysupport.netapp.com/site/["NetApp 支持站点"^] 请确保您未登录。
+
+--
+====
+. 创建非技术支持案例，以提高“潜在客户”的访问权限级别。
++
+.. 选择“案例”选项卡，然后选择“创建非技术案例”。
+.. 请选择“用户注册问题”作为反馈类别。
+.. 选择“创建案例”。
++
+请填写所有必填信息，并在评论部分写明：“我的公司邮箱地址是<您的邮箱地址>。我希望能够获得下载ONTAP Select评估软件的权限。
+
++
+请提供您的NetApp联系人姓名。
+
+.. 选择*提交*。
+
+
+
+
+
+
+== 步骤 2：下载ONTAP Select评估软件
+
+您的支持案例经审核批准后， NetApp支持团队将通过您提供的电子邮件地址通知您。
+
+.步骤
+. https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["下载ONTAP Select评估软件"^]。
++
+评估许可证文件位于压缩文件内。
+
+. 为了遵守法律规定，您需要 link:https://mysupport.netapp.com/site/help["提交支持请求"^] 在获得访问权限之前。这有助于NetApp保持正确的控制和文档，同时为您提供所需的生产就绪软件。
++
+
+NOTE: NetApp提供ONTAP Select的“生产就绪”版本，该版本并非开源版本或替代版本。只有升级到正式版许可证才能获得技术支持。
+
+
+
+.下一步是什么？
+评估软件下载完成后，按照说明下载ONTAP Select Deploy 管理实用程序并部署集群。
+
+.相关信息
+* link:concept_lic_evaluation.html["了解ONTAP Select部署的评估许可证"]
+* link:task_adm_licenses.html#convert-license["将评估版许可证转换为生产许可证"]
+
