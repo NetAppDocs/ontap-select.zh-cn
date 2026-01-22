@@ -50,13 +50,13 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 --
 以下虚拟机管理程序版本支持 KVM：
 
-** 红帽企业 Linux (RHEL) 10.0、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6
+** Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6
 ** Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6
 
 
 [NOTE]
 ====
-在 RHEL 10.0 和 Rocky Linux 10.0 主机上，KVM 虚拟机管理程序存在软件 RAID 工作流程限制。更多信息，请参阅以下知识库文章：
+RHEL 10.1 和 10.0 以及 Rocky Linux 10.0 主机上的 KVM 虚拟机管理程序存在软件 RAID 工作流限制。有关详细信息，请参见以下知识库文章：
 
 ** link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020： ONTAP Select Deploy：使用 RHEL 10 和 ROCKY 10 创建集群 HWR 时出现警告消息"^]
 ** link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025： ONTAP Select DeployGUI：在运行 RHEL10/Rocky 10 的主机上，集群创建页面中 SWR 的存储池和存储磁盘不可见"^]
