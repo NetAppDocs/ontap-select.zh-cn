@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: sizing-capacity-pool-license.html 
+keywords: license, licensing, Capacity Tiers, usable, space 
+summary: Capacity Tiers 许可证基于每个节点管理的底层磁盘容量，而不是节点、HA 对或集群的可用容量。每个 Capacity Tiers 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。 
+---
+= 调整 ONTAP Select Capacity Pools 许可证大小的注意事项
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Capacity Pool 许可证的许可容量为完整 TiB 数量，最少为 2 TiB。您可以通过将可用空间量乘以开销系数来计算许可容量。单节点和多节点（基于 HA 对）集群之间的开销系数不同：
+
+* 单节点集群的开销系数为 1.13
+* 多节点集群的开销系数为 2.67
+
+
+您需要根据可用空间计算许可容量，以确保有足够的空间进行部署。
+
+[cols="25,30,45"]
+|===
+| Description | 单节点 | HA 对或 HA 和单节点混合 
+
+
+| 可用空间 | 20 TiB | 每单节点集群 10 TiB，HA 对 20 TiB 
+
+
+| 已获许可的空间 | 23 TiB（20 x 1.13 = 22.6，四舍五入到下一个完整 TiB） | 54 TiB (20 x 2.67 = 53.4，四舍五入到下一个完整 TiB) 
+
+
+| 每个节点的最大可用空间 *注意*：每个节点或 HA 对的最大管理空间为 400 TiB | 353 TiB（400 / 1.13）  a| 
+每个单节点集群：
+
+74 TiB [(400 / 2) / 2.67]
+
+每个 HA 对集群：
+
+148 TiB（2 x 74）
+
+|===
+.下一步
+link:task_lic_acquire_cp.html["获取 ONTAP Select 的容量池许可证"]

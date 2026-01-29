@@ -88,32 +88,42 @@ sidebar:
     entries:
     - title: 选项
       entries:
-      - title: 评估版许可证
+      - title: 了解评估许可证
         url: "/concept_lic_evaluation.html"
       - title: 生产许可证
-        url: "/concept_lic_production.html"
-      - title: 平台许可证产品
-        url: "/concept_lic_platforms.html"
-    - title: 容量池许可模式
-      entries:
-      - title: 操作详细信息
-        url: "/concept_lic_cp_operation.html"
-      - title: 节点序列号
-        url: "/concept_lic_cp_serial_number.html"
-      - title: 限制
-        url: "/concept_lic_cp_restrictions.html"
-      - title: 容量池与容量层
-        url: "/concept_lic_cp_compare_ct.html"
-      - title: 优势摘要
-        url: "/concept_lic_cp_benefits.html"
-    - title: 购买
+        entries:
+        - title: 了解生产许可证
+          url: "/concept_lic_production.html"
+        - title: 平台许可证产品
+          url: "/concept_lic_platforms.html"
+        - title: 容量池许可模式
+          entries:
+          - title: 操作详细信息
+            url: "/concept_lic_cp_operation.html"
+          - title: 节点序列号
+            url: "/concept_lic_cp_serial_number.html"
+          - title: 限制
+            url: "/concept_lic_cp_restrictions.html"
+          - title: 优势摘要
+            url: "/concept_lic_cp_benefits.html"
+        - title: 容量层与容量池
+          url: "/concept_lic_cp_compare_ct.html"
+    - title: 购买许可证
       entries:
       - title: 许可工作流
         url: "/concept_lic_workflow.html"
       - title: 容量层
-        url: "/task_lic_acquire_ct.html"
+        entries:
+        - title: 调整许可证大小的注意事项
+          url: "/sizing-capacity-tier-license.html"
+        - title: 获取许可证
+          url: "/task_lic_acquire_ct.html"
       - title: 容量池
-        url: "/task_lic_acquire_cp.html"
+        entries:
+        - title: 调整许可证大小的注意事项
+          url: "/sizing-capacity-pool-license.html"
+        - title: 获取许可证
+          url: "/task_lic_acquire_cp.html"
     - title: ONTAP 功能
       url: "/reference_lic_ontap_features.html"
   - title: 安装

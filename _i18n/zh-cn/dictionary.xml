@@ -719,16 +719,12 @@
   <block id="1e27a8e66b6c9b86c6097d597ad1aae5" category="list-text">在生产环境中部署 ONTAP Select 时，您必须根据需要购买一个或多个许可证。</block>
   <block id="15dffe620a63cf36cf7950870eb1dd7f" category="list-text">许可证的存储容量以 1 TB 为增量进行分配。</block>
   <block id="e87c2d5c68d6bca7e5d00d0f9ba86e6c" category="list-text">存储容量用于标识原始容量，并对应于 ONTAP Select 虚拟机可用数据磁盘的总允许大小。</block>
-  <block id="c98b46f8b9fcca6b35bccabe1a7939b7" category="list-text">支持所有平台许可产品（标准，高级，高级 XL ）。</block>
   <block id="4632083daa344ec3c92f758f314a63af" category="list-text">在获取必要的许可证时，您应根据需要联系您的 NetApp 客户团队或合作伙伴以获得帮助。</block>
   <block id="3a93f9d290128a72adef573e6ada3782" category="list-text">您必须将许可证文件上传到 Deploy 管理实用程序，然后该实用程序会根据许可模式应用这些许可证。</block>
   <block id="c84d0d15d89203b240d22009f0e21410" category="list-text">安装并应用许可证后，您可以联系您的 NetApp 客户团队或合作伙伴来购买更新后的许可证来添加额外容量。</block>
-  <block id="a3263397bbc31693f6873997c36fe75d" category="list-text">HA 对中的两个节点必须具有相同的存储和许可证容量。</block>
   <block id="d86f9ceaae5a2db2c1aefdb22d547e86" category="list-text">最初使用已购买许可证部署的 ONTAP Select 节点无法转换为评估版许可证。</block>
   <block id="871e597c4ae832351177624116bba41c" category="list-text">您必须为每个 ONTAP Select 节点购买许可证。</block>
   <block id="13bcda60ca431e945b05ba49704703a7" category="list-text">您可以购买的最小容量为 1 TB 。</block>
-  <block id="41a121513d59eed4db3a4c7f1fc6d0ba" category="list-text">NetApp 会为每个 ONTAP Select 节点生成一个九位数的许可证序列号。</block>
-  <block id="b7fb304e7a779889262a8b4612155a54" category="list-text">分配给节点的存储是永久的（无需续订）。</block>
   <block id="a1039017542e538bd9f244ed701a0b65" category="list-text">节点序列号为九位数，等于许可证序列号。</block>
   <block id="d9e741d943a65e9ffbf3b085cb693ee3" category="list-text">您可以在集群部署期间或创建集群后 30 天内应用此许可证文件。</block>
   <block id="cb58a864ca9b83c561396808328e023e" category="list-text">您可以购买的最低容量为 2 TB 。</block>
@@ -769,7 +765,6 @@
   <block id="0b30e81c88d5ec27b841310a84373595" category="paragraph">您可以根据需要添加和配置其他 HA 对。</block>
   <block id="5f81c29f30b61204b5999a7d3c42704f" category="list-text">单击 * 开始 * 以开始网络连接测试。</block>
   <block id="893c95c096fab305c703479243f6943c" category="summary">在管理 ONTAP Select 许可证过程中，您可以执行多项相关任务。</block>
-  <block id="9eb6b36f84e03f93cb360a15fa276ffb" category="doc">ONTAP Select 许可证</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">使用管理员帐户通过 Web 界面登录到 Deploy 实用程序。</block>
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">单击页面顶部的 * 管理 * 选项卡。</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">要查看容量池列表，请执行以下操作：</block>
@@ -919,7 +914,6 @@
   <block id="ccc612cd14c06b1f422a5bb1a7ec9dd4" category="list-text">删除管理服务器</block>
   <block id="f375253c446097df1911643c823bcebc" category="doc">优势摘要</block>
   <block id="9d7eafb0b72f9b5f7663e196c8c405d4" category="section-title">更高效地利用存储容量</block>
-  <block id="c49054c6883b9886c6f31a2e8723ffe6" category="paragraph">由于容量固定在一个中央池中，因此可以在组织中的多个节点之间共享。</block>
   <block id="5aaf2ab29a3c1228e8c4125acd634e5e" category="section-title">显著降低管理开销，从而降低成本</block>
   <block id="1e8785eff311926f53d67ca62acdaa7b" category="section-title">改进了使用情况指标</block>
   <block id="3db3547bcabe9c3ed4c1a8d9ade67c26" category="summary">软件 RAID 是在 ONTAP 软件堆栈中实施的 RAID 抽象层。它提供的功能与 FAS 等传统 ONTAP 平台中的 RAID 层相同。RAID 层执行驱动器奇偶校验计算，并针对 ONTAP Select 节点中的各个驱动器故障提供保护。</block>
@@ -1119,15 +1113,9 @@
   <block id="f83c877592ae6667e4f8b98d490281d8" category="paragraph">Deploy API 使用以下安全技术：</block>
   <block id="1993a29cd22f4d42c6925aedd2416473" category="list-text">传输层安全性通过网络在 Deploy 服务器和客户端之间发送的所有流量均通过 TLS 加密。不支持在未加密的通道上使用 HTTP 协议。支持 TLS 1.2 版。</block>
   <block id="21392618546d9ab8ba4ef3600ae3644e" category="list-text">HTTP 身份验证基本身份验证用于每个 API 事务。每个请求都会添加一个 HTTP 标头，其中包含 base64 字符串中的用户名和密码。</block>
-  <block id="b83de81d9df2daba7b299079440e4a70" category="paragraph">您必须已获得 NetApp 为节点分配的九位数许可证序列号。在尝试获取许可证文件之前，您应在采购订单发货日期之后至少等待 24 小时。</block>
-  <block id="f1119e2a8337db49fe7086c2b2267602" category="list-text">使用 Web 浏览器访问 ONTAP Select 许可证站点：</block>
-  <block id="ac8e78a77fe7ca32132b86474e8c9de5" category="paragraph">`https://register.netapp.com/register/getlicensefile`</block>
   <block id="84db9bc9926628faaa27e124a2df79bb" category="list-text">使用您的 NetApp 帐户凭据登录。</block>
   <block id="e0d72df37475949c1895bd017090e2ba" category="list-text">在 * 许可证生成器 * 页面上，从下拉框中选择所需的许可证选项。</block>
-  <block id="c6168e990a24ff351dac74269242b940" category="list-text">填写同一页面上的其余字段，包括 * 产品序列号 * ，该序列号是 ONTAP Select 节点的序列号。</block>
-  <block id="4b5d2dd70af718ebe67bfea5b43d8667" category="list-text">单击 * 提交 * 。</block>
   <block id="fd0e43e383af3c2416ecdfe2b8f5d547" category="list-text">验证此请求后，选择许可证的交付方法。</block>
-  <block id="a057173e5bcafc2c46615838165047cc" category="paragraph">您可以单击 * 下载许可证 * 或 * 电子邮件许可证 * 。</block>
   <block id="8da6730d9b8223d2d2f6dc8027912c3c" category="list-text">确认您已根据选定交付方法收到许可证文件。</block>
   <block id="f32f830159376ee58bd53b11aacde459" category="paragraph">您必须先将许可证文件上传到 Deploy 管理实用程序，然后才能将其应用于 ONTAP Select 节点。</block>
   <block id="ce1478f04f5ca7b5563f3cdf75694972" category="list-text">使用管理员帐户登录到 Deploy 虚拟机命令行界面。</block>
@@ -1202,7 +1190,6 @@
   <block id="875d6acfb9499e910c2863da32d9284e" category="doc">节点序列号</block>
   <block id="3341673f4960921bc2834aa8bfa4ac44" category="paragraph">`999 ppppppppp nnnnnnnn`</block>
   <block id="8488b21dee18149216107700b6943d61" category="admonition">为清晰起见，添加了空格，但实际序列号不包含这些空格。</block>
-  <block id="eea8b1995d50aa53af45e544818f8706" category="paragraph">下表从左到右介绍了节点序列号的各个部分。</block>
   <block id="d2c24d59e0baff4d0155fbdf62590867" category="cell">部分</block>
   <block id="04adb8320a112460030976076e1b41c5" category="cell">'999'</block>
   <block id="94c8db1e39e106761ed9c4db655dd019" category="cell">NetApp 保留的三位数不变值。</block>
@@ -1238,7 +1225,6 @@
   <block id="6d998d9ff628e2b0fde654239468060c" category="list-text">在主页上，滚动到底部，然后单击 * 集群 * 。</block>
   <block id="2fa8b95c0280fa208e02bcfc35b2d714" category="list-text">单击 * 获取 /clusters/ ｛ cluster_id ｝ * 可显示用于返回 ONTAP Select 集群信息的 API 调用的详细信息。</block>
   <block id="754352c17de30934f31734f144b3d9d0" category="summary">如果您要在决定购买之前评估 ONTAP Select ，可以使用评估版许可证。评估版许可证随 ONTAP Select Deploy 管理实用程序一起提供，并在评估版部署中自动应用于每个 ONTAP Select 节点。</block>
-  <block id="8b3398557c7fb55b263bf52bece82b68" category="doc">评估版许可证</block>
   <block id="e009f07bc1785009a3ceb83036990929" category="section-title">许可特征</block>
   <block id="11731b987dc6227f75478145446eec49" category="paragraph">ONTAP Select 评估版许可证具有以下特征：</block>
   <block id="da43be3a437b4b11176af278d2bf65e4" category="list-text">节点序列号为 20 位数，由 ONTAP Select Deploy 自动生成</block>
@@ -1398,13 +1384,11 @@
   <block id="e1060dc2ca9dac04bf54c9156ff74480" category="admonition">要访问发行说明，您需要一个帐户才能登录到 NetApp 支持站点。</block>
   <block id="bed7832e3f97e759fd2581b465169890" category="paragraph">下表对 ONTAP Select 支持的两种生产许可模式进行了比较。</block>
   <block id="d8c97127df818e94ea6e6ac7b50e96b4" category="cell">许可证序列号</block>
-  <block id="74eb298f532f82b217f8fd4335a9809f" category="cell">由 NetApp 生成并分配给节点的九位数</block>
   <block id="cfe9ad257383707f3fd7fae02d04d37c" category="cell">许可证锁定</block>
   <block id="d62725d2824f19699315182c0a6b0376" category="cell">已锁定到 ONTAP Select 节点</block>
   <block id="d38016c64850189116e2066e441f03ee" category="cell">已锁定到 License Manager 实例</block>
   <block id="96fc35b6f9ffc7d38325a9aa31e1b29f" category="cell">许可证持续时间</block>
   <block id="209d48c97092139c09f12b8b898b3ebb" category="cell">永久（无需续订）</block>
-  <block id="fdad6dbf8e8406dac26765af9059a3a1" category="cell">根据购买情况确定固定期限（需要续订）</block>
   <block id="20e5e85bddb25cf1cf39977f4a5b8f1f" category="cell">数据聚合的租约期限</block>
   <block id="a051cb6fe36d0d57186040136f51ded4" category="cell">节点序列号</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">双 NIC 和四 NIC 配置的 ONTAP Select vSwitch 配置和负载平衡策略。</block>
@@ -1630,13 +1614,7 @@
   <block id="42fd4c247ebbe7dfca417006d76edd84" category="paragraph">您可以升级托管 ONTAP Select 多节点集群的 VMware ESXi 虚拟机管理程序，而无需使用 Deploy 管理实用程序。</block>
   <block id="c94bc3200f704807c4c41ce4c2e2b2d8" category="paragraph">您必须对 ONTAP Select 集群中使用的每个主机执行升级操作步骤 。</block>
   <block id="ae060de04aca5e325886869d3119eab9" category="paragraph">从 NetApp 获取存储许可证时，必须选择许可证有效期。例如，许可证的有效期可能为一年。</block>
-  <block id="7456bc766f2bb265ca706274029a4d1d" category="list-text">使用 Web 浏览器访问 NetApp 支持站点并登录。</block>
-  <block id="89d470e4f09750972e667a0aa66f60da" category="list-text">单击顶部的 * 系统 * ，然后单击 * 软件许可证 * 。</block>
   <block id="ae9aa26e0640b9c3d2d442b604f354ee" category="list-text">在许可证详细信息页面上，导航到 * 产品详细信息 * 列。</block>
-  <block id="706a307ae92c25933ca962eb6dbd8560" category="list-text">单击相应行上的 * 获取 NetApp 许可证文件 * 。</block>
-  <block id="e3a2b007e462109d35d40e5a66167dd3" category="list-text">键入 ONTAP Select Deploy 实例的许可证锁定 ID ，然后单击 * 提交 * 。</block>
-  <block id="428eaaa9f14db57c6bd3b4e5dc5b258f" category="list-text">选择适当的交付方法并单击 * 提交 * 。</block>
-  <block id="e65eef77c34710d04f651265a36f1383" category="list-text">单击传送确认窗口中的 * 确定 * 。</block>
   <block id="010b1bb88703436584f35ee315ce708a" category="summary">您可以使用命令行界面将 Deploy 管理实用程序的现有实例迁移到新虚拟机。</block>
   <block id="55327b42261932bc23e2c7dff5397072" category="paragraph">此操作步骤 基于使用原始虚拟机中的配置数据创建新虚拟机。新虚拟机和原始虚拟机必须运行相同版本的 Deploy 实用程序。您不能迁移到其他版本的 Deploy 实用程序。</block>
   <block id="50292085f30b7587c02bf7a7bdb68a00" category="paragraph">在迁移虚拟机时，您必须为 Deploy 配置数据创建一份备份。您还应在部署 ONTAP Select 集群后创建备份。数据将保存到一个加密文件中，您可以将该文件下载到本地工作站。</block>
@@ -2047,12 +2025,7 @@
   <block id="1a2858c08187c4c1503bdd84f6814aa7" category="doc">操作详细信息</block>
   <block id="18267b7796271fa458d6c8f635e9cebb" category="list-text">通过 Deploy 用户界面报告池使用情况信息</block>
   <block id="52e472917eedf9e8a785e7c56e92d749" category="section-title">租约特征</block>
-  <block id="5fe818f94cd9173f284c2cb187775708" category="list-text">许可证管理器每个 ONTAP Select 节点都与一个许可证管理器实例关联</block>
-  <block id="d671bee3ba61f48b2736b6e6d38fbf16" category="list-text">存储分配租约中会分配特定的容量值</block>
-  <block id="8a41c43a78c273b7090dd972cb11c8fa" category="list-text">到期日期和时间租约的持续时间介于一小时到七天之间，具体取决于用户配置。</block>
   <block id="c35b911ba82c4e39b4517e38d1a88551" category="paragraph">您可以通过以下方式使用 Web 用户界面确定 Deploy 实例的许可证锁定 ID ：</block>
-  <block id="93147ad40002fa287e2077d09284c452" category="list-text">开始使用页面首次登录到 Deploy 时，将显示此页面。您也可以通过单击页面右上角的下拉框并选择 Getting Started 来显示此页面。LLID 将显示在 Add Licenses 部分中。</block>
-  <block id="f51e8d01c52b31dc2ac35fcbc93eca28" category="list-text">管理单击页面顶部的 * 管理 * 选项卡 A ，然后单击 * 系统 * 和 * 设置 * 。</block>
   <block id="bc165811908b5de0b53e3fb455b59f7d" category="section-title">基本租赁操作</block>
   <block id="7d9520f0fa2db8b35655f9495b62e220" category="list-text">如果节点上存在现有租约，则只要符合以下所有条件，就会使用此租约：</block>
   <block id="841155ef8ec7759dbe94406233eb27b5" category="list-text">租约未过期</block>
@@ -2151,7 +2124,6 @@
   <block id="794df3791a8c800841516007427a2aa3" category="sidebar">许可证</block>
   <block id="187e115b0c10602baa476f64acc86a80" category="sidebar">生产许可证</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="sidebar">限制</block>
-  <block id="76b6a47a02685d51794b9fdb095512e5" category="sidebar">购买</block>
   <block id="d707dd0578f8287a0a8a84e71f612e87" category="sidebar">许可工作流</block>
   <block id="f33b49f74fc8933d903baf71e893888b" category="sidebar">ONTAP 功能</block>
   <block id="d6544042acadc7763dd58bb5217f1729" category="sidebar">安装前检查清单</block>
@@ -3067,9 +3039,7 @@ storage aggregate show-spare-disks</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能将集群用于评估目的。不得在生产环境中使用具有评估版许可证的集群。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在配置每台主机时、应按如下所示使用ONTAP Select Deploy管理实用程序：</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">配置以使用评估版许可证</block>
-  <block id="1b1ede8baae6a15d3ba60611103509a4" category="doc">ONTAP Select为生产部署购买了许可证</block>
   <block id="711f738f1281862e087807884aa5cd1c" category="doc">购买ONTAP Select许可证时的工作流</block>
-  <block id="8c2b226cf8dfc01c2d5885e6b1dc9fd2" category="paragraph"><block ref="8c2b226cf8dfc01c2d5885e6b1dc9fd2" category="inline-link-macro-rx"></block></block>
   <block id="5a61239e15d4a26620f5d89e4b1a8f7f" category="doc">ONTAP Select网络概念和特征</block>
   <block id="73a89e5a391bfad2dcfbcec41e378787" category="doc">ONTAP Select数据和管理流量隔离</block>
   <block id="f84037cae3830b722ecf096ad5fd58ef" category="doc">ONTAP Select内部和外部网络</block>
@@ -3283,25 +3253,19 @@ storage aggregate show-spare-disks</block>
   <block id="3840ec18790ba33b63a3a6e22afe1a99" category="paragraph">使用容量层许可时、您可以为每个节点分配一个固定的存储容量。任何未使用的空间都不能与其他节点共享，因此实际上会被浪费。使用容量池许可时、每个节点仅会根据数据聚合的大小使用所需的容量。</block>
   <block id="49466a9207c7bafb807837aa58b28a65" category="paragraph">如果使用容量层许可证、则必须为每个节点获取并安装一个许可证。使用容量池时、每个共享池具有一个许可证。这样可以显著降低管理开销并降低成本。</block>
   <block id="393a145ee32920c6a9dce6c89774161b" category="paragraph">Deploy Web用户界面提供了容量池的增强使用情况信息。您可以快速确定容量池中已使用和可用的存储容量、正在使用池中存储的节点以及集群从中分配容量的池。</block>
-  <block id="020fa1d798f607b3ef39647558b0e171" category="summary">容量池和容量层许可模式之间存在一些差异。</block>
-  <block id="befac9828a8ee884df5e223362669974" category="doc">比较ONTAP Select容量池和容量层许可</block>
   <block id="52d1f8cb6e7593cd562d4522014e106d" category="cell">容量层</block>
   <block id="a74c45c38136d5cb4b7be385e3a8c24e" category="cell">容量池</block>
-  <block id="b3e10a17f0986c4e189b80192f1c0f19" category="cell">九位数、由NetApp生成并分配给容量池</block>
   <block id="a3719249a1f3a7b49dd84d53689289f9" category="summary">容量池许可模式与容量层模式不同。存储容量将分配给一个池并在多个节点之间共享，而不是为每个节点分配专用存储容量。为了支持容量池模型、还创建了其他组件和流程。</block>
   <block id="020714b69513bf3a78c5bf5e611bbf05" category="doc">ONTAP Select容量池许可模式的操作详细信息</block>
   <block id="58e2309fa8979e52ed4f424f7ee35b93" category="list-text">根据容量池许可证序列号为每个节点生成唯一的20位序列号</block>
   <block id="3dc7acfb50ee98a5c175fb8cdf20a88d" category="list-text">根据ONTAP Select节点的请求为共享容量池中的容量创建租约</block>
   <block id="11b2d2fecd3396efb87558be584a6d41" category="paragraph">使用容量池许可证为节点上的每个数据聚合分配的存储必须具有关联的租约。节点请求存储租约，如果有可用容量，则 License Manager 将以租约的形式做出响应。每个租约都具有以下显式或隐式属性：</block>
-  <block id="9bb09439dbf58c43c8434974e261285c" category="list-text">容量池每个ONTAP Select节点都与一个容量池相关联</block>
   <block id="c57cd85a32e181fb83420d2adb23427d" category="paragraph">License Manager 的每个实例以及相应的每个 Deploy 实用程序实例都使用一个唯一的 128 位编号进行标识。此数量与九位数的容量池许可证序列号相结合、可将池锁定到特定的License Manager实例(实际上是一个Deploy实例)。在生成 NetApp 许可证文件 (NLF) 过程中，您必须在 NetApp 支持站点上提供这两个值。</block>
-  <block id="3ccfdfb46d04e07ae1d6fe35a8cbb514" category="paragraph">每次创建，扩展或更改数据聚合时， ONTAP Select 节点都必须找到或请求有效的容量租约。可以使用从先前请求中获取但仍然有效的租约，也可以根据需要请求新租约。ONTAP Select节点会执行以下步骤来查找容量池租约：</block>
   <block id="4760e200c006091f431ae756ea50eb83" category="section-title">将存储容量归还给容量池</block>
   <block id="b6249920b182baff7dc50dc8c3c21811" category="paragraph">存储容量会根据需要从容量池中分配、每个新请求都可以减少该池中的可用存储。在以下几种情况下，存储容量会返回到池中：</block>
   <block id="d65c8696b5fd8387f8b3f5f6c5c24418" category="summary">下面介绍了使用容量池许可模式时适用的限制。</block>
   <block id="810bc88512dd1c6822f4992dd8667995" category="doc">ONTAP Select容量池许可的部署限制</block>
   <block id="87734871bc5735c84e6ee48cdfdad1b3" category="paragraph">一个ONTAP Select集群中的所有节点都必须使用相同的许可模式、可以是容量层、也可以是容量池。您不能在一个集群中混用节点的许可类型。</block>
-  <block id="96344640227999714b6bc9eb179a6b3d" category="paragraph">ONTAP Select集群中具有容量池许可证的所有节点都必须使用同一个许可证管理器实例。由于每个 Deploy 实例中都有一个 License Manager 实例，因此，此限制重新说明了一个集群中的所有节点都必须由同一个 Deploy 实例管理的现有要求。</block>
   <block id="7b0e0ad6985cddb5b8e0a150a2fc65fb" category="paragraph-title">每个节点一个容量池</block>
   <block id="3618eed950da22dba9e302693bf31644" category="paragraph">每个节点只能从一个容量池中租用存储。一个节点不能使用两个或更多池。</block>
   <block id="a68727c2470d44ca2bcd0b95331bfb0c" category="paragraph">一个HA对中的两个节点都必须从同一个容量池租用存储。但是，同一集群中的不同 HA 对可以从同一 License Manager 管理的不同池中租用存储。</block>
@@ -3312,13 +3276,11 @@ storage aggregate show-spare-disks</block>
   <block id="a875da8c90c98e4c0f1e4e3e3d4d81a7" category="paragraph">使用容量池许可的节点的序列号格式如下：</block>
   <block id="769d960ab0e824951746a3c368509fcd" category="cell">NetApp分配给容量池的可变九位许可证序列号</block>
   <block id="28ec4566b445eb67771a9a111611e502" category="cell">License Manager为使用容量池的每个节点生成的可变八位值</block>
-  <block id="9aaa5ca53edcd9baf965b66b1fba1368" category="admonition">注意：在向NetApp支持部门创建涉及使用容量池许可证的节点的案例时、您无法提供完整的20位节点序列号。而是必须提供九位数的容量池许可证序列号。您可以从节点序列号派生许可证序列号，如上所示。跳过节点序列号的前三位数字（ 999 ），然后提取下九位数字（ ppppppppppp ）。</block>
   <block id="35892d48da3c4641520dc5f89430eeaa" category="list-text">您可以使用容量层许可证、但不支持容量池许可</block>
   <block id="1538605c931beb7706c95917ca61c48d" category="summary">您可以购买三种平台容量级别之一的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
   <block id="4be94941d4ae435ad44487d075e7a367" category="doc">了解ONTAP Select的平台许可证产品</block>
   <block id="9cdcaf5a7aae0807b2a785f7d26f1f3f" category="paragraph">您可以购买标准、高级或高级XL级别的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
   <block id="2f2718c8a2f261e7775daae8fff84dbc" category="section-title">比较平台许可证产品的硬件支持</block>
-  <block id="46fa26efbd4810693c18739e5417980e" category="paragraph">标准、高级和高级XL许可证产品支持广泛的硬件和软件。有关硬件和软件版本的最新信息，请参见<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。</block>
   <block id="06efa63cc6d93bbf842cc0f903057606" category="open-title">核心项目</block>
   <block id="a3090b498c20b75b1533765619b273a0" category="cell">核心项目类型</block>
   <block id="6bf08a2d2d231573eaa714b5221158e6" category="cell">主机协议</block>
@@ -3361,21 +3323,16 @@ storage aggregate show-spare-disks</block>
   <block id="4f17c009683074f845007741fa1c26dd" category="cell">虚拟机管理程序支持(KVM)</block>
   <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">管理软件</block>
   <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">NetApp Active IQ Unified Manager管理套件ONTAP Select Deploy实用程序SnapCenter (可选)</block>
-  <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">了解容量层和容量池许可证类型</block>
   <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">确定 ONTAP Select 适合您的组织后，您可以购买支持生产部署所需的许可证。您必须为每个部署选择容量层或容量池许可模式以及存储容量。</block>
-  <block id="580ede122197eca33afea87d209746f9" category="paragraph">Capacity Tier_和_Capacity Pools_许可模式在几个方面截然不同。但是，这两种许可模式具有以下几个共同特征：</block>
   <block id="8e8e728e920aef8a8e61276592f8f07a" category="section-title">容量层许可模式</block>
   <block id="f57d33a41fff8f72b8541732b6d8adf0" category="paragraph">容量层许可模式具有几个独特的特征、包括：</block>
   <block id="ba83abe50eb1c6316ad583689b2834f6" category="list-text">每个容量层许可证都有一个存储容量、并锁定到特定节点。</block>
   <block id="9e586a550fe27d06853aa45ee04db107" category="section-title">容量池许可模式</block>
   <block id="5308e94ce80081b419db4c906ea0e711" category="paragraph">容量池许可模式具有几个独特的特征、包括：</block>
   <block id="a5c50f7ef156865bfd5e9875fc89d1f6" category="list-text">您必须为每个共享容量池购买一个许可证。</block>
-  <block id="1f463a24c9d024f8fdaeb1e4ad716c1d" category="list-text">每个容量池许可证都有一个存储容量、并锁定到特定的License Manager实例。</block>
   <block id="72845ca8a5a798fdf6f61c6d2bed72b4" category="list-text">NetApp会为每个容量池生成一个九位数的许可证序列号。</block>
   <block id="77ba5c2fc03c677b9c3fe2b00b4439fa" category="list-text">根据购买情况、分配给容量池的存储仅在特定时间内有效(需要续订)。</block>
-  <block id="d150443cb572e514bfd51ac57dab1fce" category="list-text">节点序列号为20位数、由License Manager根据容量池许可证序列号生成。</block>
   <block id="f658732514353ebc97c68b22fba83311" category="list-text">每个节点都会自动从共享容量池中为其本地数据聚合租用存储容量。</block>
-  <block id="260ed5703a4e4e3c27063e5ad62d8426" category="paragraph">有关容量池许可模式的详细信息、请参见_容量池许可模式_以了解详细信息。</block>
   <block id="52736b6c929e3fcbb90ce69d40477b01" category="paragraph">根据您使用的是容量层许可证还是容量池许可证、确切过程会有所不同：</block>
   <block id="371311feed51b9a8b306f029ede6fb62" category="list-text">序列号适用于节点(容量层)或存储池(容量池)</block>
   <block id="1e3bb0b8e7ecbce202ac714bd6e3f265" category="list-text">使用容量池许可证时、您必须具有Deploy实例的许可证锁定ID</block>
@@ -3437,15 +3394,10 @@ storage aggregate show-spare-disks</block>
   <block id="f5eacefd45f87cad9eca589aeba17364" category="paragraph">ONTAP Select节点会使用容量层许可证。</block>
   <block id="b28ceb45f344ed12e54e3531ae0bac88" category="summary">您必须为ONTAP Select节点使用的每个容量池获取一个许可证文件。此许可证文件用于定义池的存储容量和到期时间。它将通过 NetApp 分配的唯一许可证序列号以及与 Deploy 实例关联的许可证锁定 ID 组合而锁定到 License Manager 。</block>
   <block id="b06635debd20e5d8f23e5fd54016e095" category="doc">获取ONTAP Select容量池许可证</block>
-  <block id="332320e6473eb55e261b81cf0938cfbc" category="paragraph">您必须已获得NetApp分配给容量池的九位许可证序列号。在尝试获取许可证文件之前，您应在采购订单发货日期之后至少等待 24 小时。</block>
   <block id="0e1bb7bb179252e22d246c94c588991c" category="paragraph">您必须对ONTAP Select节点使用的每个容量池执行此任务。</block>
-  <block id="1a053c6f3c727874cbf13edff1c8a80e" category="list-text">键入容量池的许可证序列号，然后单击*GO！*。</block>
-  <block id="69d0d1235d3907b389980501bf178f3e" category="paragraph">您必须先将此许可证文件上传到Deploy管理实用程序、ONTAP Select节点才能使用此容量池。</block>
   <block id="e34af85c97201b9096873d4c2ad19cf3" category="summary">使用容量层许可时、您需要为每个ONTAP Select节点获取一个许可证文件。此许可证文件定义了节点的存储容量，并通过 NetApp 分配的唯一九位序列号锁定到节点。</block>
   <block id="884816b6d5a6ed8f167117fc8af0b452" category="doc">获取ONTAP Select容量层许可证</block>
-  <block id="6a83549be60e71831bbfcda50973a52e" category="paragraph">您必须对需要容量层许可证的每个ONTAP Select节点执行此任务。</block>
   <block id="9e2e9cf9504e665219344b4d7647d396" category="sidebar">数据保护和效率</block>
-  <block id="7b1e0be7876419647c8d2d4cd1e3444e" category="sidebar">容量池与容量层</block>
   <block id="82f452184fa717ab2fcdbde25eea3a2b" category="inline-link-macro">了解生产部署的许可证</block>
   <block id="74d4caeb059278dbd1c813ff422126a8" category="list-text"><block ref="74d4caeb059278dbd1c813ff422126a8" category="inline-link-macro-rx"></block></block>
   <block id="8c091dbfff8264fef2b6558a0443daa3" category="paragraph">有关主机配置选项的其他信息，请参见<block ref="d26ab879e3e1e4419b35eeaaf3d601a9" category="inline-link-macro-rx"></block>。</block>
@@ -3696,7 +3648,6 @@ storage aggregate show-spare-disks</block>
   <block id="ca069be0eeb72c96905b0cdbf504214d" category="paragraph">以下 KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。</block>
   <block id="4e59a04163b76608c718d51a77e0ab85" category="paragraph">^1^ 假设虚拟机管理程序有两个核心和 8GB RAM。</block>
   <block id="8b8284ef1bc414b0568b54a0a11232ad" category="cell">适用的</block>
-  <block id="6799f681592f9a0a7cf264c2b7bcd3d7" category="list-text"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block></block>
   <block id="b40b101fdcaae7891ab38512cf2966e0" category="paragraph">集群创建向导（ ONTAP Deploy UI 的一部分）包含内部网络检查器，作为创建多节点集群期间可用的可选步骤。鉴于内部网络在多节点集群中发挥的重要作用，将此步骤作为集群创建工作流的一部分可以提高集群创建操作的成功率。</block>
   <block id="533eb39cd8f514c69a3b793cb415846c" category="paragraph">下图显示了 vCenter UI 中外部网络端口组的配置（ONTAP-External 和ONTAP-External2）。请注意，活动适配器来自不同的网卡。在此设置中，vmnic 4 和 vmnic 5 是同一物理网卡上的双端口，而 vmnic 6 和 vminc 7 同样是单独网卡上的双端口（本例中未使用 vnmics 0 至 3）。备用适配器的顺序提供了分层故障转移，其中来自内部网络的端口位于最后。备用列表中的内部端口顺序在两个外部端口组之间进行类似交换。</block>
   <block id="ab4f5bbd14a1da16094b721d652002c0" category="paragraph">您可以通过现代 Web 浏览器访问 Deploy 实用程序。WebUI 提供了直观易用的界面，在大多数情况下，它将是您使用该实用程序时的主要界面。</block>
@@ -3987,4 +3938,120 @@ storage aggregate show-spare-disks</block>
   <block id="9f67ae0fbf0ec858c854905b95acf153" category="list-text">Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM</block>
   <block id="02d99372e9e1eb54a9dddd0b08891357" category="list-text">Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="d65f97fb1a167a35c6951233420ba74d" category="list-text">Red Hat Enterprise Linux (RHEL) 64 位 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
+  <block id="9619f591215dbfb1d346be6b36138040" category="paragraph">容量锚定在一个中央池中，可以在组织中的许多节点之间共享。</block>
+  <block id="7e440cfb9036689e833e4df17a0ae529" category="summary">容量层和容量池许可模式之间有几个区别。</block>
+  <block id="fee8461b7e8ddef9ec0ec4e060511b93" category="doc">比较 ONTAP Select 容量层和容量池许可</block>
+  <block id="446240bc49bf82cd1fa165cc8e5438c5" category="cell">NetApp 生成九个数字并将它们分配给一个节点</block>
+  <block id="36fce331144baf1f211037348fdd68dc" category="cell">NetApp 生成九位数字并将其分配给 Capacity Pool</block>
+  <block id="7775850407e0cb325d7561581f3925f0" category="cell">基于购买的固定持续时间（需要续订）</block>
+  <block id="96c66faa186a1eb44b176d8da7061341" category="cell">最低许可证</block>
+  <block id="4e5cad9a39114e168c84b904c78fec9d" category="cell">1 TiB</block>
+  <block id="7916f32f06eaabdf61df576419c0c138" category="cell">2 TiB</block>
+  <block id="0d0171bebb3bb7b66843ab756d3f506d" category="cell">最大管理空间</block>
+  <block id="52aaf72a4a17179ddf718f6fcbec74fd" category="cell">每个节点 400 TiB</block>
+  <block id="39392adf0d44cff8d41af4ac679fe50a" category="paragraph">每个 ONTAP Select 节点都与一个 License Manager 实例关联</block>
+  <block id="7b84a54f4715d5c6426a6234f1e642c2" category="list-text">容量池</block>
+  <block id="23ab75858624d30883fda4c9d0ca635e" category="paragraph">每个 ONTAP Select 节点都与一个容量池关联</block>
+  <block id="79d2668b6cfc8ca637429ca2229463af" category="list-text">存储分配</block>
+  <block id="7b0fc4c3d8c70cb885c5a4a0e44b6d60" category="paragraph">在租赁中分配特定的容量值</block>
+  <block id="7a584848f1df02d05bdcc845d2a6a928" category="list-text">到期日期和时间</block>
+  <block id="1a09fd5b1a162aaf184e47b77eb3825d" category="paragraph">租约的持续时间为 1 小时至 7 天，具体取决于用户配置。</block>
+  <block id="5c51dc3fcfdd9653809e90fa3948c2f4" category="list-text">Getting Started 页面</block>
+  <block id="7102680d0af5da00746abf5266571291" category="paragraph">首次登录时，Deploy 会显示此页面。您也可以打开页面右上角的下拉框，然后选择*入门*以显示此页面。LLID 显示在添加许可证部分。</block>
+  <block id="ad0f17488057d0a4f5ef95d80d34618e" category="paragraph">选择页面顶部的 *Administration* 选项卡，然后选择 *Systems* 和 *Settings*。</block>
+  <block id="e4c7778b64e92f4500818df277754f2e" category="paragraph">每次创建、扩展或更改数据聚合时，ONTAP Select 节点都必须定位或请求有效的容量租赁。您可以使用从之前的请求中获得的仍有效的租赁，也可以根据需要请求新的租赁。ONTAP Select 节点采取以下步骤来查找 Capacity Pool 租赁：</block>
+  <block id="891663db017744be89f051ca6f5c115b" category="paragraph">ONTAP Select 集群中具有 Capacity Pool 许可证的所有节点都必须使用相同的 License Manager 实例。由于每个 Deploy 实例中都有一个 License Manager 实例，因此该限制是对现有要求的重申，即同一个 Deploy 实例必须管理集群中的所有节点。</block>
+  <block id="8e3654f44c6cb5c34c098c1ab6d7f533" category="paragraph">下表从左到右描述了节点序列号的每个部分。</block>
+  <block id="693442a9d092f56a2e784df168de18ba" category="admonition">打开涉及使用容量池许可证的节点的 NetApp 支持案例时，必须提供九位数容量池许可证序列号。您无法提供完整的二十位节点序列号。您可以通过跳过节点序列号的前三位（'999'）并提取后九位（ppppppppp），从节点序列号中获取许可证序列号。</block>
+  <block id="d5b3e5d8a122e99ad8934bd7428fe059" category="paragraph">标准、高级和高级 XL 许可证产品支持各种硬件和软件。有关硬件和软件版本的最新信息，请参见<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。</block>
+  <block id="074967701ca89402a9221a39241c9f36" category="inline-link-macro">了解有关购买 ONTAP Select 许可证的信息</block>
+  <block id="6165493dcd7968bb3a769f209c2de158" category="paragraph"><block ref="6165493dcd7968bb3a769f209c2de158" category="inline-link-macro-rx"></block></block>
+  <block id="299753ef34c1167232028ab467290c1f" category="doc">了解用于生产部署的 ONTAP Select 购买许可证</block>
+  <block id="eabec961b5a170ebb6520e47ced47bf7" category="paragraph">在确定 ONTAP Select 适合您的组织之后，您可以购买支持生产部署所需的许可证。您必须选择容量池或容量层许可模式以及每个部署的存储容量。</block>
+  <block id="67886863229fb7fd9c929f1258a88d82" category="paragraph">_Capacity Pools_ 和 _Capacity Tiers_ 许可模式在几个方面有很大不同。但是，这两种许可模式有几个共同特点，包括：</block>
+  <block id="4a9dc8ac50c307032e73627e4a48530c" category="list-text">支持所有平台许可产品（标准、高级和高级 XL）。</block>
+  <block id="29bd998b06fe513244ca389dfbb4166e" category="list-text">NetApp 为每个 ONTAP Select 节点生成一个九位数的许可证序列号。</block>
+  <block id="cefd3571d5e06ff7c99485867c536e9c" category="list-text">分配给节点的存储是永久性的（无需续订），但您必须续订与许可证关联的支持合同。</block>
+  <block id="f7f4327373de3cc6a57d2d554d460438" category="list-text">高可用性 (HA) 对中的每个 ONTAP Select 节点都需要至少与连接到该节点的原始存储一样大的许可证。</block>
+  <block id="98a961df32d665c3d8379e2eaefcc3a4" category="list-text">每个 Capacity Pool 许可证都有一个存储容量，并锁定到 Deploy 管理实用程序中的特定 License Manager 实例。</block>
+  <block id="ba2f294d368cb1b2835f82286d95e5e6" category="list-text">存储容量标识原始容量，并与可以在 ONTAP Select 虚拟机中创建的数据聚合的总允许大小相对应。</block>
+  <block id="f40f2d0871d158fe7d006c22eb747c36" category="list-text">License Manager 根据 Capacity Pool 许可证序列号生成一个二十位数的节点序列号。</block>
+  <block id="f9611bfca82da4a37fa7fe0bb3f805ec" category="list-text">集群中的所有 ONTAP Select 节点共享相同的许可证容量。这意味着许可证必须足够大，才能提供分配给集群中所有节点的存储。</block>
+  <block id="d8dbeac59037c2290d27767a7bd42ec0" category="list-text"><block ref="d8dbeac59037c2290d27767a7bd42ec0" category="inline-link-macro-rx"></block></block>
+  <block id="c936d1b50c1a47a54de61f1decce821b" category="inline-link-macro">详细了解 ONTAP Select 容量池许可模式</block>
+  <block id="a671af844c2fa03db19cf3d020929c26" category="list-text"><block ref="a671af844c2fa03db19cf3d020929c26" category="inline-link-macro-rx"></block></block>
+  <block id="b545209143ec884c7935d1820abcc1e6" category="paragraph">了解确定 ONTAP Select 许可证大小的注意事项：</block>
+  <block id="415895c9ff191968d93916d3139227bd" category="inline-link-macro">Capacity Tiers 许可证</block>
+  <block id="beb3d48e582d7d139ba371860582b14f" category="list-text"><block ref="beb3d48e582d7d139ba371860582b14f" category="inline-link-macro-rx"></block></block>
+  <block id="23294d133759742a20850ef7729199d6" category="inline-link-macro">Capacity Pools 许可证</block>
+  <block id="2168a52440c915ec5bfc491f5660dd69" category="list-text"><block ref="2168a52440c915ec5bfc491f5660dd69" category="inline-link-macro-rx"></block></block>
+  <block id="55ecb9826f7deb57441eeedae69c0a6d" category="inline-link-macro">了解有关管理 ONTAP Select 许可证的信息</block>
+  <block id="e9cb552b57937edc77138a16fc98ada5" category="paragraph"><block ref="e9cb552b57937edc77138a16fc98ada5" category="inline-link-macro-rx"></block></block>
+  <block id="f4f97ec2d091cfbe40253c1e9206cef4" category="summary">Capacity Tiers 许可证基于每个节点管理的底层磁盘容量，而不是节点、HA 对或集群的可用容量。每个 Capacity Tiers 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。</block>
+  <block id="120dfe55114bd18d238461d392d2851f" category="doc">调整 ONTAP Select Capacity Pools 许可证大小的注意事项</block>
+  <block id="40726d503ed95838ec2f3d2d9a606136" category="paragraph">Capacity Pool 许可证的许可容量为完整 TiB 数量，最少为 2 TiB。您可以通过将可用空间量乘以开销系数来计算许可容量。单节点和多节点（基于 HA 对）集群之间的开销系数不同：</block>
+  <block id="18bea776141012ab15d569765a0801f0" category="list-text">单节点集群的开销系数为 1.13</block>
+  <block id="50e947c808b914257cb5209da74fa627" category="list-text">多节点集群的开销系数为 2.67</block>
+  <block id="249a516ff48049712229714792dc7131" category="paragraph">您需要根据可用空间计算许可容量，以确保有足够的空间进行部署。</block>
+  <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">单节点</block>
+  <block id="4a56ef223b95c874ab12ac4a78def040" category="cell">HA 对或 HA 和单节点混合</block>
+  <block id="ee77295963ed13bed36e924ed72f669e" category="cell">可用空间</block>
+  <block id="0ffdbd1ef9d9f51f397a710af999f2ad" category="cell">20 TiB</block>
+  <block id="a1ebd4e21af00358d94cce4463c526c3" category="cell">每单节点集群 10 TiB，HA 对 20 TiB</block>
+  <block id="686d2bd292fa941724920d9f5764926c" category="cell">已获许可的空间</block>
+  <block id="58ff02047e167237b6ed11363f85b081" category="cell">23 TiB（20 x 1.13 = 22.6，四舍五入到下一个完整 TiB）</block>
+  <block id="6a080932c2aee0364e4def90523e3680" category="cell">54 TiB (20 x 2.67 = 53.4，四舍五入到下一个完整 TiB)</block>
+  <block id="eba5b56973a1a857c88a24ee4ebb2df5" category="cell">每个节点的最大可用空间 *注意*：每个节点或 HA 对的最大管理空间为 400 TiB</block>
+  <block id="49174774072434d311b739a0bc64fe4d" category="cell">353 TiB（400 / 1.13）</block>
+  <block id="d89ec2e9b51f836e29d4d62e09ac58db" category="paragraph">每个单节点集群：</block>
+  <block id="2b9de21dc4d505255ecc804af9a33ecb" category="paragraph">74 TiB [(400 / 2) / 2.67]</block>
+  <block id="bb91092a841534c73b7475d3ab63802a" category="paragraph">每个 HA 对集群：</block>
+  <block id="46d956e1efe7a0c7ba46fc0c39545e7e" category="paragraph">148 TiB（2 x 74）</block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
+  <block id="336320a7d1fb36ba0e0e250060a962ec" category="inline-link-macro">获取 ONTAP Select 的容量池许可证</block>
+  <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
+  <block id="32f9dc8bfa4ac02c770716ebf1eaf2df" category="doc">调整 ONTAP Select Capacity Tiers 许可证大小的注意事项</block>
+  <block id="c5915502bf73930e10d7d62d217a0adc" category="paragraph">Capacity Tiers 许可证基于每个 ONTAP Select 节点管理的基础磁盘容量，而不是节点、HA 对或群集的可用容量。每个 Capacity Tiers 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。</block>
+  <block id="dc8232d72a0f059323b3db9d6d168f06" category="paragraph">Capacity Tiers 许可证的授权容量以完整 TiB 为单位，最少为 1 TiB。您可以通过将可用空间量乘以开销系数来计算许可容量。单节点和多节点（基于 HA 对）集群之间的开销系数不同：</block>
+  <block id="d7af2ad49563ae7106d8189ee369825b" category="paragraph">根据可用空间计算许可容量，以确保您有足够的空间进行部署。</block>
+  <block id="5aabc9069557be7e4aeff466605cbc75" category="cell">单节点</block>
+  <block id="4a67bdd5f30eeac9ad064fc6433dc926" category="cell">10 TiB</block>
+  <block id="80482bbdd1665672627d20111c744d41" category="cell">每个节点 5 TiB，HA 对 10 TiB</block>
+  <block id="1d15e73110044bd903736f8a6e497d60" category="cell">12 TiB（10 x 1.13 = 11.3，四舍五入到下一个完整 TiB）</block>
+  <block id="ce136a1c18e1ea61f5956e35dc41e57d" category="cell">两个 14 TiB 许可证（5 x 2.67 = 13.35，四舍五入到下一个完整 TiB）</block>
+  <block id="23561a5c65d75192f0c089566ae29f4a" category="paragraph">HA 对中的每个节点：</block>
+  <block id="754bc948e75e62a589ebb57f97b00d1a" category="paragraph">在多节点集群中每个 HA 对：</block>
+  <block id="1d74566ea54de11f5334a1f0bf761d04" category="list-text">双节点：148 TiB (2 x 74)</block>
+  <block id="f826386edbc3ea46d11962a518931bab" category="list-text">四节点：296 TiB (4 x 74)</block>
+  <block id="4cdfe835bcd837387a01d0efe0b55934" category="list-text">六节点：444 TiB (6 x 74)</block>
+  <block id="cb3e683d820db1a494dd29b265d8838c" category="list-text">八节点：592 TiB (8 x 74)</block>
+  <block id="68a88e5fe4c22c1950c0f9b28b07d5c6" category="inline-link-macro">获取 ONTAP Select 的容量层许可证</block>
+  <block id="a3da07f3b51f418f1d1a05b62b272ccb" category="paragraph"><block ref="a3da07f3b51f418f1d1a05b62b272ccb" category="inline-link-macro-rx"></block></block>
+  <block id="345ec4dc6bde22a42f9b58959473502b" category="list-text">您必须拥有由 NetApp 分配给容量池的九位许可证序列号。</block>
+  <block id="8559a2c7ea3fc5ae92b9a6a494503ff8" category="list-text">在获取许可证文件之前，您应至少在采购订单的发货日期后等待 24 小时。</block>
+  <block id="228b46a7e816dea8e714f4c14c8590bd" category="inline-link-macro">调整 Capacity Pools 许可证大小的注意事项</block>
+  <block id="bee884d24fb1a8984e6e183ff1a1dd14" category="list-text">您已阅读 <block ref="bb53f7741b6e0b4fa25f9b9e4836fec7" category="inline-link-macro-rx"></block>。</block>
+  <block id="3f542661e2fc664ba5ed5a7b9205e7b3" category="list-text">登录到 <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>。</block>
+  <block id="d6af344bbc0edc9f31d80904aecd6d27" category="list-text">选择 *Systems* &gt; *Software Licenses*。</block>
+  <block id="f43ed7598168b4520b203b11914d7ebf" category="list-text">为容量池键入许可证序列号，然后选择 *Go!*。</block>
+  <block id="a4f1c2a4174bc7c9225aeed6201fe448" category="list-text">在相应的行中选择 *获取 NetApp 许可证文件*。</block>
+  <block id="9aa4b07f528053fe9e83c42a360cfb92" category="list-text">键入 ONTAP Select Deploy 实例的许可证锁定 ID，然后选择 *Submit*。</block>
+  <block id="b472b21dd6354a84275ffc79c52f89ce" category="list-text">选择适当的交付方式，然后选择 *Submit*。</block>
+  <block id="1e3b514983ea528ac8d5c481bfeb5ab1" category="list-text">在派送确认窗口中选择 *确定*。</block>
+  <block id="2d73eec636d022e0819aa98b807efe02" category="paragraph">您必须先将许可证文件上传到 Deploy 管理实用程序，然后 ONTAP Select 节点才能使用 Capacity Pool。</block>
+  <block id="7059fd7270526f5fb570058f90ac6b59" category="list-text">您必须拥有由 NetApp 分配给 ONTAP Select 节点的九位许可证序列号。</block>
+  <block id="f30b829e0eaa6b6d082c0cd582dca2de" category="inline-link-macro">调整 Capacity Tiers 许可证规模的注意事项</block>
+  <block id="cdb7cfc52ce5d5dffd8f58cdab575e8f" category="list-text">您已审阅 <block ref="1c188d5a496a6a5d90237c76b1f47eee" category="inline-link-macro-rx"></block>。</block>
+  <block id="75ff8b3c70fefaf1bb09d275c99810d0" category="paragraph">必须为每个需要 Capacity Tiers 许可证的 ONTAP Select 节点执行此任务。</block>
+  <block id="09853c24d410ef6618f01281e3a2064a" category="inline-link-macro">访问 ONTAP Select 许可网站</block>
+  <block id="d3fd1e59807549a8e6644ae7d040fb85" category="list-text"><block ref="0c3f159ff968f5b6df7db624a2f2ed62" category="inline-link-macro-rx"></block>。</block>
+  <block id="5ad7da60ec9981258981a60e93dca7dd" category="list-text">填写 *License Generator* 页面上的其余字段，包括 *Product Serial #*。</block>
+  <block id="02fa13004899b54713212c43efd75d1b" category="paragraph">"产品序列号"是 ONTAP Select 节点的序列号。</block>
+  <block id="85281ac8736ae43694fb2a98eed37831" category="paragraph">您可以选择 *Download License* 或 *Email License*。</block>
+  <block id="457728d9249110c26fc907c7cbd93060" category="sidebar">了解评估许可证</block>
+  <block id="baf734525ec008b6cbc548f24ce32475" category="sidebar">了解生产许可证</block>
+  <block id="d3a14fe349c75db44b4f42be06485d39" category="sidebar">容量层与容量池</block>
+  <block id="3b32ccaa0766722aa2afed59d3051ca8" category="sidebar">购买许可证</block>
+  <block id="9be9343d8314647310e47876ae581a39" category="sidebar">调整许可证大小的注意事项</block>
+  <block id="f207357dde5b74df08cbece4e6ecc93d" category="sidebar">获取许可证</block>
 </blocks>

@@ -71,7 +71,7 @@ NOTE: 基于内核的虚拟机 (KVM) 不支持大型实例类型。
 
 == 比较平台许可证产品的硬件支持
 
-标准、高级和高级XL许可证产品支持广泛的硬件和软件。有关硬件和软件版本的最新信息，请参见link:https://mysupport.netapp.com/matrix/["互操作性表工具"^]。
+标准、高级和高级 XL 许可证产品支持各种硬件和软件。有关硬件和软件版本的最新信息，请参见link:https://mysupport.netapp.com/matrix/["互操作性表工具"^]。
 
 [role="tabbed-block"]
 ====
@@ -182,6 +182,5 @@ Rocky Linux (KVM) 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8
 |===
 --
 ====
-.相关信息
-* link:concept_lic_production.html["了解容量层和容量池许可证类型"]
-
+.下一步是什么？
+link:concept_lic_workflow.html["了解有关购买 ONTAP Select 许可证的信息"]
