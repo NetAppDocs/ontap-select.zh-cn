@@ -14,10 +14,10 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 
 
 [role="lead"]
-您可以使用 ONTAP ONTAP Select ONTAP Select Deploy 实用程序虚拟机。
+使用 ONTAP Select Deploy 实用程序 CLI 就地升级现有 ONTAP Select Deploy 实用程序虚拟机。
 
 .开始之前
-确保在升级期间不使用ONTAP Select Deploy 执行任何其他任务。有关升级ONTAP Select Deploy 实用程序的信息和限制，请参阅当前发行说明。
+验证 ONTAP Select Deploy 在升级期间未用于执行任何其他任务。有关升级 ONTAP Select Deploy 实用程序的信息和限制，请参阅 link:reference_release_notes.html["发行说明"]。
 
 [NOTE]
 ====
@@ -28,16 +28,16 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 ====
 
 
-== 步骤 1：下载软件包
+== 步骤 1：下载升级包
 
-要开始升级过程，ONTAP Select从link:https://mysupport.netapp.com/site/["NetApp 支持站点"^]。升级包格式为单个压缩文件。
+要开始升级过程，请从 NetApp 支持站点下载 ONTAP Select Deploy 升级文件。升级包的格式为单个压缩文件。
 
 .步骤
-. 访问 link:https://mysupport.netapp.com/site/["NetApp 支持站点"^] 使用Web浏览器并从“下载”菜单中选择*Downloads*。
-. 向下滚动并选择ONTAP Select Deploy Upgrade*。
-. 选择所需版本的升级软件包。
+. 访问 link:https://mysupport.netapp.com/site/downloads/["NetApp 支持站点下载"^] 页面。
+. 向下滚动并选择 *ONTAP Select Deploy*。
+. 选择所需的 ONTAP Select 版本。
 . 查看最终用户许可协议(EULA),并选择*Accept & Continue*。
-. 选择并下载相应的软件包，根据需要对环境中的所有提示做出响应。
+. 选择并下载相应的 *ONTAP Select Deploy Upgrade* 软件包。根据需要回复所有提示。
 
 
 
