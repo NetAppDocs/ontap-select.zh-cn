@@ -40,9 +40,6 @@ ONTAP Select 产品下载选项的更新:: NetApp 支持站点上的 ONTAP Selec
 
 | ONTAP Select 节点升级 | ONTAP Select 映像 | link:concept_adm_upgrading_nodes.html["升级 ONTAP Select 节点"] 
 |===
-
-NOTE: 产品下载更改也适用于 ONTAP Select 9.17.1、9.16.1、9.15.1 和 9.14.1。
-
 --
 增强对集群扩展和收缩的支持:: 从ONTAP Select 9.18.1 开始，支持在 ESXi 和 KVM 虚拟机管理程序主机上，四节点和十二节点ONTAP Select集群之间进行集群扩展和收缩。
 +
