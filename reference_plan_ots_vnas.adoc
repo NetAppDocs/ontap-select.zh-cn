@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_plan_ots_vnas.html 
-keywords: plan, planning, vnas, vmware esxi, 
+keywords: plan, planning, vnas, vmware esxi, external storage 
 summary: 在使用VMware ESXi时、您需要考虑几个规划问题。 
 ---
-= ONTAP Select VMware ESXi要求
+= ONTAP Select 的 VMware ESXi 外部存储要求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -53,9 +53,9 @@ CAUTION: 在配置主机或执行存储添加操作时，您必须为 VMware vSA
 
 == 最佳实践
 
-请参考可用的 VMware 文档，并遵循为 ESXi 主机确定的适用最佳实践。此外：
+查看 VMware 文档，并遵循为 ESXi 主机确定的适用最佳实践。此外：
 
 * 为 ONTAP Select 网络和外部存储（使用 iSCSI 或 NFS 时为 VMware vSAN 和通用存储阵列流量）定义专用网络端口，带宽和 vSwitch 配置
 * 配置容量选项以限制存储利用率（ ONTAP Select 不能占用外部 vNAS 数据存储库的全部容量）
-* 确保所有通用外部存储阵列尽可能使用可用的冗余和 HA 功能
+* 验证所有通用外部存储阵列是否都尽可能使用可用的冗余和 HA 功能
 
