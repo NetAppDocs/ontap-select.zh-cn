@@ -1168,16 +1168,6 @@
   <block id="6ead2b5cc2e9a07c3c837cd527eae680" category="section-title">四节点集群中的单个节点</block>
   <block id="0e17d1b8e444a58b17e21b8d633cf3c9" category="paragraph">下图显示了四节点集群中单个 ONTAP Select 虚拟机的典型网络配置。有两个单独的网络： ONTAP 内部网络和 ONTAP 外部网络。</block>
   <block id="ab818ab7a96525155b780ef59003cf8c" category="paragraph"><block ref="ab818ab7a96525155b780ef59003cf8c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c44b5d59bfc3b0196028c522c56aa989" category="paragraph">vSwitch 是用于支持内部和外部网络连接的核心虚拟机管理程序组件。在配置每个虚拟机管理程序 vSwitch 时，应考虑以下几点。</block>
-  <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">将负载平衡策略设置为 "Route based on the originating virtual port ID" 。</block>
-  <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">vSwitch 属性）</block>
-  <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">将 vSwitch 配置为使用巨型帧（ 9000 MTU ）。</block>
-  <block id="e954024be7362eabbc9a349d62fdd4d4" category="list-text">在 vSwitch 上为内部流量（ ONTAP 内部）配置端口组：</block>
-  <block id="a75b88570c3f7c89c4fc7aa2f4ab0862" category="list-text">端口组将分配给用于集群， HA 互连和镜像流量的 ONTAP Select 虚拟网络适配器 e0c-e0g 。</block>
-  <block id="98a4f6885e7d5c14cf8637949d2c7084" category="list-text">端口组应位于不可路由的 VLAN 上，因为此网络应为专用网络。您应将适当的 VLAN 标记添加到端口组中以考虑此问题。</block>
-  <block id="1d73953b34ca84fbbf679a9071108259" category="list-text">端口组的负载平衡，故障恢复和故障转移顺序设置应与 vSwitch 相同。</block>
-  <block id="b7760ca7d6bf308d66b54dafb201dee0" category="list-text">在 vSwitch 上为外部流量（ ONTAP 外部）配置端口组：</block>
-  <block id="cc60c471b3f7c93bb39710ddf02f3de5" category="list-text">端口组将分配给用于数据和管理流量的 ONTAP Select 虚拟网络适配器 e0a-e0c 。</block>
   <block id="f5b241fc250b3d06edf589b105596935" category="summary">所有 API 调用的详细信息均采用通用格式记录并显示在 ONTAP Select Deploy 联机文档网页上。通过了解单个 API 调用，您可以访问和解释所有 API 调用的详细信息。</block>
   <block id="f88210d2eab3d233e5af40136f634e78" category="paragraph">您必须登录到 ONTAP Select Deploy 联机文档网页。您必须具有创建集群时为 ONTAP Select 集群分配的唯一标识符。</block>
   <block id="a1f5081f3dbf077035f1e845de86d7f2" category="paragraph">您可以使用 ONTAP Select 集群的唯一标识符检索描述该集群的配置信息。在此示例中，将返回归类为 " 低成本 " 的所有字段。但是，作为最佳实践，您应仅请求所需的特定字段。</block>
@@ -2298,7 +2288,6 @@
   <block id="90cbb6ff863c3db71ceae9fe55f8e66f" category="paragraph">此参数用于控制长时间运行的命令的行为。如果设置了、则命令将在前台运行、并且与操作相关的事件消息将在发生时显示。</block>
   <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
-  <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">将两个适配器标记为"活动"或将一个适配器标记为"活动"、将另一个适配器标记为"备用"。</block>
   <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">ONTAP Select 9.6 性能的性能信息—高级 HA 直连 SSD 存储。</block>
   <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">参考平台的性能信息。</block>
   <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">参考平台</block>
@@ -3307,16 +3296,6 @@ storage aggregate show-spare-disks</block>
   <block id="1abfe64fc729ead26726164b794bcc72" category="paragraph">下图展示了单节点集群和四节点集群使用的ONTAP Select网络。</block>
   <block id="2e5a1a6424ee2d0aa549b427d2f571d2" category="open-title">四节点集群</block>
   <block id="e6a67192413f528c465842e03f8443e0" category="paragraph">下图展示了一个包含两个网络的四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。</block>
-  <block id="c3a20bbad365631eadc5b2dca8f640b3" category="section-title">步骤3：配置Open vSwitch</block>
-  <block id="d1beebffe274c5b13d29f2fbfaa10b06" category="paragraph">以下步骤适用于典型网络环境中具有两个物理端口（2x10Gb）的 ESXi 主机的 vSwitch 配置。</block>
-  <block id="720708f411d277d77845e1db4cee83de" category="inline-link-macro">配置 vSwitch 并将两个端口分配给 vSwitch</block>
-  <block id="f07356480e3047e35b4cb99dbcc748e2" category="list-text"><block ref="2076eeb99e46600240fb1d963411bb31" category="inline-link-macro-rx"></block>(英文)</block>
-  <block id="bf87bb05f214f1b9f8546e218338fb13" category="inline-link-macro">使用两个端口创建 NIC 团队</block>
-  <block id="32d6da19d2584fe97eb75d6418af8ca3" category="list-text"><block ref="4d5b30272096305aaf5c4ffdca2a1db5" category="inline-link-macro-rx"></block>(英文)</block>
-  <block id="5a9f02bdaab74c00379f1d1e19fe6c57" category="list-text">将 " 故障恢复 " 设置设置为 " 是 " 。</block>
-  <block id="f2456bc45004bdf347023d01536a2379" category="paragraph"><block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9c0cdffd9a10aa81c87d6972a4d9f884" category="list-text">端口组可以位于可路由的 VLAN 上。根据网络环境，您还应该添加适当的 VLAN 标签或配置 VLAN 中继的端口组。</block>
-  <block id="fae4bee7c370d0d0391b8ef189079d46" category="list-text">端口组的负载平衡、故障回复和故障转移顺序设置应与 vSwitch 相同。</block>
   <block id="9450ade0fc753dddabd4ea63d8bb1187" category="summary">准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
   <block id="6ca9942b969b8c587ad10afd9e0ef119" category="doc">ONTAP Select的 KVM 主机配置和准备清单</block>
   <block id="75b870251dc6cf53eee7c05860c964ad" category="paragraph">准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
@@ -3799,7 +3778,6 @@ storage aggregate show-spare-disks</block>
   <block id="1a09fd5b1a162aaf184e47b77eb3825d" category="paragraph">租约的持续时间为 1 小时至 7 天，具体取决于用户配置。</block>
   <block id="5c51dc3fcfdd9653809e90fa3948c2f4" category="list-text">Getting Started 页面</block>
   <block id="7102680d0af5da00746abf5266571291" category="paragraph">首次登录时，Deploy 会显示此页面。您也可以打开页面右上角的下拉框，然后选择*入门*以显示此页面。LLID 显示在添加许可证部分。</block>
-  <block id="ad0f17488057d0a4f5ef95d80d34618e" category="paragraph">选择页面顶部的 *Administration* 选项卡，然后选择 *Systems* 和 *Settings*。</block>
   <block id="e4c7778b64e92f4500818df277754f2e" category="paragraph">每次创建、扩展或更改数据聚合时，ONTAP Select 节点都必须定位或请求有效的容量租赁。您可以使用从之前的请求中获得的仍有效的租赁，也可以根据需要请求新的租赁。ONTAP Select 节点采取以下步骤来查找 Capacity Pool 租赁：</block>
   <block id="891663db017744be89f051ca6f5c115b" category="paragraph">ONTAP Select 集群中具有 Capacity Pool 许可证的所有节点都必须使用相同的 License Manager 实例。由于每个 Deploy 实例中都有一个 License Manager 实例，因此该限制是对现有要求的重申，即同一个 Deploy 实例必须管理集群中的所有节点。</block>
   <block id="8e3654f44c6cb5c34c098c1ab6d7f533" category="paragraph">下表从左到右描述了节点序列号的每个部分。</block>
@@ -3834,11 +3812,8 @@ storage aggregate show-spare-disks</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">多节点集群的开销系数为 2.67</block>
   <block id="249a516ff48049712229714792dc7131" category="paragraph">您需要根据可用空间计算许可容量，以确保有足够的空间进行部署。</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">单节点</block>
-  <block id="4a56ef223b95c874ab12ac4a78def040" category="cell">HA 对或 HA 和单节点混合</block>
   <block id="ee77295963ed13bed36e924ed72f669e" category="cell">可用空间</block>
   <block id="686d2bd292fa941724920d9f5764926c" category="cell">已获许可的空间</block>
-  <block id="d89ec2e9b51f836e29d4d62e09ac58db" category="paragraph">每个单节点集群：</block>
-  <block id="bb91092a841534c73b7475d3ab63802a" category="paragraph">每个 HA 对集群：</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
   <block id="336320a7d1fb36ba0e0e250060a962ec" category="inline-link-macro">获取 ONTAP Select 的容量池许可证</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
@@ -4053,16 +4028,22 @@ storage aggregate show-spare-disks</block>
   <block id="598d217f06b9250ad27a8198bb5c2a4b" category="cell">54 TB (20 x 2.67 = 53.4，四舍五入到下一个完整 TB)</block>
   <block id="6694602e4cd7d0b05713de6bd31c888e" category="cell">每个节点的最大可用空间 *注意*：每个节点或 HA 对的最大托管空间为 400 TB</block>
   <block id="0ff836b729a9f331160a37a804c5f502" category="cell">353 TB（400 / 1.13）</block>
-  <block id="79a0d4f0660fe4b9a46b19e4fa18a314" category="paragraph">74 TB [(400 / 2) / 2.67]</block>
-  <block id="19aeb97207c21df691d50d8d0930aeba" category="paragraph">148 TB（2 x 74）</block>
   <block id="9ed860bf7c910e8f72592e603158fb1a" category="paragraph">Capacity Tiers 许可证的许可容量以完整 TB 为单位，最少为 1 TB。您可以通过将可用空间量乘以开销系数来计算许可容量。单节点和多节点（基于 HA 对）集群之间的开销系数不同：</block>
   <block id="1191f788083da9194f8eef9400d10898" category="cell">10 TB</block>
   <block id="f515aabc5719e9815156a5bba11b0271" category="cell">每个节点 5 TB，HA 对 10 TB</block>
   <block id="8ef83a850a4c3f98639c08c641ced5a0" category="cell">12 TB (10 x 1.13 = 11.3，四舍五入到下一个完整 TB)</block>
   <block id="5c2813f14ac4d1fdac66648a550ead14" category="cell">两个 14 TB 许可证（5 x 2.67 = 13.35，四舍五入到下一个完整 TB）</block>
-  <block id="985b1eaad72a330f5ac66444aa1cc872" category="list-text">双节点：148 TB (2 x 74)</block>
-  <block id="42d74051003e55f5c33a72399e33ee7c" category="list-text">四节点：296 TB (4 x 74)</block>
-  <block id="cb7d5ca5e63133f9c3ddab01857677e1" category="list-text">六节点：444 TB (6 x 74)</block>
-  <block id="dd0cb9fad81cb887132c37097f5cc87f" category="list-text">八节点：592 TB (8 x 74)</block>
   <block id="7257bc0e5008e5606e49eb884e2bc425" category="list-text">对于 ESXi 主机，使用受支持的 Deploy 管理实用程序的 ONTAP Select 9.7 或更高版本</block>
+  <block id="eac3eeac664694b6433309da45a1300a" category="list-text">选择页面顶部的 *Administration* 选项卡，然后选择 *Systems &amp; AutoSupport*。</block>
+  <block id="200bbcb887da28e9cd489bc89afc5674" category="cell">HA 对或 HA 对和单节点混合</block>
+  <block id="d1600869d5b424ddbc5e9e6b111e1551" category="paragraph">集群中每个单节点：</block>
+  <block id="68fa7b3d2b5fa9a6405ba8b8886e16e6" category="paragraph">149 TB（400 / 2.67）</block>
+  <block id="867f936c72e1e7c832aeeeb86dfdad19" category="paragraph">集群中每个 HA 对：</block>
+  <block id="1ae9306d13e8652cea306cd8e0f2f998" category="paragraph">298 TB（2 x 149）</block>
+  <block id="24ebdf5291b487d72a9f72970d82108d" category="list-text">双节点：298 TB (2 x 149)</block>
+  <block id="483679a22c6b3db76de43d55829178e0" category="list-text">四节点：596 TB (4 x 149)</block>
+  <block id="c7ba1f9c0cd7b8c5a7b2c67b9c3e7973" category="list-text">六节点：894 TB (6 x 149)</block>
+  <block id="4148985b49a3b29db1e703cf43b2866f" category="list-text">八节点：1,192 TB (8 x 149)</block>
+  <block id="01d09c7a6491e08b12c0b1b76615fe0d" category="list-text">十节点：1,490 TB (10 x 149)</block>
+  <block id="6c1b0c6ec4484bd2c7186af4f45ae51a" category="list-text">十二节点：1,788 TB (12 x 149)</block>
 </blocks>
