@@ -79,7 +79,7 @@ image:ST_14.jpg["多节点 VNAS 集群的初始部署"]
 
 NOTE: 反关联规则要求在 ESXi 群集上启用 DRS。
 
-有关如何为 ONTAP Select VM 创建反关联性规则的示例，请参见以下示例。如果 ONTAP Select 集群包含多个 HA 对，则该集群中的所有节点都必须包含在此规则中。
+请参阅以下示例，了解如何为 ONTAP Select VM 创建反关联规则。如果 ONTAP Select 集群包含多个 HA 对，则集群中的所有节点都必须包含在此规则中。
 
 image:ST_15.jpg["VM/ 主机规则"]
 

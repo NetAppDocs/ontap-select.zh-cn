@@ -23,7 +23,7 @@ summary: 在部署 ONTAP Select 之前，您必须正确配置虚拟机管理程
 您必须在每个 ONTAP Select 主机上配置一个虚拟交换机，以支持外部网络和内部网络（仅限多节点集群）。在部署多节点集群过程中，您应测试内部集群网络上的网络连接。
 
 
-NOTE: 要了解有关如何在虚拟机管理程序主机上配置 vSwitch 以及高速接口功能的详细信息，请参见 link:concept_nw_concepts_chars.html["深度剖析网络"] 部分。
+NOTE: 要详细了解如何在虚拟机监控程序主机上配置 vSwitch 和高速接口功能，请参见 link:concept_nw_concepts_chars.html["深度剖析网络"] 一节。
 
 
 
@@ -72,7 +72,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 * NIC2 处于活动状态
 
 
-请参见 link:concept_nw_concepts_chars.html["深度剖析网络"] 第节、了解有关双NIC部署的详细信息。
+有关双 NIC 部署的详细信息，请参见link:concept_nw_concepts_chars.html["深度剖析网络"]节。
 
 
 
@@ -111,7 +111,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 * NIC1 ， NIC2 ， NIC3 处于待机状态
 
 
-请参见 link:concept_nw_concepts_chars.html["深度剖析网络"] 第节、了解有关四NIC部署的详细信息。
+有关四 NIC 部署的详细信息，请参见link:concept_nw_concepts_chars.html["深度剖析网络"]节。
 
 
 

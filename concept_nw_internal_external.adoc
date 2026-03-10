@@ -72,7 +72,7 @@ network connectivity-check show --run-id X (X is a number)
 ONTAP Select 外部网络负责集群的所有出站通信，因此存在于单节点和多节点配置中。虽然此网络没有内部网络严格定义的吞吐量要求，但管理员应注意不要在客户端和 ONTAP VM 之间造成网络瓶颈，因为性能问题可能被误认为是 ONTAP Select 问题。
 
 
-NOTE: 可以采用与内部流量类似的方式在 vSwitch 层（ VST ）和外部交换机层（ EST ）标记外部流量。此外， ONTAP Select VM 本身也可以在一个称为 VGT 的过程中对外部流量进行标记。请参见一节 link:concept_nw_data_mgmt_separation.html["数据和管理流量隔离"] 了解更多详细信息。
+NOTE: 与内部流量类似，外部流量可以在 vSwitch 层（VST）和外部交换层（EST）进行标记。此外，ONTAP Select VM 本身还可以在称为 VGT 的过程中对外部流量进行标记。有关更多详细信息，请参阅 link:concept_nw_data_mgmt_separation.html["数据和管理流量隔离"] 部分。
 
 下表重点介绍了 ONTAP Select 内部网络与外部网络之间的主要区别。
 

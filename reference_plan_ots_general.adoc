@@ -33,7 +33,7 @@ Linux服务器分发版:: 您应具备使用ONTAP Select部署所使用的特定
 --
 
 
-有关准备Linux服务器的详细信息、包括所需的配置和软件包、请参见主机配置检查清单。有关当前支持的Linux分发版、请参见虚拟机管理程序要求。
+有关准备 Linux 服务器的更多信息，包括所需的配置和软件包，请参见 link:kvm-host-configuration-and-preparation-checklist.html["主机配置清单"]。请参见当前支持的 Linux 发行版的虚拟机管理程序要求。
 
 KVM部署和管理:: 您应熟悉一般虚拟化概念。此外、在KVM环境中安装和管理ONTAP Select时、必须使用多个Linux命令行界面命令：
 +
@@ -91,7 +91,7 @@ CAUTION: 除非 NetApp 支持人员指示，否则不应直接修改 ONTAP Selec
 
 NOTE: 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
 
-有关受支持平台的更多详细信息，请参见虚拟机管理程序专用的规划信息和发行说明。
+有关受支持平台的其他详细信息，请参见特定于虚拟机管理程序的规划信息和link:reference_release_notes.html["发行说明"]。
 
 适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序:: Deploy 管理实用程序和 ONTAP Select 节点均作为虚拟机运行。您为 Deploy 实用程序选择的虚拟机管理程序与您为 ONTAP Select 节点选择的虚拟机管理程序无关。您可以完全灵活地将这两者配对：
 +

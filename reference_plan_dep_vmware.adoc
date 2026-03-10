@@ -32,7 +32,7 @@ ONTAP Select和ONTAP Select Deploy管理均支持以下虚拟机管理程序：
 
 
 
-NOTE: 有关受支持平台的更多详细信息，请参见虚拟机管理程序专用的规划信息和发行说明。
+NOTE: 有关受支持平台的其他详细信息，请参见特定于虚拟机管理程序的规划信息和link:reference_release_notes.html["发行说明"]。
 
 .适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序
 Deploy管理实用程序和ONTAP Select节点均作为虚拟机运行。您为 Deploy 实用程序选择的虚拟机管理程序与您为 ONTAP Select 节点选择的虚拟机管理程序无关。您可以完全灵活地将这两者配对：

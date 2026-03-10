@@ -136,7 +136,7 @@ VMware 建议在连接到 ESXi 主机的交换机端口上将 STP 设置为 Port
 
 您必须在每个 ONTAP Select 主机上配置一个虚拟交换机，以支持外部网络和内部网络（仅限多节点集群）。在部署多节点集群过程中，您应测试内部集群网络上的网络连接。
 
-要了解有关如何在虚拟机管理程序主机上配置Open vSwitch的更多信息、请参见 link:https://www.netapp.com/media/13134-tr4613.pdf["KVM上的ONTAP Select产品架构和最佳实践"^] 技术报告。
+要了解有关如何在虚拟机监控程序主机上配置 Open vSwitch 的更多信息，请参见 link:https://www.netapp.com/media/13134-tr4613.pdf["KVM上的ONTAP Select产品架构和最佳实践"^] 技术报告。
 
 
 

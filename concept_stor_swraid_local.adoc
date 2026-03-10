@@ -148,7 +148,7 @@ image:ST_21.jpg["将 ONTAP Select 磁盘与相应的 ESXi 磁盘匹配"]
 
 [role="tabbed-block"]
 ====
-.ESX
+.ESXi
 --
 [source, cli]
 ----
