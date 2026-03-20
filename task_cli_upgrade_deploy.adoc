@@ -16,16 +16,16 @@ summary: 您可以使用命令行界面原位升级现有的 Deploy 实用程序
 [role="lead"]
 使用 ONTAP Select Deploy 实用程序 CLI 就地升级现有 ONTAP Select Deploy 实用程序虚拟机。
 
-.开始之前
-验证 ONTAP Select Deploy 在升级期间未用于执行任何其他任务。有关升级 ONTAP Select Deploy 实用程序的信息和限制，请参阅 link:reference_release_notes.html["发行说明"]。
+您可以从 ONTAP Select Deploy 9.17.1 或 9.16.1 直接升级到 ONTAP Select Deploy 9.18.1。要从早期版本升级，例如 ONTAP Select Deploy 9.15.1，您必须首先升级到 ONTAP Select Deploy 9.16.1 或 9.17.1，然后升级到 ONTAP Select Deploy 9.18.1。
 
 [NOTE]
 ====
 如果您安装了较旧的 ONTAP Select Deploy 管理实用程序实例，则应升级到当前版本。ONTAP Select 节点和 ONTAP Select Deploy 组件独立升级。有关更多详细信息，请参阅 link:concept_adm_upgrading_nodes.html["升级ONTAP Select节点"^]。
 
-您可以从 ONTAP ONTAP Select ONTAP Select Deploy 9.18.1。要从ONTAP Select Deploy 9.15.1 或更早版本升级，请查看ONTAP Select版本的发行说明。
-
 ====
+.开始之前
+验证 ONTAP Select Deploy 在升级期间未用于执行任何其他任务。
+
 
 
 == 步骤 1：下载升级包

@@ -2943,10 +2943,8 @@ storage aggregate show-spare-disks</block>
   <block id="8a4d972efa4a178e4f23653b4b6a1b69" category="paragraph">了解受支持的ONTAP Select版本中的新增功能和增强功能。</block>
   <block id="fa9e744025392ca74a15477f1e137192" category="section-title">ONTAP Select 9.16.1.</block>
   <block id="6c1d79ac25f0c97bc720f88ff0f156e0" category="list-text">更新了NetApp许可证文件支持</block>
-  <block id="a1a2f3308f6033087cf20e84356aa4ac" category="list-text">从ONTAP Select 9.161开始、更新了NetApp许可证文件(NLG)支持。新的NLL格式包括ARP、ONTAP S3和S3 SnapMirror功能的许可证。<block ref="b5ed3fe3b9ec5f0e955203c12216c0fe" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="9fc3a2fe374c89216150309f04d52677" category="paragraph">对于新的ONTAP Select 9.16.1 Deploy、将自动应用新的NLG格式。将现有ONTAP Select Deploy升级到9.161时、不会应用新的NLG格式。要获取ARP、ONTAP S3和S3 SnapMirror功能许可证、必须在升级后下载更新的NLG。如果还原到ONTAP Select 9.151或更早版本、则必须重新安装升级之前拥有的功能许可证。</block>
   <block id="9ff1c34bad1597cf08ab1c4399ae7496" category="list-text">支持自动防兰森功能</block>
-  <block id="0d42d1fa24a02ff9cf9230752f2e8dbc" category="list-text">ONTAP Select 9.161引入了对自动防兰软件保护(ARP)的支持。ONTAP Select 9.161仅支持手动更新ARP、不支持自动更新。ONTAP Select 9.161的NLL中包含ARP功能许可证。<block ref="b5ed3fe3b9ec5f0e955203c12216c0fe" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="432f71c7f4f95547896f41e4d812805f" category="list-text">ONTAP Select 9.16.1支持VMware ESXi 8.0 U3。</block>
   <block id="a011a191055a233d6e8de3b11aacb53c" category="doc">ONTAP Select部署最佳实践摘要</block>
   <block id="5a4ab7845b9d12a7fe46ca9fb4f76647" category="doc">ONTAP Select Deploy虚拟机管理程序主机注意事项</block>
@@ -3185,7 +3183,6 @@ storage aggregate show-spare-disks</block>
   <block id="69bbee1943d709d1872e201eef4b29a8" category="paragraph">ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是主流FAS、AFF和ASA ONTAP产品套件以及Cloud Volumes ONTAP等其他纯软件选项的补充。</block>
   <block id="00a3caa2896a927e39b353d23b56eb2d" category="paragraph">ONTAP Select可将内部磁盘驱动器、NVMe、SSD或HDD以及外部阵列存储转换为一个灵活的存储系统、该存储系统具有专用ONTAP存储系统提供的许多相同优势。您还可以在新服务器或现有服务器基础架构上部署ONTAP Select。ONTAP Select易于管理、并利用与基于ONTAP的解决方案相同的管理软件、这意味着降低了运营开销和培训要求。</block>
   <block id="8307546cfa4f0ccad4627a2dcd4f46fa" category="paragraph">ONTAP Select通过两种互补的许可模式(容量层和完全灵活的容量池)来适应您的容量消耗需求。这两种许可模式都支持以低至1 TB的增量增加容量。例如、您可以从几TB开始、然后随着项目增长动态添加容量。如果您使用的是容量池、则可以在项目完成后根据需要重新分配容量。</block>
-  <block id="d88f78a3aeac7464dce1dfe85df34e06" category="paragraph">ONTAP Select已集成到VMware vSphere等云管理框架中。这有助于加快文件服务、主目录、软件开发环境和应用程序测试等新项目的部署速度。</block>
   <block id="39de1f5e6bbe7e17017c377d3305e9fd" category="paragraph">借助SnapMirror软件、您可以在混合云中的ONTAP存储之间移动数据、以便可以在所需位置轻松访问数据。例如、您可以快速启动一个环境来证明一个想法。之后、您可以将项目移至专用存储平台进行生产部署、或者在开发工作流中使其在云中更易于访问。</block>
   <block id="9c191e042a5bb50dde6bcacd73b9fc18" category="paragraph">通过软件实施和交付 IT 服务，管理员可以快速灵活地配置资源，而这是以前无法做到的。随着现代数据中心迁移到软件定义的基础架构(Software definable Infrastructure、SDI)架构、您可以将最有价值的IT资产与底层物理基础架构分离、从而提供灵活性、可扩展性和可编程性。</block>
   <block id="cc0ffc2288900bd57ac4b3e354e5fb49" category="paragraph">ONTAP Select 引入了一种基于使用量的许可模式。在生产环境中部署ONTAP Select集群时、您必须为每个节点或共享容量池购买含存储容量的许可证。您必须使用 Deploy 实用程序应用用于为集群节点建立存储容量的许可证文件。</block>
@@ -3487,7 +3484,6 @@ storage aggregate show-spare-disks</block>
   <block id="1b8fd93e725596cfcebcd993f635973a" category="cell">软件 RAID 配置</block>
   <block id="612323f6c1e52e88287fea6fecdef4e1" category="cell">NVMe 驱动器...</block>
   <block id="0bbdf237a06a8d91581305ad9eaa40be" category="admonition">基于内核的虚拟机 (KVM) 不支持大型实例类型。</block>
-  <block id="dd2fc3d451e43974d9ba6b2330d17e5b" category="list-text"><block ref="dd2fc3d451e43974d9ba6b2330d17e5b" category="inline-link-macro-rx"></block></block>
   <block id="89ee8792b4466624e22db7a555dbec1c" category="list-text"><block ref="89ee8792b4466624e22db7a555dbec1c" category="inline-link-macro-rx"></block></block>
   <block id="5d2c9e43b106e440a5e6622384e824eb" category="admonition">VMFS 开销不为零（请参阅 VMware KB 1001618），并且尝试使用数据存储区报告为可用的整个空间会导致集群创建操作期间出现虚假错误。</block>
   <block id="ab38846c124130820f8766b9794e5e9c" category="summary">虚拟 NAS (vNAS) 部署支持 vSAN 上的ONTAP Select集群、某些 HCI 产品、 NetApp HCI技术以及外部阵列类型的数据存储。这些配置的底层基础架构提供了数据存储的弹性。</block>
@@ -3640,7 +3636,6 @@ storage aggregate show-spare-disks</block>
   <block id="62080c1e38d010ffa650c0549d2fd463" category="inline-link-macro">ONTAP Select 9.18.1 发行说明</block>
   <block id="bae2221cd26cec7b066734cfd0888c05" category="paragraph">您可以访问<block ref="b88c41ab6f0bacccf3a706fd6b4f9780" category="inline-link-macro-rx"></block>查看当前版本详情。</block>
   <block id="14d3f202c8554a54e4a6f4f52aa78fb3" category="list-text">对于 KVM 主机，需要ONTAP Select 9.17.1 或更高版本以及受支持的部署管理实用程序。</block>
-  <block id="bb68cf2408900213fd35084701d5c32c" category="paragraph">您可以从 ONTAP ONTAP Select ONTAP Select Deploy 9.18.1。要从ONTAP Select Deploy 9.15.1 或更早版本升级，请查看ONTAP Select版本的发行说明。</block>
   <block id="b69fcb807e0b12e6b52ca8806f85c011" category="paragraph">增加或减少现有ONTAP Select集群（适用于 ESXi 和 KVM 虚拟机管理程序主机）的集群大小。对于这两种主机类型，您可以以 4 到 12 个节点为增量增加或减少集群大小。</block>
   <block id="a0b486320d46bfa4e7a315349c3d059b" category="list-text">从单节点或双节点集群扩展到六节点、八节点、十节点或十二节点集群。</block>
   <block id="459e1c3cb388ea595c42d32d54d432fb" category="list-text">从 6、8、10 或 12 个节点的集群收缩为 1 或 2 个节点的集群。</block>
@@ -4044,6 +4039,11 @@ storage aggregate show-spare-disks</block>
   <block id="5c2e3f1b284a7eb8d03229a6f711a6d8" category="paragraph">有关 ONTAP Select 和许可证续订的详细信息，请参见 <block ref="244262621d739af44a70be8c211b652b" category="inline-link-macro-rx"></block> 中的许可证、安装、升级和还原部分。</block>
   <block id="d3687f9d5cbe754b85309258725912ba" category="paragraph">如果使用本地硬件 RAID 控制器，则必须在每个节点上为系统数据以及根和数据聚合至少创建一个数据存储区 (ESXi) 或一个<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>。作为配置 ONTAP Select 节点的一部分，必须附加存储池。</block>
   <block id="01d8de06079a4b45d8794e7643ed43a1" category="paragraph">如果使用软件 RAID，则必须至少创建一个数据存储区 (ESXi) 或一个<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>为系统数据，并确保 SSD 驱动器可用于根和数据聚合。作为配置 ONTAP Select 节点的一部分，必须附加存储池和磁盘。</block>
-  <block id="42eb22aac2ec16baf500c0673430b7de" category="paragraph">验证 ONTAP Select Deploy 在升级期间未用于执行任何其他任务。有关升级 ONTAP Select Deploy 实用程序的信息和限制，请参阅 <block ref="3dda619db99e14ba32fb3b3389030b7d" category="inline-link-macro-rx"></block>。</block>
   <block id="e7600c044897b1df8192df992376a5c1" category="paragraph">如果您安装了较旧的 ONTAP Select Deploy 管理实用程序实例，则应升级到当前版本。ONTAP Select 节点和 ONTAP Select Deploy 组件独立升级。有关更多详细信息，请参阅 <block ref="fb380fde33185400cd8ee6587621860d" category="inline-link-macro-rx"></block>。</block>
+  <block id="5b6d4054ef7052cdbac6938952fde107" category="paragraph">ONTAP Select 已集成到 VMware vSphere 和基于内核的虚拟机 (KVM) 等云管理框架中。这有助于加快新项目的部署，例如文件服务、主目录、软件开发环境和应用程序测试。</block>
+  <block id="056ac6d6b75fc8c083881fac056a5f00" category="list-text"><block ref="056ac6d6b75fc8c083881fac056a5f00" category="inline-link-macro-rx"></block></block>
+  <block id="242e2d9a4037c878b7c02d92920684a3" category="list-text">从 ONTAP Select 9.16.1 开始，NetApp 许可证文件 (NLF) 支持已更新。新的 NLF 格式包括 ARP、ONTAP S3 和 S3 SnapMirror 功能的许可证。<block ref="6a143c7a682c120f755bb9e007744e73" category="inline-link-macro-rx"></block>。</block>
+  <block id="26b97e8272b5c629fb33f3f308a35b65" category="list-text">ONTAP Select 9.16.1 引入了对自主勒索软件保护 (ARP) 的支持。ONTAP Select 9.16.1 仅支持 ARP 的手动更新，不支持自动更新。ARP 功能许可证包含在 ONTAP Select 9.16.1 的 NLF 中。<block ref="6a143c7a682c120f755bb9e007744e73" category="inline-link-macro-rx"></block>。</block>
+  <block id="c15e1083b5e8b4f4973ba9286f3ec996" category="paragraph">您可以从 ONTAP Select Deploy 9.17.1 或 9.16.1 直接升级到 ONTAP Select Deploy 9.18.1。要从早期版本升级，例如 ONTAP Select Deploy 9.15.1，您必须首先升级到 ONTAP Select Deploy 9.16.1 或 9.17.1，然后升级到 ONTAP Select Deploy 9.18.1。</block>
+  <block id="8c58e4482a12bf26ee215d6f58f5c8a8" category="paragraph">验证 ONTAP Select Deploy 在升级期间未用于执行任何其他任务。</block>
 </blocks>
