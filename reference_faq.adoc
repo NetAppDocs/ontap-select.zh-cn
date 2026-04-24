@@ -250,12 +250,12 @@ ONTAP Select Deploy还必须能够按如下方式与ONTAP Select 节点和集群
 MetroCluster SDS 是一种成本较低的同步复制选项，属于 NetApp 的 MetroCluster 业务连续性解决方案类别。它仅适用于ONTAP Select，而NetApp MetroCluster则适用于FAS混合闪存、 AFF和NetApp Private Storage for Cloud。
 
 .MetroCluster SDS 与 NetApp MetroCluster 有何不同？
-MetroCluster SDS 提供了同步复制解决方案 ，并属于 NetApp MetroCluster 解决方案的范畴。但是，主要区别在于支持的距离（~10 公里与 300 公里）和连接类型（仅支持 IP 网络，而不是 FC 和 IP ）。
+MetroCluster SDS 提供同步复制解决方案，属于 NetApp MetroCluster 解决方案范畴。但是，关键的区别在于连接类型（仅支持 IP 网络，而不支持 FC 和 IP）。
 
 .双节点 ONTAP Select 集群与双节点 ONTAP MetroCluster SDS 有何区别？
 双节点集群定义为一个集群，其中两个节点位于同一数据中心内，彼此相差 300 米以内。通常，两个节点都具有指向同一网络交换机或一组通过交换机间链路连接的网络交换机的上行链路。
 
-双节点 MetroCluster SDS 的定义是一个集群，其节点在物理上是分开的（不同的房间，不同的建筑物或不同的数据中心），并且每个节点的上行链路连接都连接到不同的网络交换机。尽管 MetroCluster SDS 不需要专用硬件，但环境应支持一组最低要求，即延迟（ 5 毫秒 RTT 和 5 毫秒抖动，最大总时间为 10 毫秒）和物理距离（ 10 公里）。
+双节点 MetroCluster SDS 被定义为具有物理上分离的节点（不同的房间、不同的建筑物或不同的数据中心）的群集，并且每个节点的上行链路连接连接到单独的网络交换机。虽然 MetroCluster SDS 不需要专用硬件，但环境应支持最低延迟要求（5ms RTT 和 5ms 抖动，最大总计 10ms）。
 
 MetroCluster SDS 是一项高级功能，需要高级版或高级版 XL 许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。所有这些配置均受支持。
 
@@ -274,10 +274,10 @@ ONTAP MetroCluster SDS 支持所有类型的存储配置（ DAS 和 vNAS ）。
 .ONTAP MetroCluster SDS 有哪些要求？
 这些要求如下：
 
-* 三个数据中心(一个用于ONTAP Select Deploy调解器、一个用于每个节点)。
-* 5 毫秒 RTT 和 5 毫秒抖动， ONTAP Select 节点之间的最大总时间为 10 毫秒，最大物理距离为 10 公里。
-* ONTAP Select Deploy调解器与每个ONTAP Select 节点之间的RTT为125毫秒、最小带宽为5 Mbps。
-* 高级版或高级版 XL 许可证。
+* 三个数据中心（一个用于 ONTAP Select Deploy Mediator，一个用于每个节点）
+* 5ms RTT 和 5ms 抖动，最大总计 10ms
+* ONTAP Select Deploy Mediator 和每个 ONTAP Select 节点之间的 125ms RTT 和最小带宽 5Mbps
+* Premium 或 Premium XL 许可证
 
 
 .ONTAP Select 是否支持 vMotion 或 VMware HA ？

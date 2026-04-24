@@ -65,6 +65,23 @@ image:ots_architecture.png["显示了使用 Deploy 管理实用程序创建的 O
 
 
 
+== 使用 ONTAP Select 的 FlexCache 回写
+
+ONTAP Select 支持具有回写功能的 FlexCache 缓存卷。ONTAP Select 实例的整体性能与入门级 ONTAP 系统相当。
+
+具有回写功能的 FlexCache 缓存卷对 ONTAP Select 有以下要求：
+
+* 在中型（8 核）或大型（16 核）实例上使用 ONTAP Select。
+* 使用 NVMe 支持的固态硬盘。与 ONTAP Select 的 NVMe 支持存储相比，SAS 支持的存储性能较低。
+* 在开始部署之前测试 ONTAP Select 的 FlexCache 回写功能。FlexCache 回写不建议用于大量小文件。
+
+
+ONTAP Select 不支持在小型实例（4 核）上回写的 FlexCache 缓存卷。此外，ONTAP Select 不支持在小型、中型或大型实例上回写的 FlexCache 原始卷。
+
+link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-guidelines.html["了解 ONTAP FlexCache 回写"^]
+
+
+
 == 请比较ONTAP Select和ONTAP 9
 
 基于硬件的 ONTAP 和 ONTAP Select 均可提供企业级存储解决方案。但是，由于它们的设计和实施方式不同，因此它们可以满足不同的业务要求和使用情形。在规划 ONTAP Select 部署之前，您应熟悉各个平台之间的主要区别。

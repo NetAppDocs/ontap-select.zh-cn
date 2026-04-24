@@ -443,16 +443,12 @@
   <block id="85b8b2674420975b303ca7af2cceb0b1" category="inline-link-macro">VMware vCenter 服务器</block>
   <block id="a7e7272f62fd6ddeec2a8fce21757dbf" category="paragraph">此处提供了所需的 vCenter 权限列表： <block ref="b5bc3984b5dc3be4e25e9aa47658f334" category="inline-link-macro-rx"></block>。</block>
   <block id="8aeec027b27415f6c0c3d1335de4508f" category="section-title">HA 和集群</block>
-  <block id="f782a001664af23a9a479ac7f8af14db" category="paragraph">MetroCluster SDS 提供了同步复制解决方案 ，并属于 NetApp MetroCluster 解决方案的范畴。但是，主要区别在于支持的距离（~10 公里与 300 公里）和连接类型（仅支持 IP 网络，而不是 FC 和 IP ）。</block>
   <block id="e390fc325e0e3f48a60a9e0c68c6a1b2" category="paragraph">双节点集群定义为一个集群，其中两个节点位于同一数据中心内，彼此相差 300 米以内。通常，两个节点都具有指向同一网络交换机或一组通过交换机间链路连接的网络交换机的上行链路。</block>
-  <block id="e3000fa150dd97eaa370fd81237fc013" category="paragraph">双节点 MetroCluster SDS 的定义是一个集群，其节点在物理上是分开的（不同的房间，不同的建筑物或不同的数据中心），并且每个节点的上行链路连接都连接到不同的网络交换机。尽管 MetroCluster SDS 不需要专用硬件，但环境应支持一组最低要求，即延迟（ 5 毫秒 RTT 和 5 毫秒抖动，最大总时间为 10 毫秒）和物理距离（ 10 公里）。</block>
   <block id="b26c3202b91162b023a9725e9e6607b8" category="paragraph">MetroCluster SDS 是一项高级功能，需要高级版或高级版 XL 许可证。高级版许可证支持创建中小型 VM 以及 HDD 和 SSD 介质。所有这些配置均受支持。</block>
   <block id="80fc0d552c981807521ad39072587462" category="paragraph">ONTAP MetroCluster SDS 支持所有类型的存储配置（ DAS 和 vNAS ）。</block>
   <block id="07c54da58acb4aa2357d4d3f120a2439" category="paragraph">可以，虽然需要高级许可证，但此许可证同时支持中小型 VM 以及 SSD 和旋转介质。</block>
   <block id="1490bd5ed0a28c21500eff09d45ae2c7" category="paragraph">不可以，只能将具有调解器的双节点集群配置为 MetroCluster SDS 。</block>
   <block id="6596d8aee024f01bd6f7082e0f3f3510" category="paragraph">这些要求如下：</block>
-  <block id="d197104ead309ddefff131940caf98cb" category="list-text">5 毫秒 RTT 和 5 毫秒抖动， ONTAP Select 节点之间的最大总时间为 10 毫秒，最大物理距离为 10 公里。</block>
-  <block id="662b3058ddf7c74b83c16f281c0f67ff" category="list-text">高级版或高级版 XL 许可证。</block>
   <block id="78a6c1f8409fb1b96accc51e1971fbdb" category="paragraph">在 vSAN 数据存储库或外部阵列数据存储库（即 vNAS 部署）上运行的 ONTAP Select VM 支持 vMotion ， DRS 和 VMware HA 功能。</block>
   <block id="afa6b88639bcd7ceb6bf277254bb384e" category="paragraph">不支持这些配置。ONTAP Select 无法查看传输客户端流量的物理网络上行链路的状态。因此， ONTAP Select 依靠 HA 检测信号来确保客户端及其对等方可以同时访问虚拟机。如果物理连接丢失，则丢失 HA 检测信号会导致自动故障转移到另一节点，这是所需的行为。</block>
   <block id="a8237ab48294323805ebcd87b5ac5e8f" category="paragraph">将 HA 流量隔离在单独的物理基础架构上可能会导致 Select VM 能够与其对等方进行通信，但无法与其客户端进行通信。这样会阻止自动 HA 过程，并导致数据不可用，直到调用手动故障转移为止。</block>
@@ -604,7 +600,6 @@
   <block id="29bcfb9b8c7f3dd5f5123092080684d8" category="list-text">部署 ONTAP Select 集群：</block>
   <block id="3170be01fdc45e3e10fbe83b1d2be644" category="paragraph">出现提示时，提供要用于 ONTAP 管理员帐户的密码。</block>
   <block id="1d8edcb67cffc7ed8d5c5ba0f36578b7" category="list-text">显示集群的状态以确定集群何时成功部署：</block>
-  <block id="f32f31f3f65cf8fd06f0af930a71a5a1" category="paragraph">在创建双节点 ONTAP Select 集群时， MetroCluster SDS 是一个配置选项。它与远程办公室 / 分支机构（ ROBO ）部署类似，但两个节点之间的距离最远可达 10 公里这种增强型双节点部署提供了其他用例场景。在准备部署 MetroCluster SDS 时，您应了解相关要求和限制。</block>
   <block id="b06ea299e97a88792e784ae5e265bc85" category="paragraph">每个节点都必须具有高级或更高的 ONTAP Select 许可证。</block>
   <block id="5dd57c2a315d3af44c2eb40eefc47111" category="section-title">网络配置：</block>
   <block id="f2f4f127985b8989606d460ea282483e" category="paragraph">参与站点之间需要第 2 层连接。支持 10GbE 和 1GbE ，包括以下配置：</block>
@@ -1020,7 +1015,6 @@
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开放源代码</block>
   <block id="ffc775822cbd19e463401855c97e8181" category="summary">ONTAP Select MetroCluster SDS 提供增强的保护功能和经济高效的实施。</block>
   <block id="468c7067a5232ce7f7b5f71d1c6e1685" category="paragraph">如果满足某些最低要求，则可以在两个位置之间延伸双节点集群。此架构可完美地位于基于硬件的 MetroCluster 和单个数据中心集群（硬件定义或软件定义）之间。ONTAP Select MetroCluster SDS 的要求突出了软件定义的存储解决方案的一般灵活性，以及它与基于硬件的 MetroCluster SDS 之间的区别。不需要专有硬件。</block>
-  <block id="189f86e135df200ab301cdba9724b737" category="paragraph">与 MetroCluster 不同， ONTAP Select 使用现有网络基础架构，并支持高达 5 毫秒 RTT 的网络延迟，最大抖动高达 5 毫秒，总最大延迟为 10 毫秒。此外，还要求最长距离为 10 公里，但延迟配置文件更为重要。市场空间的隔离要求与物理隔离有关，而不是与实际距离有关。在某些情况下，这可能意味着不同的建筑物。在其他情况下，这可能意味着同一建筑中的不同房间。无论实际的物理位置如何，将双节点集群定义为 MetroCluster SDS 的是每个节点都使用一个单独的上行链路交换机。</block>
   <block id="c0a1eea8b1af6026a021d360f96c66d8" category="paragraph">在双节点 HA 配置中，需要使用调解器在故障转移期间正确识别活动节点，并避免出现在网络分区期间两个节点均独立保持活动状态的任何脑裂情形。此操作与先前提供的常规双节点 HA 配置相同。为了在站点故障期间提供适当的保护和故障转移，调解器应位于与两个 HA 节点不同的站点上。调解器与每个 ONTAP Select 节点之间的最大延迟不能超过 125 毫秒。</block>
   <block id="7df0d3f86ea85895ce805f02d425a395" category="paragraph">ONTAP Select MetroCluster SDS 具有以下优势：</block>
   <block id="efd88036e2c90f7b3284371d9cdbb406" category="list-text">MetroCluster SDS 可通过 0 RPO 和自动故障转移提供业务关键型数据保护。数据存储和应用程序访问点都会自动切换到运行正常的数据中心或节点，无需任何干预。</block>
@@ -1040,7 +1034,6 @@
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp 卷加密（仅限非受限国家或地区）</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="eab10597f9ef50e8058170729878869e" category="list-text">MetroCluster SDS （ ONTAP Select 高级许可证产品）</block>
-  <block id="c3c1ba002ed4d0d1ae23559793a734bd" category="inline-link-macro">比较 ONTAP Select 和 ONTAP 9</block>
   <block id="5cd0ad520dbcfbdeee9d38a1ad945c17" category="summary">部署 ONTAP Select 集群后，您可以根据需要使用标准 ONTAP 软件升级操作步骤 升级每个节点的 ONTAP 映像。</block>
   <block id="047bc25615b74f5ee9ad03d531e71221" category="paragraph">部署 ONTAP Select 集群后，您可以根据需要升级集群中每个节点上的 ONTAP 映像。</block>
   <block id="30cf2dd94fe579c8d10145706d2803f2" category="admonition">您不能使用 Deploy 管理实用程序升级现有 ONTAP Select 节点。Deploy 实用程序只能用于创建新的 ONTAP Select 集群。</block>
@@ -1625,7 +1618,6 @@
   <block id="8b223dc7087ae077b733962bc5c66fff" category="list-text">单节点集群</block>
   <block id="84c58882c8429c8f8515c3e7a653c06f" category="paragraph">ONTAP Select VM 可以与应用程序 VM 搭配使用，从而使其成为 ROBO 的最佳解决方案 。</block>
   <block id="c351b410431306a0c6c9b4caf19ded4f" category="paragraph">通过使用 ONTAP Select 提供企业级文件服务，同时允许双向复制到其他 ONTAP Select 或 FAS 集群，可以在低接触或低成本环境中构建弹性解决方案。ONTAP Select 预先填充了 CIFS ， NFS 和 iSCSI 协议服务以及 SnapMirror 和 SnapVault 复制技术的功能许可证。因此，所有这些功能在部署后均可立即使用。</block>
-  <block id="c2389d581045462585c7d00fa4f67273" category="admonition">由于所有 VMware vSphere 许可证均受支持，因此您可以选择 vSphere 远程办公室分支机构标准或高级许可证，而不是 Enterprise 或 Enterprise Plus 许可证。现在支持所有 vSphere 和 VSAN 许可证。</block>
   <block id="6c7d730bef94b94b16a0eea89a48d7ef" category="paragraph">具有远程调解器的 ONTAP Select 双节点集群是一种适合小型数据中心的极具吸引力的解决方案 。在此配置中， HA 功能由 ONTAP Select 提供。双节点 ONTAP Select ROBO 解决方案 的最低网络连接要求是四个 1 Gb 链路。此外，还支持单个 10 Gb 网络连接。在 VSAN 上运行的 VNAS ONTAP Select 解决方案 （包括双节点 VSAN ROBO 配置）是另一个选项。在此配置中， HA 功能由 VSAN 提供。最后，将数据复制到核心位置的单节点 ONTAP Select 集群可以在商用服务器上提供一组强大的企业数据管理工具。</block>
   <block id="91b24599f00a58f1f331382707a0d6f2" category="paragraph">* 将远程办公室按计划备份到企业数据中心 *</block>
   <block id="8a52c9125fd5cf696cd865c130b46cf7" category="inline-image-macro">将远程办公室按计划备份到企业数据中心</block>
@@ -1666,7 +1658,6 @@
   <block id="47e419c14abec01f3f254dab003a6aba" category="section-title">双节点 HA 与双节点延伸型 HA （ MetroCluster SDS ）</block>
   <block id="568e700bfd84bf09ea449e03f0b63ec2" category="paragraph">可以将双节点主动 / 主动 HA 集群延伸到更远的距离，并可能将每个节点放置在不同的数据中心中。双节点集群与双节点延伸型集群（也称为 MetroCluster SDS ）之间的唯一区别是节点之间的网络连接距离。</block>
   <block id="576271d358b861b1da59de8d0b9547e8" category="paragraph">双节点集群定义为一个集群，其中两个节点位于同一数据中心，距离 300 米。通常，两个节点都具有指向同一网络交换机或一组交换机间链路（ ISL ）网络交换机的上行链路。</block>
-  <block id="4e83e8addeafe73c3acbe68952183177" category="paragraph">双节点 MetroCluster SDS 的定义是一个集群，其节点（不同的机房，不同的建筑物和不同的数据中心）物理隔离超过 300 米。此外，每个节点的上行链路连接都连接到不同的网络交换机。MetroCluster SDS 不需要专用硬件。但是，环境应遵守延迟（ RTT 最长为 5 毫秒，抖动最大为 5 毫秒，总共为 10 毫秒）和物理距离（最长为 10 公里）的要求。</block>
   <block id="526a514c4ab4ec984314911904c226e7" category="admonition">本地连接存储（ DAS ）和共享存储（ vNAS ）均支持 MetroCluster SDS 。请注意，由于 ONTAP Select VM 和共享存储之间的网络， vNAS 配置的固有延迟通常较高。MetroCluster SDS 配置必须在节点之间提供最长 10 毫秒的延迟，包括共享存储延迟。换言之，仅测量 Select VM 之间的延迟是不够的，因为对于这些配置，共享存储延迟并不可忽略。</block>
   <block id="d1bf7b4cf1d6b51999a759865fb8c66b" category="summary">ONTAP Select Deploy 是用于部署和管理 ONTAP Select 集群的管理实用程序。</block>
   <block id="b6943de2133c238e306c67b38531d08a" category="paragraph">ONTAP Select Deploy 是用于部署和管理 ONTAP Select 集群的管理实用程序。Deploy 会打包为 Linux 虚拟机，在创建 ONTAP Select 集群之前，必须先安装该虚拟机。</block>
@@ -2127,8 +2118,6 @@
   <block id="38f6621fec19ff801692cfd74b3d8e9a" category="paragraph">ONTAP Select Deploy还必须能够按如下方式与ONTAP Select 节点和集群管理IP地址进行通信：</block>
   <block id="fc46f3e8b95ad7a4187367a3d699fabf" category="paragraph">对于双节点集群、ONTAP Select Deploy托管集群邮箱。每个ONTAP Select 节点都必须能够通过iSCSI (端口3260)访问ONTAP Select Deploy。</block>
   <block id="81cd6c8ef1512058861a9e8233376fb2" category="paragraph">与主要使用ONTAP Select Deploy VM创建集群的四节点、六节点和八节点集群不同、双节点集群持续依赖ONTAP Select Deploy VM进行HA仲裁。如果ONTAP Select Deploy虚拟机不可用、则故障转移服务将被禁用。</block>
-  <block id="a6224d6ddba5805f1ff843d43f7d2f9d" category="list-text">三个数据中心(一个用于ONTAP Select Deploy调解器、一个用于每个节点)。</block>
-  <block id="62b01fa16ed3db055815d577d15770ac" category="list-text">ONTAP Select Deploy调解器与每个ONTAP Select 节点之间的RTT为125毫秒、最小带宽为5 Mbps。</block>
   <block id="409b8f72bddc57a6bd095f134c6d8275" category="paragraph">双节点集群持续依赖ONTAP Select Deploy虚拟机进行HA仲裁。参与双节点HA仲裁协商的ONTAP Select Deploy虚拟机将标记为调解器虚拟机。</block>
   <block id="3e528ff9b4c46aed11941383fa6d2f9e" category="paragraph">是的。ONTAP Select Deploy充当双节点HA对的调解器、支持高达500毫秒RTT的WAN延迟、并要求最小带宽为5 Mbps。</block>
   <block id="28abf93f8fe8302ba488797b5f941425" category="paragraph">调解器流量为iSCSI、源自ONTAP Select 节点管理IP地址、并在ONTAP Select Deploy IP地址上终止。请注意，在使用双节点集群时，不能对 ONTAP Select 节点管理 IP 地址使用 IPv6 。</block>
@@ -2860,8 +2849,6 @@ storage aggregate show-spare-disks</block>
   <block id="012deed4bd1d789fa86812367047fe25" category="paragraph">集群可能需要长达30分钟才能签约。</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">监控多步集群缩减过程、以确认集群已成功缩减。</block>
   <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select最多支持四个vmnics。</block>
-  <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">NetApp ONTAP 主许可证密钥</block>
-  <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
   <block id="f588ddb32cd79889160082356416d2f3" category="list-text">已更新KVM虚拟机管理程序支持</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">从ESXi .13.1开始、ONTAP 9 8.0.1 GA (内部版本20513097)在硬件版本4及更高版本中受支持。</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">保存原始Deploy虚拟机映像。</block>
@@ -3401,7 +3388,6 @@ storage aggregate show-spare-disks</block>
   <block id="b9f88b3e1ffa6ae7d67f237344be95ad" category="paragraph">以下虚拟机管理程序版本支持 KVM：</block>
   <block id="3f47eb1c93cfecc035015d51dea43351" category="inline-link-macro">部署实用程序安装</block>
   <block id="650b54030913723e437a2beaa84f5e95" category="inline-link-macro">ONTAP Select安装</block>
-  <block id="2eb8006ba6af294cdeda2a87c467fa5c" category="paragraph">关注<block ref="98f788baf075ad6e86ad4cdcdcd40ae3" category="inline-link-macro-rx"></block> ，并审查所需的信息<block ref="5f52a4a178eaea2e0c4812fd7a9f2757" category="inline-link-macro-rx"></block>和<block ref="b3b43e0c3f8f2e7f8b8f596dd2656645" category="inline-link-macro-rx"></block>了解更多信息。</block>
   <block id="9ee25f36a4c63773203c1547efed4fc1" category="paragraph">您必须在创建新的ONTAP Select集群之前执行此过程。您还可以执行此过程为现有软件 RAID NVMe 集群配置额外的 NVMe 驱动器。在这种情况下，配置驱动器后，您必须像添加额外的 SSD 驱动器一样通过 Deploy 添加它们。主要区别在于 Deploy 会检测 NVMe 驱动器并重新启动节点。将 NVMe 驱动器添加到现有集群时，请注意以下有关重新启动过程的事项：</block>
   <block id="ad1e77dc2d8bf573173118e7a9612d61" category="list-text">启用*Intel VT for Directed I/O (VT-d)* 设置。</block>
   <block id="4c223b348646a303ade4760a9df80f2f" category="list-text">某些服务器支持*Intel 卷管理设备 (Intel VMD)*。启用后，可用的 NVMe 设备将对 ESXi 或 KVM 虚拟机管理程序不可见；请先禁用此选项，然后再继续操作。</block>
@@ -3480,7 +3466,6 @@ storage aggregate show-spare-disks</block>
   <block id="24b31a5062e0cc3718df2e8c8508e0e0" category="cell">硬盘驱动器 (HDD) 在...</block>
   <block id="d988863b0fa5744471a52b3a39fbf5e2" category="cell">硬件 RAID 配置</block>
   <block id="7e68045ac7e9b9f9bc6e545d526fb361" category="cell">vNAS 配置</block>
-  <block id="059958ba42856eb78f3a321d5b2bd619" category="cell">固态硬盘 (SSD) 在...</block>
   <block id="1b8fd93e725596cfcebcd993f635973a" category="cell">软件 RAID 配置</block>
   <block id="612323f6c1e52e88287fea6fecdef4e1" category="cell">NVMe 驱动器...</block>
   <block id="0bbdf237a06a8d91581305ad9eaa40be" category="admonition">基于内核的虚拟机 (KVM) 不支持大型实例类型。</block>
@@ -3547,7 +3532,6 @@ storage aggregate show-spare-disks</block>
   <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">示例：</block>
   <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">显示示例</block>
   <block id="fc0aa017cb8518a7c70f2a39ae6553c1" category="list-text">由于之前没有安装过旧版本，因此无法回滚。</block>
-  <block id="6e1243914ebc1fc5867ce44540c39b39" category="list-text"><block ref="6e1243914ebc1fc5867ce44540c39b39" category="inline-link-macro-rx"></block></block>
   <block id="7df4c22f834073378cbc7bda2a69e5d8" category="paragraph-title">备份 Deploy 配置数据</block>
   <block id="92a0bc38a55c8986f72a9e2f38fb2581" category="paragraph">最佳实践是<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block>定期进行，包括在创建集群之后。这对于双节点集群尤为重要，因为备份中包含了中介器配置数据。</block>
   <block id="374fcbe92413e77c7fc7cda40bfb3be6" category="section-title">步骤 1：下载安装镜像</block>
@@ -3939,8 +3923,6 @@ storage aggregate show-spare-disks</block>
   <block id="1964ee773201a24ef70ec5473580b9b8" category="paragraph-title">ONTAP Select 节点之间的 HA 流量是否可以在不同 vSwitch 和/或隔离的物理端口上运行和/或在 ESXi 主机之间使用点对点 IP 电缆？</block>
   <block id="90b9d3d3c7c6090df07016c2850a6293" category="paragraph">有权访问此主机的用户名。这仅在主机不由管理服务器（即由 vCenter 管理的 ESXi 主机）管理时才需要。</block>
   <block id="047fc3d7b951880ca6749f6433cfe2bf" category="list-text">SnapLock Select</block>
-  <block id="62d69997b08663dafba848660e7b1cee" category="inline-link-macro">ONTAP SnapLock 文档</block>
-  <block id="a2c36271189430a9451913aeb53ffe5c" category="paragraph">SnapLock Select 是专为 ONTAP Select 设计的 ONTAP SnapLock 实施，包括 SnapLock Enterprise。它不包括 SnapLock Compliance。有关详细信息，请参见<block ref="4550ac0e247ddc9f80a43ee81b1b5a95" category="inline-link-macro-rx"></block>。</block>
   <block id="d7a5c2d00ea9258a0d2580ffe65ad84c" category="list-text">对 SnapLock Select 的支持</block>
   <block id="3ef41e1838b5f933bc2b06f1eb6efb06" category="list-text">从 ONTAP Select 9.17.1 开始，新部署具有自动许可的 SnapLock Select（包括防篡改快照锁定）。对于从 ONTAP Select 9.16.1 及更早版本升级，您可以从 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 免费下载 SnapLock Select 许可证并手动应用。有关详细信息，请参见 <block ref="c7da6e6f478f90eda131fcbe777888c9" category="inline-link-macro-rx"></block>。</block>
   <block id="a8642b6a7959681743079d45db6cce81" category="paragraph">vSAN ESA 是 ESXi 特定的配置，是 vSphere 8 中引入的 VMware vSAN 的新架构。vSAN ESA 旨在提供增强的效率、可扩展性和性能，特别是在使用基于 NVMe 的 TLC 闪存设备时。</block>
@@ -4046,4 +4028,35 @@ storage aggregate show-spare-disks</block>
   <block id="26b97e8272b5c629fb33f3f308a35b65" category="list-text">ONTAP Select 9.16.1 引入了对自主勒索软件保护 (ARP) 的支持。ONTAP Select 9.16.1 仅支持 ARP 的手动更新，不支持自动更新。ARP 功能许可证包含在 ONTAP Select 9.16.1 的 NLF 中。<block ref="6a143c7a682c120f755bb9e007744e73" category="inline-link-macro-rx"></block>。</block>
   <block id="c15e1083b5e8b4f4973ba9286f3ec996" category="paragraph">您可以从 ONTAP Select Deploy 9.17.1 或 9.16.1 直接升级到 ONTAP Select Deploy 9.18.1。要从早期版本升级，例如 ONTAP Select Deploy 9.15.1，您必须首先升级到 ONTAP Select Deploy 9.16.1 或 9.17.1，然后升级到 ONTAP Select Deploy 9.18.1。</block>
   <block id="8c58e4482a12bf26ee215d6f58f5c8a8" category="paragraph">验证 ONTAP Select Deploy 在升级期间未用于执行任何其他任务。</block>
+  <block id="8380920f551ca0c124aced59300fc93c" category="paragraph">与 MetroCluster 不同，ONTAP Select 使用现有的网络基础设施，支持高达 5 毫秒 RTT 的网络延迟，最大抖动高达 5 毫秒，总计 10 毫秒最大延迟。市场空间中的分离要求更多地与物理分离有关，而不是实际距离。在某些情况下，这可能意味着不同的建筑物。在其他情况下，这可能意味着同一栋楼内的不同房间。无论实际的物理位置如何，将双节点集群定义为 MetroCluster SDS 的是每个节点使用单独的上行链路交换机。</block>
+  <block id="558e06b6dd08fae765da42c411221de9" category="paragraph">双节点 MetroCluster SDS 被定义为具有物理分隔（不同房间、不同建筑物和不同数据中心）超过 300 米的节点的集群。此外，每个节点的上行链路连接都连接到单独的网络交换机。MetroCluster SDS 不需要专用硬件。但是，环境应遵守延迟要求（RTT 最多 5ms，抖动最多 5ms，总计 10ms）。</block>
+  <block id="baa67347be8004d06e741020c161132a" category="cell">固态硬盘 (SSD) 在...</block>
+  <block id="02eaca23acd9bd60cfee240891736083" category="section-title">使用 ONTAP Select 的 FlexCache 回写</block>
+  <block id="364dd8ec144e0e3935d770cd30e2eb06" category="paragraph">ONTAP Select 支持具有回写功能的 FlexCache 缓存卷。ONTAP Select 实例的整体性能与入门级 ONTAP 系统相当。</block>
+  <block id="07e9ae0d622a9d0de28b6d5c6c122728" category="paragraph">具有回写功能的 FlexCache 缓存卷对 ONTAP Select 有以下要求：</block>
+  <block id="1a308ed2e92908395a3c3d28bc751d14" category="list-text">在中型（8 核）或大型（16 核）实例上使用 ONTAP Select。</block>
+  <block id="79bc8c2d1606007acb8463332060f779" category="list-text">使用 NVMe 支持的固态硬盘。与 ONTAP Select 的 NVMe 支持存储相比，SAS 支持的存储性能较低。</block>
+  <block id="658463936ea656ed80f747c8212a3943" category="list-text">在开始部署之前测试 ONTAP Select 的 FlexCache 回写功能。FlexCache 回写不建议用于大量小文件。</block>
+  <block id="ab3c4526c60564cf431475bf92b4af26" category="paragraph">ONTAP Select 不支持在小型实例（4 核）上回写的 FlexCache 缓存卷。此外，ONTAP Select 不支持在小型、中型或大型实例上回写的 FlexCache 原始卷。</block>
+  <block id="143ccd7e6088e13e6f29a3406f9cad06" category="inline-link-macro">了解 ONTAP FlexCache 回写</block>
+  <block id="574bd528de47f58b7f75445e4e459e7d" category="paragraph"><block ref="574bd528de47f58b7f75445e4e459e7d" category="inline-link-macro-rx"></block></block>
+  <block id="c337422f492f6f6f4bce841427686ed5" category="paragraph">由于支持所有 VMware vSphere 许可证，因此可以选择 vSphere Remote Office Branch Office Standard 或 Advanced 许可证，而不是 Enterprise 或 Enterprise Plus 许可证。</block>
+  <block id="5b7cd8b10696b50beb601fc04fc9c316" category="paragraph">支持所有 vSphere 和 VSAN 许可证。</block>
+  <block id="deceddca193158f1811fc38d701027b9" category="paragraph">MetroCluster SDS 提供同步复制解决方案，属于 NetApp MetroCluster 解决方案范畴。但是，关键的区别在于连接类型（仅支持 IP 网络，而不支持 FC 和 IP）。</block>
+  <block id="935934c167ea2712b32b8d3627eb504b" category="paragraph">双节点 MetroCluster SDS 被定义为具有物理上分离的节点（不同的房间、不同的建筑物或不同的数据中心）的群集，并且每个节点的上行链路连接连接到单独的网络交换机。虽然 MetroCluster SDS 不需要专用硬件，但环境应支持最低延迟要求（5ms RTT 和 5ms 抖动，最大总计 10ms）。</block>
+  <block id="c00a7b346fd0c188d653090f7d4d0c9d" category="list-text">三个数据中心（一个用于 ONTAP Select Deploy Mediator，一个用于每个节点）</block>
+  <block id="046bd5bd096bff2b27e500aa8d2dfa80" category="list-text">5ms RTT 和 5ms 抖动，最大总计 10ms</block>
+  <block id="1d6a755bc579447fd7ccaf4c366f016d" category="list-text">ONTAP Select Deploy Mediator 和每个 ONTAP Select 节点之间的 125ms RTT 和最小带宽 5Mbps</block>
+  <block id="2cc135ee22f21247b52a24a050dc5f69" category="list-text">Premium 或 Premium XL 许可证</block>
+  <block id="442ec7099645bccabb5c77484a2a86e7" category="paragraph">ONTAP Select 支持具有回写功能的 FlexCache 缓存卷。不支持具有回写功能的 FlexCache 原始卷。</block>
+  <block id="8e27ba9474a19cb9db424e02974a1138" category="inline-link-macro">详细了解使用 ONTAP Select 的 FlexCache 回写</block>
+  <block id="9a079a12f3415657c4b643769a34e014" category="paragraph"><block ref="9a079a12f3415657c4b643769a34e014" category="inline-link-macro-rx"></block></block>
+  <block id="38b80c13e49233a5fa3471c364fdc493" category="paragraph">SnapLock Select 是专为 ONTAP Select 设计的 ONTAP SnapLock 实施，包括 SnapLock Enterprise。它不包括 SnapLock Compliance。</block>
+  <block id="5641890857d855addbaf3e3074d37f96" category="inline-link-macro">了解 ONTAP SnapLock</block>
+  <block id="eef5b24d94b7497050fd72c30a339f6a" category="paragraph"><block ref="eef5b24d94b7497050fd72c30a339f6a" category="inline-link-macro-rx"></block></block>
+  <block id="418abba3a088e4f2cf70e0dd10df26f7" category="list-text"><block ref="418abba3a088e4f2cf70e0dd10df26f7" category="inline-link-macro-rx"></block></block>
+  <block id="c93df15b2b0031a0d9e559d5c8007fb0" category="inline-link-macro">了解 NetApp ONTAP 主许可证密钥</block>
+  <block id="814128a93dc9cdfaa48e1fb357d9d154" category="list-text"><block ref="814128a93dc9cdfaa48e1fb357d9d154" category="inline-link-macro-rx"></block></block>
+  <block id="3712f888ec8c939491ff4fe2129b3d6e" category="paragraph">MetroCluster SDS 是创建双节点 ONTAP Select 集群时的配置选项。它类似于远程办公室/分支机构 (ROBO) 部署。这种增强的双节点部署提供了其他用例场景。在准备部署 MetroCluster SDS 时，您应该了解这些要求和限制。</block>
+  <block id="e16080ba1221020cf277f79a62c290d9" category="paragraph">请按照 <block ref="aa150fc2553a8a0c846847314bde8f61" category="inline-link-macro-rx"></block>，并查看 <block ref="5f52a4a178eaea2e0c4812fd7a9f2757" category="inline-link-macro-rx"></block> 和 <block ref="b3b43e0c3f8f2e7f8b8f596dd2656645" category="inline-link-macro-rx"></block> 所需的信息以了解更多信息。</block>
 </blocks>
