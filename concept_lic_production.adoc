@@ -64,8 +64,3 @@ _Capacity Pools_ 和 _Capacity Tiers_ 许可模式在几个方面有很大不同
 * 集群中的所有 ONTAP Select 节点共享相同的许可证容量。这意味着许可证必须足够大，才能提供分配给集群中所有节点的存储。
 * 每个节点都会自动从共享容量池中为其本地数据聚合租用存储容量。
 
-
-.下一步是什么？
-* link:concept_lic_platforms.html["了解ONTAP Select的平台许可证产品"]
-* link:concept_lic_cp_operation.html["详细了解 ONTAP Select 容量池许可模式"]
-

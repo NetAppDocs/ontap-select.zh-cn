@@ -24,7 +24,7 @@ summary: 您必须访问 ONTAP Select Deploy 联机文档页面才能显示 API 
 
 
 .步骤
-. 在浏览器中键入 URL 并按 * 输入 * ：
+. 在浏览器中键入 URL 并选择 *Enter*：
 +
 ` https://<ip_address>/api/ui`
 

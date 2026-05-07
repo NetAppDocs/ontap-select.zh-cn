@@ -63,7 +63,7 @@ NOTE: 如果您部署的集群仅用于评估，则可以跳过此步骤。
 .步骤
 . 在本地工作站上的命令 Shell 中，使用 sftp 实用程序将许可证文件上传到 Deploy 虚拟机。
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -113,7 +113,7 @@ license show
 host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -130,7 +130,7 @@ host register -name 10.234.81.14 -hypervisor-type KVM -username root
 host show -name <FQDN|IP> -detailed
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -156,7 +156,7 @@ host show -name 10.234.81.14 -detailed
 credential add -hostname <FQDN|IP> -type vcenter -username <vcenter_username>
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -177,7 +177,7 @@ host register -name <FQDN|IP> -hypervisor-type ESX -username <esx_username>
 host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -192,7 +192,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 host show -name <FQDN|IP> -detailed
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -223,7 +223,7 @@ host show -name 10.234.81.14 -detailed
 cluster create -name <cluster_name> -node-count <count>
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -236,7 +236,7 @@ cluster create -name test-cluster -node-count 1
 cluster modify -name <cluster_name> -mgmt-ip <IP_address> -netmask <netmask> -gateway <IP_address> -dns-servers <FQDN|IP>_LIST -dns-domains <domain_list>
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -280,7 +280,7 @@ node show -cluster-name <cluster_name>
 node modify -name <node_name> -cluster-name <cluster_name> -host-name <FQDN|IP> -license-serial-number <number> -instance-type TYPE -passthrough-disks false
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -300,7 +300,7 @@ ONTAP Select节点会使用容量层许可证。
 host network show -host-name <FQDN|IP> -detailed
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -329,7 +329,7 @@ node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -manageme
 部署单节点集群时，不需要内部网络，应删除“-internal-network”。
 
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -343,7 +343,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 node show -name <node_name> -cluster-name <cluster_name> -detailed
 ----
 +
-示例输出
+输出示例：
 
 +
 ....
@@ -372,7 +372,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 host storage pool show -host-name <FQDN|IP>
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -392,7 +392,7 @@ node storage pool attach -name <pool_name> -cluster-name <cluster_name> -node-na
 如果包含“-capacity-limit”参数，请将值指定为 GB 或 TB。
 
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -407,7 +407,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 node storage pool show -cluster-name <cluster_name> -node-name <node_name>
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -421,7 +421,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 node storage disk attach -node-name <node_name> -cluster-name <cluster_name> -disks <list_of_drives>
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -435,7 +435,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 node storage disk show -node-name <node_name> -cluster-name <cluster_name>`
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]
@@ -462,7 +462,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 cluster deploy -name <cluster_name>
 ----
 +
-示例输出
+输出示例：
 
 +
 [listing]

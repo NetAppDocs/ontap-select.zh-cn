@@ -127,12 +127,12 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 +
 主机名：
 
-.. 键入主机名并按 * 输入 * 。
+.. 键入主机名并选择*Enter*。
 .. 等待出现以下提示：
 +
 提供管理员用户的密码：
 
-.. 键入密码并按 * 输入 * 。
+.. 输入密码并选择 *Enter*。
 .. 等待出现以下提示：
 +
 是否使用 DHCP 设置网络信息？[N] ：

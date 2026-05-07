@@ -31,5 +31,5 @@ summary: 您需要使用 SSH 登录到 Deploy 管理 Shell 。登录后，您可
 ** 代理 URL （可选）
 
 
-. 键入 * ？ * 并按 * Enter * 以显示可用管理 Shell 命令的列表。
+. 键入 *?* 并选择 *Enter* 以显示可用管理 shell 命令的列表。
 

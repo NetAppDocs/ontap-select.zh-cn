@@ -45,7 +45,7 @@ shell bash
 ----
 ls -lh /opt/netapp/images
 ----
-. (可选)删除虚拟机管理程序主机的ONTAP Select映像。
+. （可选）使用虚拟机监控程序主机删除 ONTAP Select 映像。
 +
 [role="tabbed-block"]
 ====

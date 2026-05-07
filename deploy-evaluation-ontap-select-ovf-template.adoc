@@ -46,7 +46,7 @@ image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 . 使用以下选项之一选择主机：
 +
 ** 选择 * 文件 * > * 部署 OVF 模板 * 。
-** 选择*Datacenter。然后右键单击并选择*部署OVF模板*。
+** 选择 *Datacenter*。然后右键选择并选择 *Deploy OVF Template*。
 
 
 . 在本地工作站上选择ONTAP Select源OVA文件，然后选择*Next*。

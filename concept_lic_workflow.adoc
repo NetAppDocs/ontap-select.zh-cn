@@ -20,7 +20,7 @@ summary: 您可以按照工作流为 ONTAP Select 部署购买和应用许可证
 
 九位数许可证序列号:: 序列号适用于节点(容量层)或存储池(容量池)
 许可证锁定 ID:: 使用容量池许可证时、您必须具有Deploy实例的许可证锁定ID
-许可网站:: 您可以从不同的网站获取容量层和容量池许可证
+许可网站:: 您可以在不同的网站上获得 Capacity Tier 和 Capacity Pool 许可证。
 
 
 image:purchased_license_workflow.png["介绍用于为生产 ONTAP Select 部署购买和安装存储许可证的过程。"]

@@ -105,7 +105,19 @@ NOTE: 基于内核的虚拟机 (KVM) 不支持大型实例类型。
 2+| 实例大小 | 小型 | 中等 | 大型 
 
 
-2+| CPU系列 | Intel Xeon E5-26xx v3 (Haswell)或更高版本 | Intel Xeon E5-26xx v3 (Haswell)或更高版本 | Intel Xeon E5-26xx v3 (Haswell)或更高版本 
+2+| CPU系列  a| 
+Intel Xeon E5-26xx v3 (Haswell)或更高版本
+
+AMD EPYC Embedded 9004 或更高版本和 8004
+ a| 
+Intel Xeon E5-26xx v3 (Haswell)或更高版本
+
+AMD EPYC Embedded 9004 或更高版本和 8004
+ a| 
+Intel Xeon E5-26xx v3 (Haswell)或更高版本
+
+AMD EPYC Embedded 9004 或更高版本和 8004
+
 
 
 2+| ONTAP Select CPU/内存 | 4个虚拟CPU (vCPU)/16 GB RAM | 8个vCPS/64 GB RAM | 16个vCP0/128 GB RAM 
@@ -177,4 +189,4 @@ Rocky Linux (KVM) 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、
 --
 ====
 .下一步是什么？
-link:concept_lic_workflow.html["了解有关购买 ONTAP Select 许可证的信息"]
+了解 link:concept_lic_workflow.html["购买 ONTAP Select 许可证"]

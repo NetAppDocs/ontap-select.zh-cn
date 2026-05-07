@@ -79,10 +79,9 @@ NOTE: ESXi 7.0 GA 已停止提供服务。如果您有使用此版本的ONTAP Se
 
 部署 ONTAP Select 的物理虚拟机管理程序主机必须满足多个硬件要求。您可以为虚拟机管理程序主机选择任何平台，只要该主机满足最低硬件要求即可。以下供应商提供受支持的硬件平台： Cisco ， Dell ， HP ， Fujitsu ， Lenovo ， 和 Supermicro 。
 
+ONTAP Select 支持基于 Intel Xeon Sandy Bridge 和 Advanced Micro Devices (AMD) 处理器的 CPU 型号。
 
-NOTE: 从ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或更高版本的 CPU 型号。
-
-有关详细信息、请参见 https://mysupport.netapp.com/matrix["互操作性表工具、window=_blank"]。
+有关详细信息，请参见 https://mysupport.netapp.com/matrix["互操作性表工具"^]。
 
 
 
@@ -91,10 +90,9 @@ NOTE: 从ONTAP Select 9.9.1 开始，仅支持基于 Intel Xeon Sandy Bridge 或
 无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。
 
 .处理器
-支持的微处理器包括用于服务器的 Intel Xeon 处理器，请参阅link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 处理器， window=_blank"]了解更多信息。
+支持的微处理器包括 Intel Xeon 服务器处理器和 AMD 处理器。
 
-
-NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
+有关详细信息，请参见 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 处理器"^] 和 link:https://www.amd.com/en/products/processors/server/epyc.html["AMD EPYC 服务器 CPU"^]。
 
 .以太网配置
 根据集群大小、可以使用多种受支持的以太网配置。
@@ -118,8 +116,6 @@ NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
 
 根据节点实例类型，还需要满足多项其他硬件要求。
 
-请参见 link:concept_lic_platforms.html["了解平台许可证产品"] 有关详细信息 ...
-
 [cols="a1,a2,a2,a2"]
 |===
 | 节点大小 | CPU 核心 | 内存 | 所需的平台许可证产品 
@@ -135,3 +131,6 @@ NOTE: ONTAP Select不支持高级微设备(AMD)处理器。
 |===
 
 NOTE: 根据平台许可证，还有其他磁盘要求。请参见 link:reference_plan_ots_storage.html["存储和 RAID"] 有关详细信息 ...
+
+.相关信息
+了解 link:concept_lic_platforms.html["ONTAP Select 的平台许可证产品"]
