@@ -53,10 +53,9 @@ link:concept_ots_overview.html#flexcache-write-back-with-ontap-select["详细了
 SnapLock Select 是专为 ONTAP Select 设计的 ONTAP SnapLock 实施，包括 SnapLock Enterprise。它不包括 SnapLock Compliance。
 
 +
-link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["了解 ONTAP SnapLock"^]
+了解 link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^]
 
 * SnapMirror
-* SnapMirror 云
 * SnapRestore
 * SnapVault
 * Storage VM灾难恢复(SVM DR)
@@ -77,6 +76,13 @@ ONTAP Select 支持 SVM DR 作为源和目标，最多可有 16 个关系。SVM 
 NOTE: 使用StorageGRID时、不需要FabricPool许可证。
 
 * MetroCluster SDS （ ONTAP Select 高级许可证产品）
+* SnapMirror 云
++
+您需要 link:https://mysupport.netapp.com/site/help["创建非技术支持案例"^] 获取 SnapMirror 云许可证。
+
++
+了解 link:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror 云备份到对象存储"^]
+
 
 
 .相关信息
