@@ -137,7 +137,6 @@ NOTE: 从ONTAP Select 9.161开始、支持手动更新ARP、NetApp许可证文�
 由于ONTAP Select使用虚拟化环境、因此不支持NIC卸载工具。
 
 * NetApp 存储加密驱动器
-* 板载密钥管理器
 * ONTAP端口属性
 +
 不支持修改ONTAP端口的属性、包括速度、双工和流量控制。

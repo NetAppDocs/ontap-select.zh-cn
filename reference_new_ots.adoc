@@ -21,10 +21,10 @@ summary: 当前版本包括ONTAP Select的几项新增功能或改进功能。
 
 == ONTAP Select 9.19.1
 
-支持外部密钥管理 (KMIP):: 从 ONTAP Select 9.19.1 开始，ONTAP Select 支持使用密钥管理互操作性协议 (KMIP) 进行外部密钥管理。您可以在部署 ONTAP Select 9.19.1 集群或将现有集群升级到 ONTAP Select 9.19.1 后启用外部密钥管理。外部密钥管理是 ONTAP Select 9.19.1 支持的唯一密钥管理。有关详细信息，请参见 link:reference_lic_ontap_features.html#licensed-ontap-features["默认情况下获得许可的 ONTAP 功能"]。
+支持外部密钥管理 (KMIP):: 从 ONTAP Select 9.19.1 开始，ONTAP Select 支持使用密钥管理互操作性协议 (KMIP) 进行外部密钥管理。您可以在部署 ONTAP Select 9.19.1 集群或将现有集群升级到 ONTAP Select 9.19.1 后启用外部密钥管理。有关详细信息，请参阅 link:reference_lic_ontap_features.html#licensed-ontap-features["默认情况下获得许可的 ONTAP 功能"]。
 +
 --
-ONTAP Select 不支持云密钥管理器或 ONTAP Onboard Key Manager。
+ONTAP Select 不支持云密钥管理器。
 
 --
 支持 Advanced Micro Devices (AMD) 处理器:: 从 ONTAP Select 9.19.1 开始，ONTAP Select 支持基于内核的虚拟机 (KVM) 和 ESXi 虚拟机监控程序主机上的 AMD 处理器。有关详细信息，请参阅 link:reference_plan_ots_hardware.html["VMware 虚拟机管理程序和硬件注意事项"]。

@@ -30,7 +30,7 @@ NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP �
 * 重复数据删除和数据压缩
 * 使用密钥管理互操作性协议 (KMIP) 进行外部密钥管理
 +
-外部密钥管理是 ONTAP Select 唯一支持的密钥管理。了解 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["启用和配置外部密钥管理"^]。
+了解 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["启用和配置外部密钥管理"^]。
 
 * FlexCache
 +
