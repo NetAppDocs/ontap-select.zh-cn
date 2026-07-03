@@ -37,8 +37,8 @@ NOTE: 有关受支持平台的其他详细信息，请参见特定于虚拟机�
 .适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序
 Deploy管理实用程序和ONTAP Select节点均作为虚拟机运行。您为 Deploy 实用程序选择的虚拟机管理程序与您为 ONTAP Select 节点选择的虚拟机管理程序无关。您可以完全灵活地将这两者配对：
 
-* 在 VMware ESXi 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
-* 在 KVM 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
+* 在 VMware ESXi 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群。
+* 在 KVM 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群。
 
 
 .每个主机一个或多个 ONTAP Select 节点实例
@@ -69,7 +69,7 @@ ONTAP Select 集群中的所有主机都必须运行相同版本的虚拟机管�
 在 VMware 环境中安装 ONTAP Select Deploy 实用程序之前，您应考虑 VMware 环境的一些特定要求和限制。
 
 .ESXi 主机服务器硬件要求
-ESXi 虚拟机管理程序主机必须满足几个最低资源要求。您应确保部署了 ONTAP Select 的主机满足以下基本要求：
+您的 ESXi 虚拟机监控程序主机必须满足几个最低资源要求。请检查部署 ONTAP Select 的主机是否满足以下基本要求：
 
 * ESXi 服务器：
 +
@@ -84,13 +84,13 @@ ESXi 虚拟机管理程序主机必须满足几个最低资源要求。您应确
 
 
 .网络连接
-您必须确保已配置 ONTAP Select Deploy 虚拟机网络接口并具有一个管理 IP 地址。您可以使用 DHCP 动态分配 IP 地址或手动配置静态 IP 地址。
+检查 ONTAP Select Deploy 虚拟机网络接口是否已配置并具有单个管理 IP 地址。您可以使用 DHCP 动态分配 IP 地址或手动配置静态 IP 地址。
 
 根据您的部署决策， Deploy 虚拟机必须能够连接到 vCenter 服务器， ESXi 虚拟机管理程序主机及其管理的 ONTAP Select 节点。您必须将防火墙配置为允许所需的流量。
 
-Deploy 使用 VMware VIX API 与 vCenter 服务器和 ESXi 主机进行通信。最初，它会使用基于 SSL 的 SOAP 在 TCP 端口 443 上建立连接。之后，将使用 SSL 在端口 902 上打开连接。此外， Deploy 会发出 ping 命令，以验证是否存在使用您指定的 IP 地址的 ESXi 主机。
+Deploy 使用 VMware VIX API 与 vCenter 服务器和 ESXi 主机进行通信。最初，它在 TCP 端口 443 上使用 SOAP over SSL 建立连接。此后，使用端口 902 上的 SSL 打开连接。此外，Deploy 还会发出 PING 命令，以验证您指定的 IP 地址上是否存在 ESXi 主机。
 
-此外， Deploy 还必须能够使用以下协议与 ONTAP Select 节点和集群管理 IP 地址进行通信：
+此外，Deploy 必须能够使用以下协议与 ONTAP Select 节点和集群管理 IP 地址进行通信：
 
 * ping 命令（ ICMP ）
 * SSH （端口 22 ）
@@ -106,13 +106,13 @@ ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 �
 
 
 
-== ONTAP Select部署 VMware vCenter 服务器注意事项
+== VMware vCenter 服务器注意事项
+
+.ESA 的 VMware vSphere 权限
+要在 vCenter 中创建和管理 vSAN Express Storage Architecture (ESA)，需要以下 vSphere 内容库权限：
 
 
-
-=== ESA 的 VMware vSphere 权限
-
-以下列出了在 vCenter 中创建和管理 vSAN Express 存储架构 (ESA) 所需的 vSphere 内容库的特定权限：
+NOTE: 要访问内容库权限，管理员需要授予您对 vCenter Server 中全局权限的访问权限。
 
 * 添加库项目
 * 创建本地库

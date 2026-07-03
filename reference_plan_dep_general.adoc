@@ -125,8 +125,8 @@ NOTE: 帐户信息将使用 AES 加密算法和 SHA-256 哈希算法安全地存
 .凭据类型
 支持以下类型的凭据：
 
-* 在将 ONTAP Select 节点直接部署到 VMware ESXi 期间，用于对虚拟机管理程序主机进行身份验证的主机
-* 当主机由 VMware vCenter 管理时，在将 ONTAP Select 节点部署到 ESXi 时， vCenter 用于对 vCenter 服务器进行身份验证
+* *主机*：用于在将 ONTAP Select 节点直接部署到 VMware ESXi 的过程中对虚拟机监控程序主机进行身份验证
+* *vCenter*：当主机由 VMware vCenter 管理时，用于在将 ONTAP Select 节点部署到 ESXi 的过程中对 vCenter 服务器进行身份验证
 
 
 .访问

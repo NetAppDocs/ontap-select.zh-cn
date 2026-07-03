@@ -138,9 +138,9 @@ ONTAP Select Deploy 和 ONTAP Select for ESXi 支持配置 ONTAP Select 单节�
 
 [NOTE]
 ====
-要执行内容库操作，您需要访问额外的权限级别。如果您使用受限角色，则这对于 vSAN ESA 部署是必需的。
+要执行内容库操作，您需要访问其他权限级别。如果您使用受限角色，则 vSAN ESA 部署需要此访问权限。
 
-link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["了解内容库操作的访问权限级别"^] 。
+link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["了解有关访问内容库操作的权限级别的信息"].
 
 ====
 --
