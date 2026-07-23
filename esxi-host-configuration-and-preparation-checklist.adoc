@@ -21,6 +21,7 @@ NOTE: ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主
 
 
 
+[[step-1-prepare-the-esxi-hypervisor-host]]
 == 步骤 1：准备 ESXi 虚拟机管理程序主机
 
 验证 ESXi 主机和防火墙端口的配置。
@@ -63,6 +64,7 @@ NetApp建议您打开以下防火墙端口以允许访问 vSphere：
 
 
 
+[[step-2-review-the-ontap-select-cluster-configuration]]
 == 步骤 2：检查ONTAP Select集群配置
 
 您可以将 ONTAP Select 部署为多节点集群或单节点集群。在许多情况下，多节点集群是首选，因为它具有额外的存储容量和高可用性 (HA) 功能。

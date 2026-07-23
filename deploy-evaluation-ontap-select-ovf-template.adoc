@@ -26,6 +26,7 @@ summary: 您可以部署一个单节点ONTAP Select集群的 90 天评估实例�
 
 
 
+[[step-1-prepare-the-ontap-select-cluster-host]]
 == 步骤 1：准备ONTAP Select集群主机
 
 按照以下要求准备部署ONTAP Select集群的ESXi主机。此平台说明基于标准或小型实例类型配置、其中使用VMFS-5或VMFS-6文件系统格式化本地直连存储(DAS)。
@@ -36,6 +37,7 @@ image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 
 
 
+[[step-2-deploy-a-single-node-ontap-select-cluster-using-an-ovf-template]]
 == 步骤 2：使用 OVF 模板部署单节点ONTAP Select集群
 
 在受支持的64位ESXi主机服务器上完成以下步骤。

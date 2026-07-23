@@ -18,6 +18,7 @@ summary: 在规划安装 ONTAP Select Deploy 管理实用程序时，您应考�
 
 
 
+[[pairing-the-deploy-utility-with-the-ontap-select-clusters]]
 == 将 Deploy 实用程序与 ONTAP Select 集群配对
 
 在将 Deploy 实用程序实例与 ONTAP Select 集群配对时，您可以选择多种方法。
@@ -36,6 +37,7 @@ NOTE: 一个 Deploy 实用程序实例最多可管理 400 个 ONTAP Select 节�
 
 
 
+[[requirements-related-to-the-kvm-environment]]
 == 与KVM环境相关的要求
 
 在KVM虚拟机管理程序环境中安装Deploy管理实用程序之前、您应查看基本要求并做好部署准备。
@@ -70,6 +72,7 @@ ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 �
 
 
 
+[[required-configuration-information]]
 == 所需的配置信息
 
 在部署规划中，您应在安装 ONTAP Select Deploy 管理实用程序之前确定所需的配置信息。
@@ -88,6 +91,7 @@ Deploy虚拟机所连接的网络。
 
 
 
+[[optional-network-configuration-information]]
 == 可选网络配置信息
 
 默认情况下、Deploy虚拟机使用DHCP进行配置。但是、如果需要、您可以手动配置虚拟机的网络接口。
@@ -115,6 +119,7 @@ Deploy虚拟机所连接的网络。
 
 
 
+[[authentication-using-the-credential-store]]
 == 使用凭据存储进行身份验证
 
 ONTAP Select Deploy凭据存储是一个用于保存帐户信息的数据库。在集群创建和管理过程中， Deploy 会使用帐户凭据执行主机身份验证。您应了解在规划 ONTAP Select 部署时如何使用凭据存储。

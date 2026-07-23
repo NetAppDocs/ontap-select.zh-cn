@@ -21,6 +21,7 @@ NOTE: 必须通过ONTAP Select Deploy删除故障驱动器和添加新驱动器(
 
 
 
+[[identify-the-failed-drive]]
 == 确定故障驱动器
 
 如果驱动器出现故障、您需要使用ONTAP 命令行界面来识别故障磁盘。
@@ -87,6 +88,7 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 ====
 
 
+[[remove-the-failed-drive]]
 == 删除故障驱动器
 
 确定出现故障的驱动器后，请删除该磁盘。
@@ -212,6 +214,7 @@ image:ST_26.jpg["警告"]
 ====
 
 
+[[add-the-new-spare-drive]]
 == 添加新的备用驱动器
 
 删除故障驱动器后，请添加备用磁盘。

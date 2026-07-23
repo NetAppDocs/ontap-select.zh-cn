@@ -21,6 +21,7 @@ NOTE: ONTAP Select 数据聚合配置为使用 RAID 0 ，因为物理 RAID 控�
 
 
 
+[[raid-controller-configuration-for-local-attached-storage]]
 == 本地连接存储的 RAID 控制器配置
 
 为 ONTAP Select 提供后备存储的所有本地连接磁盘都必须位于 RAID 控制器后面。大多数商用服务器都随附多个 RAID 控制器选项，价格各不相同，每个控制器选项的功能级别各不相同。其目的是支持尽可能多的这些选项，前提是它们满足控制器上的某些最低要求。
@@ -46,6 +47,7 @@ NOTE: 较旧 ESXi 版本的最大范围和数据存储区大小为 64TB，这可
 
 
 
+[[raid-mode]]
 == RAID 模式
 
 许多 RAID 控制器最多支持三种操作模式，每种模式都表示写入请求所采用的数据路径存在显著差异。这三种模式如下：
@@ -61,6 +63,7 @@ ONTAP Select 要求具有电池备份或闪存单元；因此，我们可以确�
 
 
 
+[[local-disks-shared-between-ontap-select-and-os]]
 == ONTAP Select 和操作系统之间共享的本地磁盘
 
 最常见的服务器配置是，所有本地连接的磁盘轴都位于一个 RAID 控制器后面。您应至少配置两个 LUN ：一个用于虚拟机管理程序，一个用于 ONTAP Select VM 。
@@ -77,6 +80,7 @@ image:ST_08.jpg["仅使用 RAID 管理磁盘轴的服务器 LUN 配置"]
 
 
 
+[[local-disks-split-between-ontap-select-and-os]]
 == 在 ONTAP Select 和操作系统之间拆分的本地磁盘
 
 服务器供应商提供的另一种可能的配置包括为系统配置多个 RAID 或磁盘控制器。在此配置中，一组磁盘由一个磁盘控制器管理，该控制器可能提供 RAID 服务，也可能不提供 RAID 服务。第二组磁盘由硬件 RAID 控制器管理，该控制器能够提供 RAID 5/6 服务。
@@ -91,12 +95,14 @@ image:ST_09.jpg["混合 RAID/ 非 RAID 系统上的服务器 LUN 配置"]
 
 
 
+[[multiple-luns]]
 == 多个 LUN
 
 在两种情况下，单 RAID 组 / 单 LUN 配置必须更改。使用 NL-SAS 或 SATA 驱动器时， RAID 组大小不得超过 12 个驱动器。此外，一个 LUN 可能会大于底层虚拟机管理程序存储限制，可以是单个文件系统块区最大大小，也可以是存储池总最大大小。然后，必须将底层物理存储拆分为多个 LUN ，才能成功创建文件系统。
 
 
 
+[[vmware-vsphere-virtual-machine-file-system-limits]]
 == VMware vSphere 虚拟机文件系统限制
 
 某些版本的 ESXi 上数据存储库的最大大小为 64TB。
@@ -126,6 +132,7 @@ VMware 不支持从 VMFS 5 原位升级到 VMFS 6 。因此， Storage vMotion �
 
 
 
+[[ontap-select-virtual-disks]]
 == ONTAP Select 虚拟磁盘
 
 ONTAP Select 的核心是为 ONTAP 提供一组从一个或多个存储池配置的虚拟磁盘。ONTAP 会提供一组虚拟磁盘，这些虚拟磁盘会被视为物理磁盘，而存储堆栈的其余部分则由虚拟机管理程序进行抽象化。下图更详细地显示了这种关系，突出显示了物理 RAID 控制器，虚拟机管理程序和 ONTAP Select VM 之间的关系。
@@ -141,6 +148,7 @@ image:ST_12.jpg["虚拟磁盘到物理磁盘的映射"]
 
 
 
+[[virtual-disk-provisioning]]
 == 虚拟磁盘配置
 
 为了提供更加简化的用户体验， ONTAP Select 管理工具 ONTAP Deploy 会自动从关联的存储池配置虚拟磁盘并将其连接到 ONTAP Select VM 。此操作会在初始设置期间以及存储添加操作期间自动执行。如果 ONTAP Select 节点属于 HA 对，则虚拟磁盘会自动分配给本地和镜像存储池。
@@ -154,6 +162,7 @@ NOTE: 向 ONTAP Select VM 添加容量可能会导致不同大小的 VMDK。有�
 
 
 
+[[virtualized-nvram]]
 == 虚拟化 NVRAM
 
 NetApp FAS 系统通常配备物理 NVRAM PCI 卡，这是一种包含非易失性闪存的高性能卡。此卡使 ONTAP 能够立即确认传入的写入操作并返回到客户端，从而显著提升写入性能。此外，它还可以计划在称为转存的过程中将修改后的数据块移回速度较慢的存储介质。
@@ -164,6 +173,7 @@ NVRAM 放置在自己的 VMDK 上。在自己的 VMDK 中拆分 NVRAM 允许 ONT
 
 
 
+[[data-path-explained-nvram-and-raid-controller]]
 == 介绍的数据路径： NVRAM 和 RAID 控制器
 
 最好通过在写入请求进入系统时浏览写入请求所占用的数据路径来突出显示虚拟化 NVRAM 系统分区与 RAID 控制器之间的交互。

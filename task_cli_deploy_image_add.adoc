@@ -24,6 +24,7 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 
 
 
+[[step-1-download-the-install-image]]
 == 步骤 1：下载安装镜像
 
 要开始向 Deploy 实用程序实例添加 ONTAP Select 映像的过程，您必须从 NetApp 支持站点下载此安装映像。ONTAP Select 安装映像的格式为一个压缩文件。
@@ -38,6 +39,7 @@ NOTE: 您只能添加版本早于 Deploy 实用程序实例附带的原始版本
 
 
 
+[[step-2-upload-the-install-image-to-deploy]]
 == 步骤 2：将安装镜像上传到 Deploy 平台
 
 获取 ONTAP Select 安装映像后，必须将此文件上传到 Deploy 虚拟机。
@@ -67,6 +69,7 @@ exit
 
 
 
+[[step-3-add-the-install-image]]
 == 步骤 3：添加安装镜像
 
 将ONTAP Select安装映像添加到部署映像目录，以便在部署新集群时可以使用。
@@ -90,6 +93,7 @@ shell bash
 
 
 
+[[step-4-display-the-available-install-images]]
 == 步骤 4：显示可用的安装映像
 
 显示部署新集群时可用的ONTAP Select镜像。

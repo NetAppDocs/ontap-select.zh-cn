@@ -18,6 +18,7 @@ summary: 在规划 ONTAP Select 部署时，您应考虑几个一般要求。
 
 
 
+[[required-linux-knowledge-and-skills-for-kvm]]
 == KVM所需的Linux知识和技能
 
 使用KVM虚拟机管理程序的Linux是一个复杂的工作环境。在KVM上部署ONTAP Select之前、您必须具备必要的知识和技能。
@@ -61,6 +62,7 @@ KVM部署和管理:: 您应熟悉一般虚拟化概念。此外、在KVM环境�
 
 
 
+[[cluster-size-and-related-considerations]]
 == 集群大小及相关注意事项
 
 您应考虑与集群大小相关的多个规划问题。
@@ -71,6 +73,7 @@ KVM部署和管理:: 您应熟悉一般虚拟化概念。此外、在KVM环境�
 
 
 
+[[hypervisor-host-considerations]]
 == 虚拟机管理程序主机注意事项
 
 您应考虑与虚拟机管理程序主机相关的多个规划问题。
@@ -124,6 +127,7 @@ NOTE: 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支�
 
 
 
+[[storage-considerations]]
 == 存储注意事项
 
 您应考虑几个与主机存储相关的规划问题。
@@ -156,6 +160,7 @@ NOTE: ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数�
 
 
 
+[[authentication-using-the-credential-store]]
 == 使用凭据存储进行身份验证
 
 ONTAP Select Deploy凭据存储是一个用于保存帐户信息的数据库。在集群创建和管理过程中， Deploy 会使用帐户凭据执行主机身份验证。您应了解在规划 ONTAP Select 部署时如何使用凭据存储。

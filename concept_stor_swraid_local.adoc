@@ -42,6 +42,7 @@ ONTAP Select 还提供了一个软件 RAID 选项，与硬件 RAID 配置无关�
 ====
 
 
+[[software-raid-configuration-for-local-attached-storage]]
 == 本地连接存储的软件 RAID 配置
 
 使用软件 RAID 时，最好不要使用硬件 RAID 控制器，但是，如果系统确实具有现有 RAID 控制器，则必须满足以下要求：
@@ -59,6 +60,7 @@ NOTE: 管理员需要跟踪 ONTAP Select VM 正在使用哪些驱动器，并防
 
 
 
+[[ontap-select-virtual-and-physical-disks]]
 == ONTAP Select 虚拟和物理磁盘
 
 对于使用硬件 RAID 控制器的配置，物理磁盘冗余由 RAID 控制器提供。ONTAP Select 会显示一个或多个 VMDK ， ONTAP 管理员可以从中配置数据聚合。这些 VMDK 采用 RAID 0 格式进行条带化，因为使用 ONTAP 软件 RAID 会因硬件级别提供的故障恢复能力而变得冗余，效率低下且效率低下。此外，用于系统磁盘的 VMDK 与用于存储用户数据的 VMDK 位于同一个数据存储库中。
@@ -98,6 +100,7 @@ ONTAP软件 RAID 支持以下 RAID 类型：RAID 4、RAID-DP 和RAID-TEC。这�
 
 
 
+[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
 == 直通（ DirectPath IO ）设备与原始设备映射（ RDM ）
 
 ESXi 和 KVM 虚拟机管理程序不支持 NVMe 磁盘作为原始设备映射 (RDM)。要允许 ONTAP Select 直接控制 NVMe 磁盘，必须将这些驱动器配置为 ESXi 或 KVM 内的直通设备。将 NVMe 设备配置为直通设备时，需要服务器 BIOS 的支持，并且可能需要重新启动主机。此外，每个主机可以分配的直通设备数量也有限制，这可能因平台而异。但是，ONTAP Deploy 将此限制为每个 ONTAP Select 节点 14 个 NVMe 设备。这意味着 NVMe 配置以牺牲总容量为代价，提供非常高的 IOPS 密度 (IOPS/TB)。或者，如果您需要具有更大存储容量的高性能配置，建议配置为大型 ONTAP Select VM 大小、用于系统磁盘的 INTEL Optane 卡以及用于数据存储的标称数量的 SSD 驱动器。
@@ -109,6 +112,7 @@ NOTE: 要充分利用 NVMe 性能，请考虑较大的 ONTAP Select VM 大小。
 
 
 
+[[physical-and-virtual-disk-provisioning]]
 == 物理和虚拟磁盘配置
 
 为了提供更加简化的用户体验， ONTAP Deploy 会自动从指定的数据存储库（物理系统磁盘）配置系统（虚拟）磁盘，并将其连接到 ONTAP Select VM 。此操作会在初始设置期间自动执行，以便 ONTAP Select VM 可以启动。RDM 将进行分区，并自动构建根聚合。如果 ONTAP Select 节点属于 HA 对，则数据分区会自动分配给本地存储池和镜像存储池。此分配会在集群创建操作和存储添加操作期间自动进行。
@@ -124,6 +128,7 @@ NOTE: 根聚合的 RAID 组类型取决于可用磁盘的数量。ONTAP Deploy �
 
 
 
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
 == 将 ONTAP Select 磁盘与相应的 ESXi 或 KVM 磁盘匹配
 
 ONTAP Select 磁盘通常标记为 NET x.y 。您可以使用以下 ONTAP 命令获取磁盘 UUID ：
@@ -165,6 +170,7 @@ cat /sys/block/<block_device_id>/device/wwid
 ====
 
 
+[[multiple-drive-failures-when-using-software-raid]]
 == 使用软件 RAID 时出现多个驱动器故障
 
 系统可能会遇到多个驱动器同时处于故障状态的情况。系统的行为取决于聚合 RAID 保护和故障驱动器的数量。
@@ -244,6 +250,7 @@ disk show -broken
 ====
 
 
+[[virtualized-nvram]]
 == 虚拟化 NVRAM
 
 NetApp FAS 系统通常配备物理 NVRAM PCI 卡。此卡是一种高性能卡，包含非易失性闪存，可显著提升写入性能。为此，它授予 ONTAP 立即确认传入的写入客户端的能力。此外，它还可以计划在一个称为转存的过程中将修改后的数据块移回速度较慢的存储介质。

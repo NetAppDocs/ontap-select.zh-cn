@@ -26,6 +26,7 @@ summary: 您可以在 vCenter 管理的 VMware ESXi 主机上部署单节点 ONT
 
 
 
+[[1-register-vcenter-server-credential]]
 == 1. 注册 vCenter Server 凭据
 
 在部署到由 vCenter Server 管理的 ESXi 主机时，您必须在注册主机之前添加凭据。然后， Deploy 管理实用程序可以使用凭据向 vCenter 进行身份验证。
@@ -69,6 +70,7 @@ JSON 输入（步骤 01 ）::
 
 
 
+[[2-register-a-hypervisor-host]]
 == 2. 注册虚拟机管理程序主机
 
 您必须添加一个虚拟机管理程序主机，其中包含 ONTAP Select 节点的虚拟机将在其中运行。
@@ -115,6 +117,7 @@ JSON 输入（第 02 步）::
 
 
 
+[[3-create-a-cluster]]
 == 3. 创建集群
 
 创建 ONTAP Select 集群时，系统会注册基本集群配置，并且 Deploy 会自动生成节点名称。
@@ -154,6 +157,7 @@ JSON 输入（第 03 步）::
 
 
 
+[[4-configure-the-cluster]]
 == 4. 配置集群
 
 在配置集群时，必须提供多个属性。
@@ -195,6 +199,7 @@ JSON 输入（第 04 步）::
 
 
 
+[[5-retrieve-the-node-name]]
 == 5. 检索节点名称
 
 Deploy 管理实用程序会在创建集群时自动生成节点标识符和名称。在配置节点之前，必须检索分配的 ID 。
@@ -225,6 +230,7 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERI
 
 
 
+[[6-configure-the-nodes]]
 == 6. 配置节点
 
 您必须为节点提供基本配置，这是用于配置节点的三个 API 调用中的第一个。
@@ -263,6 +269,7 @@ JSON 输入（第 06 步）:: 您必须提供要运行 ONTAP Select 节点的主
 
 
 
+[[7-retrieve-the-node-networks]]
 == 7. 检索节点网络
 
 您必须确定单节点集群中的节点使用的数据和管理网络。内部网络不用于单节点集群。
@@ -293,6 +300,7 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTER
 
 
 
+[[8-configure-the-node-networking]]
 == 8. 配置节点网络
 
 您必须配置数据和管理网络。内部网络不用于单节点集群。
@@ -329,6 +337,7 @@ JSON 输入（第 08 步）:: 您需要提供网络名称。
 
 
 
+[[9-configure-the-node-storage-pool]]
 == 9. 配置节点存储池
 
 配置节点的最后一步是连接存储池。您可以通过 vSphere Web Client 或 Deploy REST API （可选）确定可用存储池。
@@ -367,6 +376,7 @@ JSON 输入（第 09 步）:: 池容量为 2 TB 。
 
 
 
+[[10-deploy-the-cluster]]
 == 部署集群
 
 配置集群和节点后，您可以部署集群。

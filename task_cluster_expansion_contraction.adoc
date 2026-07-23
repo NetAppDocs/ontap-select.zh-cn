@@ -35,6 +35,7 @@ ESXi 和 KVM 主机不支持以下集群扩展和收缩：
 
 
 
+[[hardware-and-storage-considerations]]
 == 硬件和存储注意事项
 
 以下 KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。
@@ -69,6 +70,7 @@ ESXi 和 KVM 主机不支持以下集群扩展和收缩：
 ====
 
 
+[[expand-the-cluster]]
 == 展开集群
 
 使用集群扩展功能来增加现有ONTAP Select集群的大小。
@@ -124,6 +126,7 @@ ESXi 和 KVM 主机不支持以下集群扩展和收缩：
 
 
 
+[[contract-the-cluster]]
 == 缩减集群
 
 使用集群收缩功能来减小现有ONTAP Select集群的大小。

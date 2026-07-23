@@ -18,12 +18,14 @@ summary: 您可以使用host modify命令修改使用此ONTAP Select Deploy实�
 
 
 
+[[syntax]]
 == 语法
 
 `host modify [-help] [-foreground] -name _name_ -mgmt-server _management_server_ [-username _username_]`
 
 
 
+[[required-parameters]]
 == 所需参数
 
 [cols="35,65"]
@@ -48,6 +50,7 @@ summary: 您可以使用host modify命令修改使用此ONTAP Select Deploy实�
 |===
 
 
+[[optional-parameters]]
 == 可选参数
 
 [cols="35,65"]

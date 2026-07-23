@@ -18,6 +18,7 @@ summary: 了解适用于 ONTAP Select 环境的常规存储概念，然后再了
 
 
 
+[[phases-of-storage-configuration]]
 == 存储配置的各个阶段
 
 ONTAP Select 主机存储的主要配置阶段包括：
@@ -51,12 +52,14 @@ ONTAP Select 主机存储的主要配置阶段包括：
 
 
 
+[[managed-versus-unmanaged-storage]]
 == 受管存储与非受管存储
 
 由 ONTAP Select 访问和直接控制的存储是托管存储。同一虚拟机管理程序主机上的任何其他存储均为非受管存储。
 
 
 
+[[homogeneous-physical-storage]]
 === 同构物理存储
 
 构成 ONTAP Select 受管存储的所有物理驱动器都必须是同构的。也就是说，在以下特征方面，所有硬件都必须相同：
@@ -67,6 +70,7 @@ ONTAP Select 主机存储的主要配置阶段包括：
 
 
 
+[[illustration-of-the-local-storage-environment]]
 == 本地存储环境图示
 
 每个虚拟机管理程序主机都包含可供 ONTAP Select 使用的本地磁盘和其他逻辑存储组件。这些存储组件采用物理磁盘的分层结构进行排列。
@@ -75,6 +79,7 @@ image:ST_01.jpg["本地存储环境"]
 
 
 
+[[characteristics-of-the-local-storage-components]]
 === 本地存储组件的特征
 
 以下几个概念适用于 ONTAP Select 环境中使用的本地存储组件。在准备 ONTAP Select 部署之前，您应熟悉这些概念。这些概念按类别进行排列： RAID 组和 LUN ，存储池和虚拟磁盘。
@@ -99,6 +104,7 @@ image:ST_01.jpg["本地存储环境"]
 
 
 
+[[storage-pool-considerations]]
 === 存储池注意事项
 
 在准备部署 ONTAP Select 时，您应注意一些与存储池相关的问题。
@@ -116,6 +122,7 @@ NOTE: 在 VMware 环境中，存储池与 VMware 数据存储库是同义词。
 
 
 
+[[manage-the-virtual-disks-on-esxi]]
 === 管理ESXi上的虚拟磁盘
 
 在准备部署 ONTAP Select 时，您应注意一些与虚拟磁盘相关的问题。
@@ -141,6 +148,7 @@ ONTAP Select 虚拟机分配有多个虚拟磁盘驱动器。每个虚拟磁盘�
 
 
 
+[[illustration-of-the-external-storage-environment-on-esxi]]
 == ESXi上的外部存储环境示意图
 
 通过 ONTAP Select vNAS 解决方案 ， ONTAP Select 可以使用虚拟机管理程序主机外部存储上的数据存储库。可以使用 VMware vSAN 通过网络访问这些数据存储库，也可以直接在外部存储阵列上访问这些数据存储库。
@@ -154,6 +162,7 @@ ONTAP Select 虚拟机分配有多个虚拟磁盘驱动器。每个虚拟磁盘�
 
 
 
+[[vsan-datastores]]
 === vSAN 数据存储库
 
 每个 ESXi 主机都可以有一个或多个本地 VMFS 数据存储库。通常，这些数据存储库只能由本地主机访问。但是， VMware vSAN 允许 ESXi 集群中的每个主机共享集群中的所有数据存储库，就像它们位于本地一样。下图说明了 vSAN 如何创建在 ESXi 集群中的主机之间共享的数据存储库池。
@@ -162,6 +171,7 @@ image:ST_02.jpg["ESXi 集群"]
 
 
 
+[[vmfs-datastore-on-external-storage-array]]
 === 外部存储阵列上的 VMFS 数据存储库
 
 您可以创建驻留在外部存储阵列上的 VMFS 数据存储库。可以使用多种不同的网络协议之一访问存储。下图显示了使用 iSCSI 协议访问的外部存储阵列上的 VMFS 数据存储库。
@@ -173,6 +183,7 @@ image:ST_03.jpg["ESXi 虚拟机管理程序主机"]
 
 
 
+[[nfs-datastore-on-external-storage-array]]
 === 外部存储阵列上的 NFS 数据存储库
 
 您可以创建驻留在外部存储阵列上的 NFS 数据存储库。存储可使用 NFS 网络协议进行访问。下图显示了通过 NFS 服务器设备访问的外部存储上的 NFS 数据存储库。

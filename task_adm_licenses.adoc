@@ -18,6 +18,7 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 
 
+[[manage-the-capacity-tier-licenses]]
 == 管理容量层许可证
 
 您可以根据需要添加、编辑和删除ONTAP Select容量层许可证。
@@ -33,6 +34,7 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 
 
+[[manage-the-capacity-pool-licenses]]
 == 管理容量池许可证
 
 您可以根据需要添加、编辑和删除ONTAP Select容量池许可证。
@@ -81,6 +83,7 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 
 
+[[reinstall-a-capacity-pool-license]]
 == 重新安装容量池许可证
 
 每个活动容量池许可证都锁定到特定的License Manager实例、该实例包含在Deploy管理实用程序的实例中。如果您正在使用容量池许可证、然后还原或恢复Deploy实例、则原始许可证将不再有效。您必须生成新的容量许可证文件，然后将此许可证安装到新的 Deploy 实例。
@@ -145,6 +148,8 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 
 
+[[convert-an-evaluation-license-to-a-production-license]]
+[[convert-license]]
 == 将评估版许可证转换为生产许可证
 
 您可以通过Deploy管理实用程序升级ONTAP Select评估版集群以使用生产容量层许可证。
@@ -176,6 +181,7 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 
 
+[[manage-an-expired-capacity-pool-license]]
 == 管理已过期的容量池许可证
 
 通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。
@@ -184,6 +190,7 @@ summary: 在管理 ONTAP Select 许可证过程中，您可以执行多项相关
 
 
 
+[[manage-add-on-licenses]]
 == 管理附加许可证
 
 对于ONTAP Select产品、附加许可证直接在ONTAP中应用、不通过ONTAP Select Deploy进行管理。请参见 link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理许可证概述（仅限集群管理员）"^] 和 link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["通过添加许可证密钥启用新功能"^] 有关详细信息 ...

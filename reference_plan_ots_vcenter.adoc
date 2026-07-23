@@ -21,12 +21,14 @@ NOTE: 此外、您还需要管理部署ONTAP Select 的ESXi虚拟机管理程序
 
 
 
+[[administrative-privileges]]
 == 管理权限
 
 下面列出了创建和管理ONTAP Select 集群所需的最低管理权限。
 
 
 
+[[datastore]]
 === 数据存储库
 
 * 分配空间
@@ -38,6 +40,7 @@ NOTE: 此外、您还需要管理部署ONTAP Select 的ESXi虚拟机管理程序
 
 
 
+[[host]]
 === 主机
 
 Configuration::
@@ -61,6 +64,7 @@ Configuration::
 
 
 
+[[network]]
 === 网络
 
 * 分配网络
@@ -68,6 +72,7 @@ Configuration::
 
 
 
+[[virtual-machine]]
 === 虚拟机
 
 Configuration:: 此类别中的所有权限。
@@ -78,6 +83,7 @@ Configuration:: 此类别中的所有权限。
 
 
 
+[[vapp]]
 === vApp
 
 此类别中的所有权限。

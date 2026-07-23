@@ -21,6 +21,7 @@ NOTE: 概述了 ESXi 和 KVM 主机的外部存储支持信息。有关详细信
 
 
 
+[[hardware-raid-controller-requirements]]
 == 硬件 RAID 控制器要求
 
 部署 ONTAP Select 的虚拟机管理程序主机上的 RAID 控制器必须满足多项要求。
@@ -53,12 +54,14 @@ RAID 控制器的最低要求包括：
 
 
 
+[[software-raid-requirements]]
 == 软件 RAID 要求
 
 在虚拟机监控程序上部署 ONTAP Select 集群时，您可以使用 ONTAP Select 提供的软件 RAID 功能，而不是本地硬件 RAID 控制器。在使用软件 RAID 部署集群之前，请查看以下要求和限制。
 
 
 
+[[general-requirements]]
 === 一般要求
 
 软件RAID部署环境必须满足以下核心要求：
@@ -75,6 +78,7 @@ NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_c
 
 
 
+[[esxi-specific-requirements]]
 === ESXi特定要求
 
 * VMware ESXi 8.0 GA（内部版本 20513097）或更高版本
@@ -84,6 +88,7 @@ NOTE: 如果存在硬件 RAID 控制器，请参见 link:concept_stor_concepts_c
 
 
 
+[[kvm-specific-requirements]]
 === KVM特定要求
 
 还有特定的软件包配置要求。有关详细信息，请参见 link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["Linux 服务器的准备"] 步骤。
@@ -120,6 +125,7 @@ KVM的介质要求:: 使用的SSD闪存存储设备必须满足以下附加要�
 
 
 
+[[ontap-select-node-configuration]]
 === ONTAP Select 节点配置
 
 您必须按如下所示配置每个 ONTAP Select 节点和虚拟机管理程序主机，以便将系统磁盘与根聚合和数据聚合分开：
@@ -130,6 +136,7 @@ KVM的介质要求:: 使用的SSD闪存存储设备必须满足以下附加要�
 
 
 
+[[storage-capacity-restrictions]]
 == 存储容量限制
 
 在规划 ONTAP Select 部署时，您应了解与存储分配和使用相关的限制。
@@ -141,12 +148,14 @@ TIP: ONTAP Select 强制执行与存储分配和使用相关的几个限制。�
 
 
 
+[[calculate-raw-storage-capacity]]
 === 计算原始存储容量
 
 ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的虚拟数据和根磁盘的总允许大小。分配容量时应考虑这一点。
 
 
 
+[[minimum-storage-capacity-for-a-single-node-cluster]]
 === 单节点集群的最小存储容量
 
 为单节点集群中的节点分配的最小存储池大小为：
@@ -159,6 +168,7 @@ ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的虚拟数�
 
 
 
+[[minimum-storage-capacity-for-a-multi-node-cluster]]
 === 多节点集群的最小存储容量
 
 为多节点集群中的每个节点分配的存储池的最小大小为：
@@ -180,6 +190,7 @@ HA 对中的每个节点都必须具有相同的存储容量。
 ====
 
 
+[[storage-capacity-and-multiple-storage-pools]]
 === 存储容量和多个存储池
 
 使用本地直连存储， VMware vSAN 或外部存储阵列时，您可以将每个 ONTAP Select 节点配置为最多使用 400 TB 的存储。但是，使用直连存储或外部存储阵列时，单个存储池的最大大小为 64 TB 。因此，如果您计划在这些情况下使用 64 TB 以上的存储，则必须按如下所示分配多个存储池：
@@ -193,12 +204,14 @@ NOTE: 每个存储池中有 2% 的缓冲区保持未使用状态，不需要容�
 
 
 
+[[storage-capacity-and-vmware-vsan]]
 === 存储容量和 VMware vSAN
 
 使用 VMware vSAN 时，数据存储库可能会大于 64 TB 。但是，在创建 ONTAP Select 集群时，您最初只能分配最多 64 TB 的容量。创建集群后，您可以从现有 vSAN 数据存储库分配更多存储。ONTAP Select 可以使用的 vSAN 数据存储库容量取决于所设置的 VM 存储策略。
 
 
 
+[[best-practices]]
 === 最佳实践
 
 对于虚拟机管理程序核心硬件，您应考虑以下建议：
@@ -208,6 +221,7 @@ NOTE: 每个存储池中有 2% 的缓冲区保持未使用状态，不需要容�
 
 
 
+[[additional-disk-drive-requirements-based-on-the-platform-license]]
 == 根据平台许可证确定的其他磁盘驱动器要求
 
 您选择的驱动器会受到平台许可证的限制。
@@ -235,6 +249,7 @@ NOTE: 高级许可证（仅 SSD ）和高级 XL 许可证（ SSD 或 NVMe ）支
 
 
 
+[[nvme-drives-with-software-raid]]
 == 采用软件 RAID 的 NVMe 驱动器
 
 您可以将软件 RAID 配置为使用 NVMe SSD 驱动器。您的环境必须满足以下要求：

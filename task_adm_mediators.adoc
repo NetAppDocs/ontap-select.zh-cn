@@ -18,6 +18,7 @@ summary: 每个 ONTAP Select 双节点集群都由调解器服务监控，该服
 
 
 
+[[view-the-status-of-the-mediator-service]]
 == 查看调解器服务的状态
 
 您可以查看调解器服务相对于为 ONTAP Select Deploy 实用程序定义的每个双节点集群的状态。

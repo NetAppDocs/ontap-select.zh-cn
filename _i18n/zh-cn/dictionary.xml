@@ -1545,7 +1545,6 @@
   <block id="9a44a4605ab254ea4e284ea83fc225b0" category="admonition">根据平台许可证，还有其他磁盘要求。请参见 <block ref="a3c4eb4ff3e5c01e8b1b86f1b4351b6c" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="d5955f327d5d79aa3434b5772a31b4d8" category="summary">ONTAP Select 是 ONTAP 的纯软件版本，可作为虚拟机部署在虚拟机管理程序主机上。它是对主流 FAS 和 AFF ONTAP 产品套件以及 Cloud Volumes ONTAP 等其他纯软件选项的补充。</block>
   <block id="9ed6c695ae7ec8113471a76ddcea07cf" category="section-title">软件定义的存储</block>
-  <block id="718d7c969f416878691ffcaa2bdf3ca1" category="paragraph">在一个商业环境中，数据在直连存储（ DAS ）的孤岛之间分散，数据移动性和管理已成为更加复杂的问题。软件定义的存储（ SDS ）已成为 SDI 环境中解决这些问题和其他问题的重要组成部分。</block>
   <block id="b2c8689de5a7643d75bcb087da31d4a0" category="paragraph">ONTAP Select 是适用于 SDS 市场的 NetApp 解决方案 。ONTAP Select 将企业级存储管理功能引入软件定义的数据中心，并将 NetApp Data Fabric 架构扩展到最极端的边缘用例，包括物联网（ Internet of Things ， IoT ）和战术服务器。</block>
   <block id="5e75bdbfd3f02cf9f655d512b767dc1f" category="section-title">两个软件组件</block>
   <block id="1524f7469af0e3274a12cb0f88c7e172" category="paragraph">ONTAP Select 由两个主要软件组件组成：</block>
@@ -2275,7 +2274,6 @@
   <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">性能概述</block>
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">ONTAP Select 9.6性能</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">通常、许可证到期后不会发生任何情况。但是、您不能安装其他许可证、因为这些节点与已过期的许可证相关联。在续订许可证之前、您应_不_执行任何会使聚合脱机的操作、例如重新启动或故障转移操作。建议的操作是加快许可证续订速度。</block>
-  <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM 迁移</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS Deploy集群刷新失败并显示错误</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。</block>
@@ -3104,7 +3102,6 @@ storage aggregate show-spare-disks</block>
   <block id="52736b6c929e3fcbb90ce69d40477b01" category="paragraph">根据您使用的是容量层许可证还是容量池许可证、确切过程会有所不同：</block>
   <block id="371311feed51b9a8b306f029ede6fb62" category="list-text">序列号适用于节点(容量层)或存储池(容量池)</block>
   <block id="1e3bb0b8e7ecbce202ac714bd6e3f265" category="list-text">使用容量池许可证时、您必须具有Deploy实例的许可证锁定ID</block>
-  <block id="69bbee1943d709d1872e201eef4b29a8" category="paragraph">ONTAP Select 是 ONTAP 的纯软件版本，您可以将其部署为虚拟机管理程序主机上的虚拟机。它是主流FAS、AFF和ASA ONTAP产品套件以及Cloud Volumes ONTAP等其他纯软件选项的补充。</block>
   <block id="00a3caa2896a927e39b353d23b56eb2d" category="paragraph">ONTAP Select可将内部磁盘驱动器、NVMe、SSD或HDD以及外部阵列存储转换为一个灵活的存储系统、该存储系统具有专用ONTAP存储系统提供的许多相同优势。您还可以在新服务器或现有服务器基础架构上部署ONTAP Select。ONTAP Select易于管理、并利用与基于ONTAP的解决方案相同的管理软件、这意味着降低了运营开销和培训要求。</block>
   <block id="8307546cfa4f0ccad4627a2dcd4f46fa" category="paragraph">ONTAP Select通过两种互补的许可模式(容量层和完全灵活的容量池)来适应您的容量消耗需求。这两种许可模式都支持以低至1 TB的增量增加容量。例如、您可以从几TB开始、然后随着项目增长动态添加容量。如果您使用的是容量池、则可以在项目完成后根据需要重新分配容量。</block>
   <block id="39de1f5e6bbe7e17017c377d3305e9fd" category="paragraph">借助SnapMirror软件、您可以在混合云中的ONTAP存储之间移动数据、以便可以在所需位置轻松访问数据。例如、您可以快速启动一个环境来证明一个想法。之后、您可以将项目移至专用存储平台进行生产部署、或者在开发工作流中使其在云中更易于访问。</block>
@@ -3509,7 +3506,6 @@ storage aggregate show-spare-disks</block>
   <block id="17537cd69440eff402ea1d2fdf7d785c" category="paragraph">同时支持单节点集群和多节点集群。</block>
   <block id="17af16327a03b8ca52bdf0daa844b0c1" category="paragraph">使用 Deploy 管理实用程序执行 ESXi 升级是更通用且更具弹性的选项。但是，有时可能会出现部署不可用或无法使用的情况。例如，早期版本的ONTAP Select和 Deploy 管理实用程序不支持升级到 ESXi 8.0。</block>
   <block id="be0322fd0c69452dec4b9d50f45d2e18" category="list-text">使用 VMware 提供的步骤将运行ONTAP Select 的虚拟机管理程序主机升级到 ESXi 8.0 或更高版本。</block>
-  <block id="fd1f31b53e7242c3be0dbe67d6dbb5fb" category="paragraph">ONTAP Select基于ONTAP存储软件构建，通过高可用性、无共享的横向扩展架构高效地提供企业存储服务。您可以部署一个包含一个、两个、四个、六个、八个、十个或十二个节点的解决方案，每个节点最多可提供 400TB 的 NFS、SMB/CIFS 和 iSCSI 连接存储原始容量。您可以利用原生重复数据删除和压缩功能来增加有效容量，从而降低存储成本。横向扩展架构支持高可用性和无中断数据移动，以实现负载平衡或维护硬件。</block>
   <block id="cfc747a13fce627579c4fdb16bf71036" category="paragraph">运行 Python 脚本之前，必须确保环境配置正确：</block>
   <block id="9ddaa0242d12a15ea7e8ee813c0ae382" category="list-text">四节点ONTAP Select集群由两个 HA 对组成。六节点、八节点、十节点和十二节点集群分别由三、四、五、六对HA组成。在每个 HA 对中，每个集群节点上的数据聚合都会同步镜像，因此即使发生故障转移，也不会丢失数据。</block>
   <block id="de1606c9dc446d4b683c678bc5b19e2f" category="paragraph">ONTAP Select集群由 2 到 12 个节点组成。每个 HA 对包含两个用户数据副本，通过 IP 网络跨节点同步镜像。这种镜像对用户是透明的，它是数据聚合的一个属性，在数据聚合创建过程中会自动配置。</block>
@@ -4068,4 +4064,10 @@ storage aggregate show-spare-disks</block>
   <block id="3c877a9561264bd22f7ed715473c9258" category="paragraph">要在 vCenter 中创建和管理 vSAN Express Storage Architecture (ESA)，需要以下 vSphere 内容库权限：</block>
   <block id="913b24f487842d48914e3794480e83cc" category="admonition">要访问内容库权限，管理员需要授予您对 vCenter Server 中全局权限的访问权限。</block>
   <block id="c0d2cde9a14e7d58e2ab5a38de5b380d" category="paragraph"><block ref="c0d2cde9a14e7d58e2ab5a38de5b380d" category="inline-link-macro-rx"></block></block>
+  <block id="35c865322fb18e49c0e0d5db1a728645" category="paragraph">ONTAP Select 基于 ONTAP 存储软件构建，通过高可用、无共享的横向扩展架构高效地提供企业存储服务。您可以部署具有一个、两个、四个、六个、八个、十个或十二个节点的解决方案，每个节点的 NFS、SMB/CIFS 和 iSCSI 连接存储的原始容量高达 400TB。您可以利用原生重复数据删除和压缩功能，通过提高有效容量来降低存储成本。横向扩展架构可实现高可用性和无中断的数据访问，以实现负载平衡或对硬件进行维护。</block>
+  <block id="8caf5b702720dd48353d13906ca133b0" category="paragraph">ONTAP Select 是 ONTAP 的纯软件版本，可以将其部署为虚拟机监控程序主机上的虚拟机。它补充了主流的 AFF 和 FAS ONTAP 产品套件以及其他纯软件选项，如 Cloud Volumes ONTAP。</block>
+  <block id="8132fb388d9980a45bf3e73000044650" category="paragraph">在数据分散于直接连接存储（DAS）孤岛的商品世界中，数据访问和管理已成为更复杂的问题。软件定义存储（SDS）已成为 SDI 领域解决这些及其他问题的重要组成部分。</block>
+  <block id="972cc139ce081218935961184ceb872f" category="list-text">异步 SnapMirror 中的一致性组</block>
+  <block id="2dd64bd29dd925332151bac56daee54d" category="list-text">SVM-Migrate</block>
+  <block id="191cca9b69f6675fd704265efaee5cd4" category="paragraph">ONTAP Select 不支持异步 SnapMirror 中的一致性组。</block>
 </blocks>

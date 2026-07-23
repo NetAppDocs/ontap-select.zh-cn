@@ -38,6 +38,7 @@ NOTE: ONTAP Select最多支持四个vmnics。
 
 
 
+[[standard-or-distributed-vswitch-and-four-physical-ports-per-node]]
 == 标准或分布式 vSwitch 以及每个节点四个物理端口
 
 可以为多节点集群中的每个节点分配四个端口组。每个端口组具有一个活动物理端口和三个备用物理端口，如下图所示。
@@ -106,6 +107,7 @@ image:DDN_12.jpg["第 2 部分： ONTAP Select 内部端口组"]
 |===
 
 
+[[standard-or-distributed-vswitch-and-two-physical-ports-per-node]]
 == 标准或分布式 vSwitch 以及每个节点两个物理端口
 
 当使用两个高速（25/40Gb）网卡时，推荐的端口组配置在概念上与使用四个 10Gb 适配器的配置非常相似。即使只使用两个物理适配器，也应该使用四个端口组。端口组分配如下：
@@ -134,6 +136,7 @@ image:DDN_13.jpg["vSwitch ，每个节点具有两个物理端口"]
 
 
 
+[[distributed-vswitch-with-lacp]]
 == 采用 LACP 的分布式 vSwitch
 
 在配置中使用分布式 vSwitch 时，可以使用 LACP （尽管这不是最佳实践）来简化网络配置。唯一受支持的 LACP 配置要求所有 vmnic 都位于一个 LAG 中。上行链路物理交换机在通道中的所有端口上必须支持介于 7 ， 500 到 9 ， 000 之间的 MTU 大小。内部和外部 ONTAP Select 网络应在端口组级别隔离。内部网络应使用不可路由（隔离）的 VLAN 。外部网络可以使用 VST ， EST 或 VGT 。

@@ -18,18 +18,21 @@ summary: 在规划 ONTAP Select 部署时，您应考虑一些最佳实践。
 
 
 
+[[storage]]
 == 存储
 
 您应考虑以下存储最佳实践。
 
 
 
+[[all-flash-or-generic-flash-arrays]]
 === 纯闪存或通用闪存阵列
 
 使用全闪存 VSAN 或通用闪存阵列部署 ONTAP Select 虚拟 NAS （ vNAS ）时，应遵循使用非 SSD DAS 存储的 ONTAP Select 的最佳实践。
 
 
 
+[[external-storage]]
 === 外部存储
 
 您应遵循以下建议：
@@ -41,12 +44,14 @@ summary: 在规划 ONTAP Select 部署时，您应考虑一些最佳实践。
 
 
 
+[[hypervisor-core-hardware]]
 === 虚拟机管理程序核心硬件
 
 一个 ONTAP Select 聚合中的所有驱动器都应采用相同的类型。例如，不应在同一聚合中混用 HDD 和 SSD 驱动器。
 
 
 
+[[raid-controller]]
 === RAID 控制器
 
 应将服务器 RAID 控制器配置为在回写模式下运行。如果出现写入工作负载性能问题，请检查控制器设置并确保未启用直写或写式。
@@ -57,6 +62,7 @@ RAID 控制器缓存用于存储所有传入的块更改，而不仅仅是针对
 
 
 
+[[raid-groups]]
 === RAID组
 
 最佳 RAID 组大小为 8 到 12 个驱动器。每个 RAID 组的最大驱动器数为 24 。
@@ -69,6 +75,7 @@ ONTAP Select 不会因增加 RAID 组中的 LUN 数量而获得任何性能优�
 
 
 
+[[vmware-esxi-hosts]]
 === VMware ESXi 主机
 
 NetApp 建议使用 ESXi 8.0 或更高版本，并将 NVMe 磁盘用于托管系统磁盘的数据存储区。此配置可为 NVRAM 分区提供最佳性能。
@@ -84,54 +91,63 @@ NOTE: 在 ESXi 8.0 或更高版本上安装时，无论系统磁盘驻留在 SSD
 
 
 
+[[vmware-storage-vmotion]]
 === VMware Storage vMotion
 
 在决定是否对 ONTAP Select 节点使用 VMware Storage vMotion 时，新主机上的可用容量并不是唯一的因素。底层存储类型，主机配置和网络功能应能够承受与原始主机相同的工作负载。
 
 
 
+[[networking]]
 == 网络
 
 您应考虑以下网络连接最佳实践。
 
 
 
+[[duplicate-mac-addresses]]
 === MAC 地址重复
 
 为了避免多个 Deploy 实例分配重复的 MAC 地址，应使用每个第 2 层网络一个 Deploy 实例来创建或管理 ONTAP Select 集群或节点。
 
 
 
+[[ems-messages]]
 === EMS 消息
 
 应仔细监控 ONTAP Select 双节点集群，以查看指示存储故障转移已禁用的 EMS 消息。这些消息表示与调解器服务的连接断开，应立即纠正。
 
 
 
+[[latency-between-nodes]]
 === 节点之间的延迟
 
 两个节点之间的网络必须支持 5 毫秒的平均延迟，并额外支持 5 毫秒的定期抖动。在部署集群之前、请使用ONTAP Select产品架构和最佳实践技术报告中所述的操作步骤测试网络。
 
 
 
+[[load-balancing]]
 === 负载平衡
 
 要优化内部和外部 ONTAP Select 网络之间的负载平衡，请使用基于源虚拟端口负载平衡策略的路由。
 
 
 
+[[multiple-layer-2-networks]]
 === 多个第 2 层网络
 
 如果数据流量跨越多个第 2 层网络且需要使用 VLAN 端口，或者您使用多个 IP 空间，则应使用 VGT 。
 
 
 
+[[physical-switch-configuration]]
 === 物理交换机配置
 
 VMware 建议在连接到 ESXi 主机的交换机端口上将 STP 设置为 PortFast 。如果未在交换机端口上将 STP 设置为 Portfast ，则可能会影响 ONTAP Select 允许上行链路故障的能力。使用 LACP 时， LACP 计时器应设置为 FAST （ 1 秒）。负载平衡策略应根据端口组上的 IP 哈希以及 LAG 上的源和目标 IP 地址以及 TCP/UDP 端口和 VLAN 设置为路由。
 
 
 
+[[virtual-switch-options-for-kvm]]
 === KVM的虚拟交换机选项
 
 您必须在每个 ONTAP Select 主机上配置一个虚拟交换机，以支持外部网络和内部网络（仅限多节点集群）。在部署多节点集群过程中，您应测试内部集群网络上的网络连接。
@@ -140,12 +156,14 @@ VMware 建议在连接到 ESXi 主机的交换机端口上将 STP 设置为 Port
 
 
 
+[[ha]]
 == HA
 
 为了确保高可用性、您应考虑以下最佳实践。
 
 
 
+[[deploy-backups]]
 === 部署备份
 
 定期备份 Deploy 配置数据（包括创建集群后）是最佳实践。这对于双节点集群尤为重要，因为备份中包含了中介器配置数据。
@@ -154,6 +172,7 @@ VMware 建议在连接到 ESXi 主机的交换机端口上将 STP 设置为 Port
 
 
 
+[[mirrored-aggregates]]
 === 镜像聚合
 
 尽管需要存在镜像聚合才能为主聚合提供最新（ RPO 0 ）副本，但请注意主聚合的可用空间不会不足。如果主聚合空间不足、则 发生原因 ONTAP可能会删除用作存储恢复基线的通用Snapshot副本。这种方法可以满足客户端写入要求。但是，由于故障恢复时缺少通用 Snapshot 副本，因此 ONTAP Select 节点需要从镜像聚合执行完整的基线。在无共享环境中，此操作可能需要大量时间。
@@ -163,6 +182,7 @@ NOTE: NetApp建议为镜像聚合至少保留20%的可用空间、以获得最�
 
 
 
+[[nic-aggregation-teaming-and-failover]]
 === NIC 聚合，绑定和故障转移
 
 ONTAP Select 支持双节点集群使用一个 10 Gb 链路；但是， NetApp 最佳实践是在 ONTAP Select 集群的内部和外部网络上通过 NIC 聚合或 NIC 绑定实现硬件冗余。
@@ -175,6 +195,7 @@ NetApp 建议 LACP 模式在 ESXi 和物理交换机上都处于活动状态。�
 
 
 
+[[two-node-stretched-ha-metrocluster-sds-best-practices]]
 === 双节点延伸型 HA （ MetroCluster SDS ）最佳实践
 
 在创建 MetroCluster SDS 之前，请使用 ONTAP Deploy 连接检查程序确保两个数据中心之间的网络延迟处于可接受的范围内。

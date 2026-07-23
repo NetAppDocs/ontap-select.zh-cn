@@ -18,6 +18,7 @@ summary: 在 VMware 环境中安装 Deploy 管理实用程序之前，请查看�
 
 
 
+[[required-configuration-information]]
 == 所需的配置信息
 
 在部署规划中，您应在安装 ONTAP Select Deploy 管理实用程序之前确定所需的配置信息。
@@ -40,6 +41,7 @@ summary: 在 VMware 环境中安装 Deploy 管理实用程序之前，请查看�
 |===
 
 
+[[optional-network-configuration-information]]
 == 可选网络配置信息
 
 默认情况下， Deploy 虚拟机使用 DHCP 进行配置。但是，如果需要，您可以手动配置虚拟机的网络接口。

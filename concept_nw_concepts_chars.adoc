@@ -18,12 +18,14 @@ summary: 首先，熟悉适用于 ONTAP Select 环境的一般网络概念。然
 
 
 
+[[physical-networking]]
 == 物理网络
 
 物理网络主要通过提供底层第二层交换基础架构来支持 ONTAP Select 集群部署。与物理网络相关的配置包括虚拟机管理程序主机和更广泛的交换网络环境。
 
 
 
+[[host-nic-options]]
 === 主机 NIC 选项
 
 每个 ONTAP Select 虚拟机管理程序主机都必须配置两个或四个物理端口。您选择的确切配置取决于多种因素，包括：
@@ -36,6 +38,7 @@ summary: 首先，熟悉适用于 ONTAP Select 环境的一般网络概念。然
 
 
 
+[[physical-switch-configuration]]
 === 物理交换机配置
 
 您必须确保物理交换机的配置支持 ONTAP Select 部署。物理交换机与基于虚拟机管理程序的虚拟交换机集成在一起。您选择的确切配置取决于多种因素。主要注意事项包括：
@@ -47,12 +50,14 @@ summary: 首先，熟悉适用于 ONTAP Select 环境的一般网络概念。然
 
 
 
+[[logical-networking]]
 == 逻辑网络连接
 
 ONTAP Select 使用两个不同的逻辑网络，根据类型分隔流量。具体而言，流量可以在集群中的主机之间流动，也可以流向存储客户端和集群外的其他计算机。虚拟机管理程序管理的虚拟交换机有助于支持逻辑网络。
 
 
 
+[[internal-network]]
 === 内部网络
 
 在多节点集群部署中，各个 ONTAP Select 节点使用隔离的 " 内部 " 网络进行通信。此网络不会在 ONTAP Select 集群中的节点之外公开或可用。
@@ -82,6 +87,7 @@ NOTE: 只有多节点集群存在内部网络。
 
 
 
+[[external-network]]
 === 外部网络
 
 外部网络处理 ONTAP Select 集群节点与外部存储客户端以及其他计算机之间的流量。外部网络是每个集群部署的一部分，具有以下特征：
@@ -111,6 +117,7 @@ NOTE: 只有多节点集群存在内部网络。
 
 
 
+[[virtual-machine-networking-environment]]
 == 虚拟机网络环境
 
 虚拟机管理程序主机可提供多种网络功能。

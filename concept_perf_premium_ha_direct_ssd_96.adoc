@@ -18,6 +18,7 @@ summary: ONTAP Select 9.6 性能的性能信息—高级 HA 直连 SSD 存储。
 
 
 
+[[reference-platform]]
 == 参考平台
 
 ONTAP Select (高级版XL)硬件(每个节点)
@@ -67,6 +68,7 @@ NOTE: 这些性能数据基于ONTAP Select 9.6。
 |===
 
 
+[[64k-sequential-read]]
 === 64K 顺序读取
 
 详细信息：
@@ -82,6 +84,7 @@ NOTE: 这些性能数据基于ONTAP Select 9.6。
 
 
 
+[[64k-sequential-write]]
 === 64K 顺序写入
 
 详细信息：
@@ -97,6 +100,7 @@ NOTE: 这些性能数据基于ONTAP Select 9.6。
 
 
 
+[[8k-random-read]]
 === 8 K 随机读取
 
 详细信息：
@@ -112,6 +116,7 @@ NOTE: 这些性能数据基于ONTAP Select 9.6。
 
 
 
+[[8k-random-write]]
 === 8 K 随机写入
 
 详细信息：
@@ -127,6 +132,7 @@ NOTE: 这些性能数据基于ONTAP Select 9.6。
 
 
 
+[[8k-random-50-write-50-read]]
 === 8 K 随机 50% 写入 50% 读取
 
 详细信息：

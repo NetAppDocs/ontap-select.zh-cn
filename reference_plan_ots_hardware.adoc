@@ -18,6 +18,7 @@ summary: 与 VMware 环境相关，您应考虑几个硬件要求和规划问题
 
 
 
+[[hypervisor-requirements]]
 == 虚拟机管理程序要求
 
 与运行 ONTAP Select 的虚拟机管理程序相关的要求有多种。
@@ -27,12 +28,14 @@ NOTE: 你应该复习一下link:reference_release_notes.html["《 ONTAP Select �
 
 
 
+[[vmware-licensing]]
 === VMware 许可
 
 要部署 ONTAP Select 集群，您的组织必须为运行 ONTAP Select 的虚拟机管理程序主机拥有有效的 VMware vSphere 许可证。您应使用适合您的部署的许可证。
 
 
 
+[[software-compatibility]]
 === 软件兼容性
 
 您可以在 KVM 和 ESXi 虚拟机管理程序上部署ONTAP Select 。
@@ -69,12 +72,14 @@ NOTE: ESXi 7.0 GA 已停止提供服务。如果您有使用此版本的ONTAP Se
 ====
 
 
+[[vmware-vcenter-and-standalone-esxi-hosts]]
 === VMware vCenter 和独立 ESXi 主机
 
 如果 ESXi 虚拟机管理程序主机由 vCenter Server 管理，则必须使用 vCenter 凭据将此主机注册到 Deploy 管理实用程序。您不能使用 ESXi 凭据将主机注册为独立主机。
 
 
 
+[[core-hardware-requirements]]
 == 核心硬件要求
 
 部署 ONTAP Select 的物理虚拟机管理程序主机必须满足多个硬件要求。您可以为虚拟机管理程序主机选择任何平台，只要该主机满足最低硬件要求即可。以下供应商提供受支持的硬件平台： Cisco ， Dell ， HP ， Fujitsu ， Lenovo ， 和 Supermicro 。
@@ -85,6 +90,7 @@ ONTAP Select 支持基于 Intel Xeon Sandy Bridge 和 Advanced Micro Devices (AM
 
 
 
+[[basic-hardware-requirements]]
 === 基本硬件要求
 
 无论节点实例类型或许可证提供如何，适用于所有平台的常见硬件要求都有几项。
@@ -112,6 +118,7 @@ ONTAP Select 支持基于 Intel Xeon Sandy Bridge 和 Advanced Micro Devices (AM
 |===
 
 
+[[additional-hardware-requirements-based-on-the-instance-type]]
 === 根据实例类型确定的其他硬件要求
 
 根据节点实例类型，还需要满足多项其他硬件要求。

@@ -21,6 +21,8 @@ NOTE: ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主
 
 
 
+[[step-1-prepare-the-kvm-hypervisor-host]]
+[[prepare-linux-server]]
 == 步骤 1：准备 KVM 虚拟机管理程序主机
 
 您需要准备部署ONTAP Select节点的每个 Linux KVM 服务器。此外、您还必须准备部署ONTAP Select Deploy管理实用程序的服务器。
@@ -72,6 +74,7 @@ ONTAP Select存储池是一种逻辑数据容器、用于抽象化底层物理�
 
 
 
+[[step-2-create-a-storage-pool]]
 == 步骤 2：创建存储池
 
 在每个ONTAP Select节点上创建至少一个存储池。如果使用软件RAID而不是本地硬件RAID、则存储磁盘会连接到根聚合和数据聚合的节点。在这种情况下、您仍必须为系统数据创建存储池。
@@ -137,6 +140,7 @@ virsh pool-list
 
 
 
+[[step-3-optionally-delete-a-storage-pool]]
 == 步骤 3：（可选）删除存储池
 
 当不再需要存储池时，您可以删除它。
@@ -224,6 +228,7 @@ pvremove <physical_volume_name>
 
 
 
+[[step-4-review-the-ontap-select-cluster-configuration]]
 == 步骤 4：检查ONTAP Select集群配置
 
 您可以将 ONTAP Select 部署为多节点集群或单节点集群。在许多情况下，多节点集群是首选，因为它具有额外的存储容量和高可用性 (HA) 功能。
@@ -256,6 +261,7 @@ image:CHK_03.jpg["四节点集群中的单个节点"]
 ====
 
 
+[[step-5-configure-open-vswitch]]
 == 步骤5：配置Open vSwitch
 
 使用 Open vSwitch 在每个 KVM 主机节点上配置一个软件定义的交换机。

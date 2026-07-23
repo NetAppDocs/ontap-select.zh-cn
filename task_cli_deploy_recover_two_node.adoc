@@ -18,6 +18,7 @@ summary: 如果 ONTAP Select Deploy 实用程序因某种原因失败或变得�
 
 
 
+[[prepare-to-recover-the-deploy-utility]]
 == 准备恢复部署实用程序
 
 在尝试恢复 Deploy 实用程序实例之前，您需要做好准备以确保成功。您必须熟悉若干行政程序并掌握所需信息。
@@ -51,6 +52,8 @@ link:task_cli_migrate_deploy.html#step-3-restore-the-deploy-configuration-data-t
 
 
 
+[[restore-a-deploy-utility-instance-using-a-configuration-backup]]
+[[restore-deploy-backup]]
 == 使用配置备份还原Deploy实用程序实例
 
 如果您已为包含双节点集群的失败 Deploy 实用程序实例创建备份，则可以将配置数据还原到新的 Deploy 虚拟机实例。然后，您必须对 ONTAP Select 集群中的两个节点执行额外配置来完成恢复。
@@ -127,6 +130,8 @@ storage failover show
 
 
 
+[[reconfigure-and-recover-a-deploy-utility-instance]]
+[[restore-and-recover-deploy]]
 == 重新配置和恢复Deploy实用程序实例
 
 如果您没有包含双节点集群的失败部署实用程序实例的备份，请在新的部署虚拟机中配置中介 iSCSI 目标和邮箱。然后，通过对ONTAP Select集群中的两个节点进行额外配置来完成恢复。

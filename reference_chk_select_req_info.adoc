@@ -20,6 +20,7 @@ summary: 在准备在 VMware 环境中部署 ONTAP Select 集群时，请收集�
 
 
 
+[[cluster-level-information]]
 == 集群级别的信息
 
 您必须收集与 ONTAP Select 集群相关的信息。
@@ -39,6 +40,7 @@ summary: 在准备在 VMware 环境中部署 ONTAP Select 集群时，请收集�
 |===
 
 
+[[host-level-information]]
 == 主机级信息
 
 您必须收集与 ONTAP Select 集群中每个节点相关的信息。

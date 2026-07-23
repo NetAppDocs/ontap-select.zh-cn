@@ -18,6 +18,7 @@ summary: 在部署 ONTAP Select 之前，您必须正确配置虚拟机管理程
 
 
 
+[[virtual-switch-options]]
 == 虚拟交换机选项
 
 您必须在每个 ONTAP Select 主机上配置一个虚拟交换机，以支持外部网络和内部网络（仅限多节点集群）。在部署多节点集群过程中，您应测试内部集群网络上的网络连接。
@@ -27,12 +28,14 @@ NOTE: 要详细了解如何在虚拟机监控程序主机上配置 vSwitch 和�
 
 
 
+[[upgrade-to-vmxnet3-esxi-only]]
 == 升级到VMXNET3 (仅限ESXi)
 
 从使用 Deploy 2.10 的 ONTAP Select 9.5 开始， VMXNET3 是 VMware ESXi 上新集群部署中的默认网络驱动程序。如果将旧版ONTAP Select节点升级到9.5或更高版本、则不会自动升级此驱动程序。
 
 
 
+[[cluster-mtu]]
 == 集群 MTU
 
 使用单独的内部网络连接多节点集群中的 ONTAP Select 节点。此网络的 MTU 大小通常为 9000 。但是，在某些情况下，此 MTU 大小对于连接 ONTAP Select 节点的网络来说过大。为了容纳较小的帧，内部网络上 ONTAP Select 使用的 MTU 大小可以介于 7500-9000 字节之间。
@@ -49,6 +52,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 
 
 
+[[two-nic-host-with-standard-vswitch-esxi-only]]
 == 采用标准vSwitch的双NIC主机(仅限ESXi)
 
 为了提高双 NIC 配置中的 ONTAP Select 性能，您应使用两个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：
@@ -76,6 +80,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 
 
 
+[[four-nic-host-with-standard-vswitch-esxi-only]]
 == 采用标准vSwitch的四NIC主机(仅限ESXi)
 
 为了提高四 NIC 配置中的 ONTAP Select 性能，您应使用四个端口组隔离内部和外部网络流量。此建议将适用场景 配置为以下特定配置：
@@ -115,6 +120,7 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 
 
 
+[[network-traffic-requirements]]
 == 网络流量要求
 
 您必须确保已正确配置防火墙，以使网络流量能够在 ONTAP Select 部署环境中的各个参与者之间流动。

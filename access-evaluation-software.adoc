@@ -30,6 +30,7 @@ NOTE: 评估许可证无法延期。90 天期满后，许可证将失效，您�
 
 
 
+[[step-1-register-for-an-account]]
 == 第一步：注册账号
 
 如有需要，完成NetApp帐户注册，并申请潜在客户访问权限。
@@ -73,6 +74,7 @@ NOTE: 免费邮箱账户，例如 Gmail 或 Yahoo，是不可接受的。
 
 
 
+[[step-2-download-ontap-select-evaluation-software]]
 == 步骤 2：下载ONTAP Select评估软件
 
 您的支持案例经审核批准后， NetApp支持团队将通过您提供的电子邮件地址通知您。

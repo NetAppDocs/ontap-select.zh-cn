@@ -18,6 +18,7 @@ ONTAP Select 支持单节点和多节点网络配置。
 
 
 
+[[single-node-network-configuration]]
 == 单节点网络配置
 
 单节点 ONTAP Select 配置不需要 ONTAP 内部网络，因为不存在集群， HA 或镜像流量。
@@ -41,6 +42,7 @@ NOTE: 即使两个适配器足以用于单节点集群，仍需要 NIC 绑定。
 
 
 
+[[lif-assignment]]
 === LIF 分配
 
 如本文档的多节点 LIF 分配部分所述，ONTAP 使用 IPspaces 将集群网络流量与数据和管理流量分开。此平台的单节点变体不包含集群网络。因此，集群 IPspace 中不存在任何端口。
@@ -50,6 +52,7 @@ NOTE: 集群和节点管理 LIF 在 ONTAP Select 集群设置期间自动创建�
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0c]]
 === 管理和数据 LIF （ e0a ， e0b 和 e0c ）
 
 ONTAP 端口 e0a ， e0b 和 e0c 作为传输以下类型流量的 LIF 的候选端口进行委派：
@@ -61,6 +64,7 @@ ONTAP 端口 e0a ， e0b 和 e0c 作为传输以下类型流量的 LIF 的候选
 
 
 
+[[multi-node-network-configuration]]
 == 多节点网络配置
 
 多节点 ONTAP Select 网络配置由两个网络组成。
@@ -102,6 +106,7 @@ NOTE: 外部网络和内部网络端口组均以对称方式包含所有四个 N
 
 
 
+[[lif-assignment]]
 === LIF 分配
 
 随着 IP 空间的推出， ONTAP 端口角色已弃用。与 FAS 阵列一样， ONTAP Select 集群也包含默认 IP 空间和集群 IP 空间。通过将网络端口 e0a ， e0b 和 e0g 置于默认 IP 空间中，将端口 e0c 和 e0d 置于集群 IP 空间中，这些端口实际上已与托管不属于的 LIF 隔离。ONTAP Select 集群中的其余端口将通过自动分配提供内部服务的接口来使用。它们不会像 RSM 和 HA 互连接口那样通过 ONTAP shell 公开。
@@ -113,6 +118,7 @@ NOTE: 并非所有 LIF 都可通过 ONTAP 命令 Shell 查看。HA 互连和 RSM
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0g]]
 === 管理和数据 LIF （ e0a ， e0b 和 e0g ）
 
 ONTAP 端口 e0a ， e0b 和 e0g 会委派为传输以下类型流量的 LIF 的候选端口：
@@ -127,6 +133,7 @@ NOTE: 集群和节点管理 LIF 在 ONTAP Select 集群设置期间自动创建�
 
 
 
+[[cluster-network-lifs-e0c-e0d]]
 === 集群网络 LIF （ e0c ， e0d ）
 
 ONTAP 端口 e0c 和 e0d 已委派为集群接口的主端口。在每个 ONTAP Select 集群节点中， ONTAP 设置期间会使用链路本地 IP 地址（ 169.254.x.x ）自动生成两个集群接口。
@@ -143,6 +150,7 @@ NOTE: 为确保群集网络流量的最大吞吐量，已将此网络端口配�
 
 
 
+[[raid-syncmirror-traffic-e0e]]
 === RAID SyncMirror 流量（ e0e ）
 
 使用网络端口 e0e 上的内部网络接口在 HA 配对节点之间同步复制块。此功能会使用集群设置期间由 ONTAP 配置的网络接口自动执行，不需要管理员进行任何配置。
@@ -152,6 +160,7 @@ NOTE: 端口 e0e 由 ONTAP 保留用于内部复制流量。因此，端口和�
 
 
 
+[[ha-interconnect-e0f]]
 === HA 互连（ e0f ）
 
 NetApp FAS 阵列使用专用硬件在 ONTAP 集群中的 HA 对之间传递信息。但是，软件定义的环境往往没有这种类型的设备可用（例如 InfiniBand 或 iWARP 设备），因此需要使用备用解决方案 。尽管考虑了多种可能性，但对互连传输提出的 ONTAP 要求要求要求在软件中模拟此功能。因此，在 ONTAP Select 集群中， HA 互连的功能（传统上由硬件提供）已通过以太网作为传输机制设计到操作系统中。

@@ -18,6 +18,7 @@ summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的命令�
 
 
 
+[[step-1-prepare-for-the-deployment]]
 == 步骤 1：准备部署
 
 在虚拟机管理程序上创建ONTAP Select集群之前、您应了解所需的准备工作。
@@ -50,6 +51,7 @@ Deploy 管理实用程序包含一个版本的 ONTAP Select 。如果要使用�
 
 
 
+[[step-2-upload-and-register-a-license-file]]
 == 步骤 2：上传并注册许可证文件
 
 获取具有存储容量的许可证文件后，必须将包含许可证的文件上传到 Deploy 虚拟机并进行注册。
@@ -91,6 +93,7 @@ license show
 
 
 
+[[step-3-add-hypervisor-hosts]]
 == 步骤 3：添加虚拟机管理程序主机
 
 您必须注册要运行 ONTAP Select 节点的每个虚拟机管理程序主机。
@@ -204,6 +207,7 @@ host show -name 10.234.81.14 -detailed
 ====
 
 
+[[step-4-create-and-configure-an-ontap-select-cluster]]
 == 步骤 4：创建并配置ONTAP Select集群
 
 您必须创建并配置 ONTAP Select 集群。配置集群后，您可以配置各个节点。
@@ -253,6 +257,7 @@ cluster show -name <cluster_name> -detailed
 
 
 
+[[step-5-configure-an-ontap-select-node]]
 == 步骤 5：配置ONTAP Select节点
 
 您必须配置 ONTAP Select 集群中的每个节点。
@@ -353,6 +358,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
+[[step-6-attach-storage-to-the-ontap-select-nodes]]
 == 步骤 6：将存储连接到ONTAP Select节点
 
 配置ONTAP Select集群中每个节点使用的存储。必须始终为每个节点至少分配一个存储池。使用软件RAID时、还必须为每个节点至少分配一个磁盘驱动器。
@@ -446,6 +452,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
+[[step-7-deploy-an-ontap-select-cluster]]
 == 步骤 7：部署ONTAP Select集群
 
 配置集群和节点后，您可以部署集群。

@@ -20,6 +20,7 @@ summary: '虚拟 NAS (vNAS) 部署支持 vSAN 上的ONTAP Select集群、某些 
 
 
 
+[[vnas-architecture]]
 == vNAS 架构
 
 vNAS 命名法用于所有不使用 DAS 的设置。对于多节点 ONTAP Select 集群，这包括同一 HA 对中的两个 ONTAP Select 节点共享单个数据存储（包括 vSAN 数据存储）的架构。节点也可以安装在来自相同共享外部阵列的单独数据存储上。这允许阵列端存储效率降低整个 ONTAP Select HA 对的整体占用空间。ONTAP Select vNAS 解决方案的架构与带有本地 RAID 控制器的 DAS 上的 ONTAP Select 非常相似。也就是说，每个 ONTAP Select 节点继续拥有其 HA 合作伙伴数据的副本。ONTAP 存储效率策略具有节点范围。因此，阵列端存储效率是首选的，因为它们可以潜在地应用于来自两个 ONTAP Select 节点的数据集。
@@ -30,6 +31,7 @@ HA 对中的每个 ONTAP Select 节点也可能使用单独的外部阵列。在
 
 
 
+[[vnas-architectures-versus-local-das-with-hardware-raid-controllers]]
 === vNAS 架构与具有硬件 RAID 控制器的本地 DAS 的对比
 
 vNAS 架构在逻辑上与具有 DAS 和 RAID 控制器的服务器的架构最相似。在这两种情况下， ONTAP Select 都会占用数据存储库空间。该数据存储库空间会划分到 VMDK 中，这些 VMDK 构成传统的 ONTAP 数据聚合。ONTAP Deploy 可确保在集群 -create 和 storage-add 操作期间， VMDK 大小正确并分配给正确的丛（对于 HA 对）。
@@ -38,6 +40,7 @@ vNAS 架构在逻辑上与具有 DAS 和 RAID 控制器的服务器的架构最�
 
 
 
+[[vnas-nvram]]
 == vNAS NVRAM
 
 ONTAP Select NVRAM是一种 VMDK。这意味着ONTAP Select在块可寻址设备 (VMDK) 之上模拟字节可寻址空间 (传统NVRAM)。然而， NVRAM的性能对于ONTAP Select节点的整体性能至关重要。
@@ -61,6 +64,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 ----
 
 
+[[collocate-ontap-select-nodes-when-using-vnas-on-esxi]]
 == 在ESXi上使用vNAs时、请主机配置ONTAP Select节点
 
 ONTAP Select 包括对共享存储上的多节点 ONTAP Select 集群的支持。ONTAP Deploy 启用在同一 ESXi 主机上配置多个 ONTAP Select 节点，只要这些节点不属于同一集群。
