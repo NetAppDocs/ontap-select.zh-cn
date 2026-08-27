@@ -221,11 +221,7 @@ sidebar:
       - title: 其他高可用性功能
         url: "/concept_ha_other.html"
     - title: 性能
-      entries:
-      - title: 性能概述
-        url: "/concept_perf_general.html"
-      - title: ONTAP Select 9.6性能
-        url: "/concept_perf_premium_ha_direct_ssd_96.html"
+      url: "/concept_perf_general.html"
   - title: 利用空闲实现自动化
     entries:
     - title: 概念
