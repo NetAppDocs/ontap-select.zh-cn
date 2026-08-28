@@ -4,7 +4,7 @@ permalink: concept_adm_upgrading_nodes.html
 keywords: administer, administering, web, upgrading nodes 
 summary: 部署 ONTAP Select 集群后，您可以根据需要使用标准 ONTAP 软件升级操作步骤 升级每个节点的 ONTAP 映像。 
 ---
-= 升级ONTAP Select节点
+= 升级 ONTAP Select 节点
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: sizing-capacity-pool-license.html
 keywords: license, licensing, Capacity Tiers, usable, space 
 summary: Capacity Tiers 许可证基于每个节点管理的底层磁盘容量，而不是节点、HA 对或集群的可用容量。每个 Capacity Tiers 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。 
 ---
-= 调整 ONTAP Select Capacity Pools 许可证大小的注意事项
+= 确定 ONTAP Select 的容量池许可证大小
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

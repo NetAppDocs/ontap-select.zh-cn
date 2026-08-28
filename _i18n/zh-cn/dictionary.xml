@@ -207,7 +207,6 @@
   <block id="18c27fdda3b31de582a5c418705a0eab" category="paragraph">创建集群可能需要长达 30 分钟的时间。</block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="list-title">完成后</block>
   <block id="f0d06352d26117769577e30b4e00ca4a" category="summary">您可以执行多项相关任务来管理 ONTAP Select 集群。</block>
-  <block id="c57ef2657d4baa07c3da17d9b8ee2e20" category="doc">ONTAP Select 集群</block>
   <block id="270415548e638f6227a9943760c4601e" category="paragraph">创建集群后，您可以根据需要将其脱机和联机。</block>
   <block id="dfff66df61854331286bf47398ed3c65" category="paragraph">创建集群后，它最初处于联机状态。</block>
   <block id="8f7d4958a1bc5ef246671f311712972f" category="list-text">使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。</block>
@@ -1575,7 +1574,6 @@
   <block id="8a52c9125fd5cf696cd865c130b46cf7" category="inline-image-macro">将远程办公室按计划备份到企业数据中心</block>
   <block id="4823eec54391d8d1fd865ee32e32e7f9" category="paragraph"><block ref="4823eec54391d8d1fd865ee32e32e7f9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b73167eee5082eed4d7d4c53de18c738" category="summary">创建 ONTAP Select 集群后，您可以通过执行各种管理任务来支持部署。需要注意一些一般注意事项。</block>
-  <block id="1af7e96c06b83a1ff6aad6bd1d3d9fa0" category="doc">开始管理 ONTAP Select 之前</block>
   <block id="0a4ded0e98055bab8bb8d671237cbb41" category="paragraph">通常，您可以使用 Deploy Web 界面执行的过程分为三类。</block>
   <block id="da70b9ce263d0deac21a9bdc090db697" category="paragraph">您可以使用以下受支持的 NetApp 客户端软件连接到 ONTAP Select ：</block>
   <block id="32c236bbc7c47900f75310cfa59abd2a" category="list-text">OnCommand Insight</block>
@@ -1956,7 +1954,6 @@
   <block id="c1b060c144785f27389c5e134af018e1" category="sidebar">虚拟机管理程序和硬件</block>
   <block id="392ef7332861d17c4a3770570a1a87a4" category="sidebar">双节点集群</block>
   <block id="40762683748106b1d1e0792d0c278678" category="sidebar">远程办公室和分支机构</block>
-  <block id="6e000ad3ab759a6cf44e1c9a970752c4" category="sidebar">VMware 环境</block>
   <block id="794df3791a8c800841516007427a2aa3" category="sidebar">许可证</block>
   <block id="187e115b0c10602baa476f64acc86a80" category="sidebar">生产许可证</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="sidebar">限制</block>
@@ -2351,8 +2348,6 @@
   <block id="dceaaeb84342d2c83b2b279b2eb057a8" category="paragraph">服务器供应商深知客户有不同的需求和选择至关重要。因此，在购买物理服务器时，在做出网络连接决策时，可以选择多种方式。大多数商用系统都提供各种 NIC 选项，可提供单端口和多端口选项，其速度和吞吐量各不相同。这包括在VMware ESX中支持25 Gb/秒和40 Gb/秒NIC适配器。</block>
   <block id="a576bfb8d18800b15b695bc702167ec1" category="admonition">您只能添加版本早于 Deploy 实例附带的原始版本的 ONTAP Select 映像。不支持在不更新Deploy的情况下添加更高版本的ONTAP Select。</block>
   <block id="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="paragraph"><block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block></block>
-  <block id="4d0baad02721160fc108f9d6af73fec0" category="doc">访问ONTAP Select视频控制台</block>
-  <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">确认ONTAP Select节点之间的网络连接</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">初始集群创建可用于创建占用初始数据存储库中部分或全部空间的 ONTAP Select 集群。第二步是使用其他数据存储库执行一个或多个容量添加操作，直到达到所需的总容量为止。有关此功能的详细信息，请参见一节 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">更改Deploy管理员密码</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用命令行界面部署ONTAP Select集群</block>
@@ -2369,7 +2364,6 @@
   <block id="2863feac8b058188a45f49deaf504ce8" category="section-title">使用Deploy升级多节点集群</block>
   <block id="77313127f25a198a72521f0ce3437025" category="section-title">无需Deploy即可升级单节点集群</block>
   <block id="4724841b242993261d4bc5bf0b22e4da" category="section-title">不使用Deploy升级多节点集群</block>
-  <block id="f47ad6e4bc9bad323a7e49da78e990bc" category="doc">调整ONTAP Select集群节点的大小</block>
   <block id="afe2fb2999af41d32655dc1f20500f66" category="list-text">从ONTAP Select 9.9.1开始、ONTAP Select仅支持Intel Xeon桑迪桥或更高版本的CPU型号。</block>
   <block id="0fa9a0b98f503373d1e8310c7c58315c" category="cell">ONTAP Select的产品安装可执行文件。</block>
   <block id="2d288e7805c1ececa65188f89defd9ce" category="admonition">API v3 版本与 API 的先前版本不向后兼容。上提供了一个新的API操作步骤<block ref="d0140e6551623cc2284467774c9abf91" category="inline-link-rx"></block>。</block>
@@ -2387,10 +2381,8 @@
   <block id="5c7750df890d8a1ae46102a5c56d163d" category="sidebar">ONTAP Select博客</block>
   <block id="bafb5d4f7ed06fcf88f3e77fadecc81b" category="sidebar">ONTAP Select社区</block>
   <block id="dd3d71b5f68ad8da8831a0b5ea514e35" category="sidebar">互操作性表</block>
-  <block id="f2efd2b383af9a0515aa1f64f9691215" category="sidebar">调整集群节点大小</block>
   <block id="cdedd922b30b9f8699ea17f5d0045e3d" category="sidebar">升级到VMFS6</block>
   <block id="ba0ae169498601730046cfffe2523387" category="sidebar">了解API调用</block>
-  <block id="20f67f07ed859b317730c48838666bb5" category="sidebar">工作流1创建集群</block>
   <block id="d95d85ec027f0d5da378060fe690a4ec" category="sidebar">了解这些脚本</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">NetApp 支持站点</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">查看最终用户许可协议(EULA),并选择*Accept &amp; Continue*。</block>
@@ -2731,24 +2723,16 @@ storage aggregate show-spare-disks</block>
   <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以通过集群缩减功能将集群大小从八节点集群减小为六节点集群。目前不支持将集群从六节点或八节点集群缩写为一节点、两节点或四节点集群。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬件和存储注意事项</block>
   <block id="054e946fb0b83b6a666a6ad91e898f0a" category="doc">使用ONTAP Select的作业对象进行异步处理</block>
-  <block id="1203a64f6c4121eab9dbc97f2336a51b" category="doc">在使用浏览器访问ONTAP Select Deploy API之前</block>
-  <block id="d507d585a3bf4790d7db816f3a8055fe" category="doc">在使用Python访问ONTAP Select Deploy API之前</block>
-  <block id="0efdd662738a644a15c7b4b5f469d2e9" category="doc">在使用ONTAP Select Deploy API工作流之前</block>
-  <block id="c0edc4a15c9a8f5add1ff16d8cb1a838" category="doc">如何访问ONTAP Select Deploy API</block>
   <block id="fe0458f6f4e5f651de36cf8596142eb6" category="doc">ONTAP Select Deploy API的基本操作特征</block>
-  <block id="231ed5a6a889053c28b06cb17cb1e4ee" category="doc">为部署和管理ONTAP Select集群奠定了REST Web服务基础</block>
   <block id="b71dcac4419af40029253724c36ca33b" category="doc">ONTAP Select的请求和响应API事务</block>
-  <block id="f8b6aa0580faab5529017cf022ac2d16" category="doc">了解适用于ONTAP Select Deploy的Python脚本</block>
   <block id="bbc20c2ea315836d08b392ce75c91d0b" category="doc">ONTAP Select高可用性配置</block>
   <block id="c849264ebb01817c7925cd0a068007af" category="doc">ONTAP Select HA RSM和镜像聚合</block>
-  <block id="ec8ac2a2aba486a14f418e0d73aa199d" category="doc">ONTAP Select HA可增强数据保护</block>
   <block id="2f1f8f7609cf43a281fbca2068eb08b8" category="paragraph">高可用性(HA)磁盘检测信号、HA邮箱、HA检测信号、HA故障转移和交还工作可增强数据保护。</block>
   <block id="55734e2f86357f8b0f60cd204e105d21" category="paragraph">您可以使用评估版许可证或已购买许可证部署ONTAP Select。您选择的许可证必须应用于ONTAP Select集群中的每个节点、因此也适用于整个集群。如果您要在决定购买之前评估 ONTAP Select ，可以使用评估版许可证。评估版许可证随 ONTAP Select Deploy 管理实用程序一起提供，并在评估版部署中自动应用于每个 ONTAP Select 节点。</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">部署和支持评估版集群时、需要注意以下几个事项：</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能将集群用于评估目的。不得在生产环境中使用具有评估版许可证的集群。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在配置每台主机时、应按如下所示使用ONTAP Select Deploy管理实用程序：</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">配置以使用评估版许可证</block>
-  <block id="711f738f1281862e087807884aa5cd1c" category="doc">购买ONTAP Select许可证时的工作流</block>
   <block id="5a61239e15d4a26620f5d89e4b1a8f7f" category="doc">ONTAP Select网络概念和特征</block>
   <block id="73a89e5a391bfad2dcfbcec41e378787" category="doc">ONTAP Select数据和管理流量隔离</block>
   <block id="f84037cae3830b722ecf096ad5fd58ef" category="doc">ONTAP Select内部和外部网络</block>
@@ -2770,24 +2754,18 @@ storage aggregate show-spare-disks</block>
   <block id="e1822392dfeb820c1cca38e5e718a61f" category="paragraph">由于ONTAP Select使用虚拟化环境、因此不支持NIC卸载工具。</block>
   <block id="6c9348bc5d04685460e6acda750ab989" category="list-text">ONTAP端口属性</block>
   <block id="b360fb78c737d920cd251b2f7358f606" category="paragraph">不支持修改ONTAP端口的属性、包括速度、双工和流量控制。</block>
-  <block id="fcc22b4e3de45bbac50b32226efb8e8c" category="doc">ONTAP Select性能概述</block>
-  <block id="5b7b913b9183b40db3cdac93dcffe3d9" category="doc">增加ONTAP Select存储容量</block>
-  <block id="180d14e1cfcab830c1ec4fafd5097838" category="doc">ONTAP Select存储：一般概念和特征</block>
   <block id="4c09693df54f78ec01dcfce83626b988" category="doc">ONTAP Select存储效率支持</block>
-  <block id="e85029c6308bf8469ad5d2bf5ac5a6da" category="doc">适用于ONTAP Select本地连接存储的硬件RAID服务</block>
   <block id="72270ae5ad1efa50cbda87b77a2b8c8d" category="inline-link-macro">更换ONTAP Select软件RAID配置中的故障驱动器</block>
   <block id="9e21cea65d2285f38de1d74bb5ebe82c" category="admonition">您不能将虚拟磁盘与使用硬件RAID配置的ONTAP Select VM断开连接。只有使用软件RAID配置的ONTAP Select VM才支持断开磁盘连接。有关详细信息、请参见 <block ref="2a48fe6fcfd810b54ef07e2d1e2a735b" category="inline-link-macro-rx"></block> 。</block>
   <block id="07c6a664d186f44a90042e2245e46aad" category="doc">适用于本地连接存储的ONTAP Select软件RAID配置服务</block>
   <block id="e263536030472b1b884032009157f00c" category="doc">ONTAP Select术语和重要概念</block>
   <block id="b993d6b1ae8a2148a7be773127a7d668" category="doc">ONTAP Select业务需求和使用场景</block>
   <block id="18ea6d668ccbbc1b64935d2ae14d9c63" category="doc">ONTAP Select支持私有云和数据中心</block>
-  <block id="567999f9c71634f001a831b733088bbc" category="doc">在远程办公室和分支机构中使用ONTAP Select</block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON、用于创建ONTAP Select集群的脚本</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">用于添加ONTAP Select节点许可证的脚本</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">用于创建ONTAP Select集群的脚本</block>
   <block id="d066221405020e2f85c198e0b44e228b" category="doc">用于删除ONTAP Select集群的脚本</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">用于调整ONTAP Select集群节点大小的脚本</block>
-  <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">工作流1：在ESXi上创建ONTAP Select单节点评估集群</block>
   <block id="169dafc7979793a9e61147f233aa45c3" category="doc">ONTAP Select Deploy实用程序安装所需信息</block>
   <block id="cddb93cf729be75720f6155855c70d38" category="doc">修改ONTAP Select Deploy的主机管理服务器</block>
   <block id="7ccffa1050dd38b57df1fa0990bb72a7" category="doc">部署后ONTAP Select集群的初始状态</block>
@@ -2812,8 +2790,6 @@ storage aggregate show-spare-disks</block>
   <block id="834b02e64c437c938996a121579bbd87" category="list-text">VMware ESXi 8.0 U3</block>
   <block id="91aac4a7f60b41d08a32c5e3e97fd852" category="list-text">验证所有外部存储阵列是否尽可能使用可用的冗余和高可用性(HA)功能</block>
   <block id="e3527493b496eac4476a36800671c21b" category="summary">在规划MetroCluster部署时、您应考虑ONTAP Select SDS的几项要求。</block>
-  <block id="61134acc5ec932d98d83e0b1968f4ba0" category="doc">准备ONTAP Select MetroCluster SDS部署</block>
-  <block id="42696bcb531049bc468130ae11afc8ee" category="doc">ONTAP Select网络注意事项</block>
   <block id="42e12ad664d00b6d50a44dac72efaa21" category="doc">ONTAP Select远程办公室和分支机构部署</block>
   <block id="852ae4fc33b89c5131b8050b8ab9b9de" category="doc">ONTAP Select存储和RAID注意事项</block>
   <block id="744c7aceadded1b7d2f7dbabcbe794a8" category="doc">基于ESXi的ONTAP Select VMware vCenter Server</block>
@@ -2821,7 +2797,6 @@ storage aggregate show-spare-disks</block>
   <block id="8a96228950f9c48cb7f24c3b98404d49" category="doc">管理ONTAP Select Deploy调解器服务</block>
   <block id="d2bdabf740cddb35328041a6ee746b12" category="doc">更换ONTAP Select的故障软件RAID驱动器</block>
   <block id="d2d9b29d15ac79b034bfba1cc5f636be" category="doc">确保ONTAP Select部署的安全</block>
-  <block id="7bce3fa777739691b187f554fac27625" category="doc">ONTAP Select诊断和支持</block>
   <block id="ecc7a573e63ad51d6c5b87c50988984a" category="doc">使用Storage vMotion将ONTAP Select节点升级到VMFS6</block>
   <block id="2d17a30222011fb034c3d9e239fbd264" category="doc">访问ONTAP Select Deploy文档页面</block>
   <block id="4560429c3136b530a65edc28b99c356a" category="doc">了解并执行ONTAP Select Deploy API调用</block>
@@ -2834,7 +2809,6 @@ storage aggregate show-spare-disks</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">确认网络连接</block>
   <block id="4ce7782445b66c31b4b4d786806ae7a1" category="sidebar">管理调解器服务</block>
   <block id="697112fb0ffb252e40d60a5a007943a2" category="sidebar">扩展或缩减集群</block>
-  <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">访问VM视频控制台</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">更换发生故障的软件RAID驱动器</block>
   <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1支持VMware ESXi 8.0 U2。</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
@@ -2975,7 +2949,6 @@ storage aggregate show-spare-disks</block>
   <block id="28ec4566b445eb67771a9a111611e502" category="cell">License Manager为使用容量池的每个节点生成的可变八位值</block>
   <block id="35892d48da3c4641520dc5f89430eeaa" category="list-text">您可以使用容量层许可证、但不支持容量池许可</block>
   <block id="1538605c931beb7706c95917ca61c48d" category="summary">您可以购买三种平台容量级别之一的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
-  <block id="4be94941d4ae435ad44487d075e7a367" category="doc">了解ONTAP Select的平台许可证产品</block>
   <block id="9cdcaf5a7aae0807b2a785f7d26f1f3f" category="paragraph">您可以购买标准、高级或高级XL级别的ONTAP Select容量层或容量池许可证。这些许可证选项决定了部署 ONTAP Select 的主机的功能。</block>
   <block id="2f2718c8a2f261e7775daae8fff84dbc" category="section-title">比较平台许可证产品的硬件支持</block>
   <block id="06efa63cc6d93bbf842cc0f903057606" category="open-title">核心项目</block>
@@ -3043,7 +3016,6 @@ storage aggregate show-spare-disks</block>
   <block id="4336ee0e2315cb2014ffbaddbb71d150" category="list-text">容量池许可模式是在使用Deploy 2.10的ONTAP Select 9.5中推出的。每个存储容量池都需要一个单独的许可证。容量池许可证会锁定到License Manager实例(即Deploy实例)、必须根据购买条款续订。您可以在组织中许可和使用任意数量的容量池。但是、由于容量池由ONTAP Select节点共享、因此所需许可证通常比容量层许可少。</block>
   <block id="07dd1826d2d39d21b05b11f5f59d47dd" category="list-text">License Manager是一个支持容量池许可的软件组件。它目前是 Deploy 管理实用程序的一部分。LM 会从其管理的共享池中将存储租用给 ONTAP Select 节点。_License Lock ID_ 是一个数字字符串，用于唯一标识每个 LM 实例以及每个 Deploy 实例。要生成许可证文件、必须同时使用容量池许可证序列号和LLID。</block>
   <block id="43b16943d6d5ff73da96f41d29e4303d" category="paragraph"><block ref="43b16943d6d5ff73da96f41d29e4303d" category="inline-link-macro-rx"></block></block>
-  <block id="24d0d0c7fc9a3866a568dea751e3cd63" category="doc">了解ONTAP Select数据保护和效率</block>
   <block id="b489b293d6cbe8b86835d3cac8c315fb" category="section-title">Snapshot数据保护</block>
   <block id="467385c0c4913cc96395e5493d47b3bc" category="paragraph">ONTAP Select包括数据保护功能、包括Snapshot和SnapMirror软件。您可以快速将数据复制到其他ONTAP存储、无论是内部、远程站点还是云端。如果您必须快速恢复数据、SnapRestore软件可以使用本地快照在几秒钟内恢复整个文件系统或数据卷、而不管容量或文件数量如何。</block>
   <block id="787fb8fbafed37b77c3881f9e0c851a0" category="section-title">MetroCluster 软件定义的存储</block>
@@ -3091,7 +3063,6 @@ storage aggregate show-spare-disks</block>
   <block id="82f452184fa717ab2fcdbde25eea3a2b" category="inline-link-macro">了解生产部署的许可证</block>
   <block id="74d4caeb059278dbd1c813ff422126a8" category="list-text"><block ref="74d4caeb059278dbd1c813ff422126a8" category="inline-link-macro-rx"></block></block>
   <block id="ac40d7358d4d4fc23aa16496ea43e162" category="summary">准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，请仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
-  <block id="48a140923c82edfd6e65489c46f2fd26" category="doc">ONTAP Select的 ESXi 主机配置和准备清单</block>
   <block id="cd4dd6c5342dd2939f0e0bdd97cfa640" category="paragraph">准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
   <block id="6943ac53dc25f522d2ecc61d1df4d254" category="admonition">ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主机所需的网络和存储配置。您必须在部署ONTAP Select集群之前手动准备每个主机。</block>
   <block id="423f466fab8357286c6cf217990032a9" category="section-title">步骤 1：准备 ESXi 虚拟机管理程序主机</block>
@@ -3110,7 +3081,6 @@ storage aggregate show-spare-disks</block>
   <block id="2e5a1a6424ee2d0aa549b427d2f571d2" category="open-title">四节点集群</block>
   <block id="e6a67192413f528c465842e03f8443e0" category="paragraph">下图展示了一个包含两个网络的四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。</block>
   <block id="9450ade0fc753dddabd4ea63d8bb1187" category="summary">准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
-  <block id="6ca9942b969b8c587ad10afd9e0ef119" category="doc">ONTAP Select的 KVM 主机配置和准备清单</block>
   <block id="75b870251dc6cf53eee7c05860c964ad" category="paragraph">准备部署ONTAP Select节点的每个 KVM 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。</block>
   <block id="70927fa219016e15d1c052484c1bd8b6" category="section-title">步骤 1：准备 KVM 虚拟机管理程序主机</block>
   <block id="f815b88c3f2e295185a91f57bfa50353" category="paragraph">您需要准备部署ONTAP Select节点的每个 Linux KVM 服务器。此外、您还必须准备部署ONTAP Select Deploy管理实用程序的服务器。</block>
@@ -3427,7 +3397,6 @@ storage aggregate show-spare-disks</block>
   <block id="86069ab716d4c2ffd77a81bd3827427f" category="list-text">在本地工作站的命令提示符中，使用<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block>使用（安全复制协议）实用程序将映像文件上传到ONTAP Select Deploy 虚拟机，如下示例所示：</block>
   <block id="52396dafee59debc72b8fccab2acb4c5" category="paragraph">示例命令：</block>
   <block id="3817e5dd56e94cb6952f7eb0ab2a6acd" category="summary">从ONTAP Select 9.15.1 开始，您可以增加或减少现有集群的大小。</block>
-  <block id="b4ec4e16d52cf8a4ab8bd5925fba2631" category="doc">在 ESXi 或 KVM 主机上扩展或收缩ONTAP Select集群</block>
   <block id="7e6bf0ef053af206603d7df47832fbd5" category="inline-link-macro">确认ONTAP Select AutoSupport功能已配置</block>
   <block id="785cc01cf7efbfd5a1fd1d4863d9b83a" category="paragraph">集群部署完成后，<block ref="af0babf33c9640eb381afcb6484c80f3" category="inline-link-macro-rx"></block>进而<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block>。</block>
   <block id="b7f5f41e99a6f8c3c3a0c1843b24c17b" category="sidebar">升级 ESXi</block>
@@ -3544,7 +3513,6 @@ storage aggregate show-spare-disks</block>
   <block id="d65f97fb1a167a35c6951233420ba74d" category="list-text">Red Hat Enterprise Linux (RHEL) 64 位 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="9619f591215dbfb1d346be6b36138040" category="paragraph">容量锚定在一个中央池中，可以在组织中的许多节点之间共享。</block>
   <block id="7e440cfb9036689e833e4df17a0ae529" category="summary">容量层和容量池许可模式之间有几个区别。</block>
-  <block id="fee8461b7e8ddef9ec0ec4e060511b93" category="doc">比较 ONTAP Select 容量层和容量池许可</block>
   <block id="446240bc49bf82cd1fa165cc8e5438c5" category="cell">NetApp 生成九个数字并将它们分配给一个节点</block>
   <block id="36fce331144baf1f211037348fdd68dc" category="cell">NetApp 生成九位数字并将其分配给 Capacity Pool</block>
   <block id="7775850407e0cb325d7561581f3925f0" category="cell">基于购买的固定持续时间（需要续订）</block>
@@ -3582,7 +3550,6 @@ storage aggregate show-spare-disks</block>
   <block id="55ecb9826f7deb57441eeedae69c0a6d" category="inline-link-macro">了解有关管理 ONTAP Select 许可证的信息</block>
   <block id="e9cb552b57937edc77138a16fc98ada5" category="paragraph"><block ref="e9cb552b57937edc77138a16fc98ada5" category="inline-link-macro-rx"></block></block>
   <block id="f4f97ec2d091cfbe40253c1e9206cef4" category="summary">Capacity Tiers 许可证基于每个节点管理的底层磁盘容量，而不是节点、HA 对或集群的可用容量。每个 Capacity Tiers 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。</block>
-  <block id="120dfe55114bd18d238461d392d2851f" category="doc">调整 ONTAP Select Capacity Pools 许可证大小的注意事项</block>
   <block id="18bea776141012ab15d569765a0801f0" category="list-text">单节点集群的开销系数为 1.13</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">多节点集群的开销系数为 2.67</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">单节点</block>
@@ -3591,7 +3558,6 @@ storage aggregate show-spare-disks</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
   <block id="336320a7d1fb36ba0e0e250060a962ec" category="inline-link-macro">获取 ONTAP Select 的容量池许可证</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
-  <block id="32f9dc8bfa4ac02c770716ebf1eaf2df" category="doc">调整 ONTAP Select Capacity Tiers 许可证大小的注意事项</block>
   <block id="c5915502bf73930e10d7d62d217a0adc" category="paragraph">Capacity Tiers 许可证基于每个 ONTAP Select 节点管理的基础磁盘容量，而不是节点、HA 对或群集的可用容量。每个 Capacity Tiers 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。</block>
   <block id="5aabc9069557be7e4aeff466605cbc75" category="cell">单节点</block>
   <block id="754bc948e75e62a589ebb57f97b00d1a" category="paragraph">在多节点集群中每个 HA 对：</block>
@@ -3618,11 +3584,9 @@ storage aggregate show-spare-disks</block>
   <block id="5ad7da60ec9981258981a60e93dca7dd" category="list-text">填写 *License Generator* 页面上的其余字段，包括 *Product Serial #*。</block>
   <block id="02fa13004899b54713212c43efd75d1b" category="paragraph">"产品序列号"是 ONTAP Select 节点的序列号。</block>
   <block id="85281ac8736ae43694fb2a98eed37831" category="paragraph">您可以选择 *Download License* 或 *Email License*。</block>
-  <block id="457728d9249110c26fc907c7cbd93060" category="sidebar">了解评估许可证</block>
   <block id="baf734525ec008b6cbc548f24ce32475" category="sidebar">了解生产许可证</block>
   <block id="d3a14fe349c75db44b4f42be06485d39" category="sidebar">容量层与容量池</block>
   <block id="3b32ccaa0766722aa2afed59d3051ca8" category="sidebar">购买许可证</block>
-  <block id="9be9343d8314647310e47876ae581a39" category="sidebar">调整许可证大小的注意事项</block>
   <block id="f207357dde5b74df08cbece4e6ecc93d" category="sidebar">获取许可证</block>
   <block id="e9acce0d3652d40c91f9bd7e814291c0" category="inline-link-macro">NetApp 支持站点下载</block>
   <block id="17838336399b2e69627cea0614c17f30" category="list-text">访问 <block ref="8e92c016cc209b5ea10cc71b5bfe5577" category="inline-link-macro-rx"></block> 页面。</block>
@@ -4005,4 +3969,44 @@ storage aggregate show-spare-disks</block>
   <block id="bd88bf77fede236871bbdaecddefca53" category="list-text">对于 HA 对，数据在两个节点之间复制以实现冗余，因此对于 HA 对中的 10 TB 可用数据，如果其中一个节点脱机，则每个节点需要 10 TB。</block>
   <block id="c0945522d1f6ae9ba28c16c4d8e24c38" category="list-text">每个节点的许可证容量为 14 TB（5 x 2.67 = 13.35）。对于 HA 对，您需要两个 14 TB 的许可证才能拥有 10 TB 的可用容量。</block>
   <block id="74b1b9052c3c702d9cea5b8cd980a547" category="paragraph">HA 对中的每个节点：</block>
+  <block id="374fd6d8cc46742d7f222ee4d0032d06" category="doc">ONTAP Select 数据保护和效率</block>
+  <block id="37e47edc52662df47ba4f7cb5426a905" category="doc">了解如何管理 ONTAP Select</block>
+  <block id="f0d342fa2629145fee40586516d069d4" category="doc">了解如何使用浏览器访问 ONTAP Select Deploy API</block>
+  <block id="bd922b949dfd0f5015ae892b074c86fe" category="doc">了解如何使用 Python 访问 ONTAP Select Deploy API</block>
+  <block id="830b37e1792571a94c8f2e142ec71e6f" category="doc">了解如何使用 ONTAP Select Deploy API 工作流程</block>
+  <block id="57c2192d371e5d6ffed970b8060cd9f5" category="doc">了解有关访问 ONTAP Select Deploy API 的信息</block>
+  <block id="60259b7656595391fda931689cb5cb7f" category="doc">了解用于部署和管理 ONTAP Select 集群的 REST Web 服务</block>
+  <block id="604c5195cdcb73ac8392d4ed143900f5" category="doc">了解 ONTAP Select Deploy 的 Python 脚本</block>
+  <block id="2f2d0dac4c403b493fb5e8532be94232" category="doc">利用 ONTAP Select HA 增强数据保护</block>
+  <block id="ac562c2dbd3b8631c53c5c4a091bb34f" category="doc">ONTAP Select 容量层和容量池许可比较</block>
+  <block id="b0b8cf0b3b07b2bf38733ca70970fe1a" category="doc">ONTAP Select 的平台许可证产品</block>
+  <block id="0e487a9412079574703cbaef01b17f23" category="doc">ONTAP Select 的许可证购买工作流</block>
+  <block id="aa75ac7723ea758193118b7d2dd533b9" category="doc">了解 ONTAP Select Deploy</block>
+  <block id="2dfbf69454cf0d709c2534496ca26479" category="doc">了解 ONTAP Select 性能</block>
+  <block id="236f0c179844e96f0bbb83b11155c27e" category="doc">增加 ONTAP Select 存储容量的注意事项</block>
+  <block id="2f602e200eb803a080145dc400b89b38" category="doc">了解 ONTAP Select 的常规存储特性</block>
+  <block id="b17d8f81c665435778657d2fbd01dfe2" category="doc">适用于带有本地连接存储的 ONTAP Select 的硬件 RAID 服务</block>
+  <block id="f6c1e5144436a8b950313a679c0f951a" category="doc">ONTAP Select 远程和分支机构使用案例</block>
+  <block id="3205b956a440a5064cc130d79ad166bc" category="doc">为 ONTAP Select 准备 ESXi 主机</block>
+  <block id="c1dc49d041aef30ada0e85f7632085ee" category="doc">为 ONTAP Select 准备 KVM 主机</block>
+  <block id="aed7657def5c64d964e831a2205c5b4e" category="doc">ONTAP Select 的法律声明</block>
+  <block id="9416497f668ea2bfba48d9ebd6b67b29" category="doc">在 ESXi 上创建 ONTAP Select 单节点评估集群</block>
+  <block id="e354af9228cee7b217b134d4a1a2e400" category="doc">ONTAP Select MetroCluster SDS 部署要求</block>
+  <block id="d07fdbe1aaea0a4d53b825b146643572" category="doc">ONTAP Select 网络要求</block>
+  <block id="5e1f16d2572c5a66822138bf9b7326ba" category="doc">确定 ONTAP Select 的容量池许可证大小</block>
+  <block id="c00ac1b18d84fff7bbf4760c9b4e23b0" category="doc">确定 ONTAP Select 的 Capacity Tiers 许可证大小</block>
+  <block id="d2d0829938e88afff6042d0a5eac4e74" category="doc">调整ONTAP Select集群节点的大小</block>
+  <block id="4bf856dcf874a77bd96aff6e04aa7aef" category="doc">管理 ONTAP Select 诊断和支持</block>
+  <block id="6beca47bb8f34bb637db0116eee5c174" category="doc">访问 ONTAP Select 视频控制台</block>
+  <block id="851f7bf9b2c883c2b30f957c8b6f8d6a" category="doc">确认 ONTAP Select 节点之间的网络连接</block>
+  <block id="ad18a17d3c6f3699e8114e6ba4d091df" category="doc">在 ESXi 或 KVM 主机上扩展或收缩 ONTAP Select 集群</block>
+  <block id="5b8b5ae2deba1b6579e39def9460550a" category="sidebar">虚拟机监控程序主机环境</block>
+  <block id="8b3398557c7fb55b263bf52bece82b68" category="sidebar">评估许可证</block>
+  <block id="ad98307e279e8369c80fc498106160d2" category="sidebar">确定容量层许可证大小</block>
+  <block id="11f5f4c2a5569d4e34b180729cd689bc" category="sidebar">确定容量池许可证大小</block>
+  <block id="0d9029e785d6af991e53b31b279e9aa4" category="sidebar">管理集群</block>
+  <block id="f86585270713788c4d391e92b289c1b7" category="sidebar">访问 VM 视频控制台</block>
+  <block id="9f0562c731b8981f21e8a7ac75bd947f" category="sidebar">管理许可证</block>
+  <block id="3ed621212c6f1b8569fd40f868bd89b6" category="sidebar">在 ESXi 上创建集群</block>
+  <block id="b420f92a45e1d6fca9bee10cca41ea8e" category="sidebar">使用脚本创建集群</block>
 </blocks>

@@ -4,7 +4,7 @@ permalink: concept_adm_before.html
 keywords: administer, administering, web, before you begin 
 summary: 创建 ONTAP Select 集群后，您可以通过执行各种管理任务来支持部署。需要注意一些一般注意事项。 
 ---
-= 开始管理 ONTAP Select 之前
+= 了解如何管理 ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

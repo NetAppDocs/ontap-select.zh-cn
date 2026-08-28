@@ -4,7 +4,7 @@ permalink: concept_ots_deploy.html
 keywords: ontap select deploy, deploy administration utility, deploy utility, functionality, accessing 
 summary: ONTAP Select Deploy 是用于部署和管理 ONTAP Select 集群的管理实用程序。 
 ---
-= ONTAP Select 部署
+= 了解 ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

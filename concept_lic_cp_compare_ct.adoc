@@ -4,7 +4,7 @@ permalink: concept_lic_cp_compare_ct.html
 keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
 summary: 容量层和容量池许可模式之间有几个区别。 
 ---
-= 比较 ONTAP Select 容量层和容量池许可
+= ONTAP Select 容量层和容量池许可比较
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

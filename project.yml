@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: 概念
     entries:
-    - title: 了解ONTAP Select
+    - title: ONTAP Select
       url: "/concept_ots_overview.html"
     - title: ONTAP Select 部署
       url: "/concept_ots_deploy.html"
@@ -80,7 +80,7 @@ sidebar:
       entries:
       - title: 一般要求
         url: "/reference_plan_dep_general.html"
-      - title: VMware 环境
+      - title: 虚拟机监控程序主机环境
         url: "/reference_plan_dep_vmware.html"
     - title: 最佳实践
       url: "/reference_plan_best_practices.html"
@@ -88,7 +88,7 @@ sidebar:
     entries:
     - title: 选项
       entries:
-      - title: 了解评估许可证
+      - title: 评估许可证
         url: "/concept_lic_evaluation.html"
       - title: 生产许可证
         entries:
@@ -114,13 +114,13 @@ sidebar:
         url: "/concept_lic_workflow.html"
       - title: 容量层
         entries:
-        - title: 调整许可证大小的注意事项
+        - title: 确定容量层许可证大小
           url: "/sizing-capacity-tier-license.html"
         - title: 获取许可证
           url: "/task_lic_acquire_ct.html"
       - title: 容量池
         entries:
-        - title: 调整许可证大小的注意事项
+        - title: 确定容量池许可证大小
           url: "/sizing-capacity-pool-license.html"
         - title: 获取许可证
           url: "/task_lic_acquire_cp.html"
@@ -164,21 +164,21 @@ sidebar:
       url: "/task_adm_mediators.html"
     - title: 集群
       entries:
-      - title: ONTAP Select 集群
+      - title: 管理集群
         url: "/task_adm_clusters.html"
       - title: 扩展或缩减集群
         url: "/task_cluster_expansion_contraction.html"
     - title: 节点和主机
       entries:
-      - title: 访问VM视频控制台
+      - title: 访问 VM 视频控制台
         url: "/task_adm_video_console.html"
-      - title: 调整集群节点大小
+      - title: 调整集群节点的大小
         url: "/task_adm_resize.html"
       - title: 更换发生故障的软件RAID驱动器
         url: "/task_adm_replace_drives_swraid.html"
       - title: 升级到VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
-    - title: licenses
+    - title: 管理许可证
       url: "/task_adm_licenses.html"
   - title: 深度剖析
     entries:
@@ -248,7 +248,7 @@ sidebar:
       entries:
       - title: 开始之前
         url: "/concept_api_before_workflows.html"
-      - title: 工作流1创建集群
+      - title: 在 ESXi 上创建集群
         url: "/reference_api_workflow01.html"
     - title: 使用 Python 访问
       entries:
@@ -258,7 +258,7 @@ sidebar:
         url: "/concept_api_understanding_scripts.html"
     - title: Python 代码示例
       entries:
-      - title: 创建集群
+      - title: 使用脚本创建集群
         url: "/reference_api_script_cc.html"
       - title: JSON 以创建集群
         url: "/reference_api_json_cc.html"
@@ -280,7 +280,7 @@ sidebar:
       url: "/task_cli_security.html"
     - title: 网络连接
       url: "/task_cli_connectivity.html"
-    - title: 集群
+    - title: 管理集群
       url: "/task_cli_clusters.html"
     - title: 节点和主机
       entries:

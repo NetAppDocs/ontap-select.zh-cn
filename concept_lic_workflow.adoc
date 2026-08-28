@@ -4,7 +4,7 @@ permalink: concept_lic_workflow.html
 keywords: license, licensing, purchase, purchasing, workflow 
 summary: 您可以按照工作流为 ONTAP Select 部署购买和应用许可证。 
 ---
-= 购买ONTAP Select许可证时的工作流
+= ONTAP Select 的许可证购买工作流
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

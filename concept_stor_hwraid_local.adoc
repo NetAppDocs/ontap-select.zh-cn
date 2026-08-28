@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 如果有可用的硬件 RAID 控制器， ONTAP Select 可以将 RAID 服务移至硬件控制器，以提高写入性能并防止物理驱动器出现故障。因此， ONTAP Select 集群中所有节点的 RAID 保护由本地连接的 RAID 控制器提供，而不是通过 ONTAP 软件 RAID 提供。 
 ---
-= 适用于ONTAP Select本地连接存储的硬件RAID服务
+= 适用于带有本地连接存储的 ONTAP Select 的硬件 RAID 服务
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
