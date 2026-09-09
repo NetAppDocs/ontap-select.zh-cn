@@ -4,7 +4,7 @@ permalink: task_deploy_cluster.html
 keywords: install, installing, deploy ontap select cluster, create cluster 
 summary: 您可以使用 ONTAP Select Deploy 管理实用程序提供的 Web 用户界面来部署单节点或多节点 ONTAP Select 集群。 
 ---
-= 部署 ONTAP Select 集群
+= 使用 Web UI 部署 ONTAP Select 集群
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

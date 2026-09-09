@@ -4,7 +4,7 @@ permalink: concept_lic_evaluation.html
 keywords: license, licensing, evaluation, upgrade license 
 summary: 如果您要在决定购买之前评估 ONTAP Select ，可以使用评估版许可证。评估版许可证随 ONTAP Select Deploy 管理实用程序一起提供，并在评估版部署中自动应用于每个 ONTAP Select 节点。 
 ---
-= ONTAP Select部署的评估版许可证
+= 了解ONTAP Select部署的评估许可证
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

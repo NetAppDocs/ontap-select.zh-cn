@@ -249,7 +249,7 @@ sidebar:
       - title: 开始之前
         url: "/concept_api_before_workflows.html"
       - title: 在 ESXi 上创建集群
-        url: "/reference_api_workflow01.html"
+        url: "/reference_api_workflow.html"
     - title: 使用 Python 访问
       entries:
       - title: 开始之前
@@ -258,7 +258,7 @@ sidebar:
         url: "/concept_api_understanding_scripts.html"
     - title: Python 代码示例
       entries:
-      - title: 使用脚本创建集群
+      - title: 用于创建集群的脚本
         url: "/reference_api_script_cc.html"
       - title: JSON 以创建集群
         url: "/reference_api_json_cc.html"

@@ -16,4 +16,28 @@ summary: 您可以使用一个工作流过程来部署 ONTAP Select 集群。
 [role="lead"]
 您可以使用以下工作流部署和管理 ONTAP Select 集群。
 
-image:deploy_workflow2.png["介绍部署 ONTAP Select 集群所需的完整工作流。"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] link:reference_plan_ots_general.html["规划部署并准备环境"]
+[role="quick-margin-para"]
+查看 ONTAP Select 节点、存储、网络和虚拟机监控程序环境的规划要求。提前准备好您的环境有助于避免部署问题。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] link:task_install_deploy.html["安装 ONTAP Select Deploy 管理实用程序"]
+[role="quick-margin-para"]
+安装用于部署和管理 ONTAP Select 集群的实用程序。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] link:concept_lic_workflow.html["获取生产部署所需的许可证"]
+[role="quick-margin-para"]
+购买并应用生产部署所需的许可证。您可以在容量层和容量池许可模式之间进行选择。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"] 使用 ONTAP Select Deploy 管理实用程序部署 ONTAP Select 集群
+[role="quick-margin-para"]
+使用 Deploy 实用程序创建 ONTAP Select 集群：
+
+[role="quick-margin-list"]
+* link:task_deploy_cluster.html["使用 Web UI 部署"]
+* link:task_cli_deploy_cluster.html["使用 CLI 部署"]
+* link:reference_api_workflow.html["使用 REST API 部署"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] link:concept_adm_before.html["使用标准 NetApp 管理工具和界面管理 ONTAP Select 集群"]
+[role="quick-margin-para"]
+使用您用于其他 ONTAP 集群的相同管理工具和接口来管理您的 ONTAP Select 集群。

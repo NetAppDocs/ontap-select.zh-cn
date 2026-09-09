@@ -16,6 +16,9 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 [role="lead"]
 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实用程序创建 ONTAP Select 集群。
 
+.开始之前
+您已审阅 link:kvm-host-configuration-and-preparation-checklist.html["安装前检查清单"]。
+
 
 
 [[step-1-download-the-virtual-machine-image]]
