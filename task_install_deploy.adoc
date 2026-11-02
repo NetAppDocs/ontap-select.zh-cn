@@ -93,13 +93,17 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 使用 OVF VM 映像安装并启动ONTAP Select Deploy VM。作为安装过程的一部分，您需要配置网络接口以使用 DHCP 或静态 IP 配置。
 
 .开始之前
+[role="tabbed-block"]
+====
+.ESXi
+--
 对于ESXi虚拟机管理程序、您必须准备部署ONTAP Select Deploy虚拟机：
 
 * 通过安装 VMware Client Integration 插件或根据需要执行类似配置，在浏览器中启用 OVF 功能
 * 如果要为Deploy虚拟机动态分配IP地址、请在VMware环境中启用DHCP
 
 
-对于ESXi和KVM虚拟机管理程序、您必须知道创建虚拟机时要使用的配置信息、包括虚拟机名称、外部网络和主机名。定义静态网络配置时，需要以下追加信息 ：
+您必须具有在创建 VM 时要使用的配置信息，包括 VM 的名称、外部网络和主机名。定义静态网络配置时，您需要以下附加信息：
 
 * Deploy虚拟机的IP地址
 * 网络掩码
@@ -109,6 +113,21 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 * DNS 搜索域
 
 
+--
+.KVM
+--
+对于 KVM 虚拟机管理程序，必须具有在创建 VM 时要使用的配置信息，包括 VM 的名称、外部网络和主机名。在定义静态网络配置时，您需要以下附加信息：
+
+* Deploy虚拟机的IP地址
+* 网络掩码
+* 网关（路由器）的 IP 地址
+* 主 DNS 服务器的 IP 地址
+* 第二个 DNS 服务器的 IP 地址
+* DNS 搜索域
+
+
+--
+====
 .关于此任务
 如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是、如果您选择不使用此表单、则可以改用Deploy虚拟机的控制台来配置网络。
 

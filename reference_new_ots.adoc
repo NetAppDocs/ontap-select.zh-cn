@@ -29,6 +29,7 @@ ONTAP Select 不支持云密钥管理器。
 
 --
 支持 Advanced Micro Devices (AMD) 处理器:: 从 ONTAP Select 9.19.1 开始，ONTAP Select 支持基于内核的虚拟机 (KVM) 和 ESXi 虚拟机监控程序主机上的 AMD 处理器。有关详细信息，请参阅 link:reference_plan_ots_hardware.html["VMware 虚拟机管理程序和硬件注意事项"]。
+增强了对VMware ESXi的支持:: ONTAP Select 9.19.1 包括对 VMware ESXi 9.1 的支持。
 
 
 

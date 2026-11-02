@@ -150,16 +150,19 @@ AMD EPYC Embedded 9004 或更高版本和 8004
 2+| 实例大小 | 小型 | 小型和中型 | 小型、中型和大型 
 
 
-2+| 具有硬件RAID控制器的本地DAS | 8到60个驱动器 | 8到60个驱动器 | 8到60个驱动器 
+2+| 具有硬件RAID控制器的本地DAS | 8 – 60 个驱动器 | 8 – 60 个驱动器 | 8 – 60 个驱动器 
 
 
 2+| HDD (SAS、NL) SAS、SATA | 不适用 | 4–60个驱动器 | 4–60个驱动器 
 
 
-2+| SSD (SAS) | 不适用 | 4–60个驱动器(仅限SSD) | 4–60个驱动器(仅限SSD) 
+2+| SSD (SAS) | 不适用 | 4–60个驱动器 | 4–60个驱动器 
 
 
-2+| 使用软件RAID的本地DAS | 不适用 | 适用的 | 4 - 14个驱动器(仅限NVMe) 
+2+| NVMe | 不适用 | 不适用 | 4 – 14 个驱动器 
+
+
+2+| 使用软件RAID的本地DAS | 不适用 | 适用的 | 4 – 14 个驱动器（仅限 NVMe） 
 
 
 2+| 外部阵列^1^μ m 3+| 外部阵列上托管的数据存储库通过FC、FCoE、iSCSI和NFS进行连接(KVM不支持NFS)。这些数据存储库可提供高可用性和故障恢复能力。 
@@ -176,7 +179,7 @@ AMD EPYC Embedded 9004 或更高版本和 8004
 2+| 软件类型 3+| Description 
 
 
-2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 9.0、VMware vSphere 8.0GA 及更新 1 至 3、VMware vSphere 7.0GA 及更新 1 至 3C 
+2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 9.1、9.0 VMware vSphere 8.0GA 和更新 1 至 3 
 
 
 2+| 虚拟机管理程序支持(KVM)  a| 

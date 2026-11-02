@@ -39,6 +39,7 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 --
 以下虚拟机管理程序版本支持 ESXi：
 
+** VMware ESXi 9.1
 ** VMware ESXi 9.0
 ** VMware ESXi 8.0 U3
 ** VMware ESXi 8.0 U2
