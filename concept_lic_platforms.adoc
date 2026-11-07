@@ -65,9 +65,13 @@ summary: 您可以购买三种平台容量级别之一的ONTAP Select容量层�
 
 2+| MetroCluster SDS | 否 | 是的。 | 是的。 
 |===
+[NOTE]
+====
+Microsoft Hyper-V 支持小型、中型和大型实例类型。
 
-NOTE: 基于内核的虚拟机 (KVM) 不支持大型实例类型。
+基于内核的虚拟机 (KVM) 不支持大型实例类型。
 
+====
 
 
 [[compare-hardware-support-for-platform-license-offerings]]
@@ -92,7 +96,7 @@ NOTE: 基于内核的虚拟机 (KVM) 不支持大型实例类型。
 2+| Deployment options 3+| 单节点集群、双节点集群（HA 对）、四节点、六节点、八节点、十节点或十二节点集群 
 
 
-2+| 支持的容量(每个节点) 3+| 高达400 TB原始数据(ESXi和KVM) 
+2+| 支持的容量(每个节点) 3+| 高达 400TB 的原始数据（ESXi、Hyper-V 和 KVM） 
 |===
 --
 .硬件
@@ -165,7 +169,7 @@ AMD EPYC Embedded 9004 或更高版本和 8004
 2+| 使用软件RAID的本地DAS | 不适用 | 适用的 | 4 – 14 个驱动器（仅限 NVMe） 
 
 
-2+| 外部阵列^1^μ m 3+| 外部阵列上托管的数据存储库通过FC、FCoE、iSCSI和NFS进行连接(KVM不支持NFS)。这些数据存储库可提供高可用性和故障恢复能力。 
+2+| 外部阵列^1^μ m 3+| 外部阵列上托管的数据存储通过 FC、FCoE 和 iSCSI（适用于 ESXi、Hyper-V 和 KVM）以及 NFS（适用于 ESXi）进行连接。KVM 和 Hyper-V 不支持 NFS。这些数据存储提供高可用性和弹性。 
 |===
 ^1^外部阵列协议支持反映了网络存储连接。
 
@@ -180,6 +184,9 @@ AMD EPYC Embedded 9004 或更高版本和 8004
 
 
 2+| 虚拟机管理程序支持(VMware) 3+| VMware vSphere 9.1、9.0 VMware vSphere 8.0GA 和更新 1 至 3 
+
+
+2+| 虚拟机监控程序支持（Hyper-V） 3+| Windows Server 2025 和 2022 
 
 
 2+| 虚拟机管理程序支持(KVM)  a| 

@@ -38,19 +38,10 @@ NOTE: 你应该复习一下link:reference_release_notes.html["《 ONTAP Select �
 [[software-compatibility]]
 === 软件兼容性
 
-您可以在 KVM 和 ESXi 虚拟机管理程序上部署ONTAP Select 。
+您可以在 ESXi、Hyper-V 和 KVM 虚拟机管理程序上部署 ONTAP Select。
 
 [role="tabbed-block"]
 ====
-.KVM
---
-ONTAP Select支持以下 KVM 虚拟机管理程序版本：
-
-* Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM
-* Rocky Linux 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 上的 KVM
-
-
---
 .ESXi
 --
 ONTAP Select支持以下 ESXi 虚拟机管理程序版本：
@@ -63,11 +54,29 @@ ONTAP Select支持以下 ESXi 虚拟机管理程序版本：
 * VMware ESXi 8.0 GA (内部版本20513097)
 
 
+[NOTE]
+====
+只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESXi 版本上使用 ONTAP Select 。
 
-NOTE: 只要 VMware 仍支持相同的版本， NetApp 就支持在确定的 ESXi 版本上使用 ONTAP Select 。
+ESXi 7.0 GA 已停止提供服务。如果您有使用此版本的ONTAP Select集群，则必须按照以下说明升级到受支持的版本： https://mysupport.netapp.com/matrix["互操作性表工具（ IMT ）"^] 。
+
+====
+--
+.Hyper-V
+--
+ONTAP Select 支持以下 Hyper-V 虚拟机监控程序版本：
+
+* Microsoft Windows Server 2025 和 2022
 
 
-NOTE: ESXi 7.0 GA 已停止提供服务。如果您有使用此版本的ONTAP Select集群，则必须按照以下说明升级到受支持的版本： https://mysupport.netapp.com/matrix["互操作性表工具（ IMT ）"^] 。
+--
+.KVM
+--
+ONTAP Select支持以下 KVM 虚拟机管理程序版本：
+
+* Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM
+* Rocky Linux 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 上的 KVM
+
 
 --
 ====

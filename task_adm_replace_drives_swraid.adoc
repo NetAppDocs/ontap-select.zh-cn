@@ -28,10 +28,75 @@ NOTE: 必须通过ONTAP Select Deploy删除故障驱动器和添加新驱动器(
 
 [role="tabbed-block"]
 ====
+.ESXi
+--
+.步骤
+. 使用管理员帐户登录到ONTAP 命令行界面。
+. 识别出现故障的磁盘驱动器：
++
+[source, cli]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+--
+.Hyper-V
+--
+.开始之前
+您必须具有 Hyper-V 主机上的 ONTAP Select 虚拟机（VM）的名称，以及 ONTAP Select 和 ONTAP Select Deploy 管理员帐户凭据。
+
+.关于此任务
+仅当 ONTAP Select 节点在 Hyper-V 上运行并配置为使用软件 RAID 时，才应使用此过程。在 Hyper-V 上，ONTAP Select 报告直通磁盘的虚拟化序列号，因此您可以通过目标地址而不是序列号来标识物理驱动器。
+
+.步骤
+. 使用管理员帐户登录到 ONTAP Select CLI 并识别出现故障的磁盘驱动器：
++
+[source, cli]
+----
+<cluster name>::> storage disk show -container-type broken
+----
+. [[record-lun-value]]显示故障磁盘的目标地址：
++
+[source, cli]
+----
+<cluster name>::> disk show -fields serial,vmdisk-target-address
+----
++
+记录故障磁盘的 `lun`值。该 `bus`值标识携带直通磁盘的虚拟 SCSI 控制器。
+
+. （可选）将备用磁盘容量与分区磁盘一起显示：
++
+[source, cli]
+----
+<cluster name>::> storage aggregate show-spare-disks
+----
+. 在 Hyper-V 主机上，显示连接到 ONTAP Select VM 的磁盘：
++
+[source, cli]
+----
+PS C:\> Get-VMHardDiskDrive -VMName <vm_name>
+----
++
+直通磁盘是报告磁盘编号的条目；带有文件路径的条目是系统磁盘。出现故障的磁盘是其 `ControllerLocation`与匹配的条目。故障磁盘的 `DiskNumber`是 Windows 磁盘编号。
+
+. 显示故障磁盘的物理标识：
++
+[source, cli]
+----
+PS C:\> Get-PhysicalDisk | Where-Object { [int]$_.DeviceId -eq <disk_number> } | Select-Object FriendlyName, SerialNumber, UniqueId, PhysicalLocation, MediaType, Size, HealthStatus, OperationalStatus
+----
+
+
+--
 .KVM
 --
 .开始之前
-您必须具有ONTAP Select虚拟机的VM ID以及ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
+您必须具有 ONTAP Select VM 的 VM ID，以及 ONTAP Select 和 ONTAP Select Deploy 管理员帐户凭据。
 
 .关于此任务
 只有当ONTAP Select节点运行在KVM上并配置为使用软件操作步骤时、才应使用此RAID。
@@ -39,9 +104,9 @@ NOTE: 必须通过ONTAP Select Deploy删除故障驱动器和添加新驱动器(
 .步骤
 . 在ONTAP Select命令行界面中、确定要更换的磁盘：
 +
-.. 按序列号、UUID或目标地址确定虚拟机中的磁盘。
+.. 通过 VM 中的序列号、UUID 或目标地址识别磁盘：
 +
-[listing]
+[source, cli]
 ----
 disk show -fields serial,vmdisk-target-address,uuid
 ----
@@ -53,35 +118,18 @@ storage aggregate show-spare-disks
 +
 .. 检查系统设备、搜索磁盘序列号或UUID (磁盘名称)：
 +
-[listing]
+[source, cli]
 ----
 find /dev/disk/by-id/<SN|ID>
 ----
-.. 通过搜索目标地址检查虚拟机配置：
+.. 检查 VM 配置，搜索目标地址：
 +
-[listing]
+[source, cli]
 ----
 virsh dumpxml VMID
 ----
 
 
-
-
---
-.ESXi
---
-.步骤
-. 使用管理员帐户登录到ONTAP 命令行界面。
-. 确定发生故障的磁盘驱动器。
-+
-[listing]
-----
-<cluster name>::> storage disk show -container-type broken
-Usable Disk Container Container
-Disk Size Shelf Bay Type Type Name Owner
----------------- ---------- ----- --- ------- ----------- --------- --------
-NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
-----
 
 
 --
@@ -95,95 +143,6 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 
 [role="tabbed-block"]
 ====
-.使用Deploy配置KVM
---
-您可以在更换磁盘期间或不再需要某个磁盘时将其与KVM主机断开。
-
-.开始之前
-您必须具有ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
-
-.步骤
-. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
-. 选择页面顶部的*集群*选项卡，然后从列表中选择所需的集群。
-. 选择所需HA对或节点旁边的*。
-+
-如果此选项处于禁用状态、则Deploy当前正在刷新存储信息。
-
-. 在*编辑节点存储*页面上选择*编辑存储*。
-. 取消选择要从节点断开的磁盘，输入ONTAP管理员凭据，然后选择*编辑存储*以应用更改。
-. 选择*Yes*以确认弹出窗口中的警告。
-. 选择集群的*事件*选项卡以监控并确认断开操作。
-+
-您可以从主机中删除不再需要的物理磁盘。
-
-
-
---
-.使用命令行界面的KVM
---
-确定磁盘后、请执行以下步骤。
-
-.步骤
-. 将磁盘与虚拟机断开：
-+
-.. 转储配置。
-+
-[listing]
-----
-virsh dumpxml VMNAME > /PATH/disk.xml
-----
-.. 编辑此文件并删除除要与虚拟机断开连接的磁盘以外的所有内容。
-+
-磁盘的目标地址应与ONTAP中的vmdisk-target-address字段相对应。
-
-+
-[listing]
-----
-<disk type='block' device='lun'>
-  <driver name='qemu' type='raw' cache='directsync'/>
-  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
-  <backingStore/>
-  <target dev='sde' bus='scsi'/>
-  <alias name='scsi0-0-0-4'/>
-  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
-</disk>
-----
-.. 断开磁盘。
-+
-[listing]
-----
-virsh detach-disk --persistent /PATH/disk.xml
-----
-
-
-. 更换物理磁盘：
-+
-您可以使用等实用程序 `ledctl locate=` 查找物理磁盘(如果需要)。
-
-+
-.. 从主机中删除磁盘。
-.. 选择一个新磁盘、并在必要时将其安装在主机中。
-
-
-. 编辑原始磁盘配置文件并添加新磁盘。
-+
-您应根据需要更新磁盘路径和任何其他配置信息。
-
-+
-[listing]
-----
-<disk type='block' device='lun'>
-  <driver name='qemu' type='raw' cache='directsync'/>
-  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
-  <backingStore/>
-  <target dev='sde' bus='scsi'/>
-  <alias name='scsi0-0-0-4'/>
-  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
-</disk>
-----
-
-
---
 .ESXi
 --
 .步骤
@@ -211,6 +170,95 @@ image:ST_26.jpg["警告"]
 
 
 --
+.使用 Deploy 的 Hyper-V 或 KVM
+--
+在更换磁盘或不再需要磁盘时，您可以从 Hyper-V 或 KVM 主机分离磁盘。
+
+.开始之前
+您必须具有ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 选择页面顶部的*集群*选项卡，然后从列表中选择所需的集群。
+. 选择所需HA对或节点旁边的*。
++
+如果此选项处于禁用状态、则Deploy当前正在刷新存储信息。
+
+. 在*编辑节点存储*页面上选择*编辑存储*。
+. 取消选择要从节点断开的磁盘，输入ONTAP管理员凭据，然后选择*编辑存储*以应用更改。
+. 选择*Yes*以确认弹出窗口中的警告。
+. 选择集群的*事件*选项卡以监控并确认断开操作。
++
+您可以从主机中删除不再需要的物理磁盘。
+
+
+
+--
+.使用命令行界面的KVM
+--
+确定磁盘后、请执行以下步骤。
+
+.步骤
+. 从虚拟机中分离磁盘：
++
+.. 转储配置：
++
+[source, cli]
+----
+virsh dumpxml VMNAME > /PATH/disk.xml
+----
+.. 编辑此文件并删除除要从 VM 分离的磁盘之外的所有内容。
++
+磁盘的目标地址应与ONTAP中的vmdisk-target-address字段相对应。
+
++
+[source, cli]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+.. 断开磁盘。
++
+[source, cli]
+----
+virsh detach-disk --persistent /PATH/disk.xml
+----
+
+
+. 更换物理磁盘：
++
+您可以使用等实用程序 `ledctl locate=` 查找物理磁盘(如果需要)。
+
++
+.. 从主机中删除磁盘。
+.. 选择一个新磁盘、并在必要时将其安装在主机中。
+
+
+. 编辑原始磁盘配置文件并添加新磁盘。
++
+您应根据需要更新磁盘路径和任何其他配置信息。
+
++
+[source, cli]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+
+
+--
 ====
 
 
@@ -221,50 +269,6 @@ image:ST_26.jpg["警告"]
 
 [role="tabbed-block"]
 ====
-.使用Deploy配置KVM
---
-.使用Deploy连接磁盘
-您可以在更换磁盘或添加更多存储容量时将磁盘连接到KVM主机。
-
-.开始之前
-您必须具有ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
-
-新磁盘必须物理安装在KVM Linux主机上。
-
-.步骤
-. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
-. 选择页面顶部的*集群*选项卡，然后从列表中选择所需的集群。
-. 选择所需HA对或节点旁边的*。
-+
-如果此选项处于禁用状态、则Deploy当前正在刷新存储信息。
-
-. 在*编辑节点存储*页面上选择*编辑存储*。
-. 选择要连接到节点的磁盘，输入ONTAP管理员凭据，然后选择*编辑存储*以应用更改。
-. 选择*事件*选项卡以监控和确认连接操作。
-. 检查节点存储配置以确认磁盘已连接。
-
-
---
-.使用命令行界面的KVM
---
-确定并删除故障驱动器后、您可以连接新驱动器。
-
-.步骤
-. 将新磁盘连接到虚拟机。
-+
-[listing]
-----
-virsh attach-disk --persistent /PATH/disk.xml
-----
-
-
-.结果
-磁盘将分配为备用磁盘、并可供ONTAP Select使用。磁盘可能需要一分钟或更长时间才能可用。
-
-.完成后
-由于节点配置已更改、您应使用Deploy管理实用程序执行集群刷新操作。
-
---
 .ESXi
 --
 .步骤
@@ -290,6 +294,50 @@ image:ST_30.jpg["存储磁盘详细信息"]
 image:ST_31.jpg["存储磁盘详细信息"]
 
 
+
+--
+.使用 Deploy 的 Hyper-V 或 KVM
+--
+.使用Deploy连接磁盘
+您可以将磁盘连接到 Hyper-V 或 KVM 主机，作为更换磁盘或添加更多存储容量的一部分。
+
+.开始之前
+您必须具有ONTAP Select和ONTAP Select Deploy管理员帐户凭据。
+
+新磁盘必须物理安装在KVM Linux主机上。
+
+.步骤
+. 使用管理员帐户登录到 Deploy 实用程序 Web 用户界面。
+. 选择页面顶部的*集群*选项卡，然后从列表中选择所需的集群。
+. 选择所需HA对或节点旁边的*。
++
+如果此选项处于禁用状态、则Deploy当前正在刷新存储信息。
+
+. 在*编辑节点存储*页面上选择*编辑存储*。
+. 选择要连接到节点的磁盘，输入ONTAP管理员凭据，然后选择*编辑存储*以应用更改。
+. 选择*事件*选项卡以监控和确认连接操作。
+. 检查节点存储配置以确认磁盘已连接。
+
+
+--
+.使用命令行界面的KVM
+--
+确定并删除故障驱动器后、您可以连接新驱动器。
+
+.步骤
+. 将新磁盘连接到 VM：
++
+[source, cli]
+----
+virsh attach-disk --persistent /PATH/disk.xml
+----
+
+
+.结果
+磁盘将分配为备用磁盘、并可供ONTAP Select使用。磁盘可能需要一分钟或更长时间才能可用。
+
+.完成后
+由于节点配置已更改、您应使用Deploy管理实用程序执行集群刷新操作。
 
 --
 ====

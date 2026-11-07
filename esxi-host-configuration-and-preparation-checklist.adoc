@@ -14,7 +14,7 @@ summary: 准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主�
 
 
 [role="lead"]
-准备部署ONTAP Select节点的每个 ESXi 虚拟机管理程序主机。准备主机时，需要仔细评估部署环境，以确保主机已正确配置并准备好支持ONTAP Select集群的部署。
+准备部署 ONTAP Select 节点的每个 ESXi 虚拟机监控程序主机。确保主机已正确配置并准备好支持 ONTAP Select 集群的部署。
 
 
 NOTE: ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主机所需的网络和存储配置。您必须在部署ONTAP Select集群之前手动准备每个主机。

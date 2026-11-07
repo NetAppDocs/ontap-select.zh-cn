@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: plan-ots-hyper-v.html 
+keywords: plan, planning, vnas, hyper-v 
+summary: 您应该考虑与使用 Hyper-V 虚拟机管理程序相关的几个规划问题。 
+---
+= ONTAP Select 的 Hyper-V 存储要求
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+当您在 Hyper-V 虚拟机监控程序上配置 ONTAP Select 时，ONTAP Select 会将虚拟机（VM）和虚拟磁盘存储在 Hyper-V 主机上的本地卷上。
+
+
+
+[[basic-requirements-and-restrictions]]
+== 基本要求和限制
+
+以下配置要求和限制适用于 Hyper-V 主机上的 ONTAP Select 存储池：
+
+* 存储池必须是已分配驱动器号的 NTFS 或 ReFS 卷。Deploy 实用程序通过驱动器号标识存储池。
+* 不支持将群集共享卷用作存储池。
+* 不支持将网络文件共享和远程 UNC 路径（如 SMB 3.0）用作存储池。
+* ONTAP Select 无法发现仅装载到文件夹路径的卷，因为该卷没有驱动器号。
+* 如果 Hyper-V 主机将 LUN 格式化为 NTFS 或 ReFS 并分配驱动器盘符，则 ONTAP Select 可以使用采用 FC、FCoE 或 iSCSI 的外部存储阵列上的 LUN。ONTAP Select 将此类卷视为本地主机存储。与 ESXi 一起使用的 ONTAP Select vNAS 模型不适用于 Hyper-V。
+* 存储空间虚拟磁盘如果格式化为 NTFS 或 ReFS 并分配了驱动器号，则可以容纳存储池。但是，软件 RAID 不能使用作为存储空间池成员的物理磁盘。
+* Hyper-V 配置无法识别精简配置的存储。ONTAP Select 使用 Windows 为卷报告的容量。
+
+
+
+
+[[best-practices]]
+== 最佳实践
+
+您应遵循以下最佳实践：
+
+* 为 ONTAP Select 网络定义专用的网络适配器、带宽和虚拟交换机配置。将外部存储流量（例如 iSCSI）保留在单独的适配器上。
+* 将存储池卷专用于 ONTAP Select。请勿将另一个 Hyper-V 虚拟机或 Windows 工作负载放在同一个卷中，也不要将 Windows 启动卷用作存储池。
+* 调整卷大小，使 ONTAP Select 不会消耗其全部容量。
+* 为外部存储阵列配置 Windows MPIO，以便通过冗余路径呈现 LUN。
+

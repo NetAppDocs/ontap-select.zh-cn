@@ -17,7 +17,7 @@ summary: 由于 REST Web 服务具有固有的灵活性，因此可以通过多�
 由于 REST Web 服务具有固有的灵活性，因此可以通过多种不同的方式访问 ONTAP Select Deploy API 。
 
 
-NOTE: ONTAP Select Deploy 附带的 REST API 分配了一个版本号。API 版本号与 Deploy 发布版本号无关。ONTAP Select 9.19.1 Deploy 管理实用程序包括 REST API 版本 3。
+NOTE: ONTAP Select Deploy 附带的 REST API 分配了一个版本号。API 版本号与 Deploy 发布版本号无关。ONTAP Select 9.20.1 Deploy 管理实用程序包括 REST API 版本 3。
 
 
 

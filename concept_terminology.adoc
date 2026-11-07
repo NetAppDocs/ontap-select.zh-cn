@@ -17,8 +17,9 @@ summary: 在您开始探索 ONTAP Select 并规划部署时，首先熟悉术语
 在您开始探索 ONTAP Select 并规划部署时，首先熟悉术语和关键概念会很有帮助。
 
 ONTAP Select 部署:: ONTAP Select Deploy 是用于部署 ONTAP Select 集群的管理实用程序。Deploy 实用程序在专用 Linux 虚拟机中运行。您可以通过 Web 用户界面， CLI 管理 Shell 和 REST API 访问 Deploy 实用程序。
+Microsoft Hyper-V:: Microsoft Hyper-V 是随 Windows Server 提供的硬件虚拟化平台。当您启用 Hyper-V 角色时，Windows Server 主机可以创建、运行和管理虚拟机（VM）的整个生命周期。在 ONTAP Select 环境中，运行 Hyper-V 的 Windows Server 主机是 ONTAP Select Deploy 虚拟机和 ONTAP Select 虚拟节点的虚拟机监控程序主机平台。
 基于内核的虚拟机:: 基于内核的虚拟机(KVM)是Linux内核的一项虚拟化功能、可用作虚拟机管理程序平台。支持多种子操作系统。
-虚拟机管理程序主机与 ONTAP Select 节点:: 虚拟机管理程序 host_ 是托管 ONTAP Select 虚拟机的核心硬件平台。在虚拟机管理程序主机上部署 ONTAP Select 虚拟机并使其处于活动 ONTAP Select 状态时，该虚拟机将被视为 _vp 节点 _ 。
+虚拟机管理程序主机与 ONTAP Select 节点:: _hypervisor host_ 是托管 ONTAP Select VM 的核心硬件平台。当 ONTAP Select VM 在 hypervisor 主机上部署并处于活动状态时，它将被视为 _ONTAP Select 节点_。
 ONTAP Select 集群:: 您可以创建一个由一个、两个、四个、六个、八个、十个或十二个节点组成的_ONTAP Select集群_。多节点集群始终包含一个或多个 HA 对。例如，一个四节点集群由两个 HA 对组成。单节点集群不提供 HA 功能。
 准备虚拟机管理程序主机环境:: 在使用 Deploy 管理实用程序部署 ONTAP Select 集群之前，您需要准备要运行 ONTAP Select 的虚拟机管理程序主机，包括存储和网络环境。此主机预配置是在 ONTAP Select 产品之外根据当前要求和限制完成的。
 评估与生产部署:: 每个 ONTAP Select 节点都使用 _evaluation_license_ 或 _purchased license_ 运行。您可以使用评估版许可证在将 ONTAP Select 部署到生产环境之前对其进行评估。评估版许可证会自动生成并应用。如果在生产环境中部署集群，则必须购买许可证，其中包括选择：
@@ -33,7 +34,7 @@ ONTAP Select 集群:: 您可以创建一个由一个、两个、四个、六个�
 容量层许可模式:: 最初选择使用容量层许可模式为ONTAP Select部署授予存储许可。它基于与 NetApp AFF 和 FAS 结合使用的 ONTAP 模型。每个节点都需要一个单独的许可证。存储容量将锁定到节点并永久存在（无需续订）。
 容量池许可模式:: 容量池许可模式是在使用Deploy 2.10的ONTAP Select 9.5中推出的。每个存储容量池都需要一个单独的许可证。容量池许可证会锁定到License Manager实例(即Deploy实例)、必须根据购买条款续订。您可以在组织中许可和使用任意数量的容量池。但是、由于容量池由ONTAP Select节点共享、因此所需许可证通常比容量层许可少。
 许可证管理器:: License Manager是一个支持容量池许可的软件组件。它目前是 Deploy 管理实用程序的一部分。LM 会从其管理的共享池中将存储租用给 ONTAP Select 节点。_License Lock ID_ 是一个数字字符串，用于唯一标识每个 LM 实例以及每个 Deploy 实例。要生成许可证文件、必须同时使用容量池许可证序列号和LLID。
-平台许可证产品:: 您可以通过三种许可证选项来确定购买许可证时 ONTAP Select 虚拟机的大小功能：
+平台许可证产品:: 当您购买许可证时，有三种许可证产品可供选择，这些产品决定了 ONTAP Select VM 的大小功能：
 +
 --
 * 标准
@@ -47,7 +48,7 @@ ONTAP Select 集群:: 您可以创建一个由一个、两个、四个、六个�
 有关详细信息，请参见两节 link:concept_workflow_deploy.html["规划"] 和 link:concept_lic_evaluation.html["许可证"]。
 
 存储池与数据存储库:: ONTAP Select _storage pool_ 是一个逻辑数据容器，用于抽象化和隐藏底层物理存储。存储池与虚拟机管理程序无关。在 ESXi 虚拟机管理程序主机上部署时， ONTAP Select 存储池与 vmware_datastorage_ 同义。
-集群 MTU:: 集群 MTU 是一项功能，可用于配置 ONTAP Select 多节点集群使用的内部网络上使用的 MTU 大小。在配置 HA 对以适应网络环境时， Deploy 管理实用程序会调整 MTU 大小。您也可以手动设置此值。
+集群 MTU:: 群集最大传输单元（MTU）是一项功能，允许您配置与 ONTAP Select 多节点群集一起使用的内部网络上使用的 MTU 大小。Deploy 管理实用程序会在您配置 HA 对以适应您的网络环境时调整 MTU 大小。您也可以手动设置该值。
 ONTAP Select vNAS:: ONTAP Select vNAS 解决方案 允许 ONTAP Select 节点访问外部存储上的 VMware 数据存储库。对于 ONTAP Select vNAS ，不再需要本地 RAID 控制器； RAID 功能假定由远程存储提供。可以通过以下方式配置 ONTAP Select vNAS ：
 +
 --
@@ -60,20 +61,20 @@ ONTAP Select vNAS:: ONTAP Select vNAS 解决方案 允许 ONTAP Select 节点访
 
 在这两种情况下，都必须在创建 ONTAP Select 集群或扩展现有节点的存储容量之前配置外部存储。
 
-在ESXi虚拟机上重新托管节点:: 如果您部署的集群使用通过 ONTAP Select vNAS 解决方案 （ VMware vSAN 或通用外部存储阵列）提供的外部存储，则可以通过使用以下 VMware 功能的操作移动托管 ONTAP Select 节点的 ESXi 虚拟机：
+在ESXi虚拟机上重新托管节点:: 当您部署使用通过 ONTAP Select vNAS 解决方案（VMware vSAN 或通用外部存储阵列）提供的外部存储的集群时，托管 ONTAP Select 节点的 ESXi 虚拟机可以通过利用以下 VMware 功能的操作进行移动：
 +
 --
 * VMotion
 * 高可用性（ HA ）
 * 分布式资源计划程序（ DRS ）
 +
-在对集群执行操作时， ONTAP Select Deploy 实用程序会检测虚拟机的移动，例如：
+作为在集群上执行操作的一部分，ONTAP Select Deploy 实用程序会检测 VM 的移动，例如：
 
 * 集群联机
 * 集群脱机
 * 存储添加
 +
-移动虚拟机后， Deploy 实用程序将更新其内部数据库并配置新的 ESXi 主机。在完成虚拟机移动和 Deploy 更新之前，系统会阻止对 ONTAP Select 节点执行的所有操作。
+移动 VM 时，Deploy 实用程序会更新其内部数据库并配置新的 ESXi 主机。在 VM 的移动和 Deploy 更新完成之前，在 ONTAP Select 节点上执行的所有操作都将被阻止。
 
 
 
@@ -83,7 +84,7 @@ ONTAP Select vNAS:: ONTAP Select vNAS 解决方案 允许 ONTAP Select 节点访
 
 
 
-CAUTION: 如果您有一个或多个活动双节点集群，则管理这些集群的 ONTAP Select Deploy 虚拟机必须始终处于运行状态。如果 Deploy 虚拟机暂停，则调解器服务不可用，并且双节点集群的 HA 功能将丢失。
+CAUTION: 如果您有一个或多个活动的双节点群集，则必须始终运行管理群集的 ONTAP Select Deploy VM。如果 Deploy VM 停止，则中介服务不可用，并且双节点群集的 HA 功能将丢失。
 
 MetroCluster SDS:: MetroCluster SDS 是一项功能，可在部署双节点 ONTAP Select 集群时提供额外的配置选项。与典型的双节点 ROBO 部署不同， MetroCluster SDS 节点可以相隔更远的距离。通过这种物理隔离，可以实现其他使用情形，例如灾难恢复。要使用 MetroCluster SDS ，您必须具有高级许可证或更高版本。此外，节点之间的网络必须满足最低延迟要求。
 凭据存储:: Deploy 凭据存储是保存帐户凭据的安全数据库。它主要用于将虚拟机监控程序主机注册为创建新群集的一部分。有关详细信息，请参见 link:concept_workflow_deploy.html["规划"] 节。
@@ -93,7 +94,7 @@ MetroCluster SDS:: MetroCluster SDS 是一项功能，可在部署双节点 ONTA
 vNAS 默认配置启用称为单实例数据日志记录 (SIDL) 的写入优化功能。在 ONTAP Select 9.6 及更高版本中，后台 ONTAP 存储效率功能在启用 SIDL 的情况下合格。有关详细信息，请参见 link:concept_stor_concepts_chars.html["深度剖析"] 节。
 
 --
-集群刷新:: 创建集群后，您可以使用 ONTAP 或虚拟机管理程序管理工具在 Deploy 实用程序之外更改集群或虚拟机配置。您还可以迁移导致配置更改的虚拟机。发生这些更改时， Deploy 实用程序不会自动更新，并且可能会与集群状态不同步。您可以使用集群刷新功能更新 Deploy 配置数据库。集群刷新可通过 Deploy Web 用户界面， CLI 管理 Shell 和 REST API 来实现。
+集群刷新:: 创建集群后，您可以使用 ONTAP 或虚拟机管理程序管理工具在 Deploy 实用程序之外对集群或 VM 配置进行更改。您还可以迁移 VM，这会导致配置更改。发生这些更改时，Deploy 实用程序不会自动更新，并且可能会与集群的状态不同步。您可以使用集群刷新功能来更新 Deploy 配置数据库。可通过 Deploy Web 用户界面、CLI 管理 shell 和 REST API 使用集群刷新功能。
 软件 RAID:: 使用直连存储（ DAS ）时， RAID 功能通常通过本地硬件 RAID 控制器提供。您可以改为将节点配置为使用 _software raid_ ，其中 ONTAP Select 节点提供 RAID 功能。如果使用软件 RAID ，则不再需要硬件 RAID 控制器。
 
 

@@ -17,7 +17,12 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实用程序创建 ONTAP Select 集群。
 
 .开始之前
-您已审阅 link:kvm-host-configuration-and-preparation-checklist.html["安装前检查清单"]。
+您已查看虚拟机监控程序主机的安装前检查清单：
+
+* link:esxi-host-configuration-and-preparation-checklist.html["ESXi 主机清单"]
+* link:hyper-v-host-configuration-and-preparation-checklist.html["Hyper-V 主机清单"]
+* link:kvm-host-configuration-and-preparation-checklist.html["KVM 主机检查清单"]
+
 
 
 
@@ -30,7 +35,7 @@ summary: 您需要安装 ONTAP Select Deploy 管理实用程序并使用该实�
 https://mysupport.netapp.com/site/user/registration["您已注册NetApp支持站点帐户"^](英文)
 
 .关于此任务
-ONTAP Select Deploy 管理实用程序打包为基于开放虚拟化格式 (OVF) 标准的虚拟机 (VM)。单个压缩文件具有后缀 `OVA`（用于 ESXi 主机）和 `TGZ`（用于 KVM 主机）。VM 为 ONTAP Select 节点提供 Deploy 服务器和安装映像。
+ONTAP Select Deploy 管理实用程序打包为基于 Open Virtualization Format 的虚拟机（VM）。单个压缩文件对于 ESXi 主机具有后缀 `ova`，对于 Hyper-V 具有后缀 `vhdx.tgz`，对于 KVM 主机具有后缀 `raw.tgz`。VM 为 ONTAP Select 节点提供 Deploy 服务器和安装映像。
 
 .步骤
 . 访问 link:https://mysupport.netapp.com/site/downloads/["NetApp 支持站点下载"^] 页面。
@@ -90,10 +95,15 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 [[step-3-deploy-the-virtual-machine]]
 == 步骤 3：部署虚拟机
 
-使用 OVF VM 映像安装并启动ONTAP Select Deploy VM。作为安装过程的一部分，您需要配置网络接口以使用 DHCP 或静态 IP 配置。
+在虚拟机监控程序主机上创建 ONTAP Select Deploy 虚拟机。
 
-.开始之前
 [role="tabbed-block"]
+====
+.ESXi
+--
+使用 OVF VM 映像在 ESXi 主机上安装并启动 ONTAP Select Deploy VM。作为安装过程的一部分，您可以将网络接口配置为使用 DHCP 或静态 IP 配置。
+
+--
 ====
 .ESXi
 --
@@ -127,17 +137,12 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 --
+[]
 ====
 .关于此任务
 如果您使用的是 vSphere ，则 Deploy OVF 模板向导会提供一个表单，用于提供所有 Deploy 配置信息，包括网络配置。但是、如果您选择不使用此表单、则可以改用Deploy虚拟机的控制台来配置网络。
 
 .步骤
-您需要执行的步骤取决于您使用的是ESXi虚拟机管理程序还是KVM虚拟机管理程序。
-
-[role="tabbed-block"]
-====
-.ESXi
---
 . 访问 vSphere 客户端并登录。
 . 导航到层次结构中的相应位置，然后选择 * 部署 OVF 模板 * 。
 . 选择 OVA 文件并完成 Deploy OVF Template 向导。选择适合您环境的选项。
@@ -169,8 +174,131 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 --
-.KVM
+
 --
+使用“新建虚拟机向导”在 Hyper-V 主机上安装并启动 ONTAP Select Deploy VM。
+
+.开始之前
+验证 Hyper-V 主机是否满足以下要求：
+
+[cols="1,2"]
+|===
+| 需求 | 值 
+
+
+| Hyper-V 角色 | 已安装，包括 Hyper-V PowerShell 模块 
+
+
+| VM 代 | 第 1 代 
+
+
+| vCPU | 2 
+
+
+| 内存 | 4GB，静态（已禁用动态内存） 
+
+
+| 启动磁盘 | 附加到 IDE 控制器 0，位置 0 
+
+
+| 可用磁盘空间 | 存储 VM 磁盘的卷上至少有 40GB 
+
+
+| 归档工具 | tar，包含在 Windows Server 2019 及更高版本中 
+|===
+验证您是否具有以下信息：
+
+[cols="1,2"]
+|===
+| 信息 | Description 
+
+
+| VM 名称 | 部署虚拟机的名称，例如 ONTAP-deploy-HV 
+
+
+| 虚拟交换机名称 | 外部虚拟交换机的名称，例如 ONTAP_Vswitch 
+
+
+| 物理网卡名称 | 连接到 Deploy VM 网络的主机网络适配器 
+
+
+| VLAN ID | 仅当上游交换机端口需要标记流量时才需要 
+
+
+| 主机名 | 部署虚拟机的 FQDN 或简短主机名 
+
+
+| 管理员密码 | admin 帐户的密码，在首次启动时设置 
+|===
+在定义静态网络配置时，您需要以下附加信息：
+
+* Deploy虚拟机的IP地址
+* 网络掩码
+* 网关（路由器）的 IP 地址
+* 主 DNS 服务器的 IP 地址
+* 第二个 DNS 服务器的 IP 地址
+* DNS 搜索域
+
+
+.关于此任务
+创建外部虚拟交换机会短暂中断物理网卡上的网络流量。如果您通过物理网卡远程连接到主机，请使用带外控制台（如服务器 BMC）或其他网络适配器，以免失去访问权限。
+
+.步骤
+. 在 Hyper-V 管理器中，选择 *新建* > *虚拟机* 以打开新建虚拟机向导。
+. 选择 *Next*。
+. 输入 VM 名称，然后选择*下一步*。
+. 选择*第1代*，然后选择*下一步*。
++
+
+NOTE: 带有 Hyper-V 的 ONTAP Select 不支持第 2 代虚拟机。
+
+. 输入内存量，然后选择*下一步*。
++
+
+NOTE: 最小内存要求为 4GB。
+
+. 从下拉列表中选择您的虚拟交换机，然后选择*下一步*。
+. 选择*使用现有虚拟硬盘* > *浏览*，然后找到并选择 `vhdx.tgz`映像文件。
+. 选择 *Next*。
+. 验证配置，然后选择*完成*。
+. 如果需要、您可以使用VM控制台配置Deploy网络：
++
+.. 等待出现以下提示：
++
+[listing]
+----
+Host name :
+----
+.. 键入主机名并选择*Enter*。
+.. 等待出现以下提示：
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. 键入*n*定义静态IP配置，或键入*y*使用DHCP，然后选择*Enter*。
+.. 如果选择静态配置，请根据需要提供所有网络配置信息。
+
+
+
+
+--
+
+--
+使用 OVF VM 映像在 KVM 主机上安装并启动 ONTAP Select Deploy VM。作为安装过程的一部分，您可以将网络接口配置为使用 DHCP 或静态 IP 配置。
+
+.开始之前
+您必须具有在创建 VM 时要使用的配置信息，包括 VM 的名称、外部网络和主机名。定义静态网络配置时，您需要以下附加信息：
+
+* Deploy虚拟机的IP地址
+* 网络掩码
+* 网关（路由器）的 IP 地址
+* 主 DNS 服务器的 IP 地址
+* 第二个 DNS 服务器的 IP 地址
+* DNS 搜索域
+
+
+.步骤
 . 在Linux服务器上登录到命令行界面：
 +
 [listing]
@@ -220,6 +348,8 @@ Use DHCP to set networking information? [n]:
 
 
 --
+
+--
 ====
 
 
@@ -231,7 +361,7 @@ Sign in 到 Web 用户界面，以确认部署实用程序可用并执行初始�
 .步骤
 . 使用 IP 地址或域名将浏览器指向 Deploy 实用程序：
 +
-` https://<ip_address>/`
+`\https://<IP_address>/`
 
 . 提供管理员（ admin ）帐户名称和密码并登录。
 . 如果显示*欢迎使用ONTAP Select *弹出窗口，请查看前提条件并选择*OK*继续。

@@ -19,6 +19,23 @@ summary: 当前版本包括ONTAP Select的几项新增功能或改进功能。
 
 
 
+[[ontap-select-9-20-1]]
+== ONTAP Select 9.20.1
+
+支持 Hyper-V 虚拟机管理程序:: 从 ONTAP Select 9.20.1 开始，您可以在运行 Windows Server 2025 和 Windows Server 2022 的 Microsoft Hyper-V 虚拟机管理程序上部署 ONTAP Select 集群。您可以使用 ONTAP Select Deploy 管理实用程序在支持的 Hyper-V 主机上配置和管理单节点、双节点和四节点集群。
++
+--
+* 了解 link:plan-ots-hyper-v.html["Hyper-V 存储要求"]
+* 了解 link:hyper-v-host-configuration-and-preparation-checklist.html["Hyper-V 主机配置和准备清单"]
+* 了解 link:task_install_deploy.html["在 Hyper-V 主机上安装 ONTAP Select Deploy"]
+
+
+--
+支持基于 TLS 的 NFS:: 从 ONTAP Select 9.20.1 开始，ONTAP Select 支持使用 CLI 的 NFS over TLS。不支持 System Manager。有关详细信息，请参阅link:reference_lic_ontap_features.html#licensed-ontap-features["默认情况下获得许可的 ONTAP 功能"]。
+
+
+
+
 [[ontap-select-9-19-1]]
 == ONTAP Select 9.19.1
 
@@ -28,7 +45,7 @@ summary: 当前版本包括ONTAP Select的几项新增功能或改进功能。
 ONTAP Select 不支持云密钥管理器。
 
 --
-支持 Advanced Micro Devices (AMD) 处理器:: 从 ONTAP Select 9.19.1 开始，ONTAP Select 支持基于内核的虚拟机 (KVM) 和 ESXi 虚拟机监控程序主机上的 AMD 处理器。有关详细信息，请参阅 link:reference_plan_ots_hardware.html["VMware 虚拟机管理程序和硬件注意事项"]。
+支持 Advanced Micro Devices (AMD) 处理器:: 从 ONTAP Select 9.19.1 开始，ONTAP Select 支持 ESXi 和基于内核的虚拟机（KVM）虚拟机管理程序主机上的 AMD 处理器。有关详细信息，请参阅 link:reference_plan_ots_hardware.html["VMware 虚拟机管理程序和硬件注意事项"]。
 增强了对VMware ESXi的支持:: ONTAP Select 9.19.1 包括对 VMware ESXi 9.1 的支持。
 
 
@@ -78,7 +95,7 @@ ONTAP Select 产品下载选项的更新:: NetApp 支持站点上的 ONTAP Selec
 
 
 --
-link:task_cluster_expansion_contraction.html["了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本"] 。
+link:task_cluster_expansion_contraction.html["了解群集扩展和收缩以及支持的 ESXi 和 KVM 虚拟机管理程序版本"]。
 
 --
 已更新KVM虚拟机管理程序支持:: 从 ONTAP Select 9.18.1 开始，Rocky Linux 10.1 支持 KVM 虚拟机管理程序。
@@ -101,12 +118,12 @@ KVM 主机上本地连接的 NVMe 磁盘的软件 RAID 支持:: ONTAP Select 9.1
 link:concept_stor_swraid_local.html["了解本地连接存储的软件 RAID 配置服务"] 。
 
 --
-支持KVM主机集群扩容和缩容:: 从ONTAP Select 9.17.1 开始，基于内核的虚拟机 (KVM) 和 ESXi 虚拟机管理程序主机均支持集群扩展和收缩功能。对于ONTAP Select 9.16.1 和 9.15.1，仅 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。
+支持KVM主机集群扩容和缩容:: 从 ONTAP Select 9.17.1 开始，ESXi 和基于内核的虚拟机（KVM）虚拟机监控程序主机均支持集群扩展和收缩功能。对于 ONTAP Select 9.16.1 和 9.15.1，仅 ESXi 虚拟机监控程序主机支持集群扩展和收缩。
 +
 --
 您可以使用现有ONTAP Select集群上的集群扩展和收缩功能将集群规模从六节点增加到八节点，或者将集群规模从八节点减少到六节点。
 
-link:task_cluster_expansion_contraction.html["了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本"] 。
+link:task_cluster_expansion_contraction.html["了解群集扩展和收缩以及支持的 ESXi 和 KVM 虚拟机管理程序版本"]。
 
 --
 增强对 ESXi 主机上的集群扩展和收缩的支持:: 从ONTAP Select 9.17.1 开始，ESXi 主机上的六节点集群和十二节点集群之间支持集群扩展和收缩：
@@ -128,7 +145,7 @@ link:task_cluster_expansion_contraction.html["了解集群扩展和收缩以及�
 
 
 --
-link:task_cluster_expansion_contraction.html["了解集群扩展和收缩以及支持的 KVM 和 ESXi 虚拟机管理程序版本"] 。
+link:task_cluster_expansion_contraction.html["了解群集扩展和收缩以及支持的 ESXi 和 KVM 虚拟机管理程序版本"]。
 
 --
 支持 SnapMirror 云:: 从 ONTAP Select 9.17.1 开始，ONTAP Select 支持 SnapMirror 云。默认情况下，ONTAP Select 未获得 SnapMirror 云许可证。部署 ONTAP Select 9.17.1 集群或将现有 ONTAP Select 集群升级到版本 9.17.1 时，需要请求 SnapMirror 云许可证。有关详细信息，请参阅 link:reference_lic_ontap_features.html#other-ontap-features["单独许可的ONTAP 功能"]。
@@ -144,7 +161,7 @@ ONTAP Select Deploy 和 ONTAP Select for ESXi 支持配置 ONTAP Select 单节�
 ====
 要执行内容库操作，您需要访问其他权限级别。如果您使用受限角色，则 vSAN ESA 部署需要此访问权限。
 
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["了解有关访问内容库操作的权限级别的信息"].
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["了解有关访问内容库操作的权限级别的信息"]。
 
 ====
 --
@@ -280,7 +297,7 @@ NetApp 强烈建议客户计划并执行从 ONTAP Select for KVM 到任何其他
 --
 * 集群 MTU
 +
-在部署集群之前，您必须手动将集群 MTU 大小调整为 8800 ，以考虑额外的开销。VMware 准则允许在使用 NSX-T 时使用 200 字节的缓冲区
+在部署集群之前，必须手动将集群最大传输单元（MTU）大小调整为 8800，以应对额外的开销。VMware 指南建议在使用 NSX-T 时预留 200 字节的缓冲区。
 
 * 网络 4x10 Gb 配置
 +

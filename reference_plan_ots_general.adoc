@@ -18,6 +18,64 @@ summary: 在规划 ONTAP Select 部署时，您应考虑几个一般要求。
 
 
 
+[[required-windows-knowledge-and-skills-for-hyper-v]]
+== Hyper-V 所需的 Windows 知识和技能
+
+带有 Hyper-V 虚拟机监控程序的 Windows Server 是一个复杂的环境。在 Hyper-V 上部署 ONTAP Select 之前，您必须具备必要的知识和技能。
+
+ONTAP Select Deploy 管理实用程序创建和管理 ONTAP Select 虚拟机（VM）。您需要以下技能来准备 Deploy 管理的 Windows 主机，并确认该主机符合 ONTAP Select 要求。
+
+Windows Server 管理:: 您应具有适用于 ONTAP Select 部署的 Windows Server 版本的经验。具体而言，您应该能够执行以下任务：
++
+--
+* 安装和更新 Windows Server
+* 确定已安装的 Windows Server 版本并确认其受支持
+* 安装并启用服务器角色和可选功能，包括 Hyper-V 角色
+* 使用命令行界面配置系统
+* 调整主机 CPU 和内存的大小，以便在部署 ONTAP Select 节点后，主机仍有可用容量
+
+
+有关准备 Windows 服务器的更多信息（包括所需的配置和软件包），请参见 link:hyper-v-host-configuration-and-preparation-checklist.html["主机配置清单"]。
+
+--
+Hyper-V 概念和管理:: 您应熟悉一般虚拟化概念以及 Hyper-V 平台。具体而言，您应了解以下内容：
++
+--
+* 启用 Hyper-V 角色如何更改主机上的网络和存储
+* Hyper-V 如何向 VM 呈现存储，包括虚拟硬盘和直通给 VM 的物理磁盘之间的区别
+* 如何查看虚拟机及其资源的配置和状态
+
+
+
+NOTE: Deploy 管理实用程序创建和管理 ONTAP Select VM。请勿使用 Hyper-V 管理器、故障转移群集管理器或 PowerShell 重新配置、创建检查点、迁移或删除 VM。
+
+--
+网络连接和虚拟交换机配置:: 您应熟悉网络概念和网络交换机的配置。此外，您应该能够在 Hyper-V 主机上执行以下任务：
++
+--
+* 规划和创建外部虚拟交换机，并了解每个虚拟交换机如何绑定到物理网络适配器
+* 验证主机网络适配器的链路状态、速度和 IP 配置
+* 在主机和物理网络上一致配置 VLAN 标记
+* 在物理网络适配器上配置巨型帧并确定由此产生的最大传输单元（MTU）
+
+
+Deploy 管理实用程序使用主机上已存在的虚拟交换机，因此您需要在部署之前规划虚拟交换机布局。例如，双节点集群需要 MTU 为 7500 至 9000 字节的内部网络。
+
+--
+存储管理:: 您应该能够管理 Windows Server 上的磁盘和卷。具体而言，您应该能够执行以下任务：
++
+--
+* 创建并调整 NTFS 或 ReFS 卷的大小，并分配驱动器号
+* 识别物理磁盘的介质类型、存储传输协议（总线类型）和容量
+* 区分原始磁盘与已分区或已包含卷的磁盘
+* 初始化要在系统中使用的原始磁盘
+
+
+--
+
+
+
+
 [[required-linux-knowledge-and-skills-for-kvm]]
 == KVM所需的Linux知识和技能
 
@@ -34,7 +92,7 @@ Linux服务器分发版:: 您应具备使用ONTAP Select部署所使用的特定
 --
 
 
-有关准备 Linux 服务器的更多信息，包括所需的配置和软件包，请参见 link:kvm-host-configuration-and-preparation-checklist.html["主机配置清单"]。请参见当前支持的 Linux 发行版的虚拟机管理程序要求。
+有关准备 Linux 服务器的更多信息，包括所需的配置和软件包，请参见 link:kvm-host-configuration-and-preparation-checklist.html["主机配置清单"]。
 
 KVM部署和管理:: 您应熟悉一般虚拟化概念。此外、在KVM环境中安装和管理ONTAP Select时、必须使用多个Linux命令行界面命令：
 +
@@ -79,32 +137,39 @@ KVM部署和管理:: 您应熟悉一般虚拟化概念。此外、在KVM环境�
 您应考虑与虚拟机管理程序主机相关的多个规划问题。
 
 
-CAUTION: 除非 NetApp 支持人员指示，否则不应直接修改 ONTAP Select 虚拟机的配置。只能通过 Deploy 管理实用程序配置和修改虚拟机。在未获得 NetApp 支持的情况下，在 Deploy 实用程序之外对 ONTAP Select 虚拟机进行更改会导致发生原因 虚拟机出现故障并使其无法使用。
+CAUTION: 除非得到 NetApp 支持部门的指示，否则您不应直接修改 ONTAP Select 虚拟机的配置。只能通过 Deploy 管理实用程序配置和修改虚拟机。在没有 NetApp 支持人员协助的情况下，在 Deploy 实用程序之外对 ONTAP Select 虚拟机进行更改可能会导致虚拟机发生故障并使其无法使用。
 
 独立于虚拟机管理程序:: ONTAP Select 和 ONTAP Select Deploy 管理实用程序均与虚拟机管理程序无关。这两种虚拟机管理程序均支持以下虚拟机管理程序。
 +
 --
-* VMware ESXi
+* Microsoft Hyper-V
++
+
+NOTE: 从 ONTAP Select 9.20.1 开始，支持 Microsoft Hyper-V 虚拟机管理程序。
+
 * 基于内核的虚拟机（ KVM ）
-
-
---
-
-
++
 
 NOTE: 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持在KVM虚拟机管理程序上部署新集群、而ONTAP Select 9.11.1不再支持管理现有KVM集群和主机(脱机或删除除外)。
 
+* VMware ESXi
+
+
+--
+
+
 有关受支持平台的其他详细信息，请参见特定于虚拟机管理程序的规划信息和link:reference_release_notes.html["发行说明"]。
 
-适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序:: Deploy 管理实用程序和 ONTAP Select 节点均作为虚拟机运行。您为 Deploy 实用程序选择的虚拟机管理程序与您为 ONTAP Select 节点选择的虚拟机管理程序无关。您可以完全灵活地将这两者配对：
+适用于 ONTAP Select 节点的虚拟机管理程序和管理实用程序:: Deploy 管理实用程序和 ONTAP Select 节点均作为 VM 运行。为 Deploy 实用程序选择的虚拟机管理程序独立于为 ONTAP Select 节点选择的虚拟机管理程序。在将两者配对时，您拥有完全的灵活性：
 +
 --
-* 在 VMware ESXi 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
-* 在 KVM 上运行的 Deploy 实用程序可以在 VMware ESXi 或 KVM 上创建和管理 ONTAP Select 集群
+* 在 VMware ESXi 上运行的部署实用程序可以在 VMware ESXi、Hyper-V 或 KVM 上创建和管理 ONTAP Select 集群
+* 在 Hyper-V 上运行的部署实用程序可以在 VMware ESXi、Hyper-V 或 KVM 上创建和管理 ONTAP Select 集群
+* 在 KVM 上运行的部署实用程序可以在 VMware ESXi、Hyper-V 或 KVM 上创建和管理 ONTAP Select 集群
 
 
 --
-每个主机一个或多个 ONTAP Select 节点实例:: 每个 ONTAP Select 节点都作为一个专用虚拟机运行。您可以在同一虚拟机管理程序主机上创建多个节点，但有以下限制：
+每个主机一个或多个 ONTAP Select 节点实例:: 每个 ONTAP Select 节点作为专用虚拟机运行。可以在同一虚拟机监控程序主机上创建多个节点，但有以下限制：
 +
 --
 * 一个 ONTAP Select 集群中的多个节点不能在同一主机上运行。特定主机上的所有节点必须来自不同的 ONTAP Select 集群。
@@ -153,7 +218,7 @@ RAID 类型:: 在 ESXi 上使用直连存储（ DAS ）时，您应确定是使�
 
 
 
-NOTE: ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数据磁盘允许的总大小。
+NOTE: ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数据磁盘的总允许大小。
 
 用于生产部署的许可模式:: 您必须为生产环境中部署的每个ONTAP Select集群选择容量层或容量池许可模式。有关详细信息，请查看 _License_ 一节。
 
@@ -163,17 +228,17 @@ NOTE: ONTAP Select 存储容量对应于连接到 ONTAP Select 虚拟机的数�
 [[authentication-using-the-credential-store]]
 == 使用凭据存储进行身份验证
 
-ONTAP Select Deploy凭据存储是一个用于保存帐户信息的数据库。在集群创建和管理过程中， Deploy 会使用帐户凭据执行主机身份验证。您应了解在规划 ONTAP Select 部署时如何使用凭据存储。
+ONTAP Select Deploy 凭据存储是保存帐户信息的数据库。Deploy 使用帐户凭据来执行主机身份验证，这是集群创建和管理的一部分。您应该了解在规划 ONTAP Select 部署时如何使用凭据存储。
 
 
-NOTE: 帐户信息使用高级加密标准(Advanced Encryption Standard、AES)加密算法和SHA-256哈希算法安全地存储在数据库中。
+NOTE: 帐户信息使用高级加密标准（AES）加密算法和 SHA-256 哈希算法安全地存储在数据库中。
 
 凭据类型:: 支持以下类型的凭据：
 +
 --
 * host
 +
-host*凭据用于在将ONTAP Select节点直接部署到ESXi或KVM时对虚拟机管理程序主机进行身份验证。
+作为将 ONTAP Select 节点直接部署到 ESXi、Hyper-V 或 KVM 的一部分，*主机* 凭据用于对虚拟机监控程序主机进行身份验证。
 
 * vCenter
 +

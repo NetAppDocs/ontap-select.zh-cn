@@ -19,6 +19,9 @@ summary: 如果您计划将 NVMe 驱动器与软件 RAID 结合使用，则需�
 在 NVMe 设备上使用 VMDirectPath I/O 直通可最大限度地提高数据效率。此设置会将驱动器公开给 ONTAP Select 虚拟机，从而使 ONTAP 可以通过 PCI 直接访问设备。
 
 
+NOTE: ONTAP Select 支持 NVMe 驱动器作为 Hyper-V 主机上的 SCSI 磁盘。ONTAP Select 不支持 NVMe 驱动器作为 Hyper-V 主机上的离散设备分配（直通设备）。
+
+
 
 [[step-1-configure-the-host]]
 == 步骤 1：配置主机

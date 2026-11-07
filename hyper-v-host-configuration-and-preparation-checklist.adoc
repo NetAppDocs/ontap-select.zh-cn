@@ -1,0 +1,249 @@
+---
+sidebar: sidebar 
+permalink: hyper-v-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, hyper-v, host preparation 
+summary: 准备部署 ONTAP Select 节点的每个 Hyper-V 虚拟机管理程序主机。在准备主机时，您会仔细评估部署环境，以确保主机配置正确并准备好支持 ONTAP Select 集群的部署。 
+---
+= 为 ONTAP Select 准备 Hyper-V 主机
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+准备部署 ONTAP Select 节点的每个 Hyper-V 虚拟机监控程序主机。确保主机已正确配置并准备好支持 ONTAP Select 集群的部署。
+
+
+NOTE: ONTAP Select Deploy 管理实用程序不会执行虚拟机管理程序主机所需的网络和存储配置。您必须在部署ONTAP Select集群之前手动准备每个主机。
+
+
+
+[[step-1-prepare-the-hyper-v-hypervisor-host]]
+[[prepare-hyper-v-server]]
+== 步骤 1：准备 Hyper-V 虚拟机监控程序主机
+
+准备部署 ONTAP Select 节点的每个 Windows Hyper-V 服务器。
+
+.关于此任务
+有关如何执行这些步骤的详细信息，请参见 Windows 文档。
+
+.步骤
+. 安装受支持的 Windows Server 版本，并使用服务器管理器、Windows Admin Center 或 PowerShell 启用 Hyper-V 角色。
+. 将 Windows 安装到本地启动磁盘。请勿将 Windows 安装到您打算提供给 ONTAP Select 的磁盘上。
+. 验证配置是否满足以下要求：
++
+** Windows Server 版本被列为受支持。Deploy 实用程序在主机注册期间读取产品名称，并报告不支持的版本。
+** 已启用 Hyper-V 角色。Deploy 实用程序在主机注册期间会验证此项，如果未启用该角色，则注册将失败。
+** 主机 CPU 和内存具有 Windows Server 的容量。Deploy 实用程序在调整节点大小时为主机保留 2 个 CPU 内核和 8 GB 内存。
+
+
+
+
+
+
+[[step-2-provide-remote-management-access-for-deploy]]
+== 步骤 2：为 Deploy 提供远程管理访问
+
+部署实用程序使用 HTTPS 和 PowerShell 远程配置通过 Windows 远程管理（WinRM）管理主机。您需要配置 WinRM HTTPS 侦听器、关联的证书和防火墙规则。
+
+.步骤
+. 启用 WinRM HTTP：
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+. 验证 WinRM 配置：
++
+[source, cli]
+----
+winrm enumerate winrm/config/listener
+----
+. 创建防火墙入站规则以接受 HTTPS 端口 5986 上的网络连接：
++
+[source, cli]
+----
+New-NetFirewallRule -DisplayName "WinRM HTTPS" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 5986
+----
+. 配置关联证书：
++
+[role="tabbed-block"]
+====
+.证书可用
+--
+如果您已在本地计算机证书存储库中拥有有效的证书：
+
+.. 配置证书的 Powershell 远程处理：
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+.. 为远程管理配置 WinRM：
++
+[source, cli]
+----
+winrm quickconfig -q
+----
+.. 验证 WinRM HTTPS 侦听器配置：
++
+[source, cli]
+----
+winrm e winrm/config/listener
+----
+
+
+--
+.证书不可用
+--
+.. 生成自签名证书：
++
+[source, cli]
+----
+$cert = New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My
+----
+.. 将证书绑定到 WinRM 侦听器：
++
+[source, cli]
+----
+New-WSManInstance -ResourceURI winrm/config/Listener -SelectorSet @{Transport='HTTPS';Address='*'} -ValueSet @{CertificateThumbprint=$cert.Thumbprint}
+----
+
+
+--
+====
+. 通过选择*计算机配置* > *管理模板* > *Windows 组件* > *Windows 远程管理（WinRM）* > *WinRM 服务*来配置组策略。
+. 验证配置是否满足以下要求：
++
+** 部署虚拟机 (VM) 可以访问 TCP 端口 5986 上的 WinRM HTTPS 侦听器。部署实用程序不使用 HTTP 或 TCP 端口 5985。
+** 有一个自签名证书。Deploy 实用程序不会根据证书颁发机构验证证书。
+** 用于注册主机的帐户对该主机具有管理员权限。Deploy 实用程序使用 Kerberos 进行身份验证。如果 Deploy 实用程序无法使用 Kerberos，它将回退到 NTLM。
+** 您已使用在 TCP 端口 5986 上应答的唯一名称注册了 Hyper-V 主机。Deploy 实用程序使用注册名称检索证书。
++
+
+NOTE: Deploy 实用程序会记录证书，并在以后的每次连接时对其进行验证。如果证书被替换，则与主机的连接将失败，您必须从 Deploy 实用程序中删除该主机并重新注册。
+
+
+
+
+
+
+
+[[step-3-prepare-the-host-storage]]
+== 步骤 3：准备主机存储
+
+Hyper-V 主机上的存储池是保存 ONTAP Select VM 及其虚拟磁盘的本地卷。
+
+.步骤
+. 使用磁盘管理、服务器管理器或 Windows Admin Center 创建本地卷。有关详细信息，请参见 Microsoft 文档。
+. 为每个 ONTAP Select 节点创建至少一个存储池。有关详细信息，请参见 Microsoft 文档。
++
+[NOTE]
+====
+** 使用软件 RAID 时，需要创建存储池。
+** 若要删除存储池，请先删除正在使用该存储池的 ONTAP Select 集群或节点，然后使用标准 Windows 工具删除该卷。
+
+
+====
+. 验证卷是否已格式化为 NTFS 或 ReFS 并已分配驱动器号。Deploy 实用程序通过其驱动器号标识存储池。
++
+[NOTE]
+====
+** Deploy 实用程序保留 2% 的卷作为开销，并且可以从单个存储池中分配最多 64 TB。
+** 不能将群集共享卷和 SMB 3.0 文件共享用作 ONTAP Select 存储池。
+** ONTAP Select 无法发现仅装载到文件夹路径的卷，因为它没有驱动器号。
+
+
+====
+. 如果使用软件 RAID，则需要为 ONTAP Select 预留物理磁盘。Hyper-V 不支持 PCI 直通，因此磁盘将作为直通物理磁盘呈现给虚拟机。物理磁盘必须满足以下要求：
++
+** 它们是 SSD 或 NVMe 磁盘，每个至少有 200 GB 的存储空间。
+** 它们是没有分区、卷和驱动器号的原始磁盘。
+** 磁盘不是存储空间池的成员。
+** 磁盘保持联机状态。Deploy 实用程序在将每个磁盘附加到 VM 时使其脱机。
+
+
+. 单节点群集至少需要三个磁盘用于软件 RAID，四个或五个磁盘用于软件 RAID-DP。双节点群集需要 6 个磁盘用于软件 RAID，或 10 个磁盘用于软件 RAID-DP。ONTAP Select 每个节点最多支持 60 个直通磁盘。
++
+在注册主机之前，请确认保留磁盘符合条件：
+
++
+[source, cli]
+----
+Get-PhysicalDisk | Select-Object FriendlyName, MediaType, BusType, Size
+----
++
+
+NOTE: 在  `Get-StoragePool` 输出中显示为存储空间池成员的磁盘会被 Deploy 实用程序排除，无法用于软件 RAID。
+
+
+
+
+
+[[step-4-review-the-ontap-select-cluster-configuration]]
+== 步骤 4：检查ONTAP Select集群配置
+
+您可以将 ONTAP Select 部署为双节点或四节点集群，或者单节点集群。在许多情况下，由于额外的存储容量和高可用性（HA）功能，多节点集群更可取。
+
+下图说明了用于 ESXi 主机的单节点集群和四节点集群的ONTAP Select网络。
+
+[role="tabbed-block"]
+====
+.单节点集群
+--
+下图显示了一个单节点集群。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。
+
+image:CHK_01.jpg["显示一个网络的单节点集群"]
+
+--
+.四节点集群
+--
+下图展示了一个包含两个网络的四节点集群。通过内部网络，可以在节点之间进行通信，以支持 ONTAP 集群网络服务。外部网络传输客户端，管理和跨集群复制流量（ SnapMirror/SnapVault ）。
+
+image:CHK_02.jpg["显示两个网络的四节点集群"]
+
+--
+.四节点集群中的单个节点
+--
+下图说明了四节点集群中单个 ONTAP Select VM 的典型网络配置。有两个独立的网络：ONTAP-内部和 ONTAP-外部。
+
+image:CHK_03.jpg["四节点集群中的单个节点"]
+
+--
+====
+
+
+[[step-5-prepare-the-networks]]
+== 第 5 步：准备网络
+
+ONTAP Select Deploy 通过 Hyper-V 虚拟交换机连接到物理网络。您需要在注册主机之前创建虚拟交换机。
+
+.关于此任务
+有关如何执行这些步骤的详细信息，请参见 Windows 文档。
+
+.步骤
+. 使用 Hyper-V Manager、Windows Admin Center 或 PowerShell 中的 Virtual Switch Manager 创建交换机。
++
+为 ONTAP Select 使用的每个物理适配器创建一个外部虚拟交换机。单节点集群至少需要一个适配器，双节点集群至少需要两个适配器。
+
+. 在物理适配器的高级属性中设置巨型帧。
+. 将一个物理适配器绑定到每个虚拟交换机。
++
+
+NOTE: 不支持 NIC 组合和 Switch Embedded Teaming。
+
+. 验证每个上行链路是否为 `up`。
++
+
+NOTE: 上行链路为 `down`的外部虚拟交换机被报告为不可用。
+
+. 在物理交换机端口或管理操作系统适配器上配置 VLAN 标记。Deploy 实用程序读取正在使用的 VLAN，它不会分配 VLAN。
+. 双节点集群的内部网络需要 7500 到 9000 字节的最大传输单元（MTU）。在承载内部网络的适配器上启用巨型帧。
++
+
+NOTE: Windows Server 报告包括以太网报头在内的巨型帧大小，因此设置为 9014 字节的适配器可提供 9000 字节的 MTU。这是 Deploy 实用程序解释适配器设置的 MTU 值的方式。当虚拟交换机与管理操作系统共享时，相应主机适配器的 IP MTU 也会限制 Deploy 实用程序报告的 MTU。
+
+

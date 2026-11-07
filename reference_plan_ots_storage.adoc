@@ -17,7 +17,7 @@ summary: 您应考虑几个与 ONTAP Select 主机存储相关的规划问题。
 您应考虑几个与 ONTAP Select 主机存储相关的规划问题。
 
 
-NOTE: 概述了 ESXi 和 KVM 主机的外部存储支持信息。有关详细信息，请参阅 link:reference_plan_ots_vnas.html["VMware ESXi 要求"] 和 link:reference_plan_ots_kvm.html["KVM 要求"]。
+NOTE: 概述了 ESXi、Hyper-V 和 KVM 主机的存储支持信息。有关详细信息，请参阅 link:reference_plan_ots_vnas.html["VMware ESXi 外部存储要求"]、link:plan-ots-hyper-v.html["Hyper-V 存储要求"] 和 link:reference_plan_ots_kvm.html["KVM 外部存储要求"]。
 
 
 

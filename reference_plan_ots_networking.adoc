@@ -38,7 +38,7 @@ NOTE: 要详细了解如何在虚拟机监控程序主机上配置 vSwitch 和�
 [[cluster-mtu]]
 == 集群 MTU
 
-使用单独的内部网络连接多节点集群中的 ONTAP Select 节点。此网络的 MTU 大小通常为 9000 。但是，在某些情况下，此 MTU 大小对于连接 ONTAP Select 节点的网络来说过大。为了容纳较小的帧，内部网络上 ONTAP Select 使用的 MTU 大小可以介于 7500-9000 字节之间。
+单独的内部网络用于连接多节点集群中的 ONTAP Select 节点。通常，此网络的最大传输单元（MTU）大小为 9000。但是，在某些情况下，此 MTU 大小对于连接 ONTAP Select 节点的网络来说太大。为了适应较小的帧，ONTAP Select 在内部网络上使用的 MTU 大小可以在 7500-9000 字节的范围内。
 
 MTU 大小将显示在集群创建页面的集群详细信息部分中。此值由 Deploy 管理实用程序确定，如下所示：
 
@@ -123,19 +123,35 @@ NOTE: 如果需要，您可以根据网络设计手动设置集群 MTU 值。
 [[network-traffic-requirements]]
 == 网络流量要求
 
-您必须确保已正确配置防火墙，以使网络流量能够在 ONTAP Select 部署环境中的各个参与者之间流动。
+您必须确保您的防火墙配置正确，以允许网络流量在 ONTAP Select 部署环境中的各个参与者之间流动。
 
 .参与者
 在 ONTAP Select 部署中，有多个参与者或实体会交换网络流量。这些内容将介绍，然后在网络流量要求的摘要问题描述 中使用。
 
-* 部署 ONTAP Select Deploy 管理实用程序
-* vSphere (仅限ESXi)
-vSphere服务器或ESXi主机、具体取决于此主机在集群部署中的管理方式
-* 虚拟机管理程序服务器
-ESXi虚拟机管理程序主机或Linux KVM主机
-* OTS 节点 ONTAP Select 节点
-* OTS 集群一个 ONTAP Select 集群
-* 管理 WS 本地管理工作站
+* 部署
++
+ONTAP Select Deploy 管理实用程序
+
+* vSphere（仅限 ESXi）
++
+vSphere 服务器或 ESXi 主机，具体取决于主机在集群部署中的管理方式
+
+* Hypervisor 服务器
++
+ESXi 虚拟机监控程序主机、Microsoft Hyper-V 主机或 Linux KVM 主机
+
+* ONTAP Select 节点
++
+ONTAP Select 节点
+
+* ONTAP Select 集群
++
+ONTAP Select 集群
+
+* 管理 WS
++
+本地管理工作站
+
 
 
 .网络流量要求摘要
@@ -143,7 +159,25 @@ ESXi虚拟机管理程序主机或Linux KVM主机
 
 [cols="20,20,35,25"]
 |===
-| 协议 / 端口 | ESXi / KVM | 方向 | Description 
+| 协议 / 端口 | ESXi / Hyper-V / KVM | 方向 | Description 
+
+
+| ICMP | ESXi、Hyper-V 或 KVM | 部署到虚拟机管理程序服务器 | Ping 
+
+
+| ICMP | ESXi、Hyper-V 或 KVM | 部署到每个 ONTAP Select 节点 | Ping 
+
+
+| SSH （ 22 ） | ESXi、Hyper-V 或 KVM | 到每个 ONTAP Select 节点的管理 WS | 管理 
+
+
+| SSH （ 22 ） | KVM | 部署到虚拟机管理程序服务器节点 | 访问虚拟机管理程序服务器 
+
+
+| TLS （ 443 ） | ESXi、Hyper-V 或 KVM | 部署到 ONTAP Select 节点和集群 | 访问 ONTAP 
+
+
+| TLS （ 443 ） | ESXi、Hyper-V 或 KVM | 每个要部署的 ONTAP Select 节点 | Access Deploy (容量池许可) 
 
 
 | TLS （ 443 ） | ESXi | 部署到vCenter Server (托管)或ESXi (托管或非托管) | VMware VIX API 
@@ -152,23 +186,8 @@ ESXi虚拟机管理程序主机或Linux KVM主机
 | 902. | ESXi | 部署到 vCenter Server （受管）或 ESXi （非受管） | VMware VIX API 
 
 
-| ICMP | ESXi或KVM | 部署到虚拟机管理程序服务器 | Ping 
+| iSCSI （ 3260 ） | ESXi、Hyper-V 或 KVM | 每个要部署的 ONTAP Select 节点 | 调解器 / 邮箱磁盘 
 
 
-| ICMP | ESXi或KVM | 部署到每个 OTS 节点 | Ping 
-
-
-| SSH （ 22 ） | ESXi或KVM | 管理每个 OTS 节点的 WS | 管理 
-
-
-| SSH （ 22 ） | KVM | 部署到虚拟机管理程序服务器节点 | 访问虚拟机管理程序服务器 
-
-
-| TLS （ 443 ） | ESXi或KVM | 部署到 OTS 节点和集群 | 访问 ONTAP 
-
-
-| TLS （ 443 ） | ESXi或KVM | 要部署的每个 OTS 节点 | Access Deploy (容量池许可) 
-
-
-| iSCSI （ 3260 ） | ESXi或KVM | 要部署的每个 OTS 节点 | 调解器 / 邮箱磁盘 
+| WinRM HTTPS （5986） | Hyper-V | 部署到虚拟机管理程序服务器节点 | 访问虚拟机管理程序服务器 
 |===

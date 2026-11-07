@@ -100,8 +100,8 @@ ONTAP软件 RAID 支持以下 RAID 类型：RAID 4、RAID-DP 和RAID-TEC。这�
 
 
 
-[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
-== 直通（ DirectPath IO ）设备与原始设备映射（ RDM ）
+[[passthrough-directpath-io-devices-versus-raw-device-maps-rdms]]
+== 直通（DirectPath IO）设备与原始设备映射（RDM）
 
 ESXi 和 KVM 虚拟机管理程序不支持 NVMe 磁盘作为原始设备映射 (RDM)。要允许 ONTAP Select 直接控制 NVMe 磁盘，必须将这些驱动器配置为 ESXi 或 KVM 内的直通设备。将 NVMe 设备配置为直通设备时，需要服务器 BIOS 的支持，并且可能需要重新启动主机。此外，每个主机可以分配的直通设备数量也有限制，这可能因平台而异。但是，ONTAP Deploy 将此限制为每个 ONTAP Select 节点 14 个 NVMe 设备。这意味着 NVMe 配置以牺牲总容量为代价，提供非常高的 IOPS 密度 (IOPS/TB)。或者，如果您需要具有更大存储容量的高性能配置，建议配置为大型 ONTAP Select VM 大小、用于系统磁盘的 INTEL Optane 卡以及用于数据存储的标称数量的 SSD 驱动器。
 
@@ -109,6 +109,9 @@ ESXi 和 KVM 虚拟机管理程序不支持 NVMe 磁盘作为原始设备映射 
 NOTE: 要充分利用 NVMe 性能，请考虑较大的 ONTAP Select VM 大小。
 
 直通设备和 RDM 之间还有一个区别。RDM可以映射到正在运行的虚拟机。直通设备需要重新启动虚拟机。这意味着任何 NVMe 驱动器更换或容量扩展（驱动器添加）过程都需要重新启动ONTAP Select虚拟机。驱动器更换和容量扩展（驱动器添加）操作由ONTAP Deploy 中的工作流驱动。ONTAPONTAP管理单节点集群的ONTAP Select重新启动以及 HA 对的故障转移/故障恢复。但是，务必注意使用 SSD 数据驱动器（无需ONTAP Select重新启动/故障转移）和使用 NVMe 数据驱动器（需要ONTAP Select重新启动/故障转移）之间的区别。
+
+
+NOTE: ONTAP Select 支持 NVMe 驱动器作为 Hyper-V 虚拟机管理程序上的 SCSI 磁盘。ONTAP Select 不支持 NVMe 驱动器作为 Hyper-V 虚拟机管理程序上的离散设备分配（直通设备）。
 
 
 
@@ -128,8 +131,8 @@ NOTE: 根聚合的 RAID 组类型取决于可用磁盘的数量。ONTAP Deploy �
 
 
 
-[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
-== 将 ONTAP Select 磁盘与相应的 ESXi 或 KVM 磁盘匹配
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-hyper-v-or-kvm-disk]]
+== 将 ONTAP Select 磁盘与相应的 ESXi、Hyper-V 或 KVM 磁盘匹配
 
 ONTAP Select 磁盘通常标记为 NET x.y 。您可以使用以下 ONTAP 命令获取磁盘 UUID ：
 
@@ -149,7 +152,7 @@ Plex: -This UID can be matched with the device UID displayed in the ‘storage d
 ----
 image:ST_21.jpg["将 ONTAP Select 磁盘与相应的 ESXi 磁盘匹配"]
 
-在 ESXi 或 KVM shell 中，您可以输入以下命令来使给定物理磁盘（由其 naa.unique-id 标识）的 LED 闪烁。
+在 ESXi、Hyper-V 或 KVM shell 中，您可以输入以下命令使给定物理磁盘（由其 naa.unique-id 标识）的 LED 闪烁。
 
 [role="tabbed-block"]
 ====
@@ -158,6 +161,13 @@ image:ST_21.jpg["将 ONTAP Select 磁盘与相应的 ESXi 磁盘匹配"]
 [source, cli]
 ----
 esxcli storage core device set -d <naa_id> -l=locator -L=<seconds>
+----
+--
+.Hyper-V
+--
+[source, cli]
+----
+Enable-PhysicalDiskIdentification -UniqueId <unique_id>
 ----
 --
 .KVM

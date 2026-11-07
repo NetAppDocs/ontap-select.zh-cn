@@ -27,9 +27,6 @@ ONTAP Select 支持单节点和多节点网络配置。
 
 这些端口用于提供以下服务：管理，数据和集群间 LIF 。
 
-.KVM
-您可以将 ONTAP Select 部署为单节点集群。虚拟机监控程序主机包括一个提供对外部网络访问的虚拟交换机。
-
 .ESXi
 下图显示了这些端口与底层物理适配器之间的关系。图中显示了 ESXi 虚拟机监控程序上的一个 ONTAP Select 群集节点。
 
@@ -39,6 +36,9 @@ image:DDN_03.jpg["单节点 ONTAP Select 集群的网络配置"]
 
 
 NOTE: 即使两个适配器足以用于单节点集群，仍需要 NIC 绑定。
+
+.Hyper-V 和 KVM
+您可以将 ONTAP Select 部署为单节点集群。虚拟机监控程序主机包括一个提供对外部网络访问的虚拟交换机。
 
 
 
@@ -146,7 +146,7 @@ NOTE: 您不能为这些接口分配静态 IP 地址，也不应创建其他集�
 有关详细信息，请参阅 link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["双节点延伸型 HA （ MetroCluster SDS ）最佳实践"] 一节。
 
 
-NOTE: 为确保群集网络流量的最大吞吐量，已将此网络端口配置为使用巨型帧（7500 到 9000 MTU）。要进行正确的群集操作，请验证是否在所有为 ONTAP Select 群集节点提供内部网络服务的上游虚拟和物理交换机上启用了巨型帧。
+NOTE: 为确保群集网络流量的最大吞吐量，此网络端口配置为使用最大传输单元（MTU）为 7500 至 9000 字节的巨型帧。为实现正确的群集操作，请验证是否在所有为 ONTAP Select 群集节点提供内部网络服务的上游虚拟和物理交换机上启用了巨型帧。
 
 
 

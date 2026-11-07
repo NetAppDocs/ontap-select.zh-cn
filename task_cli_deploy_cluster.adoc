@@ -100,49 +100,6 @@ license show
 
 [role="tabbed-block"]
 ====
-.KVM
---
-您必须注册要运行ONTAP Select节点的虚拟机管理程序主机。在此过程中、Deploy管理实用程序会向KVM主机进行身份验证。
-
-.关于此任务
-如果需要多个虚拟机管理程序主机，请使用此过程添加每个主机。
-
-.步骤
-. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
-. 注册主机：
-+
-[source, cli]
-----
-host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
-----
-+
-输出示例：
-
-+
-[listing]
-----
-host register -name 10.234.81.14 -hypervisor-type KVM -username root
-----
-+
-根据提示提供主机帐户的密码。
-
-. 显示主机的状态并确认其已通过身份验证：
-+
-[source, cli]
-----
-host show -name <FQDN|IP> -detailed
-----
-+
-输出示例：
-
-+
-[listing]
-----
-host show -name 10.234.81.14 -detailed
-----
-
-
---
 .ESXi
 --
 在此过程中， Deploy 管理实用程序会向管理主机的 vCenter Server 进行身份验证，或者直接向 ESXi 独立主机进行身份验证。
@@ -201,6 +158,60 @@ host show -name <FQDN|IP> -detailed
 ....
 host show -name 10.234.81.14 -detailed
 ....
+
+
+--
+.Hyper-V 或 KVM
+--
+您必须注册要运行ONTAP Select节点的虚拟机管理程序主机。在此过程中、Deploy管理实用程序会向KVM主机进行身份验证。
+
+.关于此任务
+如果需要多个虚拟机管理程序主机，请使用此过程添加每个主机。
+
+.步骤
+. 使用管理员帐户使用 SSH 登录到 Deploy 实用程序命令行界面。
+. 注册主机：
++
+*Hyper-V*
+
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type Hyper-V -username <Hyper-V_username>
+----
++
+*KVM*
+
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
+----
++
+输出示例：
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+根据提示提供主机帐户的密码。
+
+. 显示主机的状态并确认其已通过身份验证：
++
+[source, cli]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+输出示例：
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
 
 
 --
@@ -315,14 +326,14 @@ host network show -host-name 10.234.81.14 -detailed
 +
 [role="tabbed-block"]
 ====
-.ESXi主机
+.ESXi
 --
 [source, cli]
 ----
 node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -management-networks <network_name> -data-networks <network_name> -internal-network <network_name>
 ----
 --
-.KVM主机
+.Hyper-V 或 KVM
 --
 [source, cli]
 ----

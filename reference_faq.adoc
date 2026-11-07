@@ -71,7 +71,7 @@ NOTE: API v3 版本与 API 的先前版本不向后兼容。上提供了一个�
 可以， ONTAP Select 集群的还原操作步骤 与 FAS 集群的还原操作步骤 几乎相同。但是，存在一些差异：
 
 * 只能还原已升级的 ONTAP Select 实例，并且只能还原到原始安装版本。即使 ONTAP Select 通常支持旧版代码，新安装也无法还原到旧版代码。
-* 对于使用软件 RAID 的 ONTAP Select (KVM) 和 ONTAP Select (ESXi)，无法恢复到不支持软件 RAID 的先前版本。此外，在 ESXi 上新安装的 ONTAP Select 9.5 或更高版本使用 VMXNET3 网络驱动程序，并在可能的情况下使用 vNVMe 驱动程序。这些新安装无法还原到早期版本的 ONTAP Select。
+* 对于使用软件 RAID 的 ONTAP Select（ESXi）和 ONTAP Select（KVM），无法还原到不支持软件 RAID 的先前版本。此外，在 ESXi 上新安装的 ONTAP Select 9.5 或更高版本使用 VMXNET3 网络驱动程序，并在可能的情况下使用 vNVMe 驱动程序。这些新安装无法还原到早期版本的 ONTAP Select。
 * 如果ONTAP Select VM 也升级为大型实例（使用 Premium XL 许可证），则不支持恢复到 9.6 之前的版本，因为早期版本中不提供大型实例功能。
 
 
@@ -132,8 +132,8 @@ CAUTION: 请勿尝试修改许可证文件。这样做会使安全密钥失效�
 
 有关存储、有几个问题和答案。
 
-.单个 ONTAP Select Deploy 实例可以在 ESXi 和 KVM 上创建群集吗？
-可以。ONTAP Select Deploy 可以安装在 KVM 或 ESXi 上，并且两种安装都可以在任一虚拟机监控程序上创建 ONTAP Select 集群。
+.单个 ONTAP Select Deploy 实例可以在 ESXi、Hyper-V 和 KVM 上创建集群吗？
+可以。ONTAP Select Deploy 可以安装在 ESXi、Hyper-V 或 KVM 上，并且这些安装可以在任何这些虚拟机管理程序上创建 ONTAP Select 集群。
 
 .在 ESXi 上运行 ONTAP Select 是否需要 vCenter？
 如果 ESXi 主机已获得适当的许可，则无需由 vCenter Server 管理 ESXi 主机。但是，如果主机由 vCenter server 管理，则必须将 ONTAP Select Deploy 配置为使用该 vCenter Server。换句话说，如果 ESXi 主机正由 vCenter Server 主动管理，则无法在 ONTAP Select Deploy 中将其配置为独立主机。请注意，ONTAP Select Deploy VM 依赖 vCenter 来跟踪由于 vMotion 或 VMware HA 事件导致的所有 ONTAP Select VM 在 ESXi 主机之间的迁移。
@@ -148,21 +148,25 @@ AFF/FAS 上提供的所有 RAID 方法也可供 ONTAP Select 使用。其中包�
 
 软件 RAID 的一些要求如下：
 
-* 支持 ESXi 和 KVM
+* 支持 ESXi、Hyper-V 和 KVM
 +
+** 从 ONTAP Select 9.20.1 开始，ONTAP Select 支持 Hyper-V 虚拟机管理程序。
 ** 从ONTAP Select 9.14.1开始、已恢复对KVM虚拟机管理程序的支持。以前、ONTAP Select 9.10.1不再支持KVM虚拟机管理程序。
 
 
 * 支持的物理磁盘大小： 200 GB – 32 TB
 * 仅在 DAS 配置上受支持
 * 支持SSD或NVMe
++
+ONTAP Select 支持 NVMe 驱动器作为 Hyper-V 虚拟机管理程序上的 SCSI 磁盘。ONTAP Select 不支持 NVMe 驱动器作为 Hyper-V 虚拟机管理程序上的离散设备分配（直通设备）。
+
 * 需要高级版或高级版 XL ONTAP Select 许可证
 * 硬件 RAID 控制器应不存在或已禁用，或者应在 SAS HBA 模式下运行
 * 必须将基于专用 LUN 的 LVM 存储池或数据存储库用于系统磁盘：核心转储，启动 /NVRAM 和调解器。
 
 
-.适用于 KVM 的 ONTAP Select 是否支持多个 NIC 绑定？
-在 KVM 上安装时，必须使用一个绑定和一个网桥。具有两个或四个物理端口的主机应将所有端口置于同一个绑定中。
+.ONTAP Select for Hyper-V 和 KVM 是否支持多个 NIC 绑定？
+在 Hyper-V 或 KVM 上安装时，必须使用单个绑定和单个网桥。具有两个或四个物理端口的主机应将所有端口置于同一个绑定中。
 
 .ONTAP Select 如何报告或警报虚拟机管理程序主机中发生故障的物理磁盘或 NIC ？ONTAP Select 是从虚拟机管理程序检索此信息还是应在虚拟机管理程序级别设置监控？
 使用硬件 RAID 控制器时， ONTAP Select 在很大程度上不了解底层服务器问题。如果服务器是根据我们的最佳实践配置的，则应存在一定数量的冗余。我们建议使用 RAID 5/6 ，以避免驱动器出现故障。对于软件 RAID 配置， ONTAP 负责发出有关磁盘故障的警报，如果有备用驱动器，则启动驱动器重建。
@@ -187,20 +191,23 @@ ONTAP Select Deploy包含一个存储添加工作流、该工作流支持在ONTA
 .ONTAP Select 是否支持 vSAN 或外部阵列类型的数据存储库？
 ONTAP Select Deploy 和 ONTAP Select for ESXi 支持使用 vSAN 或外部阵列类型的数据存储区为其存储池配置 ONTAP Select 单节点集群。
 
-ONTAP Select Deploy和ONTAP Select for KVM支持在外部阵列上使用共享逻辑存储池类型配置ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE 。不支持其他类型的存储池。
+ONTAP Select Deploy 和 ONTAP Select for KVM 支持使用外部阵列上的共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI、FC/FCoE 和 NFS。不支持其他类型的存储池。
 
 支持共享存储上的多节点 HA 群集。
 
 .ONTAP Select 是否支持 vSAN 或其他共享外部存储（包括一些 HCI 堆栈）上的多节点集群？
-ESXi 和 KVM 均支持使用外部存储的多节点集群（多节点 vNAS）。不支持在同一集群中混合使用虚拟机监控程序。共享存储上的 HA 架构仍然意味着 HA 对中的每个节点都有其合作伙伴数据的镜像副本。但是，与依赖 VMware HA 或 KVM Live Motion 的单节点集群相比，多节点集群带来了 ONTAP 无中断操作的优势。
+ESXi 和 KVM 均支持使用外部存储的多节点集群（多节点 vNAS）。Hyper-V 不支持多节点 vNAS 模型。不支持在同一集群中混合使用虚拟机管理程序。共享存储上的 HA 架构仍然意味着 HA 对中的每个节点都有其配对节点数据的镜像副本。但是，与依赖 VMware HA 或 KVM Live Motion 的单节点集群相比，多节点集群带来了 ONTAP 无中断操作的优势。
 
 虽然 ONTAP Select Deploy 增加了对同一主机上多个 ONTAP Select VM 的支持，但它不允许这些实例在集群创建期间成为同一 ONTAP Select 集群的一部分。对于 ESXi 环境，NetApp 建议创建 VM 反关联规则，以便 VMware HA 不会尝试将多个 ONTAP Select VM 从同一个 ONTAP Select 集群迁移到单个 ESXi 主机。此外，如果 ONTAP Select Deploy 检测到 ONTAP Select VM 的管理（用户启动）vMotion 或实时迁移导致违反了我们的最佳实践，例如两个 ONTAP Select 节点最终在同一物理主机上，则 ONTAP Select Deploy 会在 Deploy UI 和日志中发布警报。ONTAP Select Deploy 意识到 ONTAP Select VM 位置的唯一方法是集群刷新操作的结果，这是 ONTAP Select Deploy 管理员必须启动的手动操作。ONTAP Select Deploy 中没有启用主动监控的功能，并且警报仅通过 Deploy UI 或日志可见。换言之，此警报无法转发到集中式监控基础设施。
 
 .ONTAP Select 是否支持 VMware 的 NSX VXLAN ？
-支持 NSX-V VXLAN 端口组。对于多节点 HA，包括 ONTAP MetroCluster SDS，请确保将内部网络 MTU 配置为 7500 到 8900 之间（而不是 9000），以适应 VXLAN 开销。可以在集群部署期间使用 ONTAP Select Deploy 配置内部网络 MTU。
+支持 NSX-V VXLAN 端口组。对于多节点 HA，包括 ONTAP MetroCluster SDS，请确保将内部网络最大传输单元（MTU）配置为 7500 到 8900 之间（而不是 9000），以适应 VXLAN 开销。在集群部署期间，可以使用 ONTAP Select Deploy 配置内部网络 MTU。
 
 .ONTAP Select 是否支持 KVM 实时迁移？
 在外部阵列存储池上运行的 ONTAP Select VM 支持 virsh 实时迁移。
+
+.ONTAP Select 是否支持 Hyper-V 实时迁移？
+在使用共享存储（例如基于 iSCSI 或 FC 的集群共享卷）的 Windows Server 故障转移集群中配置的 ONTAP Select 节点虚拟机支持实时迁移。使用本地直连存储（DAS）的 ONTAP Select 不支持实时迁移。
 
 .vSAN AF 是否需要 ONTAP Select 高级版？
 不支持，无论外部阵列或 vSAN 配置是全闪存，都支持所有版本。
@@ -211,11 +218,11 @@ Select VM 会继承 vSAN 数据存储库存储策略， FTT/FTM 设置不受限�
 .如果多个 ONTAP Select 节点属于不同的 Select 集群，它们是否可以在同一主机上运行？
 只能在同一主机上为 vNAS 配置配置多个 ONTAP Select 节点，前提是这些节点不属于同一 ONTAP Select 集群。DAS 配置不支持这一点，因为同一物理主机上的多个 ONTAP Select 节点将争用对 RAID 控制器的访问。
 
-.您可以让具有单个 10GE 端口的主机运行 ONTAP Select 吗？它是否同时可用于 ESXi 和 KVM？
-您可以使用单个 10GE 端口连接到外部网络。但是，NetApp 建议您仅在受限的小型环境中使用此功能。ESXi 和 KVM 都支持此功能。
+.是否可以让具有单个 10GE 端口的主机运行 ONTAP Select，它是否可用于 ESXi、Hyper-V 和 KVM？
+您可以使用单个 10GE 端口连接到外部网络。但是，NetApp 建议您仅在受限的小型环境中使用此功能。ESXi、Hyper-V 和 KVM 支持此功能。
 
-.要在 KVM 上执行实时迁移，您还需要运行哪些进程？
-您必须在参与实时迁移的每个主机上安装和运行开源 CLVM 和起搏器（ pcs ）组件。要访问每个主机上的相同卷组，需要执行此操作。
+.要在 Hyper-V 和 KVM 上执行实时迁移，还需要运行哪些其他进程？
+您必须在参与实时迁移的每个主机上安装并运行开源 CLVM 和 pacemaker（pcs）组件。需要执行此操作才能访问每个主机上的相同卷组。此外，您需要在 Hyper-V 服务器上启用实时迁移功能，以便进行传入和传出实时迁移。
 
 
 
@@ -268,7 +275,7 @@ MetroCluster SDS 是一项高级功能，需要高级版或高级版 XL 许可�
 ONTAP MetroCluster SDS 支持所有类型的存储配置（ DAS 和 vNAS ）。
 
 .ONTAP MetroCluster SDS 是否支持软件 RAID ？
-是，KVM 和 ESXi 上的 SSD 介质均支持软件 RAID。
+是的，ESXi 和 KVM 上的 SSD 介质均支持软件 RAID。
 
 .ONTAP MetroCluster SDS 是否同时支持 SSD 和旋转介质？
 可以，虽然需要高级许可证，但此许可证同时支持中小型 VM 以及 SSD 和旋转介质。

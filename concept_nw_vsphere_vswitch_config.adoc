@@ -139,7 +139,7 @@ image:DDN_13.jpg["vSwitch ，每个节点具有两个物理端口"]
 [[distributed-vswitch-with-lacp]]
 == 采用 LACP 的分布式 vSwitch
 
-在配置中使用分布式 vSwitch 时，可以使用 LACP （尽管这不是最佳实践）来简化网络配置。唯一受支持的 LACP 配置要求所有 vmnic 都位于一个 LAG 中。上行链路物理交换机在通道中的所有端口上必须支持介于 7 ， 500 到 9 ， 000 之间的 MTU 大小。内部和外部 ONTAP Select 网络应在端口组级别隔离。内部网络应使用不可路由（隔离）的 VLAN 。外部网络可以使用 VST ， EST 或 VGT 。
+在配置中使用分布式 vSwitches 时，可以使用 LACP（尽管这不是最佳实践）来简化网络配置。唯一受支持的 LACP 配置要求所有 VMNIC 都在一个 LAG 中。上行链路物理交换机必须在通道中的所有端口上支持 7,500 到 9,000 之间的最大传输单元（MTU）大小。内部和外部 ONTAP Select 网络应在端口组级别隔离。内部网络应使用不可路由（隔离）的 VLAN。外部网络可以使用 VST、EST 或 VGT。
 
 以下示例显示了使用 LACP 的分布式 vSwitch 配置。
 

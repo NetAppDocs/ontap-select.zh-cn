@@ -89,4 +89,4 @@ Configuration:: 此类别中的所有权限。
 此类别中的所有权限。
 
 .相关信息
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["了解 vCenter 中 vSAN ESA 的 VMware vSphere 权限"]
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["了解 vCenter 中 vSAN ESA 的 VMware vSphere 权限"]

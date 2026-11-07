@@ -20,7 +20,7 @@ summary: 您可以部署一个单节点ONTAP Select集群的 90 天评估实例�
 * 您无需从NetApp获取序列号或存储容量许可证。
 * 您可以为用户数据分配与已购买许可证相同的存储量。
 * 您只能使用vCenter帐户部署OVF模板。目前不支持直接安装到ESXi主机。
-* 您必须使用 vSphere 独立客户端或 vSphere Web 客户端（ESXi 8.0 及更高版本的唯一选项）安装 OVF 模板（包含在 ova 文件中）。请勿使用ONTAP Select Deploy 管理实用程序。
+* 必须使用 vSphere 独立客户端或 vSphere Web 客户端（ESXi 8.0 及更高版本的唯一选项）安装 OVF 模板（包含在 OVA 文件中）。您不使用 ONTAP Select Deploy 管理实用程序。
 
 
 
@@ -47,7 +47,7 @@ image:prepare_ESXi_host_requirements.png["准备ESXi主机的要求"]
 . 使用以下选项之一选择主机：
 +
 ** 选择 * 文件 * > * 部署 OVF 模板 * 。
-** 选择 *Datacenter*。然后右键选择并选择 *Deploy OVF Template*。
+** 选择 *Datacenter*。然后右键单击并选择 *Deploy OVF Template*。
 
 
 . 在本地工作站上选择ONTAP Select源OVA文件，然后选择*Next*。

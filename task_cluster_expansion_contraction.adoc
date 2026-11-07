@@ -38,7 +38,7 @@ ESXi 和 KVM 主机不支持以下集群扩展和收缩：
 [[hardware-and-storage-considerations]]
 == 硬件和存储注意事项
 
-以下 KVM 和 ESXi 虚拟机管理程序主机支持集群扩展和收缩功能。
+以下 ESXi 和 KVM 虚拟机监控程序主机支持群集扩展和收缩功能。
 
 [role="tabbed-block"]
 ====
