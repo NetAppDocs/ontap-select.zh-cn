@@ -166,7 +166,7 @@ ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 �
 --
 .KVM
 --
-在 KVM 环境中安装 ONTAP Select Deploy 实用程序之前，应考虑特定于虚拟机监控程序环境的几个要求和限制。
+在 KVM 环境中安装 ONTAP Select Deploy 实用程序之前，您应该考虑特定于 KVM 虚拟机监控程序环境的几个要求和限制。
 
 .硬件要求
 验证部署 ONTAP Select 的 Linux KVM hypervisor 主机是否满足以下基本要求：
@@ -216,10 +216,10 @@ ONTAP Select Deploy 仅支持 IP 版本 4 （ IPv4 ）。不支持 IP 版本 6 �
 ====
 
 
+[[vmware-vsphere-privileges-for-esa]]
 [[vmware-vcenter-server-considerations]]
-== VMware vCenter 服务器注意事项
+== ESA 的 VMware vSphere 权限
 
-.ESA 的 VMware vSphere 权限
 要在 vCenter 中创建和管理 vSAN Express Storage Architecture (ESA)，需要以下 vSphere 内容库权限：
 
 

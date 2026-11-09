@@ -3764,7 +3764,6 @@ storage aggregate show-spare-disks</block>
   <block id="9a5195b1ff4c19906bdb0971591f465c" category="list-text">*vCenter*：当主机由 VMware vCenter 管理时，用于在将 ONTAP Select 节点部署到 ESXi 的过程中对 vCenter 服务器进行身份验证</block>
   <block id="4677d18a24fcb2eb3f37347531f81229" category="paragraph">Deploy 使用 VMware VIX API 与 vCenter 服务器和 ESXi 主机进行通信。最初，它在 TCP 端口 443 上使用 SOAP over SSL 建立连接。此后，使用端口 902 上的 SSL 打开连接。此外，Deploy 还会发出 PING 命令，以验证您指定的 IP 地址上是否存在 ESXi 主机。</block>
   <block id="bb055e0f2f4e26b5aad8eaa467d4f3fa" category="paragraph">此外，Deploy 必须能够使用以下协议与 ONTAP Select 节点和集群管理 IP 地址进行通信：</block>
-  <block id="645dbfc8ae0a73e8087fbcb0a997027f" category="section-title">VMware vCenter 服务器注意事项</block>
   <block id="3c877a9561264bd22f7ed715473c9258" category="paragraph">要在 vCenter 中创建和管理 vSAN Express Storage Architecture (ESA)，需要以下 vSphere 内容库权限：</block>
   <block id="913b24f487842d48914e3794480e83cc" category="admonition">要访问内容库权限，管理员需要授予您对 vCenter Server 中全局权限的访问权限。</block>
   <block id="35c865322fb18e49c0e0d5db1a728645" category="paragraph">ONTAP Select 基于 ONTAP 存储软件构建，通过高可用、无共享的横向扩展架构高效地提供企业存储服务。您可以部署具有一个、两个、四个、六个、八个、十个或十二个节点的解决方案，每个节点的 NFS、SMB/CIFS 和 iSCSI 连接存储的原始容量高达 400TB。您可以利用原生重复数据删除和压缩功能，通过提高有效容量来降低存储成本。横向扩展架构可实现高可用性和无中断的数据访问，以实现负载平衡或对硬件进行维护。</block>
@@ -3890,7 +3889,6 @@ storage aggregate show-spare-disks</block>
   <block id="7fad4e1ab4f0475552986341e454b657" category="list-text">VMware ESXi 9.1</block>
   <block id="e95da606b42156a1d47560476c9088a5" category="list-text">ESXi 9.1</block>
   <block id="05297b8670c42857ef0d5c0e4996e75c" category="paragraph">您必须具有在创建 VM 时要使用的配置信息，包括 VM 的名称、外部网络和主机名。定义静态网络配置时，您需要以下附加信息：</block>
-  <block id="9db175ef7b9ec37a8ebe335363d8fbe5" category="paragraph">对于 KVM 虚拟机管理程序，必须具有在创建 VM 时要使用的配置信息，包括 VM 的名称、外部网络和主机名。在定义静态网络配置时，您需要以下附加信息：</block>
   <block id="4624a3d710907c86baab80d40c84e706" category="admonition">ONTAP Select Deploy 附带的 REST API 分配了一个版本号。API 版本号与 Deploy 发布版本号无关。ONTAP Select 9.20.1 Deploy 管理实用程序包括 REST API 版本 3。</block>
   <block id="0147f8f31be648fb76a1f8e52fad6bac" category="paragraph">Microsoft Hyper-V 支持小型、中型和大型实例类型。</block>
   <block id="53716995394b9da64981d2678057ccbf" category="cell">高达 400TB 的原始数据（ESXi、Hyper-V 和 KVM）</block>
@@ -4007,7 +4005,6 @@ storage aggregate show-spare-disks</block>
   <block id="fb7db41070ad950d89211edd219a9803" category="list-text">动态主机配置协议（DHCP）已启用（您也可以分配静态 IP 地址）</block>
   <block id="013ce7afa9cd10a3d70185c962e874e1" category="paragraph">确认已配置 Deploy 虚拟机网络接口，并且可以连接到其管理的 ONTAP Select 主机。</block>
   <block id="e98756733055aa5fb787fcc00f4f0d6f" category="cell">安装了部署实用程序的 Windows Hyper-V 虚拟机监控程序主机。</block>
-  <block id="c5cc7d9701523b61beb3f9d3ef99e3d0" category="paragraph">在 KVM 环境中安装 ONTAP Select Deploy 实用程序之前，应考虑特定于虚拟机监控程序环境的几个要求和限制。</block>
   <block id="1c473125781ad8e64aaa8bce6cb0a008" category="paragraph">验证部署 ONTAP Select 的 Linux KVM hypervisor 主机是否满足以下基本要求：</block>
   <block id="7201ef87e3397f0d7190418f150e89ca" category="cell">安装了 Deploy 实用程序的 Linux KVM 虚拟机监控程序主机。</block>
   <block id="69d8e48c6c49e4127f1093bef6fe2e3e" category="summary">您应该考虑与使用 Hyper-V 虚拟机管理程序相关的几个规划问题。</block>
@@ -4040,7 +4037,6 @@ storage aggregate show-spare-disks</block>
   <block id="02043ef6bc7f332a01887b245b8d3ad2" category="list-text">从 ONTAP Select 9.20.1 开始，ONTAP Select 支持 Hyper-V 虚拟机管理程序。</block>
   <block id="711a77eb97d9ead8951522e7361dc3a7" category="paragraph-title">ONTAP Select for Hyper-V 和 KVM 是否支持多个 NIC 绑定？</block>
   <block id="3495d24c5401b6b09edf87fc936e334b" category="paragraph">在 Hyper-V 或 KVM 上安装时，必须使用单个绑定和单个网桥。具有两个或四个物理端口的主机应将所有端口置于同一个绑定中。</block>
-  <block id="86219d239e3462d8165c24ad072d5554" category="paragraph">ONTAP Select Deploy 和 ONTAP Select for KVM 支持使用外部阵列上的共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI、FC/FCoE 和 NFS。不支持其他类型的存储池。</block>
   <block id="b8f5f1fe9fbf96b30ca71cd9acb55c8e" category="paragraph">ESXi 和 KVM 均支持使用外部存储的多节点集群（多节点 vNAS）。Hyper-V 不支持多节点 vNAS 模型。不支持在同一集群中混合使用虚拟机管理程序。共享存储上的 HA 架构仍然意味着 HA 对中的每个节点都有其配对节点数据的镜像副本。但是，与依赖 VMware HA 或 KVM Live Motion 的单节点集群相比，多节点集群带来了 ONTAP 无中断操作的优势。</block>
   <block id="6959b85ef43f7bd69d6c4bef1d636c7e" category="paragraph">支持 NSX-V VXLAN 端口组。对于多节点 HA，包括 ONTAP MetroCluster SDS，请确保将内部网络最大传输单元（MTU）配置为 7500 到 8900 之间（而不是 9000），以适应 VXLAN 开销。在集群部署期间，可以使用 ONTAP Select Deploy 配置内部网络 MTU。</block>
   <block id="f51827abc6f2c44c523da0640488337b" category="paragraph-title">ONTAP Select 是否支持 Hyper-V 实时迁移？</block>
@@ -4110,7 +4106,6 @@ storage aggregate show-spare-disks</block>
   <block id="990ddb1a4a5333b31f268a30646a04db" category="inline-link-macro">ONTAP FabricPool</block>
   <block id="8f243a23fbbc8a0796e81a03d9ca89ce" category="cell"><block ref="8f243a23fbbc8a0796e81a03d9ca89ce" category="inline-link-macro-rx"></block></block>
   <block id="4c1cd6c4889f6c77d0e40984793ba6c5" category="inline-link-macro">适用于 ONTAP Select 的 MetroCluster SDS</block>
-  <block id="d0b58b47db6599da942ab7b05527c8b1" category="cell"><block ref="d0b58b47db6599da942ab7b05527c8b1" category="inline-link-macro-rx"></block></block>
   <block id="a952d3957d6eb062e5276a4a3ab708b0" category="cell">这是 ONTAP Select 高级许可证产品。</block>
   <block id="4ae01b68125388898638ecb3eb2e59b7" category="cell"><block ref="4ae01b68125388898638ecb3eb2e59b7" category="inline-link-macro-rx"></block></block>
   <block id="ad8f7b67034a355f5ce7dc712ef53241" category="section-title">ONTAP Select 9.20.1</block>
@@ -4281,4 +4276,7 @@ storage aggregate show-spare-disks</block>
   <block id="cbaf0c40003847a7288e202f27b4a137" category="sidebar">NetApp ONTAP Select 是一种软件定义的存储设备，您可以在运行 VMware ESXi 或基于内核的虚拟机 (KVM) 虚拟机监控程序的各种商用硬件服务器上进行部署。它提供了构建灵活且可扩展的私有云基础设施所需的敏捷性。本网站包含 ONTAP Select 9.20.1 的文档。</block>
   <block id="2cf5ace986ea526c45a66e1931e641bd" category="sidebar">ONTAP Select 9.20.1 文档</block>
   <block id="41b36522e1e1020bad35b072e2f4caeb" category="sidebar">存储要求</block>
+  <block id="0b3fbf115b7bb8c3a3284542b9840849" category="paragraph">在 KVM 环境中安装 ONTAP Select Deploy 实用程序之前，您应该考虑特定于 KVM 虚拟机监控程序环境的几个要求和限制。</block>
+  <block id="6ec35a9fea619f9056b56a9cceaecd8a" category="paragraph">ONTAP Select Deploy 和 ONTAP Select for KVM 支持使用外部阵列上的共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE。不支持其他类型的存储池。</block>
+  <block id="bf1bf7b2d6495806e380ad07c5f6c4ac" category="cell"><block ref="bf1bf7b2d6495806e380ad07c5f6c4ac" category="inline-link-macro-rx"></block></block>
 </blocks>

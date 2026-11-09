@@ -191,7 +191,7 @@ ONTAP Select Deploy包含一个存储添加工作流、该工作流支持在ONTA
 .ONTAP Select 是否支持 vSAN 或外部阵列类型的数据存储库？
 ONTAP Select Deploy 和 ONTAP Select for ESXi 支持使用 vSAN 或外部阵列类型的数据存储区为其存储池配置 ONTAP Select 单节点集群。
 
-ONTAP Select Deploy 和 ONTAP Select for KVM 支持使用外部阵列上的共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI、FC/FCoE 和 NFS。不支持其他类型的存储池。
+ONTAP Select Deploy 和 ONTAP Select for KVM 支持使用外部阵列上的共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE。不支持其他类型的存储池。
 
 支持共享存储上的多节点 HA 群集。
 

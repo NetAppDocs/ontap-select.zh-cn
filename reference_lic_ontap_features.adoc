@@ -112,7 +112,7 @@ NOTE: ONTAP Select 通常不支持具有特定于硬件的依赖关系的ONTAP �
 | FabricPool | link:https://docs.netapp.com/us-en/ontap/concepts/fabricpool-concept.html["ONTAP FabricPool"^] | 使用StorageGRID时、不需要FabricPool许可证。 
 
 
-| MetroCluster SDS | link:https://docs.netapp.com/us-en/ontap/concepts/mcc-sds-ontap-select.html["适用于 ONTAP Select 的 MetroCluster SDS"^] | 这是 ONTAP Select 高级许可证产品。 
+| MetroCluster SDS | link:reference_plan_ots_mcc_sds.html["适用于 ONTAP Select 的 MetroCluster SDS"] | 这是 ONTAP Select 高级许可证产品。 
 
 
 | SnapMirror 云 | link:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror 云备份到对象存储"^] | 您需要 link:https://mysupport.netapp.com/site/help["创建非技术支持案例"^] 获取 SnapMirror 云许可证。 
