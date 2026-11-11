@@ -3773,12 +3773,10 @@ storage aggregate show-spare-disks</block>
   <block id="2dd64bd29dd925332151bac56daee54d" category="list-text">SVM-Migrate</block>
   <block id="191cca9b69f6675fd704265efaee5cd4" category="paragraph">ONTAP Select 不支持异步 SnapMirror 中的一致性组。</block>
   <block id="4b24c4ea95509e5cbdbe193ec75f463e" category="paragraph">容量池许可证的许可容量为全 TB 量，至少为 2 TB。您可以通过将可用空间量乘以开销系数来计算许可容量。开销系数估计将从可用空间中获取的 ONTAP Select 软件开销容量，并适用于确定 NVMe、SSD、HDD 或虚拟驱动器的 ONTAP Select 容量。单节点和多节点（基于 HA 对）集群之间的开销系数不同：</block>
-  <block id="b3a8f80cb2ce78cbbf07a7817fabad7d" category="paragraph">您需要根据可用空间来计算许可容量，以确保您有足够的空间来进行部署。例如，您需要一个 HA 对 20 TB 的可用容量（每个节点 10 TB）：</block>
   <block id="863cc3c84b4e89fdd7579f92bb937ebc" category="list-text">对于 HA 对，数据在两个节点之间复制以实现冗余，因此对于 HA 对中的 20 TB 可用数据，如果其中一个节点脱机，则每个节点需要有 20 TB。</block>
   <block id="3e0455dedd9dea9911d6347cfe0aee63" category="list-text">2.67 的系数使每个节点的容量翻倍，并增加了 ONTAP Select 运行所需的开销容量（0.67）。</block>
   <block id="e1b77540ab30a2b9d111bb1c6ae9524f" category="list-text">每个节点的许可证容量为 27 TB（10 x 2.67 = 26.7）。对于 HA 对，您需要两个 27 TB 的许可证才能拥有 20 TB 的可用容量。</block>
   <block id="60a2cd8b21b5abdd1f9f570f98aead06" category="paragraph">容量层许可证的授权容量为全 TB 量，最小为 1 TB。您可以通过将可用空间量乘以开销系数来计算许可容量。开销系数估计将从可用空间中获取的 ONTAP Select 软件开销容量，并适用于确定 NVMe、SSD、HDD 或虚拟驱动器的 ONTAP Select 容量。单节点和多节点（基于 HA 对）集群之间的开销系数不同：</block>
-  <block id="ab9e259cd278dabfae81423ce071874c" category="paragraph">您需要根据可用空间来计算许可容量，以确保您有足够的空间来进行部署。例如，您需要一个 HA 对 10 TB 的可用容量（每个节点 5 TB）：</block>
   <block id="bd88bf77fede236871bbdaecddefca53" category="list-text">对于 HA 对，数据在两个节点之间复制以实现冗余，因此对于 HA 对中的 10 TB 可用数据，如果其中一个节点脱机，则每个节点需要 10 TB。</block>
   <block id="c0945522d1f6ae9ba28c16c4d8e24c38" category="list-text">每个节点的许可证容量为 14 TB（5 x 2.67 = 13.35）。对于 HA 对，您需要两个 14 TB 的许可证才能拥有 10 TB 的可用容量。</block>
   <block id="74b1b9052c3c702d9cea5b8cd980a547" category="paragraph">HA 对中的每个节点：</block>
@@ -4279,4 +4277,14 @@ storage aggregate show-spare-disks</block>
   <block id="0b3fbf115b7bb8c3a3284542b9840849" category="paragraph">在 KVM 环境中安装 ONTAP Select Deploy 实用程序之前，您应该考虑特定于 KVM 虚拟机监控程序环境的几个要求和限制。</block>
   <block id="6ec35a9fea619f9056b56a9cceaecd8a" category="paragraph">ONTAP Select Deploy 和 ONTAP Select for KVM 支持使用外部阵列上的共享逻辑存储池类型配置 ONTAP Select 单节点集群。存储池可以基于 iSCSI 或 FC/FCoE。不支持其他类型的存储池。</block>
   <block id="bf1bf7b2d6495806e380ad07c5f6c4ac" category="cell"><block ref="bf1bf7b2d6495806e380ad07c5f6c4ac" category="inline-link-macro-rx"></block></block>
+  <block id="973e60ac87d2047ed8383fc1a9ccd1ab" category="summary">Capacity Pools 许可证基于每个节点管理的底层磁盘容量，而不是节点、HA 对或集群的可用容量。每个 Capacity Pools 许可证都分配给指定容量的单个节点序列号，并需要随附的支持合同。</block>
+  <block id="77abd6d38068ade401e1cda5d6d4f4bf" category="paragraph">根据可用空间和集群配置开销计算 ONTAP Select Capacity Pool 许可证大小，以确保为部署提供足够的许可容量。</block>
+  <block id="fc16ee53985da42d5d6e0c02fdd5f183" category="paragraph">在确定容量池许可证大小之前，应查看以下注意事项：</block>
+  <block id="afbbd458508df60809b6d4aec77f511e" category="list-text">在硬件 RAID（VMDK）和软件 RAID（NVMe 或 SSD）配置中，许可证消耗是根据分配给数据聚合的数据磁盘或数据分区计算的。</block>
+  <block id="d8d5fad58568a0f0ba995cf205ca4b44" category="list-text">ONTAP Select 将 RAID-DP 奇偶校验磁盘和分区排除在许可证消耗之外。您仅获得添加到聚合的数据分区和磁盘的许可，因此 RAID-DP 奇偶校验开销不会消耗额外的许可证容量。</block>
+  <block id="fca20405fb9c0582e499eb228377067f" category="list-text">备用驱动器容量不包括在聚合可用容量中，也不会消耗许可证容量。</block>
+  <block id="95970b7eb58e4eefe52eb37d1c8a622d" category="list-text">奇偶校验磁盘专用于数据保护。它们不为卷和数据提供可用存储，也不计入可用容量。</block>
+  <block id="94d3cb7d191621094c7273b8f519cdcb" category="paragraph">您需要根据可用空间来计算许可容量，以确保您有足够的容量进行部署。例如，您需要一个 HA 对 20 TB 的可用容量（每个节点 10 TB）：</block>
+  <block id="914e50a7e70b439cfca1376c40659db4" category="paragraph">在确定容量层许可证大小之前，应查看以下注意事项：</block>
+  <block id="97a23d2070cc57242b398716549eaa47" category="paragraph">您需要根据可用空间来计算许可容量，以确保您有足够的容量进行部署。例如，您希望 HA 对具有 10 TB 的可用容量（每个节点 5 TB）：</block>
 </blocks>
